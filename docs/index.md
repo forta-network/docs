@@ -1,6 +1,6 @@
 # Forta Agent Developer Docs
 
-Welcome to the Forta Agent developer documentation! Forta is the leading runtime security network for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official Javascript SDK
+Welcome to the Forta Agent developer documentation! Forta is the leading runtime security network for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official [Javascript SDK and CLI tool](https://www.npmjs.com/package/forta-agent)
 
 ## Quickstart
 
@@ -14,13 +14,13 @@ $ npx forta-agent init --typescript
 
 The above snippet creates a new project directory called `my-new-agent`, and then uses `npx` (a package runner tool that is part of npm 5.2+) to invoke the `init` command of the `forta-agent` CLI tool. By passing the `--typescript` option, you can initialize a Typescript project (default is Javascript)
 
-This will initialize several files inside of your project directory, including a package.json file, tsconfig.json (for Typescript) as well as some Jest unit tests. The project also includes a forta.config.json file that will be used through the development lifecycle. Let’s make sure our project dependencies are installed:
+This will initialize several files inside of your project directory, including a package.json file, tsconfig.json (for Typescript) as well as a src folder. The project also includes a forta.config.json file that will be used throughout the development lifecycle. Let’s make sure our project dependencies are installed:
 
 ```
 $ npm install
 ```
 
-The code for a simple Forta Agent can be found in the _src/index.ts_ file. At the end of this file, you will find:
+This will also install the `forta-agent` package locally in your project. The code for a simple Forta Agent can be found in the src/index.ts file. At the end of this file, you will find:
 
 ```javascript
 export default {
@@ -103,7 +103,7 @@ The following sections describe the CLI commands available to agent developers. 
 
 ### init
 
-Using the `forta-agent init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation with unit tests. A keyfile will also be generated for you and placed in the _~/.forta_ folder. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent.
+Using the `forta-agent init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile will also be generated for you and placed in the ~/.forta folder if it does not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent
 
 Options:
 
@@ -141,10 +141,22 @@ Example: Run for a specific transaction
 $ forta-agent run --tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
 ```
 
+or if using locally installed package
+
+```bash
+$ npm run tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
+```
+
 Example: Run for a specific block (by number)
 
 ```
 $ forta-agent run --block 12821978
+```
+
+or if using locally installed package
+
+```bash
+$ npm run block 12821978
 ```
 
 Example: Run for a specific block (by hash)
@@ -153,10 +165,22 @@ Example: Run for a specific block (by hash)
 $ forta-agent run --block 0x9e052eb02a3849b650e8b9e0a47b1fae194b928c930168ef19e311dbd7886172
 ```
 
+or if using locally installed package
+
+```bash
+$ npm run block 0x9e052eb02a3849b650e8b9e0a47b1fae194b928c930168ef19e311dbd7886172
+```
+
 Example: Run for a specific block range
 
 ```
 $ forta-agent run --range 12821978..12821980
+```
+
+or if using locally installed package
+
+```bash
+$ npm run range 12821978..12821980
 ```
 
 Example: Run for an input file
@@ -165,17 +189,23 @@ Example: Run for an input file
 $ forta-agent run --file ./test.data.json
 ```
 
+or if using locally installed package
+
+```bash
+$ npm run file ./test.data.json
+```
+
 ### publish
 
 Once you have tested your agent, you can deploy it to the Forta Network using the `forta-agent publish` command. This requires some configuration to be set in your forta.config.json. Firstly, you will need to specify the `agentId` of your agent, as well as the `poolId` that you are targeting. You should also set the `version` of your agent to track changes
 
-A prerequisite for publishing is that you are authorized to do so in the Agent Registry contract by the owner of the pool specified by `poolId`. The Agent Registry contract is currently deployed on the Göerli Testnet. Once you are approved by a pool admin for a specific `poolId`, you will need to send a “publish” transaction to the Agent Registry (using the CLI `publish` command). To do this you will need Göerli ETH (you can get some at https://faucet.goerli.mudit.blog/)
+A prerequisite for publishing is that you are authorized to do so in the Agent Registry contract by the owner of the pool specified by `poolId`. The Agent Registry contract is currently deployed on the Göerli testnet. Once you are approved by a pool admin for a specific `poolId`, you will need to send a “publish” transaction to the Agent Registry (using the CLI `publish` command). To do this you will need Göerli ETH (you can get some at [https://faucet.goerli.mudit.blog](https://faucet.goerli.mudit.blog))
 
-Access to an IPFS gateway is required to publish your agent’s manifest. The manifest will be stored on the IPFS network, and the IPFS address of the agent manifest will be published to the Agent Registry contract. This will be used by Forta Scanners to pull the image for your agent and execute it. We recommend using the Infura IPFS gateway as the simplest option to interact with IPFS. The `ipfsGatewayUrl` will point to the IPFS gateway you want to use (for Infura, this would be https://ipfs.infura.io:5001)
+Access to an IPFS gateway is required to publish your agent’s manifest. The manifest will be stored on the IPFS network, and the IPFS address of the agent manifest will be published to the Agent Registry contract. This will be used by Forta Scanners to pull the image for your agent and execute it. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS. The `ipfsGatewayUrl` will point to the IPFS gateway you want to use (for Infura, this would be `https://ipfs.infura.io:5001`)
 
 If your gateway requires an authorization header (as Infura’s does), you can set this value using the `ipfsGatewayAuthHeader` property (e.g. `Basic Base64(<YOUR_INFURA_PROJECT_ID>:<YOUR_INFURA_PROJECT_SECRET>)`)
 
-The agent manifest will need to be signed using your private key generated by the `init` command. You will be prompted to enter the password for the keyfile when signing.
+The agent manifest will need to be signed using your private key generated by the `init` command. You will be prompted to enter the password for the keyfile when signing
 
 ### forta.config.json
 
@@ -186,7 +216,7 @@ The forta.config.json file provides configurability for your agent. Here are the
 - **version** - used as a version stamp for your agent when publishing
 - **ipfsGatewayUrl** - used to specify a IPFS gateway to upload your agent manifest when publishing
 - **ipfsGatewayAuthHeader** - optional; provide an authorization header if your IPFS gateway requires one
-- **jsonRpcUrl** - development only; allows you to run your agent against data from a specific JSON-RPC endpoint (see forta-agent run CLI command)
+- **jsonRpcUrl** - development only; allows you to run your agent against data from a specific JSON-RPC endpoint (see `run` CLI command)
 - **handlers** - specifies an array of file paths to your agent handlers (i.e. the files with the exported functions)
 
 ## Javascript SDK
@@ -211,7 +241,7 @@ When a transaction is mined and detected by a Forta Scanner, it will generate a 
 
 The `transaction` property will contain information about the signed transaction message that was sent to the blockchain, such as its `hash`, `nonce`, `gas`, `gasPrice`, `value` of attached ether and any input `data` if calling a function. The `r`, `s`, `v` values of the signature are also provided
 
-The `receipt` property will contain the confirmation of the mined transaction, including data like its `status` (success/failure), `gasUsed` and `transactionIndex`. Any logs generated by the transaction are also provided in the `logs` property. A convenience function is provided to check for the existence of an event given the event signature in `TransactionEvent.hasEvent`. An optional `contractAddress` property provides the address if a new contract was created.
+The `receipt` property will contain the confirmation of the mined transaction, including data like its `status` (success/failure), `gasUsed` and `transactionIndex`. Any logs generated by the transaction are also provided in the `logs` property. A convenience function is provided to check for the existence of an event given the event signature in `TransactionEvent.filterEvent`. An optional `contractAddress` property provides the address if a new contract was created.
 
 The `traces` property contains detailed trace information about the transaction including any internal contract functions that may have been called. This is useful for detecting the use of particular contracts/functions that may not generate event logs.
 
@@ -219,13 +249,13 @@ The `addresses` property contains a map for quick lookup of any addresses involv
 
 ### Finding
 
-If a handler wants to flag a transaction because it meets some condition (e.g. flash loan attack), the function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` static method and has four required properties: `name`, `description`, `alertId` and `protocol`.
+If a handler wants to flag a transaction because it meets some condition (e.g. flash loan attack), the function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` static method and has six required properties: `name`, `description`, `alertId`, `protocol`, `severity` and `type`.
 
 The `name` and `description` properties are required to provide a human-readable summary of the finding. For example, for a transaction with high gas usage, the name could be “High Gas” while the description could be “High gas used: 1,000,000“
 
-The `alertId` is a unique string identifier for this class of finding. This is primarily used to group findings as a convenience to the end user. The `type` property informs us whether this finding is an exploit or just some suspicious activity
+The `alertId` is a unique string identifier for this class of finding. This is primarily used to group findings as a convenience to the end user. The `protocol` property would specify whether this finding is for a specific protocol (e.g. Aave). If left blank, it defaults to “Ethereum”.
 
-The `severity` property is used to indicate the impact level of the finding. As a general guidance, here are brief descriptions of what each severity level means:
+The `type` property informs us whether this finding is an exploit or just some suspicious activity. The `severity` property is used to indicate the impact level of the finding. As a general guidance, here are brief descriptions of what each severity level means:
 
 - **Critical** - exploitable vulnerabilities, massive impact on users/funds
 - **High** - exploitable under more specific conditions, significant impact on users/funds
@@ -233,7 +263,7 @@ The `severity` property is used to indicate the impact level of the finding. As 
 - **Low** - minor oversights, negligible impact on users/funds
 - **Info** - miscellaneous behaviours worth describing
 
-The `protocol` property would specify whether this finding is for a specific protocol (e.g. Aave). If left blank, it defaults to “Ethereum”. A `metadata` property allows for providing a key-value map (where keys and values are strings) of extra information about the finding.
+A `metadata` property allows for providing a key-value map (where both keys and values are strings) of extra information about the finding.
 
 ## Ideas for Agents
 
@@ -253,4 +283,4 @@ You can find more example implementations of Forta Agents in our [examples repo]
 
 ## Getting Help
 
-If you have a question that you want to ask, feel free to reach us on our Discord/Slack channels!
+If you have a question that you want to ask or just want to say hello, feel free to reach us on our Discord channel :)
