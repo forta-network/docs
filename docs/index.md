@@ -87,7 +87,7 @@ Agents refer to a module of computation that processes some blockchain data (i.e
 
 ### Agent registry
 
-The agent registry refers to a smart contract (currently deployed on the Arbitrum public testnet) that records the existence of all pools and agents. Developers publish their agent manifests to this registry, and scanner nodes listen for events from this contract to know how manage the agents they are running
+The agent registry refers to a smart contract (currently deployed on the Göerli public testnet) that records the existence of all pools and agents. Developers publish their agent manifests to this registry, and scanner nodes listen for events from this contract to know how to manage the agents they are running
 
 ### Agent manifest
 
