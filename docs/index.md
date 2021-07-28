@@ -79,7 +79,7 @@ Scan pools are groupings of scan nodes in the Forta Network that are collaborati
 
 ### Scan Nodes
 
-A scan nodes is a specific type of Forta node that executes agents for every transaction and every new block on a specific blockchain network (may also be mempool or simulated network). Each scan node belongs to a specific scan pool. The scan node manages and coordinates agents (e.g. by instantiating and running agents, and restarting agents that become unresponsive). The scan node ferries blockchain data to agents to process the transaction/block and then consolidates the report of findings to a public Forta smart contract.
+A scan node is a specific type of Forta node that executes agents for every transaction and every new block on a specific blockchain network (may also be mempool or simulated network). Each scan node belongs to a specific scan pool. The scan node manages and coordinates agents (e.g. by instantiating and running agents, and restarting agents that become unresponsive). The scan node ferries blockchain data to agents to process the transaction/block and then consolidates the report of findings to a public Forta smart contract.
 
 ### Agents
 
