@@ -1,6 +1,6 @@
 # Forta Agent Developer Docs
 
-Welcome to the Forta Agent developer documentation! Forta is the leading runtime security network for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official [Javascript SDK and CLI tool](https://www.npmjs.com/package/forta-agent)
+Welcome to the Forta Agent developer documentation! Forta is a permissionless runtime security network designed to provide threat detection and prevention for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official [Javascript SDK and CLI tool](https://www.npmjs.com/package/forta-agent).
 
 ## Quickstart
 
@@ -12,7 +12,7 @@ $ cd my-new-agent
 $ npx forta-agent init --typescript
 ```
 
-The above snippet creates a new project directory called `my-new-agent`, and then uses `npx` (a package runner tool that is part of npm 5.2+) to invoke the `init` command of the `forta-agent` CLI tool. By passing the `--typescript` option, you can initialize a Typescript project (default is Javascript)
+The above snippet creates a new project directory called `my-new-agent`, and then uses `npx` (a package runner tool that is part of npm 5.2+) to invoke the `init` command of the `forta-agent` CLI tool. By passing the `--typescript` option, you can initialize a Typescript project (default is Javascript).
 
 This will initialize several files inside of your project directory, including a package.json file, tsconfig.json (for Typescript) as well as a src folder. The project also includes a forta.config.json file that will be used throughout the development lifecycle. Let’s make sure our project dependencies are installed:
 
@@ -71,39 +71,39 @@ Since our gas threshold is pretty high (1 million), we may not flag a lot of tra
 
 ### Forta Network
 
-The Forta Network refers to the distributed and decentralized nodes collaborating to secure different parts of a particular blockchain. The collection of all nodes is referred to as the Forta Network
+The Forta Network refers to the distributed and decentralized nodes collaborating to provide threat detection and prevention for smart contract transactions on supported blockchains, coordinated through a set of smart contracts deployed across multiple blockchains. One specific type of node is the scan node. The collection of all nodes and smart contracts is referred to as the Forta Network.
 
-### Pools
+### Scan Pools
 
-Pools are groupings of nodes inside of the Forta Network that are collaborating to secure some aspect of the blockchain. An example pool could be one dedicated to a specific protocol (e.g. Aave) or dedicated to a specific function (e.g. checking for flash loan attacks)
+Scan pools are groupings of scan nodes in the Forta Network that are collaborating to provide threat detection for some transactions and smart contracts on a specific blockchain network (may also be mempool or simulated network). The scan pool defines which specific agents must be executed by participating scan nodes. An example scan pool could be one dedicated to a specific protocol (e.g. Aave) or group of protocols (e.g. "top DeFi" protocols) or dedicated to a specific category of threats (e.g. threats resulting from flash loan attacks).
 
-### Scanners
+### Scan Nodes
 
-Scanners refer to a type of node in the network that listens for data from the blockchain and passes it to agents. Scanner nodes belong to a specific pool. The scanner node coordinates agents (e.g. by running newly published agents, removing unpublished agents, or restarting agents that may become unresponsive). The scanner ferries blockchain data to agents to process the transaction/block and return any findings
+A scan nodes is a specific type of Forta node that executes agents for every transaction and every new block on a specific blockchain network (may also be mempool or simulated network). Each scan node belongs to a specific scan pool. The scan node manages and coordinates agents (e.g. by instantiating and running agents, and restarting agents that become unresponsive). The scan node ferries blockchain data to agents to process the transaction/block and then consolidates the report of findings to a public Forta smart contract.
 
 ### Agents
 
-Agents refer to a module of computation that processes some blockchain data (i.e. a block or transaction) and detects specific conditions (e.g. whether a flash loan attack occured, or whether a particular account balance fell below some threshold). Agents belong to a specific pool, as defined in the agent registry. Agents are run by scanner nodes, which can be running many agents on the same node all belonging to the same pool
+Agents refer to a set of code scripts within a Docker container that process some blockchain data (i.e. a block or transaction) and detect specific threat conditions (e.g. whether a flash loan attack occured, or whether a particular account balance fell below some threshold). Agents emit alerts for their findings. Agents are executed by scan nodes.
 
 ### Agent registry
 
-The agent registry refers to a smart contract (currently deployed on the Göerli public testnet) that records the existence of all pools and agents. Developers publish their agent manifests to this registry, and scanner nodes listen for events from this contract to know how to manage the agents they are running
+The agent registry refers to a smart contract (currently deployed on the Göerli public testnet) that records the existence of all agent containers. Developers publish their agent manifests to this registry, and scan nodes listen for events from this contract to know how to manage the agents they are running.
 
 ### Agent manifest
 
-An agent manifest refers to a signed JSON document that describes the contents of an agent. Specifically, it provides information like the agent version as well as an IPFS reference to the agent image. Manifests are persisted on the IPFS network, with their IPFS references stored in the agent registry
+An agent manifest refers to a signed JSON document that describes the contents of an agent container. Specifically, it provides information like the agent version as well as an IPFS reference to the agent container image. Manifests are persisted on the IPFS network, with their IPFS references stored in the agent registry.
 
 ### Disco
 
-Disco is an open-source, decentralized and distributed container registry. This registry is used to store and distribute agent images. Scanner nodes request agent images from a Disco repository
+Disco is an open-source, decentralized and distributed container registry. This registry is used to store and distribute agent container images. Scan nodes request agent images from a Disco repository.
 
 ## CLI Commands
 
-The following sections describe the CLI commands available to agent developers. You can always use `forta-agent help` to get a quick overview of these commands, as well as details about specific commands e.g. `forta-agent run help`
+The following sections describe the CLI commands available to agent developers. You can always use `forta-agent help` to get a quick overview of these commands, as well as details about specific commands e.g. `forta-agent run help`.
 
 ### init
 
-Using the `forta-agent init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile will also be generated for you and placed in the ~/.forta folder if it does not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent
+Using the `forta-agent init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile will also be generated for you and placed in the ~/.forta folder if it does not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent.
 
 Options:
 
@@ -119,7 +119,7 @@ $ forta-agent init --typescript
 
 ### run
 
-Easily verify the behaviour of your agent during development using the `forta-agent run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your agent with output printed to the console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file. A websocket endpoint is required (i.e. begins with ws:// or wss://) **only** for the default run command. All other run options can use a http:// or https:// endpoint
+Easily verify the behaviour of your agent during development using the `forta-agent run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your agent with output printed to the console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file. A websocket endpoint is required (i.e. begins with ws:// or wss://) **only** for the default run command. All other run options can use a http:// or https:// endpoint.
 
 Options:
 
@@ -197,15 +197,15 @@ $ npm run file ./test.data.json
 
 ### publish
 
-Once you have tested your agent, you can deploy it to the Forta Network using the `forta-agent publish` command. This requires some configuration to be set in your forta.config.json. Firstly, you will need to specify the `agentId` of your agent, as well as the `poolId` that you are targeting. You should also set the `version` of your agent to track changes
+Once you have tested your agent, you can deploy it to the Forta Network using the `forta-agent publish` command. This requires some configuration to be set in your forta.config.json. Firstly, you will need to specify the `agentId` of your agent, as well as the `poolId` that you are targeting. You should also set the `version` of your agent to track changes.
 
-A prerequisite for publishing is that you are authorized to do so in the Agent Registry contract by the owner of the pool specified by `poolId`. The Agent Registry contract is currently deployed on the Göerli testnet. Once you are approved by a pool admin for a specific `poolId`, you will need to send a “publish” transaction to the Agent Registry (using the CLI `publish` command). To do this you will need Göerli ETH (you can get some at [https://faucet.goerli.mudit.blog](https://faucet.goerli.mudit.blog))
+A prerequisite for publishing is that you are authorized to do so in the Agent Registry contract by the owner of the pool specified by `poolId`. The Agent Registry contract is currently deployed on the Göerli testnet. Once you are approved by a pool admin for a specific `poolId`, you will need to send a “publish” transaction to the Agent Registry (using the CLI `publish` command). To do this you will need Göerli ETH (you can get some at [https://faucet.goerli.mudit.blog](https://faucet.goerli.mudit.blog)).
 
-Access to an IPFS gateway is required to publish your agent’s manifest. The manifest will be stored on the IPFS network, and the IPFS address of the agent manifest will be published to the Agent Registry contract. This will be used by Forta Scanners to pull the image for your agent and execute it. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS. The `ipfsGatewayUrl` will point to the IPFS gateway you want to use (for Infura, this would be `https://ipfs.infura.io:5001`)
+Access to an IPFS gateway is required to publish your agent’s manifest. The manifest will be stored on the IPFS network, and the IPFS address of the agent manifest will be published to the Agent Registry contract. This will be used by Forta Scanners to pull the image for your agent and execute it. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS. The `ipfsGatewayUrl` will point to the IPFS gateway you want to use (for Infura, this would be `https://ipfs.infura.io:5001`).
 
-If your gateway requires an authorization header (as Infura’s does), you can set this value using the `ipfsGatewayAuthHeader` property (e.g. `Basic Base64(<YOUR_INFURA_PROJECT_ID>:<YOUR_INFURA_PROJECT_SECRET>)`)
+If your gateway requires an authorization header (as Infura’s does), you can set this value using the `ipfsGatewayAuthHeader` property (e.g. `Basic Base64(<YOUR_INFURA_PROJECT_ID>:<YOUR_INFURA_PROJECT_SECRET>)`).
 
-The agent manifest will need to be signed using your private key generated by the `init` command. You will be prompted to enter the password for the keyfile when signing
+The agent manifest will need to be signed using your private key generated by the `init` command. You will be prompted to enter the password for the keyfile when signing.
 
 ### forta.config.json
 
@@ -239,7 +239,7 @@ When a block is mined and detected by a Forta Scanner, it will generate a `Block
 
 When a transaction is mined and detected by a Forta Scanner, it will generate a `TransactionEvent` containing various information about the transaction. A `block` property is also provided to easily get the block hash, number and timestamp.
 
-The `transaction` property will contain information about the signed transaction message that was sent to the blockchain, such as its `hash`, `nonce`, `gas`, `gasPrice`, `value` of attached ether and any input `data` if calling a function. The `r`, `s`, `v` values of the signature are also provided
+The `transaction` property will contain information about the signed transaction message that was sent to the blockchain, such as its `hash`, `nonce`, `gas`, `gasPrice`, `value` of attached ether and any input `data` if calling a function. The `r`, `s`, `v` values of the signature are also provided.
 
 The `receipt` property will contain the confirmation of the mined transaction, including data like its `status` (success/failure), `gasUsed` and `transactionIndex`. Any logs generated by the transaction are also provided in the `logs` property. A convenience function is provided to check for the existence of an event given the event signature in `TransactionEvent.filterEvent`. An optional `contractAddress` property provides the address if a new contract was created.
 
@@ -251,7 +251,7 @@ The `addresses` property contains a map for quick lookup of any addresses involv
 
 If a handler wants to flag a transaction because it meets some condition (e.g. flash loan attack), the function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` static method and has six required properties: `name`, `description`, `alertId`, `protocol`, `severity` and `type`.
 
-The `name` and `description` properties are required to provide a human-readable summary of the finding. For example, for a transaction with high gas usage, the name could be “High Gas” while the description could be “High gas used: 1,000,000“
+The `name` and `description` properties are required to provide a human-readable summary of the finding. For example, for a transaction with high gas usage, the name could be “High Gas” while the description could be “High gas used: 1,000,000“.
 
 The `alertId` is a unique string identifier for this class of finding. This is primarily used to group findings as a convenience to the end user. The `protocol` property would specify whether this finding is for a specific protocol (e.g. Aave). If left blank, it defaults to “Ethereum”.
 
@@ -279,8 +279,8 @@ We’re excited to see what sort of innovative agents our community comes up wit
 
 ## Examples
 
-You can find more example implementations of Forta Agents in our [examples repo](https://github.com/forta-network/forta-agent-examples)
+You can find more example implementations of Forta Agents in our [examples repo](https://github.com/forta-network/forta-agent-examples).
 
 ## Getting Help
 
-If you have a question that you want to ask or just want to say hello, feel free to reach us on our Discord channel :)
+If you have a question that you want to ask or just want to say hello, please reach us on our Discord channel.
