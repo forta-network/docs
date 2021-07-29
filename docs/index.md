@@ -285,4 +285,4 @@ You can find more example implementations of Forta Agents in our [examples repo]
 
 ## Getting Help
 
-If you have a question that you want to ask or just want to say hello, please reach us on our [Discord channel](https://discord.com/channels/869983523371642921/869983523816226898).
+If you have a question that you want to ask or just want to say hello, please reach us on our [Discord channel](https://discord.gg/DUju5Dh4J9).
