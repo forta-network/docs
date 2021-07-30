@@ -2,3 +2,7 @@ site_name: Forta Network
 
 theme:
   name: material
+  palette:
+    primary: black
+    accent: blue grey
+  logo: forta-logo.png
