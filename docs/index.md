@@ -223,6 +223,7 @@ The forta.config.json file provides configurability for your agent. Here are the
 - **ipfsGatewayAuth** - optional; provide an authorization header if your IPFS gateway requires one
 - **agentRegistryJsonRpcUrl** - used to access the network where the Agent Registry is deployed (i.e. Göerli)
 - **jsonRpcUrl** - development only; allows you to run your agent against data from a specific JSON-RPC endpoint (see `run` CLI command)
+- **traceRpcUrl** - development only; allows you to retrieve trace data from the specified JSON-RPC endpoint
 - **handlers** - specifies an array of file paths to your agent handlers (i.e. the files with the exported functions)
 
 ## Javascript SDK
