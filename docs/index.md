@@ -386,7 +386,11 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 ### getJsonRpcUrl
 
-The SDK provides a convenience function called `getJsonRpcUrl` that can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running in development, this function will return the `jsonRpcUrl` property specified in your config file.
+A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running in development, this function will return the `jsonRpcUrl` property specified in your config file.
+
+### getFortaConfig
+
+A convenience function called `getFortaConfig` can be used to load your config file as an object to access any other properties
 
 ## Ideas for Agents
 
