@@ -229,6 +229,7 @@ The forta.config.json file provides configurability for your agent. Since it can
 - **imageRepositoryUsername** - optional; provide authorization username when pushing to an image repository
 - **imageRepositoryPassword** - optional; provide authorization password when pushing to an image repository
 - **handlers** - specifies an array of file paths to your agent handlers (i.e. the files with the exported functions)
+- **documentation** - specifies the name of a markdown file containing agent documentation
 
 ## Javascript SDK
 
