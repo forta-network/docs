@@ -252,26 +252,26 @@ When a block is mined and detected by a Forta scan node, it will generate a `Blo
 - `blockHash` - hash of the block
 - `blockNumber` - number of the block
 - `block` - data object containing the following fields:
-  - `difficulty`
-  - `extraData`
-  - `gasLimit`
-  - `gasUsed`
-  - `hash`
-  - `logsBloom`
-  - `miner`
-  - `mixHash`
-  - `nonce`
-  - `number`
-  - `parentHash`
-  - `receiptsRoot`
-  - `sha3Uncles`
-  - `size`
-  - `stateRoot`
-  - `timestamp`
-  - `totalDifficulty`
-  - `transactions`
-  - `transactionsRoot`
-  - `uncles`
+    - `difficulty`
+    - `extraData`
+    - `gasLimit`
+    - `gasUsed`
+    - `hash`
+    - `logsBloom`
+    - `miner`
+    - `mixHash`
+    - `nonce`
+    - `number`
+    - `parentHash`
+    - `receiptsRoot`
+    - `sha3Uncles`
+    - `size`
+    - `stateRoot`
+    - `timestamp`
+    - `totalDifficulty`
+    - `transactions`
+    - `transactionsRoot`
+    - `uncles`
 
 ### TransactionEvent
 
@@ -291,65 +291,65 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 - `blockHash` - alias for `block.hash`
 - `addresses` - map of addresses involved in the transaction (generated from transaction to/from address, any event log address and trace data address if available)
 - `block` - data object containing following fields:
-  - `hash`
-  - `number`
-  - `timestamp`
+    - `hash`
+    - `number`
+    - `timestamp`
 - `transaction` - data object containing the following fields:
-  - `hash`
-  - `from`
-  - `to`
-  - `nonce`
-  - `gas`
-  - `gasPrice`
-  - `value`
-  - `data`
-  - `r`
-  - `s`
-  - `v`
-- `receipt` - receipt object containing the following fields:
-  - `status`
-  - `root`
-  - `gasUsed`
-  - `cumulativeGasUsed`
-  - `logsBloom`
-  - `contractAddress`
-  - `blockNumber`
-  - `blockHash`
-  - `transactionIndex`
-  - `transactionHash`
-  - `logs` - list of log objects with following fields:
-    - `address`
-    - `topics`
+    - `hash`
+    - `from`
+    - `to`
+    - `nonce`
+    - `gas`
+    - `gasPrice`
+    - `value`
     - `data`
-    - `logIndex`
+    - `r`
+    - `s`
+    - `v`
+- `receipt` - receipt object containing the following fields:
+    - `status`
+    - `root`
+    - `gasUsed`
+    - `cumulativeGasUsed`
+    - `logsBloom`
+    - `contractAddress`
     - `blockNumber`
     - `blockHash`
     - `transactionIndex`
     - `transactionHash`
-    - `removed`
+    - `logs` - list of log objects with following fields:
+        - `address`
+        - `topics`
+        - `data`
+        - `logIndex`
+        - `blockNumber`
+        - `blockHash`
+        - `transactionIndex`
+        - `transactionHash`
+        - `removed`
 - `traces` - only with tracing enabled; list of trace objects with following fields:
-  - `blockHash`
-  - `blockNumber`
-  - `subtraces`
-  - `traceAddress`
-  - `transactionHash`
-  - `transactionPosition`
-  - `type`
-  - `error`
-  - `action` - object with following fields:
-    - `callType`
-    - `to`
-    - `from`
-    - `input`
-    - `value`
-    - `init`
-    - `address`
-    - `balance`
-    - `refundAddress`
-  - `result` - object with following fields:
-    - `gasUsed`
-    - `address`
-    - `code`
+    - `blockHash`
+    - `blockNumber`
+    - `subtraces`
+    - `traceAddress`
+    - `transactionHash`
+    - `transactionPosition`
+    - `type`
+    - `error`
+    - `action` - object with following fields:
+        - `callType`
+        - `to`
+        - `from`
+        - `input`
+        - `value`
+        - `init`
+        - `address`
+        - `balance`
+        - `refundAddress`
+    - `result` - object with following fields:
+        - `gasUsed`
+        - `address`
+        - `code`
 
 #### filterEvent
 
@@ -377,11 +377,11 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 - `protocol` - **required**; name of protocol being reported on e.g. "aave", defaults to "ethereum" if left blank
 - `type` - **required**; indicates type of finding e.g. exploit or suspicious occurrence
 - `severity` - **required**; indicates impact level of finding:
-  - Critical - exploitable vulnerabilities, massive impact on users/funds
-  - High - exploitable under more specific conditions, significant impact on users/funds
-  - Medium - notable unexpected behaviours, moderate to low impact on users/funds
-  - Low - minor oversights, negligible impact on users/funds
-  - Info - miscellaneous behaviours worth describing
+    - Critical - exploitable vulnerabilities, massive impact on users/funds
+    - High - exploitable under more specific conditions, significant impact on users/funds
+    - Medium - notable unexpected behaviours, moderate to low impact on users/funds
+    - Low - minor oversights, negligible impact on users/funds
+    - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; key-value map (both keys and values as strings) for providing extra information
 - `everestId` - optional; [Everest](http://everest.link/) link for information about the specific project/protocol
 
