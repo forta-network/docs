@@ -1,8 +1,10 @@
 # Forta Agent Developer Docs
 
-_Last updated: August 18, 2021_
+_Javascript SDK version: 0.0.13_
+_Python SDK version: 0.0.2_
+_Last updated: September 3rd, 2021_
 
-Welcome to the Forta Agent developer documentation! Forta is a permissionless runtime security network designed to provide threat detection and prevention for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official [Javascript SDK and CLI tool](https://www.npmjs.com/package/forta-agent).
+Welcome to the Forta Agent developer documentation! Forta is a permissionless runtime security network designed to provide threat detection and prevention for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official [Javascript SDK and CLI tool](https://www.npmjs.com/package/forta-agent) as well as the [Python SDK](https://pypi.org/project/forta-agent/).
 
 ## Quickstart
 
@@ -22,7 +24,7 @@ This will initialize several files inside of your project directory, including a
 $ npm install
 ```
 
-This will also install the `forta-agent` package locally in your project. Note: you can choose to install the CLI tool globally using `npm install -g forta-agent`, just make sure it does not conflict with the locally installed version. The code for a simple Forta Agent can be found in the src/index.ts file. At the end of this file, you will find:
+This will also install the `forta-agent` package locally in your project. Note: you can choose to install the CLI tool globally using `npm install -g forta-agent`, just make sure it does not conflict with the locally installed version. The code for a simple Forta Agent can be found in the src/agent.ts file. The entry point for your agent will always be a file named agent.ts (or agent.js/agent.py if using Javascript/Python, respectively). At the end of this file, you will find:
 
 ```javascript
 export default {
@@ -36,13 +38,11 @@ We are exporting 2 functions inside of an object: `handleTransaction` and `handl
 Let’s take a closer look at the `handleTransaction` function:
 
 ```javascript
-const handleTransaction: HandleTransaction = async (
-  txEvent: TransactionEvent
-) => {
-  const findings: Finding[] = [];
+const handleTransaction: HandleTransaction = async (txEvent: TransactionEvent) => {
+  const findings: Finding[] = []
 
   // create finding if gas used is higher than threshold
-  const gasUsed = new BigNumber(txEvent.gasUsed);
+  const gasUsed = new BigNumber(txEvent.gasUsed)
   if (gasUsed.isGreaterThan("1000000")) {
     findings.push(
       Finding.fromObject({
@@ -52,22 +52,22 @@ const handleTransaction: HandleTransaction = async (
         severity: FindingSeverity.High,
         type: FindingType.Suspicious,
       })
-    );
+    )
   }
 
-  return findings;
-};
+  return findings
+}
 ```
 
 The signature of this function is `(txEvent: TransactionEvent) => Promise<Finding[]>`. That is, it accepts a `TransactionEvent` as an input, and returns a Promise of an array of `Finding` objects. In this simple example, we check whether the amount of gas used by a transaction is above 1 million. If so, we flag the transaction as suspicious by creating a Finding object. We then return what we found in the `findings` array. Pretty straightforward (we’ll get into the details later).
 
-Now let’s take this agent for a spin with some real data to see how it behaves. First, let’s specify a JSON-RPC provider in the forta.config.json file. Uncomment the `jsonRpcUrl` property and set it to a websocket provider (e.g. wss://mainnet.infura.io/ws/v3/<YOUR_INFURA_API_KEY>). Now we can run `npm start` to begin throwing mainnet transactions at our agent and observe the output:
+Now let’s take this agent for a spin with some real data to see how it behaves. First, let’s specify a JSON-RPC provider in the forta.config.json file. Uncomment the `jsonRpcUrl` property and set it to a HTTP provider (e.g. https://mainnet.infura.io/v3/<YOUR_INFURA_API_KEY>). Now we can run `npm start` to begin throwing mainnet transactions at our agent and observe the output:
 
 ```bash
 $ npm start
 ```
 
-Since our gas threshold is pretty high (1 million), we may not flag a lot of transactions. To quickly make changes and see them take effect, try changing the threshold to a lower number and save the index.ts file. The agent should automatically restart with your new changes.
+Since our gas threshold is pretty high (1 million), we may not flag a lot of transactions. To quickly make changes and see them take effect, try changing the threshold to a lower number and save the agent.ts file. The agent should automatically restart with your new changes.
 
 ## Core Concepts
 
@@ -107,6 +107,7 @@ Options:
 
 ```
 --typescript - initialize Typescript project
+--python - initialize Python project
 ```
 
 Example: Initialize a Typescript Project
@@ -117,7 +118,7 @@ $ forta-agent init --typescript
 
 ### run
 
-Easily verify the behaviour of your agent during development using the `forta-agent run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your agent with output printed to the console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file. A websocket endpoint is required (i.e. begins with ws:// or wss://) **only** for the default run command. All other run options can use a http:// or https:// endpoint.
+Easily verify the behaviour of your agent during development using the `forta-agent run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your agent with output printed to the console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file.
 
 Options:
 
@@ -228,8 +229,8 @@ The forta.config.json file provides configurability for your agent. Since it can
 - **traceRpcUrl** - development only; allows you to retrieve trace data from the specified JSON-RPC endpoint
 - **imageRepositoryUsername** - optional; provide authorization username when pushing to an image repository
 - **imageRepositoryPassword** - optional; provide authorization password when pushing to an image repository
-- **handlers** - specifies an array of file paths to your agent handlers (i.e. the files with the exported functions)
-- **documentation** - specifies the name of a markdown file containing agent documentation
+- **documentation** - specifies the name of a markdown file containing agent documentation that is published with the agent
+- **keyfile** - optional; specifies the name of a keyfile in ~/.forta to use for publishing (by default we assume there is only one keyfile)
 
 ## Javascript SDK
 
@@ -249,28 +250,28 @@ When a block is mined and detected by a Forta scan node, it will generate a `Blo
 
 - `type` - specifies whether this was a block reorg or a regular block
 - `network` - specifies which network the block was mined on (e.g. mainnet, ropsten, rinkeby, etc)
-- `blockHash` - hash of the block
-- `blockNumber` - number of the block
+- `blockHash` (python: `block_hash`) - hash of the block
+- `blockNumber` (python: `block_number`) - number of the block
 - `block` - data object containing the following fields:
     - `difficulty`
-    - `extraData`
-    - `gasLimit`
-    - `gasUsed`
+    - `extraData` (python: `extra_data`)
+    - `gasLimit` (python: `gas_limit`)
+    - `gasUsed` (python: `gas_used`)
     - `hash`
-    - `logsBloom`
+    - `logsBloom` (python: `logs_bloom`)
     - `miner`
-    - `mixHash`
+    - `mixHash` (python: `mix_hash`)
     - `nonce`
     - `number`
-    - `parentHash`
-    - `receiptsRoot`
-    - `sha3Uncles`
+    - `parentHash` (python: `parent_hash`)
+    - `receiptsRoot` (python: `receipts_root`)
+    - `sha3Uncles` (python: `sha3_uncles`)
     - `size`
-    - `stateRoot`
+    - `stateRoot` (python: `state_root`)
     - `timestamp`
-    - `totalDifficulty`
+    - `totalDifficulty` (python: `total_difficulty`)
     - `transactions`
-    - `transactionsRoot`
+    - `transactionsRoot` (python: `transactions_root`)
     - `uncles`
 
 ### TransactionEvent
@@ -280,15 +281,15 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 - `type` - specifies whether this was from a block reorg or a regular block
 - `network` - specifies which network the transaction was mined on (e.g. mainnet, ropsten, rinkeby, etc)
 - `hash` - alias for `transaction.hash`
-- `from` - alias for `transaction.from`
+- `from` (python: `from_`) - alias for `transaction.from`
 - `to` - alias for `transaction.to`
-- `gasPrice` - alias for `transaction.gasPrice`
-- `gasUsed` - alias for `receipt.gasUsed`
+- `gasPrice` (python: `gas_price`) - alias for `transaction.gasPrice`
+- `gasUsed` (python: `gas_used`) - alias for `receipt.gasUsed`
 - `status` - alias for `receipt.status`
 - `logs` - alias for `receipt.logs`
 - `timestamp` - alias for `block.timestamp`
-- `blockNumber` - alias for `block.number`
-- `blockHash` - alias for `block.hash`
+- `blockNumber` (python: `block_number`) - alias for `block.number`
+- `blockHash` (python: `block_hash`) - alias for `block.hash`
 - `addresses` - map of addresses involved in the transaction (generated from transaction to/from address, any event log address and trace data address if available)
 - `block` - data object containing following fields:
     - `hash`
@@ -296,11 +297,11 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `timestamp`
 - `transaction` - data object containing the following fields:
     - `hash`
-    - `from`
+    - `from` (python: `from_`)
     - `to`
     - `nonce`
     - `gas`
-    - `gasPrice`
+    - `gasPrice` (python: `gas_price`)
     - `value`
     - `data`
     - `r`
@@ -310,50 +311,50 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `status`
     - `root`
     - `gasUsed`
-    - `cumulativeGasUsed`
-    - `logsBloom`
-    - `contractAddress`
-    - `blockNumber`
-    - `blockHash`
-    - `transactionIndex`
-    - `transactionHash`
+    - `cumulativeGasUsed` (python: `cumulative_gas_used`)
+    - `logsBloom` (python: `logs_bloom`)
+    - `contractAddress` (python: `contract_address`)
+    - `blockNumber` (python: `block_number`)
+    - `blockHash` (python: `block_hash`)
+    - `transactionIndex` (python: `transaction_index`)
+    - `transactionHash` (python: `transaction_hash`)
     - `logs` - list of log objects with following fields:
         - `address`
         - `topics`
         - `data`
-        - `logIndex`
-        - `blockNumber`
-        - `blockHash`
-        - `transactionIndex`
-        - `transactionHash`
+        - `logIndex` (python: `log_index`)
+        - `blockNumber` (python: `block_number`)
+        - `blockHash` (python: `block_hash`)
+        - `transactionIndex` (python: `transaction_index`)
+        - `transactionHash` (python: `transaction_hash`)
         - `removed`
 - `traces` - only with tracing enabled; list of trace objects with following fields:
-    - `blockHash`
-    - `blockNumber`
+    - `blockHash` (python: `block_hash`)
+    - `blockNumber` (python: `block_number`)
     - `subtraces`
-    - `traceAddress`
-    - `transactionHash`
-    - `transactionPosition`
+    - `traceAddress` (python: `trace_address`)
+    - `transactionHash` (python: `transaction_hash`)
+    - `transactionPosition` (python: `transaction_position`)
     - `type`
     - `error`
     - `action` - object with following fields:
-        - `callType`
+        - `callType` (python: `call_type`)
         - `to`
-        - `from`
+        - `from` (python: `from_`)
         - `input`
         - `value`
         - `init`
         - `address`
         - `balance`
-        - `refundAddress`
+        - `refundAddress` (python: `refund_address`)
     - `result` - object with following fields:
-        - `gasUsed`
+        - `gasUsed` (python: `gas_used`)
         - `address`
         - `code`
 
 #### filterEvent
 
-A convenience function is provided on `TransactionEvent` to check for the existence of event logs called `filterEvent`. For example, you could use it to filter all of the transfer logs of a particular ERC-20 token:
+A convenience function is provided on `TransactionEvent` to check for the existence of event logs called `filterEvent` (python: `filter_event`). For example, you could use it to filter all of the transfer logs of a particular ERC-20 token:
 
 ```javascript
 const erc20TokenAddress = "0x123abc";
@@ -373,7 +374,7 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 - `name` - **required**; human-readable name of finding e.g. "High Gas"
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
-- `alertId` - **required**; unique string to identify this class of finding, primarily used to group similar findings for the end user
+- `alertId` (python: `alert_id`) - **required**; unique string to identify this class of finding, primarily used to group similar findings for the end user
 - `protocol` - **required**; name of protocol being reported on e.g. "aave", defaults to "ethereum" if left blank
 - `type` - **required**; indicates type of finding e.g. exploit or suspicious occurrence
 - `severity` - **required**; indicates impact level of finding:
@@ -383,15 +384,27 @@ If an agent wants to flag a transaction/block because it meets some condition (e
     - Low - minor oversights, negligible impact on users/funds
     - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; key-value map (both keys and values as strings) for providing extra information
-- `everestId` - optional; [Everest](http://everest.link/) link for information about the specific project/protocol
+- `everestId` (python: `everest_id`) - optional; [Everest](http://everest.link/) link for information about the specific project/protocol
 
 ### getJsonRpcUrl
 
-A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running in development, this function will return the `jsonRpcUrl` property specified in your config file.
+A convenience function called `getJsonRpcUrl` (python: `get_json_rpc_url`) can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running in development, this function will return the `jsonRpcUrl` property specified in your config file.
 
 ### getFortaConfig
 
-A convenience function called `getFortaConfig` can be used to load your config file as an object to access any other properties
+A convenience function called `getFortaConfig` (python: `get_forta_config`) can be used to load your config file as an object to access any other properties.
+
+### createBlockEvent
+
+A utility function for writing tests. You can use `createBlockEvent` (python: `create_block_event`) to easily generate a `BlockEvent` object for your unit tests.
+
+### createTransactionEvent
+
+A utility function for writing tests. You can use `createTransactionEvent` (python: `create_transaction_event`) to easily generate a `TransactionEvent` object for your unit tests.
+
+## Python SDK
+
+The Forta Agent Python SDK enables developers to write agents using Python. You can get started using the `forta-agent init --python` command. Instead of exporting functions from your agent as in Javascript, you would simply declare functions called `handle_transaction` or `handle_block` in your agent.py file. Generally speaking, variable names are the same except that they are in snake-case (e.g. `block_number`) instead of camel-case (e.g. `blockNumber`). Although the agent can be written in Python, you would still use the Javascript CLI tool to run the agent. Check out the Python agents in our examples repo to learn more.
 
 ## Ideas for Agents
 
