@@ -1,7 +1,7 @@
 # Forta Agent Developer Docs
 
-_Javascript SDK version: 0.0.13_
-_Python SDK version: 0.0.2_
+_Javascript SDK version: 0.0.13_<br>
+_Python SDK version: 0.0.2_<br>
 _Last updated: September 3rd, 2021_
 
 Welcome to the Forta Agent developer documentation! Forta is a permissionless runtime security network designed to provide threat detection and prevention for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official [Javascript SDK and CLI tool](https://www.npmjs.com/package/forta-agent) as well as the [Python SDK](https://pypi.org/project/forta-agent/).
