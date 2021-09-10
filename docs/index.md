@@ -1,8 +1,8 @@
 # Forta Agent Developer Docs
 
-_Javascript SDK version: 0.0.13_<br>
-_Python SDK version: 0.0.2_<br>
-_Last updated: September 3rd, 2021_
+_Javascript SDK version: 0.0.15_<br>
+_Python SDK version: 0.0.3_<br>
+_Last updated: September 10th, 2021_
 
 Welcome to the Forta Agent developer documentation! Forta is a permissionless runtime security network designed to provide threat detection and prevention for the decentralized economy. We are currently in the private testnet phase. Agents are at the heart of the Forta network as they examine and flag events of interest. You can easily begin writing your own Forta Agents using the official [Javascript SDK and CLI tool](https://www.npmjs.com/package/forta-agent) as well as the [Python SDK](https://pypi.org/project/forta-agent/).
 
@@ -13,10 +13,10 @@ To initialize a Forta Agent project, you can use the `forta-agent` CLI tool:
 ```bash
 $ mkdir my-new-agent
 $ cd my-new-agent
-$ npx forta-agent init --typescript
+$ npx forta-agent@latest init --typescript
 ```
 
-The above snippet creates a new project directory called `my-new-agent`, and then uses `npx` (a package runner tool that is part of npm 5.2+) to invoke the `init` command of the `forta-agent` CLI tool. By passing the `--typescript` option, you can initialize a Typescript project (default is Javascript).
+The above snippet creates a new project directory called `my-new-agent`, and then uses `npx` (a package runner tool that is part of npm 5.2+) to invoke the `init` command of the latest version of the `forta-agent` CLI tool. By passing the `--typescript` option, you can initialize a Typescript project (default is Javascript, and Python is also an option).
 
 This will initialize several files inside of your project directory, including a package.json file, tsconfig.json (for Typescript) as well as a src folder. The project also includes a forta.config.json file that will be used throughout the development lifecycle. Let’s make sure our project dependencies are installed:
 
