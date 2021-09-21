@@ -1,4 +1,18 @@
-site_name: Forta
+site_name: Forta Developer SDK
+
+nav:
+  - Overview: index.md
+  - Build your first agent:
+      - 1) Quick start: quickstart.md
+      - 2) Testing your agent: testing.md
+      - 3) Deploying your agent: deploying.md
+  - Reference:
+      - Core concepts: concepts.md
+      - CLI commands: cli.md
+      - forta.config.json: config.md
+  - Javascript SDK: sdk.md
+  - Python SDK: python.md
+  - Getting help: help.md
 
 theme:
   name: material
@@ -6,3 +20,9 @@ theme:
     primary: black
     accent: blue grey
   logo: forta-logo.png
+  favicon: forta-logo.png
+  features:
+    - navigation.expand
+
+markdown_extensions:
+  - admonition
