@@ -13,4 +13,4 @@ Join the discussion on our [Discord channel!](https://discord.gg/DUju5Dh4J9)
 
 _Javascript SDK version: 0.0.15_<br>
 _Python SDK version: 0.0.3_<br>
-_Last updated: September 21st, 2021_
+_Last updated: September 22nd, 2021_
