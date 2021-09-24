@@ -11,6 +11,6 @@ Forta is a decentralized community-based security platform to prevent or mitigat
 
 Join the discussion on our [Discord channel!](https://discord.gg/DUju5Dh4J9)
 
-_Javascript SDK version: 0.0.15_<br>
-_Python SDK version: 0.0.3_<br>
-_Last updated: September 22nd, 2021_
+_Javascript SDK version: 0.0.16_<br>
+_Python SDK version: 0.0.4_<br>
+_Last updated: September 24th, 2021_
