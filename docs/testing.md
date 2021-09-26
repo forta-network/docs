@@ -1,6 +1,6 @@
 # Testing your agent
 
-The code for a simple Forta Agent can be found in the src/agent.ts file. The entry point for your agent will always be a file named agent.ts (or agent.js/agent.py if using Javascript/Python, respectively). At the end of this file, you will find:
+Once you have developed your agent, it’s now time to test it. The code for a simple Forta Agent can be found in the src/agent.ts file. The entry point for your agent will always be a file named agent.ts (or agent.js/agent.py if using Javascript/Python, respectively). At the end of this file, you will find:
 
 ```javascript
 export default {

@@ -23,6 +23,7 @@ theme:
   favicon: forta-logo.png
   features:
     - navigation.expand
+    - navigation.instant
 
 markdown_extensions:
   - admonition

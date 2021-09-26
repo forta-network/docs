@@ -1,6 +1,6 @@
 # Quick start
 
-To initialize a Forta Agent project, you can use the `forta-agent` CLI tool:
+This guide will explore the basics of creating a Forta Agent project. To initialize a Forta Agent project, you can use the `forta-agent` CLI tool:
 
 ```bash
 $ mkdir my-new-agent
@@ -11,7 +11,7 @@ $ npx forta-agent@latest init --typescript
 The above snippet creates a new project directory called `my-new-agent`, and then uses `npx` (a package runner tool that is part of npm 5.2+) to invoke the `init` command of the latest version of the `forta-agent` CLI tool. By passing the `--typescript` option, you can initialize a Typescript project (default is Javascript, and `--python` is also an option).
 
 !!! note "Using latest version"
-    We always recommend initializing with `@latest` to ensure you have the latest and greatest SDK features. Otherwise, you may end up using an older previously cached version.
+    We recommend always initializing with `@latest` to ensure you have the latest and greatest SDK features. Otherwise, you may end up using an older previously cached version.
 
 This will initialize a keyfile for you (and prompt for a password) as well as several files inside of your project directory, including a package.json file, tsconfig.json (for Typescript) and a src folder. The project also includes a forta.config.json file that will be used throughout the development lifecycle. Let’s make sure our project dependencies are installed:
 
