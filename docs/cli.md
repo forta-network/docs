@@ -96,7 +96,7 @@ $ npm run file ./test.data.json
 
 ## publish
 
-Deploy your agent to the Forta network using the `forta-agent publish` command. This will build a Docker image for your agent and publish it to the image repository. Also, it will create an agent manifest using the image reference and the information in forta.config.json, sign it using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the agent registry contract.
+Deploy your agent to the Forta protocol using the `forta-agent publish` command. This will build a Docker image for your agent and publish it to the image repository. Also, it will create an agent manifest using the image reference and the information in forta.config.json, sign it using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the agent registry contract.
 
 Options:
 

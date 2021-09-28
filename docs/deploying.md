@@ -5,7 +5,7 @@ hide:
 
 # Deploying your agent
 
-Once you have tested your agent, you can deploy it to the Forta network using the `forta-agent publish` command (or `npm run publish`). This will build a Docker image for your agent and push it to an image repository where scan nodes can find it. A manifest will be generated for your agent (which includes a reference to the image) and be published to the Agent Registry contract.
+Once you have tested your agent, you can deploy it to the Forta protocol using the `forta-agent publish` command (or `npm run publish`). This will build a Docker image for your agent and push it to an image repository where scan nodes can find it. A manifest will be generated for your agent (which includes a reference to the image) and be published to the Agent Registry contract.
 
 This requires some configuration to be set in your forta.config.json. Firstly, you will need to specify the `agentId` of your agent which should be globally unique. You should also set the `version` of your agent to track changes. A `documentation` markdown is provided as an example, which should be updated for your specific agent.
 
@@ -20,6 +20,6 @@ Lastly, you need to provide the `agentRegistryJsonRpcUrl` which should be a JSON
 
 Once your agent is published and picked up by a scan node, you can view the findings it generates using the [Forta Explorer](https://explorer.forta.network/).
 
-Congrats! You have created a project, developed an agent, written and run a test, and deployed it to the Forta network.
+Congrats! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol.
 
 We encourage you to share your agents with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
