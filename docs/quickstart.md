@@ -39,4 +39,4 @@ We’re excited to see what sort of innovative agents our community comes up wit
 
 ## Examples
 
-You can find more example implementations of Forta Agents in our [examples repo](https://github.com/forta-network/forta-agent-examples).
+You can find more example implementations of Forta Agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples).
