@@ -115,6 +115,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
         - `gasUsed` (python: `gas_used`)
         - `address`
         - `code`
+        - `output`
 
 ### filterEvent
 
