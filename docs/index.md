@@ -20,6 +20,8 @@ Anyone can become an agent developer and submit agents to be certified by the ne
 
 Get started by [building your first agent](quickstart.md). Join our community [Discord](https://discord.gg/DUju5Dh4J9) for help and to chat with other developers and our team!
 
+Also, join us on [Reddit](https://www.reddit.com/r/fortaprotocol/) and [Telegram](https://t.me/FortaProtocol).
+
 **Forta is currently in the private testnet phase**
 
 _Javascript SDK version: 0.0.18_<br>
