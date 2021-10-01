@@ -8,6 +8,8 @@ The most relevant type definitions for agent developers are the `HandleBlock` an
 
 Your agent must have a default export object with the `handleBlock` and/or `handleTransaction` properties that export the handler functions. You can export one or both of these, depending on your use case, but at least one must be provided. The return type of these functions is `Promise<Finding[]>`, meaning they are asynchronous functions that return an array of zero or more `Finding` objects.
 
+You can also optionally export an `initialize` handler that will be executed on startup. This is useful for fetching some data from the network or parsing some file before your agent begins. The signature for the `initialize` handler is `() => Promise<void>`
+
 ## BlockEvent
 
 When a block is mined and detected by a Forta scan node, it will generate a `BlockEvent` containing information such as the block hash and block number. It contains the following fields:
