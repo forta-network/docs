@@ -155,11 +155,11 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 ## getJsonRpcUrl
 
-A convenience function called `getJsonRpcUrl` (python: `get_json_rpc_url`) can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running in development, this function will return the `jsonRpcUrl` property specified in your config file.
+A convenience function called `getJsonRpcUrl` (python: `get_json_rpc_url`) can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file.
 
 ## getFortaConfig
 
-A convenience function called `getFortaConfig` (python: `get_forta_config`) can be used to load your config file as an object to access any other properties.
+A convenience function called `getFortaConfig` (python: `get_forta_config`) can be used to load your forta.config.json file as an object to access any other properties.
 
 ## createBlockEvent
 

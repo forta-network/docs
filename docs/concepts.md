@@ -12,13 +12,13 @@ A scan node is a specific type of Forta node that executes agents for every tran
 
 Agents refer to a set of code scripts within a Docker container that process some blockchain data (i.e. a block or transaction) and detect specific threat conditions (e.g. whether a flash loan attack occured, or whether a particular account balance fell below some threshold). Agents emit alerts for their findings. Agents are executed by scan nodes.
 
-## Agent registry
+## Agent Registry
 
-The agent registry refers to a smart contract (currently deployed on the Göerli public testnet) that records the existence of all agent containers. Developers publish their agent manifests to this registry, and scan nodes listen for events from this contract to know how to manage the agents they are running.
+The Agent Registry refers to a smart contract (currently deployed on the Göerli public testnet) that records the existence of all agent containers. Developers publish their agent manifests to this registry, and scan nodes listen for events from this contract to know how to manage the agents they are running.
 
-## Agent manifest
+## Agent Manifest
 
-An agent manifest refers to a signed JSON document that describes the contents of an agent container. Specifically, it provides information like the agent version as well as an IPFS reference to the agent container image. Manifests are persisted on the IPFS network, with their IPFS references stored in the agent registry.
+An agent manifest refers to a signed JSON document that describes the contents of an agent container. Specifically, it provides information like the agent version as well as an IPFS reference to the agent container image. Manifests are stored on the IPFS network, with their IPFS references stored in the Agent Registry.
 
 ## Disco
 

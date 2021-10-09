@@ -4,7 +4,7 @@ The following sections describe the CLI commands available to agent developers. 
 
 ## init
 
-Using the `forta-agent init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile will also be generated for you and placed in the ~/.forta folder if it does not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent.
+Using the `forta-agent init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile and forta.config.json file will also be generated for you and placed in the ~/.forta folder if they do not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent.
 
 Options:
 
@@ -21,7 +21,7 @@ $ forta-agent init --typescript
 
 ## run
 
-Easily verify the behaviour of your agent during development using the `forta-agent run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your agent with output printed to the console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file.
+Easily verify the behaviour of your agent during local development using the `forta-agent run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your agent with any findings printed to your output console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file.
 
 Options:
 
@@ -96,7 +96,7 @@ $ npm run file ./test.data.json
 
 ## publish
 
-Deploy your agent to the Forta protocol using the `forta-agent publish` command. This will build a Docker image for your agent and publish it to the image repository. Also, it will create an agent manifest using the image reference and the information in forta.config.json, sign it using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the agent registry contract.
+Deploy your agent to the Forta protocol using the `forta-agent publish` command. This will build a Docker image for your agent and publish it to the image repository. Also, it will create an agent manifest which includes the Docker image reference, sign the manifest using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the Agent Registry contract.
 
 Options:
 

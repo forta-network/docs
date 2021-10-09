@@ -1,6 +1,6 @@
 # Testing your agent
 
-Once you have developed your agent, it’s now time to test it. The code for a simple Forta Agent can be found in the src/agent.ts file. The entry point for your agent will always be a file named agent.ts (or agent.js/agent.py if using Javascript/Python, respectively). At the end of this file, you will find:
+Once you have initialized your agent, it’s now time to test it. The code for a simple Forta Agent can be found in the src/agent.ts file. The entry point for your agent will always be a file named agent.ts (or agent.js/agent.py if using Javascript/Python, respectively). At the end of this file, you will find:
 
 ```javascript
 export default {
@@ -9,7 +9,7 @@ export default {
 };
 ```
 
-We are exporting 2 functions inside of an object: `handleTransaction` and `handleBlock`. These functions are where the logic of your agent will live. As blocks and transactions are added to the blockchain, these functions will be invoked to allow the agent to scan for certain conditions and return any findings. You can export either one or both of these functions based on your requirements.
+We are exporting 2 functions inside of an object: `handleTransaction` and `handleBlock`. These functions are where the logic of your agent will live. As blocks and transactions are added to the blockchain, these functions will be invoked with blockchain data to allow the agent to scan for certain conditions and return any findings. You can export either one or both of these functions based on your requirements.
 
 Let’s take a closer look at the `handleTransaction` function:
 
@@ -37,11 +37,13 @@ const handleTransaction: HandleTransaction = async (
 };
 ```
 
-The signature of this function is `(txEvent: TransactionEvent) => Promise<Finding[]>`. That is, it accepts a `TransactionEvent` as an input, and returns a Promise of an array of `Finding` objects. In this simple example, we check whether the amount of gas used by a transaction is above 1 million. If so, we flag the transaction as suspicious by creating a Finding object. We then return what we found in the `findings` array. Pretty straightforward.
+The signature of this function is `(txEvent: TransactionEvent) => Promise<Finding[]>`. That is, it accepts a `TransactionEvent` as an input, and returns a Promise of an array of `Finding` objects. In this simple example, we check whether the amount of gas used by a transaction is above 1 million. If so, we flag the transaction as suspicious by creating a `Finding` object. We then return what we found in the `findings` array. Pretty straightforward.
 
 ## Manual testing
 
-Now let’s manually test this agent with some real data to see how it behaves. First, let’s specify a JSON-RPC provider in the forta.config.json file. Uncomment the `jsonRpcUrl` property and set it to a HTTP provider (e.g. https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY). Now we can begin throwing mainnet transactions at our agent and observe the output:
+Now let’s run this agent locally with some real data from Ethereum mainnet to see how it behaves. First, let’s specify a JSON-RPC provider in the forta.config.json file (located in ~/.forta). Uncomment the `jsonRpcUrl` property and set it to a HTTP provider (e.g. https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY).
+
+We can begin throwing blockchain data at our agent and observe the output with the command:
 
 ```bash
 $ npm start
@@ -62,4 +64,4 @@ $ npm test
 
 ## Code review
 
-We strongly recommend conducting code reviews within your team as a best practice. This will help ensure that any bugs are identified and any edge cases are covered by your agent.
+We strongly recommend conducting code reviews within your team as a best practice. This will help ensure that any bugs are identified and any edge cases are covered by your agent. Once you have tested and reviewed your agent, you can move on to [deploying your agent](deploying.md).
