@@ -7,6 +7,7 @@ This guide will explore the basics of creating a Forta Agent project.
 Before you start, please make sure you have the following:
 
 - [Node.js](https://nodejs.org/) (which includes the Node package manager i.e. npm)
+- [Python](https://www.python.org/) (only if you want to use Python SDK)
 - [Docker](https://www.docker.com/get-started)
 - Basic understanding of [Ethereum](https://ethereum.org/) and smart contracts
 
