@@ -16,7 +16,7 @@ Here are the following supported configuration properties:
 - `imageRepositoryPassword` - optional; provide authorization password when pushing to an image repository
 - `keyfile` - optional; specify the name of a keyfile in ~/.forta to use for publishing (by default we assume there is only one keyfile)
 
-## Migrating to v0.0.19
+## Migrating to v0.0.19+
 
 The forta.config.json file became a globally shared config stored at ~/.forta in SDK v0.0.19. Before v0.0.19, forta.config.json was stored in each project's folder. The motivation for this change was to prevent repeating configuration values across multiple agent projects. You may still provide a local config file in your project which will override any global config values.
 
