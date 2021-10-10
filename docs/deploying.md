@@ -21,7 +21,7 @@ A few configuration values must be set in your package.json and forta.config.jso
     - `version` of your agent should also be set as well
 - in forta.config.json (located in ~/.forta):
     - `ipfsGatewayUrl` is required to publish your agent's metadata (also referred to as manifest) to IPFS. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS (for Infura, this value would be `https://ipfs.infura.io:5001`)
-    - `ipfsGatewayAuth` is needed *if your IPFS gateway requires an authorization header* (as Infura's does). If using Infura, you should set this value to `Basic Base64(<YOUR_INFURA_PROJECT_ID>:<YOUR_INFURA_PROJECT_SECRET>)`
+    - `ipfsGatewayAuth` is needed *if your IPFS gateway requires an authorization header* (as Infura's does). If using Infura, you should set this value to `Basic Base64(<YOUR_INFURA_PROJECT_ID>:<YOUR_INFURA_PROJECT_SECRET>)`. See their [authentication docs](https://infura.io/docs/ipfs#section/Authentication) for more information
     - `agentRegistryJsonRpcUrl` is required to interact with the Agent Registry contract on Göerli. We also recommend using Infura to do this e.g. `https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID`
 
 ## Deploying
