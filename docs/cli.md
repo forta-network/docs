@@ -103,3 +103,11 @@ Options:
 ```
 --config - specify a config file to use (default: forta.config.json)
 ```
+
+## disable
+
+Disable your deployed agent and stop it from running on the Forta protocol by using `forta-agent disable`. Your Docker image will still be publicly available, but scan nodes will know not to run your agent.
+
+## enable
+
+Enable your agent and start execution on the Forta protocol by using `forta-agent enable`. By default, your agent is enabled when you deploy to the Forta protocol. Only use this command if your agent is currently disabled.
