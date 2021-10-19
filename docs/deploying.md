@@ -1,13 +1,13 @@
 # Deploying your agent
 
-Once you have tested your agent locally, you are ready to deploy it to the Forta protocol production environment! Deploying your agent involves publishing a Docker image and registering it in the Agent Registry contract. **Make sure your Docker is running before proceeding**.
+Once you have tested your agent locally, you are ready to deploy it to the Forta protocol production environment! Deploying your agent involves publishing a Docker image and registering it in the Agent Registry contract.
 
 !!! note "Deploying via CLI"
     While we currently only support deploying using the CLI tool, we will add a web UI deployment process in the near future for a simpler experience.
 
-## Göerli ETH
+## Acquire Polygon MATIC
 
-The Agent Registry contract currently lives on the Göerli testnet, so you will need Göerli ETH in order to deploy. You can acquire some ETH at this [Göerli faucet](https://faucet.goerli.mudit.blog). The address to send the funds to will be specified in your keyfile (located at ~/.forta).
+The Agent Registry contract currently lives on the Polygon mainnet, so you will need Polygon MATIC tokens in order to deploy. You can acquire some MATIC by following [this guide](matic.md).
 ## Documentation
 
 Documentation for your agent is **required** in order to deploy. It should let others know what conditions your agent is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific agent.
@@ -26,11 +26,10 @@ A few configuration values must be set in your package.json and forta.config.jso
 - in forta.config.json (located in ~/.forta):
     - `ipfsGatewayUrl` is required to publish your agent's metadata (also referred to as manifest) to IPFS. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS (for Infura, this value would be `https://ipfs.infura.io:5001`)
     - `ipfsGatewayAuth` is needed if your IPFS gateway requires an authorization header (as Infura's does). If using Infura, this value should look something like `Basic MXpNTm5D...QmVNmI0`. See their [authentication docs](https://infura.io/docs/ipfs#section/Authentication) for more information
-    - `agentRegistryJsonRpcUrl` is required to interact with the Agent Registry contract on Göerli. We also recommend using Infura to do this e.g. `https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID`
 
 ## Deploying
 
-You can now run the following command from your project folder to deploy your agent:
+**Make sure your Docker is running before proceeding**. You can now run the following command from your project folder to deploy your agent:
 
 ```
 npm run publish

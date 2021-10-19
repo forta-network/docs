@@ -14,7 +14,7 @@ Agents refer to a set of code scripts within a Docker container that process som
 
 ## Agent Registry
 
-The Agent Registry refers to a smart contract (currently deployed on the Göerli public testnet) that records the existence of all agent containers. Developers publish their agent manifests to this registry, and scan nodes listen for events from this contract to know how to manage the agents they are running.
+The Agent Registry refers to a smart contract (currently deployed on the Polygon public mainnet) that records the existence of all agent containers. Developers publish their agent manifests to this registry, and scan nodes listen for events from this contract to know how to manage the agents they are running.
 
 ## Agent Manifest
 
