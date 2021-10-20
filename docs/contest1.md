@@ -14,7 +14,7 @@ Below you will find five challenges. Each challenge has a specific security conc
 
 - This contest will run from Oct. 20th through Oct. 27th, after which no further submissions will be considered.
 
-- Winners will be chosen by a panel of agent reviewers from Forta community members Nethermind and Arbitrary Execution, and will be announced on Oct. 27th.
+- Winners will be chosen by a panel of agent reviewers from Forta community member Nethermind, and will be announced on Oct. 27th.
 
 - For any questions, please contact a Forta Moderator on [Discord](https://discord.gg/rsc55DqcCy).
 
