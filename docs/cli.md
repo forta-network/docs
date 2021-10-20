@@ -111,3 +111,7 @@ Disable your deployed agent and stop it from running on the Forta protocol by us
 ## enable
 
 Enable your agent and start execution on the Forta protocol by using `forta-agent enable`. By default, your agent is enabled when you deploy to the Forta protocol. Only use this command if your agent is currently disabled.
+
+## keyfile
+
+You can print out information about your keyfile, including its absolute path and address, using the `forta-agent keyfile` command.

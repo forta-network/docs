@@ -26,6 +26,7 @@ A few configuration values must be set in your package.json and forta.config.jso
 - in package.json (located in your project folder):
     - `name` of your agent project should be specified and **should be globally unique**, so add some unique modifiers
     - `version` of your agent should also be set as well
+    - `repository` is **optional**, but providing a link to your code helps build trust in your agent
 - in forta.config.json (located in ~/.forta):
     - `ipfsGatewayUrl` is required to publish your agent's metadata (also referred to as manifest) to IPFS. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS (for Infura, this value would be `https://ipfs.infura.io:5001`)
     - `ipfsGatewayAuth` is needed if your IPFS gateway requires an authorization header (as Infura's does). If using Infura, this value should look something like `Basic MXpNTm5D...QmVNmI0`. See their [authentication docs](https://infura.io/docs/ipfs#section/Authentication) for more information
