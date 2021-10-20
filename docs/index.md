@@ -24,6 +24,6 @@ Also, join us on [Reddit](https://www.reddit.com/r/fortaprotocol/) and [Telegram
 
 **Forta is currently in the private testnet phase**
 
-_Javascript SDK version: 0.0.22_<br>
+_Javascript SDK version: 0.0.24_<br>
 _Python SDK version: 0.0.7_<br>
-_Last updated: October 13th, 2021_
+_Last updated: October 20th, 2021_
