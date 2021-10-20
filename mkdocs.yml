@@ -13,6 +13,8 @@ nav:
   - Javascript SDK: sdk.md
   - Python SDK: python.md
   - Getting help: help.md
+  - Agent Developer Contests:
+      - Contest 1 (10/20/2021): contest1.md
 
 theme:
   name: material

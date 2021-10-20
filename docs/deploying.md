@@ -1,6 +1,9 @@
 # Deploying your agent
 
-Once you have tested your agent locally, you are ready to deploy it to the Forta protocol production environment! Deploying your agent involves publishing a Docker image and registering it in the Agent Registry contract.
+Once you have tested your agent locally, you are ready to deploy it to the Forta protocol production environment! Deploying your agent involves 2 key steps:
+
+1. publishing a Docker image, and
+2. registering it in the Agent Registry contract.
 
 !!! note "Deploying via CLI"
     While we currently only support deploying using the CLI tool, we will add a web UI deployment process in the near future for a simpler experience.

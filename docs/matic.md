@@ -1,6 +1,8 @@
 # Acquiring Polygon MATIC
 
-As of October 18th 2021, Forta smart contracts (including the Agent Registry) have been moved to Polygon, a blockchain scaling solution that enables faster and cheaper transactions. You will need [MATIC](https://coinmarketcap.com/currencies/polygon/) tokens in order to pay gas fees on Polygon when deploying your agent. This guide will walk you through converting your ETH (on Ethereum mainnet) to MATIC (on Polygon mainnet). If you already have MATIC tokens on Ethereum mainnet, you can transfer them over to Polygon using the bridge in step 3. To learn more about Polygon, visit their [website](https://polygon.technology/).
+As of October 18th 2021, Forta smart contracts (including the Agent Registry) have been moved to Polygon, a blockchain scaling solution that enables faster and cheaper transactions. You will need [MATIC](https://coinmarketcap.com/currencies/polygon/) tokens in order to pay gas fees on Polygon when deploying your agent. This guide will walk you through converting your ETH (on Ethereum mainnet) to MATIC (on Polygon mainnet). To learn more about Polygon, visit their [website](https://polygon.technology/).
+
+**If you already have MATIC tokens on Ethereum mainnet, you can transfer them over to Polygon using the bridge in step 3.**
 
 ## 1. Import your keyfile into Metamask
 
