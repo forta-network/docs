@@ -50,7 +50,7 @@ Congratulations! You have successfully deployed your first Forta Agent!
 
 ## Verifying your agent
 
-Once your agent is published and picked up by a scan node, you can view the findings it generates using the [Forta Explorer](https://explorer.forta.network/). You can filter findings using your agent ID (as outputted above).
+Once your agent is published and picked up by a scan node, you can view the findings it generates using the [Forta Explorer](https://explorer.forta.network/). You can filter findings using your agent ID (as outputted above). Once you are done verifying your agent and if you will not be using the alerts it generates (i.e. you were just testing out Forta), we ask that you please disable the agent using `npm run disable`.
 
 Great job getting this far! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol.
 
