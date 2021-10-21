@@ -12,6 +12,7 @@ nav:
       - forta.config.json: config.md
   - Javascript SDK: sdk.md
   - Python SDK: python.md
+  - Private agents: private.md
   - Getting help: help.md
   - Agent Developer Contests:
       - Contest 1 (10/20/2021): contest1.md
