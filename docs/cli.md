@@ -106,7 +106,7 @@ Options:
 
 ## push
 
-Push your agent image to a repository where scan nodes can find it. This will build and push your Docker agent image (but will not add it to the agent registry). Intended to be used as part of the [Forta Connect](https://connect.forta.network/) deployment flow.
+Push your agent image to a repository where scan nodes can find it. This will build and push your Docker agent image (but will not add it to the agent registry). Intended to be used as part of the Forta Connect deployment flow.
 
 Options:
 
