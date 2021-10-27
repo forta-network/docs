@@ -104,6 +104,16 @@ Options:
 --config - specify a config file to use (default: forta.config.json)
 ```
 
+## push
+
+Push your agent image to a repository where scan nodes can find it. This will build and push your Docker agent image (but will not add it to the agent registry). Intended to be used as part of the [Forta Connect](https://connect.forta.network/) deployment flow.
+
+Options:
+
+```
+--config - specify a config file to use (default: forta.config.json)
+```
+
 ## disable
 
 Disable your deployed agent and stop it from running on the Forta protocol by using `forta-agent disable`. Your Docker image will still be publicly available, but scan nodes will know not to run your agent.
