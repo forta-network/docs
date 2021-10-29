@@ -37,11 +37,23 @@ Your Metamask should now be connected to Forta Connect. You should see a Create 
 
 ## Deploying
 
-The Create Agent form will need to be populated in order to deploy. The agent ID will be automatically generated for you. Fill in the rest of the form with your agent's information. Also, paste in the image reference you copied earlier into the Image field. Once the form is complete, click the Create button.
+In order to deploy your agent, you will need to complete a short form:
+
+1. Click the Create Agent button to bring up the form. The agent ID will be automatically generated for you
+2. Fill in the rest of the fields with your agent's information like name, description and version
+3. For the Documentation field, select the README.md from your project folder. This will be uploaded to IPFS and the hash will be shown
+4. For the Image field, paste in the image reference you copied earlier from the `npm run push` command
+5. If your code repository is public, fill in the Repository field
+6. Click the Create button
+7. On the following Metamask dialogs, click the Sign button to sign the deployment transaction. Note: the transaction will be gasless (i.e. it won't cost you anything)
+
+When successfully deployed, you should see a dialog on Forta Connect saying your agent was created.
+
+Congratulations! You have successfully deployed your first Forta Agent!
 
 ## Verifying your agent
 
-Once your agent is published and picked up by a scan node, you can view the findings it generates using the [Forta Explorer](https://explorer.forta.network/). You can filter findings using your agent ID. Once you are done verifying your agent and if you will not be using the alerts it generates (i.e. you were just testing out Forta), we ask that you please disable the agent using Forta Connect.
+Once your agent is published and picked up by a scan node, you can view the findings it generates using the [Forta Explorer](https://explorer.forta.network/). You can filter findings using your agent ID. Once you are done verifying your agent and if you will not be using the alerts it generates (i.e. you were just testing out Forta), we ask that you please disable the agent using `npm run disable` (make sure to set your `agentId` in your project's forta.config.json).
 
 Great job getting this far! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol.
 
