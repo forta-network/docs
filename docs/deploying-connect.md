@@ -45,7 +45,8 @@ In order to deploy your agent, you will need to complete a short form:
 4. For the Image field, paste in the image reference you copied earlier from the `npm run push` command
 5. If your code repository is public, fill in the Repository field
 6. Click the Create button
-7. On the following Metamask dialogs, click the Sign button to sign the deployment transaction. Note: the transaction will be gasless (i.e. it won't cost you anything)
+7. A Metamask dialog will appear asking you to sign the metadata of your agent. Click the Sign button
+8. Another Metamask dialog will appear asking you to sign the deployment transaction. Note: the transaction will be gasless (i.e. it won't cost you anything). Click the Sign button
 
 When successfully deployed, you should see a dialog on Forta Connect saying your agent was created.
 
