@@ -11,8 +11,8 @@ Forta is the first decentralized, community-based runtime security network for s
 
 The two primary components of Forta are threat detection agents and scan nodes:
 
-  - Agents are scripts that look for suspicious transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any Layer 1, Layer 2, or sidechain.
-  - Scan nodes are responsible for running agents. When agents detect a specific condition or event, an alert is triggered from the network.
+- Agents are scripts that look for suspicious transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any Layer 1, Layer 2, or sidechain.
+- Scan nodes are responsible for running agents. When agents detect a specific condition or event, an alert is triggered from the network.
 
 Forta will maintain a public registry of all alerts, and anyone interested in the security of a contract can consume relevant alerts via the [Forta Explorer](https://explorer.forta.network/) or API (coming soon).
 
@@ -22,6 +22,6 @@ Get started by [building your first agent](quickstart.md). Join our community [D
 
 **Forta is currently in the private testnet phase**
 
-_Javascript SDK version: 0.0.25_<br>
-_Python SDK version: 0.0.7_<br>
-_Last updated: October 27th, 2021_
+_Javascript SDK version: 0.0.27_<br>
+_Python SDK version: 0.0.8_<br>
+_Last updated: November 1st, 2021_

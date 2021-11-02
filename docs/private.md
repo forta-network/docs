@@ -1,8 +1,8 @@
 # Private Agents
 
-In certain usecases, agent developers may want to keep their agent code and generated findings private. To enable this, we apply two common techniques: code obfuscation and data encryption. Using obfuscation, agent developers can make their code unreadable so that others cannot determine the scenario it is detecting. Using encryption, agents can publish findings but make them unreadable to anyone but themselves. In this example we will describe how to make a private Javascript agent (the same code can be used for Typescript agents as well). Private Python agents may be supported in the future.
+In certain usecases, agent developers may want to keep their agent code and generated findings private. To enable this, we apply two common techniques: code obfuscation and data encryption. Using obfuscation, agent developers can make their code unreadable so that others cannot determine the scenario it is detecting. Using encryption, agents can publish findings but make them unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the agent developer would understand.
 
-You can find the [code for this example Javascript private agent](https://github.com/forta-protocol/forta-agent-examples/tree/master/private-agent-js) in the examples repo. We start with the high gas used agent and turn it into a private agent.
+In this example we will describe how to make a private Javascript agent using obfuscation and encryption (the same code can be used for Typescript agents as well). Private Python agents may be supported in the future. You can find the complete [code for this example Javascript private agent](https://github.com/forta-protocol/forta-agent-examples/tree/master/private-agent-js) in the examples repo. We start with the high gas used agent and turn it into a private agent.
 
 ## Generating keys
 

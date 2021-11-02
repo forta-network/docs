@@ -119,9 +119,35 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
         - `code`
         - `output`
 
+### filterLog
+
+`filterLog` (python: `filter_log`) is a convenience function on `TransactionEvent` to filter **and decode** transaction logs. The underlying library used for decoding is [ethers.js](https://docs.ethers.io/v5/) for Javascript and [web3.py](https://web3py.readthedocs.io/en/stable/) for Python. For example, you can use it to filter all of the transfer logs from a particular ERC-20 token:
+
+```javascript
+const erc20TokenAddress = "0x123abc";
+const transferEvent = "event Transfer(address indexed from, address indexed from, uint256 value)";
+const transfers = transactionEvent.filterLog(transferEvent, erc20TokenAddress);
+console.log(`found ${transfers.length} transfer events`);
+```
+
+To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
+
+### filterFunction
+
+`filterFunction` (python: `filter_function`) is a convenience function on `TransactionEvent` to filter **and decode** function calls in the transaction or traces. The underlying library used for decoding is [ethers.js](https://docs.ethers.io/v5/) for Javascript and [web3.py](https://web3py.readthedocs.io/en/stable/) for Python. For example, you can use it to filter all of the transferFrom function calls onP a particular ERC-20 token:
+
+```javascript
+const erc20TokenAddress = "0x123abc";
+const transferFromFunction = "function transferFrom(address from, address to, uint value)";
+const transfers = transactionEvent.filterFunction(transferFromFunction, erc20TokenAddress);
+console.log(`found ${transfers.length} function calls`);
+```
+
+To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
+
 ### filterEvent
 
-A convenience function is provided on `TransactionEvent` to check for the existence of event logs called `filterEvent` (python: `filter_event`). For example, you could use it to filter all of the transfer logs of a particular ERC-20 token:
+**Scheduled for deprecation (use `filterLog` instead)**. A convenience function on `TransactionEvent` to check for the existence of event logs called `filterEvent` (python: `filter_event`). For example, you could use it to filter all of the transfer logs of a particular ERC-20 token:
 
 ```javascript
 const erc20TokenAddress = "0x123abc";
@@ -143,7 +169,11 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
 - `alertId` (python: `alert_id`) - **required**; unique string to identify this class of finding, primarily used to group similar findings for the end user
 - `protocol` - **required**; name of protocol being reported on e.g. "aave", defaults to "ethereum" if left blank
-- `type` - **required**; indicates type of finding e.g. exploit or suspicious occurrence
+- `type` - **required**; indicates type of finding:
+    - Exploit
+    - Suspicious
+    - Degraded
+    - Info
 - `severity` - **required**; indicates impact level of finding:
     - Critical - exploitable vulnerabilities, massive impact on users/funds
     - High - exploitable under more specific conditions, significant impact on users/funds
@@ -157,9 +187,13 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 A convenience function called `getJsonRpcUrl` (python: `get_json_rpc_url`) can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file.
 
-## getFortaConfig
+## getEthersProvider
 
-A convenience function called `getFortaConfig` (python: `get_forta_config`) can be used to load your forta.config.json file as an object to access any other properties.
+**Javascript/Typescript only**. `getEthersProvider` is a convenience function that returns an [ethers.js Provider](https://docs.ethers.io/v5/api/providers/) which can be used to interact with the blockchain. The value from `getJsonRpcUrl` will be used as the JSON-RPC endpoint to connect to.
+
+## get_web3_provider
+
+**Python only**. `get_web3_provider` is a convenience function that returns a [web3.py Provider](https://web3py.readthedocs.io/en/stable/providers.html) which can be used to interact with the blockchain. The value from `get_json_rpc_url` will be used as the JSON-RPC endpoint to connect to.
 
 ## createBlockEvent
 
