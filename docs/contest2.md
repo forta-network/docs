@@ -6,7 +6,7 @@ Below you will find five challenges. Each challenge has a specific security conc
 
 - After ten valid submissions are received, the Google Form will be closed and you will be unable to submit any further agents, so work fast! As long as submissions are still open, you are welcome to build agents for as many of these challenges as you can!
 
-- Each winning agent will receive $1500 in AAVE tokens, and a unique Forta NFT which will be provided at a later date when our NFT’s become available. To be eligible for a prize, you will be asked to submit a valid email and discord username through the google form, along with your agent.
+- Each winning agent will receive $1000 in AAVE tokens, and a unique Forta NFT which will be provided at a later date when our NFT’s become available. To be eligible for a prize, you will be asked to submit a valid email and discord username through the google form, along with your agent.
 
 - This contest will run from Nov 3rd through Nov 10th, after which no further submissions will be considered.
   Winners will be chosen by a panel of agent reviewers from Forta community member Arbitrary Execution, and will be announced on Nov 12th.
