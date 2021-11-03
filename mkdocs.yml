@@ -13,11 +13,12 @@ nav:
   - Javascript SDK: sdk.md
   - Python SDK: python.md
   - Private agents: private.md
-  - Getting help: help.md
   - Best practices: best-practices.md
+  - Getting help: help.md
   - FAQ: faq.md
   - Agent Developer Contests:
       - Contest 1 (10/20/2021): contest1.md
+      - Contest 2 (11/3/2021): contest2.md
 
 theme:
   name: material
