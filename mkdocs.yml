@@ -22,6 +22,7 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     primary: black
     accent: blue grey
@@ -30,6 +31,11 @@ theme:
   features:
     - navigation.expand
     - navigation.instant
+
+extra:
+  analytics:
+    provider: custom
+    gtmId: GTM-WNVX2Q6
 
 markdown_extensions:
   - admonition
