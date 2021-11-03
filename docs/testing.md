@@ -64,4 +64,10 @@ $ npm test
 
 ## Code review
 
-We strongly recommend conducting code reviews within your team as a best practice. This will help ensure that any bugs are identified and any edge cases are covered by your agent. Once you have tested and reviewed your agent, you can move on to [deploying your agent](deploying.md).
+We strongly recommend conducting code reviews within your team as a best practice. This will help ensure that any bugs are identified and any edge cases are covered by your agent. 
+
+## Best practices
+
+To learn about more agent development best practices, see the [Best practices](best-practices.md) section.
+
+Once you have tested and reviewed your agent, you can move on to [deploying your agent](deploying.md).

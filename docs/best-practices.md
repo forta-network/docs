@@ -16,7 +16,11 @@ There is a `metadata` field in the `Finding` object that you can use to store an
 
 ## Write unit tests
 
-You should write and maintain unit tests for your agent. This will ensure a high quality bar and also allow you to test all edge-cases in your agent. When writing tests that involve log events, you can mock out the `filterLog` function instead of having to fiddle around with topics and signatures.
+You should write and maintain unit tests for your agent. This will ensure a high quality bar and also allow you to test all edge cases in your agent. When writing tests that involve log events, you can mock out the `filterLog` function instead of having to fiddle around with topics and signatures.
+
+## Conduct code reviews
+
+It is strongly recommended to conduct code reviews within your team. This will help ensure that any bugs are identified and all edge cases are covered by your agent.
 
 ## Use the initialize handler
 

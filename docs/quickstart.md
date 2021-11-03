@@ -6,7 +6,7 @@ This guide will explore the basics of creating a Forta Agent project.
 
 Before you start, please make sure you have the following:
 
-- [Node.js v14+](https://nodejs.org/) (which includes the Node package manager i.e. npm)
+- [Node.js v12+](https://nodejs.org/) (which includes the Node package manager i.e. npm)
 - [Python v3.6+](https://www.python.org/) (only if you want to use Python SDK)
 - [Docker v20+](https://www.docker.com/get-started)
 - Basic understanding of [Ethereum](https://ethereum.org/) and smart contracts
@@ -57,6 +57,7 @@ We’re excited to see what sort of innovative agents our community comes up wit
 - Detect when an oracle is returning bad values
 - Detect transactions from a known list of blacklisted addresses
 
+To learn more about what makes a good agent, see our [FAQ](faq.md#what-makes-a-good-agent) section.
 ## Examples
 
 You can find more example implementations of Forta Agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples).
