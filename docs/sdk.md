@@ -121,7 +121,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 
 ### filterLog
 
-`filterLog` (python: `filter_log`) is a convenience function on `TransactionEvent` to filter **and decode** transaction logs. The underlying library used for decoding is [ethers.js](https://docs.ethers.io/v5/) for Javascript and [web3.py](https://web3py.readthedocs.io/en/stable/) for Python. For example, you can use it to filter all of the transfer logs from a particular ERC-20 token:
+`filterLog` (python: `filter_log`) is a convenience function on `TransactionEvent` to filter **and decode** transaction logs. For example, you can use it to get all of the Transfer logs in a transaction from a particular ERC-20 token:
 
 ```javascript
 const erc20TokenAddress = "0x123abc";
@@ -130,11 +130,11 @@ const transfers = transactionEvent.filterLog(transferEvent, erc20TokenAddress);
 console.log(`found ${transfers.length} transfer events`);
 ```
 
-To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
+The underlying library used for decoding is [ethers.js](https://docs.ethers.io/v5/) for Javascript and [web3.py](https://web3py.readthedocs.io/en/stable/) for Python. The Javascript SDK uses the ethers.js [`parseLog`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`LogDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#LogDescription) objects. The Python SDK uses the web3.py [`processLog`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractEvents.myEvent) method and returns an array of [`Event Log`](https://web3py.readthedocs.io/en/stable/contracts.html#event-log-object) objects. To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
 
 ### filterFunction
 
-`filterFunction` (python: `filter_function`) is a convenience function on `TransactionEvent` to filter **and decode** function calls in the transaction or traces. The underlying library used for decoding is [ethers.js](https://docs.ethers.io/v5/) for Javascript and [web3.py](https://web3py.readthedocs.io/en/stable/) for Python. For example, you can use it to filter all of the transferFrom function calls onP a particular ERC-20 token:
+`filterFunction` (python: `filter_function`) is a convenience function on `TransactionEvent` to filter **and decode** function calls in the transaction or traces. For example, you can use it to get all of the transferFrom function calls on a particular ERC-20 token:
 
 ```javascript
 const erc20TokenAddress = "0x123abc";
@@ -143,7 +143,7 @@ const transfers = transactionEvent.filterFunction(transferFromFunction, erc20Tok
 console.log(`found ${transfers.length} function calls`);
 ```
 
-To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
+The underlying library used for decoding is [ethers.js](https://docs.ethers.io/v5/) for Javascript and [web3.py](https://web3py.readthedocs.io/en/stable/) for Python. The Javascript SDK uses the ethers.js [`parseTransaction`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`TransactionDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription) objects. The Python SDK uses the web3.py [`decode_function_input`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input) method and returns an array of ([`ContractFunction`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction), `dict`) tuples. To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
 
 ### filterEvent
 
