@@ -20,7 +20,7 @@ Below you will find five challenges. Each challenge has a specific security conc
 
 Check out Compound docs for more information on Compound Protocol: [https://compound.finance/docs](https://compound.finance/docs)
 
-**Challenges:**
+## Challenges
 
 - Provide alert if cToken exchange rate goes down. [https://forms.gle/aTpwYWHA15YfdhLeA](https://forms.gle/aTpwYWHA15YfdhLeA)
 
@@ -31,3 +31,25 @@ Check out Compound docs for more information on Compound Protocol: [https://comp
 - Provide alert for governance proposal advancing through approval process and implementation. [https://forms.gle/izaXz2KRRDUe4bkQA](https://forms.gle/izaXz2KRRDUe4bkQA)
 
 - Provide alert for 10% or more change in Utilization Rate within a 60 minute window in a given pool. [https://forms.gle/WKhGJmJDHYJJzNe68](https://forms.gle/WKhGJmJDHYJJzNe68)
+
+## Winners
+
+- Challenge #1: Provide alert if cToken exchange rate goes down.
+    - Winner: **@jmederos**
+    - Winning Agent: [https://github.com/jmederosalvarado/compound-ctoken-exrate-down](https://github.com/jmederosalvarado/compound-ctoken-exrate-down)
+
+- Challenge #2: Provide alert for large/unusual transfers out of Comptroller Contract.
+    - Winner: **@kovart**
+    - Winning Agent: [https://github.com/kovart/challenge-2](https://github.com/kovart/challenge-2)
+
+- Challenge #3: Provide alert for blacklisted address interacting with Compound Protocol.
+    - Winner: **@kovart**
+    - Winning Agent: [https://github.com/kovart/challenge-3](https://github.com/kovart/challenge-3)
+
+- Challenge #4: Provide alert for governance proposal advancing through approval process and implementation.
+    - Winner: **@kovart**
+    - Winning Agent: [https://github.com/kovart/challenge-4](https://github.com/kovart/challenge-4)
+
+- Challenge #5: Provide alert for 10% or more change in Utilization Rate within a 60 minute window in a given pool.
+    - Winner: **@rsproule**
+    - Winning Agent: https://github.com/BlockchainCapitalLLC/forta-agent-challenge/tree/main/utilization-rate
