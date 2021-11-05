@@ -22,6 +22,6 @@ Get started by [building your first agent](quickstart.md). Join our community [D
 
 **Forta is currently in the private testnet phase**
 
-_Javascript SDK version: 0.0.28_<br>
+_Javascript SDK version: 0.0.29_<br>
 _Python SDK version: 0.0.9_<br>
-_Last updated: November 2nd, 2021_
+_Last updated: November 5th, 2021_
