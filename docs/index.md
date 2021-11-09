@@ -20,8 +20,8 @@ Anyone can become an agent developer and submit agents to be certified by the ne
 
 Get started by [building your first agent](quickstart.md). Join our community [Discord](https://discord.gg/DUju5Dh4J9) for help and to chat with other developers and our team!
 
-**Forta is currently in the private testnet phase**
+**Forta is currently in the public testnet phase**
 
 _Javascript SDK version: 0.0.29_<br>
 _Python SDK version: 0.0.9_<br>
-_Last updated: November 5th, 2021_
+_Last updated: November 9th, 2021_
