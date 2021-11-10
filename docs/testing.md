@@ -54,6 +54,8 @@ $ npm start
 
 Since our gas threshold is pretty high (1 million), we may not flag a lot of transactions. To quickly make changes and see them take effect, try changing the threshold to a lower number and save the agent.ts file. The agent should automatically restart with your new changes.
 
+It is also worth mentioning that agents are long-running processes that listen for blockchain data and output findings. This means you can also maintain state in-memory between blocks and transactions if needed. See the [high volume agent](https://github.com/forta-protocol/forta-agent-examples/tree/master/high-volume-js) as an example of a stateful agent.
+
 ## Automated testing
 
 A complete agent testing strategy will include automated unit tests that can quickly verify the behaviour of the agent. For your convenience, unit tests are included in the starter projects as examples. We use the `jest` testing framework in the Javascript/Typescript projects, and `pytest` in the Python project. These are only suggestions and you should feel free to use whichever testing framework you prefer. You can run the included unit tests with the following command:
