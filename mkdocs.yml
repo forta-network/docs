@@ -17,8 +17,8 @@ nav:
   - Getting help: help.md
   - FAQ: faq.md
   - Agent Developer Contests:
-      - Compound Contest (10/20/2021): contest1.md
-      - Aave Contest (11/3/2021): contest2.md
+      - Compound Contest (10/20/2021): contest1-compound.md
+      - Aave Contest (11/3/2021): contest2-aave.md
 
 theme:
   name: material

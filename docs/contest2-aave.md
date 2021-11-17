@@ -18,11 +18,21 @@ Check out the Aave liquidity protocol and the Aave Grants DAO for more informati
 ## Challenges
 
 - Alert if getFallbackOracle() function is called. [https://forms.gle/oxM2zPVJdfWziuPA6](https://forms.gle/oxM2zPVJdfWziuPA6)
+    - Winner: **@kovart**
+    - Winning Agent: [https://github.com/kovart2/challenge-1](https://github.com/kovart2/challenge-1)
 
 - Alert if getFallbackOracle() returns a price that deviates more than 10% from last price delivered by getAssetPrice(). [https://forms.gle/jN1K43GYd6SjfJL99](https://forms.gle/jN1K43GYd6SjfJL99)
+    - Winner: **@kovart**
+    - Winning Agent: [https://github.com/kovart2/challenge-2](https://github.com/kovart2/challenge-2)
 
 - Alert if aUSDC / aDAI exchange rate goes down. [https://forms.gle/yNyu5rfsDm8PHkNaA](https://forms.gle/yNyu5rfsDm8PHkNaA)
+    - Winner: **@vvlovsky**
+    - Winning Agent: [https://github.com/VVlovsky/forta-aave-agents/tree/main/exchange_rate_goes_down](https://github.com/VVlovsky/forta-aave-agents/tree/main/exchange_rate_goes_down)
 
 - Alert if flash loan transaction value ≥ $10m. [https://forms.gle/eAeB9zziRDw99ssS8](https://forms.gle/eAeB9zziRDw99ssS8)
+    - Winner: **@kovart**
+    - Winning Agent: [https://github.com/kovart2/challenge-5](https://github.com/kovart2/challenge-5)
 
 - Alert if governance proposal is EXECUTED. [https://forms.gle/TnhhwTyG7FNoNBdh9](https://forms.gle/TnhhwTyG7FNoNBdh9)
+    - Winner: **@vvlovsky**
+    - Winning Agent: [https://github.com/VVlovsky/forta-aave-agents/tree/main/governance](https://github.com/VVlovsky/forta-aave-agents/tree/main/governance)
