@@ -22,9 +22,9 @@ You will find two challenges listed below. Each challenge has a specific securit
     - **2nd place will receive $750 in USDC and a unique Winners Forta NFT.**
     - **3rd place will receive $250 in USDC and a unique Winners Forta NFT.**
 
-- To be eligible for a prize, you will be asked to submit a valid email and discord username through the Google form, along with your agent.
+- To be eligible for a prize, you will be asked to submit a valid email and discord username through the Google form, along with your Agent.
 
-- This contest will run from November 18th through November 25th, after which no further submissions will be considered. Winners will be chosen by a panel of agent reviewers from Forta community member Nethermind, and will be announced on November 26th.
+- This contest will run from November 18th through November 25th, after which no further submissions will be considered. Winners will be chosen by a panel of agent reviewers from Forta community member Nethermind, and will be announced on November 29th.
 
 - For any questions, please contact a Forta Moderator on [Discord](https://discord.gg/rsc55DqcCy).
 
