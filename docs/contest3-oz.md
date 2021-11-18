@@ -44,7 +44,7 @@ You will find two challenges listed below. Each challenge has a specific securit
 - Documentation
     - Does the README.md have a concise description of agent functionality?
     - Does the README.md contain well-formatted descriptions of each alert?
-    - Does the README.md contain real blocks/transactions that will trigger alerts?
+    - (If Applicable) Does the README.md contain real blocks/transactions that will trigger alerts?
     - Does the package.json contain an appropriate name and description?
 
 Check out [OpenZeppelin.com](https://openzeppelin.com/) for more information on our sponsor!
