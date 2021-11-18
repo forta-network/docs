@@ -9,18 +9,18 @@ conditions are met. The best Agents trigger alerts when specific conditions indi
 
 Contest discussion group and announcements are available on our [Discord here](https://discord.gg/rsc55DqcCy).
 
-You will find two challenges listed below. Each challenge has a specific security concern that a Forta Agent can solve, provided by OpenZeppelin. You may submit your agents to the contest judges through the Google form above and on [connect.forta.network](https://connect.forta.network/).
+You will find two challenges listed below. Each challenge has a specific security concern that a Forta Agent monitors for. Please submit your completed agents to the contest judges through the Google form linked above and on [connect.forta.network](https://connect.forta.network/).
 
 - Only the first **twenty five (25) QUALIFIED** submissions to each challenge that meet the challenge requirements below will be considered.
 
-- After twenty five qualified submissions are received for an individual challenge, we will announce that contest is closed in the Agent-Development-Contest channel in Discord! As long as submissions are still open, you are welcome to build and submit Agents for both challenges!
+- After twenty five qualified submissions are received for an individual challenge, we will close the challenge and announce it in the #agent-development-contest channel in Discord! As long as submissions are still open, you are welcome to build and submit Agents for both challenges!
 
 - **All** developers that submit a qualifying agent will receive a Forta NFT.
 
-- Cash prizes will be awarded to the 1st, 2nd, and 3rd place Agents in each challenges.
-    - 1st place will receive $1500 in USDC and a unique Winners Forta NFT.
-    - 2nd place will receive $750 in USDC and a unique Winners Forta NFT.
-    - 3rd place will receive $250 in USDC and a unique Winners Forta NFT.
+- Cash prizes will be awarded to the 1st, 2nd, and 3rd place Agents in each challenge.
+    - **1st place will receive $1500 in USDC and a unique Winners Forta NFT.**
+    - **2nd place will receive $750 in USDC and a unique Winners Forta NFT.**
+    - **3rd place will receive $250 in USDC and a unique Winners Forta NFT.**
 
 - To be eligible for a prize, you will be asked to submit a valid email and discord username through the Google form, along with your agent.
 
@@ -31,21 +31,21 @@ You will find two challenges listed below. Each challenge has a specific securit
 **QUALIFIED AGENT** best practices:
 
 - Agent implementation
-    - does the code correctly alert according to the challenge description?
-    - does the code make appropriate use of Forta SDK and built-in functions?
-    - does the code contain comments?
-    - is the code well-formatted and easy to read?
+    - Does the code correctly alert according to the challenge description?
+    - Does the code make appropriate use of Forta SDK and built-in functions?
+    - Does the code contain comments?
+    - Is the code well-formatted and easy to read?
 
 - Testing
-    - do all tests run and pass?
-    - are there negative test cases? i.e. when alerts should not be created
-    - are there positive test cases? i.e. when alerts should be created
+    - Do all tests run and pass?
+    - Are there negative test cases? i.e. when alerts should not be created
+    - Are there positive test cases? i.e. when alerts should be created
 
 - Documentation
-    - does the README.md have a concise description of agent functionality?
-    - does the README.md contain well-formatted descriptions of each alert?
-    - does the README.md contain real blocks/transactions that will trigger alerts?
-    - does the package.json contain an appropriate name and description?
+    - Does the README.md have a concise description of agent functionality?
+    - Does the README.md contain well-formatted descriptions of each alert?
+    - Does the README.md contain real blocks/transactions that will trigger alerts?
+    - Does the package.json contain an appropriate name and description?
 
 Check out [OpenZeppelin.com](https://openzeppelin.com/) for more information on our sponsor!
 
@@ -69,7 +69,7 @@ Check out [OpenZeppelin.com](https://openzeppelin.com/) for more information on 
     
     The second vulnerability concerns the [UUPSUpgradeable](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.3/contracts/proxy/utils/UUPSUpgradeable.sol) contract.
 
-    By exploiting this vulnerability, an attacker could trigger a selfdestruct of a UUPS implementation contract, leaving a proxy contract permantently broken.
+    By exploiting this vulnerability, an attacker could trigger a selfdestruct of a UUPS implementation contract, leaving a proxy contract permanently broken.
 
     For a detailed description of the issue refer to the [post-mortem](https://forum.openzeppelin.com/t/uupsupgradeable-vulnerability-post-mortem/15680).
 
