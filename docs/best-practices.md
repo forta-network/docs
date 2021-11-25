@@ -12,15 +12,25 @@ Your agent may be looking for multiple conditions that you could write in a sing
 
 ## Keep findings lean
 
-There is a `metadata` field in the `Finding` object that you can use to store any extra information that is useful. Try to keep the data here as lean as possible i.e. don't throw the whole TransactionEvent into the metadata since that information is already available on Etherscan.
+There is a `metadata` field in the `Finding` object that you can use to store any extra information that is useful. Try to keep the data here as lean as possible i.e. don't throw the whole `TransactionEvent` into the metadata since that information is already available on Etherscan.
+
+## Create useful alertIds
+
+You are required to populate the `alertId` field of the `Finding` object. Ideally, you would want it to be unique so that when you search for your `alertId` in [Forta Explorer](https://explorer.forta.network/) it only shows your agent's alerts. Typically, an `alertId` has a string component (describing either the protocol or project) and a numeric component (to distinguish between different types of alerts about the same protocol or project) e.g. `TETHER-1`. It is left to the agent developer to choose what makes sense for their agent.
 
 ## Write unit tests
 
-You should write and maintain unit tests for your agent. This will ensure a high quality bar and also allow you to test all edge cases in your agent. When writing tests that involve log events, you can mock out the `filterLog` function instead of having to fiddle around with topics and signatures.
+You should write and maintain unit tests for your agent. This will ensure a high quality bar and also allow you to test all edge cases in your agent. Include both negative (i.e. when alerts should not be created) and positive (i.e. when alerts should be created) test cases for completeness.
+
+When writing tests that involve log events, you can mock out the `filterLog` SDK method instead of having to fiddle around with event topics and signatures. See [here](https://github.com/forta-protocol/forta-agent-examples/blob/master/filter-event-and-function-js/src/large.transfer.event.spec.js) for an example. You can similarly mock out the `filterFunction` SDK method when writing tests that involve function calls. See [here](https://github.com/forta-protocol/forta-agent-examples/blob/master/filter-event-and-function-js/src/transfer.from.function.spec.js) for an example.
 
 ## Conduct code reviews
 
 It is strongly recommended to conduct code reviews within your team. This will help ensure that any bugs are identified and all edge cases are covered by your agent.
+
+## Include documentation
+
+Ensure that your project documentation README.md is complete, clear and concise. Briefly describe what your agent does, as well as each type of alert it can produce under which conditions. You should also include real test data that someone could use to verify the agent's behaviour. See the example README.md included with the starter projects for an example.
 
 ## Use the initialize handler
 
@@ -44,4 +54,4 @@ Be sure not to include sensitive information, such as API keys, in your code. Ag
 
 ## Beware of case-sensitivity
 
-When comparing addresses in your code, be mindful of case-sensitivity. The SDK will return addresses in the BlockEvent and TransactionEvent as lowercase, but if you are comparing to a checksum address it will not be equal.
+When comparing addresses in your code, be mindful of case-sensitivity. The SDK will return addresses in the BlockEvent`` and `TransactionEvent` as lowercase, but if you are comparing to a checksum address it will not be equal.

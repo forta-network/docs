@@ -28,7 +28,7 @@ You will find two challenges listed below. Each challenge has a specific securit
 
 - For any questions, please contact a Forta Moderator on [Discord](https://discord.gg/rsc55DqcCy).
 
-**QUALIFIED AGENT** best practices:
+**QUALIFIED AGENT** assessment criteria:
 
 - Agent implementation
     - Does the code correctly alert according to the challenge description?

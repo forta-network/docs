@@ -145,22 +145,6 @@ console.log(`found ${transfers.length} function calls`);
 
 The underlying library used for decoding is [ethers.js](https://docs.ethers.io/v5/) for Javascript and [web3.py](https://web3py.readthedocs.io/en/stable/) for Python. The Javascript SDK uses the ethers.js [`parseTransaction`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`TransactionDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription) objects. The Python SDK uses the web3.py [`decode_function_input`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input) method and returns an array of ([`ContractFunction`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction), `dict`) tuples. To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
 
-### filterEvent
-
-**Scheduled for deprecation (use `filterLog` instead)**. A convenience function on `TransactionEvent` to check for the existence of event logs called `filterEvent` (python: `filter_event`). For example, you could use it to filter all of the transfer logs of a particular ERC-20 token:
-
-```javascript
-const erc20TokenAddress = "0x123abc";
-const transferEventSignature = "Transfer(address,address,uint256)";
-const transfers = transactionEvent.filterEvent(
-  transferEventSignature,
-  erc20TokenAddress
-);
-console.log(`found ${transfers.length} transfers`);
-```
-
-The second argument for the contract address is optional. To better understand how event signatures are formed, see [this article](https://medium.com/mycrypto/understanding-event-logs-on-the-ethereum-blockchain-f4ae7ba50378).
-
 ## Finding
 
 If an agent wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` method which accepts the following properties:
