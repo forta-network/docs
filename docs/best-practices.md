@@ -2,6 +2,10 @@
 
 This page describes some of the best practices observed for agent development.
 
+## Target specific conditions
+
+Write your agent to target a specific condition so that it does not generate findings for every other block/transaction. Verbose agents can make it hard to distinguish the signal from the noise i.e. if an agent alerts on more than 5% of transactions, the usefulness of those alerts would not be very high as it is difficult to know what to pay attention to.
+
 ## Return findings in a timely manner
 
 Ensure that your agent returns findings in a timely manner. Agents are considered unresponsive by the scan node if they do not return findings within 5 seconds of a request. If the agent is unresponsive multiple times, it will result in the agent being stopped.
@@ -54,4 +58,4 @@ Be sure not to include sensitive information, such as API keys, in your code. Ag
 
 ## Beware of case-sensitivity
 
-When comparing addresses in your code, be mindful of case-sensitivity. The SDK will return addresses in the BlockEvent`` and `TransactionEvent` as lowercase, but if you are comparing to a checksum address it will not be equal.
+When comparing addresses in your code, be mindful of case-sensitivity. The SDK will return addresses in the `BlockEvent` and `TransactionEvent` as lowercase, but if you are comparing to a checksum address it will not be equal.

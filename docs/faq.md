@@ -22,7 +22,7 @@ The expected profile for a scan node is dual or quad core, 8-16GB memory. More s
 
 ## What makes a good agent?
 
-Good agents are ones that detect real-world exploits as they occur, or provide warning of suspicious or unexpected conditions. A good agent is one that is targeting a specific condition i.e. if an agent alerts on more than 10% of transactions, the usefulness of those alerts would not be very high as it is difficult to know what to pay attention to.
+Good agents are ones that detect real-world exploits as they occur, or provide warning of suspicious or unexpected conditions. A good agent is one that is targeting a specific condition i.e. if an agent alerts on more than 5% of transactions, the usefulness of those alerts would not be very high as it is difficult to know what to pay attention to.
 
 ## Where can I get ideas for agents?
 
