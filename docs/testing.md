@@ -56,7 +56,7 @@ This will run blocks and transactions against your agent as they are mined. Sinc
 
 It is also worth mentioning that agents are long-running processes. This means you can maintain state in-memory across blocks and transactions if needed. See the [high volume agent](https://github.com/forta-protocol/forta-agent-examples/tree/master/high-volume-js) as an example of a stateful agent.
 
-## Finding test data
+## Getting test data
 
 If you are writing an agent targeting a particular protocol or contract, you likely already have a wealth of data on the blockchain which you can use to test your agent. By visiting a block explorer (e.g. [Etherscan](https://etherscan.io/)), you can browse the history of transactions on a contract.
 
