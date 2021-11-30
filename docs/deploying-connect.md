@@ -10,7 +10,12 @@ Before you head over to Forta Connect, you will need one piece of information: y
 npm run push
 ```
 
-This will build your agent image and push it to a repository where scan nodes can find it. Once completed, you should see a message in your output similar to `successfully pushed image with reference bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`. Copy the image reference to your clipboard and head over to [Forta Connect](https://connect.forta.network/).
+This will build your agent image and push it to a repository where scan nodes can find it. Once completed, you should see a message in your output similar to:
+
+```
+successfully pushed image with reference bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2
+```
+Copy the image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`) to your clipboard and head over to [Forta Connect](https://connect.forta.network/).
 
 ## Import your keyfile into Metamask
 
