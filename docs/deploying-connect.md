@@ -57,10 +57,6 @@ When successfully deployed, you should see a dialog on Forta Connect saying your
 
 Congratulations! You have successfully deployed your first Forta Agent!
 
-## Verifying your agent
+Great job getting this far! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol. We encourage you to share your agents with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
 
-Once your agent is published and picked up by a scan node, you can view the findings it generates using the [Forta Explorer](https://explorer.forta.network/). You can filter findings using your agent ID. Once you are done verifying your agent and if you will not be using the alerts it generates (i.e. you were just testing out Forta), we ask that you please disable the agent using the CLI `npm run disable` command (make sure to set the `agentId` in your **project folder's** forta.config.json). Currently, Forta Connect only supports deploying agents, with support for updating, enabling and disabling coming in the near future.
-
-Great job getting this far! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol.
-
-We encourage you to share your agents with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
+Continue to the next page where you can learn more about [maintaining your agent](maintaining.md).

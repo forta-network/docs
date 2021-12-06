@@ -39,14 +39,14 @@ This will build a Docker image for your agent using the Dockerfile in your proje
 !!! note "Signing the manifest"
     The agent manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password**.
 
-When successfully deployed, you should see a message in your output similar to `successfully added agent id 0x12345abcdef with manifest bafyxyz123abc`. To update your agent, you would use the same command: `npm run publish`.
+When successfully deployed, you should see a message in your output similar to 
+```
+successfully added agent id 0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7 with manifest bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2
+```
+This message contains your agent ID (i.e. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) as well as your Docker image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`)
 
 Congratulations! You have successfully deployed your first Forta Agent!
 
-## Verifying your agent
+Great job getting this far! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol. We encourage you to share your agents with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
 
-Once your agent is published and picked up by a scan node, you can view the findings it generates using the [Forta Explorer](https://explorer.forta.network/). You can filter findings using your agent ID (as outputted above). Once you are done verifying your agent and if you will not be using the alerts it generates (i.e. you were just testing out Forta), we ask that you please disable the agent using `npm run disable`.
-
-Great job getting this far! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol.
-
-We encourage you to share your agents with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
+Continue to the next page where you can learn more about [maintaining your agent](maintaining.md).

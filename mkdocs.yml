@@ -6,6 +6,7 @@ nav:
       - 1) Quick start: quickstart.md
       - 2) Testing your agent: testing.md
       - 3) Deploying your agent: deploying.md
+      - 4) Maintaining your agent: maintaining.md
   - Reference:
       - Core concepts: concepts.md
       - CLI commands: cli.md
