@@ -28,7 +28,7 @@ You will find two challenges listed below. Each challenge has a specific securit
 
 - For any questions, please contact a Forta Moderator on [Discord](https://discord.gg/rsc55DqcCy).
 
-**QUALIFIED AGENT** assessment criteria:
+## Assessment Criteria
 
 - Agent implementation
     - Does the code correctly alert according to the challenge description?
@@ -65,6 +65,13 @@ Check out [OpenZeppelin.com](https://openzeppelin.com/) for more information on 
 
     Note: This attack has not, as far as we know, been executed on chain.
 
+    - Winner: **@kovart#3924**
+    - Winning Agent: [https://github.com/kovart3/contest-3-1](https://github.com/kovart3/contest-3-1)
+    - 2nd Place: **@vvlovsky#6572**
+    - 2nd Place Agent: [https://github.com/VVlovsky/TimelockController-Exploit-Agent](https://github.com/VVlovsky/TimelockController-Exploit-Agent)
+    - 3rd Place: **@Roderick#4932**
+    - 3rd Place Agent: [https://github.com/rodrigo-pino/timelock-agent-ts](https://github.com/rodrigo-pino/timelock-agent-ts)
+
 2. **UUPSUpgradeable**
     
     The second vulnerability concerns the [UUPSUpgradeable](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.3/contracts/proxy/utils/UUPSUpgradeable.sol) contract.
@@ -74,3 +81,10 @@ Check out [OpenZeppelin.com](https://openzeppelin.com/) for more information on 
     For a detailed description of the issue refer to the [post-mortem](https://forum.openzeppelin.com/t/uupsupgradeable-vulnerability-post-mortem/15680).
 
     In order to detect an attack, an agent needs to find `Upgraded(address)` events and then retrieve the code of the contract that emitted the event. If the code is empty, this means that the contract was selfdestructed, and an alert should be emitted.
+
+    - Winner: **@karmacoma#4155**
+    - Winning Agent: [https://github.com/karmacoma-eth/forta-uups-agent](https://github.com/karmacoma-eth/forta-uups-agent)
+    - 2nd Place: **@kovart#3924**
+    - 2nd Place Agent: [https://github.com/kovart3/contest-3-2](https://github.com/kovart3/contest-3-2)
+    - 3rd Place: **@nfmelendez#2069**
+    - 3rd Place Agent: [https://github.com/nfmelendez/oz-uupsupgradeable-contract-agent](https://github.com/nfmelendez/oz-uupsupgradeable-contract-agent)
