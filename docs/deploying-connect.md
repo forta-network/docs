@@ -1,6 +1,6 @@
 # Deploying your agent with Forta Connect
 
-This page covers how to deploy your agent using the [Forta Connect](https://connect.forta.network/) dapp.
+This page covers how to deploy your agent using [Forta Connect](https://connect.forta.network/).
 
 ## Pushing your agent image
 
@@ -31,7 +31,7 @@ Your keyfile should now be in Metamask.
 
 ## Connect your Metamask to Forta Connect
 
-You will need to connect your Metamask to the Forta Connect dapp with the following steps:
+You will need to connect your Metamask to Forta Connect with the following steps:
 
 1. On the Forta Connect website, click the Connect Wallet button on the top right
 2. A Metamask dialog will appear asking you to select which account to connect. Select your imported account, click Next and then click Connect
