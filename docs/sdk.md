@@ -181,8 +181,8 @@ A convenience function called `getJsonRpcUrl` (python: `get_json_rpc_url`) can b
 
 ## createBlockEvent
 
-A utility function for writing tests. You can use `createBlockEvent` (python: `create_block_event`) to easily generate a `BlockEvent` object for your unit tests.
+A utility function for writing tests. You can use `createBlockEvent` (python: `create_block_event`) to easily generate a mock `BlockEvent` object when writing unit tests for your `handleBlock` handler. To better understand usage, see the [Typescript example](https://github.com/forta-protocol/forta-agent-examples/blob/master/minimum-balance-ts/src/agent.spec.ts) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/blob/master/minimum-balance-py/src/agent_test.py).
 
 ## createTransactionEvent
 
-A utility function for writing tests. You can use `createTransactionEvent` (python: `create_transaction_event`) to easily generate a `TransactionEvent` object for your unit tests.
+A utility function for writing tests. You can use `createTransactionEvent` (python: `create_transaction_event`) to easily generate a mock `TransactionEvent` object when writing unit tests for your `handleTransaction` handler. To better understand usage, see the [Javascript example](https://github.com/forta-protocol/forta-agent-examples/blob/master/high-gas-js/src/high.gas.used.spec.js) or the [Python example](https://github.com/forta-protocol/forta-agent-examples/blob/master/high-gas-py/src/agent_test.py).
