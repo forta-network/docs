@@ -106,7 +106,8 @@ Be careful if tweaking the obfuscation-config.js settings, as some of the option
 ## Other considerations
 
 - Make sure to modify the README.md documentation to not reveal anything about the agent. You can keep a separate file (e.g. README_private.md) for your own internal documentation
-- You will notice that the Dockerfile is slightly modified to copy the obfuscated source code from the dist folder instead of the src folder. The rest of the Dockerfile is the same
+- Be careful when populating the package.json `name` and `description` fields as these will get published in the agent manifest. You may not want these to reveal anything about the agent
+- You will notice that the Dockerfile in the example is slightly modified from the starter project to move the obfuscation step outside the Dockerfile and to copy the obfuscated source code from the dist folder instead of the src folder
 - For agents with several files, you can encrypt all findings in the top-level agent.js file. This way you don't need to repeat encryption code across multiple files
 - If there are any json files you include with your agent (e.g. ABI.json), convert them into Javascript (.js) files so that they also get obfuscated and don't reveal anything about the agent
 - The `javascript-obfuscator` tool can output different results based on the same settings, so make sure to verify the obfuscated result is good enough for you
