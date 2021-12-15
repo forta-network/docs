@@ -34,6 +34,18 @@ Here is an excellent set of video tutorials provided by Forta community member A
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JhVlAifJvQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## 9) Full Example Agent Walkthrough
+## 9) Full example agent walkthrough
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xd6K3QB_JcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## 10) Subscribing to alerts using Forta Explorer
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iJQREcKAORU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## 11) Deploying an agent with Forta Connect
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bEDsc0LtGD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## 12) Machine learning on Forta
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Uw7n5_mV9aQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

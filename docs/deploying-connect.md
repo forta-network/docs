@@ -1,6 +1,8 @@
 # Deploying your agent with Forta Connect
 
-This page covers how to deploy your agent using [Forta Connect](https://connect.forta.network/).
+This page covers how to deploy your agent using [Forta Connect](https://connect.forta.network/). You can also check out this short video tutorial:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bEDsc0LtGD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Pushing your agent image
 
