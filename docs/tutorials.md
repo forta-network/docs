@@ -1,6 +1,6 @@
 # Video tutorials
 
-Here is an excellent set of video tutorials provided by Forta community member Arbitrary Execution to help developers understand the lifecycle of building agents.
+Here is an excellent set of video tutorials provided by Forta core dev and community member Arbitrary Execution to help developers understand the lifecycle of building agents.
 
 ## 1) What are Forta Agents?
 
