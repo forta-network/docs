@@ -25,6 +25,7 @@ nav:
       - Compound Contest (10/20/2021): contest1-compound.md
       - Aave Contest (11/3/2021): contest2-aave.md
       - OpenZeppelin Contest (11/18/2021): contest3-oz.md
+      - Forta Contest (12/17/2021): contest4-forta.md
 
 theme:
   name: material
