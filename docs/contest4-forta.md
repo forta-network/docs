@@ -59,13 +59,13 @@ For any questions, please contact a Forta Moderator on **Discord**.
 
     Optional, but recommended: Tracking balances in the 100 blocks after the vote is cast and creating a finding if the balance decreases.
 
-    - *GovernorAlpha Contract*
-        - [Github](https://github.com/Uniswap/governance/blob/master/contracts/GovernorAlpha.sol)
-        - [Deployed Contract](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984)
+    - *GovernorBravo Contract*
+        - [Github](https://github.com/gettty/uniswap-gov/blob/main/contracts/GovernorBravoDelegate.sol)
+        - [Deployed Contract (Proxy)](https://etherscan.io/address/0x408ED6354d4973f66138C91495F2f2FCbd8724C3)
 
     - *Uni Token Contract*
         - [Github](https://github.com/Uniswap/governance/blob/master/contracts/Uni.sol)
-        - [Deployed](https://github.com/Uniswap/governance/blob/master/contracts/Uni.sol)
+        - [Deployed](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984)
 
 2. **Evidence of Phishing**
 
