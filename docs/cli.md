@@ -4,7 +4,7 @@ The following sections describe the CLI commands available to agent developers. 
 
 ## init
 
-Using the `forta-agent init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile and forta.config.json file will also be generated for you and placed in the ~/.forta folder if they do not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent.
+Using the `npx forta-agent@latest init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile and forta.config.json file will also be generated for you and placed in the ~/.forta folder if they do not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent.
 
 Options:
 
@@ -16,7 +16,7 @@ Options:
 Example: Initialize a Typescript Project
 
 ```
-$ forta-agent init --typescript
+$ npx forta-agent@latest init --typescript
 ```
 
 ## run

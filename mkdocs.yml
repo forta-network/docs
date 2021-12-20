@@ -13,7 +13,7 @@ nav:
       - Core concepts: concepts.md
       - CLI commands: cli.md
       - forta.config.json: config.md
-  - Javascript SDK: sdk.md
+  - Javascript/Typescript SDK: sdk.md
   - Python SDK: python.md
   - Private agents: private.md
   - Best practices: best-practices.md
