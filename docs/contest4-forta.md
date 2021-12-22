@@ -55,7 +55,7 @@ For any questions, please contact a Forta Moderator on **Discord**.
 
     Governance proposals allow protocols to change to meet the evolving requirements of the DeFi ecosystem. Voting on these proposals occurs over a limited period of time where only those accounts that have been delegated votes may cast those votes in favor of or against the proposal. There is also a check to determine whether the delegated votes existed in the block number when the proposal was submitted.
 
-    This challenge is to create an agent that will monitor proposals to the Uniswap Governance and the votes cast on those proposals. A finding should be created if an address casting a vote had a significant change in UNI balance in the 100 blocks leading up to the proposal starting block number.
+    This challenge is to create an agent that will monitor proposals to the Uniswap Governance and the votes cast on those proposals. A finding should be created if an address casting a vote had a significant change in UNI balance in the 100 blocks leading up to the proposal starting block number. 
 
     Optional, but recommended: Tracking balances in the 100 blocks after the vote is cast and creating a finding if the balance decreases.
 
@@ -68,17 +68,15 @@ For any questions, please contact a Forta Moderator on **Discord**.
         - [Deployed](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984)
 
 2. **Evidence of Phishing**
-
-   Users approving token transfers to an externally owned address (EOA) may be a behavior indicative of a phishing attack.
    
-   This challenge is to create an agent that will detect when a high number (e.g. 10 or more) of EOAs call the approve() or increaseAllowance() methods for the same target EOA over an extend period of time (e.g. 6 hours ~ 1600 blocks). The finding should include the affected addresses, the alleged attacker's address, and the addresses and amounts of tokens involved. Be certain to filter out smart contracts (i.e. approve() called by a smart contract or a smart contract that is the designated spender for an approve() call) and EOAs for any centralized exchanges (e.g. FTX exchange: 0x2FAF487A4414Fe77e2327F0bf4AE2a264a776AD2).
-   
-   The agent should trigger when run against the following block range:
-  13650638 to 13652198    
-  
-  - ERC20 Reference
-        - [`approve()`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
-        - [`increaseAllowance()`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#ERC20-increaseAllowance-address-uint256-)
-
-    - Example phishing attacks
-        - [BadgerDAO](https://rekt.news/badger-rekt/)
+          Users approving token transfers to an externally owned address (EOA) may be a behavior indicative of a phishing attack.
+          
+          This challenge is to create an agent that will detect when a high number (e.g. 10 or more) of EOAs call the approve() or increaseAllowance() methods for the same target EOA over an extend period of time (e.g. 6 hours ~ 1600 blocks). The finding should include the affected addresses, the alleged attacker's address, and the addresses and amounts of tokens involved. Be certain to filter out smart contracts (i.e. approve() called by a smart contract or a smart contract that is the designated spender for an approve() call) and EOAs for any centralized exchanges (e.g. FTX exchange: 0x2FAF487A4414Fe77e2327F0bf4AE2a264a776AD2).
+          
+          The agent should trigger when run against the following block range: 13650638 to 13652198
+          
+          - ERC20 Reference
+            - [`approve()`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
+            - [`increaseAllowance()`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#ERC20-increaseAllowance-address-uint256-)
+          - Example phishing attacks
+            -[BadgerDAO](https://rekt.news/badger-rekt/)
