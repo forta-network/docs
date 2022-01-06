@@ -108,7 +108,7 @@ WantedBy=multi-user.target
 
 In your Forta directory, there now is a `config.yml` file. You must configure that file so that your scan node knows how to get its blockchain data.
 
-Set the `scan.jsonRpc` and `trace.jsonRpc` values. If you have your own Ethereum node, you can use that node. Keep in mind that the trace endpoint must support `trace_block`.
+Set the `scan.jsonRpc` and `trace.jsonRpc` values. If you have your own Ethereum node, you can use that node. The trace endpoint must support `trace_block` from the Parity Trace API.
 
 !!! note "JSON-RPC APIs"
     The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic.  
@@ -139,7 +139,7 @@ trace:
 
 ## Register Scan Node
 
-Please contact the Forta team and provide your node and once approved we will add your node to the Forta network.
+Please contact the Forta team and provide your node address.  Once approved, we will add your node to the Forta network.
 
 !!! important "Early Decentralization Phase"
     At this phase, only Forta-approved nodes are allowed onto the network. In later phases, Forta will introduce economic security measures that will allow permissionless scan nodes.
@@ -148,7 +148,7 @@ Please contact the Forta team and provide your node and once approved we will ad
 
 ### Start Docker
 
-Ensure Docker is running by running a `docker ps`.  If it is not running, start docker before running Forta.
+Ensure Docker is running use the docker command `docker ps`.  If it is not running, start docker before running Forta.
 
 ### Start Forta via systemd
 
