@@ -28,8 +28,8 @@ $ sudo yum install forta
 ### Install via APT (Ubuntu, Debian etc.)
 
 ```
-$ sudo curl https://dist.forta.network/pgp.public -o /usr/share/keyrings/forta-keyring.asc
-$ echo 'deb [signed-by=/usr/share/keyrings/forta-keyring.asc] https://dist.forta.network/repositories/apt stable main' > /etc/apt/sources.list.d/forta.list
+$ sudo curl https://dist.forta.network/pgp.public -o /usr/share/keyrings/forta-keyring.asc -s
+$ sudo echo 'deb [signed-by=/usr/share/keyrings/forta-keyring.asc] https://dist.forta.network/repositories/apt stable main' > /etc/apt/sources.list.d/forta.list
 $ sudo apt-get update
 $ sudo apt-get install forta
 ```
