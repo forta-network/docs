@@ -40,8 +40,7 @@ $ apt-get install forta
 2. Download the latest x86-64 release binary and install
 
 ```
-$ wget https://dist.forta.network/artifacts/forta
-$ mv forta /usr/local/bin/forta
+$ sudo curl https://dist.forta.network/artifacts/forta -o /usr/local/bin/forta
 ```
 
 ## Initial Setup
