@@ -21,17 +21,17 @@ The Forta scan node software is available for installing on popular 64-bit Linux
 ### Install via YUM (CentOS, Fedora, Red Hat Enterprise Linux etc.)
 
 ```
-$ curl https://dist.forta.network/repositories/yum/Forta.repo -o /etc/yum.repos.d/Forta.repo -s
-$ yum install forta
+$ sudo curl https://dist.forta.network/repositories/yum/Forta.repo -o /etc/yum.repos.d/Forta.repo -s
+$ sudo yum install forta
 ```
 
 ### Install via APT (Ubuntu, Debian etc.)
 
 ```
-$ wget https://dist.forta.network/pgp.public -O /usr/share/keyrings/forta-keyring.asc
+$ sudo curl https://dist.forta.network/pgp.public -o /usr/share/keyrings/forta-keyring.asc
 $ echo 'deb [signed-by=/usr/share/keyrings/forta-keyring.asc] https://dist.forta.network/repositories/apt stable main' > /etc/apt/sources.list.d/forta.list
-$ apt-get update
-$ apt-get install forta
+$ sudo apt-get update
+$ sudo apt-get install forta
 ```
 
 ### Install Manually
