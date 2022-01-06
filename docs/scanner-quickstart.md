@@ -126,7 +126,7 @@ $ docker logs -f forta-publisher
 ```
 
 !!! note "Agent Assignments"
-    Your scanner might not have any agents assigned.  This is okay.  As agents are added to the network, the network will assign agents to your scanner.
+    Your scan node might not have any agents assigned.  This is okay.  As agents are added to the network, the network will assign agents to your node.
 
 To see a list of agents that the node is running, use this command.
 
