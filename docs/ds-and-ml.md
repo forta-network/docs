@@ -15,3 +15,13 @@ Check out this short clip below to learn more about how the open-source data on 
 There’s a unique opportunity for the community to take advantage of the open data and collaborate on new data science and machine learning solutions together. For example, the community can begin to extract trends and insights from historical alerts that may be helpful to improving blockchain security. And with the right tools and data, Forta can also begin to detect threats and exploits before they happen with increasing accuracy over time. 
 
 Do you need access to historical alerts soon for data analysis or for your agent? If so, please fill out [this short survey](https://forms.gle/Q6F4edb8kH4bCZcH9) or share it with your friends and colleagues. This will help Forta learn more about your needs and how you'd like to use the alerts! 
+
+## Improving Alerts Quality with ML
+
+Forta has been disabling redundant agents to improve the alerts quality. 
+The video below will explain in more detail why Forta did that and give you some insight into the disabling process. 
+
+<p align="center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jbAwNCf6Oww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<br/><br/>
