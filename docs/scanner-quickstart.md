@@ -46,7 +46,7 @@ $ mv forta /usr/local/bin/forta
 
 ## Initial Setup
 
-Forta scan node node CLI allows you to set up your first Forta configuration directory along with creating and managing your scan node's private key'.
+Forta scan node node CLI allows you to set up your first Forta configuration directory along with creating and managing your scan node's private key.
 
 ### Initialize Forta Directory
 
