@@ -16,7 +16,7 @@ The following are the requirements for running a Forta scan node.
 
 ## Install Forta
 
-The Forta scan node software is available for installing on popular 64-bit Linux distributions using official Forta repositories. Package installation methods are verifiable (auto-verified during installation) and help you install required dependencies.
+The Forta scan node software is available for popular 64-bit Linux distributions using official Forta repositories. Package installation methods are verifiable (auto-verified during installation) and help you install required dependencies.
 
 ### Install via YUM (CentOS, Fedora, Red Hat Enterprise Linux etc.)
 
@@ -49,7 +49,7 @@ Forta scan node's CLI allows you to set up your first Forta configuration direct
 
 ### Initialize Forta Directory
 
-For the first time, you will need to set ($FORTA_PASSPHRASE) or provide the --passphrase flag so the CLI can generate and store your private key safely.
+Initialization creates a private key that will sign the alerts from your scan node.  You must set the $FORTA_PASSPHRASE environment variable or provide the --passphrase flag to the `init` command.
 
 Initialize Forta using the `forta init` command
 
@@ -57,7 +57,7 @@ Initialize Forta using the `forta init` command
 $ forta init --passphrase <your_passphrase>
 ```
 
-This will generate a config directory, a private key, and output your address
+This generates a config directory, a private key, and output your address
 
 ```
 Scanner address: 0xAAA8C491232cB65a65FBf7F36b71220B3E695AAA
@@ -72,12 +72,19 @@ Take note of the address. This is the value that will be registered in the scan 
 
 ### Configure config.yml
 
-In your Forta directory, there now is a `config.yml` file. We need to configure that file so that your scan node knows how to scan.
+In your Forta directory, there now is a `config.yml` file. You must configure that file so that your scan node knows how to get its blockchain data.
 
 Set the `scan.jsonRpc` and `trace.jsonRpc` values. If you have your own Ethereum node, you can use that node. Keep in mind that the trace endpoint must support `trace_block`.
 
 !!! note "JSON-RPC APIs"
-    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic. We suggest running your own light node for the `scan.jsonRpc` and an Alchemy Growth plan for `trace.jsonRpc` endpoint.
+    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic.  
+    
+    We suggest running your own ethereum light node for the `scan.jsonRpc` and an Alchemy Growth plan for `trace.jsonRpc` endpoint.  
+
+!!! warning "Public JSON-RPC APIs"
+    While there are public endpoints available for many chains, please note that the quality of an endpoint will drive the quality of a scan node's output.  
+    
+    When Forta node economics are introduced, the quality of a scan node's output will drive rewards and slashing.  We strongly recommend providing your own ethereum light node or using a paid provider when possible.
 
 Example configuration
 
