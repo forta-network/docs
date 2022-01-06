@@ -78,6 +78,32 @@ Take note of the address. This is the value that will be registered in the scan 
 !!! note "Forta Directory"
     By default, the forta directory is located in `~/.forta`. If you would like to use a different directory, either set the $FORTA_DIR env var or provide the `--dir` flag to the `init` command. Init command will initialize your Forta configuration and key to this directory.
 
+### Configure systemd
+
+If the binary ever stops, it must be restarted.  If you used a package installation method, there is a forta systemd service that can now be updated with your passphrase and config directory.
+
+Replace `<PASSPHRASE>` and `<CONFIG_DIR>` with the correct values.
+
+Example Config
+```
+[Unit]
+Description=Forta
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+Restart=on-failure
+RestartSec=15s
+
+ExecStart=/usr/bin/forta run --passphrase <PASSPHRASE> --dir <CONFIG_DIR>
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ### Configure config.yml
 
 In your Forta directory, there now is a `config.yml` file. You must configure that file so that your scan node knows how to get its blockchain data.
@@ -124,7 +150,16 @@ Please contact the Forta team and provide your node and once approved we will ad
 
 Ensure Docker is running by running a `docker ps`.  If it is not running, start docker before running Forta.
 
-### Start Forta
+### Start Forta via systemd
+
+Run the systemd service to start Forta
+
+```
+sudo systemctl enable forta
+sudo systemctl run forta
+```
+
+### Start Forta manually
 
 Run the `forta run` command to start processing blocks.
 
