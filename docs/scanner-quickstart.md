@@ -1,7 +1,7 @@
 # Run a Scan Node
 
 !!! important "Early Decentralization Phase"
-    At this phase, only approved nodes are allowed onto the network. As we introduce other decentralized security measures we will make this process more permissionless.
+    At this phase, only approved nodes are allowed onto the network. In later phases, Forta will introduce economic security measures that will allow permissionless scan nodes.
 
 ## Scan Node Requirements
 
@@ -105,10 +105,10 @@ trace:
 
 ## Register Scan Node
 
-Please contact the Forta team with your node address to be added to the network.
+Please contact the Forta team and provide your node and once approved we will add your node to the Forta network.
 
 !!! important "Early Decentralization Phase"
-    At this phase only approved nodes are allowed onto the network.
+    At this phase, only approved nodes are allowed onto the network. In later phases, Forta will introduce economic security measures that will allow permissionless scan nodes.
 
 ## Run Scan Node
 
