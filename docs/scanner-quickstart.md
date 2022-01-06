@@ -36,12 +36,20 @@ $ sudo apt-get install forta
 
 ### Install Manually
 
-1. [Install Docker](https://docs.docker.com/get-docker/) (at least v20.10) 
-2. Download the latest x86-64 release binary and install
+[Install Docker](https://docs.docker.com/get-docker/) (at least v20.10) 
+
+Download the latest x86-64 release binary and install
 
 ```
 $ sudo curl https://dist.forta.network/artifacts/forta -o /usr/local/bin/forta
 ```
+
+Make the binary executable
+
+```
+$ sudo chmod 755 /usr/local/bin/forta
+```
+
 
 ## Initial Setup
 
