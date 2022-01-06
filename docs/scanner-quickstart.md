@@ -1,6 +1,6 @@
-# Running a Scan Node
+# Run a Scan Node
 
-!!! warning "Early Decentralization Phase"
+!!! important "Early Decentralization Phase"
     At this phase, only approved nodes are allowed onto the network. As we introduce other decentralized security measures we will make this process more permissionless.
 
 ## Scan Node Requirements
