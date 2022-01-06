@@ -132,5 +132,5 @@ $ docker logs -f forta-publisher
 To see a list of agents that the node is running, use this command.
 
 ```
-$ docker ps |grep forta-agent
+$ docker ps | grep forta-agent
 ```
