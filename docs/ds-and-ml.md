@@ -16,7 +16,7 @@ There’s a unique opportunity for the community to take advantage of the open d
 
 Do you need access to historical alerts soon for data analysis or for your agent? If so, please fill out [this short survey](https://forms.gle/Q6F4edb8kH4bCZcH9) or share it with your friends and colleagues. This will help Forta learn more about your needs and how you'd like to use the alerts! 
 
-## Improving Alerts Quality with ML
+## Improving Alerts Quality with Machine Learning
 
 Forta has been disabling redundant agents to improve the alerts quality. 
 The video below will explain in more detail why Forta did that and give you some insight into the disabling process. 
