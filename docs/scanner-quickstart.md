@@ -16,7 +16,7 @@ The following are the requirements for running a Forta scan node.
 
 ## Install and Configure Docker
 
-[Install Docker](https://docs.docker.com/get-docker/) (at least v20.10) 
+[Install Docker](https://docs.docker.com/engine/install/) (at least v20.10) 
 
 Add a file called `daemon.json` to your `/etc/docker` directory with the following contents:
 
