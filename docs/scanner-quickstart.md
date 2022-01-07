@@ -131,9 +131,13 @@ Take note of the address. This is the value that will be registered in the scan 
 
 If the binary ever stops, it must be restarted.  If you used a package installation method, there is a forta systemd service that can now be updated with your passphrase and config directory.
 
-The service definition can be found here: `/usr/lib/systemd/system/forta.service`
+Run this command to find your service file:
 
-Replace `<PASSPHRASE>` and `<CONFIG_DIR>` with the correct values.
+```
+systemctl cat forta.service
+```
+
+Edit the file, and replace `<PASSPHRASE>` and `<CONFIG_DIR>` with the correct values.
 
 Example Config
 ```
@@ -207,7 +211,7 @@ Run the systemd service to start Forta
 
 ```
 sudo systemctl enable forta
-sudo systemctl run forta
+sudo systemctl start forta
 ```
 
 ### Start Forta manually
