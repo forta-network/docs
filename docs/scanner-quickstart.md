@@ -14,6 +14,55 @@ The following are the requirements for running a Forta scan node.
 - Docker v20.10+
 - **Recommended:** Ethereum Light Node
 
+## Install and Configure Docker
+
+[Install Docker](https://docs.docker.com/get-docker/) (at least v20.10) 
+
+Add a file called `daemon.json` to your `/etc/docker` directory with the following contents:
+
+```
+{
+   "default-address-pools": [
+        {
+            "base":"172.17.0.0/12",
+            "size":16
+        },
+        {
+            "base":"192.168.0.0/16",
+            "size":20
+        },
+        {
+            "base":"10.99.0.0/16",
+            "size":24
+        }
+    ]
+}
+```
+
+Restart docker with `systemctl restart docker`
+
+Ensure docker is running.  You can run `docker ps` and you should not get any errors and see a list of header columns.
+
+!!! note "Run Docker as a non-root user"
+    To run docker as a non-root user, do the following:
+
+    Add the docker group (it may already exist)
+
+    ```
+    sudo groupadd docker
+    ```
+
+    Add your user to that group.
+
+    ```
+    sudo usermod -aG docker your-user
+    ```
+
+    **You must exit and login again to take effect**
+
+!!! warning "Make sure Docker is running"
+    Once `docker ps` gives you a list of headers, continue to the next section.
+
 ## Install Forta
 
 The Forta scan node software is available for popular 64-bit Linux distributions using official Forta repositories. Package installation methods are verifiable (auto-verified during installation) and help you install required dependencies.
