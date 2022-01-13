@@ -14,6 +14,20 @@ The following are the requirements for running a Forta scan node.
 - Docker v20.10+
 - **Recommended:** Ethereum Light Node
 
+## Install and Configure Geth Light Node
+
+[Install Geth](https://geth.ethereum.org/docs/install-and-build/installing-geth)
+
+Make sure you enable these
+
+- eth,net,web3 http apis
+- http.vhosts 
+
+Example execution
+```
+geth --http.vhosts '*' --mainnet --syncmode "light" --http --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain '*' --http.api 'eth,net,web3'
+```
+
 ## Install and Configure Docker
 
 [Install Docker](https://docs.docker.com/engine/install/) (at least v20.10) 
