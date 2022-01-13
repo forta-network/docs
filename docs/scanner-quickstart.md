@@ -178,7 +178,7 @@ In your Forta directory, there now is a `config.yml` file. You must configure th
 Set the `scan.jsonRpc` and `trace.jsonRpc` values. If you have your own Ethereum node, you can use that node. The trace endpoint must support `trace_block` from the Parity Trace API.
 
 !!! note "JSON-RPC APIs"
-    The geth node must be reachable from inside a docker container.  It cannot be localhost or 127.0.0.1, because the container will resolve those to the itself instead of geth.
+    The geth node must be reachable from inside a docker container.  It cannot be localhost or 127.0.0.1, because the container will resolve those to itself instead of geth.
     
     The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic.  
     
