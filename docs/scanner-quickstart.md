@@ -14,6 +14,18 @@ The following are the requirements for running a Forta scan node.
 - Docker v20.10+
 - **Recommended:** Ethereum Light Node
 
+## Install and Configure Geth Light Node
+
+[Install Geth](https://geth.ethereum.org/docs/install-and-build/installing-geth)
+
+!!! note "Geth"
+    Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` http apis.
+
+Example execution
+```
+geth --http.vhosts '*' --mainnet --syncmode "light" --http --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain '*' --http.api 'eth,net,web3'
+```
+
 ## Install and Configure Docker
 
 [Install Docker](https://docs.docker.com/engine/install/) (at least v20.10) 
@@ -166,9 +178,12 @@ In your Forta directory, there now is a `config.yml` file. You must configure th
 Set the `scan.jsonRpc` and `trace.jsonRpc` values. If you have your own Ethereum node, you can use that node. The trace endpoint must support `trace_block` from the Parity Trace API.
 
 !!! note "JSON-RPC APIs"
-    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic.  
+    The geth node must be reachable from inside a docker container.  It cannot be localhost or 127.0.0.1, because the container will resolve those to itself instead of geth.
     
-    We suggest running your own ethereum light node for the `scan.jsonRpc` and an Alchemy Growth plan for `trace.jsonRpc` endpoint.  
+    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic. We suggest running your own ethereum light node for the `scan.jsonRpc` and an Alchemy Growth plan for `trace.jsonRpc` endpoint.  
+
+!!! note "Dockerized Geth"
+    If Geth is inside a docker container, you must use the hostname `host.docker.internal` to reach it.
 
 !!! warning "Public JSON-RPC APIs"
     While there are public endpoints available for many chains, please note that the quality of an endpoint will drive the quality of a scan node's output.  
