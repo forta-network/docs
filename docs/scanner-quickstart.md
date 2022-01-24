@@ -141,34 +141,14 @@ Take note of the address. This is the value that will be registered in the scan 
 
 ### Configure systemd
 
-If the binary ever stops, it must be restarted.  If you used a package installation method, there is a forta systemd service that can now be updated with your passphrase and config directory.
+If the binary ever stops, it must be restarted. If you used a package installation method, there is a Forta systemd service that can be enabled and overridden with your passphrase and config directory environment variables.
 
-Run this command to find your service file:
+To override systemd service environment, you can set the variables in `/etc/systemd/system/forta.service.d/env.conf` like:
 
-```
-systemctl cat forta.service
-```
-
-Edit the file, and replace `<PASSPHRASE>` and `<CONFIG_DIR>` with the correct values.
-
-Example Config
-```
-[Unit]
-Description=Forta
-After=network-online.target
-Wants=network-online.target systemd-networkd-wait-online.service
-
-StartLimitIntervalSec=500
-StartLimitBurst=5
-
+```ini
 [Service]
-Restart=on-failure
-RestartSec=15s
-
-ExecStart=/usr/bin/forta run --passphrase <PASSPHRASE> --dir <CONFIG_DIR>
-
-[Install]
-WantedBy=multi-user.target
+Environment="FORTA_DIR=<your_forta_config_dir>"
+Environment="FORTA_PASSPHRASE=<your_forta_passphrase>"
 ```
 
 ### Configure config.yml
