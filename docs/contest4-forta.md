@@ -66,6 +66,13 @@ For any questions, please contact a Forta Moderator on **Discord**.
     - *Uni Token Contract*
         - [Github](https://github.com/Uniswap/governance/blob/master/contracts/Uni.sol)
         - [Deployed](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984)
+<br/><br/>
+    - Winner: **vvlovsky**
+    - Winning Agent: [https://github.com/VVlovsky/Influencing-Governance-Proposals-Agent](https://github.com/VVlovsky/Influencing-Governance-Proposals-Agent)
+    - 2nd Place: **Miguel Martinez**
+    - 2nd Place Agent: [https://github.com/miguelmtzinf/forta-uniswap-governance-influence](https://github.com/miguelmtzinf/forta-uniswap-governance-influence)
+    - 3rd Place: **kovart**
+    - 3rd Place Agent: [https://github.com/kovart/forta-agents/tree/main/uniswap/governance-votes](https://github.com/kovart/forta-agents/tree/main/uniswap/governance-votes)
 
 2. **Evidence of Phishing**
    
@@ -81,3 +88,10 @@ For any questions, please contact a Forta Moderator on **Discord**.
 
     - Example phishing attacks
         - [BadgerDAO](https://rekt.news/badger-rekt/)
+<br/><br/>
+    - Winner: **kovart**
+    - Winning Agent: [https://github.com/kovart/forta-agents/tree/main/common/erc20-approve](https://github.com/kovart/forta-agents/tree/main/common/erc20-approve)
+    - 2nd Place: **vvlovsky**
+    - 2nd Place Agent: [https://github.com/VVlovsky/Evidence-of-Phishing-Agent](https://github.com/VVlovsky/Evidence-of-Phishing-Agent)
+    - 3rd Place: **Rodrigo Pino**
+    - 3rd Place Agent: [https://github.com/rodrigo-pino/forta-phishing-agent-ts](https://github.com/rodrigo-pino/forta-phishing-agent-ts)
