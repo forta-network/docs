@@ -214,7 +214,9 @@ $ forta run --passphrase <your_passphrase>
 
 ### Verify Execution
 
-View the forta-publisher logs for batches of alerts.
+Run `forta status` command to see how your scanner is doing. As more services start, this status output will be dynamically updated. If you see any yellows or reds, please check the error messages, your config and your machine's network connectivity. If you can't make any sense of it, please let us know.
+
+You can also view the forta-publisher logs for batches of alerts.
 
 ```
 $ docker logs -f forta-publisher
