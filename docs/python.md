@@ -167,7 +167,6 @@ If an agent wants to flag a transaction/block because it meets some condition (e
     - Low - minor oversights, negligible impact on users/funds
     - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; dict (both keys and values as strings) for providing extra information
-- `everest_id` - optional; [Everest](http://everest.link/) link for information about the specific project/protocol
 
 ## get_json_rpc_url
 

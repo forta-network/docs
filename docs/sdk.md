@@ -171,7 +171,6 @@ If an agent wants to flag a transaction/block because it meets some condition (e
     - Low - minor oversights, negligible impact on users/funds
     - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; key-value map (both keys and values as strings) for providing extra information
-- `everestId` - optional; [Everest](http://everest.link/) link for information about the specific project/protocol
 
 ## getJsonRpcUrl
 
