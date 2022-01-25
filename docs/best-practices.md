@@ -1,4 +1,4 @@
-# Best Practices
+# Best practices
 
 This page describes some of the best practices observed for agent development.
 
