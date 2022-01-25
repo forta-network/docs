@@ -17,10 +17,11 @@ nav:
   - Python SDK: python.md
   - Private agents: private.md
   - Best practices: best-practices.md
-  - Data Science and Machine Learning on Forta: ds-and-ml.md
+  - Data science and machine learning on Forta: ds-and-ml.md
   - Getting help: help.md
   - FAQ: faq.md
   - How to contribute: contributing.md
+  - Useful libraries: useful-libraries.md
   - Agent Developer Contests:
       - Compound Contest (10/20/2021): contest1-compound.md
       - Aave Contest (11/3/2021): contest2-aave.md

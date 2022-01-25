@@ -24,7 +24,7 @@ Are you a skilled Javascript, Typescript or Python developer? You can help build
 
 ## Share useful libraries
 
-Have you written an awesome library to help you develop agents? Sharing such tools and libraries helps the community also improve their agents. If you have identified a common pattern when writing your agents, you could share a set of templates that others can use to speed up their agent development process.
+Have you written an awesome library to help you develop agents? Sharing such tools and libraries helps the community also improve their agents. If you have identified a common pattern when writing your agents, you could share a set of templates that others can use to speed up their agent development process. Check out the [useful libaries](useful-libraries.md) page to see what is currently recommended.
 
 ## Run a scan node (coming soon)
 
@@ -32,6 +32,6 @@ Scan nodes are a key piece of Forta infrastructure as they help run agents and s
 
 ## Analyze historical alerts (coming soon)
 
-There’s a unique opportunity for the community to take advantage of the open data and collaborate on new data science and machine learning solutions together. For example, the community can begin to extract trends and insights from historical alerts that may be helpful to improving blockchain security. And with the right tools and data, Forta can also begin to detect threats and exploits before they happen with increasing accuracy over time. 
+There’s a unique opportunity for the community to take advantage of the open data and collaborate on new data science and machine learning solutions together. For example, the community can begin to extract trends and insights from historical alerts that may be helpful to improving blockchain security. And with the right tools and data, Forta can also begin to detect threats and exploits before they happen with increasing accuracy over time.
 
-Do you need access to historical alerts soon for data analysis or for your agent? If so, please fill out [this short survey](https://forms.gle/Q6F4edb8kH4bCZcH9) or share it with your friends and colleagues. This will help Forta learn more about your needs and how you'd like to use the alerts! 
+Do you need access to historical alerts soon for data analysis or for your agent? If so, please fill out [this short survey](https://forms.gle/Q6F4edb8kH4bCZcH9) or share it with your friends and colleagues. This will help Forta learn more about your needs and how you'd like to use the alerts!

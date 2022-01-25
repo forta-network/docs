@@ -1,4 +1,4 @@
-# Private Agents
+# Private agents
 
 In certain usecases, agent developers may want to keep their agent code and generated findings private. Two common techniques can be used to enable this: code obfuscation and data encryption. Using obfuscation, agent developers can make their code unreadable so that others cannot determine the scenario it is detecting. Using encryption, agent developers can publish findings that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the agent developer would understand.
 
@@ -67,6 +67,7 @@ async function encryptFindings(findings) {
 ```
 
 Try and run this agent using `npm start` and verify that the findings are printed. The `data` field will look like a gibberish string e.g.
+
 ```
 "metadata": {
   "data": "-----BEGIN PGP MESSAGE-----\n\nwV4DnxOp2TR9DQISAQdAu9EkgSitn74NvrbYS6bCLUt0wzEgSY3ttXBVo/cF\ntE0w34HroEIRL4CjIrDJnZxaKoQXTIHw5zFqUHKcROwX8g27IDfilxg2i21B\nq2780NHy0sAJAQQtXuyjo7r+oN/H1Kl/KgB+OzBg1Jd5M0Bjx5brBXOMt30j\n52KB+4Q68VnqO5tUFc4+Cc35+ZfYzxwpNWQy7JH0q+iHuVNwk8HpU+jmR98q\nfqEIKTN1IDUM1zbZRsogPBbgjjT/kR5RnQS+Vw66TItV8ciGtSUYSF/UJBN4\nnskwMYxL/3NZzwlEw+NxplsYAu9W5AJXZiEYfDTJ6OJq9jCGWDWLIi9DsjL+\n0Nf1qwByGhuLAMdsFkLNIDhOe9vUdNFZs14umrK6\n=8WDC\n-----END PGP MESSAGE-----\n"
@@ -93,9 +94,9 @@ The above code should print out the high gas finding that was passed into the `e
 
 All agents publish their code in the form of a Docker image to a public repository. Encrypted findings by themselves are not enough to keep the agent private since anyone can look at the code and determine what conditions its looking for. This is where obfuscation can be helpful. In this example, the [javascript-obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator) library is used to obfuscate the agent code, but you can use any library you prefer.
 
-The obfuscation of the code can be done using the `npm run obfuscate` command. This will take all of the Javascript files in the src folder and output obfuscated versions of each file (with the same name) to the dist folder. Under the hood, the script is running the `javascript-obfuscator` tool and passing it some obfuscation options stored in obfuscation-config.js. 
+The obfuscation of the code can be done using the `npm run obfuscate` command. This will take all of the Javascript files in the src folder and output obfuscated versions of each file (with the same name) to the dist folder. Under the hood, the script is running the `javascript-obfuscator` tool and passing it some obfuscation options stored in obfuscation-config.js.
 
-It is recommended to obfuscate *before* publishing your agent so that you can verify the results of the obfuscation and make sure it meets your expectations. You can also try running the obfuscated code to verify that it still works by moving the obfuscated files over to the src folder.
+It is recommended to obfuscate _before_ publishing your agent so that you can verify the results of the obfuscation and make sure it meets your expectations. You can also try running the obfuscated code to verify that it still works by moving the obfuscated files over to the src folder.
 
 ## Obfuscation settings
 
