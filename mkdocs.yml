@@ -15,7 +15,13 @@ nav:
       - forta.config.json: config.md
   - Javascript/Typescript SDK: sdk.md
   - Python SDK: python.md
-  - Private agents: private.md
+  - Agent patterns:
+      - Storing sensitive data: sensitive-data.md
+      - Private alerts: private-alerts.md
+      - Long running tasks: longrunning-tasks.md
+      - Querying other chains: querying-chains.md
+      - Transaction simulation: tx-simulation.md
+      - Error monitoring: error-monitoring.md
   - Best practices: best-practices.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - Getting help: help.md

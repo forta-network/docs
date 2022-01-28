@@ -1,6 +1,6 @@
-# Private agents
+# Private alerts
 
-In certain usecases, agent developers may want to keep their agent code and generated findings private. Two common techniques can be used to enable this: code obfuscation and data encryption. Using obfuscation, agent developers can make their code unreadable so that others cannot determine the scenario it is detecting. Using encryption, agent developers can publish findings that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the agent developer would understand.
+In certain usecases, agent developers may want to keep their agent code and generated alerts private. Two common techniques can be used to enable this: code obfuscation and data encryption. Using obfuscation, agent developers can make their code unreadable so that others cannot determine the scenario it is detecting. Using encryption, agent developers can publish alerts that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the agent developer would understand.
 
 This guide describes how to make a private Javascript agent using obfuscation and encryption (the same code can be used for Typescript agents as well). Private Python agents may be supported in the future. You can find the complete [code for this example Javascript private agent](https://github.com/forta-protocol/forta-agent-examples/tree/master/private-agent-js) in the examples repo. Let's start with the high gas used agent and turn it into a private agent.
 
@@ -108,11 +108,11 @@ Be careful if tweaking the obfuscation-config.js settings, as some of the option
 
 - Make sure to modify the README.md documentation to not reveal anything about the agent. You can keep a separate file (e.g. README_private.md) for your own internal documentation
 - Be careful when populating the package.json `name` and `description` fields as these will get published in the agent manifest. You may not want these to reveal anything about the agent
-- You will notice that the Dockerfile in the example is slightly modified from the starter project to move the obfuscation step outside the Dockerfile and to copy the obfuscated source code from the dist folder instead of the src folder
 - For agents with several files, you can encrypt all findings in the top-level agent.js file. This way you don't need to repeat encryption code across multiple files
-- If there are any json files you include with your agent (e.g. ABI.json), convert them into Javascript (.js) files so that they also get obfuscated and don't reveal anything about the agent
-- The `javascript-obfuscator` tool can output different results based on the same settings, so make sure to verify the obfuscated result is good enough for you
 - Do not read the public key from the public.pem file as this would make your agent vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your agent's findings on their own machine
 - Make sure that unit tests are also obfuscated, or better yet, just not included in the final image. This could easily reveal what the agent is doing
 
 You now have a private agent that obfuscates its code and encrypts its findings! When you are ready to publish, you can simply run the `npm run publish` or `npm run push` command to deploy the agent.
+
+setPrivateFindings
+not associated to tx/block, so make sure to include all info required in metadata
