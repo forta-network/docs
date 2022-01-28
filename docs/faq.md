@@ -14,7 +14,7 @@ Currently, several scan nodes are maintained by OpenZeppelin that scan Ethereum 
 
 ## Can I scan other blockchains like BSC?
 
-Currently, Forta is scanning Ethereum mainnet. Scan nodes are able to scan any EVM-compatible blockchain. In the future, more blockchains (e.g. BSC) will be supported.
+Yes! Forta supports scanning on several blockchains including Ethereum, Polygon, BSC and Avalanche. Scan nodes are able to scan any EVM-compatible blockchain. In the future, more blockchains will be supported.
 
 ## Do I need special hardware to run scan nodes?
 
