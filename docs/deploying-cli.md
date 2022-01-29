@@ -21,6 +21,11 @@ A few configuration values must be set in your package.json and forta.config.jso
 - in package.json (located in your project folder):
     - `name` of your agent project should be specified and **should be globally unique**, so add some unique modifiers
     - `version` of your agent should also be set as well
+    - `chainIds` of the blockchains that your agent will be scanning should be specified as an array of integers. You must specify at least one and up to as many as you need. The supported chain IDs are:
+        - 1 (Ethereum mainnet)
+        - 137 (Polygon mainnet)
+        - 56 (Binance Smart Chain mainnet)
+        - 43114 (Avalanche mainnet)
     - `repository` is **optional**, but providing a link to your code helps build trust in your agent
 - in forta.config.json (located in ~/.forta):
     - `ipfsGatewayUrl` is required to publish your agent's metadata (also referred to as manifest) to IPFS. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS (for Infura, this value would be `https://ipfs.infura.io:5001`)
