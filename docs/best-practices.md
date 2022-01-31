@@ -8,7 +8,7 @@ Write your agent to target a specific condition so that it does not generate fin
 
 ## Return findings in a timely manner
 
-Ensure that your agent returns findings in a timely manner. Agents are considered unresponsive by the scan node if they do not return findings within 5 seconds of a request. If the agent is unresponsive multiple times, it will result in the agent being stopped.
+Ensure that your agent returns findings in a timely manner. Agents are considered unresponsive by the scan node if they do not return findings within 30 seconds of a request. If the agent is unresponsive multiple consecutive times, it will result in the agent being stopped. If your agent needs to execute for longer than 30 seconds, check out the pattern for [long running tasks](long-running-tasks.md).
 
 ## Break down large agents into smaller files
 
@@ -52,9 +52,9 @@ Caching is a great way to improve performance. If you need to store the result o
 
 Try to make use of concurrency to maximize performance. For example, if firing multiple network calls to do some calculation, you can fire all the requests at the same time using something like `Promise.all` in Javascript.
 
-## Don't include sensitive information
+## Obfuscate sensitive information
 
-Be sure not to include sensitive information, such as API keys, in your code. Agent images are stored in a public repository where anyone can access and inspect the code.
+Be sure not to obfuscate sensitive information, such as API keys, in your code. Agent images are stored in a public repository where anyone can access and inspect the code. See the pattern for [hiding sensitive data](sensitive-data.md).
 
 ## Beware of case-sensitivity
 
