@@ -36,7 +36,7 @@ The average consumer laptop is more than sufficient to build agents. If you are 
 
 ## How can I create alerts that only I can see?
 
-You can write a "private agent" to generate alerts that can only be understood by you. See the [documentation on writing private agents](private.md).
+You can write a "private agent" to generate alerts that can only be understood by you. See the [documentation on writing private agents](private-alerts.md).
 
 ## Can I include sensitive information like API keys in my agent?
 

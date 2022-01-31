@@ -1,14 +1,16 @@
 # Private alerts
 
-In certain usecases, agent developers may want to keep their agent code and generated alerts private. Two common techniques can be used to enable this: code obfuscation and data encryption. Using obfuscation, agent developers can make their code unreadable so that others cannot determine the scenario it is detecting. Using encryption, agent developers can publish alerts that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the agent developer would understand.
+In certain usecases agent developers may want to keep their generated alerts private. Using encryption, agent developers can publish alerts that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the agent developer would understand.
 
-This guide describes how to make a private Javascript agent using obfuscation and encryption (the same code can be used for Typescript agents as well). Private Python agents may be supported in the future. You can find the complete [code for this example Javascript private agent](https://github.com/forta-protocol/forta-agent-examples/tree/master/private-agent-js) in the examples repo. Let's start with the high gas used agent and turn it into a private agent.
+In addition to encrypting the alerts, you likely also want to obfuscate the agent logic (as done in the example code). Agent images are stored in a public repository where anyone can inspect the contents of the image as well as the agent logic to see what is being scanned for. Check out the [pattern for hiding sensitive data](sensitive-data.md) to understand how this is implemented.
+
+This page describes how to write a Javascript agent that emits private alerts using encryption. You can find the code for this example [here](https://github.com/forta-protocol/forta-agent-examples/tree/master/private-agent-js).
 
 ## Generating keys
 
-[OpenPGP](https://www.openpgp.org/) public key encryption will be used in this example, but you can use any public key encryption algorithm you prefer (just make sure you understand the tradeoffs). The first step is to generate the keypair you will use for encryption. This example uses the [OpenPGP.js](https://www.npmjs.com/package/openpgp) library, but you can use any library you prefer. As a convenience, the project has a script to generate your public and private keys: `npm run keygen`. This will run the `generate-keys.js` file and output a public and private key file in your project folder: public.pem and private.pem, respectively.
+[OpenPGP](https://www.openpgp.org/) public key encryption will be used in this example, but you can use any public key encryption algorithm you prefer (just make sure you understand the tradeoffs). The first step is to generate the keypair you will use for encryption. This example uses the [OpenPGP.js](https://www.npmjs.com/package/openpgp) library, but you can use any library you prefer. The project has an npm script to generate public and private keys: `npm run keygen`. This will run the `generate-keys.js` file and output a public and private key file in the project folder: public.pem and private.pem, respectively.
 
-The public key can be distributed with the agent, so let's copy paste it into agent.js (beware of formatting as there should be no spaces at the beginning of each line). The private key should be **secured and kept in a secret place** i.e. do not commit private.pem into version control. If you view the agent code in agent.js, you will see that the public key is setup inside the `initialize` handler function:
+The public key can be distributed with the agent, so let's copy paste it into agent.js (be careful with formatting as there should be no spaces at the beginning of each line). The private key should be **secured and kept in a secret place** i.e. do not commit private.pem into version control. If you view the agent code in agent.js, you will see that the public key is setup inside the `initialize` handler function:
 
 ```javascript
 let publicKey;
@@ -30,7 +32,7 @@ async function initialize() {
 
 ## Encrypting findings
 
-Now, when a high gas transaction is detected, the agent needs to generate an encrypted finding. In this example, a regular finding is created the way you normally would in `handleTransaction`, and then passed through the `encryptFindings` function. This will return a list of new encrypted findings with most attributes set to "omitted". The original finding will be encrypted using the public key and then stored in the `metadata` field of the encrypted finding as a base64 string:
+In this example, a regular finding is created the way you normally would in `handleTransaction`, and then passed through the `encryptFindings` function. This will return a list of new encrypted findings with most attributes set to "omitted". The original finding will be encrypted using the public key and then stored in the `metadata` field of the encrypted finding as a base64 string:
 
 ```javascript
 async function encryptFindings(findings) {
@@ -78,7 +80,7 @@ Great! Now that you have an agent generating encrypted findings, let's go over h
 
 ## Decrypting findings
 
-In order to decrypt the finding, you would make use of the private key in private.pem. In practice, you would subscribe to findings from your particular agent using [Forta Explorer](https://explorer.forta.network/) and receive its contents via some webhook. Upon receiving the finding, you can decrypt the data using the private key.
+In order to decrypt the finding, you would make use of the private key in private.pem. In practice, you would subscribe to findings from your particular agent using [Forta Explorer](https://explorer.forta.network/notifications) and receive its contents via some webhook. Upon receiving the finding, you can decrypt the data using the private key.
 
 For this example's sake, the project has a `decrypt.js` file to help you decrypt your finding data and verify that it's what you expect. If you open a `node` console from your project folder, you can decrypt the data string from your finding:
 
@@ -88,31 +90,29 @@ $ node
 > decrypt("-----BEGIN PGP MESSAGE-----\n\nwV4DnxOp2TR...s14umrK6\n=8WDC\n-----END PGP MESSAGE-----\n").then(r => console.log(r))
 ```
 
-The above code should print out the high gas finding that was passed into the `encryptFindings` function. Awesome!
+The above code should print out the finding that was passed into the `encryptFindings` function.
 
-## Obfuscating code
+## setPrivateFindings
 
-All agents publish their code in the form of a Docker image to a public repository. Encrypted findings by themselves are not enough to keep the agent private since anyone can look at the code and determine what conditions its looking for. This is where obfuscation can be helpful. In this example, the [javascript-obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator) library is used to obfuscate the agent code, but you can use any library you prefer.
+As an added layer of security, agents can indicate that they do not want their findings indexed by Forta Explorer. An adversary could potentially look for alerts that use encryption and with enough alerts could infer what condition the agent is looking for. To avoid this, simply invoke `setPrivateFindings(true)` in the `initialize` handler:
 
-The obfuscation of the code can be done using the `npm run obfuscate` command. This will take all of the Javascript files in the src folder and output obfuscated versions of each file (with the same name) to the dist folder. Under the hood, the script is running the `javascript-obfuscator` tool and passing it some obfuscation options stored in obfuscation-config.js.
+```javascript
+const { setPrivateFindings } = require("forta-agent")
 
-It is recommended to obfuscate _before_ publishing your agent so that you can verify the results of the obfuscation and make sure it meets your expectations. You can also try running the obfuscated code to verify that it still works by moving the obfuscated files over to the src folder.
+async function initialize() {
+  ...
+  setPrivateFindings(true)
+}
+```
 
-## Obfuscation settings
-
-The obfuscation-config.js contains a number of settings for manipulating the code. You may want to tweak these settings in order to further obfuscate your code. There are a few [preset options](https://github.com/javascript-obfuscator/javascript-obfuscator#preset-options) you can experiment with to achieve your desired level of obfuscation. Keep in mind that there will be a tradeoff between obfuscation and performance when tweaking these settings.
-
-Be careful if tweaking the obfuscation-config.js settings, as some of the options could potentially break your code. For example, the `selfDefending` option will prevent your code from running if it is formatted in any way after being obfuscated. See the [complete list of options](https://github.com/javascript-obfuscator/javascript-obfuscator#javascript-obfuscator-options) to get a better understanding.
+This will tell the Forta protocol not to display the emitted alerts in Forta Explorer, as well as not to associate the alert with any block/transaction. If you would like to reference the block/transaction, you would need to set the data yourself in the finding `metadata`.
 
 ## Other considerations
 
-- Make sure to modify the README.md documentation to not reveal anything about the agent. You can keep a separate file (e.g. README_private.md) for your own internal documentation
+- Make sure to modify the README.md documentation to not reveal anything about the agent since it will be published in the agent manifest. You can keep a separate file (e.g. README_private.md) for your own internal documentation
 - Be careful when populating the package.json `name` and `description` fields as these will get published in the agent manifest. You may not want these to reveal anything about the agent
 - For agents with several files, you can encrypt all findings in the top-level agent.js file. This way you don't need to repeat encryption code across multiple files
 - Do not read the public key from the public.pem file as this would make your agent vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your agent's findings on their own machine
 - Make sure that unit tests are also obfuscated, or better yet, just not included in the final image. This could easily reveal what the agent is doing
 
-You now have a private agent that obfuscates its code and encrypts its findings! When you are ready to publish, you can simply run the `npm run publish` or `npm run push` command to deploy the agent.
-
-setPrivateFindings
-not associated to tx/block, so make sure to include all info required in metadata
+Awesome! You now have an agent that encrypts findings which do not appear in Forta Explorer.
