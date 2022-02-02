@@ -131,7 +131,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 
 ```javascript
 const erc20TokenAddress = "0x123abc";
-const transferEventAbi = "event Transfer(address indexed from, address indexed from, uint256 value)";
+const transferEvent = "event Transfer(address indexed from, address indexed to, uint256 value)";
 const transfers = transactionEvent.filterLog(transferEvent, erc20TokenAddress);
 console.log(`found ${transfers.length} transfer events`);
 ```
@@ -144,7 +144,7 @@ The underlying library used for decoding event logs is [ethers.js](https://docs.
 
 ```javascript
 const erc20TokenAddress = "0x123abc";
-const transferFromFunctionAbi = "function transferFrom(address from, address to, uint value)";
+const transferFromFunction = "function transferFrom(address from, address to, uint value)";
 const transfers = transactionEvent.filterFunction(transferFromFunction, erc20TokenAddress);
 console.log(`found ${transfers.length} function calls`);
 ```
