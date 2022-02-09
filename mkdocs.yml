@@ -15,6 +15,7 @@ nav:
       - forta.config.json: config.md
   - Javascript/Typescript SDK: sdk.md
   - Python SDK: python.md
+  - Forta API: api.md
   - Best practices: best-practices.md
   - Agent patterns:
       - Hiding sensitive data: sensitive-data.md
