@@ -2,7 +2,7 @@
 
 The forta.config.json file is a shared global config located in ~/.forta that provides configuration for your agent projects. You can optionally override any value for a specific agent project by providing a forta.config.json file in your project folder. Also, if you want to use a specific config file during local development, you can do so using the `--config` CLI flag. 
 
-!!! note "Securing sensitive information"
+!!! warning "Securing sensitive information"
     Since the config file can contain sensitive information (e.g. Infura API keys), you should **not** commit it into version control. 
 
 Here are the following supported configuration properties:

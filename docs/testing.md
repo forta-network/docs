@@ -9,7 +9,7 @@ export default {
 };
 ```
 
-We are exporting 2 functions inside of an object: `handleTransaction` and `handleBlock`. These functions are where the logic of your agent will live. As blocks and transactions are added to the blockchain, these functions will be invoked with blockchain data to allow the agent to scan for certain conditions and return any findings. You can export either one or both of these functions based on your requirements.
+We are exporting 2 functions inside of an object: `handleTransaction` and `handleBlock`. These functions are where the logic of your agent will live. As blocks and transactions are mined to the blockchain, these functions will be invoked with blockchain data to allow the agent to scan for certain conditions and return any findings. You can export either one or both of these functions based on your requirements.
 
 Let’s take a closer look at the `handleTransaction` function:
 
@@ -49,7 +49,7 @@ We can begin throwing blockchain data at our agent and observe the output with t
 $ npm start
 ```
 
-!!! note "npm scripts"
+!!! info "npm scripts"
     The package.json file includes a set of npm scripts which invoke the `forta-agent` CLI tool. When invoking `npm start` to run the agent, we are using the `forta-agent run` command.
 
 This will run blocks and transactions against your agent as they are mined. Since our gas threshold is pretty high (1 million), we may not flag a lot of transactions. To quickly make changes and see them take effect, try changing the threshold to a lower number and save the agent.ts file. The agent should automatically restart with your new changes.
@@ -87,6 +87,6 @@ We strongly recommend conducting code reviews within your team as a best practic
 
 ## Best practices
 
-To learn about more agent development best practices, see the [Best practices](best-practices.md) section.
+To learn more about agent development best practices, see the [Best practices](best-practices.md) section. Be sure to check out [Useful libraries](useful-libraries.md) for developing your agents as well. There are also sections describing more advanced agent patterns like [hiding sensitive data](sensitive-data.md), [publishing private alerts](private-alerts.md), [transaction simulation](tx-simulation.md) and [querying other chains](querying-chains.md).
 
 Once you have tested and reviewed your agent, you can move on to [deploying your agent](deploying.md).

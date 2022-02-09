@@ -8,7 +8,7 @@ Write your agent to target a specific condition so that it does not generate fin
 
 ## Return findings in a timely manner
 
-Ensure that your agent returns findings in a timely manner. Agents are considered unresponsive by the scan node if they do not return findings within 30 seconds of a request. If the agent is unresponsive multiple consecutive times, it will result in the agent being stopped. If your agent needs to execute for longer than 30 seconds, check out the pattern for [long running tasks](long-running-tasks.md).
+Ensure that your agent returns findings in a timely manner. Agents are considered unresponsive by the scan node if they do not return findings within 30 seconds of a request. If the agent is unresponsive for 3 consecutive requests, it will result in the agent being stopped. If your agent needs to execute for longer than 30 seconds, check out the pattern for [long running tasks](long-running-tasks.md).
 
 ## Break down large agents into smaller files
 
@@ -38,19 +38,19 @@ Ensure that your project documentation README.md is complete, clear and concise.
 
 ## Use the initialize handler
 
-Your agent may need to do some initialization when it starts, for example, by fetching data from some external API. You should use the `initialize` handler function for such logic.
+Your agent may need to do some asynchronous initialization when it starts, for example, by fetching data from some external API. You should use the `initialize` handler function for such logic.
 
 ## Limit number of network calls
 
-Your agent may need to make network calls to fetch data from external sources e.g. token prices. Be sure to make only the necessary network calls in order to respond in a timely manner. Another useful strategy for this could be to use caching.
+Your agent may need to make network calls to fetch data from external sources e.g. token prices. Be sure to make only the necessary network calls in order to respond in a timely manner. Another useful strategy for this could be to use caching. Also, if querying lots of on-chain data (e.g. token balances for a list of accounts), consider using the `ethers-multicall` package listed in the [Useful libraries](useful-libraries.md) section to fetch all the data in a single http request.
 
 ## Use caching where possible
 
-Caching is a great way to improve performance. If you need to store the result of a network call or some other calculation, try to use an in-memory cache.
+Caching is a great way to improve performance. If you need to store the result of a network call or some other calculation, try to use an in-memory cache. The `lru-cache` package listed in the [Useful libraries](useful-libraries.md) section is a great option.
 
 ## Use concurrency where possible
 
-Try to make use of concurrency to maximize performance. For example, if firing multiple network calls to do some calculation, you can fire all the requests at the same time using something like `Promise.all` in Javascript.
+Try to make use of concurrency to maximize performance. For example, if you are firing multiple http requests to fetch on-chain data, you can use the `ethers-multicall` package to fetch all the data in a single http request. Also, if firing multiple network calls, you can fire all the requests at the same time using something like `Promise.all` in Javascript.
 
 ## Obfuscate sensitive information
 

@@ -41,7 +41,7 @@ npm run publish
 
 This will build a Docker image for your agent using the Dockerfile in your project folder and push it to an image repository where scan nodes can find it. A manifest will be generated for your agent (which includes a reference to the Docker image) and be published to the Agent Registry contract.
 
-!!! note "Signing the manifest"
+!!! warning "Signing the manifest"
     The agent manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password**.
 
 When successfully deployed, you should see a message in your output similar to 

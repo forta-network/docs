@@ -14,6 +14,10 @@ Here is a collection of libraries and APIs that agent developers may find useful
 
 [`rolling-math`](https://www.npmjs.com/package/rolling-math) is an awesome library developed by Forta community member [Arbitrary Execution](https://www.arbitraryexecution.com/). It is useful for agents that require analyzing trends across some time window.
 
+## lru-cache
+
+[`lru-cache`](https://www.npmjs.com/package/lru-cache) is great for adding caching capability to your agent. You can specify the maximum number of items you want to cache and keep only the most recently used items.
+
 ## Etherscan API
 
 The [Etherscan APIs](https://etherscan.io/apis) are a great resource for agent developers. They can be used to answer questions like "which transactions was a given address involved in?" or "what is the ABI for a given contract address?". **Note: make sure to use obfuscation if placing an Etherscan API key in your code.**
