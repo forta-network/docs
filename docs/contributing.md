@@ -12,7 +12,13 @@ Runtime blockchain security is a relatively new concept and many people do not k
 
 ## Use the tools
 
-[Forta Explorer](https://explorer.forta.network/) and [Forta Connect](https://connect.forta.network/) are essential tools that community members use to subscribe to alerts and deploy new agents. Helping test these tools by simply using them is a great way to contribute. See a bug or have an idea for improvement? Share it in Discord!
+Helping test the following tools by simply using them is a great way to contribute:
+
+* [Forta Explorer](https://explorer.forta.network/): Explore agents and subscribe to alerts.
+* [Forta Connect](https://connect.forta.network/): Deploy new agents.
+* [Forta API](api.md): Integrate alerts into your monitoring tools or dApps.
+
+See a bug or have an idea for improvement? Share it in Discord!
 
 ## Improve the documentation
 
@@ -30,8 +36,8 @@ Have you written an awesome library to help you develop agents? Sharing such too
 
 Scan nodes are a key piece of Forta infrastructure as they help run agents and share any alerts. A great way to expand the network is to run your own scan node and create bandwidth for more agents to run.
 
-## Analyze historical alerts (coming soon)
+## Analyze historical alerts
 
 There’s a unique opportunity for the community to take advantage of the open data and collaborate on new data science and machine learning solutions together. For example, the community can begin to extract trends and insights from historical alerts that may be helpful to improving blockchain security. And with the right tools and data, Forta can also begin to detect threats and exploits before they happen with increasing accuracy over time.
 
-Do you need access to historical alerts soon for data analysis or for your agent? If so, check out [Forta's API](api.md).
+Do you need access to historical alerts soon for data analysis or for your agent? If so, check out [Forta API](api.md).

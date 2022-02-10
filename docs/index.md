@@ -6,7 +6,7 @@ hide:
 # Overview
 
 !!! important "Forta API (beta)"
-    (2/9/2022) We recently launched API access to alerts. To get access, please check out [the API docs](api.md).
+    (February 2022) We recently launched API access to alerts. For more details, please check out [the API docs](api.md).
 
 Welcome to the Forta Developer SDK documentation!
 
