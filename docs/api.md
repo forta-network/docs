@@ -1,4 +1,4 @@
-# Forta API Docs
+# Forta API
 
 !!! important "Beta Mode"
     (February 2022) The API is in beta mode. If you see any bugs or issues, please let us know at [github:forta-protocol/forta-api](https://github.com/forta-protocol/forta-api/issues/new/choose).
@@ -8,7 +8,7 @@ Forta currently supports free [GraphQL](https://graphql.org/) API access to aler
 ## How can I access the API?
 
 !!! note "API Keys"
-    API Keys are not required at this time.
+    API keys are not required at this time.
 
 The API endpoint is [https://api.forta.network/graphql](https://api.forta.network/graphql).
 
