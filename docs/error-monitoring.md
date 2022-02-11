@@ -1,6 +1,6 @@
 # Error monitoring
 
-You can verify the health of your agent from the status dashboard on Forta Explorer (i.e. `https://explorer.forta.network/agent/YOUR_AGENT_ID`). This will give you information like how many transactions the agent has processed or how many times the agent has been stopped due to unresponsiveness.
+You can verify the health of your agent from the status dashboard on Forta Explorer (i.e. `https://explorer.forta.network/agent/YOUR_AGENT_ID`). This will give you information like how many transactions the agent has processed or the latency of its responses.
 
 While this is useful information, agent developers may want more context about error cases and what caused them. Forta currently does not provide detailed error traces for agents, but developers can still collect this data themselves using an existing monitoring tool (e.g. [Sentry](https://sentry.io/)).
 

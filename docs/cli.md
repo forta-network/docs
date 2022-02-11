@@ -32,6 +32,7 @@ Options:
 --file - run your agent against a JSON file of test data
 --prod - used for running the agent inside of a production environment i.e. you probably won’t need this during development
 --config - specify a config file to use (default: forta.config.json)
+--nocache - disables writing block/tx data to local disk cache (but reads are still enabled)
 ```
 
 Example: Run for a specific transaction

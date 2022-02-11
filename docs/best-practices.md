@@ -8,7 +8,7 @@ Write your agent to target a specific condition so that it does not generate fin
 
 ## Return findings in a timely manner
 
-Ensure that your agent returns findings in a timely manner. Agents are considered unresponsive by the scan node if they do not return findings within 30 seconds of a request. If the agent is unresponsive for 3 consecutive requests, it will result in the agent being stopped. If your agent needs to execute for longer than 30 seconds, check out the pattern for [long running tasks](long-running-tasks.md).
+Ensure that your agent returns findings in a timely manner as requests will timeout after 30 seconds. If your agent needs to execute for longer than 30 seconds, check out the pattern for [long running tasks](long-running-tasks.md).
 
 ## Break down large agents into smaller files
 
