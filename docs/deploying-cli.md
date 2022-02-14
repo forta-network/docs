@@ -10,10 +10,6 @@ The Agent Registry contract currently lives on the Polygon mainnet, so you will 
 
 Documentation for your agent is **required** in order to deploy. It should let others know what conditions your agent is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific agent.
 
-## Discord Badge (optional)
-
-To receive the `Agent Developer [Published]` Discord badge, add the following line at the top of your README.md (replaced with your own Discord username): `Please add me as a Agent Developer [Published] on Discord, my username is FortaKicksAss#010203`. After deploying your agent, share a link to your Github repo in [this channel](https://discord.gg/9V8CH8fCHr) with the hashtag #Published (make sure the repo is public). This is completely **optional**, and we do not require anyone to make their Discord username or codebase public.
-
 ## Configuration
 
 A few configuration values must be set in your package.json and forta.config.json in order to deploy successfully:
