@@ -24,6 +24,7 @@ nav:
       - Long running tasks: long-running-tasks.md
       - Querying other chains: querying-chains.md
       - Error monitoring: error-monitoring.md
+      - Advanced testing: advanced-testing.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - Getting help: help.md
   - FAQ: faq.md

@@ -81,6 +81,10 @@ $ npm test
 
 When writing unit tests, you can easily create mock transactions and blocks using the SDK methods `createTransactionEvent` and `createBlockEvent`. See [here](https://github.com/forta-protocol/forta-agent-examples/blob/master/high-gas-js/src/high.gas.used.spec.js) for an example. Also, you can easily write tests for agents that detect log events or function calls by mocking out the SDK methods `filterLog` and `filterFunction`. See [here](https://github.com/forta-protocol/forta-agent-examples/blob/master/filter-event-and-function-js/src/large.transfer.event.spec.js) for an example.
 
+## Advanced testing
+
+For more advanced testing involving simulated transactions, check out the [Advanced testing](advanced-testing.md) pattern.
+
 ## Code review
 
 We strongly recommend conducting code reviews within your team as a best practice. This will help ensure that any bugs are identified and any edge cases are covered by your agent. 
