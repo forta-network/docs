@@ -1,4 +1,4 @@
-# Forta API
+# API Access & Schema
 
 !!! important "Beta Mode"
     (February 2022) The API is in beta mode. If you see any bugs or issues, please let us know at [github:forta-protocol/forta-api](https://github.com/forta-protocol/forta-api/issues/new/choose).
@@ -22,11 +22,6 @@ Please visit the [API Sandbox](https://studio.apollographql.com/sandbox?endpoint
 <p align="left">
     <img alt="Forta API Schema" src="../api-schema.png" width="700">
 </p>
-
-## Any example queries I can try?
-
-We provided some example queries for you to try in the [API Sandbox](https://studio.apollographql.com/sandbox?endpoint=https%3A%2F%2Fapi.forta.network%2Fgraphql). You can find the examples in the [forta-api github repository](https://github.com/forta-protocol/forta-api#explore-example-queries).
-
 
 ## How can I contribute?
 
