@@ -16,6 +16,7 @@ A few configuration values must be set in your package.json and forta.config.jso
 
 - in package.json (located in your project folder):
     - `name` of your agent project should be specified and **should be globally unique**, so add some unique modifiers
+    - `description` should be a short human-readable description of what your agent does
     - `version` of your agent should also be set as well
     - `chainIds` of the blockchains that your agent will be scanning should be specified as an array of integers. You must specify at least one and up to as many as you need. The supported chain IDs are:
         - 1 (Ethereum mainnet)
@@ -23,9 +24,6 @@ A few configuration values must be set in your package.json and forta.config.jso
         - 56 (Binance Smart Chain mainnet)
         - 43114 (Avalanche mainnet)
     - `repository` is **optional**, but providing a link to your code helps build trust in your agent
-- in forta.config.json (located in ~/.forta):
-    - `ipfsGatewayUrl` is required to publish your agent's metadata (also referred to as manifest) to IPFS. We recommend using the [Infura IPFS gateway](https://infura.io/docs/ipfs) as the simplest option to interact with IPFS (for Infura, this value would be `https://ipfs.infura.io:5001`)
-    - `ipfsGatewayAuth` is needed if your IPFS gateway requires an authorization header (as Infura's does). If using Infura, this value should look something like `Basic MXpNTm5D...QmVNmI0`. See their [authentication docs](https://infura.io/docs/ipfs#section/Authentication) for more information
 
 ## Deploying
 
@@ -38,7 +36,7 @@ npm run publish
 This will build a Docker image for your agent using the Dockerfile in your project folder and push it to an image repository where scan nodes can find it. A manifest will be generated for your agent (which includes a reference to the Docker image) and be published to the Agent Registry contract.
 
 !!! warning "Signing the manifest"
-    The agent manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password**.
+    The agent manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password** (unless you specified `keyfilePassword` in forta.config.json).
 
 When successfully deployed, you should see a message in your output similar to 
 ```
