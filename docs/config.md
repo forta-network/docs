@@ -7,11 +7,11 @@ The forta.config.json file is a shared global config located in ~/.forta that pr
 
 Here are the following supported configuration properties:
 
-- `jsonRpcUrl` - development only; allows you to run your agent against data from a specific JSON-RPC endpoint
-- `traceRpcUrl` - development only; allows you to retrieve trace data from the specified JSON-RPC endpoint
-- `ipfsGatewayUrl` - used to specify a IPFS gateway to upload your agent manifest when publishing
+- `jsonRpcUrl` - for local development only; allows you to run your agent against data from a specific JSON-RPC endpoint
+- `traceRpcUrl` - for local development only; allows you to retrieve trace data from the specified JSON-RPC endpoint
+- `ipfsGatewayUrl` - optional; used to specify a IPFS gateway to upload your agent manifest when publishing
 - `ipfsGatewayAuth` - optional; provide an authorization header if your IPFS gateway requires one
-- `agentRegistryJsonRpcUrl` - used to access the network where the Agent Registry is deployed (i.e. Polygon)
+- `agentRegistryJsonRpcUrl` - optional; used to access the network where the Agent Registry is deployed (i.e. Polygon)
 - `imageRepositoryUsername` - optional; provide authorization username when pushing to an image repository
 - `imageRepositoryPassword` - optional; provide authorization password when pushing to an image repository
 - `keyfile` - optional; specify the name of a keyfile in ~/.forta to use for publishing (by default we assume there is only one keyfile)
