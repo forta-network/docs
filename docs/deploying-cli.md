@@ -2,10 +2,6 @@
 
 This page covers how to deploy your agent using the `forta-agent` CLI tool.
 
-## Acquire Polygon MATIC
-
-The Agent Registry contract currently lives on the Polygon mainnet, so you will need Polygon MATIC tokens in order to deploy. You can acquire some MATIC by following [this guide](matic.md).
-
 ## Documentation
 
 Documentation for your agent is **required** in order to deploy. It should let others know what conditions your agent is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific agent.

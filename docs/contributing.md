@@ -14,8 +14,7 @@ Runtime blockchain security is a relatively new concept and many people do not k
 
 Helping test the following tools by simply using them is a great way to contribute:
 
-* [Forta Explorer](https://explorer.forta.network/): Explore agents and subscribe to alerts.
-* [Forta Connect](https://connect.forta.network/): Deploy new agents.
+* [Forta Explorer](https://explorer.forta.network/): Deploy new agents and subscribe to alerts.
 * [Forta API](api.md): Integrate alerts into your monitoring tools or dApps.
 
 See a bug or have an idea for improvement? Share it in Discord!

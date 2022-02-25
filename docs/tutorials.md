@@ -42,7 +42,7 @@ Here is an excellent set of video tutorials provided by Forta core dev and commu
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iJQREcKAORU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## 11) Deploying an agent with Forta Connect
+## 11) Deploying an agent with Forta Connect (deprecated)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bEDsc0LtGD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
