@@ -15,7 +15,7 @@ nav:
       - forta.config.json: config.md
   - Javascript/Typescript SDK: sdk.md
   - Python SDK: python.md
-  - Forta API: 
+  - Forta API:
       - API Access & Schema: api.md
       - Example Queries: api-examples.md
   - Best practices: best-practices.md
@@ -37,6 +37,7 @@ nav:
       - Aave Contest (11/3/2021): contest2-aave.md
       - OpenZeppelin Contest (11/18/2021): contest3-oz.md
       - Forta Contest (12/17/2021): contest4-forta.md
+      - Solace Contest (1/3/2022): contest5-solace.md
 
 theme:
   name: material
