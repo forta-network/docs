@@ -37,7 +37,7 @@ nav:
       - Aave Contest (11/3/2021): contest2-aave.md
       - OpenZeppelin Contest (11/18/2021): contest3-oz.md
       - Forta Contest (12/17/2021): contest4-forta.md
-      - Solace Contest (1/3/2022): contest5-solace.md
+      - Solace Contest (3/1/2022): contest5-solace.md
 
 theme:
   name: material

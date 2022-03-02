@@ -15,7 +15,7 @@ Contest discussion, support, and announcements are available on Forta’s [Disco
 
 - Only the first **ten (10) QUALIFIED** submissions to each challenge that meet the challenge requirements below will be considered.
 
-- After fifteen qualified submissions are received for a challenge, we will close the challenge and announce it in the #agent-dev-contests channel in Discord. As long as submissions are open, you are welcome to build and submit Agents for the challenges!
+- After ten qualified submissions are received for a challenge, we will close the challenge and announce it in the #agent-dev-contests channel in Discord. As long as submissions are open, you are welcome to build and submit Agents for all challenges!
 
 - All developers that submit a qualifying agent will receive a Forta NFT.
 
