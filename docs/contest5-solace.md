@@ -1,6 +1,6 @@
 **Forta is thrilled to announce the first Agent Development Contest of 2022, co-sponsored by Solace!**
 
-Submit your entries for this contest [**HERE**](https://docs.google.com/forms/d/1RPk5rOC8jRCt2Ht0WaVC-ybTLqArbJ5T1K0uXbIFItY/edit).
+Submit your entries for this contest [**HERE**](https://forms.gle/Aya5hsdAemwB8gno7).
 
 **Forta Agents** are code scripts written in Python, Javascript and Typescript that trigger alerts when certain
 conditions are met. The best Agents trigger alerts when specific conditions indicate that a potential hack or exploit may be taking place and help end users prevent them. For more information on creating your first Agent, check out our [quickstart guide](https://docs.forta.network/en/latest/quickstart/) and [video tutorials](https://docs.forta.network/en/latest/tutorials/).
