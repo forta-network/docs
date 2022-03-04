@@ -155,17 +155,19 @@ Environment="FORTA_PASSPHRASE=<your_forta_passphrase>"
 
 In your Forta directory, there now is a `config.yml` file. You must configure that file so that your scan node knows how to get its blockchain data.
 
-Set the `scan.jsonRpc` and `trace.jsonRpc` values. If you have your own Ethereum node, you can use that node. The trace endpoint must support `trace_block` from the Parity Trace API.
-
-!!! note "JSON-RPC APIs"
-    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic. We suggest running your own ethereum light node for the `scan.jsonRpc` and an Alchemy Growth plan for `trace.jsonRpc` endpoint.  
+Your scan node is registered to scan a single chain. To let your scan node pull chain data, you need to provide a valid `scan.jsonRpc.url`.
 
 !!! warning "Public JSON-RPC APIs"
-    While there are public endpoints available for many chains, please note that the quality of an endpoint will drive the quality of a scan node's output.  
-    
-    When Forta node economics are introduced, the quality of a scan node's output will drive rewards and slashing. We strongly recommend providing your own ethereum light node or using a paid provider when possible.
+    While there are public endpoints available for many chains, please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing. We strongly recommend providing your own blockchain node or using a paid provider when possible.
 
-Example configuration
+If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method from the Parity Trace API. If you have your own Ethereum node, you can use that node.
+
+!!! note "JSON-RPC APIs"
+    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic. We suggest running your own Ethereum light node for the `scan.jsonRpc.url` and an Alchemy Growth plan for `trace.jsonRpc.url` endpoint.
+
+**If your node is scanning chains other than Ethereum mainnet,** please checkout the final section to see options.
+
+Example configuration to scan Ethereum mainnet:
 
 ```yaml
 chainId: 1
@@ -179,7 +181,6 @@ scan:
 trace:
   jsonRpc:
     url: https://eth-mainnet.alchemyapi.io/v2/KEY
-
 ```
 
 ## Register Scan Node
@@ -229,4 +230,60 @@ To see a list of agents that the node is running, use this command.
 
 ```
 $ docker ps | grep forta-agent
+```
+
+## Scanning other chains
+
+It's best to use your own full node for scanning. If you don't have a node, here are some API alternatives that you can use:
+
+### BSC
+
+You can choose from public BSC endpoints at https://docs.binance.org/smart-chain/developer/rpc.html.
+
+```yaml
+chainId: 56
+
+scan:
+  jsonRpc:
+    url: https://bsc-dataseed.binance.org/
+```
+
+### Polygon
+
+```yaml
+chainId: 137
+
+scan:
+  jsonRpc:
+    url: https://polygon-rpc.com/
+```
+
+### Avalanche
+
+```yaml
+chainId: 43114
+
+scan:
+  jsonRpc:
+    url: https://api.avax.network/ext/bc/C/rpc
+```
+
+### Arbitrum
+
+```yaml
+chainId: 42161
+
+scan:
+  jsonRpc:
+    url: https://arb1.arbitrum.io/rpc
+```
+
+### Optimism
+
+```yaml
+chainId: 10
+
+scan:
+  jsonRpc:
+    url: https://mainnet.optimism.io
 ```
