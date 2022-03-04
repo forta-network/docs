@@ -234,9 +234,7 @@ $ docker ps | grep forta-agent
 
 ## Scanning other chains
 
-It's best to use your own full node for scanning. Alternatively, [QuickNode](https://www.quicknode.com/) provides good options to get a node up running on many networks.
-
-If you don't have a node, here are some API alternatives you can use:
+It's best to use your own full node for scanning. If you don't have a node, here are some API alternatives that you can use:
 
 ### BSC
 
@@ -251,8 +249,6 @@ scan:
 ```
 
 ### Polygon
-
-Check out Infura or use the public API:
 
 ```yaml
 chainId: 137
@@ -274,8 +270,6 @@ scan:
 
 ### Arbitrum
 
-Check out Infura or use the public API:
-
 ```yaml
 chainId: 42161
 
@@ -285,8 +279,6 @@ scan:
 ```
 
 ### Optimism
-
-Check out Infura or use the public API:
 
 ```yaml
 chainId: 10
