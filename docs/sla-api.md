@@ -1,12 +1,12 @@
 # SLA API
 
-To evaluate health of nodes in the network, Forta calculates a score (SLA) based on node activity.  This score is a 0-1 score where higher is better.
+To evaluate health of nodes in the network, Forta calculates a score (SLA) based on node activity.  This score is a 0-1 score where higher is better.  This calculation will evolve as more factors are considered.
 
 ## SLA Calculation
 
-Scan nodes are expected to be continuously submitting results from their agents. At this time, "uptime" is the only factor in SLA. The calculation involves a weighted average of two components: number of batches per minute (weighted 1), and whether the latest evaluated block is falling behind (weighted 5).
+Scan nodes are expected to continuously scan the latest blocks and submit results (batches). At this time, "uptime" is the only factor in SLA. The calculation involves a weighted average of two components: number of batches per minute (weighted 1), and whether the latest evaluated block is falling behind (weighted 5).
 
-SLAs are calculated periodically for each minute.  This means, each minute will be assigned a score.  At this time, scores are only available for times older than one hour.
+SLA is calculated periodically for each minute.  This means each minute will be assigned a score.  At this time, scores are only available for times older than one hour.
 
 !!! note "What's a good score?"
     The score is a fairly raw score, and does not mean a % of time up.  A score >90% is generally good.  A score of .90 does not mean 10% of the time the node was down.  The score is subject to change as the network considers other criteria.  Higher is better.
@@ -52,7 +52,7 @@ Fields
   - `lowestScores` - 10 lowest scores for the period (sorted by score ASC)
     - `minute` - Minute for this minute-level score
     - `score` - Score for this minute
-    - `inputs` - Inputs considered (subject to evolve)
+    - `inputs` - Inputs considered in the subscores
         - `batch_count` - Number of batches sent in this minute
         - `expected_batch_count` - Expected number of batches for the minute
         - `latest_block` - Latest block sent by scan node in this minute
