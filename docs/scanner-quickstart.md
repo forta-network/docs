@@ -287,3 +287,7 @@ scan:
   jsonRpc:
     url: https://mainnet.optimism.io
 ```
+
+## Monitor SLA
+
+To monitor whether your scan node is performing well, use the [SLA-API](sla-api.md)
