@@ -27,6 +27,9 @@ nav:
       - Querying other chains: querying-chains.md
       - Error monitoring: error-monitoring.md
       - Advanced testing: advanced-testing.md
+  - Running a Scan Node:
+      - Quickstart: scanner-quickstart.md
+      - SLA API: sla-api.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - Getting help: help.md
   - FAQ: faq.md
