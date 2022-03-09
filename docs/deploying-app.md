@@ -1,10 +1,10 @@
-# Deploying your agent with Forta Explorer
+# Deploying your agent with Forta App
 
-This page covers how to deploy your agent using [Forta Explorer](https://explorer.forta.network/).
+This page covers how to deploy your agent using [Forta App](https://app.forta.network/).
 
 ## Pushing your agent image
 
-Before you head over to Forta Explorer, you will need one piece of information: your agent's image reference. You can get the image reference by running the following command (**make sure your Docker is running before proceeding**):
+Before you head over to Forta App, you will need one piece of information: your agent's image reference. You can get the image reference by running the following command (**make sure your Docker is running before proceeding**):
 
 ```
 npm run push
@@ -15,11 +15,11 @@ This will build your agent image and push it to a repository where scan nodes ca
 ```
 successfully pushed image with reference bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2
 ```
-Copy the image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`) to your clipboard and head over to [Forta Explorer](https://explorer.forta.network/).
+Copy the image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`) to your clipboard and head over to [Forta App](https://app.forta.network/).
 
 ## Import your keyfile into Metamask
 
-Forta Explorer will use your Metamask to send the deployment transaction. You can import your keyfile (located in ~/.forta) with the following steps:
+Forta App will use your Metamask to send the deployment transaction. You can import your keyfile (located in ~/.forta) with the following steps:
 
 1. In Metamask, click the Accounts dropdown and then click on Import Account
 2. Select the JSON File option from the Type dropdown
@@ -29,15 +29,15 @@ Forta Explorer will use your Metamask to send the deployment transaction. You ca
 
 Your keyfile should now be in Metamask.
 
-## Connect your Metamask to Forta Explorer
+## Connect your Metamask to Forta App
 
-You will need to connect your Metamask to Forta Explorer with the following steps:
+You will need to connect your Metamask to Forta App with the following steps:
 
-1. On the Forta Explorer website, click the "Log in with wallet" button on the top right
+1. On the Forta App website, click the "Log in with wallet" button on the top right
 2. A Metamask dialog will appear asking you to select which account to connect. Select your imported account, click Next and then click Connect
 3. Another Metamask dialog will ask you to sign a message to login. Click the Sign button
 
-Your Metamask should now be connected to Forta Explorer. You should see your wallet address appear on the menu at the top right of the page.
+Your Metamask should now be connected to Forta App. You should see your wallet address appear on the menu at the top right of the page.
 
 ## Deploying
 
