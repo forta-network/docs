@@ -4,7 +4,7 @@ To evaluate health of nodes in the network, Forta calculates a score (SLA) based
 
 ## SLA Calculation
 
-Scan nodes are expected to continuously scan the latest blocks and submit results (batches). At this time, "uptime" is the only factor in SLA. The calculation involves a weighted average of two components: number of batches per minute (weighted 1), and whether the latest evaluated block is falling behind (weighted 5).
+Scan nodes are expected to continuously scan the latest blocks and submit results (batches). At this time, "uptime" is the only factor in SLA. The calculation involves a weighted average of two components: number of batches per minute (weighted x1), and whether the latest evaluated block is falling behind (weighted x5).
 
 SLA is calculated periodically for each minute.  This means each minute will be assigned a score.  At this time, scores are only available for times older than one hour.
 
