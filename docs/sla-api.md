@@ -24,8 +24,8 @@ GET https://api.forta.network/stats/sla/scanner/{scannerAddress}
 
 Request Parameters
 
-  - `startTime` - RFC3339 of the start of the date range to consider (Default: 2 hours ago)
-  - `endTime` - RFC3339 of the end of the date range to consider (Default: 1 hour ago)
+  - `startTime` - Start of date range to consider, in RFC3339 (YYYY-MM-DDTHH:MM:SSZ) (Default: 2 hours ago)
+  - `endTime` - End of date range to consider, in RFC3339 (YYYY-MM-DDTHH:MM:SSZ) (Default: 1 hour ago)
 
 Example (Most Recent available Hour)
 ```
