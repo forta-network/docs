@@ -1,10 +1,22 @@
 # Maintaining your agent
 
-## Verifying your agent
+## Verifying agent health
 
 When your agent is published **and picked up by a scan node**, you can view the findings it generates using [Forta Explorer](https://explorer.forta.network/). You can filter findings using your agent ID (which looks like a SHA-256 hash e.g. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) using the search bar near the top of the page.
 
-Also, you can verify that your agent is healthy by visiting the agent status page on Forta Explorer. The URL for this page looks like `https://explorer.forta.network/agent/YOUR_AGENT_ID`. You can see various information about the agent including how many transactions it processed, the different severities of alerts it produced and how long it took to respond to requests. For more detailed information like error stacktraces, check out the [error monitoring pattern](error-monitoring.md).
+Also, you can verify that your agent is healthy by visiting the agent status page on Forta Explorer. The URL for this page looks like `https://explorer.forta.network/agent/YOUR_AGENT_ID`. You can see various information about the agent including how many transactions it processed, the different severities of alerts it produced and how long it took to respond to requests.
+
+## Viewing agent logs
+
+Developers may want further insight into the state of their agents by viewing logs. Forta provides a logging feature that can be used to see what's happening inside of your agent across multiple scan nodes. To enable this feature, you need to add the following line to the agent Dockerfile:
+
+```Dockerfile
+LABEL "network.forta.settings.agent-logs.enable"="true"
+```
+
+Once added, you should **build and publish your agent again**.
+
+The logs are updated by scan nodes every minute. You can fetch the latest logs from `https://api.forta.network/logs/agents/YOUR_AGENT_ID`. Only logs from the past 30 days are stored. To enable JSON format responses, you can specify the `Accept: application/json` header in your request. If you would like integrate an existing error monitoring tool, check out the [error monitoring pattern](error-monitoring.md).
 
 ## Disabling/enabling your agent
 
