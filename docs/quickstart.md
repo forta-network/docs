@@ -61,4 +61,4 @@ We’re excited to see what sort of innovative agents the community comes up wit
 Be sure to check out [Useful libraries](useful-libraries.md) for developing your agents, including a set of low-code templates you can use. To learn more about what makes a good agent, see our [FAQ](faq.md#what-makes-a-good-agent) section.
 ## Examples
 
-You can find some example implementations of Forta Agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples). Another great place to see real agents in action is on the [Forta Explorer Agents](https://explorer.forta.network/agents) page.
+You can find some example implementations of Forta Agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples). Another great place to see real agents in action is on the [Forta App Discover](https://app.forta.network/) page.

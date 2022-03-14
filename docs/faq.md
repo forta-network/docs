@@ -6,7 +6,7 @@ Short answer: no. Forta is not a blockchain in the sense that it does not mainta
 
 ## How can I consume alerts from agents?
 
-You can subscribe to alerts from specific agents or contracts using [Forta Explorer](https://explorer.forta.network/). If you click on the "Subscribe to alerts" button and connect your wallet, you can setup notifications for alerts. Currently, email and Slack notifications are supported with more options coming in the near future.
+You can subscribe to alerts from specific agents or contracts using [Forta App](https://app.forta.network/). If you connect your wallet and click on "My Alert Subscriptions", you can setup notifications for alerts. Currently, email and Slack notifications are supported with more options coming in the near future.
 
 ## How do I run a scan node?
 

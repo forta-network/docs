@@ -80,7 +80,7 @@ Great! Now that you have an agent generating encrypted findings, let's go over h
 
 ## Decrypting findings
 
-In order to decrypt the finding, you would make use of the private key in private.pem. In practice, you would subscribe to findings from your particular agent using [Forta Explorer](https://explorer.forta.network/notifications) and receive its contents via some webhook. Upon receiving the finding, you can decrypt the data using the private key.
+In order to decrypt the finding, you would make use of the private key in private.pem. In practice, you would subscribe to findings from your particular agent using the [Forta App](https://app.forta.network/notifications) and receive its contents via some webhook. Upon receiving the finding, you can decrypt the data using the private key.
 
 For this example's sake, the project has a `decrypt.js` file to help you decrypt your finding data and verify that it's what you expect. If you open a `node` console from your project folder, you can decrypt the data string from your finding:
 

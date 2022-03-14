@@ -16,7 +16,7 @@ Here are the following supported configuration properties:
 - `imageRepositoryPassword` - optional; provide authorization password when pushing to an image repository
 - `keyfile` - optional; specify the name of a keyfile in ~/.forta to use for publishing (by default we assume there is only one keyfile)
 - `keyfilePassword` - optional; specify the password to decrypt the keyfile, useful for CI/CD pipelines
-- `agentId` - optional; specify the agentId of this agent, to be used for agents deployed with Forta Explorer
+- `agentId` - optional; specify the agentId of this agent, to be used for agents deployed with Forta App
 
 ## Migrating to v0.0.19+
 
