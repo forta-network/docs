@@ -27,4 +27,4 @@ Get started by [building your first agent](quickstart.md). Join our community [D
 
 _Javascript SDK version: 0.0.39_<br>
 _Python SDK version: 0.0.13_<br>
-_Last updated: February 25th, 2022_
+_Last updated: March 14th, 2022_
