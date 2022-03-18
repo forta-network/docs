@@ -15,10 +15,13 @@ A few configuration values must be set in your package.json and forta.config.jso
     - `description` should be a short human-readable description of what your agent does
     - `version` of your agent should also be set as well
     - `chainIds` of the blockchains that your agent will be scanning should be specified as an array of integers. You must specify at least one and up to as many as you need. The supported chain IDs are:
-        - 1 (Ethereum mainnet)
-        - 137 (Polygon mainnet)
-        - 56 (Binance Smart Chain mainnet)
-        - 43114 (Avalanche mainnet)
+        - 1 (Ethereum)
+        - 137 (Polygon)
+        - 56 (Binance Smart Chain)
+        - 43114 (Avalanche)
+        - 42161 (Arbitrum)
+        - 10 (Optimism)
+        - 250 (Fantom)
     - `repository` is **optional**, but providing a link to your code helps build trust in your agent
 
 ## Deploying

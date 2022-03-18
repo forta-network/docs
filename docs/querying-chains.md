@@ -1,6 +1,6 @@
 # Querying other chains
 
-Forta currently supports scanning on several chains including Ethereum, Polygon, BSC and Avalanche. More chains will inevitably be added in the future, but some agents may need to scan data from chains that are not yet officially supported (could be mainnet or testnet). To achieve this, agents can manually read data from any other chain themselves.
+Forta currently supports scanning on several chains including Ethereum, Polygon, BSC, Avalanche, Arbitrum, Optimism and Fantom. More chains will inevitably be added in the future, but some agents may need to scan data from chains that are not yet officially supported (could be mainnet or testnet). To achieve this, agents can manually read data from any other chain themselves.
 
 This page will describe how to interact with any blockchain using a Javascript example agent. This example builds on the [long running task pattern](long-running-tasks.md) to query the Rinkeby testnet and find transactions with high gas usage. The complete code for this example can be found [here](https://github.com/forta-protocol/forta-agent-examples/tree/master/querying-other-chains-js).
 
