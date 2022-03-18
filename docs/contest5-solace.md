@@ -57,6 +57,9 @@ See Forta’s [Code Review checklist](https://github.com/forta-protocol/agent-re
 
     - SOLACE Contract: 0x9c051f8a6648a51ef324d30c235da74d060153ac (ETH)
     - SOLACE Docs: [https://docs.solace.fi/docs/dev-docs/intro](https://docs.solace.fi/docs/dev-docs/intro)
+    <br/><br/>
+    - Winner: **vvlovsky**
+    - Winning Agent: [https://explorer.forta.network/agent/0x7d63...1f07](https://explorer.forta.network/agent/0x7d631d5f2c51d939b6d38cee614c535da1d84606fdf46bd75973099ddc251f07) ([source code](https://github.com/VVlovsky/Forta-Solace-Agents/tree/master/whales-monitoring-agent))
 
 2. **BondTeller Monitoring for Basic Functions**
 
@@ -64,6 +67,9 @@ See Forta’s [Code Review checklist](https://github.com/forta-protocol/agent-re
 
     - DAI BondTeller Contract: 0x501ACe677634Fd09A876E88126076933b686967a (ETH)
     - BondTeller Docs: [https://docs.solace.fi/docs/dev-docs/contracts/bonds/BondTellerErc20](https://docs.solace.fi/docs/dev-docs/contracts/bonds/BondTellerErc20)
+    <br/><br/>
+    - Winner: **hyodar**
+    - Winning Agent: [https://explorer.forta.network/agent/0x022e...aee9](https://explorer.forta.network/agent/0x022eb176480a2cd02ef5cb928a48fce47578afa79a9a7d861c7d22ff8426aee9) ([source code](https://github.com/Hyodar/forta-agents/tree/master/bondteller-governance-solace))
 
 3. **BondTeller Monitoring Whale Alert**
 
@@ -71,6 +77,9 @@ See Forta’s [Code Review checklist](https://github.com/forta-protocol/agent-re
 
     - DAI BondTeller Contract: 0x501ACe677634Fd09A876E88126076933b686967a (ETH)
     - BondTeller Docs: [https://docs.solace.fi/docs/dev-docs/contracts/bonds/BondTellerErc20](https://docs.solace.fi/docs/dev-docs/contracts/bonds/BondTellerErc20)
+    <br/><br/>
+    - Winner: **karmacoma**
+    - Winning Agent: [https://explorer.forta.network/agent/0x407c...c276](https://explorer.forta.network/agent/0x407cf0397de5fc49f8e1329b556dcc5b91286d66532a8ecd979214d7cbc3c276) ([source code](https://github.com/karmacoma-eth/forta-solace-bondteller-whale-alert))
 
 4. **StakingRewards Monitoring**
 
@@ -78,6 +87,9 @@ See Forta’s [Code Review checklist](https://github.com/forta-protocol/agent-re
 
     - StakingRewards Contract: 0x501ace3D42f9c8723B108D4fBE29989060a91411 (ETH)
     - StakingRewards Docs: [https://docs.solace.fi/docs/dev-docs/contracts/staking/StakingRewards](https://docs.solace.fi/docs/dev-docs/contracts/staking/StakingRewards)
+    <br/><br/>
+    - Winner: **miguelmtzinf**
+    - Winning Agent: [https://explorer.forta.network/agent/0xda27...e6ee](https://explorer.forta.network/agent/0xda27257407055ba19ddf476e199ba03ff10d6a6ac140c0495e2c487cddbbe6ee) ([source code](https://github.com/miguelmtzinf/forta-solace-monitoring-staking-rewards))
 
 5. **BondDepository Monitoring**
 
@@ -85,3 +97,6 @@ See Forta’s [Code Review checklist](https://github.com/forta-protocol/agent-re
 
     - BondDepository Contract: 0x501ACe2f00EC599D4FDeA408680e192f88D94D0D (ETH)
     - BondDepository Docs: [https://docs.solace.fi/docs/dev-docs/contracts/bonds/BondDepository](https://docs.solace.fi/docs/dev-docs/contracts/bonds/BondDepository)
+    <br/><br/>
+    - Winner: **vvlovsky**
+    - Winning Agent: [https://explorer.forta.network/agent/0x143f...c15d](https://explorer.forta.network/agent/0x143f7fd87abb8aff430bdf0a5d94ce8da09159c2fc509f72f6a34838eb9bc15d) ([source code](https://github.com/VVlovsky/Forta-Solace-Agents/tree/master/bonddepository-monitoring-agent))
