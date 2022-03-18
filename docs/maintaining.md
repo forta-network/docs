@@ -8,15 +8,7 @@ Also, you can verify that your agent is healthy by visiting the agent status pag
 
 ## Viewing agent logs
 
-Developers may want further insight into the state of their agents by viewing logs. Forta provides a logging feature that can be used to see what's happening inside of your agent across multiple scan nodes. To enable this feature, you need to add the following line to the agent Dockerfile:
-
-```Dockerfile
-LABEL "network.forta.settings.agent-logs.enable"="true"
-```
-
-Once added, you should **build and publish your agent again**.
-
-The logs are updated by scan nodes every minute. You can fetch the latest logs from `https://api.forta.network/logs/agents/YOUR_AGENT_ID`. Only logs from the past 30 days are stored. To enable JSON format responses, you can specify the `Accept: application/json` header in your request. If you would like integrate an existing error monitoring tool, check out the [error monitoring pattern](error-monitoring.md).
+If [logging is enabled](deploying.md#enable-logging-optional), agent logs are updated by scan nodes every minute. You can fetch the latest logs from `https://api.forta.network/logs/agents/YOUR_AGENT_ID`. Only logs from the past 30 days are stored. To enable JSON format responses, you can specify the `Accept: application/json` header in your request. If you would like to integrate an existing error monitoring tool, check out the [error monitoring pattern](error-monitoring.md).
 
 ## Disabling/enabling your agent
 
