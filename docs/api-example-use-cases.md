@@ -27,7 +27,7 @@ Or you can also develop more complex mitigation scripts that:
 2. Build out an extension to wallets like Metamask to display warnings about a particular wallet address or smart contracts users are about to interact with.
 3. Build a smart contract safety checker tool.
 
-This is all possible by querying the API for alerts across agents that are associated with  specific wallets, smart contracts at different points in time. 
+This is all possible by querying the API for alerts across agents that are associated with specific wallets and/or smart contracts at different points in time. 
 
 ## 3. Make Informed Financial Decisions
 
