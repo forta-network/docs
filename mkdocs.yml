@@ -18,6 +18,7 @@ nav:
   - Forta API:
       - API Access: api.md
       - GraphQL API Reference: forta-api-reference/index.html
+      - Example Use Cases: api-example-use-cases.md
       - Example Queries: api-examples.md
   - Best practices: best-practices.md
   - Agent patterns:
