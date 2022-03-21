@@ -16,7 +16,8 @@ nav:
   - Javascript/Typescript SDK: sdk.md
   - Python SDK: python.md
   - Forta API:
-      - API Access & Schema: api.md
+      - API Access: api.md
+      - GraphQL API Reference: forta-api-reference/index.html
       - Example Queries: api-examples.md
   - Best practices: best-practices.md
   - Agent patterns:

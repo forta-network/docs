@@ -1,0 +1,3183 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
+    <title>Forta API GraphQL API Reference</title>
+    <link rel="stylesheet" href="stylesheets/spectaql.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="javascripts/spectaql.min.js"></script>
+  </head>
+  <body id="spectacle">
+    <div id="page" class="drawer-layout drawer-slide-right-large">
+      <div id="sidebar">
+        <button id="close-button" class="close-button" aria-label="Close menu" type="button" data-drawer-close>
+          <span aria-hidden="true">×</span>
+        </button>
+        <div id="logo">
+          <img src="images/logo.png" title="Forta API GraphQL API Reference" /> </div>
+        <nav id="nav" role="navigation">
+          <h5>Introduction</h5>
+          <a href="#introduction">Welcome</a>
+          <a href="#intro-item-0">Forta API Support</a>
+          <h5>Operations</h5>
+          <a href="#operation-alerts-Queries"> alerts </a>
+          <a href="#operation-project-Queries"> project </a>
+          <a href="#operation-projects-Queries"> projects </a>
+          <h5>Types</h5>
+          <a href="#definition-Agent"> Agent </a>
+          <a href="#definition-Alert"> Alert </a>
+          <a href="#definition-AlertEndCursor"> AlertEndCursor </a>
+          <a href="#definition-AlertEndCursorInput"> AlertEndCursorInput </a>
+          <a href="#definition-AlertPageInfo"> AlertPageInfo </a>
+          <a href="#definition-AlertSource"> AlertSource </a>
+          <a href="#definition-AlertsInput"> AlertsInput </a>
+          <a href="#definition-AlertsResponse"> AlertsResponse </a>
+          <a href="#definition-BigInt"> BigInt </a>
+          <a href="#definition-Block"> Block </a>
+          <a href="#definition-BlockRange"> BlockRange </a>
+          <a href="#definition-Boolean"> Boolean </a>
+          <a href="#definition-Byte"> Byte </a>
+          <a href="#definition-Contacts"> Contacts </a>
+          <a href="#definition-Contract"> Contract </a>
+          <a href="#definition-Currency"> Currency </a>
+          <a href="#definition-DID"> DID </a>
+          <a href="#definition-Date"> Date </a>
+          <a href="#definition-DateRange"> DateRange </a>
+          <a href="#definition-DateTime"> DateTime </a>
+          <a href="#definition-Duration"> Duration </a>
+          <a href="#definition-EmailAddress"> EmailAddress </a>
+          <a href="#definition-GUID"> GUID </a>
+          <a href="#definition-HSL"> HSL </a>
+          <a href="#definition-HSLA"> HSLA </a>
+          <a href="#definition-HexColorCode"> HexColorCode </a>
+          <a href="#definition-Hexadecimal"> Hexadecimal </a>
+          <a href="#definition-IBAN"> IBAN </a>
+          <a href="#definition-IPv4"> IPv4 </a>
+          <a href="#definition-IPv6"> IPv6 </a>
+          <a href="#definition-ISBN"> ISBN </a>
+          <a href="#definition-ISO8601Duration"> ISO8601Duration </a>
+          <a href="#definition-Int"> Int </a>
+          <a href="#definition-JSON"> JSON </a>
+          <a href="#definition-JSONObject"> JSONObject </a>
+          <a href="#definition-JWT"> JWT </a>
+          <a href="#definition-Latitude"> Latitude </a>
+          <a href="#definition-LocalDate"> LocalDate </a>
+          <a href="#definition-LocalEndTime"> LocalEndTime </a>
+          <a href="#definition-LocalTime"> LocalTime </a>
+          <a href="#definition-Long"> Long </a>
+          <a href="#definition-Longitude"> Longitude </a>
+          <a href="#definition-MAC"> MAC </a>
+          <a href="#definition-NegativeFloat"> NegativeFloat </a>
+          <a href="#definition-NegativeInt"> NegativeInt </a>
+          <a href="#definition-NonEmptyString"> NonEmptyString </a>
+          <a href="#definition-NonNegativeFloat"> NonNegativeFloat </a>
+          <a href="#definition-NonNegativeInt"> NonNegativeInt </a>
+          <a href="#definition-NonPositiveFloat"> NonPositiveFloat </a>
+          <a href="#definition-NonPositiveInt"> NonPositiveInt </a>
+          <a href="#definition-ObjectID"> ObjectID </a>
+          <a href="#definition-PhoneNumber"> PhoneNumber </a>
+          <a href="#definition-Port"> Port </a>
+          <a href="#definition-PositiveFloat"> PositiveFloat </a>
+          <a href="#definition-PositiveInt"> PositiveInt </a>
+          <a href="#definition-PostalCode"> PostalCode </a>
+          <a href="#definition-Project"> Project </a>
+          <a href="#definition-ProjectEdge"> ProjectEdge </a>
+          <a href="#definition-ProjectPageInfo"> ProjectPageInfo </a>
+          <a href="#definition-ProjectsInput"> ProjectsInput </a>
+          <a href="#definition-ProjectsResponse"> ProjectsResponse </a>
+          <a href="#definition-RGB"> RGB </a>
+          <a href="#definition-RGBA"> RGBA </a>
+          <a href="#definition-SafeInt"> SafeInt </a>
+          <a href="#definition-Social"> Social </a>
+          <a href="#definition-Sort"> Sort </a>
+          <a href="#definition-String"> String </a>
+          <a href="#definition-Time"> Time </a>
+          <a href="#definition-Timestamp"> Timestamp </a>
+          <a href="#definition-Token"> Token </a>
+          <a href="#definition-URL"> URL </a>
+          <a href="#definition-USCurrency"> USCurrency </a>
+          <a href="#definition-UUID"> UUID </a>
+          <a href="#definition-UnsignedFloat"> UnsignedFloat </a>
+          <a href="#definition-UnsignedInt"> UnsignedInt </a>
+          <a href="#definition-UtcOffset"> UtcOffset </a>
+          <a href="#definition-Void"> Void </a>
+          <a href="#definition-scanNodeFilters"> scanNodeFilters </a>
+        </nav>
+      </div>
+      <div id="docs" class="row collapse expanded drawer" data-drawer>
+        <button class="floating-menu-icon" type="button" data-drawer-slide="right">
+          <span class="hamburger"></span>
+        </button>
+        <div class="example-box doc-content"></div>
+        <article id="content">
+          <h1 class="doc-title">Forta API GraphQL API Reference</h1>
+          <div id="introduction" data-traverse-target="introduction">
+            <div class="doc-row">
+              <div class="doc-copy">
+                <p>Free
+                  <a href="https://graphql.org/">GraphQL</a> API access to alerts and blockchain projects data</p>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <p>Terms of Service:
+                    <a href="https://forta.org/terms-of-use/">https://forta.org/terms-of-use/</a>
+                  </p>
+                  <h5>API Endpoints</h5> <pre><code>Forta API Production:
+https://api.forta.network/graphql
+</code></pre> </section>
+              </div>
+            </div>
+            <div id="intro-item-0" data-traverse-target="intro-item-0">
+              <div class="doc-row">
+                <h5 class="doc-intro-item">Forta API Support</h5>
+                <div class="doc-copy">
+                  <p>The API is in beta mode. If you see any bugs or issues, please let us know at
+                    <a href="https://github.com/forta-protocol/forta-api/issues/new/choose">github:forta-protocol/forta-api</a> or
+                    <a href="https://discord.gg/38eg5EP3F9">discord</a>.</p>
+                </div>
+                <div class="doc-examples"> </div>
+              </div>
+            </div>
+          </div>
+          <h1>Queries</h1>
+          <span id="path-alerts"></span>
+          <div id="operation-alerts-Queries" class="operation panel" data-traverse-target="operation-alerts-Queries">
+            <h2 class="operation-name "> <code>alerts</code> </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description operation-description"> Fetches alerts </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body"> </section>
+                <section class="swagger-responses"> Returns an
+                  <a href="#definition-AlertsResponse"><code>AlertsResponse</code></a>
+                </section>
+                <br>
+                <section class="swagger-request-params">
+                  <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>input</code> -
+                        <a href="#definition-AlertsInput"><code>AlertsInput</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h4>Example</h4>
+                  <h5>Query</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> alerts<span class="hljs-tag">(<span class="hljs-code">$input</span>:<span class="hljs-type"> AlertsInput)</span> {
+  alerts(input: <span class="hljs-code">$input</span>)</span> <span class="hljs-tag">{
+    <span class="hljs-symbol">alerts <span class="hljs-tag">{
+    }</span></span>
+    <span class="hljs-symbol">pageInfo <span class="hljs-tag">{
+      <span class="hljs-type">...AlertPageInfoFragment</span>
+    }</span></span>
+  }</span></span>
+}
+</code></pre> </body>
+                  </html>
+                  <h5>Variables</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"input"</span>: <span class="hljs-string">AlertsInput</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy"> </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response </h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"alerts"</span>: {
+      <span class="hljs-attr">"alerts"</span>: [<span class="hljs-string">Alert</span>],
+      <span class="hljs-attr">"pageInfo"</span>: <span class="hljs-string">AlertPageInfo</span>
+    }
+  }
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <span id="path-project"></span>
+          <div id="operation-project-Queries" class="operation panel" data-traverse-target="operation-project-Queries">
+            <h2 class="operation-name "> <code>project</code> </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description operation-description"> Fetches a web3 project given its project ID </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body"> </section>
+                <section class="swagger-responses"> Returns a
+                  <a href="#definition-Project"><code>Project</code></a>
+                </section>
+                <br>
+                <section class="swagger-request-params">
+                  <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>id</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h4>Example</h4>
+                  <h5>Query</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> project<span class="hljs-tag">(<span class="hljs-code">$id</span>:<span class="hljs-type"> String!</span>)</span> <span class="hljs-tag">{
+  <span class="hljs-symbol">project<span class="hljs-tag">(id: <span class="hljs-code">$id</span>)</span> <span class="hljs-tag">{
+    <span class="hljs-symbol">contacts <span class="hljs-tag">{
+      <span class="hljs-type">...ContactsFragment</span>
+    }</span></span>
+    <span class="hljs-symbol">name</span>
+    <span class="hljs-symbol">id</span>
+    <span class="hljs-symbol">social <span class="hljs-tag">{
+      <span class="hljs-type">...SocialFragment</span>
+    }</span></span>
+    <span class="hljs-symbol">token <span class="hljs-tag">{
+      <span class="hljs-type">...TokenFragment</span>
+    }</span></span>
+    <span class="hljs-symbol">website</span>
+  }</span></span>
+}</span></span>
+</code></pre> </body>
+                  </html>
+                  <h5>Variables</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy"> </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response </h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"project"</span>: {
+      <span class="hljs-attr">"contacts"</span>: <span class="hljs-string">Contacts</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"social"</span>: <span class="hljs-string">Social</span>,
+      <span class="hljs-attr">"token"</span>: <span class="hljs-string">Token</span>,
+      <span class="hljs-attr">"website"</span>: <span class="hljs-string">"abc123"</span>
+    }
+  }
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <span id="path-projects"></span>
+          <div id="operation-projects-Queries" class="operation panel" data-traverse-target="operation-projects-Queries">
+            <h2 class="operation-name "> <code>projects</code> </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description operation-description"> Fetches all existing web3 projects recorded in github repo:
+                  <a href="https://github.com/ethereum-lists/contracts/tree/main/projects">https://github.com/ethereum-lists/contracts/tree/main/projects</a>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body"> </section>
+                <section class="swagger-responses"> Returns a
+                  <a href="#definition-ProjectsResponse"><code>ProjectsResponse</code></a>
+                </section>
+                <br>
+                <section class="swagger-request-params">
+                  <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>input</code> -
+                        <a href="#definition-ProjectsInput"><code>ProjectsInput</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h4>Example</h4>
+                  <h5>Query</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> projects<span class="hljs-tag">(<span class="hljs-code">$input</span>:<span class="hljs-type"> ProjectsInput)</span> {
+  projects(input: <span class="hljs-code">$input</span>)</span> <span class="hljs-tag">{
+    <span class="hljs-symbol">edges <span class="hljs-tag">{
+      <span class="hljs-type">...ProjectEdgeFragment</span>
+    }</span></span>
+    <span class="hljs-symbol">pageInfo <span class="hljs-tag">{
+      <span class="hljs-type">...ProjectPageInfoFragment</span>
+    }</span></span>
+  }</span></span>
+}
+</code></pre> </body>
+                  </html>
+                  <h5>Variables</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"input"</span>: <span class="hljs-string">ProjectsInput</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy"> </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response </h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"projects"</span>: {
+      <span class="hljs-attr">"edges"</span>: [<span class="hljs-string">ProjectEdge</span>],
+      <span class="hljs-attr">"pageInfo"</span>: <span class="hljs-string">ProjectPageInfo</span>
+    }
+  }
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <span id="tag-types"></span>
+          <h1>Types</h1>
+          <div id="definition-Agent" class="definition panel" data-traverse-target="definition-Agent">
+            <h2 class="panel-title">
+              <a name="/definitions/Agent"></a>
+              <p><code>Agent</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Agent information</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="id"> <code>id</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Agent id </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="reference"> <code>reference</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Agent manifest reference </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="image"> <code>image</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Agent docker image url </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"reference"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"image"</span>: <span class="hljs-string">"abc123"</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Alert" class="definition panel" data-traverse-target="definition-Alert">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Alert"></a>
+              <p><code>Alert</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Alert information</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="alertId"> <code>alertId</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Unique string to identify this class of finding, primarily used to group similar findings for the end user </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="addresses"> <code>addresses</code> -
+                        <a href="#definition-String"><code>[String]</code></a>
+                      </td>
+                      <td> List of addresses involved in the alert </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="contracts"> <code>contracts</code> -
+                        <a href="#definition-Contract"><code>[Contract]</code></a>
+                      </td>
+                      <td> List of contracts related to the alert </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="createdAt"> <code>createdAt</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Timestamp when the alert was published </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="description"> <code>description</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Text description of the alert </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="hash"> <code>hash</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Alert hash identifier </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="metadata"> <code>metadata</code> -
+                        <a href="#definition-JSONObject"><code>JSONObject</code></a>
+                      </td>
+                      <td> Extra alert information </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="name"> <code>name</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Alert name </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="projects"> <code>projects</code> -
+                        <a href="#definition-Project"><code>[Project]</code></a>
+                      </td>
+                      <td> List of Web3 projects related to the alert </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="protocol"> <code>protocol</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Name of protocol being reported on </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="scanNodeCount"> <code>scanNodeCount</code> -
+                        <a href="#definition-Int"><code>Int</code></a>
+                      </td>
+                      <td> Number of scanners that found the alert </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="severity"> <code>severity</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td>
+                        <p>Impact level of finding</p>
+                        <p>CRITICAL - Exploitable vulnerabilities, massive impact on users/funds</p>
+                        <p>HIGH - Exploitable under more specific conditions, significant impact on users/funds</p>
+                        <p>MEDIUM - Notable unexpected behaviours, moderate to low impact on users/funds</p>
+                        <p>LOW - Minor oversights, negligible impact on users/funds</p>
+                        <p>INFO - Miscellaneous behaviours worth describing</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="source"> <code>source</code> -
+                        <a href="#definition-AlertSource"><code>AlertSource</code></a>
+                      </td>
+                      <td> Source where the alert was detected </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="findingType"> <code>findingType</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td>
+                        <p>Type of finding</p>
+                        <p>UNKNOWN_TYPE</p>
+                        <p>EXPLOIT</p>
+                        <p>SUSPICIOUS</p>
+                        <p>DEGRADED</p>
+                        <p>INFO</p>
+                      </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"alertId"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"addresses"</span>: [<span class="hljs-string">"xyz789"</span>],
+  <span class="hljs-attr">"contracts"</span>: [<span class="hljs-string">Contract</span>],
+  <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">JSONObject</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"projects"</span>: [<span class="hljs-string">Project</span>],
+  <span class="hljs-attr">"protocol"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"scanNodeCount"</span>: <span class="hljs-number">987</span>,
+  <span class="hljs-attr">"severity"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"source"</span>: <span class="hljs-string">AlertSource</span>,
+  <span class="hljs-attr">"findingType"</span>: <span class="hljs-string">"abc123"</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-AlertEndCursor" class="definition panel" data-traverse-target="definition-AlertEndCursor">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/AlertEndCursor"></a>
+              <p><code>AlertEndCursor</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="blockNumber"> <code>blockNumber</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="alertId"> <code>alertId</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">NonNegativeInt</span>, <span class="hljs-attr">"alertId"</span>: <span class="hljs-string">"abc123"</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-AlertEndCursorInput" class="definition panel" data-traverse-target="definition-AlertEndCursorInput">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/AlertEndCursorInput"></a>
+              <p><code>AlertEndCursorInput</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Search after specified block number and alertId</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Input Field</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>blockNumber</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td><code>alertId</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"blockNumber"</span>: <span class="hljs-string">NonNegativeInt</span>, <span class="hljs-attr">"alertId"</span>: <span class="hljs-string">"xyz789"</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-AlertPageInfo" class="definition panel" data-traverse-target="definition-AlertPageInfo">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/AlertPageInfo"></a>
+              <p><code>AlertPageInfo</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="endCursor"> <code>endCursor</code> -
+                        <a href="#definition-AlertEndCursor"><code>AlertEndCursor!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="hasNextPage"> <code>hasNextPage</code> -
+                        <a href="#definition-Boolean"><code>Boolean!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"endCursor"</span>: <span class="hljs-string">AlertEndCursor</span>, <span class="hljs-attr">"hasNextPage"</span>: <span class="hljs-literal">false</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-AlertSource" class="definition panel" data-traverse-target="definition-AlertSource">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/AlertSource"></a>
+              <p><code>AlertSource</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Source where the threat was detected</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="transactionHash"> <code>transactionHash</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Transaction where the threat was detected </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="agent"> <code>agent</code> -
+                        <a href="#definition-Agent"><code>Agent</code></a>
+                      </td>
+                      <td> Agent that triggered the alert </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="block"> <code>block</code> -
+                        <a href="#definition-Block"><code>Block</code></a>
+                      </td>
+                      <td> Block where the threat was detected </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">Agent</span>,
+  <span class="hljs-attr">"block"</span>: <span class="hljs-string">Block</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-AlertsInput" class="definition panel" data-traverse-target="definition-AlertsInput">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/AlertsInput"></a>
+              <p><code>AlertsInput</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Alert list input</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="after"> <code>after</code> -
+                        <a href="#definition-AlertEndCursorInput"><code>AlertEndCursorInput</code></a>
+                      </td>
+                      <td> Search results after the specified cursor </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="addresses"> <code>addresses</code> -
+                        <a href="#definition-String"><code>[String]</code></a>
+                      </td>
+                      <td> Indicate a list of addresses. Alerts returned will have those addresses involved. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="agents"> <code>agents</code> -
+                        <a href="#definition-String"><code>[String]</code></a>
+                      </td>
+                      <td> Indicate a list of agent hashes. Alerts returned will only be from any of those agents. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="blockNumberRange"> <code>blockNumberRange</code> -
+                        <a href="#definition-BlockRange"><code>BlockRange</code></a>
+                      </td>
+                      <td> Block number range Alerts for the block number range will be returned. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="chainId"> <code>chainId</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                      </td>
+                      <td> Indicate a chain Id: EIP155 identifier of the chain Alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="createdSince"> <code>createdSince</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                      </td>
+                      <td> Indicate number of milliseconds Alerts returned will be alerts created since the number of milliseconds indicated ago. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="blockDateRange"> <code>blockDateRange</code> -
+                        <a href="#definition-DateRange"><code>DateRange</code></a>
+                      </td>
+                      <td> Block Date range Alerts returned will be between the specified start and end block timestamp dates when the threats were detected. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="first"> <code>first</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                      </td>
+                      <td> Indicate max number of results. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="projectId"> <code>projectId</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Indicate a project Id. Alerts returned will only be from that project. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="blockSortDirection"> <code>blockSortDirection</code> -
+                        <a href="#definition-Sort"><code>Sort</code></a>
+                      </td>
+                      <td> Indicate sorting order by block number, 'desc' or 'asc'. Default is 'desc'. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="scanNodeConfirmations"> <code>scanNodeConfirmations</code> -
+                        <a href="#definition-scanNodeFilters"><code>scanNodeFilters</code></a>
+                      </td>
+                      <td> Filter alerts by number of scan nodes confirming the alert. </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="transactionHash"> <code>transactionHash</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Indicate a transaction hash Alerts returned will only be from that transaction. </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"after"</span>: <span class="hljs-string">AlertEndCursorInput</span>,
+  <span class="hljs-attr">"addresses"</span>: [<span class="hljs-string">"abc123"</span>],
+  <span class="hljs-attr">"agents"</span>: [<span class="hljs-string">"xyz789"</span>],
+  <span class="hljs-attr">"blockNumberRange"</span>: <span class="hljs-string">BlockRange</span>,
+  <span class="hljs-attr">"chainId"</span>: <span class="hljs-string">NonNegativeInt</span>,
+  <span class="hljs-attr">"createdSince"</span>: <span class="hljs-string">NonNegativeInt</span>,
+  <span class="hljs-attr">"blockDateRange"</span>: <span class="hljs-string">DateRange</span>,
+  <span class="hljs-attr">"first"</span>: <span class="hljs-string">NonNegativeInt</span>,
+  <span class="hljs-attr">"projectId"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"blockSortDirection"</span>: <span class="hljs-string">Sort</span>,
+  <span class="hljs-attr">"scanNodeConfirmations"</span>: <span class="hljs-string">scanNodeFilters</span>,
+  <span class="hljs-attr">"transactionHash"</span>: <span class="hljs-string">"xyz789"</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-AlertsResponse" class="definition panel" data-traverse-target="definition-AlertsResponse">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/AlertsResponse"></a>
+              <p><code>AlertsResponse</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="alerts"> <code>alerts</code> -
+                        <a href="#definition-Alert"><code>[Alert]</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="pageInfo"> <code>pageInfo</code> -
+                        <a href="#definition-AlertPageInfo"><code>AlertPageInfo</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"alerts"</span>: [<span class="hljs-string">Alert</span>],
+  <span class="hljs-attr">"pageInfo"</span>: <span class="hljs-string">AlertPageInfo</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-BigInt" class="definition panel" data-traverse-target="definition-BigInt">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/BigInt"></a>
+              <p><code>BigInt</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>BigInt</code> scalar type represents non-fractional signed whole numeric values.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Block" class="definition panel" data-traverse-target="definition-Block">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Block"></a>
+              <p><code>Block</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Block information</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="number"> <code>number</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                      </td>
+                      <td> Block number </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="hash"> <code>hash</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Block hash </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="timestamp"> <code>timestamp</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Block's timestamp </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="chainId"> <code>chainId</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                      </td>
+                      <td> Block's chain id </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"number"</span>: <span class="hljs-string">NonNegativeInt</span>,
+  <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"chainId"</span>: <span class="hljs-string">NonNegativeInt</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-BlockRange" class="definition panel" data-traverse-target="definition-BlockRange">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/BlockRange"></a>
+              <p><code>BlockRange</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Block range</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Input Field</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>startBlockNumber</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td><code>endBlockNumber</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"startBlockNumber"</span>: <span class="hljs-string">NonNegativeInt</span>,
+  <span class="hljs-attr">"endBlockNumber"</span>: <span class="hljs-string">NonNegativeInt</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Boolean" class="definition panel" data-traverse-target="definition-Boolean">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Boolean"></a>
+              <p><code>Boolean</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>Boolean</code> scalar type represents <code>true</code> or <code>false</code>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-literal">false</span></span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Byte" class="definition panel" data-traverse-target="definition-Byte">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Byte"></a>
+              <p><code>Byte</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>Byte</code> scalar type represents byte value as a Buffer</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Contacts" class="definition panel" data-traverse-target="definition-Contacts">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Contacts"></a>
+              <p><code>Contacts</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Project Contact Information</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="generalEmailAddress"> <code>generalEmailAddress</code> -
+                        <a href="#definition-EmailAddress"><code>EmailAddress</code></a>
+                      </td>
+                      <td> General contact email </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="securityEmailAddress"> <code>securityEmailAddress</code> -
+                        <a href="#definition-EmailAddress"><code>EmailAddress</code></a>
+                      </td>
+                      <td> Security contact email </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"generalEmailAddress"</span>: <span class="hljs-string">EmailAddress</span>,
+  <span class="hljs-attr">"securityEmailAddress"</span>: <span class="hljs-string">EmailAddress</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Contract" class="definition panel" data-traverse-target="definition-Contract">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Contract"></a>
+              <p><code>Contract</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Smart Contract Information</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="address"> <code>address</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> EIP55 checksummed deployment address </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="name"> <code>name</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> User-friendly name of the contract </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="projectId"> <code>projectId</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> Related web3 project </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"projectId"</span>: <span class="hljs-string">"xyz789"</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Currency" class="definition panel" data-traverse-target="definition-Currency">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Currency"></a>
+              <p><code>Currency</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a Currency:
+                    <a href="https://en.wikipedia.org/wiki/ISO_4217">https://en.wikipedia.org/wiki/ISO_4217</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-DID" class="definition panel" data-traverse-target="definition-DID">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/DID"></a>
+              <p><code>DID</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value conforms to the standard DID format as specified in did-core:
+                    <a href="https://www.w3.org/TR/did-core/">https://www.w3.org/TR/did-core/</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Date" class="definition panel" data-traverse-target="definition-Date">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Date"></a>
+              <p><code>Date</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A date string, such as 2007-12-03, compliant with the <code>full-date</code> format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">2022-03-21T16:03:14.759Z</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-DateRange" class="definition panel" data-traverse-target="definition-DateRange">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/DateRange"></a>
+              <p><code>DateRange</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Date range Date format: YYYY-MM-DD</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Input Field</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>startDate</code> -
+                        <a href="#definition-LocalDate"><code>LocalDate!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td><code>endDate</code> -
+                        <a href="#definition-LocalDate"><code>LocalDate!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"startDate"</span>: <span class="hljs-string">LocalDate</span>,
+  <span class="hljs-attr">"endDate"</span>: <span class="hljs-string">LocalDate</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-DateTime" class="definition panel" data-traverse-target="definition-DateTime">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/DateTime"></a>
+              <p><code>DateTime</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the <code>date-time</code> format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Duration" class="definition panel" data-traverse-target="definition-Duration">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Duration"></a>
+              <p><code>Duration</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description"> <pre><code class="hljs">A <span class="hljs-keyword">string</span> representing <span class="hljs-keyword">a</span> duration conforming <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> ISO8601 standard,
+                        such <span class="hljs-keyword">as</span>: P1W1DT13H23M34S
+                        P is <span class="hljs-keyword">the</span> duration designator (<span class="hljs-keyword">for</span> period) placed <span class="hljs-keyword">at</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">start</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> duration representation.
+                        Y is <span class="hljs-keyword">the</span> year designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> years.
+                        M is <span class="hljs-keyword">the</span> month designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> months.
+                        W is <span class="hljs-keyword">the</span> week designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> weeks.
+                        D is <span class="hljs-keyword">the</span> day designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> days.
+                        T is <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> designator that precedes <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> components <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> representation.
+                        H is <span class="hljs-keyword">the</span> hour designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> hours.
+                        M is <span class="hljs-keyword">the</span> minute designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> minutes.
+                        S is <span class="hljs-keyword">the</span> <span class="hljs-keyword">second</span> designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">seconds</span>.
+                        
+                        Note <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> designator, T, that precedes <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> <span class="hljs-built_in">value</span>.
+                        
+                        Matches moment.js, Luxon <span class="hljs-keyword">and</span> DateFns implementations
+                        ,/. is valid <span class="hljs-keyword">for</span> decimal places <span class="hljs-keyword">and</span> +/- is <span class="hljs-keyword">a</span> valid prefix
+                        </code></pre> </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-EmailAddress" class="definition panel" data-traverse-target="definition-EmailAddress">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/EmailAddress"></a>
+              <p><code>EmailAddress</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value conforms to the standard internet email address format as specified in RFC822:
+                    <a href="https://www.w3.org/Protocols/rfc822/">https://www.w3.org/Protocols/rfc822/</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-GUID" class="definition panel" data-traverse-target="definition-GUID">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/GUID"></a>
+              <p><code>GUID</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a generic Universally Unique Identifier:
+                    <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-HSL" class="definition panel" data-traverse-target="definition-HSL">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/HSL"></a>
+              <p><code>HSL</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a CSS HSL color:
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()">https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-HSLA" class="definition panel" data-traverse-target="definition-HSLA">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/HSLA"></a>
+              <p><code>HSLA</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a CSS HSLA color:
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()">https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-HexColorCode" class="definition panel" data-traverse-target="definition-HexColorCode">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/HexColorCode"></a>
+              <p><code>HexColorCode</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a hex color code:
+                    <a href="https://en.wikipedia.org/wiki/Web_colors">https://en.wikipedia.org/wiki/Web_colors</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Hexadecimal" class="definition panel" data-traverse-target="definition-Hexadecimal">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Hexadecimal"></a>
+              <p><code>Hexadecimal</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a hexadecimal:
+                    <a href="https://en.wikipedia.org/wiki/Hexadecimal">https://en.wikipedia.org/wiki/Hexadecimal</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-IBAN" class="definition panel" data-traverse-target="definition-IBAN">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/IBAN"></a>
+              <p><code>IBAN</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is an International Bank Account Number (IBAN):
+                    <a href="https://en.wikipedia.org/wiki/International_Bank_Account_Number">https://en.wikipedia.org/wiki/International_Bank_Account_Number</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-IPv4" class="definition panel" data-traverse-target="definition-IPv4">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/IPv4"></a>
+              <p><code>IPv4</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a IPv4 address:
+                    <a href="https://en.wikipedia.org/wiki/IPv4">https://en.wikipedia.org/wiki/IPv4</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-IPv6" class="definition panel" data-traverse-target="definition-IPv6">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/IPv6"></a>
+              <p><code>IPv6</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a IPv6 address:
+                    <a href="https://en.wikipedia.org/wiki/IPv6">https://en.wikipedia.org/wiki/IPv6</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ISBN" class="definition panel" data-traverse-target="definition-ISBN">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ISBN"></a>
+              <p><code>ISBN</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a ISBN-10 or ISBN-13 number:
+                    <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number">https://en.wikipedia.org/wiki/International_Standard_Book_Number</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ISO8601Duration" class="definition panel" data-traverse-target="definition-ISO8601Duration">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ISO8601Duration"></a>
+              <p><code>ISO8601Duration</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description"> <pre><code class="hljs">A <span class="hljs-keyword">string</span> representing <span class="hljs-keyword">a</span> duration conforming <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> ISO8601 standard,
+                        such <span class="hljs-keyword">as</span>: P1W1DT13H23M34S
+                        P is <span class="hljs-keyword">the</span> duration designator (<span class="hljs-keyword">for</span> period) placed <span class="hljs-keyword">at</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">start</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> duration representation.
+                        Y is <span class="hljs-keyword">the</span> year designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> years.
+                        M is <span class="hljs-keyword">the</span> month designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> months.
+                        W is <span class="hljs-keyword">the</span> week designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> weeks.
+                        D is <span class="hljs-keyword">the</span> day designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> days.
+                        T is <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> designator that precedes <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> components <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> representation.
+                        H is <span class="hljs-keyword">the</span> hour designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> hours.
+                        M is <span class="hljs-keyword">the</span> minute designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> minutes.
+                        S is <span class="hljs-keyword">the</span> <span class="hljs-keyword">second</span> designator that follows <span class="hljs-keyword">the</span> <span class="hljs-built_in">value</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">seconds</span>.
+                        
+                        Note <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> designator, T, that precedes <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> <span class="hljs-built_in">value</span>.
+                        
+                        Matches moment.js, Luxon <span class="hljs-keyword">and</span> DateFns implementations
+                        ,/. is valid <span class="hljs-keyword">for</span> decimal places <span class="hljs-keyword">and</span> +/- is <span class="hljs-keyword">a</span> valid prefix
+                        </code></pre> </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Int" class="definition panel" data-traverse-target="definition-Int">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Int"></a>
+              <p><code>Int</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>Int</code> scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">123</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-JSON" class="definition panel" data-traverse-target="definition-JSON">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/JSON"></a>
+              <p><code>JSON</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>JSON</code> scalar type represents JSON values as specified by
+                    <a href="http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">ECMA-404</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-tag">{}</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-JSONObject" class="definition panel" data-traverse-target="definition-JSONObject">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/JSONObject"></a>
+              <p><code>JSONObject</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>JSONObject</code> scalar type represents JSON objects as specified by
+                    <a href="http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">ECMA-404</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-JWT" class="definition panel" data-traverse-target="definition-JWT">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/JWT"></a>
+              <p><code>JWT</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a JSON Web Token (JWT):
+                    <a href="https://jwt.io/introduction">https://jwt.io/introduction</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Latitude" class="definition panel" data-traverse-target="definition-Latitude">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Latitude"></a>
+              <p><code>Latitude</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a valid decimal degrees latitude number (53.471):
+                    <a href="https://en.wikipedia.org/wiki/Latitude">https://en.wikipedia.org/wiki/Latitude</a>
+                  </p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-LocalDate" class="definition panel" data-traverse-target="definition-LocalDate">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/LocalDate"></a>
+              <p><code>LocalDate</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A local date string (i.e., with no associated timezone) in <code>YYYY-MM-DD</code> format, e.g. <code>2020-01-01</code>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-LocalEndTime" class="definition panel" data-traverse-target="definition-LocalEndTime">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/LocalEndTime"></a>
+              <p><code>LocalEndTime</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A local time string (i.e., with no associated timezone) in 24-hr <code>HH:mm[:ss[.SSS]]</code> format, e.g. <code>14:25</code> or <code>14:25:06</code> or <code>14:25:06.123</code>. This scalar is very similar to the <code>LocalTime</code>, with the only difference being that <code>LocalEndTime</code> also allows <code>24:00</code> as a valid value to indicate midnight of the following day. This is useful when using the scalar to represent the exclusive upper bound of a time block.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-LocalTime" class="definition panel" data-traverse-target="definition-LocalTime">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/LocalTime"></a>
+              <p><code>LocalTime</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A local time string (i.e., with no associated timezone) in 24-hr <code>HH:mm[:ss[.SSS]]</code> format, e.g. <code>14:25</code> or <code>14:25:06</code> or <code>14:25:06.123</code>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Long" class="definition panel" data-traverse-target="definition-Long">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Long"></a>
+              <p><code>Long</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>BigInt</code> scalar type represents non-fractional signed whole numeric values.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Longitude" class="definition panel" data-traverse-target="definition-Longitude">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Longitude"></a>
+              <p><code>Longitude</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a valid decimal degrees longitude number (53.471):
+                    <a href="https://en.wikipedia.org/wiki/Longitude">https://en.wikipedia.org/wiki/Longitude</a>
+                  </p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-MAC" class="definition panel" data-traverse-target="definition-MAC">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/MAC"></a>
+              <p><code>MAC</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a IEEE 802 48-bit MAC address:
+                    <a href="https://en.wikipedia.org/wiki/MAC_address">https://en.wikipedia.org/wiki/MAC_address</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NegativeFloat" class="definition panel" data-traverse-target="definition-NegativeFloat">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NegativeFloat"></a>
+              <p><code>NegativeFloat</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Floats that will have a value less than 0.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NegativeInt" class="definition panel" data-traverse-target="definition-NegativeInt">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NegativeInt"></a>
+              <p><code>NegativeInt</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Integers that will have a value less than 0.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NonEmptyString" class="definition panel" data-traverse-target="definition-NonEmptyString">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NonEmptyString"></a>
+              <p><code>NonEmptyString</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A string that cannot be passed as an empty value</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NonNegativeFloat" class="definition panel" data-traverse-target="definition-NonNegativeFloat">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NonNegativeFloat"></a>
+              <p><code>NonNegativeFloat</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Floats that will have a value of 0 or more.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NonNegativeInt" class="definition panel" data-traverse-target="definition-NonNegativeInt">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NonNegativeInt"></a>
+              <p><code>NonNegativeInt</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Integers that will have a value of 0 or more.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NonPositiveFloat" class="definition panel" data-traverse-target="definition-NonPositiveFloat">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NonPositiveFloat"></a>
+              <p><code>NonPositiveFloat</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Floats that will have a value of 0 or less.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NonPositiveInt" class="definition panel" data-traverse-target="definition-NonPositiveInt">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NonPositiveInt"></a>
+              <p><code>NonPositiveInt</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Integers that will have a value of 0 or less.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ObjectID" class="definition panel" data-traverse-target="definition-ObjectID">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ObjectID"></a>
+              <p><code>ObjectID</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value conforms with the standard mongodb object ID as described here:
+                    <a href="https://docs.mongodb.com/manual/reference/method/ObjectId/#ObjectId">https://docs.mongodb.com/manual/reference/method/ObjectId/#ObjectId</a>. Example: 5e5677d71bdc2ae76344968c</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-PhoneNumber" class="definition panel" data-traverse-target="definition-PhoneNumber">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/PhoneNumber"></a>
+              <p><code>PhoneNumber</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value conforms to the standard E.164 format as specified in:
+                    <a href="https://en.wikipedia.org/wiki/E.164">https://en.wikipedia.org/wiki/E.164</a>. Basically this is +17895551234.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Port" class="definition panel" data-traverse-target="definition-Port">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Port"></a>
+              <p><code>Port</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a valid TCP port within the range of 0 to 65535:
+                    <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_ports">https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_ports</a>
+                  </p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-PositiveFloat" class="definition panel" data-traverse-target="definition-PositiveFloat">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/PositiveFloat"></a>
+              <p><code>PositiveFloat</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Floats that will have a value greater than 0.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-PositiveInt" class="definition panel" data-traverse-target="definition-PositiveInt">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/PositiveInt"></a>
+              <p><code>PositiveInt</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Integers that will have a value greater than 0.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-PostalCode" class="definition panel" data-traverse-target="definition-PostalCode">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/PostalCode"></a>
+              <p><code>PostalCode</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value conforms to the standard postal code formats for United States, United Kingdom, Germany, Canada, France, Italy, Australia, Netherlands, Spain, Denmark, Sweden, Belgium, India, Austria, Portugal, Switzerland or Luxembourg.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Project" class="definition panel" data-traverse-target="definition-Project">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Project"></a>
+              <p><code>Project</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Web3 Project Information</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="contacts"> <code>contacts</code> -
+                        <a href="#definition-Contacts"><code>Contacts</code></a>
+                      </td>
+                      <td> List of contact info </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="name"> <code>name</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> User-friendly name of the project </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="id"> <code>id</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> Project identifier </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="social"> <code>social</code> -
+                        <a href="#definition-Social"><code>Social</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="token"> <code>token</code> -
+                        <a href="#definition-Token"><code>Token</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="website"> <code>website</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Main website of the project </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"contacts"</span>: <span class="hljs-string">Contacts</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"social"</span>: <span class="hljs-string">Social</span>,
+  <span class="hljs-attr">"token"</span>: <span class="hljs-string">Token</span>,
+  <span class="hljs-attr">"website"</span>: <span class="hljs-string">"xyz789"</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ProjectEdge" class="definition panel" data-traverse-target="definition-ProjectEdge">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ProjectEdge"></a>
+              <p><code>ProjectEdge</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="cursor"> <code>cursor</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="node"> <code>node</code> -
+                        <a href="#definition-Project"><code>Project</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"cursor"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"node"</span>: <span class="hljs-string">Project</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ProjectPageInfo" class="definition panel" data-traverse-target="definition-ProjectPageInfo">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ProjectPageInfo"></a>
+              <p><code>ProjectPageInfo</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="endCursor"> <code>endCursor</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="hasNextPage"> <code>hasNextPage</code> -
+                        <a href="#definition-Boolean"><code>Boolean</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"endCursor"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"hasNextPage"</span>: <span class="hljs-literal">true</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ProjectsInput" class="definition panel" data-traverse-target="definition-ProjectsInput">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ProjectsInput"></a>
+              <p><code>ProjectsInput</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Input Field</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>first</code> -
+                        <a href="#definition-Int"><code>Int</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td><code>after</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"first"</span>: <span class="hljs-number">987</span>, <span class="hljs-attr">"after"</span>: <span class="hljs-string">"xyz789"</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ProjectsResponse" class="definition panel" data-traverse-target="definition-ProjectsResponse">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ProjectsResponse"></a>
+              <p><code>ProjectsResponse</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="edges"> <code>edges</code> -
+                        <a href="#definition-ProjectEdge"><code>[ProjectEdge]</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="pageInfo"> <code>pageInfo</code> -
+                        <a href="#definition-ProjectPageInfo"><code>ProjectPageInfo</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"edges"</span>: [<span class="hljs-string">ProjectEdge</span>],
+  <span class="hljs-attr">"pageInfo"</span>: <span class="hljs-string">ProjectPageInfo</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-RGB" class="definition panel" data-traverse-target="definition-RGB">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/RGB"></a>
+              <p><code>RGB</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a CSS RGB color:
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()">https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-RGBA" class="definition panel" data-traverse-target="definition-RGBA">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/RGBA"></a>
+              <p><code>RGBA</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a CSS RGBA color:
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()">https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-SafeInt" class="definition panel" data-traverse-target="definition-SafeInt">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/SafeInt"></a>
+              <p><code>SafeInt</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>SafeInt</code> scalar type represents non-fractional signed whole numeric values that are considered safe as defined by the ECMAScript specification.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Social" class="definition panel" data-traverse-target="definition-Social">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Social"></a>
+              <p><code>Social</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Social Media Links</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="coingecko"> <code>coingecko</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Path to the coingecko identifier </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="everest"> <code>everest</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Identifier in the everest.link registry </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="github"> <code>github</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Github organization slug </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="twitter"> <code>twitter</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Twitter account name </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"coingecko"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"everest"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"github"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"twitter"</span>: <span class="hljs-string">"xyz789"</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Sort" class="definition panel" data-traverse-target="definition-Sort">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Sort"></a>
+              <p><code>Sort</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Enum Value</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p><code>asc</code></p>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p><code>desc</code></p>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-String" class="definition panel" data-traverse-target="definition-String">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/String"></a>
+              <p><code>String</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The <code>String</code> scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.</p>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Time" class="definition panel" data-traverse-target="definition-Time">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Time"></a>
+              <p><code>Time</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A time string at UTC, such as 10:15:30Z, compliant with the <code>full-time</code> format outlined in section 5.6 of the RFC 3339profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Timestamp" class="definition panel" data-traverse-target="definition-Timestamp">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Timestamp"></a>
+              <p><code>Timestamp</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The javascript <code>Date</code> as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Token" class="definition panel" data-traverse-target="definition-Token">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Token"></a>
+              <p><code>Token</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Project Token Information</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="address"> <code>address</code> -
+                        <a href="#definition-String"><code>String!</code></a>
+                      </td>
+                      <td> Address where the project token is deployed </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="chainId"> <code>chainId</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> EIP155 identifier of the chain where the project token is deployed </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="decimals"> <code>decimals</code> -
+                        <a href="#definition-Int"><code>Int</code></a>
+                      </td>
+                      <td> Decimals of the token contract </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="name"> <code>name</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Name of the token </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="symbol"> <code>symbol</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> Symbol of the token </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"chainId"</span>: <span class="hljs-number">987</span>,
+  <span class="hljs-attr">"decimals"</span>: <span class="hljs-number">987</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"abc123"</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-URL" class="definition panel" data-traverse-target="definition-URL">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/URL"></a>
+              <p><code>URL</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value conforms to the standard URL format as specified in RFC3986:
+                    <a href="https://www.ietf.org/rfc/rfc3986.txt">https://www.ietf.org/rfc/rfc3986.txt</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-USCurrency" class="definition panel" data-traverse-target="definition-USCurrency">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/USCurrency"></a>
+              <p><code>USCurrency</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A currency string, such as $21.25</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-UUID" class="definition panel" data-traverse-target="definition-UUID">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/UUID"></a>
+              <p><code>UUID</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a generic Universally Unique Identifier:
+                    <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a>.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-UnsignedFloat" class="definition panel" data-traverse-target="definition-UnsignedFloat">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/UnsignedFloat"></a>
+              <p><code>UnsignedFloat</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Floats that will have a value of 0 or more.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-UnsignedInt" class="definition panel" data-traverse-target="definition-UnsignedInt">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/UnsignedInt"></a>
+              <p><code>UnsignedInt</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Integers that will have a value of 0 or more.</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-UtcOffset" class="definition panel" data-traverse-target="definition-UtcOffset">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/UtcOffset"></a>
+              <p><code>UtcOffset</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A field whose value is a UTC Offset:
+                    <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>
+                  </p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Void" class="definition panel" data-traverse-target="definition-Void">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/Void"></a>
+              <p><code>Void</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Represents NULL values</p>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">object</span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-scanNodeFilters" class="definition panel" data-traverse-target="definition-scanNodeFilters">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/scanNodeFilters"></a>
+              <p><code>scanNodeFilters</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Filter by number of scan nodes confirming the alert.</p>
+                </section>
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Input Field</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>gte</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td><code>lte</code> -
+                        <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"gte"</span>: <span class="hljs-string">NonNegativeInt</span>,
+  <span class="hljs-attr">"lte"</span>: <span class="hljs-string">NonNegativeInt</span>
+}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="doc-row no-margin">
+            <div class="doc-copy doc-separator"> </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
