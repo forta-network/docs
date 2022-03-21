@@ -246,6 +246,9 @@ chainId: 56
 scan:
   jsonRpc:
     url: https://bsc-dataseed.binance.org/
+
+trace:
+  enabled: false
 ```
 
 ### Polygon
@@ -256,6 +259,9 @@ chainId: 137
 scan:
   jsonRpc:
     url: https://polygon-rpc.com/
+
+trace:
+  enabled: false
 ```
 
 ### Avalanche
@@ -266,6 +272,9 @@ chainId: 43114
 scan:
   jsonRpc:
     url: https://api.avax.network/ext/bc/C/rpc
+
+trace:
+  enabled: false
 ```
 
 ### Arbitrum
@@ -276,6 +285,9 @@ chainId: 42161
 scan:
   jsonRpc:
     url: https://arb1.arbitrum.io/rpc
+
+trace:
+  enabled: false
 ```
 
 ### Optimism
@@ -286,6 +298,9 @@ chainId: 10
 scan:
   jsonRpc:
     url: https://mainnet.optimism.io
+
+trace:
+  enabled: false
 ```
 
 ## Monitor SLA
