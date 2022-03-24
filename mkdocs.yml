@@ -8,9 +8,10 @@ nav:
       - 3) Deploying your agent: deploying.md
       - 4) Subscribing to alerts: subscribing.md
       - 5) Maintaining your agent: maintaining.md
-  - Video tutorials: tutorials.md
+  - Integrating with Hardhat: hardhat.md
   - Reference:
       - Core concepts: concepts.md
+      - Video tutorials: tutorials.md
       - CLI commands: cli.md
       - forta.config.json: config.md
   - Javascript/Typescript SDK: sdk.md

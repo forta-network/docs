@@ -13,7 +13,7 @@ Before you start, please make sure you have the following:
 
 ## Initializing a project
 
-To initialize a Forta Agent project, you can use the `forta-agent` CLI tool:
+To initialize a Forta Agent project, you can use the [Forta Hardhat plugin](hardhat.md) or the `forta-agent` CLI tool:
 
 ```bash
 $ mkdir my-new-agent
@@ -26,23 +26,10 @@ The above snippet creates a new project directory called `my-new-agent`, and the
 !!! info "Using @latest version"
     We recommend always initializing projects with `@latest` version to ensure you have the latest and greatest SDK features. Otherwise, you may end up using an older previously cached version.
 
-The `init` command will initialize a forta.config.json and a keyfile for you in the ~/.forta folder (you will be prompted for a password for the keyfile). The forta.config.json file will be used throughout the development lifecycle of your agents. Several files will also be created inside of your project folder, including a package.json file, tsconfig.json (for Typescript) and a src folder.
+The `init` command will initialize a forta.config.json and a keyfile for you in the ~/.forta folder (you will be prompted for a password for the keyfile). The forta.config.json file will be used throughout the development lifecycle of your agents. Several files will also be created inside of your project folder, including a package.json file, tsconfig.json (for Typescript) and a src folder. Dependencies of the project will also be installed by running `npm install`.
 
 !!! danger "Protecting your keyfile"
     Make sure you **do not forget the password** for your keyfile as we have no way to recover it! We also recommend keeping a backup of it. The keyfile is located in the ~/.forta folder and named in the format `UTC--<created_at UTC ISO8601>--<address hex>` (an example name would be `UTC--2021-07-12T01:37:55.270Z--577022b59d1c25623ac523fe78d2f6347b5c69f2`). This keyfile will primarily be used for publishing your agent. You can get the absolute path to your keyfile using the `npm run keyfile` command from the project folder.
-
-## Installing dependencies
-
-Let’s make sure our project dependencies are installed by running:
-
-```bash
-$ npm install
-```
-
-This will also install the `forta-agent` package locally in your project (i.e. in the node_modules folder). 
-
-!!! warning "Installing globally"
-    You may choose to install the CLI tool globally using `npm install -g forta-agent`, just make sure it does not conflict with the locally installed version. We strongly recommend using the locally installed version to avoid keeping track of this.
 
 Awesome! You have successfully completed setting up your project. See below for ideas/examples of agents, or continue to [testing your agent](testing.md).
 ## Ideas for agents
