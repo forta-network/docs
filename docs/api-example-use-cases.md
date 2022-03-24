@@ -3,6 +3,11 @@
 The Forta API will allow protocols, DAOs, investors, and the community to integrate alerts in dApps and tools.
 There are many use cases for this, but here are three examples to give you a better idea how this API can be used. 
 
+You can also learn about these three examples and one Forta community member's API integration in the following youtube videos:
+
+* [Integrating with Forta: Learn more about the Forta API](https://www.youtube.com/watch?v=xkxS7d2i5ms)
+* [How the Convo Space is using the Forta API](https://www.youtube.com/watch?v=XmI_C5MjIjk)
+
 ## 1. Strengthen Protocol Security
 
 **As a protocol developer...**
