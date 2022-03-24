@@ -1,4 +1,4 @@
-# API Access & Schema
+# API Access
 
 !!! important "Beta Mode"
     (February 2022) The API is in beta mode. If you see any bugs or issues, please let us know at [github:forta-protocol/forta-api](https://github.com/forta-protocol/forta-api/issues/new/choose).
