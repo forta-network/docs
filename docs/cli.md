@@ -2,6 +2,23 @@
 
 The following sections describe the CLI commands available to agent developers. You can always use `forta-agent help` to get a quick overview of these commands, as well as details about specific commands e.g. `forta-agent run help`.
 
+## Invoke commands programmatically
+
+You can invoke the available CLI commands programmatically in NodeJS using the exported `configureContainer` method. This method returns a dependency injection container that can be used to access different commands. It accepts an optional object of arguments that will configure its behaviour, the most important of which is `contextPath` which points to the agent directory that you are running commands for (defaults to current working directory if not specified). For example, if you wanted to invoke the `init` command it would look like the following:
+
+```js
+const { configureContainer } = require("forta-agent");
+
+const pathToAgentDirectory = "/Desktop/my-agent";
+const container = configureContainer({ contextPath: pathToAgentDirectory });
+const init = container.resolve("init");
+await init();
+```
+
+The above code snippet will initialize a Forta Agent project at the specified `contextPath` (creating the folder if it does not exist). All the CLI commands are asynchronous so you will need to `await` them. Similarly, you can resolve other commands that are listed below.
+
+Exposing the CLI functionality enables developers to integrate with other tools. The first example of such an integration is the [Forta Hardhat plugin](hardhat.md). We look forward to seeing the new and creative ways developers will integrate this functionality into their own toolset!
+
 ## init
 
 Using the `npx forta-agent@latest init` command, you can quickly initialize a Forta Agent Javascript project inside of the current working directory. The starter project includes some default configuration files as well as an example agent implementation. A keyfile and forta.config.json file will also be generated for you and placed in the ~/.forta folder if they do not already exist. You will be prompted to enter a password that will be used to encrypt the keyfile. This keyfile will be used later when publishing your agent.

@@ -1,6 +1,8 @@
 # Integrating with Hardhat
 
-Integrating Forta in your existing Hardhat project is easier than ever with the [Forta Hardhat plugin](https://www.npmjs.com/package/hardhat-forta). You can now keep your security/operational monitoring logic right next to the smart contracts they will be monitoring. The plugin provides convenient access to the Forta Agent development tools to manage the agent lifecycle using Hardhard tasks. For a more comprehensive walkthrough of agent development, we recommend going through the [build your first agent](quickstart.md) guide as well.
+Integrating Forta in your existing Hardhat project is easier than ever with the [Forta Hardhat plugin](https://www.npmjs.com/package/hardhat-forta). You can now keep your security/operational monitoring logic right next to the smart contracts they will be monitoring. The plugin provides convenient access to the Forta Agent development tools to manage the agent lifecycle using Hardhard tasks.
+
+This plugin uses the [`forta-agent`](https://www.npmjs.com/package/forta-agent) package to [programmatically invoke commands](cli.md#invoke-commands-programmatically). For a more comprehensive walkthrough of agent development, we recommend going through the [build your first agent](quickstart.md) guide as well.
 
 ## Installation
 
