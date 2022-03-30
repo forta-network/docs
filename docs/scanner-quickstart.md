@@ -163,7 +163,7 @@ Your scan node is registered to scan a single chain. To let your scan node pull 
 If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method from the Parity Trace API. If you have your own Ethereum node, you can use that node.
 
 !!! note "JSON-RPC APIs"
-    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic. We suggest running your own Ethereum light node for the `scan.jsonRpc.url` and an Alchemy Growth plan for `trace.jsonRpc.url` endpoint.
+    The scan node will request every transaction on a target chain, which can add up to a lot of requests. Ensure your endpoints can accept the appropriate level of traffic. We suggest running your own Ethereum light node for the `jsonRpcProxy.jsonRpc.url` and an Alchemy Growth plan for `trace.jsonRpc.url` and `scan.jsonRpc.url` endpoint.
 
 **If your node is scanning chains other than Ethereum mainnet,** please checkout the final section to see options.
 
@@ -172,10 +172,16 @@ Example configuration to scan Ethereum mainnet:
 ```yaml
 chainId: 1
 
+# The proxy settings are used for agents to make their own json-rpc calls
+# By default, this is set to the scan node url value
+jsonRpcProxy:
+  jsonRpc:
+    url: http://your-node:8545
+
 # The scan settings are used to retrieve the transactions that are analyzed
 scan:
   jsonRpc:
-    url: https://mainnet.infura.io/v3/KEY
+    url: https://eth-mainnet.alchemyapi.io/v2/KEY
 
 # The trace endpoint must support trace_block (such as alchemy)
 trace:
