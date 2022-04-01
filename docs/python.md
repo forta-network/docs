@@ -1,6 +1,6 @@
 # Python SDK
 
-The Forta Agent Python SDK comes with a set of classes to provide a consistent interface for developers to write their agents. There are also some utility functions available for your convenience to do common operations like searching for an event in a transaction receipt. Check out the Python agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
+The Forta Agent Python SDK comes with a set of classes to provide a consistent interface for developers to write their agents. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Python agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
 
 **NOTE**: while you can write agents in Python, you would still use the Node.js `forta-agent` CLI tool to run the agent
 
@@ -52,9 +52,6 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 - `from_` - alias for `transaction.from_`
 - `to` - alias for `transaction.to`
 - `gas_price` - alias for `transaction.gas_price`
-- `gas_used` - alias for `receipt.gas_used`
-- `status` - alias for `receipt.status`
-- `logs` - alias for `receipt.logs`
 - `timestamp` - alias for `block.timestamp`
 - `block_number` - alias for `block.number`
 - `block_hash` - alias for `block.hash`
@@ -75,27 +72,16 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `r`
     - `s`
     - `v`
-- `receipt` - receipt object containing the following fields:
-    - `status`
-    - `root`
-    - `gasUsed`
-    - `cumulative_gas_used`
-    - `logs_bloom`
-    - `contract_address`
+- `logs` - list of log objects with following fields:
+    - `address`
+    - `topics`
+    - `data`
+    - `log_index`
     - `block_number`
     - `block_hash`
     - `transaction_index`
     - `transaction_hash`
-    - `logs` - list of log objects with following fields:
-        - `address`
-        - `topics`
-        - `data`
-        - `log_index`
-        - `block_number`
-        - `block_hash`
-        - `transaction_index`
-        - `transaction_hash`
-        - `removed`
+    - `removed`
 - `traces` - only with tracing enabled; list of trace objects with following fields:
     - `block_hash`
     - `block_number`
@@ -170,11 +156,15 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 ## get_json_rpc_url
 
-A convenience function called `get_json_rpc_url` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file.
+A convenience function called `get_json_rpc_url` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file (or `https://cloudflare-eth.com/` by default).
 
 ## get_web3_provider
 
 `get_web3_provider` is a convenience function that returns a [web3.py Provider](https://web3py.readthedocs.io/en/stable/providers.html) which can be used to interact with the blockchain. The value from `get_json_rpc_url` will be used as the JSON-RPC endpoint to connect to.
+
+## get_transaction_receipt
+
+A convenience function called `get_transaction_receipt` can be used to fetch the entire receipt of a transaction and returned in a format matching the SDK `Receipt` interface.
 
 ## create_block_event
 

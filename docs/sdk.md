@@ -1,6 +1,6 @@
 # Javascript/Typescript SDK
 
-The Forta Agent Javascript SDK comes with a set of classes and type definitions to provide a consistent interface for developers to write their agents. There are also some utility functions available for your convenience to do common operations like searching for an event in a transaction receipt. Check out the Javascript/Typescript agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
+The Forta Agent Javascript SDK comes with a set of classes and type definitions to provide a consistent interface for developers to write their agents. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Javascript/Typescript agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
 
 ## Handlers
 
@@ -56,9 +56,6 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 - `from` - alias for `transaction.from`
 - `to` - alias for `transaction.to`
 - `gasPrice` - alias for `transaction.gasPrice`
-- `gasUsed` - alias for `receipt.gasUsed`
-- `status` - alias for `receipt.status`
-- `logs` - alias for `receipt.logs`
 - `timestamp` - alias for `block.timestamp`
 - `blockNumber` - alias for `block.number`
 - `blockHash` - alias for `block.hash`
@@ -79,27 +76,16 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `r`
     - `s`
     - `v`
-- `receipt` - receipt object containing the following fields:
-    - `status`
-    - `root`
-    - `gasUsed`
-    - `cumulativeGasUsed`
-    - `logsBloom`
-    - `contractAddress`
+- `logs` - list of log objects with following fields:
+    - `address`
+    - `topics`
+    - `data`
+    - `logIndex`
     - `blockNumber`
     - `blockHash`
     - `transactionIndex`
     - `transactionHash`
-    - `logs` - list of log objects with following fields:
-        - `address`
-        - `topics`
-        - `data`
-        - `logIndex`
-        - `blockNumber`
-        - `blockHash`
-        - `transactionIndex`
-        - `transactionHash`
-        - `removed`
+    - `removed`
 - `traces` - only with tracing enabled; list of trace objects with following fields:
     - `blockHash`
     - `blockNumber`
@@ -174,11 +160,15 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 ## getJsonRpcUrl
 
-A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file.
+A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file (or `https://cloudflare-eth.com/` by default).
 
 ## getEthersProvider
 
 `getEthersProvider` is a convenience function that returns an [ethers.js Provider](https://docs.ethers.io/v5/api/providers/) which can be used to interact with the blockchain. The value from `getJsonRpcUrl` will be used as the JSON-RPC endpoint to connect to.
+
+## getTransactionReceipt
+
+A convenience function called `getTransactionReceipt` can be used to fetch the entire receipt of a transaction and returned in a format matching the SDK `Receipt` interface.
 
 ## createBlockEvent
 

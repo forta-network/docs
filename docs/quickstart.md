@@ -10,6 +10,7 @@ Before you start, please make sure you have the following:
 - [Python v3.6+](https://www.python.org/) (only if you want to use Python SDK)
 - [Docker v20+](https://www.docker.com/get-started)
 - Basic understanding of [Ethereum](https://ethereum.org/) and smart contracts
+- MATIC tokens for deploying your agent (see [this guide](matic.md))
 
 ## Initializing a project
 
@@ -26,7 +27,7 @@ The above snippet creates a new project directory called `my-new-agent`, and the
 !!! info "Using @latest version"
     We recommend always initializing projects with `@latest` version to ensure you have the latest and greatest SDK features. Otherwise, you may end up using an older previously cached version.
 
-The `init` command will initialize a forta.config.json and a keyfile for you in the ~/.forta folder (you will be prompted for a password for the keyfile). The forta.config.json file will be used throughout the development lifecycle of your agents. Several files will also be created inside of your project folder, including a package.json file, tsconfig.json (for Typescript) and a src folder. Dependencies of the project will also be installed by running `npm install`.
+The `init` command will initialize a forta.config.json and a keyfile for you in the ~/.forta folder (you will be prompted for a password for the keyfile). The forta.config.json file will be used throughout the development lifecycle of your agents. Several files will also be created inside of your project folder, including a package.json file, tsconfig.json (for Typescript) and a src folder. Dependencies of the project will also be installed for you by running `npm install`.
 
 !!! danger "Protecting your keyfile"
     Make sure you **do not forget the password** for your keyfile as we have no way to recover it! We also recommend keeping a backup of it. The keyfile is located in the ~/.forta folder and named in the format `UTC--<created_at UTC ISO8601>--<address hex>` (an example name would be `UTC--2021-07-12T01:37:55.270Z--577022b59d1c25623ac523fe78d2f6347b5c69f2`). This keyfile will primarily be used for publishing your agent. You can get the absolute path to your keyfile using the `npm run keyfile` command from the project folder.
