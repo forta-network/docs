@@ -1,0 +1,1317 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../forta-logo.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+    
+    
+      
+        <title>Python SDK - Forta Developer SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe914879.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+  
+
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-WNVX2Q6");</script>
+<!-- End Google Tag Manager -->
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="blue-grey">
+  
+    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNVX2Q6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-sdk" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Forta Developer SDK" class="md-header__button md-logo" aria-label="Forta Developer SDK" data-md-component="logo">
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Forta Developer SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python SDK
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Forta Developer SDK" class="md-nav__button md-logo" aria-label="Forta Developer SDK" data-md-component="logo">
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+    Forta Developer SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Build your first agent
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Build your first agent" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Build your first agent
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        1) Quick start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/" class="md-nav__link">
+        2) Testing your agent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying/" class="md-nav__link">
+        3) Deploying your agent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subscribing/" class="md-nav__link">
+        4) Subscribing to alerts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintaining/" class="md-nav__link">
+        5) Maintaining your agent
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardhat/" class="md-nav__link">
+        Integrating with Hardhat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        Core concepts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        Video tutorials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        CLI commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        forta.config.json
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/" class="md-nav__link">
+        Javascript/Typescript SDK
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python SDK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python SDK
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#handlers" class="md-nav__link">
+    Handlers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blockevent" class="md-nav__link">
+    BlockEvent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transactionevent" class="md-nav__link">
+    TransactionEvent
+  </a>
+  
+    <nav class="md-nav" aria-label="TransactionEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter_log" class="md-nav__link">
+    filter_log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter_function" class="md-nav__link">
+    filter_function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding" class="md-nav__link">
+    Finding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_json_rpc_url" class="md-nav__link">
+    get_json_rpc_url
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_web3_provider" class="md-nav__link">
+    get_web3_provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create_block_event" class="md-nav__link">
+    create_block_event
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create_transaction_event" class="md-nav__link">
+    create_transaction_event
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Forta API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Forta API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Forta API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-api-reference/" class="md-nav__link">
+        GraphQL API Reference
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-example-use-cases/" class="md-nav__link">
+        Example Use Cases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-examples/" class="md-nav__link">
+        Example Queries
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        Best practices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Agent patterns
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agent patterns" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Agent patterns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitive-data/" class="md-nav__link">
+        Hiding sensitive data
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../private-alerts/" class="md-nav__link">
+        Private alerts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tx-simulation/" class="md-nav__link">
+        Transaction simulation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-running-tasks/" class="md-nav__link">
+        Long running tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querying-chains/" class="md-nav__link">
+        Querying other chains
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-monitoring/" class="md-nav__link">
+        Error monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-testing/" class="md-nav__link">
+        Advanced testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        Running a Scan Node
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Running a Scan Node" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Running a Scan Node
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla-api/" class="md-nav__link">
+        Scan Node SLA API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ds-and-ml/" class="md-nav__link">
+        Data science and machine learning on Forta
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/" class="md-nav__link">
+        Getting help
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-libraries/" class="md-nav__link">
+        Useful libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" data-md-state="indeterminate" type="checkbox" id="__nav_16" checked>
+      
+      <label class="md-nav__link" for="__nav_16">
+        Agent Developer Contests
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agent Developer Contests" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Agent Developer Contests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest1-compound/" class="md-nav__link">
+        Compound Contest (10/20/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest2-aave/" class="md-nav__link">
+        Aave Contest (11/3/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest3-oz/" class="md-nav__link">
+        OpenZeppelin Contest (11/18/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest4-forta/" class="md-nav__link">
+        Forta Contest (12/17/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest5-solace/" class="md-nav__link">
+        Solace Contest (3/1/2022)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#handlers" class="md-nav__link">
+    Handlers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blockevent" class="md-nav__link">
+    BlockEvent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transactionevent" class="md-nav__link">
+    TransactionEvent
+  </a>
+  
+    <nav class="md-nav" aria-label="TransactionEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter_log" class="md-nav__link">
+    filter_log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter_function" class="md-nav__link">
+    filter_function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding" class="md-nav__link">
+    Finding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_json_rpc_url" class="md-nav__link">
+    get_json_rpc_url
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_web3_provider" class="md-nav__link">
+    get_web3_provider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create_block_event" class="md-nav__link">
+    create_block_event
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create_transaction_event" class="md-nav__link">
+    create_transaction_event
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="python-sdk">Python SDK</h1>
+<p>The Forta Agent Python SDK comes with a set of classes to provide a consistent interface for developers to write their agents. There are also some utility functions available for your convenience to do common operations like searching for an event in a transaction receipt. Check out the Python agents in our <a href="https://github.com/forta-protocol/forta-agent-examples">examples repo</a> to learn more.</p>
+<p><strong>NOTE</strong>: while you can write agents in Python, you would still use the Node.js <code>forta-agent</code> CLI tool to run the agent</p>
+<h2 id="handlers">Handlers</h2>
+<p>The most relevant functions for agent developers are the handler functions: <code>initialize</code>, <code>handle_block</code> and <code>handle_transaction</code>.</p>
+<p>Your <code>agent.py</code> file must declare a <code>handle_block</code> and/or <code>handle_transaction</code> function. You can implement one or both of these depending on your use case, but at least one must be provided. These functions take a <code>BlockEvent</code> or <code>TransactionEvent</code> as their input, respectively, and return an array of zero or more <code>Finding</code> objects.</p>
+<p>You can also optionally declare an <code>initialize</code> function that will be executed on agent startup. This is useful for fetching some data from the network or parsing some file before your agent begins.</p>
+<h2 id="blockevent">BlockEvent</h2>
+<p>When a block is mined and detected by a Forta scan node, it will generate a <code>BlockEvent</code> containing information such as the block hash and block number. It contains the following fields:</p>
+<ul>
+<li><code>type</code> - specifies whether this was a block reorg or a regular block</li>
+<li><code>network</code> - specifies which network the block was mined on (e.g. mainnet, ropsten, rinkeby, etc)</li>
+<li><code>block_hash</code> - alias for <code>block.hash</code></li>
+<li><code>block_number</code> - alias for <code>block.number</code></li>
+<li><code>block</code> - data object containing the following fields:<ul>
+<li><code>difficulty</code></li>
+<li><code>extra_data</code></li>
+<li><code>gas_limit</code></li>
+<li><code>gas_used</code></li>
+<li><code>hash</code></li>
+<li><code>logs_bloom</code></li>
+<li><code>miner</code></li>
+<li><code>mix_hash</code></li>
+<li><code>nonce</code></li>
+<li><code>number</code></li>
+<li><code>parent_hash</code></li>
+<li><code>receipts_root</code></li>
+<li><code>sha3_uncles</code></li>
+<li><code>size</code></li>
+<li><code>state_root</code></li>
+<li><code>timestamp</code></li>
+<li><code>total_difficulty</code></li>
+<li><code>transactions</code></li>
+<li><code>transactions_root</code></li>
+<li><code>uncles</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="transactionevent">TransactionEvent</h2>
+<p>When a transaction is mined and detected by a Forta scan node, it will generate a <code>TransactionEvent</code> containing various information about the transaction. It contains the following fields:</p>
+<ul>
+<li><code>type</code> - specifies whether this was from a block reorg or a regular block</li>
+<li><code>network</code> - specifies which network the transaction was mined on (e.g. mainnet, ropsten, rinkeby, etc)</li>
+<li><code>hash</code> - alias for <code>transaction.hash</code></li>
+<li><code>from_</code> - alias for <code>transaction.from_</code></li>
+<li><code>to</code> - alias for <code>transaction.to</code></li>
+<li><code>gas_price</code> - alias for <code>transaction.gas_price</code></li>
+<li><code>gas_used</code> - alias for <code>receipt.gas_used</code></li>
+<li><code>status</code> - alias for <code>receipt.status</code></li>
+<li><code>logs</code> - alias for <code>receipt.logs</code></li>
+<li><code>timestamp</code> - alias for <code>block.timestamp</code></li>
+<li><code>block_number</code> - alias for <code>block.number</code></li>
+<li><code>block_hash</code> - alias for <code>block.hash</code></li>
+<li><code>addresses</code> - map of addresses involved in the transaction (generated from transaction to/from address, any event log address and trace data address if available)</li>
+<li><code>block</code> - data object containing following fields:<ul>
+<li><code>hash</code></li>
+<li><code>number</code></li>
+<li><code>timestamp</code></li>
+</ul>
+</li>
+<li><code>transaction</code> - data object containing the following fields:<ul>
+<li><code>hash</code></li>
+<li><code>from_</code></li>
+<li><code>to</code></li>
+<li><code>nonce</code></li>
+<li><code>gas</code></li>
+<li><code>gas_price</code></li>
+<li><code>value</code></li>
+<li><code>data</code></li>
+<li><code>r</code></li>
+<li><code>s</code></li>
+<li><code>v</code></li>
+</ul>
+</li>
+<li><code>receipt</code> - receipt object containing the following fields:<ul>
+<li><code>status</code></li>
+<li><code>root</code></li>
+<li><code>gasUsed</code></li>
+<li><code>cumulative_gas_used</code></li>
+<li><code>logs_bloom</code></li>
+<li><code>contract_address</code></li>
+<li><code>block_number</code></li>
+<li><code>block_hash</code></li>
+<li><code>transaction_index</code></li>
+<li><code>transaction_hash</code></li>
+<li><code>logs</code> - list of log objects with following fields:<ul>
+<li><code>address</code></li>
+<li><code>topics</code></li>
+<li><code>data</code></li>
+<li><code>log_index</code></li>
+<li><code>block_number</code></li>
+<li><code>block_hash</code></li>
+<li><code>transaction_index</code></li>
+<li><code>transaction_hash</code></li>
+<li><code>removed</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>traces</code> - only with tracing enabled; list of trace objects with following fields:<ul>
+<li><code>block_hash</code></li>
+<li><code>block_number</code></li>
+<li><code>subtraces</code></li>
+<li><code>trace_address</code></li>
+<li><code>transaction_hash</code></li>
+<li><code>transaction_position</code></li>
+<li><code>type</code></li>
+<li><code>error</code></li>
+<li><code>action</code> - object with following fields:<ul>
+<li><code>call_type</code></li>
+<li><code>to</code></li>
+<li><code>from_</code></li>
+<li><code>input</code></li>
+<li><code>value</code></li>
+<li><code>init</code></li>
+<li><code>address</code></li>
+<li><code>balance</code></li>
+<li><code>refund_address</code></li>
+</ul>
+</li>
+<li><code>result</code> - object with following fields:<ul>
+<li><code>gas_used</code></li>
+<li><code>address</code></li>
+<li><code>code</code></li>
+<li><code>output</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="filter_log">filter_log</h3>
+<p><code>filter_log</code> is a convenience function on <code>TransactionEvent</code> to filter <strong>and decode</strong> transaction logs. For example, you can use it to get all of the Transfer logs in a transaction from a particular ERC-20 token:</p>
+<pre><code class="language-python">erc20_token_address = '0x123abc'
+transfer_event_abi = '{&quot;name&quot;:&quot;Transfer&quot;,&quot;type&quot;:&quot;event&quot;,&quot;anonymous&quot;:false,&quot;inputs&quot;:[{&quot;indexed&quot;:true,&quot;name&quot;:&quot;from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;indexed&quot;:true,&quot;name&quot;:&quot;to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;indexed&quot;:false,&quot;name&quot;:&quot;value&quot;,&quot;type&quot;:&quot;uint256&quot;}]}'
+transfers = transaction_event.filter_log(transfer_event_abi, erc20_token_address)
+print(f'found {transfers.length} transfer events')
+</code></pre>
+<p>The underlying library used for decoding event logs is <a href="https://web3py.readthedocs.io/en/stable/">web3.py</a>. The Python SDK uses the web3.py <a href="https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractEvents.myEvent"><code>processLog</code></a> method and returns an array of <a href="https://web3py.readthedocs.io/en/stable/contracts.html#event-log-object"><code>Event Log</code></a> objects. To better understand usage, see the <a href="https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py">Python filtering example</a> agent.</p>
+<h3 id="filter_function">filter_function</h3>
+<p><code>filter_function</code> is a convenience function on <code>TransactionEvent</code> to filter <strong>and decode</strong> function calls in the transaction or traces. For example, you can use it to get all of the transferFrom function calls on a particular ERC-20 token:</p>
+<pre><code class="language-python">erc20_token_address = '0x123abc'
+transferFrom_function_abi = '{&quot;name&quot;:&quot;transferFrom&quot;,&quot;type&quot;:&quot;function&quot;,&quot;constant&quot;:false,&quot;inputs&quot;:[{&quot;name&quot;:&quot;from&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;to&quot;,&quot;type&quot;:&quot;address&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;type&quot;:&quot;uint256&quot;}],&quot;outputs&quot;:[],&quot;payable&quot;:false,&quot;stateMutability&quot;:&quot;nonpayable&quot;}'
+transfers = transaction_event.filter_function(transferFrom_function_abi, erc20_token_address)
+print(f'found {transfers.length} function calls')
+</code></pre>
+<p>The underlying library used for decoding function calls is <a href="https://web3py.readthedocs.io/en/stable/">web3.py</a>. The Python SDK uses the web3.py <a href="https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input"><code>decode_function_input</code></a> method and returns an array of (<a href="https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction"><code>ContractFunction</code></a>, <code>dict</code>) tuples. To better understand usage, see the <a href="https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py">Python filtering example</a> agent.</p>
+<h2 id="finding">Finding</h2>
+<p>If an agent wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a <code>Finding</code> object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A <code>Finding</code> object accepts the following properties:</p>
+<ul>
+<li><code>name</code> - <strong>required</strong>; human-readable name of finding e.g. "High Gas"</li>
+<li><code>description</code> - <strong>required</strong>; brief description e.g. "High gas used: 1,000,000"</li>
+<li><code>alert_id</code> - <strong>required</strong>; unique string to identify this class of finding, primarily used to group similar findings for the end user</li>
+<li><code>protocol</code> - <strong>required</strong>; name of protocol being reported on e.g. "aave", defaults to "ethereum" if left blank</li>
+<li><code>type</code> - <strong>required</strong>; indicates type of finding:<ul>
+<li>Exploit</li>
+<li>Suspicious</li>
+<li>Degraded</li>
+<li>Info</li>
+</ul>
+</li>
+<li><code>severity</code> - <strong>required</strong>; indicates impact level of finding:<ul>
+<li>Critical - exploitable vulnerabilities, massive impact on users/funds</li>
+<li>High - exploitable under more specific conditions, significant impact on users/funds</li>
+<li>Medium - notable unexpected behaviours, moderate to low impact on users/funds</li>
+<li>Low - minor oversights, negligible impact on users/funds</li>
+<li>Info - miscellaneous behaviours worth describing</li>
+</ul>
+</li>
+<li><code>metadata</code> - optional; dict (both keys and values as strings) for providing extra information</li>
+</ul>
+<h2 id="get_json_rpc_url">get_json_rpc_url</h2>
+<p>A convenience function called <code>get_json_rpc_url</code> can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the <code>jsonRpcUrl</code> property specified in your forta.config.json file.</p>
+<h2 id="get_web3_provider">get_web3_provider</h2>
+<p><code>get_web3_provider</code> is a convenience function that returns a <a href="https://web3py.readthedocs.io/en/stable/providers.html">web3.py Provider</a> which can be used to interact with the blockchain. The value from <code>get_json_rpc_url</code> will be used as the JSON-RPC endpoint to connect to.</p>
+<h2 id="create_block_event">create_block_event</h2>
+<p>A utility function for writing tests. You can use <code>create_block_event</code> to easily generate a mock <code>BlockEvent</code> object when writing unit tests for your <code>handle_block</code> handler. To better understand usage, see the <a href="https://github.com/forta-protocol/forta-agent-examples/blob/master/minimum-balance-py/src/agent_test.py">Python unit test example</a>.</p>
+<h2 id="create_transaction_event">create_transaction_event</h2>
+<p>A utility function for writing tests. You can use <code>create_transaction_event</code> to easily generate a mock <code>TransactionEvent</code> object when writing unit tests for your <code>handle_transaction</code> handler. To better understand usage, see the <a href="https://github.com/forta-protocol/forta-agent-examples/blob/master/high-gas-py/src/agent_test.py">Python unit test example</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../sdk/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Javascript/Typescript SDK" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Javascript/Typescript SDK
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../api/" class="md-footer__link md-footer__link--next" aria-label="Next: API Access" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              API Access
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+    
+  </body>
+</html>

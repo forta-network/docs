@@ -1,0 +1,1214 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../forta-logo.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+    
+    
+      
+        <title>Best practices - Forta Developer SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe914879.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+  
+
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-WNVX2Q6");</script>
+<!-- End Google Tag Manager -->
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="blue-grey">
+  
+    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNVX2Q6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#best-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Forta Developer SDK" class="md-header__button md-logo" aria-label="Forta Developer SDK" data-md-component="logo">
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Forta Developer SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Best practices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Forta Developer SDK" class="md-nav__button md-logo" aria-label="Forta Developer SDK" data-md-component="logo">
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+    Forta Developer SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Build your first agent
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Build your first agent" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Build your first agent
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        1) Quick start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/" class="md-nav__link">
+        2) Testing your agent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying/" class="md-nav__link">
+        3) Deploying your agent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subscribing/" class="md-nav__link">
+        4) Subscribing to alerts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintaining/" class="md-nav__link">
+        5) Maintaining your agent
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardhat/" class="md-nav__link">
+        Integrating with Hardhat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        Core concepts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        Video tutorials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        CLI commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        forta.config.json
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/" class="md-nav__link">
+        Javascript/Typescript SDK
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Python SDK
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Forta API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Forta API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Forta API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API Access
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-api-reference/" class="md-nav__link">
+        GraphQL API Reference
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-example-use-cases/" class="md-nav__link">
+        Example Use Cases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-examples/" class="md-nav__link">
+        Example Queries
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Best practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Best practices
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#target-specific-conditions" class="md-nav__link">
+    Target specific conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-findings-in-a-timely-manner" class="md-nav__link">
+    Return findings in a timely manner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-down-large-agents-into-smaller-files" class="md-nav__link">
+    Break down large agents into smaller files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keep-findings-lean" class="md-nav__link">
+    Keep findings lean
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-useful-alertids" class="md-nav__link">
+    Create useful alertIds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-unit-tests" class="md-nav__link">
+    Write unit tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conduct-code-reviews" class="md-nav__link">
+    Conduct code reviews
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-documentation" class="md-nav__link">
+    Include documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-initialize-handler" class="md-nav__link">
+    Use the initialize handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-number-of-network-calls" class="md-nav__link">
+    Limit number of network calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-caching-where-possible" class="md-nav__link">
+    Use caching where possible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-concurrency-where-possible" class="md-nav__link">
+    Use concurrency where possible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obfuscate-sensitive-information" class="md-nav__link">
+    Obfuscate sensitive information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beware-of-case-sensitivity" class="md-nav__link">
+    Beware of case-sensitivity
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Agent patterns
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agent patterns" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Agent patterns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitive-data/" class="md-nav__link">
+        Hiding sensitive data
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../private-alerts/" class="md-nav__link">
+        Private alerts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tx-simulation/" class="md-nav__link">
+        Transaction simulation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-running-tasks/" class="md-nav__link">
+        Long running tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querying-chains/" class="md-nav__link">
+        Querying other chains
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-monitoring/" class="md-nav__link">
+        Error monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-testing/" class="md-nav__link">
+        Advanced testing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        Running a Scan Node
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Running a Scan Node" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Running a Scan Node
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla-api/" class="md-nav__link">
+        Scan Node SLA API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ds-and-ml/" class="md-nav__link">
+        Data science and machine learning on Forta
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/" class="md-nav__link">
+        Getting help
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-libraries/" class="md-nav__link">
+        Useful libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" data-md-state="indeterminate" type="checkbox" id="__nav_16" checked>
+      
+      <label class="md-nav__link" for="__nav_16">
+        Agent Developer Contests
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agent Developer Contests" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Agent Developer Contests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest1-compound/" class="md-nav__link">
+        Compound Contest (10/20/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest2-aave/" class="md-nav__link">
+        Aave Contest (11/3/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest3-oz/" class="md-nav__link">
+        OpenZeppelin Contest (11/18/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest4-forta/" class="md-nav__link">
+        Forta Contest (12/17/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest5-solace/" class="md-nav__link">
+        Solace Contest (3/1/2022)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#target-specific-conditions" class="md-nav__link">
+    Target specific conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-findings-in-a-timely-manner" class="md-nav__link">
+    Return findings in a timely manner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-down-large-agents-into-smaller-files" class="md-nav__link">
+    Break down large agents into smaller files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keep-findings-lean" class="md-nav__link">
+    Keep findings lean
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-useful-alertids" class="md-nav__link">
+    Create useful alertIds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-unit-tests" class="md-nav__link">
+    Write unit tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conduct-code-reviews" class="md-nav__link">
+    Conduct code reviews
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-documentation" class="md-nav__link">
+    Include documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-the-initialize-handler" class="md-nav__link">
+    Use the initialize handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-number-of-network-calls" class="md-nav__link">
+    Limit number of network calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-caching-where-possible" class="md-nav__link">
+    Use caching where possible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-concurrency-where-possible" class="md-nav__link">
+    Use concurrency where possible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obfuscate-sensitive-information" class="md-nav__link">
+    Obfuscate sensitive information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beware-of-case-sensitivity" class="md-nav__link">
+    Beware of case-sensitivity
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="best-practices">Best practices</h1>
+<p>This page describes some of the best practices observed for agent development.</p>
+<h2 id="target-specific-conditions">Target specific conditions</h2>
+<p>Write your agent to target a specific condition so that it does not generate findings for every other block/transaction. Verbose agents can make it hard to distinguish the signal from the noise i.e. if an agent alerts on more than 5% of transactions, the usefulness of those alerts would not be very high as it is difficult to know what to pay attention to.</p>
+<h2 id="return-findings-in-a-timely-manner">Return findings in a timely manner</h2>
+<p>Ensure that your agent returns findings in a timely manner as requests will timeout after 30 seconds. If your agent needs to execute for longer than 30 seconds, check out the pattern for <a href="../long-running-tasks/">long running tasks</a>.</p>
+<h2 id="break-down-large-agents-into-smaller-files">Break down large agents into smaller files</h2>
+<p>Your agent may be looking for multiple conditions that you could write in a single file. We recommend keeping each condition in its own file. This will make testing your agent easier and keep the code more maintainable. You would then combine all the agents in the top-level entrypoint file (i.e. agent.js). See <a href="https://github.com/forta-protocol/forta-agent-examples/tree/master/high-gas-js">here</a> for an example.</p>
+<h2 id="keep-findings-lean">Keep findings lean</h2>
+<p>There is a <code>metadata</code> field in the <code>Finding</code> object that you can use to store any extra information that is useful. Try to keep the data here as lean as possible i.e. don't throw the whole <code>TransactionEvent</code> into the metadata since that information is already available on Etherscan.</p>
+<h2 id="create-useful-alertids">Create useful alertIds</h2>
+<p>You are required to populate the <code>alertId</code> field of the <code>Finding</code> object. Ideally, you would want it to be unique so that when you search for your <code>alertId</code> in <a href="https://explorer.forta.network/">Forta Explorer</a> it only shows your agent's alerts. Typically, an <code>alertId</code> has a string component (describing either the protocol or project) and a numeric component (to distinguish between different types of alerts about the same protocol or project) e.g. <code>TETHER-1</code>. It is left to the agent developer to choose what makes sense for their agent.</p>
+<h2 id="write-unit-tests">Write unit tests</h2>
+<p>You should write and maintain unit tests for your agent. This will ensure a high quality bar and also allow you to test all edge cases in your agent. Include both negative (i.e. when alerts should not be created) and positive (i.e. when alerts should be created) test cases for completeness.</p>
+<p>When writing tests that involve log events, you can mock out the <code>filterLog</code> SDK method instead of having to fiddle around with event topics and signatures. See <a href="https://github.com/forta-protocol/forta-agent-examples/blob/master/filter-event-and-function-js/src/large.transfer.event.spec.js">here</a> for an example. You can similarly mock out the <code>filterFunction</code> SDK method when writing tests that involve function calls. See <a href="https://github.com/forta-protocol/forta-agent-examples/blob/master/filter-event-and-function-js/src/transfer.from.function.spec.js">here</a> for an example.</p>
+<h2 id="conduct-code-reviews">Conduct code reviews</h2>
+<p>It is strongly recommended to conduct code reviews within your team. This will help ensure that any bugs are identified and all edge cases are covered by your agent.</p>
+<h2 id="include-documentation">Include documentation</h2>
+<p>Ensure that your project documentation README.md is complete, clear and concise. Briefly describe what your agent does, as well as each type of alert it can produce under which conditions. You should also include real test data that someone could use to verify the agent's behaviour. See the example README.md included with the starter projects for an example.</p>
+<h2 id="use-the-initialize-handler">Use the initialize handler</h2>
+<p>Your agent may need to do some asynchronous initialization when it starts, for example, by fetching data from some external API. You should use the <code>initialize</code> handler function for such logic.</p>
+<h2 id="limit-number-of-network-calls">Limit number of network calls</h2>
+<p>Your agent may need to make network calls to fetch data from external sources e.g. token prices. Be sure to make only the necessary network calls in order to respond in a timely manner. Another useful strategy for this could be to use caching. Also, if querying lots of on-chain data (e.g. token balances for a list of accounts), consider using the <code>ethers-multicall</code> package listed in the <a href="../useful-libraries/">Useful libraries</a> section to fetch all the data in a single http request.</p>
+<h2 id="use-caching-where-possible">Use caching where possible</h2>
+<p>Caching is a great way to improve performance. If you need to store the result of a network call or some other calculation, try to use an in-memory cache. The <code>lru-cache</code> package listed in the <a href="../useful-libraries/">Useful libraries</a> section is a great option.</p>
+<h2 id="use-concurrency-where-possible">Use concurrency where possible</h2>
+<p>Try to make use of concurrency to maximize performance. For example, if you are firing multiple http requests to fetch on-chain data, you can use the <code>ethers-multicall</code> package to fetch all the data in a single http request. Also, if firing multiple network calls, you can fire all the requests at the same time using something like <code>Promise.all</code> in Javascript.</p>
+<h2 id="obfuscate-sensitive-information">Obfuscate sensitive information</h2>
+<p>Be sure to obfuscate sensitive information, such as API keys, in your code. Agent images are stored in a public repository where anyone can access and inspect the code. See the pattern for <a href="../sensitive-data/">hiding sensitive data</a>.</p>
+<h2 id="beware-of-case-sensitivity">Beware of case-sensitivity</h2>
+<p>When comparing addresses in your code, be mindful of case-sensitivity. The SDK will return addresses in the <code>BlockEvent</code> and <code>TransactionEvent</code> as lowercase, but if you are comparing to a checksum address it will not be equal.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../api-examples/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Example Queries" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Example Queries
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../sensitive-data/" class="md-footer__link md-footer__link--next" aria-label="Next: Hiding sensitive data" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Hiding sensitive data
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+    
+  </body>
+</html>
