@@ -26,6 +26,6 @@ Get started by [building your first bot](quickstart.md). Join our community [Dis
 
 **Forta is currently in the public testnet phase**
 
-_Javascript SDK version: 0.1.2_<br>
+_Javascript SDK version: 0.1.3_<br>
 _Python SDK version: 0.1_<br>
 _Last updated: April 7th, 2022_
