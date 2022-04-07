@@ -9,7 +9,7 @@ Here is a collection of libraries and APIs that bot developers may find useful w
 
 ## forta-flashloan-detector
 
-[`forta-flashloan-detector`](https://www.npmjs.com/package/forta-flashloan-detector) is an awesome library developed by Forta community member [LimeChain](https://limechain.tech/). It provides a convenient way to detect whether transactions contains flash loans from various protocols including Aave, dYdX, Euler, Iron Bank and MakerDAO.
+[`forta-flashloan-detector`](https://www.npmjs.com/package/forta-flashloan-detector) is an awesome library developed by Forta community member [LimeChain](https://limechain.tech/). It provides a convenient way to detect whether transactions contain flashloans from various protocols including Aave, dYdX, Euler, Iron Bank and MakerDAO.
 
 ## forta-agent-tools
 
