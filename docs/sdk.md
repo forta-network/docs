@@ -1,10 +1,10 @@
 # Javascript/Typescript SDK
 
-The Forta Agent Javascript SDK comes with a set of classes and type definitions to provide a consistent interface for developers to write their agents. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Javascript/Typescript agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
+The Forta bot Javascript SDK comes with a set of classes and type definitions to provide a consistent interface for developers to write their bots. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Javascript/Typescript bots in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
 
 ## Handlers
 
-The most relevant type definitions for agent developers are the handler types: `Initialize`, `HandleBlock` and `HandleTransaction`. They are function types with the following signatures
+The most relevant type definitions for bot developers are the handler types: `Initialize`, `HandleBlock` and `HandleTransaction`. They are function types with the following signatures
 
 ```javascript
 type Initialize = () => Promise<void>
@@ -14,7 +14,7 @@ type HandleBlock = (blockEvent: BlockEvent) => Promise<Finding[]>
 
 Your `agent.js`/`agent.ts` file must have a default export object with the `handleBlock` and/or `handleTransaction` properties that provide the handler functions. You can export one or both of these depending on your use case, but at least one must be provided. The return type of these functions is `Promise<Finding[]>`, meaning they are asynchronous functions that return an array of zero or more `Finding` objects.
 
-You can also optionally export an `initialize` handler that will be executed on agent startup. This is useful for fetching some data from the network or parsing some file before your agent begins.
+You can also optionally export an `initialize` handler that will be executed on bot startup. This is useful for fetching some data from the network or parsing some file before your bot begins.
 
 ## BlockEvent
 
@@ -122,7 +122,7 @@ const transfers = transactionEvent.filterLog(transferEvent, erc20TokenAddress);
 console.log(`found ${transfers.length} transfer events`);
 ```
 
-The underlying library used for decoding event logs is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseLog`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`LogDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#LogDescription) objects (which we modified to also include the originating `address` of the log). To better understand usage, see the [Javascript filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) agent.
+The underlying library used for decoding event logs is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseLog`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`LogDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#LogDescription) objects (which we modified to also include the originating `address` of the log). To better understand usage, see the [Javascript filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) bot.
 
 ### filterFunction
 
@@ -135,11 +135,11 @@ const transfers = transactionEvent.filterFunction(transferFromFunction, erc20Tok
 console.log(`found ${transfers.length} function calls`);
 ```
 
-The underlying library used for decoding function calls is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseTransaction`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`TransactionDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription) objects. To better understand usage, see the [Javascript filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) agent.
+The underlying library used for decoding function calls is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseTransaction`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`TransactionDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription) objects. To better understand usage, see the [Javascript filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-js) bot.
 
 ## Finding
 
-If an agent wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` method which accepts the following properties:
+If a bot wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` method which accepts the following properties:
 
 - `name` - **required**; human-readable name of finding e.g. "High Gas"
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
@@ -160,7 +160,7 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 ## getJsonRpcUrl
 
-A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file (or `https://cloudflare-eth.com/` by default).
+A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL for your bot. When running in production, this function will return a URL injected by the scan node that is running the bot. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file (or `https://cloudflare-eth.com/` by default).
 
 ## getEthersProvider
 

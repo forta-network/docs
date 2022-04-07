@@ -8,14 +8,14 @@ One of the best ways to contribute is to just be a positive and helpful member o
 
 ## Spread the word
 
-Runtime blockchain security is a relatively new concept and many people do not know that such a tool is available. If you are aware of a project that is looking to improve their security, has suffered a recent exploit or just needs to build a first line of defense, let them know about Forta! You can also share the Forta Agent development contests on your social media to spread awareness, get people involved and earn crypto prizes.
+Runtime blockchain security is a relatively new concept and many people do not know that such a tool is available. If you are aware of a project that is looking to improve their security, has suffered a recent exploit or just needs to build a first line of defense, let them know about Forta! You can also share the Forta bot development contests on your social media to spread awareness, get people involved and earn crypto prizes.
 
 ## Use the tools
 
 Helping test the following tools by simply using them is a great way to contribute:
 
-* [Forta App](https://app.forta.network/): Deploy new agents and subscribe to alerts.
-* [Forta Explorer](https://explorer.forta.network/): Monitor agents and alerts.
+* [Forta App](https://app.forta.network/): Deploy new bots and subscribe to alerts.
+* [Forta Explorer](https://explorer.forta.network/): Monitor bots and alerts.
 * [Forta API](api.md): Integrate alerts into your monitoring tools or dApps.
 
 See a bug or have an idea for improvement? Share it in Discord!
@@ -30,14 +30,14 @@ Are you a skilled Javascript, Typescript or Python developer? You can help build
 
 ## Share useful libraries
 
-Have you written an awesome library to help you develop agents? Sharing such tools and libraries helps the community also improve their agents. If you have identified a common pattern when writing your agents, you could share a set of templates that others can use to speed up their agent development process. Check out the [useful libaries](useful-libraries.md) page to see what is currently recommended.
+Have you written an awesome library to help you develop bots? Sharing such tools and libraries helps the community also improve their bots. If you have identified a common pattern when writing your bots, you could share a set of templates that others can use to speed up their bot development process. Check out the [useful libaries](useful-libraries.md) page to see what is currently recommended.
 
 ## Run a scan node (coming soon)
 
-Scan nodes are a key piece of Forta infrastructure as they help run agents and share any alerts. A great way to expand the network is to run your own scan node and create bandwidth for more agents to run.
+Scan nodes are a key piece of Forta infrastructure as they help run bots and share any alerts. A great way to expand the network is to run your own scan node and create bandwidth for more bots to run.
 
 ## Analyze historical alerts
 
 There’s a unique opportunity for the community to take advantage of the open data and collaborate on new data science and machine learning solutions together. For example, the community can begin to extract trends and insights from historical alerts that may be helpful to improving blockchain security. And with the right tools and data, Forta can also begin to detect threats and exploits before they happen with increasing accuracy over time.
 
-Do you need access to historical alerts soon for data analysis or for your agent? If so, check out [Forta API](api.md).
+Do you need access to historical alerts soon for data analysis or for your bot? If so, check out [Forta API](api.md).

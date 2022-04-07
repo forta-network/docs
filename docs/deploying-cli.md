@@ -1,19 +1,19 @@
-# Deploying your agent with the CLI
+# Deploying your bot with the CLI
 
-This page covers how to deploy your agent using the `forta-agent` CLI tool.
+This page covers how to deploy your bot using the `forta-agent` CLI tool.
 
 ## Documentation
 
-Documentation for your agent is **required** in order to deploy. It should let others know what conditions your agent is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific agent.
+Documentation for your bot is **required** in order to deploy. It should let others know what conditions your bot is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific bot.
 
 ## Configuration
 
 A few configuration values must be set in your package.json in order to deploy:
 
-- `name` of your agent project should be specified and **should be globally unique**, so add some unique modifiers
-- `description` should be a short human-readable description of what your agent does
-- `version` of your agent should also be set as well
-- `chainIds` of the blockchains that your agent will be scanning should be specified as an array of integers. You must specify at least one and up to as many as you need. The supported chain IDs are:
+- `name` of your bot project should be specified and **should be globally unique**, so add some unique modifiers
+- `description` should be a short human-readable description of what your bot does
+- `version` of your bot should also be set as well
+- `chainIds` of the blockchains that your bot will be scanning should be specified as an array of integers. You must specify at least one and up to as many as you need. The supported chain IDs are:
     - 1 (Ethereum)
     - 137 (Polygon)
     - 56 (Binance Smart Chain)
@@ -21,29 +21,29 @@ A few configuration values must be set in your package.json in order to deploy:
     - 42161 (Arbitrum)
     - 10 (Optimism)
     - 250 (Fantom)
-- `repository` is **optional**, but providing a link to your code helps build trust in your agent
+- `repository` is **optional**, but providing a link to your code helps build trust in your bot
 
 ## Deploying
 
-**Make sure your Docker is running before proceeding**. You can now run the following command from your project folder to deploy your agent:
+**Make sure your Docker is running before proceeding**. You can now run the following command from your project folder to deploy your bot:
 
 ```
 npm run publish
 ```
 
-This will build a Docker image for your agent using the Dockerfile in your project folder and push it to an image repository where scan nodes can find it. A manifest will be generated for your agent (which includes a reference to the Docker image) and be published to the Agent Registry contract.
+This will build a Docker image for your bot using the Dockerfile in your project folder and push it to an image repository where scan nodes can find it. A manifest will be generated for your bot (which includes a reference to the Docker image) and be published to the Bot Registry contract.
 
 !!! warning "Signing the manifest"
-    The agent manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password** (unless you specified `keyfilePassword` in forta.config.json).
+    The bot manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password** (unless you specified `keyfilePassword` in forta.config.json).
 
 When successfully deployed, you should see a message in your output similar to 
 ```
 successfully added agent id 0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7 with manifest bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2
 ```
-This message contains your agent ID (i.e. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) as well as your Docker image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`)
+This message contains your bot ID (i.e. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) as well as your Docker image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`)
 
-Congratulations! You have successfully deployed your first Forta Agent!
+Congratulations! You have successfully deployed your first Forta bot!
 
-Great job getting this far! You have created a project, developed an agent, written and run a test, and deployed it to the Forta protocol. We encourage you to share your agents with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
+Great job getting this far! You have created a project, developed a bot, written and run a test, and deployed it to the Forta protocol. We encourage you to share your bots with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
 
 Continue to the next page where you can learn more about [subscribing to alerts](subscribing.md).

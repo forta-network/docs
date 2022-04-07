@@ -1,14 +1,20 @@
 # Useful libraries
 
-Here is a collection of libraries and APIs that agent developers may find useful when building their agents. Want to add your library here? Check out [this section](/contributing/#improve-the-documentation) to suggest an edit.
+Here is a collection of libraries and APIs that bot developers may find useful when building their bots. Want to add your library here? Check out [this section](/contributing/#improve-the-documentation) to suggest an edit.
 
 ## forta-agent-templates
 
-[`forta-agent-templates`](https://github.com/arbitraryexecution/forta-agent-templates) is a repository of low-code agent templates developed by Forta community member [Arbitrary Execution](https://www.arbitraryexecution.com/). All you have to do is modify a single json config file to build your agent. Some example templates include listening for a set of events and filtering by some conditions, or scanning for accounts that have interacted with Tornado Cash.
+[`forta-agent-templates`](https://github.com/arbitraryexecution/forta-agent-templates) is a repository of low-code bot templates developed by Forta community member [Arbitrary Execution](https://www.arbitraryexecution.com/). All you have to do is modify a single json config file to build your bot. Some example templates include listening for a set of events and filtering by some conditions, or scanning for accounts that have interacted with Tornado Cash.
+
+
+## forta-flashloan-detector
+
+[`forta-flashloan-detector`](https://www.npmjs.com/package/forta-flashloan-detector) is an awesome library developed by Forta community member [LimeChain](https://limechain.tech/). It provides a convenient way to detect whether transactions contains flash loans from various protocols including Aave, dYdX, Euler, Iron Bank and MakerDAO.
 
 ## forta-agent-tools
 
-[`forta-agent-tools`](https://www.npmjs.com/package/forta-agent-tools) is a nifty library developed by Forta community member [Nethermind](https://nethermind.io/). It includes some common agent templates, as well as some neat testing tools.
+[`forta-agent-tools`](https://www.npmjs.com/package/forta-agent-tools) is a nifty library developed by Forta community member [Nethermind](https://nethermind.io/). It includes some common bot templates, as well as some neat testing tools.
+
 
 ## ethers-multicall
 
@@ -17,12 +23,12 @@ Here is a collection of libraries and APIs that agent developers may find useful
 
 ## rolling-math
 
-[`rolling-math`](https://www.npmjs.com/package/rolling-math) is an awesome library developed by Forta community member Arbitrary Execution. It is useful for agents that require analyzing trends across some time window.
+[`rolling-math`](https://www.npmjs.com/package/rolling-math) is an awesome library developed by Forta community member Arbitrary Execution. It is useful for bots that require analyzing trends across some time window.
 
 ## lru-cache
 
-[`lru-cache`](https://www.npmjs.com/package/lru-cache) is great for adding caching capability to your agent. You can specify the maximum number of items you want to cache and keep only the most recently used items.
+[`lru-cache`](https://www.npmjs.com/package/lru-cache) is great for adding caching capability to your bot. You can specify the maximum number of items you want to cache and keep only the most recently used items.
 
 ## Etherscan API
 
-The [Etherscan APIs](https://etherscan.io/apis) are a great resource for agent developers. They can be used to answer questions like "which transactions was a given address involved in?" or "what is the ABI for a given contract address?". **Note: make sure to [use obfuscation](sensitive-data.md) if placing an Etherscan API key in your code.**
+The [Etherscan APIs](https://etherscan.io/apis) are a great resource for bot developers. They can be used to answer questions like "which transactions was a given address involved in?" or "what is the ABI for a given contract address?". **Note: make sure to [use obfuscation](sensitive-data.md) if placing an Etherscan API key in your code.**

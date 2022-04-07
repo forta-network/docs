@@ -1,16 +1,16 @@
 # Python SDK
 
-The Forta Agent Python SDK comes with a set of classes to provide a consistent interface for developers to write their agents. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Python agents in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
+The Forta bot Python SDK comes with a set of classes to provide a consistent interface for developers to write their bots. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Python bots in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
 
-**NOTE**: while you can write agents in Python, you would still use the Node.js `forta-agent` CLI tool to run the agent
+**NOTE**: while you can write bots in Python, you would still use the Node.js `forta-agent` CLI tool to run the bot.
 
 ## Handlers
 
-The most relevant functions for agent developers are the handler functions: `initialize`, `handle_block` and `handle_transaction`.
+The most relevant functions for bot developers are the handler functions: `initialize`, `handle_block` and `handle_transaction`.
 
 Your `agent.py` file must declare a `handle_block` and/or `handle_transaction` function. You can implement one or both of these depending on your use case, but at least one must be provided. These functions take a `BlockEvent` or `TransactionEvent` as their input, respectively, and return an array of zero or more `Finding` objects.
 
-You can also optionally declare an `initialize` function that will be executed on agent startup. This is useful for fetching some data from the network or parsing some file before your agent begins.
+You can also optionally declare an `initialize` function that will be executed on bot startup. This is useful for fetching some data from the network or parsing some file before your bot begins.
 
 ## BlockEvent
 
@@ -118,7 +118,7 @@ transfers = transaction_event.filter_log(transfer_event_abi, erc20_token_address
 print(f'found {transfers.length} transfer events')
 ```
 
-The underlying library used for decoding event logs is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`processLog`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractEvents.myEvent) method and returns an array of [`Event Log`](https://web3py.readthedocs.io/en/stable/contracts.html#event-log-object) objects. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
+The underlying library used for decoding event logs is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`processLog`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractEvents.myEvent) method and returns an array of [`Event Log`](https://web3py.readthedocs.io/en/stable/contracts.html#event-log-object) objects. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) bot.
 
 ### filter_function
 
@@ -131,11 +131,11 @@ transfers = transaction_event.filter_function(transferFrom_function_abi, erc20_t
 print(f'found {transfers.length} function calls')
 ```
 
-The underlying library used for decoding function calls is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`decode_function_input`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input) method and returns an array of ([`ContractFunction`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction), `dict`) tuples. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) agent.
+The underlying library used for decoding function calls is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`decode_function_input`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input) method and returns an array of ([`ContractFunction`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction), `dict`) tuples. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) bot.
 
 ## Finding
 
-If an agent wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object accepts the following properties:
+If a bot wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object accepts the following properties:
 
 - `name` - **required**; human-readable name of finding e.g. "High Gas"
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
@@ -156,7 +156,7 @@ If an agent wants to flag a transaction/block because it meets some condition (e
 
 ## get_json_rpc_url
 
-A convenience function called `get_json_rpc_url` can be used to load a JSON-RPC URL for your agent. When running in production, this function will return a URL injected by the scan node that is running the agent. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file (or `https://cloudflare-eth.com/` by default).
+A convenience function called `get_json_rpc_url` can be used to load a JSON-RPC URL for your bot. When running in production, this function will return a URL injected by the scan node that is running the bot. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file (or `https://cloudflare-eth.com/` by default).
 
 ## get_web3_provider
 

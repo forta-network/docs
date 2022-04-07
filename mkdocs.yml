@@ -2,12 +2,12 @@ site_name: Forta Developer SDK
 
 nav:
   - Overview: index.md
-  - Build your first agent:
+  - Build your first detection bot:
       - 1) Quick start: quickstart.md
-      - 2) Testing your agent: testing.md
-      - 3) Deploying your agent: deploying.md
+      - 2) Testing your bot: testing.md
+      - 3) Deploying your bot: deploying.md
       - 4) Subscribing to alerts: subscribing.md
-      - 5) Maintaining your agent: maintaining.md
+      - 5) Maintaining your bot: maintaining.md
   - Integrating with Hardhat: hardhat.md
   - Reference:
       - Core concepts: concepts.md
@@ -17,12 +17,12 @@ nav:
   - Javascript/Typescript SDK: sdk.md
   - Python SDK: python.md
   - Forta API:
-      - API Access: api.md
-      - GraphQL API Reference: forta-api-reference/index.html
-      - Example Use Cases: api-example-use-cases.md
-      - Example Queries: api-examples.md
+      - API access: api.md
+      - GraphQL API reference: forta-api-reference/index.html
+      - Example use cases: api-example-use-cases.md
+      - Example queries: api-examples.md
   - Best practices: best-practices.md
-  - Agent patterns:
+  - Bot development patterns:
       - Hiding sensitive data: sensitive-data.md
       - Private alerts: private-alerts.md
       - Transaction simulation: tx-simulation.md
@@ -30,15 +30,15 @@ nav:
       - Querying other chains: querying-chains.md
       - Error monitoring: error-monitoring.md
       - Advanced testing: advanced-testing.md
-  - Running a Scan Node:
+  - Running a scan node:
       - Quickstart: scanner-quickstart.md
-      - Scan Node SLA API: sla-api.md
+      - Scan node SLA API: sla-api.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - Getting help: help.md
   - FAQ: faq.md
   - How to contribute: contributing.md
   - Useful libraries: useful-libraries.md
-  - Agent Developer Contests:
+  - Bot developer contests:
       - Compound Contest (10/20/2021): contest1-compound.md
       - Aave Contest (11/3/2021): contest2-aave.md
       - OpenZeppelin Contest (11/18/2021): contest3-oz.md

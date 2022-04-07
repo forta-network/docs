@@ -1,16 +1,16 @@
 # Private alerts
 
-In certain usecases agent developers may want to keep their generated alerts private. Using encryption, agent developers can publish alerts that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the agent developer would understand.
+In certain usecases bot developers may want to keep their generated alerts private. Using encryption, bot developers can publish alerts that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the bot developer would understand.
 
-In addition to encrypting the alerts, you likely also want to obfuscate the agent logic (as done in the example code). Agent images are stored in a public repository where anyone can inspect the contents of the image as well as the agent logic to see what is being scanned for. Check out the [pattern for hiding sensitive data](sensitive-data.md) to understand how this is implemented.
+In addition to encrypting the alerts, you likely also want to obfuscate the bot logic (as done in the example code). Bot images are stored in a public repository where anyone can inspect the contents of the image as well as the bot logic to see what is being scanned for. Check out the [pattern for hiding sensitive data](sensitive-data.md) to understand how this is implemented.
 
-This page describes how to write a Javascript agent that emits private alerts using encryption. You can find the code for this example [here](https://github.com/forta-protocol/forta-agent-examples/tree/master/private-agent-js).
+This page describes how to write a Javascript bot that emits private alerts using encryption. You can find the code for this example [here](https://github.com/forta-protocol/forta-agent-examples/tree/master/private-agent-js).
 
 ## Generating keys
 
 [OpenPGP](https://www.openpgp.org/) public key encryption will be used in this example, but you can use any public key encryption algorithm you prefer (just make sure you understand the tradeoffs). The first step is to generate the keypair you will use for encryption. This example uses the [OpenPGP.js](https://www.npmjs.com/package/openpgp) library, but you can use any library you prefer. The project has an npm script to generate public and private keys: `npm run keygen`. This will run the `generate-keys.js` file and output a public and private key file in the project folder: public.pem and private.pem, respectively.
 
-The public key can be distributed with the agent, so let's copy paste it into agent.js (be careful with formatting as there should be no spaces at the beginning of each line). The private key should be **secured and kept in a secret place** i.e. do not commit private.pem into version control. If you view the agent code in agent.js, you will see that the public key is setup inside the `initialize` handler function:
+The public key can be distributed with the bot, so let's copy paste it into agent.js (be careful with formatting as there should be no spaces at the beginning of each line). The private key should be **secured and kept in a secret place** i.e. do not commit private.pem into version control. If you view the bot code in agent.js, you will see that the public key is setup inside the `initialize` handler function:
 
 ```javascript
 let publicKey;
@@ -68,7 +68,7 @@ async function encryptFindings(findings) {
 }
 ```
 
-Try and run this agent using `npm start` and verify that the findings are printed. The `data` field will look like a gibberish string e.g.
+Try and run this bot using `npm start` and verify that the findings are printed. The `data` field will look like a gibberish string e.g.
 
 ```
 "metadata": {
@@ -76,11 +76,11 @@ Try and run this agent using `npm start` and verify that the findings are printe
 }
 ```
 
-Great! Now that you have an agent generating encrypted findings, let's go over how to decrypt the data and use it.
+Great! Now that you have an bot generating encrypted findings, let's go over how to decrypt the data and use it.
 
 ## Decrypting findings
 
-In order to decrypt the finding, you would make use of the private key in private.pem. In practice, you would subscribe to findings from your particular agent using the [Forta App](https://app.forta.network/notifications) and receive its contents via some webhook. Upon receiving the finding, you can decrypt the data using the private key.
+In order to decrypt the finding, you would make use of the private key in private.pem. In practice, you would subscribe to findings from your particular bot using the [Forta App](https://app.forta.network/notifications) and receive its contents via some webhook. Upon receiving the finding, you can decrypt the data using the private key.
 
 For this example's sake, the project has a `decrypt.js` file to help you decrypt your finding data and verify that it's what you expect. If you open a `node` console from your project folder, you can decrypt the data string from your finding:
 
@@ -94,7 +94,7 @@ The above code should print out the finding that was passed into the `encryptFin
 
 ## setPrivateFindings
 
-As an added layer of security, agents can indicate that they do not want their findings indexed by Forta Explorer. An adversary could potentially look for alerts that use encryption and with enough alerts could infer what condition the agent is looking for. To avoid this, simply invoke `setPrivateFindings(true)` in the `initialize` handler:
+As an added layer of security, bots can indicate that they do not want their findings indexed by Forta Explorer. An adversary could potentially look for alerts that use encryption and with enough alerts could infer what condition the bot is looking for. To avoid this, simply invoke `setPrivateFindings(true)` in the `initialize` handler:
 
 ```javascript
 const { setPrivateFindings } = require("forta-agent")
@@ -109,10 +109,10 @@ This will tell the Forta protocol not to display the emitted alerts in Forta Exp
 
 ## Other considerations
 
-- Make sure to modify the README.md documentation to not reveal anything about the agent since it will be published in the agent manifest. You can keep a separate file (e.g. README_private.md) for your own internal documentation
-- Be careful when populating the package.json `name` and `description` fields as these will get published in the agent manifest. You may not want these to reveal anything about the agent
-- For agents with several files, you can encrypt all findings in the top-level agent.js file. This way you don't need to repeat encryption code across multiple files
-- Do not read the public key from the public.pem file as this would make your agent vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your agent's findings on their own machine
-- Make sure that unit tests are also obfuscated, or better yet, just not included in the final image. This could easily reveal what the agent is doing
+- Make sure to modify the README.md documentation to not reveal anything about the bot since it will be published in the bot manifest. You can keep a separate file (e.g. README_private.md) for your own internal documentation
+- Be careful when populating the package.json `name` and `description` fields as these will get published in the bot manifest. You may not want these to reveal anything about the abotgent
+- For bots with several files, you can encrypt all findings in the top-level agent.js file. This way you don't need to repeat encryption code across multiple files
+- Do not read the public key from the public.pem file as this would make your bot vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your bot's findings on their own machine
+- Make sure that unit tests are also obfuscated, or better yet, just not included in the final image. This could easily reveal what the bot is doing
 
-Awesome! You now have an agent that encrypts findings which do not appear in Forta Explorer.
+Awesome! You now have a bot that encrypts findings which do not appear in Forta Explorer.

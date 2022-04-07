@@ -1,6 +1,6 @@
 # Advanced testing
 
-There may be cases where developers want to test their agent with more complex interactions using real data, or to test scenarios that have not yet occurred on-chain. One way to do this is to fork the state of the chain locally and point your agent to it. You can then simulate transactions on the forked chain and the agent will scan the resulting blocks and transactions.
+There may be cases where developers want to test their bot with more complex interactions using real data, or to test scenarios that have not yet occurred on-chain. One way to do this is to fork the state of the chain locally and point your bot to it. You can then simulate transactions on the forked chain and the bot will scan the resulting blocks and transactions.
 
 This page describes how to conduct more advanced testing using a locally forked chain. The complete code for this example can be found [here](https://github.com/forta-protocol/forta-agent-examples/tree/master/advanced-testing-js).
 
@@ -33,9 +33,9 @@ async function runGanacheFork() {
 
 This function will fetch the latest block number and create a Ganache fork at that point in the chain. You can also specify any accounts you want to unlock in order to simulate transactions from them. The last line starts a JSON-RPC server running locally on port 7545.
 
-## Point the agent to the forked chain
+## Point the bot to the forked chain
 
-Once we have the forked Ganache chain running, we want to point our agent to it. This is easily done by setting the `jsonRpcUrl` in forta.config.json:
+Once we have the forked Ganache chain running, we want to point our bot to it. This is easily done by setting the `jsonRpcUrl` in forta.config.json:
 
 ```
 {
@@ -43,13 +43,13 @@ Once we have the forked Ganache chain running, we want to point our agent to it.
 }
 ```
 
-In the example project, we provide a _local_ forta.config.json to point this specific agent to the forked chain (make sure that `jsonRpcUrl` is uncommented). You could also set `jsonRpcUrl` in your global forta.config.json (located at ~/.forta) if you want to point all of your local agents to the forked chain.
+In the example project, we provide a _local_ forta.config.json to point this specific bot to the forked chain (make sure that `jsonRpcUrl` is uncommented). You could also set `jsonRpcUrl` in your global forta.config.json (located at ~/.forta) if you want to point all of your local bots to the forked chain.
 
-Now you can run the agent in a separate terminal using `npm start`. This will start listening for blocks from the forked Ganache chain. Awesome!
+Now you can run the bot in a separate terminal using `npm start`. This will start listening for blocks from the forked Ganache chain. Awesome!
 
 ## Simulate transactions
 
-Now we can simulate a number of transactions on the forked chain and see whether the agent returns any findings. In a separate terminal, run the script provided in package.json: `npm run simulation`. This will run the following code:
+Now we can simulate a number of transactions on the forked chain and see whether the bot returns any findings. In a separate terminal, run the script provided in package.json: `npm run simulation`. This will run the following code:
 
 ```javascript
 async function runSimulatedTransactions() {
@@ -71,12 +71,12 @@ async function runSimulatedTransactions() {
 }
 ```
 
-Here we simulate 2 transfers of Tether tokens from the unlocked account. After these transactions are mined by Ganache, you should see the agent scan the blocks shortly after (may take a few seconds). The agent should alert about one of these transactions. Sweet! Note that Ganache behaviour is to mine a new block for each transaction.
+Here we simulate 2 transfers of Tether tokens from the unlocked account. After these transactions are mined by Ganache, you should see the bot scan the blocks shortly after (may take a few seconds). The bot should alert about one of these transactions. Sweet! Note that Ganache behaviour is to mine a new block for each transaction.
 
 ## Automating the above
 
-While it's cool to be able to manually run the above scripts, it would be amazing to have it all automated. This is exactly what we have done in the provided [agent.spec.js](https://github.com/forta-protocol/forta-agent-examples/blob/master/advanced-testing-js/src/agent.spec.js) file. In it you will find a Jest test suite that will fork a Ganache chain, run simulated transactions and verify that the agent outputs the correct findings.
+While it's cool to be able to manually run the above scripts, it would be amazing to have it all automated. This is exactly what we have done in the provided [agent.spec.js](https://github.com/forta-protocol/forta-agent-examples/blob/master/advanced-testing-js/src/agent.spec.js) file. In it you will find a Jest test suite that will fork a Ganache chain, run simulated transactions and verify that the bot outputs the correct findings.
 
 ## Other considerations
 
-- A known limitation of Ganache is the lack of tracing data. If your agent relies on trace data (either using `txEvent.traces` directly, or indirectly using `txEvent.filterFunction`), then this simulation will not generate the correct findings.
+- A known limitation of Ganache is the lack of tracing data. If your bot relies on trace data (either using `txEvent.traces` directly, or indirectly using `txEvent.filterFunction`), then this simulation will not generate the correct findings.

@@ -223,10 +223,10 @@ You can also view the forta-publisher logs for batches of alerts.
 $ docker logs -f forta-publisher
 ```
 
-!!! note "Agent Assignments"
-    Your scan node might not have any agents assigned.  This is okay.  As agents are added to the network, the network will assign agents to your node.
+!!! note "Bot Assignments"
+    Your scan node might not have any bots assigned.  This is okay.  As bots are added to the network, the network will assign bots to your node.
 
-To see a list of agents that the node is running, use this command.
+To see a list of bots that the node is running, use this command.
 
 ```
 $ docker ps | grep forta-agent
