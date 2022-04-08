@@ -1,7 +1,6 @@
-site_name: Forta Developer SDK
+site_name: Forta Docs
 
 nav:
-  - Welcome!: index.md
   - About Forta:
       - What is Forta: what-is-forta.md
       - How Forta works: how-forta-works.md
@@ -64,3 +63,8 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
