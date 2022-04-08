@@ -3,14 +3,14 @@ hide:
   - toc
 ---
 
-# Overview
+# Welcome!
 
 !!! important "Forta API (beta)"
-    (February 2022) We recently launched API access to alerts. For more details, please check out [the API docs](api.md).
+(February 2022) We recently launched API access to alerts. For more details, please check out [the API docs](api.md).
 
 Welcome to the Forta Developer SDK documentation!
 
-**Forta** is a decentralized, community-based monitoring network to detect threats and anomalies on DeFi, NFT, governance, bridges and other Web3 systems in real-time.
+**Forta** is a decentralized monitoring network to detect threats and anomalies on DeFi, NFT, governance, bridges and other Web3 systems in real-time.
 
 Given timely and relevant alerts about the security and health of owned or dependent systems, protocols and investors can react quickly to neutralize threats and prevent or minimize loss of funds.
 

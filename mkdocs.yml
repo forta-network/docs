@@ -1,7 +1,12 @@
 site_name: Forta Developer SDK
 
 nav:
-  - Overview: index.md
+  - Welcome!: index.md
+  - About Forta:
+      - What is Forta: what-is-forta.md
+      - How Forta works: how-forta-works.md
+      - Governance: governance.md
+      - FORT token: fort-token.md
   - Build your first detection bot:
       - 1) Quick start: quickstart.md
       - 2) Testing your bot: testing.md
@@ -56,11 +61,6 @@ theme:
   features:
     - navigation.expand
     - navigation.instant
-
-extra:
-  analytics:
-    provider: custom
-    gtmId: GTM-WNVX2Q6
 
 markdown_extensions:
   - admonition
