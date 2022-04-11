@@ -1,6 +1,6 @@
 # Deploying your bot
 
-Once you have tested your bot locally, you are ready to deploy it to the Forta protocol production environment! Deploying your bot involves 2 key steps:
+Once you have tested your bot locally, you are ready to deploy it to the Forta network production environment! Deploying your bot involves 2 key steps:
 
 1. publishing a Docker image, and
 2. registering it in the Bot Registry smart contract.

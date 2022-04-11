@@ -57,6 +57,6 @@ When successfully deployed, you should see the bot status as Enabled on the My A
 
 Congratulations! You have successfully deployed your first Forta bot!
 
-Great job getting this far! You have created a project, developed a bot, written and run a test, and deployed it to the Forta protocol. We encourage you to share your bots with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
+Great job getting this far! You have created a project, developed a bot, written and run a test, and deployed it to the Forta network. We encourage you to share your bots with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
 
 Continue to the next page where you can learn more about [subscribing to alerts](subscribing.md).

@@ -1,6 +1,7 @@
 site_name: Forta Docs
 
 nav:
+  - Welcome: index.md
   - About Forta:
       - What is Forta: what-is-forta.md
       - How Forta works: how-forta-works.md

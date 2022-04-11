@@ -57,12 +57,3 @@ hide:
     [:octicons-arrow-right-24: Learn more](what-is-forta.md)
 
 </div>
-
-<br>
-**Forta is currently in the Fortification phase (i.e. public beta)**
-<br>
-*Javascript/Typescript SDK version: 0.1.3*
-<br>
-*Python SDK version: 0.1*
-<br>
-*Last updated: April 8th, 2022*

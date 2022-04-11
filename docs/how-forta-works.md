@@ -35,7 +35,7 @@ If you are an independent dev that wants to develop detection bots, you can visi
 
 #### Become a node operator
 
-The Forta Foundation will soon announce the start of the “Fortification Phase,” where anyone in the Forta community may apply to run a scan node and participate in testing the decentralized Forta Protocol using the FORT token, subject to certain eligibility criteria. If you are keen to dig into the technical details of running a node, [check out the docs](https://docs.forta.network/en/latest/scanner-quickstart/).
+The Forta Foundation will soon announce the start of the “Fortification Phase,” where anyone in the Forta community may apply to run a scan node and participate in testing the decentralized Forta network using the FORT token, subject to certain eligibility criteria. If you are keen to dig into the technical details of running a node, [check out the docs](https://docs.forta.network/en/latest/scanner-quickstart/).
 
 ## Security
 

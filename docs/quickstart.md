@@ -35,7 +35,7 @@ The `init` command will initialize a forta.config.json and a keyfile for you in 
 Awesome! You have successfully completed setting up your project. See below for ideas/examples of bots, or continue to [testing your bot](testing.md).
 ## Ideas for bots
 
-We’re excited to see what sort of innovative bots the community comes up with! A good place to start is to choose a specific protocol that you use or love to build bots for. You could also choose based on TVL ranking as listed on [DeFi Pulse](https://www.defipulse.com/). If you’re looking for some inspiration to get started, here are possible ideas for bots:
+We’re excited to see what sort of innovative bots the community comes up with! A good place to start is to choose a specific protocol that you use or would love to build bots for. You could also choose based on TVL ranking as listed on [DeFi Pulse](https://www.defipulse.com/). If you’re looking for some inspiration to get started, here are possible ideas for bots:
 
 - Detect admin functions
 - Detect high gas transactions

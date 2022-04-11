@@ -105,7 +105,7 @@ async function initialize() {
 }
 ```
 
-This will tell the Forta protocol not to display the emitted alerts in Forta Explorer, as well as not to associate the alert with any block/transaction. If you would like to reference the block/transaction, you would need to set the data yourself in the finding `metadata`.
+This will tell the Forta network not to display the emitted alerts in Forta Explorer, as well as not to associate the alert with any block/transaction. If you would like to reference the block/transaction, you would need to set the data yourself in the finding `metadata`.
 
 ## Other considerations
 
