@@ -1,6 +1,6 @@
 # How to contribute
 
-Thank you for being a part of the Forta Protocol! All contributions from the community are valuable and encouraged. Getting the community involved is essential to Forta's success and there are many ways to contribute even without having to write any code. Here are just a few ideas, but you're welcome to submit any more you think of!
+Thank you for being a part of the Forta network! All contributions from the community are valuable and encouraged. Getting the community involved is essential to Forta's success and there are many ways to contribute even without having to write any code. Here are just a few ideas, but you're welcome to submit any more you think of!
 
 ## Join the Forta Discord
 
@@ -14,9 +14,9 @@ Runtime blockchain security is a relatively new concept and many people do not k
 
 Helping test the following tools by simply using them is a great way to contribute:
 
-* [Forta App](https://app.forta.network/): Deploy new bots and subscribe to alerts.
-* [Forta Explorer](https://explorer.forta.network/): Monitor bots and alerts.
-* [Forta API](api.md): Integrate alerts into your monitoring tools or dApps.
+- [Forta App](https://app.forta.network/): Deploy new bots and subscribe to alerts.
+- [Forta Explorer](https://explorer.forta.network/): Monitor bots and alerts.
+- [Forta API](api.md): Integrate alerts into your monitoring tools or dApps.
 
 See a bug or have an idea for improvement? Share it in Discord!
 

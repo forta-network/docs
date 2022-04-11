@@ -114,7 +114,7 @@ $ npm run file ./test.data.json
 
 ## publish
 
-Deploy your bot to the Forta protocol using the `forta-agent publish` command. This will build a Docker image for your bot and publish it to the image repository. Also, it will create a bot manifest which includes the Docker image reference, sign the manifest using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the Bot Registry contract.
+Deploy your bot to the Forta network using the `forta-agent publish` command. This will build a Docker image for your bot and publish it to the image repository. Also, it will create a bot manifest which includes the Docker image reference, sign the manifest using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the Bot Registry contract.
 
 Options:
 
@@ -134,11 +134,11 @@ Options:
 
 ## disable
 
-Disable your deployed bot and stop it from running on the Forta protocol by using `forta-agent disable`. Your Docker image will still be publicly available, but scan nodes will know not to run your bot.
+Disable your deployed bot and stop it from running on the Forta network by using `forta-agent disable`. Your Docker image will still be publicly available, but scan nodes will know not to run your bot.
 
 ## enable
 
-Enable your bot and start execution on the Forta protocol by using `forta-agent enable`. By default, your bot is enabled when you deploy to the Forta protocol. Only use this command if your bot is currently disabled.
+Enable your bot and start execution on the Forta network by using `forta-agent enable`. By default, your bot is enabled when you deploy to the Forta network. Only use this command if your bot is currently disabled.
 
 ## keyfile
 
