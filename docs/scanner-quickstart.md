@@ -134,7 +134,7 @@ Scanner address: 0xAAA8C491232cB65a65FBf7F36b71220B3E695AAA
 Successfully initialized at /yourname/.forta
 ```
 
-Take note of the address. This is the value that will be registered in the scan node registry smart contract.
+Take note of the address. This is the value that will be registered in the scan node registry smart contract. If you need to find out your address later again, you can run `forta account address`.
 
 !!! note "Forta Directory"
     By default, the forta directory is located in `~/.forta`. If you would like to use a different directory, either set the $FORTA_DIR env var or provide the `--dir` flag to the `init` command. Init command will initialize your Forta configuration and key to this directory.
@@ -191,10 +191,18 @@ trace:
 
 ## Register Scan Node
 
-Please contact the Forta team and provide your node address.  Once approved, we will add your node to the Forta network.
+To register your node to the registry contract, you can run `forta register --owner-address <address>`.
+
+!!! warning "Action requires funds"
+    You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
+
+The owner address should be from a separate wallet which you will be able to use later to disable your scan node. This actions is useful to avoid slashing while you do maintenance or shut down your node entirely. The owner address needs to be a different address than your scan node address.
+
+When your transaction goes through, please contact the Forta team and provide this transaction hash. We will take extra steps to enable your node on the Forta network.
 
 !!! important "Early Decentralization Phase"
-    At this phase, only Forta-approved nodes are allowed onto the network. In later phases, Forta will introduce economic security measures that will allow permissionless scan nodes.
+    At this phase, only Forta-approved nodes are allowed onto the network. This will be permissionless when staking becomes publicly accessible.
+
 
 ## Run Scan Node
 
