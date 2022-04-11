@@ -8,6 +8,12 @@ Underlying Forta is a decentralized network of independent node operators that s
 
 The future is multi-chain. That is why Forta continues to expand into the emerging landscape of new L1s and L2s, bringing runtime monitoring and anomaly detection to Ethereum, Avalanche, Polygon, BNB Chain, Fantom, Arbitrum, and Optimism.
 
+### Why Forta
+
+As the Web3 economy grows in value and complexity, security has become increasingly critical. More than $1 billion was lost in the first quarter of 2022 due to hacks and exploits, some of which have only been discovered several days after the attack happened. The need for real-time security and operational monitoring has become clear, allowing protocols and investors to react quickly to neutralize threats and prevent or minimize loss of funds.
+
+However, the rapid speed at which the Web3 industry develops makes it hard for a centralized entity to watch it all. That’s where Forta comes in.
+
 ## How to get started
 
 **You can subscribe** to the Forta data feeds through a variety of applications, including the [Forta App](https://app.forta.network/), [OpenZeppelin Defender](https://openzeppelin.com/defender/), or directly by using the public [Forta API](https://www.youtube.com/watch?v=xkxS7d2i5ms).

@@ -1,12 +1,16 @@
 # How Forta works
 
-Underlying Forta is a decentralized network of independent node operators that scan all transactions and block-by-block state changes for outlier transactions and threats. When an issue is detected, node operators send alerts to subscribers of potential risks, which enables them to take action.
+The Forta Network has two main components – detection bots and scan nodes. Detection bots are pieces of logic (scripts) that look for certain transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any supported chain. Nodes run detection bots against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. Forta will also maintain an automated public registry of all alerts, and anyone interested in the security of a contract can consume relevant alerts via the [Forta Explorer](https://explorer.forta.network/) or [API](api.md).
+
+There is value in the negative signal too – knowing that detection bots are running 24/7 and not triggering alerts. Forta will maintain an automated record of the detection bots run by each node, for each block.
 
 ## Roles in the network
 
 ### Subscribers to alerts
 
-You can subscribe to the Forta data feeds through a variety of applications, including the [Forta App](https://app.forta.network/), [OpenZeppelin Defender](https://openzeppelin.com/defender/), or directly by using the public [Forta API](https://www.youtube.com/watch?v=xkxS7d2i5ms).
+Protocols, DAOs, investors and individuals can use Forta to monitor transaction activity and receive alerts on security, financial, operational and governance related events on Layer 1s, Layer 2s and sidechains.
+
+**You can subscribe** to the Forta data feeds through a variety of applications, including the [Forta App](https://app.forta.network/), [OpenZeppelin Defender](https://openzeppelin.com/defender/), or directly by using the public [Forta API](https://www.youtube.com/watch?v=xkxS7d2i5ms).
 
 #### Notification channels
 
@@ -27,11 +31,15 @@ There are multiple options for users that prefer private monitoring. Forta bots 
 
 ### Detection bot developers
 
+The vehicles for monitoring smart contracts on Forta are called detection bots – virtual security cameras that broadcast a public feed. Any developer can write and publish a detection bot on the Forta network, and anyone can subscribe to a bot and receive its alerts. The more detection bots running on Forta, the safer Web3 becomes.
+
 **You can develop** and deploy your own detection bots on Forta using the [SDK](https://docs.forta.network/en/latest/quickstart/). There are many [templates](https://github.com/arbitraryexecution/forta-agent-templates) and [examples](https://github.com/forta-protocol/forta-agent-examples) you can work from. There are also a growing number of development teams who you can hire to develop Forta bots for your project (visit the [Bot Development Marketplace](https://www.notion.so/forta/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) or contact the Forta Foundation at [info@forta.org](mailto:info@forta.org) for more information).
 
 If you are an independent dev that wants to develop detection bots, you can visit Forta’s [Bot Development Marketplace](https://forta.notion.site/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) to discover RFPs, apply for Grants or participate in Forta Development Contests, which are announced in the [Forta Discord](https://discord.com/invite/KACdTEutQq).
 
 ### Scan node operators
+
+Scan node operators run the detection bots that Forta’s work assigner directs to them, against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS.
 
 #### Become a node operator
 

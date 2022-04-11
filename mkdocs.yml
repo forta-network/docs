@@ -35,14 +35,14 @@ nav:
       - Querying other chains: querying-chains.md
       - Error monitoring: error-monitoring.md
       - Advanced testing: advanced-testing.md
+  - Useful libraries: useful-libraries.md
   - Running a scan node:
       - Quickstart: scanner-quickstart.md
       - Scan node SLA API: sla-api.md
   - Data science and machine learning on Forta: ds-and-ml.md
+  - How to contribute: contributing.md
   - Getting help: help.md
   - FAQ: faq.md
-  - How to contribute: contributing.md
-  - Useful libraries: useful-libraries.md
   - Bot developer contests:
       - Compound Contest (10/20/2021): contest1-compound.md
       - Aave Contest (11/3/2021): contest2-aave.md
@@ -59,8 +59,8 @@ theme:
   logo: forta-logo.png
   favicon: forta-logo.png
   features:
-    - navigation.expand
     - navigation.instant
+    - navigation.top
 
 markdown_extensions:
   - admonition
