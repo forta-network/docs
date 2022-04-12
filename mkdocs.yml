@@ -7,6 +7,7 @@ nav:
       - How Forta works: how-forta-works.md
       - Governance: governance.md
       - FORT token: fort-token.md
+      - Core concepts: concepts.md
   - Detection bot developers:
       - Build your first detection bot:
           - 1) Quick start: quickstart.md
@@ -43,7 +44,6 @@ nav:
       - GraphQL API reference: forta-api-reference/index.html
       - Example use cases: api-example-use-cases.md
       - Example queries: api-examples.md
-  - Core concepts: concepts.md
   - Video tutorials: tutorials.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - How to contribute: contributing.md
