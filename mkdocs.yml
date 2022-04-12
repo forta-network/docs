@@ -7,48 +7,48 @@ nav:
       - How Forta works: how-forta-works.md
       - Governance: governance.md
       - FORT token: fort-token.md
-  - Build your first detection bot:
-      - 1) Quick start: quickstart.md
-      - 2) Testing your bot: testing.md
-      - 3) Deploying your bot: deploying.md
-      - 4) Subscribing to alerts: subscribing.md
-      - 5) Maintaining your bot: maintaining.md
-  - Integrating with Hardhat: hardhat.md
-  - Reference:
-      - Core concepts: concepts.md
-      - Video tutorials: tutorials.md
+  - Detection bot developers:
+      - Build your first detection bot:
+          - 1) Quick start: quickstart.md
+          - 2) Testing your bot: testing.md
+          - 3) Deploying your bot: deploying.md
+          - 4) Subscribing to alerts: subscribing.md
+          - 5) Maintaining your bot: maintaining.md
+      - Integrating with Hardhat: hardhat.md
+      - Best practices: best-practices.md
+      - Bot development patterns:
+          - Hiding sensitive data: sensitive-data.md
+          - Private alerts: private-alerts.md
+          - Transaction simulation: tx-simulation.md
+          - Long running tasks: long-running-tasks.md
+          - Querying other chains: querying-chains.md
+          - Error monitoring: error-monitoring.md
+          - Advanced testing: advanced-testing.md
+      - Useful libraries: useful-libraries.md
+      - Javascript/Typescript SDK: sdk.md
+      - Python SDK: python.md
       - CLI commands: cli.md
       - forta.config.json: config.md
-  - Javascript/Typescript SDK: sdk.md
-  - Python SDK: python.md
-  - Forta API:
+      - Bot developer contests:
+          - Compound Contest (10/20/2021): contest1-compound.md
+          - Aave Contest (11/3/2021): contest2-aave.md
+          - OpenZeppelin Contest (11/18/2021): contest3-oz.md
+          - Forta Contest (12/17/2021): contest4-forta.md
+          - Solace Contest (3/1/2022): contest5-solace.md
+  - Scan node operators:
+      - Quickstart: scanner-quickstart.md
+      - Scan node SLA API: sla-api.md
+  - Alerts API:
       - API access: api.md
       - GraphQL API reference: forta-api-reference/index.html
       - Example use cases: api-example-use-cases.md
       - Example queries: api-examples.md
-  - Best practices: best-practices.md
-  - Bot development patterns:
-      - Hiding sensitive data: sensitive-data.md
-      - Private alerts: private-alerts.md
-      - Transaction simulation: tx-simulation.md
-      - Long running tasks: long-running-tasks.md
-      - Querying other chains: querying-chains.md
-      - Error monitoring: error-monitoring.md
-      - Advanced testing: advanced-testing.md
-  - Useful libraries: useful-libraries.md
-  - Running a scan node:
-      - Quickstart: scanner-quickstart.md
-      - Scan node SLA API: sla-api.md
+  - Core concepts: concepts.md
+  - Video tutorials: tutorials.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - How to contribute: contributing.md
   - Getting help: help.md
   - FAQ: faq.md
-  - Bot developer contests:
-      - Compound Contest (10/20/2021): contest1-compound.md
-      - Aave Contest (11/3/2021): contest2-aave.md
-      - OpenZeppelin Contest (11/18/2021): contest3-oz.md
-      - Forta Contest (12/17/2021): contest4-forta.md
-      - Solace Contest (3/1/2022): contest5-solace.md
 
 theme:
   name: material

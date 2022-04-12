@@ -22,6 +22,15 @@ However, the rapid speed at which the Web3 industry develops makes it hard for a
 
 If you are an independent dev that wants to develop detection bots, you can visit Forta’s [Bot Development Marketplace](https://forta.notion.site/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) to discover RFPs, apply for Grants or participate in Forta Development Contests, which are announced in the [Forta Discord](https://discord.com/invite/KACdTEutQq).
 
+### Detection Bots
+
+Detection bots refer to a set of code scripts within a Docker container that process some blockchain data (i.e. a block or transaction) and detect specific threat conditions (e.g. whether a flash loan attack occured, or whether a particular account balance fell below some threshold). Bots emit alerts for their findings. Bots are executed by scan nodes. To learn more about bots, see our [FAQ](faq.md#what-makes-a-good-bot) section.
+
+### Scan Nodes
+
+A scan node is a specific type of Forta node that executes detection bots for every transaction and every new block on a specific blockchain network (may also be mempool or simulated network). The scan node manages and coordinates bots (e.g. by instantiating and running bots, and restarting bots that become unresponsive). The scan node ferries blockchain data to bots to process the transaction/block. To learn more about scan nodes, see our [FAQ](faq.md#how-do-i-run-a-scan-node) section.
+
+
 ## Types of monitoring
 
 ### Operational monitoring

@@ -20,7 +20,7 @@ hide:
 
     ---
 
-    Use the Forta App to receive alerts from specific contracts or detection bots
+    Use the Forta App to receive alerts from specific contracts or detection bots. See the [video tutorial](tutorials.md#10-subscribing-to-alerts-using-forta-app)
 
     [:octicons-arrow-right-24: Subscribe](https://app.forta.network){target=_blank}
 

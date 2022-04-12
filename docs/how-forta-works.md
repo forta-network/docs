@@ -55,6 +55,14 @@ Scan nodes must produce proof of scan for every block, which provides the abilit
 
 The Forta smart contracts, node software, and other components of the network receive regular security review and the reports will be made public.
 
+### How does Forta ensure reliable monitoring?
+
+Reliability on Forta is solved through agent redundancy and the monitoring and enforcement of scan node service levels by the community. On the public network, Forta agents are assigned to multiple scan nodes with periodic re-assignment. Agents with a minimum stake are executed on a minimum number of scan nodes set by a parameter in the Forta protocol smart contracts, and agents with higher community staking are executed on additional scan nodes. Scan nodes are required to provide a stake and must produce a proof of scan for every block. Scan nodes are monitored for reliability and are slashed for failure to meet the community-established service levels. Alert and information output from agents is validated by consensus of the multiple scan nodes on which agents are executed, and users can choose to determine the minimum consensus level they require for alert information.
+
+### How are Forta alerts and findings validated?
+
+Forta scan nodes gather findings from agents for each block and then store a proof of scan on IPFS and broadcast the finding details to the Forta analyzer node. Users can obtain the detailed information from the Forta analyzer node via the public API, which can be validated against the proof of scan data on IPFS. The analyzer node performs data indexing and may provide additional analysis.
+
 ## Fees
 
 No fees are required for subscribing to receive Forta alerts or for the execution of bots, although Forta encourages projects to fund experienced developers to create quality Forta detection bots for their specific use cases.
