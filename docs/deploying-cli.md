@@ -38,9 +38,9 @@ This will build a Docker image for your bot using the Dockerfile in your project
 
 When successfully deployed, you should see a message in your output similar to 
 ```
-successfully added agent id 0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7 with manifest bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2
+successfully added agent id 0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7 with manifest QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg
 ```
-This message contains your bot ID (i.e. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) as well as your Docker image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`)
+This message contains your bot ID (i.e. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) as well as your manifest IPFS reference (i.e. `QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg`). You can view the manifest by requesting it from any IPFS gateway (i.e. [`https://ipfs.io/ipfs/QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg`](https://ipfs.io/ipfs/QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg))
 
 Congratulations! You have successfully deployed your first Forta bot!
 
