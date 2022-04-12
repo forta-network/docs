@@ -191,14 +191,18 @@ trace:
 
 ## Register Scan Node
 
+Your scan node has an Ethereum address which allows receiving detection bots to run and asserting an authority on the outputted alerts. While it remains as the main identity, it is ownable and manageable by a different owner wallet.
+
+The owner wallet address you provide upon registering is able to disable your scan node later. This action is useful to avoid slashing while you do maintenance or when you shut down your node entirely. The owner wallet address needs to be a different address than your scan node address.
+
 To register your node to the registry contract, you can run `forta register --owner-address <address>`.
 
 !!! warning "Action requires funds"
     You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
 
-The owner address should be from a separate wallet which you will be able to use later to disable your scan node. This actions is useful to avoid slashing while you do maintenance or shut down your node entirely. The owner address needs to be a different address than your scan node address.
+When your transaction goes through, you can run your node as described in the next section. Your node will be assigned new bots as new ones arrive to the network.
 
-When your transaction goes through, please contact the Forta team and provide this transaction hash. We will take extra steps to enable your node on the Forta network.
+Make sure to find us in [Discord](https://discord.gg/cE774RyA) node operator support channel and fill out the application form so your node can be fully enabled and receive bots.
 
 !!! important "Early Decentralization Phase"
     At this phase, only Forta-approved nodes are allowed onto the network. This will be permissionless when staking becomes publicly accessible.
