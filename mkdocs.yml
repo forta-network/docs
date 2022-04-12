@@ -39,7 +39,7 @@ nav:
   - Scan node operators:
       - Quickstart: scanner-quickstart.md
       - Scan node SLA API: sla-api.md
-  - Alerts API:
+  - API integration:
       - API access: api.md
       - GraphQL API reference: forta-api-reference/index.html
       - Example use cases: api-example-use-cases.md

@@ -40,7 +40,7 @@ hide:
 
     [:octicons-arrow-right-24: Scanner quick start](scanner-quickstart.md)
 
--   :mag:{ .lg .middle } __Query the Alerts API__
+-   :mag:{ .lg .middle } __Query the Forta API__
 
     ---
 
