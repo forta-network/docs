@@ -76,7 +76,7 @@ Try and run this bot using `npm start` and verify that the findings are printed.
 }
 ```
 
-Great! Now that you have an bot generating encrypted findings, let's go over how to decrypt the data and use it.
+Great! Now that you have a bot generating encrypted findings, let's go over how to decrypt the data and use it.
 
 ## Decrypting findings
 
@@ -110,7 +110,7 @@ This will tell the Forta network not to display the emitted alerts in Forta Expl
 ## Other considerations
 
 - Make sure to modify the README.md documentation to not reveal anything about the bot since it will be published in the bot manifest. You can keep a separate file (e.g. README_private.md) for your own internal documentation
-- Be careful when populating the package.json `name` and `description` fields as these will get published in the bot manifest. You may not want these to reveal anything about the abotgent
+- Be careful when populating the package.json `name` and `description` fields as these will get published in the bot manifest. You may not want these to reveal anything about the bot
 - For bots with several files, you can encrypt all findings in the top-level agent.js file. This way you don't need to repeat encryption code across multiple files
 - Do not read the public key from the public.pem file as this would make your bot vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your bot's findings on their own machine
 - Make sure that unit tests are also obfuscated, or better yet, just not included in the final image. This could easily reveal what the bot is doing

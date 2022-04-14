@@ -71,4 +71,4 @@ The above code fetches block data given a block number which also includes trans
 - The above example uses a simple flag (i.e. `isScanningRinkeby`) to ensure only one task is running, but based on your requirements you may customize this logic further e.g. making sure a minimum amount of time has passed before triggering the next task
 - A minor drawback of this approach is that the developer tools (i.e. CLI commands) are not usable. For instance, you cannot specify a transaction/block from Rinkeby using `npm run tx/block`. You would have to do this by manually modifying the code.
 
-Great! You now have an bot that can scan blocks and transactions from any blockchain whether or not it's officially supported by Forta.
+Great! You now have a bot that can scan blocks and transactions from any blockchain whether or not it's officially supported by Forta.

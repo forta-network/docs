@@ -63,4 +63,4 @@ async function handleBlock(blockEvent: BlockEvent) {
 
 The above transaction should succeed with no errors. Ganache will mine the transaction and increase the block number. But what happens if you try to transfer an amount higher than the user's balance? The on-chain logic will throw an error, and the `catch` block will be invoked. In this example, we return a finding if the transfer fails for any reason.
 
-Amazing! You now have an bot that can fork the state of the blockchain, query on-chain data, and execute transactions without needing to pay any gas.
+Amazing! You now have a bot that can fork the state of the blockchain, query on-chain data, and execute transactions without needing to pay any gas.

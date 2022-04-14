@@ -1,6 +1,6 @@
 **Forta is thrilled to announce that we’ve partnered with Aave Grants DAO to bring you our second bot development contest!**
 
-Below you will find five challenges. Each challenge has a specific security concern that a Forta bot can solve, provided by Aave. Next to each challenge is a link to a Google Form, which you may use to submit an bot you develop that meets the challenge requirements to the contest judges.
+Below you will find five challenges. Each challenge has a specific security concern that a Forta bot can solve, provided by Aave. Next to each challenge is a link to a Google Form, which you may use to submit a bot you develop that meets the challenge requirements to the contest judges.
 
 - Only the first ten (10) submissions to each challenge that meet the challenge requirements below will be considered.
 

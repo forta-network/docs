@@ -46,4 +46,4 @@ The `runLongTask` function above is declared as `async` and is where the long ru
 - The long running task is being triggered from `handleBlock` in the example, which should fire on average every 15 seconds for Ethereum mainnet. You may want more regular fixed intervals to trigger your task, in which case you can use the Node.js `setInterval` function and invoke it from the bot's `initialize` handler
 - The above example uses a simple flag (i.e. `isTaskRunning`) to ensure only one task is running, but based on your requirements you may customize this logic further e.g. making sure a minimum amount of time has passed before triggering the next task
 
-Great! You now have an bot that can execute tasks longer than Forta's specified timeout and return findings.
+Great! You now have a bot that can execute tasks longer than Forta's specified timeout and return findings.

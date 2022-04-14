@@ -4,7 +4,7 @@ This page describes some of the best practices observed for bot development.
 
 ## Target specific conditions
 
-Write your bot to target a specific condition so that it does not generate findings for every other block/transaction. Verbose bots can make it hard to distinguish the signal from the noise i.e. if an bot alerts on more than 5% of transactions, the usefulness of those alerts would not be very high as it is difficult to know what to pay attention to.
+Write your bot to target a specific condition so that it does not generate findings for every other block/transaction. Verbose bots can make it hard to distinguish the signal from the noise i.e. if a bot alerts on more than 5% of transactions, the usefulness of those alerts would not be very high as it is difficult to know what to pay attention to.
 
 ## Return findings in a timely manner
 

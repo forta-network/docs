@@ -80,7 +80,7 @@ Check out [OpenZeppelin.com](https://openzeppelin.com/) for more information on 
 
     For a detailed description of the issue refer to the [post-mortem](https://forum.openzeppelin.com/t/uupsupgradeable-vulnerability-post-mortem/15680).
 
-    In order to detect an attack, an bot needs to find `Upgraded(address)` events and then retrieve the code of the contract that emitted the event. If the code is empty, this means that the contract was selfdestructed, and an alert should be emitted.
+    In order to detect an attack, a bot needs to find `Upgraded(address)` events and then retrieve the code of the contract that emitted the event. If the code is empty, this means that the contract was selfdestructed, and an alert should be emitted.
 
     - Winner: **@karmacoma#4155**
     - Winning bot: [https://github.com/karmacoma-eth/forta-uups-agent](https://github.com/karmacoma-eth/forta-uups-agent)

@@ -79,4 +79,4 @@ While it's cool to be able to manually run the above scripts, it would be amazin
 
 ## Other considerations
 
-- A known limitation of Ganache is the lack of tracing data. If your bot relies on trace data (either using `txEvent.traces` directly, or indirectly using `txEvent.filterFunction`), then this simulation will not generate the correct findings.
+- A known limitation of Ganache is the lack of tracing data. If your bot relies on trace data (either using `txEvent.traces` directly, or indirectly using `txEvent.filterFunction`), then this simulation may not generate the correct findings.

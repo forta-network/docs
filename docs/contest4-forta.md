@@ -5,7 +5,7 @@ Submit your entries for this contest [**HERE**](https://docs.google.com/forms/d/
 **Forta bots** are code scripts written in Python, Javascript and Typescript that trigger alerts when certain
 conditions are met. The best bots trigger alerts when specific conditions indicate that a potential hack or exploit may be taking place and help end users prevent them. For more information on creating your first bot, check out our [quickstart guide](https://docs.forta.network/en/latest/quickstart/) and [video tutorials](https://docs.forta.network/en/latest/tutorials/).
 
-**Forta bot developer contests** are mini-hackathons where anyone is able to submit an bot and be rewarded in NFTs, and Crypto!
+**Forta bot developer contests** are mini-hackathons where anyone is able to submit a bot and be rewarded in NFTs, and Crypto!
 
 Contest discussion group and announcements are available on our [Discord](https://discord.gg/rsc55DqcCy).
 
@@ -55,7 +55,7 @@ For any questions, please contact a Forta Moderator on **Discord**.
 
     Governance proposals allow protocols to change to meet the evolving requirements of the DeFi ecosystem. Voting on these proposals occurs over a limited period of time where only those accounts that have been delegated votes may cast those votes in favor of or against the proposal. There is also a check to determine whether the delegated votes existed in the block number when the proposal was submitted.
 
-    This challenge is to create an bot that will monitor proposals to the Uniswap Governance and the votes cast on those proposals. A finding should be created if an address casting a vote had a significant change in UNI balance in the 100 blocks leading up to the proposal starting block number. 
+    This challenge is to create a bot that will monitor proposals to the Uniswap Governance and the votes cast on those proposals. A finding should be created if an address casting a vote had a significant change in UNI balance in the 100 blocks leading up to the proposal starting block number. 
 
     Optional, but recommended: Tracking balances in the 100 blocks after the vote is cast and creating a finding if the balance decreases.
 
