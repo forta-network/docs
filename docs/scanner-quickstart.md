@@ -191,22 +191,25 @@ trace:
 
 ## Register Scan Node
 
-Your scan node has an Ethereum address which allows receiving detection bots to run and asserting an authority on the outputted alerts. While it remains as the main identity, it is ownable and manageable by a different owner wallet.
+Your scan node has an Ethereum address that makes two main features possible:
+  - Receiving detection bots to run
+  - Asserting an authority on the outputted alerts
+  
+While this address remains as the main identity, it is ownable and manageable by a different wallet. The owner wallet allows you to disable your scan node later and avoid slashing while you do maintenance (for a short period) or when you decide to shut down your node entirely. The owner wallet address needs to be a different address than your scan node address.
 
-The owner wallet address you provide upon registering is able to disable your scan node later. This action is useful to avoid slashing while you do maintenance or when you shut down your node entirely. The owner wallet address needs to be a different address than your scan node address.
-
-To register your node to the registry contract, you can run `forta register --owner-address <address>`.
+To register your node to the registry contract, you can run `forta register --owner-address <address>`. **Make sure you have set the `chainId` in your config.yml correctly before executing this.** Your scan node can be registered only once and to scan a specific chain.
 
 !!! warning "Action requires funds"
     You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
 
 When your transaction goes through, you can run your node as described in the next section. Your node will be assigned new bots as new ones arrive to the network.
 
-Make sure to find us in [Discord](https://discord.gg/cE774RyA) node operator support channel and fill out the application form so your node can be fully enabled and receive bots.
+Finally, for your node to be fully enabled and receive bot assignments, please fill out the [application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform).
 
-!!! important "Early Decentralization Phase"
-    At this phase, only Forta-approved nodes are allowed onto the network. This will be permissionless when staking becomes publicly accessible.
+!!! warning "Early Decentralization Phase"
+    At this phase, only Forta-approved nodes are allowed onto the network and **your application may get rejected.** This process will be permissionless when staking becomes publicly accessible.
 
+Make sure to find us in [Discord](https://discord.gg/CEgXjgBC) (`#learn-more-nodes`) if you need any help or have questions.
 
 ## Run Scan Node
 
