@@ -12,7 +12,7 @@ The following are the requirements for running a Forta scan node.
 - 16GB RAM
 - Connection to Internet
 - Docker v20.10+
-- **Recommended:** Ethereum Light Node
+- **Recommended:** Ethereum Full Node or JRPC API supporting `trace_block`
 
 ## Install and Configure Geth Light Node
 
