@@ -28,7 +28,7 @@ Detection bots refer to a set of code scripts within a Docker container that pro
 
 ### Scan Nodes
 
-A scan node is a specific type of Forta node that executes detection bots for every transaction and every new block on a specific blockchain network (may also be mempool or simulated network). The scan node manages and coordinates bots (e.g. by instantiating and running bots, and restarting bots that become unresponsive). The scan node ferries blockchain data to bots to process the transaction/block. To learn more about scan nodes, see our [FAQ](faq.md#how-do-i-run-a-scan-node) section.
+A scan node is a specific type of Forta node that executes detection bots for every transaction and every new block on a specific blockchain network. The scan node manages and coordinates bots (e.g. by instantiating and running bots, and restarting bots that become unresponsive). The scan node ferries blockchain data to bots to process the transaction/block. To learn more about scan nodes, see our [FAQ](faq.md#how-do-i-run-a-scan-node) section.
 
 
 ## Types of monitoring

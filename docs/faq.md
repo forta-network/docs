@@ -10,15 +10,15 @@ You can subscribe to alerts from specific bots or contracts using [Forta App](ht
 
 ## How do I run a scan node?
 
-Currently, several scan nodes are maintained by OpenZeppelin that scan Ethereum mainnet. Forta will release the scan node to the public in the near future, which will enable others to run scan nodes as well. Stay tuned!
-
-## Can I scan other blockchains like BSC?
-
-Yes! Forta supports scanning on several blockchains including Ethereum, Polygon, BSC, Avalanche, Arbitrum, Optimism and Fantom. Scan nodes are able to scan any EVM-compatible blockchain. In the future, more blockchains will be supported.
+Currently, only Forta-approved nodes are allowed onto the network. In later phases, Forta will introduce economic security measures that will allow permissionless scan nodes. Please see the [quickstart](scanner-quickstart.md) guide to learn how to setup a scan node.
 
 ## Do I need special hardware to run scan nodes?
 
-The expected profile for a scan node is dual or quad core, 8-16GB memory. More specific hardware requirements will be provided once scan nodes are released to the public in the near future.
+The hardware requirements for running a Forta scan node are described [here](scanner-quickstart.md#scan-node-requirements).
+
+## Can I scan other blockchains like BSC?
+
+Yes! Forta supports scanning on several blockchains including Ethereum, Polygon, BSC, Avalanche, Arbitrum, Optimism and Fantom. Scan nodes are able to scan any EVM-compatible blockchain.
 
 ## What makes a good bot?
 
@@ -26,9 +26,9 @@ Good bots are ones that detect real-world exploits before or as they occur, or p
 
 ## Where can I get ideas for bots?
 
-The best ideas for bots are actual exploits that occur in the real world. As the DeFi space grows rapidly, exploits are occurring almost on a daily basis. To stay up-to-date on these exploits, you can check out the [rekt.news](https://rekt.news/) website or subscribe to the [Blockchain Threat Intelligence](https://www.blockthreat.io/) newsletter.
+The best ideas for bots are actual exploits that occur in the real world. As the DeFi space grows rapidly, exploits are occurring almost on a daily basis. To stay up-to-date on these exploits, you can check out the [rekt.news](https://rekt.news/) website or subscribe to the [Blockchain Threat Intelligence](https://www.blockthreat.io/) newsletter. You can also see bots that are currently deployed by other protocols on the [Forta App Discover page](https://app.forta.network/).
 
-Also, if you are writing bots for your own protocol it can be useful to think about the types of conditions you want to be made aware of, either in your own protocol or upstream/downstream protocols.
+Also, if you are writing bots for your own protocol it can be useful to think about the types of conditions you want to be notified of, either in your own protocol or upstream/downstream protocols.
 
 ## Do I need special hardware to build bots?
 
@@ -40,7 +40,7 @@ You can write a "private bot" to generate alerts that can only be understood by 
 
 ## Can I include sensitive information like API keys in my bot?
 
-Bots are stored as Docker images in a public repository i.e. anyone can access and inspect the image and its contents. Currently, there is no supported mechanism for storing secrets on bots. We do not recommend storing sensitive information like private keys or API keys on the bot.
+Bots are stored as Docker images in a public repository i.e. anyone can access and inspect the image and its contents. Currently, there is no supported mechanism for storing secrets on bots. We do not recommend storing high-value secrets on the bot. Please see the pattern for [hiding sensitive data](sensitive-data.md) to learn more.
 
 ## Where is my keyfile?
 
