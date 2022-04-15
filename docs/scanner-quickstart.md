@@ -17,13 +17,13 @@ The following are the requirements for running a Forta scan node.
 ### Example: Run your Ethereum full node
 
 ```bash
-erigon-rpcdaemon --http.vhosts '*' --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain '*' --http.api 'eth,net,web3' --private.api.addr=localhost:9090
+erigon-rpcdaemon --http.vhosts '*' --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain '*' --http.api 'eth,net,web3,trace' --private.api.addr=localhost:9090
 
 erigon --private.api.addr=localhost:9090
 ```
 
 !!! note "Ethereum node access"
-    Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` HTTP APIs.
+    Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` HTTP APIs. Note that `trace` is only applicable for Ethereum mainnet.
 
 ## Install and Configure Docker
 
@@ -140,7 +140,7 @@ This is the value that will be registered in the scan node registry smart contra
 
 ### Configure systemd
 
-If `forta` ever stops, it must be restarted. If you used a package installation method, there is a Forta systemd service that can be enabled and overridden with your passphrase and config directory environment variables.
+If `forta` ever stops running, it must be restarted. If you used a package installation method, there is a Forta systemd service that can be enabled and overridden with your passphrase and config directory environment variables.
 
 To override systemd service environment, you can set the variables in `/etc/systemd/system/forta.service.d/env.conf` like:
 
