@@ -213,7 +213,7 @@ Your scan node has an Ethereum address that makes two main features possible:
   - Receiving detection bots to run
   - Asserting an authority on the outputted alerts
   
-While this address remains as the main identity, it must be owned by a different wallet. After registered, the scan node is minted as an NFT (ERC721) and transferred to this owner.
+While this address remains as the main identity, it must be owned by a different wallet. After registration, the scan node is minted as an NFT (ERC721) and transferred to this owner.
 
 In the future, the owner wallet will allow you to disable your scan node remotely and avoid slashing while you do maintenance (for a short period) or when you decide to shut down your node entirely. Right now, `forta disable` and `forta enable` commands are available to you to do the same using the scan node private key.
 
