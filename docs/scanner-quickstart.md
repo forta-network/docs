@@ -204,12 +204,10 @@ To register your node to the registry contract, you can run `forta register --ow
 
 When your transaction goes through, you can run your node as described in the next section. Your node will be assigned new bots as new ones arrive to the network.
 
-Finally, for your node to be fully enabled and receive bot assignments, please fill out the [application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform).
-
 !!! warning "Early Decentralization Phase"
-    At this phase, only Forta-approved nodes are allowed onto the network and **your application may get rejected.** This process will be permissionless when staking becomes publicly accessible.
+    At this phase, only Forta-approved nodes are allowed onto the network. This process will be permissionless when staking becomes publicly accessible.
 
-Make sure to find us in [Discord](https://discord.gg/CEgXjgBC) (`#learn-more-nodes`) if you need any help or have questions.
+Make sure to find us in [Discord](https://discord.gg/CEgXjgBC) and **let us know about your registration** (`#learn-more-nodes`) if you need any help or have questions.
 
 ## Run Scan Node
 
