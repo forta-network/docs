@@ -191,18 +191,23 @@ trace:
 
 ## Register Scan Node
 
-To register your node to the registry contract, you can run `forta register --owner-address <address>`.
+Your scan node has an Ethereum address that makes two main features possible:
+  - Receiving detection bots to run
+  - Asserting an authority on the outputted alerts
+  
+While this address remains as the main identity, it is ownable and manageable by a different wallet. The owner wallet allows you to disable your scan node later and avoid slashing while you do maintenance (for a short period) or when you decide to shut down your node entirely. The owner wallet address needs to be a different address than your scan node address.
+
+To register your node to the registry contract, you can run `forta register --owner-address <address>`. **Make sure you have set the `chainId` in your config.yml correctly before executing this.** Your scan node can be registered only once and to scan a specific chain.
 
 !!! warning "Action requires funds"
     You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
 
-The owner address should be from a separate wallet which you will be able to use later to disable your scan node. This actions is useful to avoid slashing while you do maintenance or shut down your node entirely. The owner address needs to be a different address than your scan node address.
+When your transaction goes through, you can run your node as described in the next section. Your node will be assigned new bots as new ones arrive to the network.
 
-When your transaction goes through, please contact the Forta team and provide this transaction hash. We will take extra steps to enable your node on the Forta network.
+!!! warning "Early Decentralization Phase"
+    At this phase, only Forta-approved nodes are allowed onto the network. This process will be permissionless when staking becomes publicly accessible.
 
-!!! important "Early Decentralization Phase"
-    At this phase, only Forta-approved nodes are allowed onto the network. This will be permissionless when staking becomes publicly accessible.
-
+Make sure to find us in [Discord](https://discord.gg/CEgXjgBC) and **let us know about your registration** (`#learn-more-nodes`) if you need any help or have questions.
 
 ## Run Scan Node
 
