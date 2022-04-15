@@ -185,7 +185,7 @@ trace:
 # this differently than the scan node url value if you are using a paid plan.
 jsonRpcProxy:
   jsonRpc:
-    url: http://your-node-or-different-api:8545
+    url: http://different-api:8545
 ```
 
 Another example configuration to scan Ethereum mainnet using your Erigon node, which is much simpler:
@@ -201,7 +201,7 @@ trace:
   jsonRpc:
     url: http://your-node:8545
 
-# Defaulting to scan node url because it is not set
+# Defaulting to scan node url because it is not set - the best option when running a node
 # jsonRpcProxy:
 #   jsonRpc:
 #     url: http://your-node:8545
