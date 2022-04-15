@@ -213,9 +213,11 @@ Your scan node has an Ethereum address that makes two main features possible:
   - Receiving detection bots to run
   - Asserting an authority on the outputted alerts
   
-While this address remains as the main identity, it is ownable and manageable by a different wallet. The owner wallet allows you to disable your scan node later and avoid slashing while you do maintenance (for a short period) or when you decide to shut down your node entirely. The owner wallet address needs to be a different address than your scan node address.
+While this address remains as the main identity, it must be owned by a different wallet. After registered, the scan node is minted as an NFT (ERC721) and transferred to this owner.
 
-To register your node to the registry contract, you can run `forta register --owner-address <address>`. **Make sure you have set the `chainId` in your config.yml correctly before executing this.** Your scan node can be registered only once and to scan a specific chain.
+In the future, the owner wallet will allow you to disable your scan node remotely and avoid slashing while you do maintenance (for a short period) or when you decide to shut down your node entirely. Right now, `forta disable` and `forta enable` commands are available to you to do the same using the scan node private key.
+
+To register your node to the registry contract, you can run `forta register --owner-address <address>`. **Make sure you have set the `chainId` in your config.yml correctly before executing this.** Your scan node can be registered only once and to scan a specific chain. The owner wallet address needs to be a different address than your scan node address.
 
 !!! warning "Action requires funds"
     You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
