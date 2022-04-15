@@ -12,19 +12,18 @@ The following are the requirements for running a Forta scan node.
 - 16GB RAM
 - Connection to Internet
 - Docker v20.10+
-- **Recommended:** Ethereum Light Node
+- **Recommended:** Full node (any chain)
 
-## Install and Configure Geth Light Node
+### Example: Run your Ethereum full node
 
-[Install Geth](https://geth.ethereum.org/docs/install-and-build/installing-geth)
+```bash
+erigon-rpcdaemon --http.vhosts '*' --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain '*' --http.api 'eth,net,web3' --private.api.addr=localhost:9090
 
-!!! note "Geth"
-    Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` http apis.
-
-Example execution
+erigon --private.api.addr=localhost:9090
 ```
-geth --http.vhosts '*' --mainnet --syncmode "light" --http --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain '*' --http.api 'eth,net,web3'
-```
+
+!!! note "Ethereum node access"
+    Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` HTTP APIs.
 
 ## Install and Configure Docker
 
@@ -134,14 +133,14 @@ Scanner address: 0xAAA8C491232cB65a65FBf7F36b71220B3E695AAA
 Successfully initialized at /yourname/.forta
 ```
 
-Take note of the address. This is the value that will be registered in the scan node registry smart contract. If you need to find out your address later again, you can run `forta account address`.
+This is the value that will be registered in the scan node registry smart contract. If you need to find out your address later again, you can run `forta account address`.
 
 !!! note "Forta Directory"
-    By default, the forta directory is located in `~/.forta`. If you would like to use a different directory, either set the $FORTA_DIR env var or provide the `--dir` flag to the `init` command. Init command will initialize your Forta configuration and key to this directory.
+    By default, the forta directory is located in `~/.forta`. If you would like to use a different directory, either set the $FORTA_DIR env var or provide the `--dir` flag to every command. Init command will initialize your Forta configuration and key to this directory.
 
 ### Configure systemd
 
-If the binary ever stops, it must be restarted. If you used a package installation method, there is a Forta systemd service that can be enabled and overridden with your passphrase and config directory environment variables.
+If `forta` ever stops, it must be restarted. If you used a package installation method, there is a Forta systemd service that can be enabled and overridden with your passphrase and config directory environment variables.
 
 To override systemd service environment, you can set the variables in `/etc/systemd/system/forta.service.d/env.conf` like:
 
@@ -155,38 +154,57 @@ Environment="FORTA_PASSPHRASE=<your_forta_passphrase>"
 
 In your Forta directory, there now is a `config.yml` file. You must configure that file so that your scan node knows how to get its blockchain data.
 
-Your scan node is registered to scan a single chain. To let your scan node pull chain data, you need to provide a valid `scan.jsonRpc.url`.
+Your scan node will be registered to scan a single chain. To let your scan node pull chain data, you need to provide a valid `scan.jsonRpc.url`.
 
 !!! warning "Public JSON-RPC APIs"
-    While there are public endpoints available for many chains, please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing. We strongly recommend providing your own blockchain node or using a paid provider when possible.
+    While there are public endpoints available for many chains, **please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing**. We strongly recommend providing your own blockchain node or using a paid provider when possible.
 
-If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method from the Parity Trace API. If you have your own Ethereum node, you can use that node.
+If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method. If you have your own Ethereum node that supports it (e.g. Erigon), you can use that node. If not, you can use an endpoint from a paid plan like Alchemy Growth plan.
 
 !!! note "JSON-RPC APIs"
-    Agents are able to call JSON-RPC APIs using the scan node's configured endpoints. By default, this is the `scan.jsonRpc.url` but one can separate Agent-specific traffic by specifying a `jsonRpcProxy.jsonRpc.url`.  Ensure your endpoints can accept the appropriate level of traffic. We suggest running your own Ethereum light node for the `jsonRpcProxy.jsonRpc.url` and an Alchemy Growth plan for `trace.jsonRpc.url` and `scan.jsonRpc.url` endpoint.
+    Detection bots are able to call JSON-RPC APIs using the scan node's configured endpoints. By default, this is the `scan.jsonRpc.url` but one can separate bot-specific traffic by specifying a `jsonRpcProxy.jsonRpc.url`. We suggest setting this as your own node's JSON-RPC API endpoint if you are running one. If not, it is better to set this as a different JSON-RPC API endpoint than `scan.jsonRpc.url`.
 
 **If your node is scanning chains other than Ethereum mainnet,** please checkout the final section to see options.
 
-Example configuration to scan Ethereum mainnet:
+Here is an example configuration to scan Ethereum mainnet using Alchemy Growth plan:
 
 ```yaml
 chainId: 1
-
-# The proxy settings are used for agents to make their own json-rpc calls
-# By default, this is set to the scan node url value
-jsonRpcProxy:
-  jsonRpc:
-    url: http://your-node:8545
 
 # The scan settings are used to retrieve the transactions that are analyzed
 scan:
   jsonRpc:
     url: https://eth-mainnet.alchemyapi.io/v2/KEY
 
-# The trace endpoint must support trace_block (such as alchemy)
 trace:
   jsonRpc:
     url: https://eth-mainnet.alchemyapi.io/v2/KEY
+
+# The proxy settings are used for detection bots to make their own json-rpc calls.
+# By default, this is set to the scan node url value. We recommend setting
+# this differently than the scan node url value if you are using a paid plan.
+jsonRpcProxy:
+  jsonRpc:
+    url: http://your-node-or-different-api:8545
+```
+
+Another example configuration to scan Ethereum mainnet using your Erigon node, which is much simpler:
+
+```yaml
+chainId: 1
+
+scan:
+  jsonRpc:
+    url: http://your-node:8545
+
+trace:
+  jsonRpc:
+    url: http://your-node:8545
+
+# Defaulting to scan node url because it is not set
+# jsonRpcProxy:
+#   jsonRpc:
+#     url: http://your-node:8545
 ```
 
 ## Register Scan Node
