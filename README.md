@@ -1,4 +1,4 @@
-# Forta Agent Development Docs
+# Forta Docs
 
 Built using [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/). See the docs deployed at https://docs.forta.network/en/latest/
 
