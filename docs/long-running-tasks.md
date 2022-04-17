@@ -2,7 +2,7 @@
 
 Both `handleBlock` and `handleTransaction` functions are required to return within a timeout specified by the network (currently 30 seconds). This should be enough time for most bots to complete, but if you need longer for your bot (e.g. you need to execute many network calls) you can still return findings asynchronously.
 
-This page covers how to execute long running tasks using a Javascript example bot. The code for this example can be found [here](https://github.com/forta-protocol/forta-agent-examples/tree/master/long-running-task-js).
+This page covers how to execute long running tasks using a Javascript example bot. The code for this example can be found [here](https://github.com/forta-protocol/forta-bot-examples/tree/master/long-running-task-js).
 
 ## Triggering an asynchronous task
 

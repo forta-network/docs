@@ -1,6 +1,6 @@
 # Python SDK
 
-The Forta bot Python SDK comes with a set of classes to provide a consistent interface for developers to write their bots. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Python bots in our [examples repo](https://github.com/forta-protocol/forta-agent-examples) to learn more.
+The Forta bot Python SDK comes with a set of classes to provide a consistent interface for developers to write their bots. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Python bots in our [examples repo](https://github.com/forta-protocol/forta-bot-examples) to learn more.
 
 **NOTE**: while you can write bots in Python, you would still use the Node.js `forta-agent` CLI tool to run the bot.
 
@@ -118,7 +118,7 @@ transfers = transaction_event.filter_log(transfer_event_abi, erc20_token_address
 print(f'found {transfers.length} transfer events')
 ```
 
-The underlying library used for decoding event logs is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`processLog`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractEvents.myEvent) method and returns an array of [`Event Log`](https://web3py.readthedocs.io/en/stable/contracts.html#event-log-object) objects. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) bot.
+The underlying library used for decoding event logs is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`processLog`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractEvents.myEvent) method and returns an array of [`Event Log`](https://web3py.readthedocs.io/en/stable/contracts.html#event-log-object) objects. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-bot-examples/tree/master/filter-event-and-function-py) bot.
 
 ### filter_function
 
@@ -131,7 +131,7 @@ transfers = transaction_event.filter_function(transferFrom_function_abi, erc20_t
 print(f'found {transfers.length} function calls')
 ```
 
-The underlying library used for decoding function calls is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`decode_function_input`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input) method and returns an array of ([`ContractFunction`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction), `dict`) tuples. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-agent-examples/tree/master/filter-event-and-function-py) bot.
+The underlying library used for decoding function calls is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`decode_function_input`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input) method and returns an array of ([`ContractFunction`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction), `dict`) tuples. To better understand usage, see the [Python filtering example](https://github.com/forta-protocol/forta-bot-examples/tree/master/filter-event-and-function-py) bot.
 
 ## Finding
 
@@ -168,8 +168,8 @@ A convenience function called `get_transaction_receipt` can be used to fetch the
 
 ## create_block_event
 
-A utility function for writing tests. You can use `create_block_event` to easily generate a mock `BlockEvent` object when writing unit tests for your `handle_block` handler. To better understand usage, see the [Python unit test example](https://github.com/forta-protocol/forta-agent-examples/blob/master/minimum-balance-py/src/agent_test.py).
+A utility function for writing tests. You can use `create_block_event` to easily generate a mock `BlockEvent` object when writing unit tests for your `handle_block` handler. To better understand usage, see the [Python unit test example](https://github.com/forta-protocol/forta-bot-examples/blob/master/minimum-balance-py/src/agent_test.py).
 
 ## create_transaction_event
 
-A utility function for writing tests. You can use `create_transaction_event` to easily generate a mock `TransactionEvent` object when writing unit tests for your `handle_transaction` handler. To better understand usage, see the [Python unit test example](https://github.com/forta-protocol/forta-agent-examples/blob/master/high-gas-py/src/agent_test.py).
+A utility function for writing tests. You can use `create_transaction_event` to easily generate a mock `TransactionEvent` object when writing unit tests for your `handle_transaction` handler. To better understand usage, see the [Python unit test example](https://github.com/forta-protocol/forta-bot-examples/blob/master/high-gas-py/src/agent_test.py).

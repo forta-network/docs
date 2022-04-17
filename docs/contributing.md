@@ -26,7 +26,7 @@ Documentation is one of the most important parts of the Forta ecosystem as it on
 
 ## Develop the SDK
 
-Are you a skilled Javascript, Typescript or Python developer? You can help build out the Forta SDK and developer tools. The SDK and CLI are opensource and [available on Github](https://github.com/forta-protocol/forta-agent-sdk). Got an idea to improve the developer workflow? You can submit a pull request against the repository (by forking it). Reporting or fixing bugs and making suggestions for code improvements are also fantastic ways to contribute.
+Are you a skilled Javascript, Typescript or Python developer? You can help build out the Forta SDK and developer tools. The SDK and CLI are opensource and [available on Github](https://github.com/forta-protocol/forta-bot-sdk). Got an idea to improve the developer workflow? You can submit a pull request against the repository (by forking it). Reporting or fixing bugs and making suggestions for code improvements are also fantastic ways to contribute.
 
 ## Share useful libraries
 

@@ -2,7 +2,7 @@
 
 Transaction simulation is a powerful technique that can be used by bot developers to see the results of transactions without having to pay for on-chain execution. Using simulation, you can run transactions from any account on the latest blockchain state and view the results. An example usecase would be to flag malicious transactions in the mempool targeting your protocol before they get mined.
 
-This page describes how to simulate transactions using an example Typescript bot. The code for this example can be found [here](https://github.com/forta-protocol/forta-agent-examples/tree/master/tx-simulation-ts).
+This page describes how to simulate transactions using an example Typescript bot. The code for this example can be found [here](https://github.com/forta-protocol/forta-bot-examples/tree/master/tx-simulation-ts).
 
 ## Forking the chain
 
