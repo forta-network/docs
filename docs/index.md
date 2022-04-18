@@ -48,14 +48,6 @@ hide:
 
     [:octicons-arrow-right-24: Use the API](api.md)
 
--   :fontawesome-solid-file-contract:{ .lg .middle } __Learn About Forta Smart Contracts__
-
-    ---
-
-    See deployed smart contracts used by the Forta Network
-
-    [:octicons-arrow-right-24: Smart Contracts](smart-contracts.md)
-
 -   :material-discord:{ .lg .middle } __Join the Community__
 
     ---
