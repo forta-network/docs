@@ -210,8 +210,9 @@ trace:
 ## Register Scan Node
 
 Your scan node has an Ethereum address that makes two main features possible:
-  - Receiving detection bots to run
-  - Asserting an authority on the outputted alerts
+
+- Receiving detection bots to run
+- Asserting an authority on the outputted alerts
   
 While this address remains as the main identity, it must be owned by a different wallet. After registration, the scan node is minted as an NFT (ERC721) and transferred to this owner.
 
