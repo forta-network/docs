@@ -50,6 +50,9 @@ Add a file called `daemon.json` to your `/etc/docker` directory with the followi
 }
 ```
 
+!!! warning "Avoid networking conflicts"
+    Please confirm these network ranges don't conflict with your node's network, especially if you use VPC peering, VPNs, or other non-trivial networking settings.
+
 Restart docker with `systemctl restart docker`
 
 Ensure docker is running.  You can run `docker ps` and you should not get any errors and see a list of header columns.
