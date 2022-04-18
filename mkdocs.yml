@@ -7,6 +7,7 @@ nav:
       - How Forta works: how-forta-works.md
       - Governance: governance.md
       - Core concepts: concepts.md
+      - Smart contracts: smart-contracts.md
   - Detection bot developers:
       - Build your first detection bot:
           - 1) Quick start: quickstart.md
