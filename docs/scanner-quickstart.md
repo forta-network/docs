@@ -133,7 +133,8 @@ Scanner address: 0xAAA8C491232cB65a65FBf7F36b71220B3E695AAA
 Successfully initialized at /yourname/.forta
 ```
 
-This is the value that will be registered in the scan node registry smart contract. If you need to find out your address later again, you can run `forta account address`.
+This is the value that will be registered in the scan node registry smart contract (as `uint256`).
+If you need to find out your address later again, you can run `forta account address`.
 
 !!! note "Forta Directory"
     By default, the forta directory is located in `~/.forta`. If you would like to use a different directory, either set the $FORTA_DIR env var or provide the `--dir` flag to every command. Init command will initialize your Forta configuration and key to this directory.
@@ -213,7 +214,7 @@ Your scan node has an Ethereum address that makes two main features possible:
   - Receiving detection bots to run
   - Asserting an authority on the outputted alerts
   
-While this address remains as the main identity, it must be owned by a different wallet. After registration, the scan node is minted as an NFT (ERC721) and transferred to this owner.
+While this address remains as the main identity, it must be owned by a different wallet. After registration, the scan node is minted as an NFT (ERC721) and transferred to this owner. You can check the [smart contract documentation here](smart-contracts.md).
 
 In the future, the owner wallet will allow you to disable your scan node remotely and avoid slashing while you do maintenance (for a short period) or when you decide to shut down your node entirely. Right now, `forta disable` and `forta enable` commands are available to you to do the same using the scan node private key.
 
