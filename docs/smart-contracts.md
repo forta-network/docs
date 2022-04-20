@@ -1,9 +1,9 @@
 # Smart Contracts
 
 
-Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network.
+Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network via the ERC20 FORT Token.
 
-To learn more, read the [smart contracts github repo](https://github.com/forta-protocol/forta-contracts).
+To learn more, read the [smart contracts github repo](https://github.com/forta-protocol/forta-contracts), or the documentation for the contracts in this site.
 
 
 # Deployments
