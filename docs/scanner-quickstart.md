@@ -1,6 +1,6 @@
 # Run a Scan Node
 
-This page contains the steps and the technical recommendations to help you set up your node. If you have not seen the full list of onboarding steps yet, please see them through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746).
+This page contains the steps and technical recommendations to help you set up your node. If you have not seen the full list of onboarding steps yet, please see them through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746).
 
 **Before continuing, please make sure that you have filled out the [KYC form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) and agreed to terms of participation first.** You can feel free to register and start your node while your application is being reviewed but please also keep in mind that your application may get rejected.
 
