@@ -6,6 +6,7 @@ nav:
       - What is Forta: what-is-forta.md
       - How Forta works: how-forta-works.md
       - Governance: governance.md
+      - FORT token: fort-token.md
       - Core concepts: concepts.md
   - Detection bot developers:
       - Build your first detection bot:
