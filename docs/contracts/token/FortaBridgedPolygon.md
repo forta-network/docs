@@ -1,5 +1,5 @@
 
-## FortaBridgedPolygon
+
 
 This version of the Forta token is living on the child chain. That would be:
 - Polygon for production

@@ -1,5 +1,5 @@
 
-## IStakeSubject
+
 
 ### StakeThreshold
 

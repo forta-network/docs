@@ -1,5 +1,5 @@
 
-## ScannerRegistry
+
 
 Registry of scanners. Unlike agents, scanners are addresses that are expected to be able to send transactions. They could either be EOA or smart contracts.
 

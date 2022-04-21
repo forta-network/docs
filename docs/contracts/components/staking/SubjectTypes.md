@@ -11,7 +11,7 @@ uint8 SCANNER_SUBJECT
 uint8 AGENT_SUBJECT
 ```
 
-## SubjectTypeValidator
+
 
 ### InvalidSubjectType
 

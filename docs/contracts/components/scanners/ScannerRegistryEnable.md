@@ -1,5 +1,5 @@
 
-## ScannerRegistryEnable
+
 
 _ScannerRegistry methods and state handling disabling and enabling scanners, and
 recognizing stake changes that might disable a scanner.

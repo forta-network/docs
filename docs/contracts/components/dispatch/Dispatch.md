@@ -1,5 +1,5 @@
 
-## Dispatch
+
 
 The dispatch contract keeps track of the agent <> scanner links. An agent can be run by multiple scanners and a scanner can run multiple agents.
 

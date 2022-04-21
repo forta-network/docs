@@ -1,5 +1,5 @@
 
-## AgentRegistryEnable
+
 
 _AgentRegistry methods and state handling disabling and enabling agents, and
 recognizing stake changes that might disable an agent.

@@ -1,5 +1,5 @@
 
-## AgentRegistryMetadata
+
 
 ### AgentMetadata
 

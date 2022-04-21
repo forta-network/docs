@@ -1,5 +1,5 @@
 
-## AgentRegistryEnumerable
+
 
 ### _allAgents
 

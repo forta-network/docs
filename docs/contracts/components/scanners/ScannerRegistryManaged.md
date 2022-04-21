@@ -1,5 +1,5 @@
 
-## ScannerRegistryManaged
+
 
 ### _managers
 

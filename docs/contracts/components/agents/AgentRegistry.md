@@ -1,5 +1,4 @@
 
-## AgentRegistry
 
 Registry of agents (known now as Detection Bots). Agents are abstract objects identified by a unique uint256 value. Agents are owned, transferable, and come with attributes:
 

@@ -1,5 +1,5 @@
 
-## ScannerNodeVersion
+
 
 Contract that will trigger software autoupdate of the Scanner Node software.
 Forta Governance, through SCANNER_VERSION_ROLE, will propose and approve updates and

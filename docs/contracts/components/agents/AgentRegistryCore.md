@@ -1,5 +1,4 @@
 
-## AgentRegistryCore
 
 ### _stakeThreshold
 

@@ -1,5 +1,5 @@
 
-## ScannerRegistryCore
+
 
 ### _stakeThresholds
 
