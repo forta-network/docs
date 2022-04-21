@@ -232,9 +232,9 @@ To register your node to the registry contract, you can run `forta register --ow
 !!! warning "Action requires funds"
     You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
 
-After your registration transaction is included in the next block, you can start your node as described in the next section.
+After your registration transaction is included in the next block, you can start your node as described in the next section. However, your node will not be assigned any detection bots or generate any rewards until the application you submitted through [the application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) suceeds.
 
-If your KYC application succeeds, you will be invited to a node operator channel on Discord. Please provide your scan node address in this channel (can be found by doing `forta account address`) so Forta Foundation can stake on your behalf.
+If your application succeeds, you will be invited to a node operator channel on Discord. Please provide your scan node address in this channel (can be found by doing `forta account address`) so Forta Foundation can stake on your behalf.
 
 ## Run Scan Node
 
