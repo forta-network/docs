@@ -76,7 +76,7 @@ nav:
       - API access: api.md
       - GraphQL API reference: forta-api-reference/index.html
       - Example use cases: api-example-use-cases.md
-      - Example queries: api-examples.md
+      - Example queries & tutorials: api-examples-tutorials.md
   - Video tutorials: tutorials.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - How to contribute: contributing.md
