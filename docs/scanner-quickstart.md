@@ -1,7 +1,11 @@
 # Run a Scan Node
 
-!!! important "Early Decentralization Phase"
-    At this phase, only Forta-approved nodes are allowed onto the network. In later phases, Forta will introduce economic security measures that will allow permissionless scan nodes.
+This page contains the steps and technical recommendations to help you set up your node. If you have not seen the full list of onboarding steps yet, please see them through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746).
+
+**Before continuing, please make sure that you have filled out the [KYC form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) and agreed to terms of participation first.** You can feel free to follow this documentation and start your node while your application is being reviewed but please also keep in mind that your application may get rejected.
+
+!!! important "Fortification Phase 1"
+    At this phase, only Forta-approved nodes are allowed onto the network and staking is done by Forta Foundation on behalf of participants. In the next phase, participants will have the option to stake FORT on their nodes. Unstaked nodes do not get assigned detection bots and do not generate any rewards.
 
 ## Scan Node Requirements
 
@@ -228,12 +232,9 @@ To register your node to the registry contract, you can run `forta register --ow
 !!! warning "Action requires funds"
     You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
 
-When your transaction goes through, you can run your node as described in the next section. Your node will be assigned new bots as new ones arrive to the network.
+After your registration transaction is included in the next block, you can start your node as described in the next section.
 
-!!! warning "Early Decentralization Phase"
-    At this phase, only Forta-approved nodes are allowed onto the network. This process will be permissionless when staking becomes publicly accessible.
-
-Make sure to find us in [Discord](https://discord.gg/CEgXjgBC) and **let us know about your registration** (`#learn-more-nodes`) if you need any help or have questions.
+If your KYC application succeeds, you will be invited to a node operator channel on Discord. Please provide your scan node address in this channel (can be found by doing `forta account address`) so Forta Foundation can stake on your behalf.
 
 ## Run Scan Node
 
