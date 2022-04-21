@@ -12,6 +12,7 @@ The following are the requirements for running a Forta scan node.
 - 16GB RAM
 - Connection to Internet
 - Docker v20.10+
+- 100GB SSD (in addition to full node requirements)
 - **Recommended:** Full node (any chain)
 
 ### Example: Run your Ethereum full node
