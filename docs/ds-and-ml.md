@@ -1,8 +1,5 @@
 # Data science and machine learning on Forta
 
-!!! important "Forta API (beta)"
-    (February 2022) We recently launched API access to alerts. For more details, please check out [the API docs](api.md).
-
 Check out this short clip below to learn more about how the open-source data on Forta can be used by the community to create next-generation security solutions.
 
 <p align="center">
