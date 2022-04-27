@@ -234,7 +234,7 @@ To register your node to the registry contract, you can run `forta register --ow
 
 After your registration transaction is included in the next block, you can start your node as described in the next section. However, your node will not be assigned any detection bots or generate any rewards until the application you submitted through [the application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) succeeds.
 
-If your application succeeds, you will be invited to a node operator channel on Discord. Please provide your scan node address in this channel (can be found by doing `forta account address`) as soon as possible so Forta Foundation can stake on your behalf.
+If your application succeeds, you will receive an email with a link to a second form. Once your node is running, complete this second form with your node address (found via `forta account address`) as soon as possible so Forta Foundation can stake on your behalf.  We only stake on running nodes to avoid impacting overall network reliability.
 
 ## Run Scan Node
 
