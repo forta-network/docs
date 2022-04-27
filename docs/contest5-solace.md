@@ -47,7 +47,7 @@ For any questions, please contact a Forta Moderator on **Discord**.
     - (If Applicable) Does the README.md contain real blocks/transactions that will trigger alerts?
     - Does the package.json contain an appropriate name and description?
 
-See Forta’s [Code Review checklist](https://github.com/forta-protocol/agent-review-checklist) for a detailed description of how to develop a high quality bot.
+See Forta’s [Code Review checklist](https://github.com/forta-network/bot-review-checklist) for a detailed description of how to develop a high quality bot.
 
 ## Challenges
 
