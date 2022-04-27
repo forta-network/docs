@@ -30,7 +30,7 @@ When writing tests that involve log events, you can mock out the `filterLog` SDK
 
 ## Conduct code reviews
 
-It is strongly recommended to conduct code reviews within your team. This will help ensure that any bugs are identified and all edge cases are covered by your bot.
+It is strongly recommended to conduct code reviews within your team. This will help ensure that any bugs are identified and all edge cases are covered by your bot. See the [code review checklist](https://github.com/forta-network/bot-review-checklist) for how to conduct a comprehensive review.
 
 ## Include documentation
 
