@@ -2,12 +2,12 @@
 
 ## How is the FORT token used in Forta?
 
-To ensure the accuracy and integrity of the data provided by the network, Forta plans to adopt a work token model, where node runners must stake FORT tTokens in order to broadcast real-time security and operational data to the network, and anyone may stake FORT Tokens in order to signal detection bot quality in the network.
+To ensure the accuracy and integrity of the data provided by the network, Forta plans to adopt a work token model, where node runners must stake FORT tokens in order to broadcast real-time security and operational data to the network, and anyone may stake FORT Tokens in order to signal detection bot quality in the network.
 
 FORT is an ERC-20 token that has two primary uses that are indispensable to the proper functioning of the network:
 
-1. Node Runner Staking. Node runners must deposit FORT Tokens to be discoverable in the network and to provide economic security for the work they are performing, since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously. Once FORT is staked, it may only be withdrawn subject to a thawing period, which provides ample opportunity for verification and dispute resolution.
-2. Detection Bot Signaling. Developers may stake FORT tTokens on bots, signaling bot quality to the network and also providing a sSybil resistance mechanism. Having fake or low quality bots on the network makes it harder to find the best risk detection offerings. Detection bots with higher signal will also be afforded additional node resources to increase security, reliability, and performance.
+1. Node Runner Staking. Node runners must deposit FORT tokens to be discoverable in the network and to provide economic security for the work they are performing, since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously. Once FORT is staked, it may only be withdrawn subject to a thawing period, which provides ample opportunity for verification and dispute resolution.
+2. Detection Bot Signaling. Developers may stake FORT tokens on bots, signaling bot quality to the network and also providing a sSybil resistance mechanism. Having fake or low quality bots on the network makes it harder to find the best risk detection offerings. Detection bots with higher signal will also be afforded additional node resources to increase security, reliability, and performance.
 
 In the future, community governance over the Forta network is intended to be moved on-chain, and the FORT Token can also be used by the community to autonomously govern the network.
 
