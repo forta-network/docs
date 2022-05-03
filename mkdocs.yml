@@ -42,6 +42,7 @@ nav:
                   - FortaBridgedPolygon: contracts/token/FortaBridgedPolygon.md
                   - FortaCommon: contracts/token/FortaCommon.md
   - Detection bot developers:
+      - Getting started: getting-started.md
       - Build your first detection bot:
           - 1) Quick start: quickstart.md
           - 2) Testing your bot: testing.md

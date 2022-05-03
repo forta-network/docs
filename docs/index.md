@@ -18,7 +18,7 @@ hide:
 
     Use the Forta SDK to start detecting on-chain events of interest
 
-    [:octicons-arrow-right-24: Get started](quickstart.md)
+    [:octicons-arrow-right-24: Get started](getting-started.md)
 
 -   :mega:{ .lg .middle } __Subscribe to Alerts__
 
