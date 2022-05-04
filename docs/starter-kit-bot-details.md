@@ -45,6 +45,14 @@ You can read more about what this is and why it matters [here](https://a16z.com/
 
 This bot detects **ALL** events from smart contracts defined in the [`openzeppelin-contracts`](https://github.com/OpenZeppelin/openzeppelin-contracts) and [`gnosis-safe`](https://github.com/gnosis/safe-contracts) Github repositories
 
+## Reentrancy Counter
+
+| Bot Name | Bot Stats | Bot Source Code  |
+|----------|-----------|------------------|
+| nethforta-25 | [Stats URL](https://explorer.forta.network/agent/0x492c05269cbefe3a1686b999912db1fb5a39ce2e4578ac3951b0542440f435d9){:target="_blank"} | [Github Repo URL](https://github.com/NethermindEth/Forta-Agents/tree/a5bd20303669d5a1d0e2163c43904627f8999749/reentrancy-counter#reentrancy-counter){:target="_blank"} |
+
+This bot detects reentrancy based on the call stack provided in the transaction traces. The bot reports the number of repeated calls with different severities levels.
+
 ## Successful Transactions with Internal Failures
 
 | Bot Name | Bot Stats | Bot Source Code  |
@@ -70,10 +78,3 @@ This bot detects when a suspicious contract is created. A suspicious contract ca
 
 This bot detects when an account that was funded by Tornado Cash interacts with any contract.
 
-## Reentrancy Counter
-
-| Bot Name | Bot Stats | Bot Source Code  |
-|----------|-----------|------------------|
-| nethforta-25 | [Stats URL](https://explorer.forta.network/agent/0x492c05269cbefe3a1686b999912db1fb5a39ce2e4578ac3951b0542440f435d9){:target="_blank"} | [Github Repo URL](https://github.com/NethermindEth/Forta-Agents/tree/a5bd20303669d5a1d0e2163c43904627f8999749/reentrancy-counter#reentrancy-counter){:target="_blank"} |
-
-This bot detects reentrancy based on the call stack provided in the transaction traces. The bot reports the number of repeated calls with different severities levels.
