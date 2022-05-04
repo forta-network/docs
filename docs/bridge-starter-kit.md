@@ -1,5 +1,11 @@
 # Bridge Starter Kit
 
+| Bot Name | Bot Details Link | Bot Description  |
+|----------|------------------|------------------|
+|  1 | 2  | 3  |
+|   |   |   |
+|   |   |   |
+
 ## Bot 1 (List in alphabetical order)
 
 [Bot Details](starter-kit-bot-details.md#bot1)
