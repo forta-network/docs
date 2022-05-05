@@ -1,5 +1,9 @@
 # Starter Kit Bot Details
 
+!!! important "Frequent Doc Updates"
+    Forta will continue to add more curated security bots in the coming months, so stay tuned and come check this page frequently for new updates!
+
+
 ## Blocklisted Addresses Transaction Detection
 
 | Bot Name | Bot Stats | Bot Source Code  |
