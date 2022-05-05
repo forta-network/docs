@@ -3,7 +3,7 @@
 !!! important "Frequent Doc Updates"
     Forta will continue to add more curated security bots in the coming months, so stay tuned and come check this page frequently for new updates!
 
-| Bot Name | Bot Details Link | Bot Description  |
+| Bot Name | Bot Details/Template Link | Bot Description  |
 |----------|------------------|------------------|
 | Balance Decreases | Coming Soon | Identifies when the balance of an account decreases significantly. |
 | Blocklisted Addresses’ Transaction Detection | [Bot Details](starter-kit-bot-details.md#blocklisted-addresses-transaction-detection) | Alerts when a blocklisted account interacts with the address monitored. |
