@@ -43,11 +43,11 @@ nav:
                   - FortaCommon: contracts/token/FortaCommon.md
   - Quickstart for beginners:
       - Get started: starter-get-started.md
-      - Bridge Starter Kit: bridge-starter-kit.md
-      - DeFi Starter Kit: defi-starter-kit.md
-      - NFT Starter Kit: nft-starter-kit.md
-      - Stablecoin Starter Kit: stablecoin-starter-kit.md
-      - Starter Kit Bot Details: starter-kit-bot-details.md
+      - Bridge Threat Detection Kit: bridge-starter-kit.md
+      - DeFi Threat Detection Kit: defi-starter-kit.md
+      - NFT Threat Detection Kit: nft-starter-kit.md
+      - Stablecoin Threat Detection Kit: stablecoin-starter-kit.md
+      - Threat Detection Kit Bot Details: starter-kit-bot-details.md
   - Detection bot developers:
       - Getting started: getting-started.md
       - Build your first detection bot:

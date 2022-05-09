@@ -1,10 +1,11 @@
-# Bridge Starter Kit
+# Bridge Threat Detection Kit
 
 !!! important "Frequent Doc Updates"
     Forta will continue to add more curated security bots in the coming months, so stay tuned and come check this page frequently for new updates!
 
 | Bot Name | Bot Details/Template Link | Bot Description  |
 |----------|------------------|------------------|
+| Alert Combiner | [Bot Details](starter-kit-bot-details.md#alert-combiner) | Combines past alerts under common adddress to emit a high precision alert. |
 | Balance Decreases | Coming Soon | Identifies when the balance of an account decreases significantly. |
 | Blocklisted Addresses’ Transaction Detection | [Bot Details](starter-kit-bot-details.md#blocklisted-addresses-transaction-detection) | Alerts when a blocklisted account interacts with the address monitored. |
 | Bridge Balance Inconsistencies | Coming Soon | Alerts when the two sides of the bridge are unexpectedly are out of balance. |

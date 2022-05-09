@@ -1,4 +1,4 @@
-# NFT Starter Kit
+# NFT Threat Detection Kit
 
 !!! important "Frequent Doc Updates"
     Forta will continue to add more curated security bots in the coming months, so stay tuned and come check this page frequently for new updates!
@@ -6,6 +6,7 @@
 
 | Bot Name | Bot Details/Template Link | Bot Description  |
 |----------|------------------|------------------|
+| Alert Combiner | [Bot Details](starter-kit-bot-details.md#alert-combiner) | Combines past alerts under common adddress to emit a high precision alert. |
 | Blocklisted Addresses’ Transaction Detection | [Bot Details](starter-kit-bot-details.md#blocklisted-addresses-transaction-detection) | Alerts when a blocklisted account interacts with the address monitored. |
 | Events with access control monitor | [Template Link](https://github.com/arbitraryexecution/forta-agent-templates/tree/main/admin-events) | Alerts on events emitted from functions that should only be callable by privileged roles.|| Function call with access control monitor | [Template Link](https://github.com/arbitraryexecution/forta-agent-templates/tree/main/monitor-function-calls) | Alerts on function calls that should only be callable by privileged roles.|
 | Ice Phishing Detection Bot | [Bot Details](starter-kit-bot-details.md#evidence-of-phishing-bot) | Alerts when ice phishing (social engineer users into token approvals) for a token contract monitored. |
