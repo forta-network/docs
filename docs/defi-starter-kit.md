@@ -1,5 +1,10 @@
 # DeFi Threat Detection Kit
 
+
+<p align="left">
+    <img width=1200 alt="DeFi Threat Detection Kit Overview" src="defi-threat-detection-kit.png">
+</p>
+
 !!! important "Frequent Doc Updates"
     Forta will continue to add more curated security bots in the coming months, so stay tuned and come check this page frequently for new updates!
 
