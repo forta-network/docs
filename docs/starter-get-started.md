@@ -13,22 +13,36 @@ There are currently 4 threat detection kits available, each specifically tailore
 * [NFT Threat Detection Kit](nft-starter-kit.md)
 * [Stablecoin Threat Detection Kit](stablecoin-starter-kit.md)
 
-## (WIP) How to subscribe to threat detection kit detection bots?
+## How to subscribe to threat detection kit detection bots?
+
+<p align="center">
+    <img alt="Forta Alert Subscription" src="../alert-subscription.png">
+</p>
 
 For each threat detection kit, security experts hand-picked a list of detection bots users can subscribe to to help identify a broad range of security related events. By subscribing to these bots, you can receive alerts on suspicious and/or anomalous activities potentially occuring at any stage of an ongoing web3 attack. To learn more about how web3 attacks happen and how Forta can mitigate them, check out the [Forta illuminates the Web3 Kill Chain Blog Post](https://forta.org/blog/web3-kill-chain/).
 
-// TODO - update instructions once UI is updated.
+### Monitoring your wallet or contracts
 
 1. To subscribe, first visit the [Forta App](https://app.forta.network/).
-2.
+2. Click on "Monitor my contracts" or "Monitor my wallet". If you clicked on "Monitor my contracts", select a threat detection kit.
+    <p align="center">
+        <img alt="Forta Threat Detection Kits" src="../threat-detection-kits.png">
+    </p>
+4. Sign in with your wallet to continue.
+    <p align="center">
+        <img width="300px" alt="Wallet Sign" src="../wallet-sign.png">
+    </p>
+5. Select or update the selected threat detection kit in the "Select Subscription type" dropdown.
+6. Add a contract/wallet address to watch.
+7. Choose notification type and destination.
+<p align="center">
+    <img width="500px" alt="Alert Subscription Form" src="../alert-subscription-form.png">
+</p>
 
-
-## (WIP) What are detection bot templates? How does it work?
+## What are detection bot templates?
 
 Each threat detection kit may also include detection bot templates. The bot templates allow users to quickly customize, create, and deploy bots without developing one from scratch.
 
-Non-technical users can configure and create their own detection bots without touching any code via the bot wizard interface.
+(coming soon!) Non-technical users can configure and create their own detection bots without touching any code via the bot wizard interface.
 
-TODO - how to access the bot wizard
-
-Developers can also get access to security detection bot and template source code to fork, customize, and contribute.
+Developers can get access to security detection bot and template source code to fork, customize, and contribute.
