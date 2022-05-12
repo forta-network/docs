@@ -10,6 +10,8 @@ Also, you can verify that your bot is healthy by visiting the bot status page on
 
 If [logging is enabled](deploying.md#enable-logging-optional), bot logs are updated by scan nodes every minute. You can fetch the latest logs from `https://api.forta.network/logs/agents/YOUR_AGENT_ID`. Only logs from the past 30 days are stored. To enable JSON format responses, you can specify the `Accept: application/json` header in your request. If you would like to integrate an existing error monitoring tool, check out the [error monitoring pattern](error-monitoring.md).
 
+By default, the logs API will return the most recent logs but you can query previous logs using the `minute` query param. By specifying a minute in RFC3339 format (e.g. `https://api.forta.network/logs/agents/YOUR_AGENT_ID?minute=2019-10-12T07:20:50.52Z`), you can view previous logs. Note that not every minute may have logs.
+
 ## Disabling/enabling your bot
 
 If you will not be using the alerts your bot generates (i.e. you were just testing out Forta, which we encourage), we ask that you please disable the bot. You can use [Forta App](https://app.forta.network/) or the CLI to enable or disable your bot. In Forta App, go to the My Agents page (from the menu at the top right) and click on the options menu to the right of your bot. From the options menu, you can choose to disable or enable your bot.
