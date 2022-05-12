@@ -2,7 +2,7 @@
 
 ## What is a threat detection kit?
 
-If you are new to Forta, a threat detection kit will help you get started on monitoring and protecting Web3 projects and assets right away with little to no technical and security experience.
+If you are new to Forta, a threat detection kit will help you get started on monitoring and protecting Web3 projects and assets right away with no custom bot development needed to get security relevant value from Forta.
 
 A threat detection kit consists of security detection bots and bot templates created and curated by the Forta community and security experts.
 
@@ -33,7 +33,7 @@ For each threat detection kit, security experts hand-picked a list of detection 
         <img width="300px" alt="Wallet Sign" src="../wallet-sign.png">
     </p>
 5. Select or update the selected threat detection kit in the "Select Subscription type" dropdown.
-6. Add a contract/wallet address to watch.
+6. Add a contract/wallet address to watch. For contracts, it's recommended to create a subscription for each address pertaining to your protocol, including protocol specific token contract addresses.
 7. Choose notification type and destination.
 <p align="center">
     <img width="500px" alt="Alert Subscription Form" src="../alert-subscription-form.png">
@@ -41,7 +41,7 @@ For each threat detection kit, security experts hand-picked a list of detection 
 
 ## What are detection bot templates?
 
-Each threat detection kit may also include detection bot templates. The bot templates allow users to quickly customize, create, and deploy bots without developing one from scratch.
+While the existing threat detection kit bots provide broad coverage for security relevant issues, sometimes the bot needs protocol specific information. Detection bot template allow users to create these custom bots quickly without the need to develop one from scratch.
 
 (coming soon!) Non-technical users can configure and create their own detection bots without touching any code via the bot wizard interface.
 
