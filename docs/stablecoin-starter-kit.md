@@ -2,7 +2,7 @@
 
 
 <p align="left">
-    <img width=1200 alt="Stablecoin Threat Detection Kit Overview" src="stablecoin-threat-detection-kit.png">
+    <img width=1200 alt="Stablecoin Threat Detection Kit Overview" src="../stablecoin-threat-detection-kit.png">
 </p>
 
 !!! important "Frequent Doc Updates"

@@ -2,7 +2,7 @@
 
 
 <p align="left">
-    <img width=1200 alt="DeFi Threat Detection Kit Overview" src="defi-threat-detection-kit.png">
+    <img width=1200 alt="DeFi Threat Detection Kit Overview" src="../defi-threat-detection-kit.png">
 </p>
 
 !!! important "Frequent Doc Updates"
