@@ -4,6 +4,25 @@
     Forta will continue to add more curated security bots in the coming months, so stay tuned and come check this page frequently for new updates!
 
 
+## Alert Combiner
+
+| Bot Name | Bot Stats | Bot Source Code  |
+|----------|-----------|------------------|
+| alert-combiner | [Stats URL](https://explorer.forta.network/agent/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/alert-combiner-py#alert-combiner){:target="_blank"} |
+
+Individual alerts can have low precision (in other words raise false positives). This agent combines past alerts to separate the signal from noise.
+
+It does so with the realization that an attack usually consists of 4 distinct phases:
+
+* funding (e.g. tornado cash funding)
+* preparation (e.g. creation of an attacker contract)
+* exploitation (e.g. draining funds from a contract)
+* money laundering (e.g. sending funds to tornado cash)
+
+As such, this detection bot combines previously raised alerts under the initiating address (i.e. the attacker address) for a given time window (2 calendar days, so between 24-48h) and emits a cricial alert when alerts from all four phases have been observed.
+
+As a result, the precision of this alert is quite high, but also some attacks may be missed. Note, in the case where attacks are missed, the broader set of detection bots deployed on Forta will still raise individual alerts that users can subscribe to.
+
 ## Blocklisted Addresses Transaction Detection
 
 | Bot Name | Bot Stats | Bot Source Code  |
