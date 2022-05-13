@@ -10,6 +10,14 @@ hide:
 <div class="grid cards" markdown>
 
 
+-   :tools:{ .lg .middle } __Quickstart for Beginners__
+
+    ---
+
+    Subscribe to recommended security detection bots for DeFi, stablecoins, NFTs, governance, and bridges.
+
+    [:octicons-arrow-right-24: Get started](starter-get-started.md)
+
 -   :tools:{ .lg .middle } __Start Building__
 
     ---
@@ -18,19 +26,11 @@ hide:
 
     [:octicons-arrow-right-24: Get started](getting-started.md)
 
--   :mega:{ .lg .middle } __Subscribe to Alerts__
-
-    ---
-
-    Use the Forta App to receive alerts from specific contracts, wallets or detection bots
-
-    [:octicons-arrow-right-24: Subscribe](https://app.forta.network){target=_blank}
-
 -   :material-server:{ .lg .middle } __Run a Scan Node__
 
     ---
 
-    Setup a scan node to run detection bots and operate the Forta network 
+    Setup a scan node to run detection bots and operate the Forta network
 
     [:octicons-arrow-right-24: Scanner quick start](scanner-quickstart.md)
 
