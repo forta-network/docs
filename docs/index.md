@@ -10,21 +10,29 @@ hide:
 <div class="grid cards" markdown>
 
 
--   :tools:{ .lg .middle } __Quickstart for Beginners__
+-   :zap:{ .lg .middle } __Quickstart for Beginners__
 
     ---
 
     Subscribe to recommended security detection bots for DeFi, stablecoins, NFTs, governance, and bridges.
 
-    [:octicons-arrow-right-24: Get started](starter-get-started.md)
+    [:octicons-arrow-right-24: Subscribe to security alerts](threat-detection-kits.md)
 
--   :tools:{ .lg .middle } __Start Building__
+-   :toolbox:{ .lg .middle } __Threat Detection Kits__
+
+    ---
+
+    Start monitoring and protecting Web3 projects and assets with Threat Detection Kits.
+
+    [:octicons-arrow-right-24: Get started](threat-detection-kits.md)
+
+-   :tools:{ .lg .middle } __Build Detection Bots__
 
     ---
 
     Use the Forta SDK to start detecting on-chain events of interest
 
-    [:octicons-arrow-right-24: Get started](getting-started.md)
+    [:octicons-arrow-right-24: Start building](getting-started.md)
 
 -   :material-server:{ .lg .middle } __Run a Scan Node__
 
