@@ -141,10 +141,12 @@ Scanner address: 0xAAA8C491232cB65a65FBf7F36b71220B3E695AAA
 Successfully initialized at /yourname/.forta
 ```
 
-**NEVER LOSE OR DELETE YOUR PRIVATE KEY in `~/.forta/.keys`.**
+**IF YOU DELETE YOUR NODE DATA, YOU LOSE YOUR SCAN NODE PRIVATE KEY.**
+
+**NEVER LOSE OR DELETE YOUR PRIVATE KEY in `~/.forta/.keys` AND CONSIDER A BACKUP.**
 
 !!! warning "Private Key"
-    Losing the private key will require actions to initiate a withdrawal for the old scan node address (takes 10 days), withdraw and deposit for the new scan node address.
+    Losing the private key will require actions to initiate a withdrawal for the old scan node address which takes 10 days for security reasons and requires ownership of the staking shares. After the withdrawal initiation is completed, the next actions are withdrawing for the old scan node address and depositing for the new scan node address.
 
 This is the value that will be registered in the scan node registry smart contract (as `uint256`).
 If you need to find out your address later again, you can run `forta account address`.
