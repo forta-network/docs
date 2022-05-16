@@ -145,6 +145,10 @@ Successfully initialized at /yourname/.forta
 
 **NEVER LOSE OR DELETE YOUR PRIVATE KEY in `~/.forta/.keys` AND CONSIDER A BACKUP.**
 
+**NEVER LOSE YOUR PASSPHRASE.**
+
+**YOUR PRIVATE KEY CAN BE DECRYPTED ONLY USING YOUR PASSPHRASE.**
+
 !!! warning "Private Key"
     Losing the private key will require actions to initiate a withdrawal for the old scan node address which takes 10 days for security reasons and requires ownership of the staking shares. After the withdrawal initiation is completed, the next actions are withdrawing for the old scan node address and depositing for the new scan node address.
 
