@@ -7,6 +7,10 @@ The property of the stake is signaled by the ownership of ERC1155 shares emitted
 - **Active shares:** represent active stake, which is counted for security. Minted when depositing stake. These shares are transferrable
 - **Inactive shares:** represent inactive stake, not counted for security. Minted when `init withdrawal` is executed. These shares are non transferrable. After `staking delay`, these shares can be burned to get the staked FORT back:
 
+⚠️ Staking more than the minimum in a Scan Node does not affect the rewards in any way. ⚠️
+
+Values and parameters are subject to change.
+
 ## Depositing stake
 
 Deposit FORT to get active shares.
@@ -39,6 +43,8 @@ Deposit FORT to get active shares.
 
 ## Stake FORT
 
+You can only stake on registered scanner nodes.
+
 1. Go to Staking contract page, [section "write as proxy"](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
 2. Connect your wallet (make sure it is the correct wallet, and that you are on Polygon network)
@@ -68,6 +74,8 @@ Init the withdrawal process. Active stake becomes inactive, active shares are bu
 After `stake delay`, you will be able to withdraw los FORT.
 
 Current `stake delay` is 10 days (subject to change).
+
+⚠️ Only active share holders can init withdrawal. In Fortification phase, this means you have earned 500 FORT or more in a week, thus receiving staking shares.⚠️
 
 <p align="center">
     <img width="500px" alt="Stake Init Withdrawal Diagram" src="../stake-images/staking-init-withdrawal.png">
