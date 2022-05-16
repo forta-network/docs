@@ -41,8 +41,9 @@ nav:
                   - Forta: contracts/token/Forta.md
                   - FortaBridgedPolygon: contracts/token/FortaBridgedPolygon.md
                   - FortaCommon: contracts/token/FortaCommon.md
-  - Quickstart for beginners:
-      - Get started: starter-get-started.md
+  - Quickstart for beginners: beginner-quick-start.md
+  - Threat Detection Kits:
+      - Get started: threat-detection-kits.md
       - Bridge Threat Detection Kit: bridge-starter-kit.md
       - DeFi Threat Detection Kit: defi-starter-kit.md
       - NFT Threat Detection Kit: nft-starter-kit.md
