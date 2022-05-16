@@ -1,138 +1,111 @@
 # Staking on Scan Nodes
 
-To be a part of the Forta Network, a Scan Node should have at least 500 Fort of active stake staked on it's behalf (this value is subject to change, and may have different values by chain in the future).
+To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf.
 
-The property of the stake is signaled by the ownership of ERC1155 shares emitted by the staking contract. There are 2 kinds of shares:
+!!! warning "Minimum Stake Threshold"
+    This value is subject to change and can be different per chain in the future.
 
-- **Active shares:** represent active stake, which is counted for security. Minted when depositing stake. These shares are transferrable
-- **Inactive shares:** represent inactive stake, not counted for security. Minted when `init withdrawal` is executed. These shares are non transferrable. After `staking delay`, these shares can be burned to get the staked FORT back:
+The staking state is signaled by the ownership of ERC1155 shares emitted by the staking contract. There are two kinds of shares:
 
-⚠️ Staking more than the minimum in a Scan Node does not affect the rewards in any way. ⚠️
+- **Active shares** represent active stake and are counted for security. They are minted when depositing stake. These shares are transferrable.
+- **Inactive shares** represent inactive stake and are not counted for security. They are minted when `initiateWithdrawal()` is executed. These shares are non-transferrable. After _staking delay_, these shares can be burned to get the staked FORT back.
 
-Values and parameters are subject to change.
+!!! warning "Staking and Rewards"
+    Staking more than the minimum in a scan node does not affect the rewards in any way.
+
+Again, please keep in mind that **the values and parameters are subject to change.**
+
+!!! warning "Staking Delay"
+    A withdrawal consists of two steps: initiating a withdrawal and withdrawing. For security reasons, there is a _staking delay_ between initiation and the actual withdrawal. **This delay is currently 10 days** and is subject to change in the future.
 
 ## Depositing stake
 
 Deposit FORT to get active shares.
 
-<p align="center">
-    <img width="500px" alt="Stake Deposit Diagram" src="../stake-images/staking-deposit.png">
-</p>
+![staking deposit](stake-images/staking-deposit.png)
 
 ### Staking using Polyscan
 
-**Approve FORT**
+#### Approve FORT
 
-1. Go to Forta's contract page, [section "write as proxy"](https://polygonscan.com/address/0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1#writeProxyContract)
+1. Go to FORT token contract page, [section _Write as Proxy_](https://polygonscan.com/address/0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1#writeProxyContract)
 
-2. Connect your wallet (make sure it is the correct wallet, and that you are on Polygon network)
-<p align="center">
-    <img width="500px" alt="Fort Approve Polyscan" src="../stake-images/1-token-connect.png">
-</p>
-3- Approve at least the amount you want to stake.
+2. Connect your scan node owner wallet and make sure that you have selected the Polygon network. ![token connect](stake-images/1-token-connect.png)
 
-**Spender:** Input `FortaStaking` contract's address: `0xd2863157539b1D11F39ce23fC4834B62082F6874`
+3. Approve the amount you would like to stake. This amount needs to be higher than the minimum threshold mentioned before.
 
-**Amount:** FORT amount, in wei. FORT has 18 decimals like Ether, so input the amount followed by 18 zeroes, if unsure use a converter like https://eth-converter.com/
+    - **spender:** `FortaStaking` contract address: `0xd2863157539b1D11F39ce23fC4834B62082F6874`
 
-<p align="center">
-    <img width="500px" alt="Fort Approve Polyscan" src="../stake-images/2-token-approve.png">
-</p>
+    - **amount:** FORT amount, in wei. FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like https://eth-converter.com/. ![token approve](stake-images/2-token-approve.png)
 
-4- Click "write" and approve the transaction in your wallet.
+4. Click _Write_ and approve the transaction in your wallet.
 
-## Stake FORT
+#### Stake FORT
 
-You can only stake on registered scanner nodes.
+You can stake only on the registered scan nodes.
 
-1. Go to Staking contract page, [section "write as proxy"](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
+1. Go to Forta staking contract page, [section _Write as Proxy_](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
-2. Connect your wallet (make sure it is the correct wallet, and that you are on Polygon network)
-<p align="center">
-    <img width="500px" alt="Fort Approve Polyscan" src="../stake-images/1-connect.png">
-</p>
+2. Connect your scan node owner wallet and make sure that you have selected the Polygon network. ![connect](stake-images/1-connect.png)
 
-3- Go to `1. deposit` to stake and input the folowing:
-**subjectType:** 0
+3. Go to `1. deposit` to stake and input the folowing:
 
-**subject:** Your scanner address (NOT the scanner owner address).
+    - **subjectType:** 0
 
-**stakeValue:** Amount of FORT to stake. For a new node, input  `500000000000000000000` (500 FORT in wei)
-if unsure use a converter like https://eth-converter.com/
+    - **subject:** Your scan node address **(not the owner address).**
 
-<p align="center">
-    <img width="500px" alt="Staking Approve Polyscan" src="../stake-images/3-stake.png">
-</p>
-
-4- Click "write" and approve the transaction in your wallet.
+    - **stakeValue:** Amount of FORT to stake. For a new node, input `500000000000000000000` (500 FORT in wei). If you are unsure, you can use a converter like https://eth-converter.com/. ![stake](stake-images/3-stake.png)
 
 
-## Init withdrawal
+4. Click _Write_ and approve the transaction in your wallet.
 
-Init the withdrawal process. Active stake becomes inactive, active shares are burned and inactive shares minted.
+## Initiating a stake withdrawal
 
-After `stake delay`, you will be able to withdraw los FORT.
+When this action is executed (`initiateWithdrawal()`), active stake becomes inactive i.e. active shares are burned and inactive shares minted.
 
-Current `stake delay` is 10 days (subject to change).
+After _staking delay_ is over, you will be able to `withdraw()` FORT, as described in the next section.
 
-⚠️ Only active share holders can init withdrawal. In Fortification phase, this means you have earned 500 FORT or more in a week, thus receiving staking shares.⚠️
+!!! warning "Permissions"
+    Only active share holders can init withdrawal. This means you have earned 500 FORT or more in a week during Fortification Phase, thus received staking shares.
 
-<p align="center">
-    <img width="500px" alt="Stake Init Withdrawal Diagram" src="../stake-images/staking-init-withdrawal.png">
-</p>
+![staking init withdrawal](stake-images/staking-init-withdrawal.png)
 
+### Initiate the withdrawal using Polyscan
 
-### Init withdrawal using Polyscan
+1. Go to Forta staking contract page, [section _Write as Proxy_](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
-1. Go to Staking contract page, [section "write as proxy"](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
+2. Connect your scan node owner wallet and make sure that you have selected the Polygon network. ![connect](stake-images/1-connect.png)
 
-2. Connect your wallet (make sure it is the correct wallet, and that you are on Polygon network)
-<p align="center">
-    <img width="500px" alt="Staking Connect Polyscan" src="../stake-images/1-connect.png">
-</p>
+3. Go to `4. initiateWithdrawal` and input the folowing:
 
-3 Go to `4. initiateWithdrawal` and input the folowing:
-**subjectType:** 0
+    - **subjectType:** 0
 
-**subject:** Your scanner address (NOT the scanner owner address).
+    - **subject:** Your scan node address **(not the owner address).**
 
-**stakeValue:** Amount of shares to unstake, in wei. If the node has not been slashed, the proportion is 1 Share : 1 Fort
+    - **stakeValue:** Amount of shares to unstake, in wei. If the node has not been slashed, the proportion is `1 Share : 1 FORT`. If you are unsure about the amount in wei, you can use a converter like https://eth-converter.com/. ![initiate withdrawal](stake-images/4-initiate-withdrawal.png)
 
-if unsure use a converter like https://eth-converter.com/
-<p align="center">
-    <img width="500px" alt="Fort Approve Polyscan" src="../stake-images/4-initiate-withdrawal.png">
-</p>
+4. Click _Write_ and approve the transaction in your wallet.
 
-4 Click "write" and approve the transaction in your wallet.
-
-5 After confirmation, the 10 day delay starts. If the current active shares are < minimum required stake, the node is not enabled.
+5. After confirmation, the _staking delay_ starts. If the current active shares are under minimum stake threshold, the node enters into disabled state.
 
 ## Withdrawal
 
-Burn inactive shares after `staking delay` to get staked FORT.
+Burn inactive shares after _staking delay_ to get staked FORT.
 
-<p align="center">
-    <img width="500px" alt="Staking Withdrawal Diagram" src="../stake-images/staking-withdrawal.png">
-</p>
+![staking withdrawal](stake-images/staking-withdrawal.png)
 
 ### Withdrawal using Polyscan
 
-1. After delay, go to Staking contract page, [section "write as proxy"](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
+1. When the _staking delay_ is over, go to Forta staking contract page, [section _Write as Proxy_](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
-2. Connect your wallet (make sure it is the correct wallet, and that you are on Polygon network)
-<p align="center">
-    <img width="500px" alt="Staking Connect Polyscan" src="../stake-images/1-connect.png">
-</p>
+2. Connect your scan node owner wallet and make sure that you have selected the Polygon network. ![connect](stake-images/1-connect.png)
 
-3 Go to `4. initiateWithdrawal` and input the folowing:
-**subjectType:** 0
+3. Go to `4. initiateWithdrawal` and input the folowing:
 
-**subject:** Your scanner address (NOT the scanner owner address).
+    - **subjectType:** 0
 
-<p align="center">
-    <img width="500px" alt="Staking Withdraw Polyscan" src="../stake-images/5-withdraw.png">
-</p>
+    - **subject:** Your scan node address **(not the owner address).** ![withdraw](stake-images/5-withdraw.png)
 
-4 Click "write" and approve the transaction in your wallet.
+4. Click _Write_ and approve the transaction in your wallet.
 
-5 When confirmed, you will receive the FORT
+5. When the transaction is confirmed, you will receive the FORT amount you specified.
