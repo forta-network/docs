@@ -16,7 +16,7 @@ hide:
 
     Subscribe to recommended security detection bots for DeFi, stablecoins, NFTs, governance, and bridges.
 
-    [:octicons-arrow-right-24: Subscribe to security alerts](threat-detection-kits.md)
+    [:octicons-arrow-right-24: Subscribe to security alerts](beginner-quick-start.md)
 
 -   :toolbox:{ .lg .middle } __Threat Detection Kits__
 
