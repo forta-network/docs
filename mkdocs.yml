@@ -82,6 +82,7 @@ nav:
   - Scan node operators:
       - Quickstart: scanner-quickstart.md
       - Scan node SLA API: sla-api.md
+      - Stake on your Scan Node: stake-on-scan-node.md
   - API integration:
       - API access: api.md
       - GraphQL API reference: forta-api-reference/index.html
