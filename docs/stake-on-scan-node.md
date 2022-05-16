@@ -36,7 +36,7 @@ Deposit FORT to get active shares.
 
     - **spender:** `FortaStaking` contract address: `0xd2863157539b1D11F39ce23fC4834B62082F6874`
 
-    - **amount:** FORT amount, in wei. FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like https://eth-converter.com/. ![token approve](stake-images/2-token-approve.png)
+    - **amount:** FORT amount, in wei. FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like [https://eth-converter.com/]. ![token approve](stake-images/2-token-approve.png)
 
 4. Click _Write_ and approve the transaction in your wallet.
 
@@ -54,7 +54,7 @@ You can stake only on the registered scan nodes.
 
     - **subject:** Your scan node address **(not the owner address).**
 
-    - **stakeValue:** Amount of FORT to stake. For a new node, input `500000000000000000000` (500 FORT in wei). If you are unsure, you can use a converter like https://eth-converter.com/. ![stake](stake-images/3-stake.png)
+    - **stakeValue:** Amount of FORT to stake. For a new node, input `500000000000000000000` (500 FORT in wei). If you are unsure, you can use a converter like [https://eth-converter.com/]. ![stake](stake-images/3-stake.png)
 
 
 4. Click _Write_ and approve the transaction in your wallet.
@@ -82,7 +82,7 @@ After _staking delay_ is over, you will be able to `withdraw()` FORT, as describ
 
     - **subject:** Your scan node address **(not the owner address).**
 
-    - **stakeValue:** Amount of shares to unstake, in wei. If the node has not been slashed, the proportion is `1 Share : 1 FORT`. If you are unsure about the amount in wei, you can use a converter like https://eth-converter.com/. ![initiate withdrawal](stake-images/4-initiate-withdrawal.png)
+    - **stakeValue:** Amount of shares to unstake, in wei. If the node has not been slashed, the proportion is `1 Share : 1 FORT`. If you are unsure about the amount in wei, you can use a converter like [https://eth-converter.com/]. ![initiate withdrawal](stake-images/4-initiate-withdrawal.png)
 
 4. Click _Write_ and approve the transaction in your wallet.
 
