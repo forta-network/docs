@@ -1,6 +1,8 @@
 # Run a Scan Node
 
-This page contains the steps and technical recommendations to help you set up your node. If you have not seen the full list of onboarding steps yet, please see them through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746).
+This page contains the steps and technical recommendations to help you set up your node. Please always refer to this documentation for the most up-to-date information.
+
+If you have not seen the full list of onboarding steps yet, please see them first through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746).
 
 **Before continuing, please make sure that you have filled out the [application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) and agreed to terms of participation first.** You can feel free to follow this documentation and start your node while your application is being reviewed but please also keep in mind that your application may get rejected.
 
@@ -29,6 +31,26 @@ erigon --private.api.addr=localhost:9090
 
 !!! note "Ethereum node access"
     Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` HTTP APIs. Note that `trace` is only applicable for Ethereum mainnet.
+
+## Synchronize system time
+
+To produce correct timestamps on the alerts and avoid authorization problems at the time of publishing alerts, **you must ensure at all times that the system time is correct.** If the system time is not correct, your node will fail to publish alerts and may generate no rewards as a result.
+
+We suggest using `systemd-timesyncd` which is widely available and sufficient as a time synchronization daemon. After started, it will periodically synchronize the system time in background.
+
+To enable, `systemd-timesyncd` and check the result, you can do:
+```
+$ sudo systemctl enable systemd-timesyncd
+$ sudo systemctl start systemd-timesyncd
+$ timedatectl status
+               Local time: Tue 2022-01-01 17:00:00 -03
+           Universal time: Tue 2022-01-01 20:00:00 UTC
+                 RTC time: Tue 2022-01-01 20:00:00
+                Time zone: America/Argentina/Buenos_Aires (-03, -0300)
+System clock synchronized: yes
+              NTP service: active  <------------------- (it worked)
+          RTC in local TZ: no
+```
 
 ## Install and Configure Docker
 
@@ -125,7 +147,7 @@ Forta scan node's CLI allows you to set up your first Forta configuration direct
 
 ### Initialize Forta Directory
 
-Initialization creates a private key that will sign the alerts from your scan node.  You must set the $FORTA_PASSPHRASE environment variable or provide the --passphrase flag to the `init` command.
+Initialization creates a private key that will sign the alerts from your scan node.  You must set the `FORTA_PASSPHRASE` environment variable or provide the --passphrase flag to the `init` command.
 
 Initialize Forta using the `forta init` command
 
@@ -133,7 +155,10 @@ Initialize Forta using the `forta init` command
 $ forta init --passphrase <your_passphrase>
 ```
 
-This generates a config directory, a private key, and output your address
+!!! note "Forta Directory"
+    By default, the forta directory is located in `~/.forta`. If you would like to use a different directory, either set the `FORTA_DIR` env var or provide the `--dir` flag to every command. Init command will initialize your Forta configuration and key to this directory.
+
+This command generates a config directory, a private key and outputs your address.
 
 ```
 Scanner address: 0xAAA8C491232cB65a65FBf7F36b71220B3E695AAA
@@ -141,22 +166,43 @@ Scanner address: 0xAAA8C491232cB65a65FBf7F36b71220B3E695AAA
 Successfully initialized at /yourname/.forta
 ```
 
-**IF YOU DELETE YOUR NODE DATA, YOU LOSE YOUR SCAN NODE PRIVATE KEY.**
-
-**NEVER LOSE OR DELETE YOUR PRIVATE KEY in `~/.forta/.keys` AND CONSIDER A BACKUP.**
-
-**NEVER LOSE YOUR PASSPHRASE.**
-
-**YOUR PRIVATE KEY CAN BE DECRYPTED ONLY USING YOUR PASSPHRASE.**
-
-!!! warning "Private Key"
-    Losing the private key will require actions to initiate a withdrawal for the old scan node address which takes 10 days for security reasons and requires ownership of the staking shares. After the withdrawal initiation is completed, the next actions are withdrawing for the old scan node address and depositing for the new scan node address.
-
 This is the value that will be registered in the scan node registry smart contract (as `uint256`).
 If you need to find out your address later again, you can run `forta account address`.
 
-!!! note "Forta Directory"
-    By default, the forta directory is located in `~/.forta`. If you would like to use a different directory, either set the $FORTA_DIR env var or provide the `--dir` flag to every command. Init command will initialize your Forta configuration and key to this directory.
+### Backup Forta Directory
+
+🚨 **If you delete scan node data without backup, you cannot restore your scan node.** 🚨
+
+🔐 **You should never lose your private key in `~/.forta/.keys` and your passphrase.** 🔐
+
+To avoid losing the control of your node address and save yourself configuration time, you can back up your Forta directory at `~/.forta` to some place only you can access. At the time of setting up your node on a new server and restore your scan node data, it is sufficient to just copy the backed up Forta directory to `~/.forta`. After doing this, you can verify that it has worked by doing `forta account address` and seeing if the outputted node address is correct.
+
+Without your passphrase, your private key cannot be decrypted so backing up your passphrase is as equally important as backing up the directory. Losing the passphrase is another way of losing your private key file in `~/.forta/.keys`. If you choose to back up your passphrase, make sure you store it in a different location than your `~/.forta` directory to reduce risks of losing the control of your node if a backup location of yours gets exposed to an attacker.
+
+
+### Recovery
+
+!!! important "Not required for node setup"
+    If you have visited this documentation to set up your node, you can safely skip this _Recovery_ section. It is placed here to inform you about potential problems if you lose data and for troubleshooting if needed later.
+
+_"I lost my scan node data, now what?"_
+
+Losing the scan node private key will require you to transfer your stake to a new scan node address after you finish setting up your new node. Same applies if your node private key and/or passphrase was stolen and you would like to switch to a new address.
+
+**The scan node private key does not own or control the staked FORT.**
+
+The first thing to check to see is if you own the shares to your stake by querying `11. sharesOf` method in Forta staking contract [on Polygonscan](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#readProxyContract) by inputting:
+
+- **subjectType:** 0
+
+- **subject:** Your scan node address
+
+- **account:** Your owner wallet address
+
+If the result is 0 after clicking the _Query_ button, your owner wallet does not own the stake shares for your node and thus you cannot move your stake.
+
+If you are able to move your stake, you can follow the steps in the [_Stake on your Scan Node_ section](https://docs.forta.network/en/latest/stake-on-scan-node/). Due to security reasons, this can take time.
+
 
 ### Configure systemd
 
@@ -258,6 +304,7 @@ Ensure Docker is running use the docker command `docker ps`.  If it is not runni
 Run the systemd service to start Forta
 
 ```
+sudo systemctl daemon-reload
 sudo systemctl enable forta
 sudo systemctl start forta
 ```
