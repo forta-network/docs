@@ -367,11 +367,11 @@ chainId: 250
 
 scan:
   jsonRpc:
-    url: "https://rpc.ftm.tools/"
+    url: https://rpc.ftm.tools/
 
 trace:
   jsonRpc:
-    url: "https://rpcapi-tracing.fantom.network/"
+    url: https://rpcapi-tracing.fantom.network/
 ```
 
 ## Monitor SLA
