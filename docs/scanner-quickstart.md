@@ -171,9 +171,9 @@ If you need to find out your address later again, you can run `forta account add
 
 ### Backup Forta Directory
 
-**If you delete scan node data without backup, you cannot restore your scan node.**
+🚨 **If you delete scan node data without backup, you cannot restore your scan node.** 🚨
 
-**You should never lose your private key in `~/.forta/.keys` and your passphrase.**
+🔐 **You should never lose your private key in `~/.forta/.keys` and your passphrase.** 🔐
 
 To avoid losing the control of your node address and save yourself configuration time, you can back up your Forta directory at `~/.forta` to some place only you can access. At the time of setting up your node on a new server and restore your scan node data, it is sufficient to just copy the backed up Forta directory to `~/.forta`. After doing this, you can verify that it has worked by doing `forta account address` and seeing if the outputted node address is correct.
 
