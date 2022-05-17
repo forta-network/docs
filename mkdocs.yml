@@ -41,7 +41,7 @@ nav:
                   - Forta: contracts/token/Forta.md
                   - FortaBridgedPolygon: contracts/token/FortaBridgedPolygon.md
                   - FortaCommon: contracts/token/FortaCommon.md
-  - Quickstart for beginners: beginner-quick-start.md
+  - Subscribe to Alerts: subscribe-to-alerts.md
   - Threat Detection Kits:
       - Get started: threat-detection-kits.md
       - Bridge Threat Detection Kit: bridge-starter-kit.md
