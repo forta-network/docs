@@ -360,6 +360,20 @@ trace:
   enabled: false
 ```
 
+### Fantom
+
+```yaml
+chainId: 250
+
+scan:
+  jsonRpc:
+    url: "https://rpc.ftm.tools/"
+
+trace:
+  jsonRpc:
+    url: "https://rpcapi-tracing.fantom.network/"
+```
+
 ## Monitor SLA
 
 To monitor whether your scan node is performing well, use the [SLA-API](sla-api.md)
