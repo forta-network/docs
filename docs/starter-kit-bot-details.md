@@ -107,4 +107,4 @@ This bot detects when an account that was funded by Tornado Cash interacts with 
 |----------|-----------|------------------|
 | Unverified Contract Creation | [Stats URL](https://explorer.forta.network/agent/0x4c7e56a9a753e29ca92bd57dd593bdab0c03e762bdd04e2bc578cb82b842c1f3){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/unverified-contract-py){:target="_blank"} |
 
-This bot detects when a contracr is created that isnt verified on Etherscan within 30min of creation.
+This bot detects when a contract is created that isn't verified on Etherscan within 30 min of creation.

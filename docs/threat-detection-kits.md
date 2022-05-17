@@ -6,10 +6,11 @@ If you are new to Forta, a threat detection kit will help you get started on mon
 
 A threat detection kit consists of security detection bots and bot templates created and curated by the Forta community and security experts.
 
-There are currently 4 threat detection kits available, each specifically tailored to monitor different parts of the Web3 ecosystem and detect threats.
+There are currently 5 threat detection kits available, each specifically tailored to monitor different parts of the Web3 ecosystem and detect threats.
 
 * [Bridge Threat Detection Kit](bridge-starter-kit.md)
 * [DeFi Threat Detection Kit](defi-starter-kit.md)
+* [Governance Threat Detection Kit](governance-starter-kit.md)
 * [NFT Threat Detection Kit](nft-starter-kit.md)
 * [Stablecoin Threat Detection Kit](stablecoin-starter-kit.md)
 
