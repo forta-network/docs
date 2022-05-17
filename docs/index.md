@@ -10,19 +10,19 @@ hide:
 <div class="grid cards" markdown>
 
 
--   :zap:{ .lg .middle } __Quickstart for Beginners__
+-   :zap:{ .lg .middle } __Subscribe to Alerts__
 
     ---
 
-    Subscribe to recommended security detection bots for DeFi, stablecoins, NFTs, governance, and bridges.
+    Subscribe to get real-time alerts on threats and anomalies.
 
-    [:octicons-arrow-right-24: Subscribe to security alerts](beginner-quick-start.md)
+    [:octicons-arrow-right-24: Subscribe to security alerts](subscribe-to-alerts.md)
 
 -   :toolbox:{ .lg .middle } __Threat Detection Kits__
 
     ---
 
-    Start monitoring and protecting Web3 projects and assets with Threat Detection Kits.
+    Start monitoring your favorite smart contracts through recommended and curated Threat Detection Kits for DeFi, Stablecoins, Bridges, NFTs, and Governance events.
 
     [:octicons-arrow-right-24: Get started](threat-detection-kits.md)
 
@@ -58,12 +58,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](what-is-forta.md)
 
--   :material-discord:{ .lg .middle } __Getting Help__
-
-    ---
-
-    Got a question or feedback? It's easy to get in touch with the community
-
-    [:octicons-arrow-right-24: Get help](help.md)
-
 </div>
+
+:material-discord: Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.gg/DUju5Dh4J9).
