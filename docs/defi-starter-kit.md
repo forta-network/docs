@@ -13,7 +13,7 @@
 | Alert Combiner | [Bot Details](starter-kit-bot-details.md#alert-combiner) | Combines past alerts under common adddress to emit a high precision alert. |
 | Balance Decreases | Coming Soon | Identifies when the balance of an account decreases significantly. |
 | Blocklisted Addresses’ Transaction Detection | [Bot Details](starter-kit-bot-details.md#blocklisted-addresses-transaction-detection) | Alerts when a blocklisted account interacts with the address monitored. |
-| Events with access control monitor | [Template Link](hhttps://github.com/arbitraryexecution/forta-agent-templates/tree/main/admin-events) | Alerts on events emitted from functions that should only be callable by privileged roles.|
+| Events with access control monitor | [Template Link](https://github.com/arbitraryexecution/forta-agent-templates/tree/main/admin-events) | Alerts on events emitted from functions that should only be callable by privileged roles.|
 | Flash Loan Detector | Coming soon | Alerts when a flash loan results in large profits indicative of an attack |
 | Function call with access control monitor | [Template Link](https://github.com/arbitraryexecution/forta-agent-templates/tree/main/monitor-function-calls) | Alerts on function calls that should only be callable by privileged roles.|
 | Ice Phishing Detection Bot | [Bot Details](starter-kit-bot-details.md#evidence-of-phishing-bot) | Alerts when ice phishing (social engineer users into token approvals) for a token contract monitored. |
