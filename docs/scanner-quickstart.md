@@ -208,6 +208,8 @@ If you are able to move your stake, you can follow the steps in the [_Stake on y
 
 If `forta` ever stops running, it must be restarted. If you used a package installation method, there is a Forta systemd service that can be enabled and overridden with your passphrase and config directory environment variables.
 
+**Please do not modify the original `forta.service` file and instead prefer the override recommended here.** This is needed because the original file will be replaced next time you update `forta` through `yum` or `apt`.
+
 To override systemd service environment, you can set the variables in `/etc/systemd/system/forta.service.d/env.conf` like:
 
 ```ini
