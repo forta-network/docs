@@ -46,6 +46,7 @@ nav:
       - Get started: threat-detection-kits.md
       - Bridge Threat Detection Kit: bridge-starter-kit.md
       - DeFi Threat Detection Kit: defi-starter-kit.md
+      - Governance Threat Detection Kit: governance-starter-kit.md
       - NFT Threat Detection Kit: nft-starter-kit.md
       - Stablecoin Threat Detection Kit: stablecoin-starter-kit.md
       - Threat Detection Kit Bot Details: starter-kit-bot-details.md
