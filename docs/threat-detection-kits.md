@@ -13,7 +13,6 @@ There are currently 5 threat detection kits available, each specifically tailore
 * [Governance Threat Detection Kit](governance-starter-kit.md)
 * [NFT Threat Detection Kit](nft-starter-kit.md)
 * [Stablecoin Threat Detection Kit](stablecoin-starter-kit.md)
-* [Governance Threat Detection Kit](governance-starter-kit.md)
 
 
 ## How to subscribe to threat detection kit detection bots?
