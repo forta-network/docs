@@ -1,7 +1,7 @@
 # Governance Threat Detection Kit
 
 <p align="left">
-    <img width=1200 alt="Governance Threat Detection Kit Overview" src="governance-threat-detection-kit.png">
+    <img width=1200 alt="Governance Threat Detection Kit Overview" src="../governance-threat-detection-kit.png">
 </p>
 
 !!! important "Frequent Doc Updates"
