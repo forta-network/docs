@@ -2,7 +2,7 @@
 
 To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf.
 
-!!! warning "Minimum Stake Threshold"
+!!! important "Minimum Stake Threshold"
     This value is subject to change and can be different per chain in the future.
 
 The staking state is signaled by the ownership of ERC1155 shares emitted by the staking contract. There are two kinds of shares:
@@ -61,11 +61,14 @@ You can stake only on the registered scan nodes.
 
 ## Initiating a stake withdrawal
 
+!!! warning "This is a withdrawal action!"
+    If you have visited this page to deposit on your new node and executed the deposit step already, please keep in mind that you inactivate your stake by doing `initiateWithdrawal()` and your node becomes disabled.
+
 When this action is executed (`initiateWithdrawal()`), active stake becomes inactive i.e. active shares are burned and inactive shares minted.
 
 After _staking delay_ is over, you will be able to `withdraw()` FORT, as described in the next section.
 
-!!! warning "Permissions"
+!!! note "Permissions"
     Only active share holders can init withdrawal. This means you have earned 500 FORT or more in a week during Fortification Phase, thus received staking shares.
 
 ![staking init withdrawal](stake-images/staking-init-withdrawal.png)
