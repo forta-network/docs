@@ -1,4 +1,5 @@
 ---
+template: home.html
 hide:
   - toc
   - navigation
@@ -32,7 +33,7 @@ hide:
 
     Use the Forta SDK to start detecting on-chain events of interest
 
-    [:octicons-arrow-right-24: Start building](getting-started.md)
+    [:octicons-arrow-right-24: Start building](quickstart.md)
 
 -   :material-server:{ .lg .middle } __Run a Scan Node__
 
