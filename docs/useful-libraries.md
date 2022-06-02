@@ -2,9 +2,9 @@
 
 Here is a collection of libraries and APIs that bot developers may find useful when building their bots. Want to add your library here? Check out [this section](/contributing/#improve-the-documentation) to suggest an edit.
 
-## forta-agent-templates
+## forta-bot-templates
 
-[`forta-agent-templates`](https://github.com/arbitraryexecution/forta-agent-templates) is a repository of low-code bot templates developed by Forta community member [Arbitrary Execution](https://www.arbitraryexecution.com/). All you have to do is modify a single json config file to build your bot. Some example templates include listening for a set of events and filtering by some conditions, or scanning for accounts that have interacted with Tornado Cash.
+[`forta-bot-templates`](https://github.com/arbitraryexecution/forta-bot-templates) is a repository of low-code bot templates developed by Forta community member [Arbitrary Execution](https://www.arbitraryexecution.com/). All you have to do is modify a single json config file to build your bot. Some example templates include listening for a set of events and filtering by some conditions, or scanning for accounts that have interacted with Tornado Cash.
 
 
 ## forta-flashloan-detector

@@ -44,7 +44,7 @@ You can initialize a sample project using the `forta:init` task, but to create s
 npx hardhat forta:init:template
 ```
 
-This will prompt you with a list of [templates](https://github.com/arbitraryexecution/forta-agent-templates) (i.e. low-code bots) to choose from. Some examples include monitoring whether an account's ETH balance has fallen below a threshold, or if an address that recently interacted with Tornado Cash is now interacting with your contracts.
+This will prompt you with a list of [templates](https://github.com/arbitraryexecution/forta-bot-templates) (i.e. low-code bots) to choose from. Some examples include monitoring whether an account's ETH balance has fallen below a threshold, or if an address that recently interacted with Tornado Cash is now interacting with your contracts.
 
 You can select one or more templates from the list. They will be unpacked into a folder called `agents` in your Hardhat project. Each template comes with a SETUP.md file that you should use to configure the bot's behaviour. All you need to do is modify a single JSON config file.
 
