@@ -12,6 +12,14 @@
 
 Combines past alerts under a common address to emit a high precision alert.
 
+## Anomalous Transaction Volume
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Successful txn | [Stats URL](https://explorer.forta.network/agent/0x20d57d727a2d7bf4b447d1952d7ea44efeda0920e45e779d298d5385f3b36cfa){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/transaction-volume-anomaly-detection){:target="_blank"} | Ethereum Mainnet, BSC, Polygon, Optimism, Fantom, Arbitrum, Avalanche |
+
+This bot detects successful transactions that have one or more failed internal transactions.
+
 ## Blocklisted Addresses Transaction Detection
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
@@ -31,11 +39,30 @@ Blocklist source:
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
-| Evidence of Phishing Agent | [Stats URL](https://explorer.forta.network/agent/0x6a0960a22bb752532b68c266dfa507849009283bf11f086095f3504211c2b5fa){:target="_blank"} | [Github Repo URL](https://github.com/VVlovsky/Evidence-of-Phishing-Agent#evidence-of-phishing-agent){:target="_blank"} | Ethereum Mainnet |
+| Evidence of Phishing Agent | [Stats URL](https://explorer.forta.network/agent/0xd9fe61cfe875470b80318a96cc0a94ba3adbe1eb4a14827fa018f14925e7da64){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/ice-phishing-detection-bot){:target="_blank"} | Ethereum Mainnet |
 
-Users approving token transfers to an externally owned address (EOA) may be a behavior indicative of a phishing attack.
+Users approving token transfers to an address or contract may be a behavior indicative of an ice phishing attack.
 
-This bot detects when a high number (e.g. 10 or more) of EOAs call the approve() or increaseAllowance() methods for the same target EOA over an extend period of time (e.g. 6 hours ~ 1600 blocks). The finding should include the affected addresses, the alleged attacker's address, and the addresses and amounts of tokens involved. It also doesn't include smart contracts (i.e. approve() called by a smart contract or a smart contract that is the designated spender for an approve() call) and EOAs for any centralized exchanges (e.g. FTX exchange: 0x2FAF487A4414Fe77e2327F0bf4AE2a264a776AD2).
+This bot detects when a high number of EOAs call the approve() or increaseAllowance() methods for the same target EOA/ contract over an extend period of time. This bot emits two types of alerts: first for the approvals that occurred and another when attacker is making the transfers.
+
+
+## Flashloan Detection Bot
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Flashloan Detection Bot | [Stats URL](https://explorer.forta.network/agent/0x55636f5577694c83b84b0687eb77863850c50bd9f6072686c8463a0cbc5566e0){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/flashloan-detector){:target="_blank"} | Ethereum Mainnet |
+
+This bot detects if a transaction contains a flashloan and the borrower made significant profit
+
+
+## Mint/Borrow Anomaly Detection Bot
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Flashloan Detection Bot | [Stats URL](https://explorer.forta.network/agent/0x2c8452ff81b4fa918a8df4441ead5fedd1d4302d7e43226f79cb812ea4962ece){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/large-mint-borrow-anomaly-detection){:target="_blank"} | Ethereum Mainnet |
+
+This bot detects if an anomalous volume of mints and/or borrows occurs.
+
 
 ## NFT Sleep Minting Detection
 
@@ -65,13 +92,6 @@ This bot detects **ALL** events from smart contracts defined in the [`openzeppel
 
 This bot detects reentrancy based on the call stack provided in the transaction traces. The bot reports the number of repeated calls with different severities levels.
 
-## Successful Transactions with Internal Failures
-
-| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
-|----------|-----------|------------------|------------------|
-| Successful txn | [Stats URL](https://explorer.forta.network/agent/0x09f72094780dd969eb295dad8ce6126cc393a97a9df746633611235a39810110){:target="_blank"} | [Github Repo URL](https://github.com/NethermindEth/Forta-Agents/tree/ce3026fb0e6da69af243ba3d36dbf6dd85a74d9f/success-txn-with-internal-failures#successful-transactions-with-internal-failures){:target="_blank"} | Ethereum Mainnet, BSC, Polygon |
-
-This bot detects successful transactions that have one or more failed internal transactions.
 
 ## Suspicious Contract Creation
 
