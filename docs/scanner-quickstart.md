@@ -2,12 +2,7 @@
 
 This page contains the steps and technical recommendations to help you set up your node. Please always refer to this documentation for the most up-to-date information.
 
-If you have not seen the full list of onboarding steps yet, please see them first through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746).
-
-**Before continuing, please make sure that you have filled out the [application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) and agreed to terms of participation first.** You can feel free to follow this documentation and start your node while your application is being reviewed but please also keep in mind that your application may get rejected.
-
-!!! important "Fortification Phase 1"
-    At this phase, only Forta-approved nodes are allowed onto the network and staking is done by Forta Foundation on behalf of participants. In the next phase, participants will have the option to stake FORT on their nodes. Unstaked nodes do not get assigned detection bots and do not generate any rewards.
+If you have not seen the full list of onboarding steps yet, please see them first through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746). You can feel free to follow this documentation and start your node while your application is being reviewed but please also keep in mind that your application may get rejected (**update**: due to overwhelming interest, onboarding has been paused)
 
 ## Scan Node Requirements
 

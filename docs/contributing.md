@@ -32,7 +32,7 @@ Are you a skilled Javascript, Typescript or Python developer? You can help build
 
 Have you written an awesome library to help you develop bots? Sharing such tools and libraries helps the community also improve their bots. If you have identified a common pattern when writing your bots, you could share a set of templates that others can use to speed up their bot development process. Check out the [useful libaries](useful-libraries.md) page to see what is currently recommended.
 
-## Run a scan node (coming soon)
+## Run a scan node
 
 Scan nodes are a key piece of Forta infrastructure as they help run bots and share any alerts. A great way to expand the network is to run your own scan node and create bandwidth for more bots to run.
 

@@ -48,7 +48,7 @@ For example, while the DeFi community is well aware of the anonymity that Tornad
 
 Certain categories of exploits, such as phishing, governance attacks, and multi-chain or bridge attacks, typically require the use of multiple transactions over multiple blocks that offer the opportunity for early detection followed by prevention before the exploit occurs or mitigation before the exploit is complete.
 
-Forta community members have already published multiple examples of how Forta can be used to detect and prevent or mitigate such exploits, like the [Microsoft ice phishing bot](https://t.co/sPlZEmh0qN) or the [Sleep Minting bot for NFTs](https://a16z.com/2022/03/09/sleep-minting-nfts/). The ability to respond to Forta alerts also relies on the readiness of project teams and Forta community members have begun to work with organizations to put together emergency response plans.
+Forta community members have already published [multiple examples](https://forta.notion.site/How-Forta-alerted-on-past-hacks-d05c45f060e8404886996ca5518e6f75) of how Forta can be used to detect and prevent or mitigate such exploits, like the [Microsoft ice phishing bot](https://t.co/sPlZEmh0qN) or the [Sleep Minting bot for NFTs](https://a16z.com/2022/03/09/sleep-minting-nfts/). The ability to respond to Forta alerts also relies on the readiness of project teams and Forta community members have begun to work with organizations to put together emergency response plans.
 
 #### Examples of smart contract exploits that can be mitigated by Forta
 

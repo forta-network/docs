@@ -10,7 +10,7 @@ You can subscribe to alerts from specific bots or contracts using [Forta App](ht
 
 ## How do I run a scan node?
 
-Currently, only Forta-approved nodes are allowed onto the network. In later phases, Forta will introduce economic security measures that will allow permissionless scan nodes. Please see the [quickstart](scanner-quickstart.md) guide to learn how to setup a scan node.
+Please see the [quickstart](scanner-quickstart.md) guide to learn how to setup a scan node.
 
 ## Do I need special hardware to run scan nodes?
 
@@ -26,7 +26,7 @@ Good bots are ones that detect real-world exploits before or as they occur, or p
 
 ## Where can I get ideas for bots?
 
-The best ideas for bots are actual exploits that occur in the real world. As the DeFi space grows rapidly, exploits are occurring almost on a daily basis. To stay up-to-date on these exploits, you can check out the [rekt.news](https://rekt.news/) website or subscribe to the [Blockchain Threat Intelligence](https://www.blockthreat.io/) newsletter. You can also see bots that are currently deployed by other protocols on the [Forta App Discover page](https://app.forta.network/).
+The best ideas for bots are actual exploits that occur in the real world. As the DeFi space grows rapidly, exploits are occurring almost on a daily basis. To stay up-to-date on these exploits, you can check out the [rekt.news](https://rekt.news/) website or subscribe to the [Blockchain Threat Intelligence](https://www.blockthreat.io/) newsletter. You can also see bots that are currently deployed by other protocols on the [Forta App Discover page](https://app.forta.network/discover).
 
 Also, if you are writing bots for your own protocol it can be useful to think about the types of conditions you want to be notified of, either in your own protocol or upstream/downstream protocols.
 
