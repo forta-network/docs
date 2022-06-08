@@ -7,6 +7,7 @@ nav:
       - How Forta works: how-forta-works.md
       - Governance: governance.md
       - FORT token: fort-token.md
+      - Airdrop: airdrop.md
       - Core concepts: concepts.md
       - Smart contracts:
           - Intro & Addresses: smart-contracts.md
@@ -135,3 +136,6 @@ extra:
       name: Forta Blog
     - icon: fontawesome/solid/envelope
       link: mailto:community@forta.org
+
+extra_css:
+  - stylesheets/extra.css
