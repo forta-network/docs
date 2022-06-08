@@ -1,8 +1,8 @@
 ---
-template: home.html
 hide:
   - toc
   - navigation
+  - footer
 ---
 
 # Welcome to the Forta Docs!
