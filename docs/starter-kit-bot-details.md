@@ -20,20 +20,15 @@ Combines past alerts under a common address to emit a high precision alert.
 
 This bot detects successful transactions that have one or more failed internal transactions.
 
-## Blocklisted Addresses Transaction Detection
+## Chainalysis Sanctioned Addresses
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
-| Blocklisted Addresses Transaction Detection | [Stats URL](https://explorer.forta.network/agent/0xaedda4252616d971d570464a3ae4a9f0a9d72a57d8581945fff648d03cd30a7d){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/blocklist-addr-tx-py#blocklisted-address-bot){:target="_blank"} | All |
+| Chainalysis Sanctioned Addresses | [Stats URL](https://explorer.forta.network/agent/0x9a8134e4a061e3c0098fd14f8d54c2391fb9118ff403e4b2c79faf6390f0e518){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/sanctioned-addresses-py#chainalysis-sanctioned-addresses){:target="_blank"} | All |
 
-This bot detects transactions that involve blocklisted addresses. The blocklist is generated and updated from 4 data sources listed below.
+This bot detects transactions that involve Chainalysis sanctioned addresses.
 
-Blocklist source:
-
-* Blocklisted addresses in [USDC Token Contract](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48).
-* Blocklisted addresses in [USDT Token Contract](https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7)
-* Sanctioned addresses by [Chainalysis Sanction Oracle Contract](https://go.chainalysis.com/chainalysis-oracle-docs.html)
-* [Luabase's](https://luabase.com/) `tags` table which includes addresses and wallet tags labeled as `exploit`, `heist`, and `phish/hack` from [Etherscan](https://etherscan.io/labelcloud).
+The bot listens to the [Chainalysis Sanction Oracle Contract](https://go.chainalysis.com/chainalysis-oracle-docs.html)'s sanctioned events and maintains a local list of sanctioned addresses.
 
 ## Evidence of Phishing Bot
 
@@ -45,6 +40,13 @@ Users approving token transfers to an address or contract may be a behavior indi
 
 This bot detects when a high number of EOAs call the approve() or increaseAllowance() methods for the same target EOA/ contract over an extend period of time. This bot emits two types of alerts: first for the approvals that occurred and another when attacker is making the transfers.
 
+## Exploiter Addresses
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Exploiter Addresses | [Stats URL](https://explorer.forta.network/agent/0x0e82982faa7878af3fad8ddf5042762a3b78d8949da2e301f1adfedc973f25ea){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/exploiter-addresses-py#exploiter-addresses-detection-bot){:target="_blank"} | All |
+
+This bot detects transactions that involve known exploiter addresses.
 
 ## Flashloan Detection Bot
 
