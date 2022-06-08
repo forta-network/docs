@@ -14,6 +14,7 @@
 | Balance Decreases | Coming Soon | Identifies when the balance of an account decreases significantly. |
 | Blocklisted Addresses’ Transaction Detection | [Bot Details](starter-kit-bot-details.md#blocklisted-addresses-transaction-detection) | Alerts when a blocklisted account interacts with the address monitored. |
 | Events with access control monitor | [Template Link](https://github.com/arbitraryexecution/forta-bot-templates/tree/main/src/monitor-events) | Alerts on events emitted from functions that should only be callable by privileged roles.|
+| Exploiter Addresses | Coming Soon | Alerts when known exploiter address interacts with the address monitored. |
 | Flash Loan Detector | [Bot Details](starter-kit-bot-details.md#evidence-of-phishing-bot) | Alerts when a flash loan results in large profits indicative of an attack |
 | Function call with access control monitor | [Template Link](https://github.com/arbitraryexecution/forta-bot-templates/tree/main/src/monitor-function-calls) | Alerts on function calls that should only be callable by privileged roles.|
 | Ice Phishing Detection Bot | [Bot Details](starter-kit-bot-details.md#evidence-of-phishing-bot) | Alerts when ice phishing (social engineer users into token approvals) for a token contract monitored. |
@@ -21,6 +22,7 @@
 | OpenZeppelin-Gnosis Safe Contract Events | [Bot Details](starter-kit-bot-details.md#openzeppelin-gnosis-safe-contract-events) | Alerts on security relevant events of the OZ contract library/ Gnosis Safe contact instances. |
 | Price Change Anomalies | Coming Soon | Identifies when a price of an asset changes significantly. |
 | Re-entrancy counter | [Bot Details](starter-kit-bot-details.md#reentrancy-counter) | Alerts when reentrancy on the contract monitored is detected. |
+| Sanctioned Addresses | Coming Soon | Alerts when a Chainalysis sanctioned account interacts with the address monitored. |
 | Sneak Governance Proposal | Coming Soon | Identifies when a governance proposal with only a few EOA voting is about to be approved. |
 | Suspicious Contract Creation | [Bot Details](starter-kit-bot-details.md#suspicious-contract-creation) | Alerts on contract creation that contained the address monitored. |
 | Token Impersonation | Coming Soon | Alerts when an existing token is being impersonated by a newly created contract. |
