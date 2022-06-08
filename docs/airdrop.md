@@ -98,3 +98,6 @@ If you weren’t eligible in this FORT Airdrop, there are plenty of other ways t
 - [Check out](https://boards.greenhouse.io/forta) full-time roles in the Forta ecosystem
 
 Finally, make sure to join the Forta [Discord](https://discord.com/invite/fortanetwork), follow Forta on [Twitter](https://twitter.com/fortanetwork), and subscribe to the Forta [Newsletter](https://forta.substack.com/) so you never miss an update!
+
+<br>
+*<h6>The values above may change between now and the date of the token Airdrop. An announcement will be made by the Forta Foundation on the official announcement channels when tokens are ready to be claimed.</h6>*
