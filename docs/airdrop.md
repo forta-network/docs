@@ -14,7 +14,7 @@ Each category and subcategory is discrete and cumulative: an address can be elig
 
 ## Forta Users
 
-Forta Users, in the context of the airdrop, are those who have contributed to the Network from day one, including, but not limited to, detection bot developers, community members who participated in detection bot development contests, alert subscribers, and Forta scan node runners. 
+Forta Users, in the context of the airdrop, are those who have contributed to the Network from day one, including, but not limited to, detection bot developers, community members who participated in detection bot development contests, alert subscribers, and Forta scan node runners.
 
 ### Detection Bot Developers
 
@@ -25,7 +25,7 @@ Detection Bot developers represent a critical aspect of the Network by building 
 
 ### Alert Subscribers
 
-This group selects early adopters who started using Forta by subscribing to alerts on the Forta Network. 
+This group selects early adopters who started using Forta by subscribing to alerts on the Forta Network.
 
 ![Alert Subscribers](airdrop-table3.png)
 
@@ -38,11 +38,11 @@ Node runners are crucial to the Network’s security and growth by operating the
 
 ## Builders
 
-These are those who have created or contributed to key aspects of Web3’s infrastructure and security. This includes, but is not limited to, Ethereum mainnet developers, library contributors, Ethernaut players, and Subgraph developers. 
+These are those who have created or contributed to key aspects of Web3’s infrastructure and security. This includes, but is not limited to, Ethereum mainnet developers, library contributors, Ethernaut players, and Subgraph developers.
 
 ### Mainnet Developers
 
-Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-galaxy-announces-shadowy-super-coder-nft-pack-with-300-million-worth-of-perks-c5cb9ea2d18a) to support innovative developers, top developers in the Ethereum ecosystem are eligible for the FORT Airdrop. These are defined as those who deployed smart contracts with the most active interactions. 
+Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-galaxy-announces-shadowy-super-coder-nft-pack-with-300-million-worth-of-perks-c5cb9ea2d18a) to support innovative developers, top developers in the Ethereum ecosystem are eligible for the FORT Airdrop. These are defined as those who deployed smart contracts with the most active interactions.
 
 ![Mainnet Developers](airdrop-table5.png)
 
@@ -62,13 +62,13 @@ This group includes developers who actively contributed to the over 900 eligible
 
 ### Subgraph Developers
 
-The Graph Protocol subgraph developers are valuable contributors to Web3, facilitating access to blockchain data for decentralized applications on Ethereum. 
+The Graph Protocol subgraph developers are valuable contributors to Web3, facilitating access to blockchain data for decentralized applications on Ethereum.
 
 ![Subgraph Developers](airdrop-table8.png)
 
-## Multisig Signers 
+## Multisig Signers
 
-Multisig signers can be key decision-makers, DAO leaders, and/or builders that have access to large pools of assets or control over critical protocol functions. 
+Multisig signers can be key decision-makers, DAO leaders, and/or builders that have access to large pools of assets or control over critical protocol functions.
 
 ![Multisig Signers](airdrop-table9.png)
 
@@ -80,8 +80,8 @@ Forta Contributors are ambassadors and thought leaders who are strong proponents
 
 In an effort to reward benevolent Forta Network participants, Forta filtered out blocklisted addresses involved in any malicious activities.
 
-- Known exploit addresses were filtered out. 
-- Addresses listed in [Hop Protocol’s Airdrop Sybil Attacker List](https://github.com/hop-protocol/hop-airdrop/tree/master/src/data/blacklists) were excluded. 
+- Known exploit addresses were filtered out.
+- Addresses listed in [Hop Protocol’s Airdrop Sybil Attacker List](https://github.com/hop-protocol/hop-airdrop/blob/master/src/data/eliminatedSybilAttackers.csv) were excluded.
 - Addresses listed in [Optimism’s Airdrop Sybil Filter](https://docs.google.com/spreadsheets/d/1kUAt-vrkID0yBkic72djWRxdliK8W_5rBGxq6-Iv3cg/edit#gid=822397105) were excluded.
 - Addresses listed in [Chainalysis Sanction Oracle Contract](https://go.chainalysis.com/chainalysis-oracle-docs.html) were excluded.
 
