@@ -86,6 +86,15 @@ You can read more about what this is and why it matters [here](https://a16z.com/
 
 This bot detects **ALL** events from smart contracts defined in the [`openzeppelin-contracts`](https://github.com/OpenZeppelin/openzeppelin-contracts) and [`gnosis-safe`](https://github.com/gnosis/safe-contracts) Github repositories
 
+
+## Price Change Anomaly
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Smart Price Changes Agent | [Stats URL](https://explorer.forta.network/agent/0x0f21668ebd017888e7ee7dd46e9119bdd2bc7f48dbabc375d96c9b415267534c){:target="_blank"} | [Github Repo URL](https://github.com/VVlovsky/Smart-Price-Changes-Agent){:target="_blank"} | Ethereum Mainnet |
+
+This bot detects when there are drastic price change anomalies based on on-chain price oracles (i.e. Uniswap and Uniswap deriveratives.)
+
 ## Reentrancy Counter
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
@@ -104,6 +113,15 @@ This bot detects reentrancy based on the call stack provided in the transaction 
 This bot detects when a suspicious contract is created. A suspicious contract can take many forms; initially, this bot will alert on contracts that were created from Tornado cash funded accounts.
 
 
+## Token Impersonation 
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Token Impersonation | [Stats URL](https://explorer.forta.network/agent/0x6aa2012744a3eb210fc4e4b794d9df59684d36d502fd9efe509a867d0efa5127){:target="_blank"} | [Github Repo URL](https://github.com/kovart/forta-token-impersonation-agent){:target="_blank"} | Ethereum Mainnet |
+
+This bot detects if an ERC-20/ ERC-721/ ERC-1155 contract gets deployed with the same symbol of an existing deployed contract. This may be indicative of a scam or phishing attack.
+
+
 ## Tornado Cash Funded Account Interaction
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
@@ -111,6 +129,7 @@ This bot detects when a suspicious contract is created. A suspicious contract ca
 | Tornado Cash Funded Account Interaction | [Stats URL](https://explorer.forta.network/agent/0x617c356a4ad4b755035ef8024a87d36d895ee3cb0864e7ce9b3cf694dd80c82a){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/forta-tornado-cash-starter-kit#tornado-cash-funded-account-interacted-with-contract){:target="_blank"} | Ethereum Mainnet, BSC, Polygon, Arbitrum, Optimism |
 
 This bot detects when an account that was funded by Tornado Cash interacts with any contract.
+
 
 ## Unverified Contract Creation
 

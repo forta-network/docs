@@ -20,7 +20,7 @@
 | Ice Phishing Detection Bot | [Bot Details](starter-kit-bot-details.md#evidence-of-phishing-bot) | Alerts when ice phishing (social engineer users into token approvals) for a token contract monitored. |
 | Mint/Borrow Value Anomalies | [Bot Details](starter-kit-bot-details.md#mint-borrow-anomalies) | Alerts when mint/borrow volume is changing in a statistically significant way. |
 | OpenZeppelin-Gnosis Safe Contract Events | [Bot Details](starter-kit-bot-details.md#openzeppelin-gnosis-safe-contract-events) | Alerts on security relevant events of the OZ contract library/ Gnosis Safe contact instances. |
-| Price Change Anomalies | Coming Soon | Identifies when a price of an asset changes significantly. |
+| Price Change Anomalies | [Bot Details](starter-kit-bot-details.md#price-change-anomaly) | | Identifies when a price of an asset changes significantly. |
 | Stablecoin Blocklisted Addresses | Coming Soon | Alerts when address blocklisted by Stablecoin providers interacts with the address monitored. |
 | Stablecoin interaction with DeFi protocols | Coming Soon | Identifies when stablecoin is used in DeFi protocols. |
 | Successful transactions with internal failures | [Bot Details](starter-kit-bot-details.md#anomalous-transaction-volume) | Alerts on transactions involving the address monitored that succeed, but had internal failures.|
