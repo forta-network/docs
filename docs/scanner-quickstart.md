@@ -270,6 +270,32 @@ trace:
 #     url: http://your-node:8545
 ```
 
+### Private scanning
+
+In addition to default public scanning, `forta` has a private mode which allows:
+
+- running only desired detection bots
+- forwarding the alerts to a specific target
+
+To suit this purpose and other cases, we defined [Forta Webhook Specification](https://github.com/forta-network/forta-core-go/blob/master/protocol/webhook/swagger.yml). In private mode, a scan node conforms with this specification when making authorized webhook requests.
+
+!!! note "About paths"
+    The paths defined in the webhook specification is only for making the definitions easier. Scan node configuration requires the complete webhook URL and ignores all paths defined in the specification.
+
+To enable private mode, you can include the `privateMode` configuration in your `~/.forta/config.yml` as described below:
+```yaml
+privateMode:
+  enable: true
+  webhookUrl: <your-webhook-handler-url>
+  # docker references of remote or locally available detection bot images
+  botImages:
+    - my-local-test-agent
+    - disco.forta.network/bafybeie5xvbbvhlrollwfb3xd4qxs5qw6rhk52ukeq2zbek6tetryqdn5a
+```
+
+!!! warning "Staking and rewards"
+    Private nodes require staking but generate no rewards.
+
 ## Register Scan Node
 
 Your scan node has an Ethereum address that makes two main features possible:
@@ -289,6 +315,15 @@ To register your node to the registry contract, you can run `forta register --ow
 After your registration transaction is included in the next block, you can start your node as described in the next section. However, your node will not be assigned any detection bots or generate any rewards until the application you submitted through [the application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) succeeds.
 
 If your application succeeds, you will receive an email with a link to a second form. Once your node is running, complete this second form with your node address (found via `forta account address`) as soon as possible so Forta Foundation can stake on your behalf.  We only stake on running nodes to avoid impacting overall network reliability.
+
+### Staking and slashing
+
+To ensure network reliablity, Forta uses two main mechanisms:
+
+- **Staking:** Node operators are incentivized with rewards to ensure that their Forta nodes are running with good health and as expected. To gain rewards, a node operator must `deposit()` the minimum amount of FORT required using the staking contract.
+- **Slashing:** Node operators are discouraged from harmful actions. Upon detection, they lose rewards and a determined amount is removed from the deposited stake. This can cause the staked amount to go under minimum required and the node to enter into disabled state.
+
+You can follow the guide [here](https://docs.forta.network/en/latest/stake-on-scan-node/) to learn how to manage staking for a node.
 
 ## Run Scan Node
 
