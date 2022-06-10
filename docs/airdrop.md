@@ -48,7 +48,7 @@ Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-gala
 
 ### Library Contributors
 
-This group includes developers who actively contributed to the over 900 eligible [Web3 GitHub repositories](https://docs.google.com/spreadsheets/d/1VgLQIiceycJf0i6gofPTWi05UCfJJ4PURBEvkSCLG-E/edit?usp=sharing) (including Web3 libraries, public goods, and top projects on chains that Forta supports). Thousands of people worked to build and maintain these projects over the years, some even working completely for free in an effort to create a better and safer decentralized economy.
+This group includes developers who actively contributed to over 900 [Web3 GitHub repositories](https://docs.google.com/spreadsheets/d/1VgLQIiceycJf0i6gofPTWi05UCfJJ4PURBEvkSCLG-E/edit?usp=sharing). This list comprises Web3 libraries, public goods, and top projects that are vital to Forta ecosystem. Thousands of people worked to build and maintain these projects over the years, some even working completely for free in an effort to create a better and safer decentralized economy.
 
 ![Library Contributors](airdrop-table6.png)
 *Each subcategory is discrete and cumulative: an address can be eligible for multiple and allocated a sum of tokens accordingly.*
