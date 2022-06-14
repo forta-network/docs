@@ -1,6 +1,6 @@
 # Staking on Scan Nodes
 
-To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf.
+To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf. Staking occurs on Polygon, so if you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
 
 !!! important "Minimum Stake Threshold"
     This value is subject to change and can be different per chain in the future.

@@ -74,6 +74,7 @@ nav:
       - Python SDK: python.md
       - CLI commands: cli.md
       - forta.config.json: config.md
+      - Staking on detection bots: stake-on-detection-bot.md
       - Bot developer contests:
           - Compound Contest (10/20/2021): contest1-compound.md
           - Aave Contest (11/3/2021): contest2-aave.md
