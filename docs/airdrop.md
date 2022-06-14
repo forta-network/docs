@@ -4,7 +4,7 @@
 
 Read the Forta Airdrop announcement [here](https://forta.org/blog/fort-airdrop/).
 
-The FORT Airdrop rewards early Forta contributors and seeds the broader Web3 security community with FORT tokens so they can begin building on the Forta Network. 26,022 addresses are eligible to claim FORT Tokens in the Forta Airdrop, including four key groups: Forta Users, Forta Contributors, Builders, and Gnosis Safe Signers.
+The FORT Airdrop rewards early Forta contributors and seeds the broader Web3 security community with FORT tokens so they can begin building on the Forta Network. 26,769 addresses are eligible to claim FORT Tokens in the Forta Airdrop, including four key groups: Forta Users, Forta Contributors, Builders, and Gnosis Safe Signers.
 
 Each category and subcategory is discrete and cumulative: an address can be eligible for multiple categories and allocated a sum of tokens for each accordingly. The allocation and criteria are broken down as follows:
 
@@ -38,17 +38,17 @@ Node runners are crucial to the Network’s security and growth by operating the
 
 ## Builders
 
-These are those who have created or contributed to key aspects of Web3’s infrastructure and security. This includes, but is not limited to, Ethereum mainnet developers, library contributors, Ethernaut players, and Subgraph developers.
+These are individuals who have created or contributed to key aspects of Web3’s infrastructure and security. This includes, but is not limited to, Ethereum mainnet developers, library contributors, Ethernaut players, and Subgraph developers.
 
 ### Mainnet Developers
 
-Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-galaxy-announces-shadowy-super-coder-nft-pack-with-300-million-worth-of-perks-c5cb9ea2d18a) to support innovative developers, top developers in the Ethereum ecosystem are eligible for the FORT Airdrop. These are defined as those who deployed smart contracts with the most active interactions.
+Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-galaxy-announces-shadowy-super-coder-nft-pack-with-300-million-worth-of-perks-c5cb9ea2d18a) to support innovative developers, top developers in the Ethereum ecosystem are eligible for the FORT Airdrop. These are defined as developers who deployed smart contracts with the most active interactions.
 
 ![Mainnet Developers](airdrop-table5.png)
 
 ### Library Contributors
 
-This group includes developers who actively contributed to over 900 [Web3 GitHub repositories](https://docs.google.com/spreadsheets/d/1VgLQIiceycJf0i6gofPTWi05UCfJJ4PURBEvkSCLG-E/edit?usp=sharing). This list comprises Web3 libraries, public goods, and top projects that are vital to Forta ecosystem. Thousands of people worked to build and maintain these projects over the years, some even working completely for free in an effort to create a better and safer decentralized economy.
+This group includes developers who actively contributed to over 900 [Web3 GitHub repositories](https://docs.google.com/spreadsheets/d/1VgLQIiceycJf0i6gofPTWi05UCfJJ4PURBEvkSCLG-E/edit?usp=sharing). This list comprises Web3 libraries, public goods, and top projects that are vital to the Forta ecosystem. Thousands of people worked to build and maintain these projects over the years, some even working completely for free in an effort to create a better and safer decentralized economy.
 
 ![Library Contributors](airdrop-table6.png)
 *Each subcategory is discrete and cumulative: an address can be eligible for multiple and allocated a sum of tokens accordingly.*
@@ -66,9 +66,9 @@ The Graph Protocol subgraph developers are valuable contributors to Web3, facili
 
 ![Subgraph Developers](airdrop-table8.png)
 
-## Multisig Signers
+## Gnosis Safe Signers
 
-Multisig signers can be key decision-makers, DAO leaders, and/or builders that have access to large pools of assets or control over critical protocol functions.
+Gnosis Safe Multisig signers can be key decision-makers, DAO leaders, and/or builders that have access to large pools of assets or control over critical protocol functions.
 
 ![Multisig Signers](airdrop-table9.png)
 
