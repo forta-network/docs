@@ -2,8 +2,6 @@
 
 This page contains the steps and technical recommendations to help you set up your node. Please always refer to this documentation for the most up-to-date information.
 
-If you have not seen the full list of onboarding steps yet, please see them first through [here](https://forta.notion.site/Forta-Fortification-Network-4a8af3ab4aea480d993e5095ad0ed746). You can feel free to follow this documentation and start your node while your application is being reviewed but please also keep in mind that your application may get rejected (**update**: due to overwhelming interest, onboarding has been paused)
-
 ## Scan Node Requirements
 
 The following are the requirements for running a Forta scan node.
@@ -286,9 +284,17 @@ To register your node to the registry contract, you can run `forta register --ow
 !!! warning "Action requires funds"
     You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
 
-After your registration transaction is included in the next block, you can start your node as described in the next section. However, your node will not be assigned any detection bots or generate any rewards until the application you submitted through [the application form](https://docs.google.com/forms/d/e/1FAIpQLSe7p8LYECwDJetO2eCXBzs0H7dt7aEcoisexVteCIu7wVx_pg/viewform) succeeds.
+## Stake FORT
 
-If your application succeeds, you will receive an email with a link to a second form. Once your node is running, complete this second form with your node address (found via `forta account address`) as soon as possible so Forta Foundation can stake on your behalf.  We only stake on running nodes to avoid impacting overall network reliability.
+To ensure network reliablity, Forta Network requires staking FORT tokens on your node. You can follow the [staking guide](https://docs.forta.network/en/latest/stake-on-scan-node/) to learn how to manage stake for a node.
+
+!!! warning "All nodes require stake"
+    Unstaked nodes node will not be assigned any detection bots and will not generate any rewards.
+
+Forta Network makes good use of the stake by enforcing two main mechanisms:
+
+- **Rewarding:** Node operators are incentivized with rewards to ensure that their Forta nodes are running with good health and as expected. To gain rewards, a node operator must `deposit()` the minimum amount of FORT required using the staking contract.
+- **Slashing:** Node operators are discouraged from harmful actions. Upon detection, they lose rewards and a determined amount is removed from the deposited stake. This can cause the staked amount to go under minimum required and the node to enter into disabled state.
 
 ## Run Scan Node
 
