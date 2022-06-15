@@ -1,0 +1,7 @@
+## Security - Development
+
+Code reuse and leveraging audited smart contract libraries help to reduce the overall attack surface. Forta leverages [OpenZeppelin's Smart Contract libraries](https://www.openzeppelin.com/contracts) for it's smart contracts. Overall, the priniciple of least privilege and access control was implemented (e.g. see [role usage](https://docs.forta.network/en/latest/contracts/components/Roles/) within Forta's smart contracts). 
+
+The principle of least privilege does not just apply to smart contracts, but all other dependent code relevant components, such as GitHub code repositories (e.g. secured by 2FA on all accounts) and processes (e.g. code review requirements for critical pull requests).
+
+Development could happen also through the community through on-chain governance and could pose a security risk. This isn't the case for Forta. [Forta's governance process](https://docs.forta.network/en/latest/governance/) is a community governance framework that consist of a Forta Proposal Process (supported by off-chain governance voting on [Snapshot](https://snapshot.org/#/forta.eth)) as well as the Forta Governance Council to which the community delegated decision power to. This council has control of the 4/7 Gnosis Safe Multisig wallet and requires a majority to execute proposals and/or changes to the protocol. Due to the distributed and two step nature of proposal execution mitigates significant risk compared to on-chain governance.
