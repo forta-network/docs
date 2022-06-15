@@ -2,7 +2,7 @@
 
 <h2>It's Time to Protect Web3</h2>
 
-[Check your eligibility for FORT Airdrop](https://airdrop.forta.network)
+[Check your eligibility and claim your FORT airdrop](https://airdrop.forta.network)
 
 The FORT Airdrop rewards early Forta contributors and seeds the broader Web3 security community with FORT tokens so they can begin building on the Forta Network. 26,769 addresses are eligible to claim FORT Tokens in the Forta Airdrop. If you’ve used Forta, contributed to a Web3 project or are an active participant in the Web3 ecosystem, you may be eligible.
 
