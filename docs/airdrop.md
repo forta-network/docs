@@ -40,31 +40,27 @@ Node runners are crucial to the Network’s security and growth by operating the
 
 Forta Contributors are ambassadors and thought leaders who are strong proponents of Forta’s mission and have contributed to the development and advancement of the network in a meaningful way.
 
-## Web3 Builders
-
-These are individuals who have created or contributed to key aspects of Web3’s infrastructure and security. This includes, but is not limited to, Ethereum mainnet developers, library contributors, Ethernaut players, and Subgraph developers.
-
-### Web3 Coders
-
-Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-galaxy-announces-shadowy-super-coder-nft-pack-with-300-million-worth-of-perks-c5cb9ea2d18a) to support innovative developers, top developers in the Ethereum ecosystem are eligible for the FORT Airdrop. These are defined as coders who deployed smart contracts with the most active interactions.
-
-![Mainnet Developers](airdrop-table5.png)
-
-### Web3 Github Contributors
+## Web3 Github Contributors
 
 This group includes developers who actively contributed to over 900 [Web3 Github repositories](https://docs.google.com/spreadsheets/d/1VgLQIiceycJf0i6gofPTWi05UCfJJ4PURBEvkSCLG-E/edit?usp=sharing). This list comprises Web3 libraries, public goods, and top projects that are vital to the Forta ecosystem. Thousands of people worked to build and maintain these projects over the years, some even working completely for free in an effort to create a better and safer decentralized economy.
 
-![Library Contributors](airdrop-table6.png)
+![Web3 Github Contributors](airdrop-table6.png)
 *Each subcategory is discrete and cumulative: an address can be eligible for multiple and allocated a sum of tokens accordingly.*
 
-### Ethernaut Players
+## Ethernaut Players
 
 [Ethernaut](https://ethernaut.openzeppelin.com) is an open source foundational learning tool teaching thousands of developers the basics of smart contract security. Fans of Ethernaut have gone on to build and audit protocols, securing billions in TVL by incorporating the critical security concepts introduced in Ethernaut.
 
 ![Ethernaut Players](airdrop-table7.png)
 *Each subcategory is discrete and cumulative: an address can be eligible for multiple and allocated a sum of tokens accordingly.*
 
-### Subgraph Developers
+## Web3 Coders
+
+Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-galaxy-announces-shadowy-super-coder-nft-pack-with-300-million-worth-of-perks-c5cb9ea2d18a) to support innovative developers, top developers in the Ethereum ecosystem are eligible for the FORT Airdrop. These are defined as coders who deployed smart contracts with the most active interactions.
+
+![Mainnet Developers](airdrop-table5.png)
+
+## Subgraph Developers
 
 The Graph Protocol subgraph developers are valuable contributors to Web3, facilitating access to blockchain data for decentralized applications on Ethereum.
 
