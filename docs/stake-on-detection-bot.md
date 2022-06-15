@@ -23,7 +23,7 @@ Once approved, you can search for a bot by name using Forta Explorer
     1. Search for the bot
     2. Copy the bot ID
    ![Forta Explorer](stake-bot4.png)
-3. Go to the [Forta Staking contract page](https://polygonscan.com/address/0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1#writeProxyContract)
+3. Go to the [Forta Staking contract page](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
     1. Click on "Connect to Web3"
     2. In the "deposit" section, enter 1 for the "subjectType" field
     3. Enter the bot ID you copied from Forta Explorer in the "subject" field

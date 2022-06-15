@@ -7,7 +7,7 @@ hide:
 
 # Welcome to the Forta Docs!
 
-!!! forta "FORT Airdrop has been announced! Check eligibility [here](https://airdrop.forta.network/)"
+!!! forta "FORT Airdrop | Now available to claim [here](https://airdrop.forta.network/)"
 
 <div class="grid cards" markdown>
 
