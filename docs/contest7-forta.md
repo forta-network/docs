@@ -48,7 +48,7 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
 
     The goal of this bot is to successfully identify the Saddle Finance and similar attacks on block [14684300](https://etherscan.io/block/14684300) with a critical alert utilizing a simulation approach:
 
-    1. Upon suspicious contract creation, the bot should create a local folks of the blockchain using ganache (see [https://docs.forta.network/en/latest/tx-simulation](tx-simulation.md) for details on how to do so)
+    1. Upon suspicious contract creation, the bot should create a local fork of the blockchain using Ganache (see [https://docs.forta.network/en/latest/tx-simulation](tx-simulation.md) for details on how to do so)
     2. Invoke the functions of the created smart contract
     3. Assess whether state changes (e.g. large balance changes) occur to determine whether exploitation occurred
     4. Emit a critical alert
