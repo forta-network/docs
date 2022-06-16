@@ -18,7 +18,7 @@ By default, detection bot alerts are sent from Scan Nodes to a Forta maintained 
 
 1. Subscriptions through the Forta App - Currently email address and/or a Slack webhook, but you can request that other options be added by the Forta Foundation.
 2. OpenZeppelin Defender Forta Sentinels - Monitors the Forta Public API for new alerts and delivers those alerts to Defender Autotasks and/or Defender Notifications (email, Discord, Slack, Datadog, Telegram, other webhooks).
-3. Custom solution - Manually polling the Forta Public API on local or cloud hosted machine/
+3. Custom solution - Manually polling the Forta Public API on local or cloud hosted machine.
 4. Pushing data directly from the Forta detection bot to an External API Endpoint - As in the case of the data sources, there is no mechanism for keeping an API key secret. This is ill-advised.
 
 #### Reacting to alerts
