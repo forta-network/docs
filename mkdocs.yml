@@ -82,6 +82,7 @@ nav:
           - Forta Contest (12/17/2021): contest4-forta.md
           - Solace Contest (3/1/2022): contest5-solace.md
           - Forta Contest 2 (4/27/2022): contest6-forta.md
+          - Forta Contest 3 (6/16/2022): contest7-forta.md
   - Scan node operators:
       - Quickstart: scanner-quickstart.md
       - Scan node SLA API: sla-api.md
