@@ -14,8 +14,8 @@
     - **1st place will receive $3,000 USD (paid in FORT) and a unique Forta NFT.**
     - **Runner up will receive $1,000 USD (paid in FORT) and a unique Forta NFT.**
 - To be eligible for a prize, you will be asked to submit a valid email and Discord username through the Google form, along with a link of your bot on Github.
-- This contest will run from June 16th through July 7th, after which no further submissions will be considered.
-- Winners will be chosen by a panel of detection bot reviewers from Limechain, and will be announced on July 12th.
+- This contest will run from June 17th through July 8th, after which no further submissions will be considered.
+- Winners will be chosen by a panel of detection bot reviewers from Limechain, and will be announced on July 13th.
 
 For any questions, please contact a Forta Moderator on **Discord**.
 
