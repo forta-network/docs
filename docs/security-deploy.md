@@ -1,18 +1,20 @@
 ## Security - Deployment
 
-Deployment overall is handled through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests go through a required review that upon the merge are gated by successful tests. Smart contract deployments are handled through OpenZeppelin's Defender product and relayers and are controlled by multisigs. As such, even with a breach of an individual developer, the network can not be changed. 
+Deployment overall is handled through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests go through a required review that upon the merge are gated by successful tests, node scanner software is gated through an state update in the ScannerNodeVersion contract, and smart contract deployments/changes are handled through OpenZeppelin's Defender product and relayers and are controlled by multisigs. As such, even with a breach of an individual developer, the network can not be changed. 
 
 ### Multi-Sig
 Forta is managed through three main Gnosis Safe Multi Sig contracts: 
-        [0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1](https://etherscan.io/address/0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1) (Ethereum mainnet). 4/7 controlled by the [council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
-        [0x30ceaeC1d8Ed347B91d45077721c309242db3D6d](https://polygonscan.com/address/0x30ceaeC1d8Ed347B91d45077721c309242db3D6d) (Polygon mainnet). 4/7 controlled by the [council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
-        [0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e](https://polygonscan.com/address/0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e) (Polygon mainnet). 3/6 controlled by members of the core development team.
+
+- [0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1](https://etherscan.io/address/0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1) (Ethereum mainnet). 4/7 controlled by the [council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
+- [0x30ceaeC1d8Ed347B91d45077721c309242db3D6d](https://polygonscan.com/address/0x30ceaeC1d8Ed347B91d45077721c309242db3D6d) (Polygon mainnet). 4/7 controlled by the [council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
+- [0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e](https://polygonscan.com/address/0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e) (Polygon mainnet). 4/6 controlled by members of the core developers.
 
 ### Contract Administration
 Forta contracts are managed through [OpenZeppelin's Defender product](https://defender.openzeppelin.com/) utilizing relays to manage smart contract deployment and maintenance.
 
 ### Forta On-Chain Monitoring
-Forta on-chain activity is monitored by [Forta Detection Bots](https://app.forta.network/agents/forta) and feeds into Forta's incident response process. The following detection bots were developed specifically for the smart contracts. The code is available on [GitHub](https://github.com/LimeChain/forta-bots)
+Forta on-chain activity is monitored by [Forta Detection Bots](https://app.forta.network/agents/forta) and feeds into Forta's incident response process. The following detection bots were developed specifically for the Forta smart contracts. The code is available on [GitHub](https://github.com/LimeChain/forta-bots).
+
 - [Forta Access Control Role Changed](https://explorer.forta.network/agent/0x8e5cfc52606ac22590cf872711f81df8a0d81e3e110dee4f3fb00fafadc962c2)
 - [Forta Access Manager - Router Updated](https://explorer.forta.network/agent/0xacd82110ea6551078e40b58cebd83b9f29c09b5cf85200a5ec9244e374035e6c)
 - [Forta Admin Bot Scanner Disable](https://explorer.forta.network/agent/0x15022cd09034e6247336e5937f2c738d572d5f42a9c3fd53551f8c6c1766994b)
@@ -31,7 +33,7 @@ Forta on-chain activity is monitored by [Forta Detection Bots](https://app.forta
 - [Forta Token Role Changes](https://explorer.forta.network/agent/0xe6eebc466ba3dc71bf701719f8012bd9e1c80bfa63224684271be80ea2f93338)
 - [Forta Whitelist Disabling](https://explorer.forta.network/agent/0x11b5412d0d56b1b7bec8b15f18e8976416b93482961c50cf1161fbf9c4445c70)
 
-Forta is monitored by the bots in the [Threat Detection Kits](https://docs.forta.network/en/latest/threat-detection-kits/).
+Forta is also monitored by the bots in the [Threat Detection Kits](https://docs.forta.network/en/latest/threat-detection-kits/).
 
 ### Forta Off-Chain Monitoring
 Lastly, several operational monitors exist around the performance of the network, such as latency, API usage, deployments, etc. 
