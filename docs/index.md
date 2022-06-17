@@ -54,13 +54,13 @@ hide:
 
 -   :information_source:{ .lg .middle } __Learn How Forta Works__
 
-     ---
+    ---
 
     Learn how Forta network is secured
 
     [:octicons-arrow-right-24: Security](security.md)
 
--   :information_source:{ .lg .middle } __Security__
+-   :shield:{ .lg .middle } __Security__
 
     ---
 

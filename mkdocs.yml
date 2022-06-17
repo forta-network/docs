@@ -93,8 +93,11 @@ nav:
       - Example queries & tutorials: api-examples-tutorials.md
   - Security:
       - Security Overview: security.md
-      - Forta Monitors: forta_monitors.md
-      - Incident Response Process: 
+      - Design: security-design.md
+      - Development: security-develop.md
+      - Deployment: security-deploy.md
+      - Testing and Review: security-testing.md
+      - Maintenance: security-maintain.md
   - Video tutorials: tutorials.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - How to contribute: contributing.md

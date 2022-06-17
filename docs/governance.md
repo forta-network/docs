@@ -43,7 +43,8 @@ The Council also holds admin signing privileges on the Forta multi-signature wal
 The Council should help reduce the real problems that would be created by a more complex governance system introduced at the outset that requires FORT token holder voting on every single issue. An initial governance council should reduce the attention-taxing process of FORT holders needing to keep up with an ever-changing system, which provides them more time and attention that can be used to provide value in the Forta Network, furthering its mission to monitor all transactions and protect all assets in Web3.
 
 ### Current Forta Governance Council
-The current Forta Governance Council consists of the following members. They were elected by FP-1 on 
+The current Forta Governance Council consists of the following members. They were elected by FP-1 on June 5th 2022.
+
 1. [Demian Brener](https://www.linkedin.com/in/demianbrener/) - Founder & CEO @ OpenZeppelin, the company that founded and incubated Forta
 2. [Hart Lambur](https://www.linkedin.com/in/hartlambur/) - Co-Founder @ UMA, proven Web3 protocol and active Forta user
 3. [Jeremy Sklaroff](https://www.linkedin.com/in/jeremysklaroff/) - GC @ Celestia, seasoned crypto lawyer passionate about decentralized technology

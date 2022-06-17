@@ -1,6 +1,6 @@
 ## Security - Development
 
-Code reuse and leveraging audited smart contract libraries help to reduce the overall attack surface. Forta leverages [OpenZeppelin's Smart Contract libraries](https://www.openzeppelin.com/contracts) for it's smart contracts. Overall, the priniciple of least privilege and access control was implemented (e.g. see [role usage](https://docs.forta.network/en/latest/contracts/components/Roles/) within Forta's smart contracts). 
+Code reuse and leveraging audited smart contract libraries help to reduce the overall attack surface. Forta leverages [OpenZeppelin's Smart Contract libraries](https://www.openzeppelin.com/contracts) for it's smart contracts. Overall, the priniciple of least privilege and access control was implemented (e.g. see [role usage](https://docs.forta.network/en/latest/contracts/components/Roles/) of Forta's smart contracts). 
 
 The principle of least privilege does not just apply to smart contracts, but all other dependent code relevant components, such as GitHub code repositories (e.g. secured by 2FA on all accounts) and processes (e.g. code review requirements for critical pull requests).
 
