@@ -75,6 +75,6 @@ The post mortems should have a set of prioritized action items assigned and comp
 
 
 ### Practice
-Incident response processes can be stressful events. Similar on how fire drills are practiced in school, practicing incident response processes will help to surface gaps in the process, get everybody familiar with the process, and help everybody to be more comfortable and effective in a real world incident. 
+Incident response processes can be stressful events. Similar to how fire drills are practiced in school, practicing incident response processes will help to surface gaps in the process, get everybody familiar with the process, and help everybody to be more comfortable and effective in a real world incident. 
  
 The Forta community will simulate an incident every 6 months if no other real world incidents occurred and post results of the incidents in a post-mortem write up. These will be scheduled events.  

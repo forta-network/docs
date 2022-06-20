@@ -9,6 +9,24 @@ Forta is managed through three main Gnosis Safe Multi Sig contracts:
 - [0x30ceaeC1d8Ed347B91d45077721c309242db3D6d](https://polygonscan.com/address/0x30ceaeC1d8Ed347B91d45077721c309242db3D6d) (Polygon mainnet). 4/7 controlled by the [council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
 - [0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e](https://polygonscan.com/address/0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e) (Polygon mainnet). 4/6 controlled by members of the core developers.
 
+The core developer multisig have the following roles:
+
+**Polygon Mainnet**
+
+- Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3): SLASHER_ROLE, UPGRADER_ROLE, AGENT_ADMIN_ROLE, ROUTER_ADMIN_ROLE, ENS_MANAGER_ROLE, SWEEPER_ROLE, SCANNER_VERSION_ROLE, DISPATCHER_ROLE
+The council member multisigs have the following roles:
+
+**Ethereum Mainnet**
+
+- Forta Token (0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29): ADMIN_ROLE, MINTER_ROLE, WHITELISTER_ROLE
+- Airdrop (0x988a7Bc24A9D0fa49989FB9734bDa30f55760cEb): DEFAULT_ADMIN_ROLE, AIRDROP_MANAGER_ROLE, ADDITIONAL_CLAIM_MANAGER_ROLE, UPGRADER_ROLE
+
+**Polygon Mainnet**
+
+- Forta Token (Bridged) (0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1): ADMIN_ROLE, WHITELISTER_ROLE, MINTER_ROLE
+- Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3): SLASHER_ROLE, UPGRADER_ROLE, AGENT_ADMIN_ROLE, ROUTER_ADMIN_ROLE, ENS_MANAGER_ROLE, SCANNER_VERSION_ROLE
+
+
 ### Contract Administration
 Forta contracts are managed through [OpenZeppelin's Defender product](https://defender.openzeppelin.com/) utilizing relays to manage smart contract deployment and maintenance.
 
