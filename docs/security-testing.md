@@ -28,7 +28,7 @@ Testing and review starts with a good understanding of the network itself throug
 
 Testing of the code happens through GitHub Actions on each pull request and gated upon successful tests. 
 
-Adopting an attacker mindset, Forta's efforts spanned beyond secure design, development, deployment and testing towards enlisting external security experts to assess the network after it was built. This helps to surface erroneous assumptions and uncover security gaps that may have remained hidden. Forta primarily engaged OpenZeppelin's excellent smart contract auditing expertise as well as Dedalo's web2 and broad threat assessment expertise for other critical components of the network. All their reports/findings are linked below:
+Adopting an attacker mindset, Forta community's efforts spanned beyond secure design, development, deployment and testing towards enlisting external security experts to assess the network after it was built. This helps to surface erroneous assumptions and uncover security gaps that may have remained hidden. Forta primarily engaged OpenZeppelin's smart contract auditing expertise as well as Dedalo's web2 and broad threat assessment expertise for other critical components of the network. All their reports/findings are linked below:
 
 - [Dedalo's Airdrop Assessment, June 17th 20222](../2022Q2-FortaAirdrop-AuditReport.pdf)
 - <a href="../Forta Network Airdrop Audit Report.pdf">OpenZeppelin's Airdrop Smart Contract Audit, June 9th 2022</a>
