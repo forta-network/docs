@@ -74,6 +74,7 @@ nav:
       - Python SDK: python.md
       - CLI commands: cli.md
       - forta.config.json: config.md
+      - Staking on detection bots: stake-on-detection-bot.md
       - Bot developer contests:
           - Compound Contest (10/20/2021): contest1-compound.md
           - Aave Contest (11/3/2021): contest2-aave.md
@@ -81,6 +82,7 @@ nav:
           - Forta Contest (12/17/2021): contest4-forta.md
           - Solace Contest (3/1/2022): contest5-solace.md
           - Forta Contest 2 (4/27/2022): contest6-forta.md
+          - Forta Contest 3 (6/17/2022): contest7-forta.md
   - Scan node operators:
       - Quickstart: scanner-quickstart.md
       - Scan node SLA API: sla-api.md

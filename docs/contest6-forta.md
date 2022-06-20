@@ -55,6 +55,13 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
 
     ![Ronin gas usage](roningasusage.png)
 
+    <br/><br/>
+    - Winner: **soptq**
+    - Winning bot: [https://explorer.forta.network/agent/0xe2786...4555](https://explorer.forta.network/agent/0xe27867c40008e0e3533d6dba7d3c1f26a61a3923bc016747d131f868f8f34555)
+    - 2nd place: **kovart**
+    - 2nd place bot: [https://explorer.forta.network/agent/0x3054...13ed](https://explorer.forta.network/agent/0x30547600c8b10757a559fc94a124cc27e560c8fe3af66087d8a8fadb309513ed)
+    - 3rd place: **hex.marc**
+
 2. **Monitor unusual price changes**
 
     DeFi often relies on on-chain oracles. Some of these - if liquidity is low - can be easily manipulated driving prices up/down to subsequently perform actions that drain funds.
@@ -66,3 +73,8 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
     An example set of transactions can be found in the Beanstalk hack e.g. the chart below shows the price manipulation of the ETH/INV price ([https://etherscan.io/dex/sushiswap/0x328dfd0139e26cb0fef7b0742b49b0fe4325f821](https://etherscan.io/dex/sushiswap/0x328dfd0139e26cb0fef7b0742b49b0fe4325f821) on April 2nd 2022).
 
     ![Inverse DAO price chart](inversedao.png)
+
+    <br/><br/>
+    - Winner: **vvlovsky**
+    - Winning bot: [https://explorer.forta.network/agent/0xe2786...4555](https://explorer.forta.network/agent/0xe27867c40008e0e3533d6dba7d3c1f26a61a3923bc016747d131f868f8f34555)
+    - 2nd place: **khayalievartur**
