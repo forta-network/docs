@@ -316,15 +316,6 @@ After your registration transaction is included in the next block, you can start
 
 If your application succeeds, you will receive an email with a link to a second form. Once your node is running, complete this second form with your node address (found via `forta account address`) as soon as possible so Forta Foundation can stake on your behalf.  We only stake on running nodes to avoid impacting overall network reliability.
 
-### Staking and slashing
-
-To ensure network reliablity, Forta uses two main mechanisms:
-
-- **Staking:** Node operators are incentivized with rewards to ensure that their Forta nodes are running with good health and as expected. To gain rewards, a node operator must `deposit()` the minimum amount of FORT required using the staking contract.
-- **Slashing:** Node operators are discouraged from harmful actions. Upon detection, they lose rewards and a determined amount is removed from the deposited stake. This can cause the staked amount to go under minimum required and the node to enter into disabled state.
-
-You can follow the guide [here](https://docs.forta.network/en/latest/stake-on-scan-node/) to learn how to manage staking for a node.
-
 ## Run Scan Node
 
 ### Start Docker
