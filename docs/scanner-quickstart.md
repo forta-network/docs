@@ -1,6 +1,8 @@
 # Run a Scan Node
 
-This page contains the steps and technical recommendations to help you set up your node. Please always refer to this documentation for the most up-to-date information.
+This page contains the steps and technical recommendations to help you set up your node. Please always refer to this documentation for the most up-to-date node setup and configuration details.
+
+For other information including rewards, please check out our [node operators page](https://forta.notion.site/Node-Operators-Forta-Network-4a8af3ab4aea480d993e5095ad0ed746) if you have not visited yet.
 
 ## Scan Node Requirements
 
