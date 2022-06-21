@@ -103,7 +103,7 @@ Burn inactive shares after _staking delay_ to get staked FORT.
 
 2. Connect your scan node owner wallet and make sure that you have selected the Polygon network. ![connect](stake-images/1-connect.png)
 
-3. Go to `4. initiateWithdrawal` and input the folowing:
+3. Go to `23. withdraw` and input the folowing:
 
     - **subjectType:** 0
 
@@ -111,4 +111,4 @@ Burn inactive shares after _staking delay_ to get staked FORT.
 
 4. Click _Write_ and approve the transaction in your wallet.
 
-5. When the transaction is confirmed, you will receive the FORT amount you specified.
+5. When the transaction is confirmed, you will receive the FORT amount you specified in `initiateWithdrawal()` step.
