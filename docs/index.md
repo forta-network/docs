@@ -7,7 +7,7 @@ hide:
 
 # Welcome to the Forta Docs!
 
-!!! forta "FORT token Airdrop is Live | Claim yours [here](https://airdrop.forta.network/)"
+!!! danger "[Detection Bot Development contest](contest7-forta.md) now live!"
 
 <div class="grid cards" markdown>
 
