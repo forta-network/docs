@@ -12,6 +12,8 @@ If [logging is enabled](deploying.md#enable-logging-optional), bot logs are upda
 
 By default, the logs API will return the most recent logs but you can query previous logs using the `minute` query param. By specifying a minute in RFC3339 format (e.g. `https://api.forta.network/logs/agents/YOUR_AGENT_ID?minute=2019-10-12T07:20:50.52Z`), you can view previous logs. Note that not every minute may have logs.
 
+You can also use the [CLI command](cli.md#logs) `npm run logs` to see recent logs.
+
 ## Disabling/enabling your bot
 
 If you will not be using the alerts your bot generates (i.e. you were just testing out Forta, which we encourage), we ask that you please disable the bot. You can use [Forta App](https://app.forta.network/) or the CLI to enable or disable your bot. In Forta App, go to the My Agents page (from the menu at the top right) and click on the options menu to the right of your bot. From the options menu, you can choose to disable or enable your bot.
@@ -25,3 +27,6 @@ You may want to update the code for your bot from time to time (e.g. if you foun
 
 You can also use the CLI command `npm run publish` to update your bot. If you have already deployed a bot, the CLI will know to update the existing bot. Ensure that the keyfile used for updating is the same one you used for creating the bot. Make sure to set the `agentId` property in your **project folder's** forta.config.json before running the command (you should create the forta.config.json if it doesn't exist). You will also need to ensure you have Polygon MATIC tokens in your keyfile address to execute the update transaction (you can get the keyfile address using `npm run keyfile`). See [this guide](matic.md) on how to acquire Polygon MATIC tokens.
 
+## Viewing the state of your bot
+
+If you want to inspect the current or historic state of your bot, for example checking the last time your bot was updated, you can use the [CLI command](cli.md#info) `npm run info`. This command allows you to see
