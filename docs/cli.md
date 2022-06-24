@@ -145,13 +145,13 @@ Options (optional):
 
 --after - An ISO timestamp [YYYY-MM-DDTHH:mmZ] representing the oldest time to include in logs
 
---scanerId - Filter to only return logs of a given scannerId
+--scannerId - Filter to only return logs of a given scannerId
 ```
 
 
 ## info
 
-Inspect the state of your bot. This command prints the bot's IPFS metadata to the console as well as the last 1000 bot events. The default `agentId` is read from `forta.config.json` unless specified.
+Inspect the state of your bot. This command prints the bot's IPFS metadata to the console as well as recent bot events. The default `agentId` is read from `forta.config.json` unless specified.
 
 Bot events include:
 

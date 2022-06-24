@@ -29,4 +29,4 @@ You can also use the CLI command `npm run publish` to update your bot. If you ha
 
 ## Viewing the state of your bot
 
-If you want to inspect the current or historic state of your bot, for example checking the last time your bot was updated, you can use the [CLI command](cli.md#info) `npm run info`. This command allows you to see
+If you want to inspect the current or historic state of your bot, for example checking the last time your bot was updated, you can use the [CLI command](cli.md#info) `npm run info`.
