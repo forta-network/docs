@@ -22,6 +22,7 @@
 | NFT Sleep Minting Detection | [Bot Details](starter-kit-bot-details.md#nft-sleep-minting-detection) | Alerts when an NFT is created in a way that appears to be minted from another account. |
 | NFT Wash Trading | [Template Link](https://github.com/forta-network/forta-bot-templates/tree/main/nft-wash-trade) | Alerts on evidence of wash trading.|
 | Suspicious Contract Creation | [Bot Details](starter-kit-bot-details.md#suspicious-contract-creation) | Alerts on contract creation that contained the address monitored. |
+| Time Series Analyzer Template | [Template Link](https://github.com/forta-network/starter-kits/time-series-analyzer-template) | This template turns an underlying noisy alert representing a time series into a statistically meaningful alert when values become abnormal. |
 | Token Impersonation | [Bot Details](starter-kit-bot-details.md#token-impersonation) | Alerts when an existing token is being impersonated by a newly created contract. |
 | Tornado Cash Funded Account Interaction | [Bot Details](starter-kit-bot-details.md#tornado-cash-funded-account-interaction) | Alerts when a Tornado Cash funded account interacts with the address monitored. |
 | Unverified Contract Creation | [Bot Details](starter-kit-bot-details.md#unverified-contract-creation) | Alerts on contract creation that isnt verified on Etherscan. |

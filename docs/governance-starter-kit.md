@@ -25,6 +25,7 @@
 | Re-entrancy counter | [Bot Details](starter-kit-bot-details.md#reentrancy-counter) | Alerts when reentrancy on the contract monitored is detected. |
 | Sneak Governance Proposal | [Template Link](https://github.com/LimeChain/forta-starter-kits/tree/main/gov-sneak-proposal) | Identifies when a governance proposal with only a few EOA voting is about to be approved. |
 | Suspicious Contract Creation | [Bot Details](starter-kit-bot-details.md#suspicious-contract-creation) | Alerts on contract creation that contained the address monitored. |
+| Time Series Analyzer Template | [Template Link](https://github.com/forta-network/starter-kits/time-series-analyzer-template) | This template turns an underlying noisy alert representing a time series into a statistically meaningful alert when values become abnormal. |
 | Token Impersonation | [Bot Details](starter-kit-bot-details.md#token-impersonation) | Alerts when an existing token is being impersonated by a newly created contract. |
 | Tornado Cash Funded Account Interaction | [Bot Details](starter-kit-bot-details.md#tornado-cash-funded-account-interaction) | Alerts when a Tornado Cash funded account interacts with the address monitored. |
 | Unreasonable Governance Parameters | Coming Soon | Identifies when a governance proposal will change the protocol's parameters outside of a reasonable range. |
