@@ -132,6 +132,39 @@ Options:
 --config - specify a config file to use (default: forta.config.json)
 ```
 
+## logs
+
+Retrieves logs for specified bot id and prints them to the console. The default `agentId` is read from `forta.config.json` unless specified.
+
+Options (optional):
+
+```
+--agentId - Specify a bot id to request logs for
+
+--before - An ISO timestamp [YYYY-MM-DDTHH:mmZ] representing the latest time to include in logs
+
+--after - An ISO timestamp [YYYY-MM-DDTHH:mmZ] representing the oldest time to include in logs
+
+--scannerId - Filter to only return logs of a given scannerId
+```
+
+
+## info
+
+Inspect the state of your bot. This command prints the bot's IPFS metadata to the console as well as recent bot events. The default `agentId` is read from `forta.config.json` unless specified.
+
+Bot events include:
+
+- Bot Created
+- Bot Enabled/Disabled
+- Bot Updated
+
+Options (optional):
+
+```
+--agentId - Specify a bot id to request info about
+```
+
 ## disable
 
 Disable your deployed bot and stop it from running on the Forta network by using `forta-agent disable`. Your Docker image will still be publicly available, but scan nodes will know not to run your bot.
