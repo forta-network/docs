@@ -15,7 +15,7 @@
 | Chainalysis Sanctioned Addresses | [Bot Details](starter-kit-bot-details.md#chainalysis-sanctioned-addresses) | Alerts when a Chainalysis sanctioned account interacts with the address monitored. |
 | Events with access control monitor | [Template Link](https://github.com/arbitraryexecution/forta-bot-templates/tree/main/src/monitor-events) | Alerts on events emitted from functions that should only be callable by privileged roles.|
 | Exploiter Addresses | [Bot Details](starter-kit-bot-details.md#exploiter-addresses) | Alerts when known exploiter address interacts with the address monitored. |
-| FlashBot Detector | Coming Soon |  Alerts when transaction is routed through FlashBot framework bypassing the mempool. |
+| FlashBot Detector | [Bot Details](https://explorer.forta.network/agent/0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5) |  Alerts when transaction is routed through FlashBot framework bypassing the mempool. |
 | Flash Loan Detector | [Bot Details](starter-kit-bot-details.md#evidence-of-phishing-bot) | Alerts when a flash loan results in large profits indicative of an attack |
 | Events Monitor | [Template Link](https://github.com/arbitraryexecution/forta-bot-templates/tree/main/src/monitor-events) | Monitors blockchain transactions for specified events emitted from specified contract addresses. This template can be used to alert events emitted from functions that should only be callable by privileged roles. |
 | Ice Phishing Detection Bot | [Bot Details](starter-kit-bot-details.md#evidence-of-phishing-bot) | Alerts when ice phishing (social engineer users into token approvals) for a token contract monitored. |
@@ -28,9 +28,9 @@
 | Time Series Analyzer Template | [Template Link](https://github.com/forta-network/starter-kits/time-series-analyzer-template) | This template turns an underlying noisy alert representing a time series into a statistically meaningful alert when values become abnormal. |
 | Token Impersonation | [Bot Details](starter-kit-bot-details.md#token-impersonation) | Alerts when an existing token is being impersonated by a newly created contract. |
 | Tornado Cash Funded Account Interaction | [Bot Details](starter-kit-bot-details.md#tornado-cash-funded-account-interaction) | Alerts when a Tornado Cash funded account interacts with the address monitored. |
-| Unreasonable Governance Parameters | Coming Soon | Identifies when a governance proposal will change the protocol's parameters outside of a reasonable range. |
+| Unreasonable Governance Parameters | [Template Link](https://github.com/LimeChain/forta-starter-kits/tree/main/malicious-gov-proposal) | Identifies when a governance proposal will change the protocol's parameters outside of a reasonable range. |
 | Unverified Contract Creation | [Bot Details](starter-kit-bot-details.md#unverified-contract-creation) | Alerts on contract creation that isnt verified on Etherscan. |
-| Voting Power Changes | [Template Link](https://explorer.forta.network/agent/0x90d63f4e1ddcec5375e65b46157b71d1e3d04faafca8bbdab0018264de64a58f)] | Identifies when the voting power changes signficantly. |
+| Voting Power Changes | [Template Link](https://github.com/LimeChain/forta-starter-kits/tree/main/gov-voting-power-change)] | Identifies when the voting power changes signficantly. |
 
 
 
