@@ -62,7 +62,7 @@ Inspired by [Project Galaxy’s initiative](https://blog.galaxy.eco/project-gala
 
 ## Subgraph Developers
 
-The Graph Protocol subgraph developers are valuable contributors to Web3, facilitating access to blockchain data for decentralized applications on Ethereum.
+The Graph Protocol subgraph developers on the decentralized service, who are valuable contributors to Web3 by facilitating access to blockchain data for decentralized applications on Ethereum.
 
 ![Subgraph Developers](airdrop-table8.png)
 
