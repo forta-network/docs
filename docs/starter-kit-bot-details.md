@@ -48,11 +48,19 @@ This bot detects when a high number of EOAs call the approve() or increaseAllowa
 
 This bot detects transactions that involve known exploiter addresses.
 
+## Flashbot Detection Bot
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Flashbot Detection Bot | [Stats URL](https://explorer.forta.network/agent/0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/flashbot-attack){:target="_blank"} | Ethereum Mainnet |
+
+This bot detects if a transaction was made using Flashbots bypassing the mempool.
+
 ## Flashloan Detection Bot
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
-| Flashloan Detection Bot | [Stats URL](https://explorer.forta.network/agent/0x55636f5577694c83b84b0687eb77863850c50bd9f6072686c8463a0cbc5566e0){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/flashloan-detector){:target="_blank"} | Ethereum Mainnet |
+| Flashloan Detection Bot | [Stats URL](https://explorer.forta.network/agent/0x55636f5577694c83b84b0687eb77863850c50bd9f6072686c8463a0cbc5566e0){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/flashloan-detector){:target="_blank"} | Ethereum Mainnet, Optimism, BSC, Polygon, Fantom, Arbitrum, Avalanche |
 
 This bot detects if a transaction contains a flashloan and the borrower made significant profit
 
