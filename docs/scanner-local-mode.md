@@ -19,7 +19,7 @@ chainId: 1
 
 scan:
   jsonRpc:
-	url: http://some-json-rpc-url.io
+    url: http://some-json-rpc-url.io
 
 trace:
   jsonRpc:
@@ -45,14 +45,14 @@ This allows limiting the runtime inputs, test different bots under the same cond
 publish:
   batch:
     intervalSeconds: 1
-	metricsBucketIntervalSeconds: 1 # how often the metrics go out with alert batches
+    metricsBucketIntervalSeconds: 1 # how often the metrics go out with alert batches
 
 localMode:
   ...
   runtimeLimits:
     startBlock: 1191111
-	stopBlock: 1192345
-	stopTimeoutSeconds: 30
+    stopBlock: 1192345
+    stopTimeoutSeconds: 30
 ```
 
 ## Outputting alerts
@@ -87,7 +87,7 @@ jsonRpcProxy:
   ...
   rateLimit:
     rate: 123
-	burst: 456
+    burst: 456
 ```
 
 ## Bot metrics
