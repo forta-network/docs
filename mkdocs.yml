@@ -87,6 +87,7 @@ nav:
       - Quickstart: scanner-quickstart.md
       - Scan node SLA API: sla-api.md
       - Stake on your Scan Node: stake-on-scan-node.md
+      - Local mode: scanner-local-mode.md
   - API integration:
       - API access: api.md
       - GraphQL API reference: forta-api-reference/index.html
