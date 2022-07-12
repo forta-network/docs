@@ -60,6 +60,7 @@ nav:
           - 4) Subscribing to alerts: subscribing.md
           - 5) Maintaining your bot: maintaining.md
       - Integrating with Hardhat: hardhat.md
+      - Detection bot wizard: wizard.md
       - Best practices: best-practices.md
       - Bot development patterns:
           - Hiding sensitive data: sensitive-data.md
