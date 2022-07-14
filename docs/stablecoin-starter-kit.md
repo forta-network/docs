@@ -23,7 +23,7 @@
 | Mint/Borrow Value Anomalies | [Bot Details](starter-kit-bot-details.md#mint-borrow-anomalies) | Alerts when mint/borrow volume is changing in a statistically significant way. |
 | OpenZeppelin-Gnosis Safe Contract Events | [Bot Details](starter-kit-bot-details.md#openzeppelin-gnosis-safe-contract-events) | Alerts on security relevant events of the OZ contract library/ Gnosis Safe contact instances. |
 | Price Change Anomalies | [Bot Details](starter-kit-bot-details.md#price-change-anomaly) | | Identifies when a price of an asset changes significantly. |
-| Stablecoin interaction with DeFi protocols | Coming Soon | Identifies when stablecoin is used in DeFi protocols. |
+| Stablecoin Interaction with DeFi Protocols | NA | Alerts USDT/USDC token transfer events emitted by the [OpenZeppelin-Gnosis Safe Contract Events Bot](starter-kit-bot-details.md#openzeppelin-gnosis-safe-contract-events). Token transfers sent to selected DeFi Smart Contracts such as Balancer Vault, 1inch Exchange, Uniswap Router, SushiSwap Router, and PancakeSwap Router are alerted. |
 | Successful transactions with internal failures | [Bot Details](starter-kit-bot-details.md#anomalous-transaction-volume) | Alerts on transactions involving the address monitored that succeed, but had internal failures.|
 | Suspicious Contract Creation | [Bot Details](starter-kit-bot-details.md#suspicious-contract-creation) | Alerts on contract creation that contained the address monitored. |
 | Time Series Analyzer Template | [Template Link](https://github.com/forta-network/starter-kits/time-series-analyzer-template) | This template turns an underlying noisy alert representing a time series into a statistically meaningful alert when values become abnormal. |
