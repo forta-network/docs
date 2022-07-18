@@ -156,7 +156,7 @@ If a bot wants to flag a transaction/block because it meets some condition (e.g.
 
 ## Alerts
 
-When an `Alert` is fired by a bot the data will be avalible to fetch using the [`getAlerts` method](python.md#get_alerts). `Alert` objects have the following properties:
+When an `Alert` is fired by a bot the data will be avalible to fetch using the [`get_alerts` method](python.md#getalerts). `Alert` objects have the following properties:
 
 - `addresses` -  human-readable list of addresses involved in the alert
 - `alertId` -  unique string to identify this class of finding
