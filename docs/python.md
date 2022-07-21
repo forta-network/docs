@@ -159,21 +159,30 @@ If a bot wants to flag a transaction/block because it meets some condition (e.g.
 When an `Alert` is fired by a bot the data will be avalible to fetch using the [`get_alerts` method](python.md#getalerts). `Alert` objects have the following properties:
 
 - `addresses` -  human-readable list of addresses involved in the alert
-- `alertId` -  unique string to identify this class of finding
+- `alert_id` -  unique string to identify this class of finding
 - `contracts` -  list of contracts related to the alert
-- `createdAt` -  timestamp when the alert was published
+- `created_at` -  timestamp when the alert was published
 - `description` - text description of the alert
 - `name` - alert name
 - `protocol` - name of protocol being reported on
-- `scanNodeCount` - number of scanners that found the alert
+- `scan_node_count` - number of scanners that found the alert
 - `source` - source where the alert was detected
+    - block - block where the threat was detected
+    - bot - bot that triggered the alert
+    - transaction_hash - transaction where the threat was detected
 - `projects` - list of Web3 projects related to the alert
-- `findingType` -  indicates type of finding:
+    - contacts - list of contact info
+    - id - project identifier
+    - name - user-friendly name of the project
+    - token
+    - social
+    - website - main website of the project
+- `finding_type` -  indicates type of finding:
     - Exploit
     - Suspicious
     - Degraded
     - Info
-    - Umnknown_Type
+    - Unknown_Type
 - `severity` - indicates impact level of finding:
     - Critical - exploitable vulnerabilities, massive impact on users/funds
     - High - exploitable under more specific conditions, significant impact on users/funds
@@ -198,23 +207,31 @@ A convenience function called `get_transaction_receipt` can be used to fetch the
 
 A method called `get_alerts` can be used to fetch alerts based on input `AlertQueryOptions`. The `get_alerts` method accepts the following input filter properties:
 
-- `botIds` **required**; list of bot ids to fetch alerts for
+- `bot_ids` **required**; list of bot ids to fetch alerts for
 - `addresses` -  indicate a list of addresses, alerts returned will have those addresses involved.
-- `alertId` - filter alerts by alert-id
-- `chainId` - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet
-- `createdSince` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago
+- `alert_id` - filter alerts by alert-id
+- `chain_id` - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet
+- `created_since` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago
 - `first` - indicate max number of results.
-- `startingCursor` - query results after the specified cursor
-- `projectId` - indicate a project id, alerts returned will only be from that project.
-- `scanNodeConfirmations` - filter alerts by number of scan nodes confirming the alert
+- `starting_cursor` - query results after the specified cursor
+- `project_id` - indicate a project id, alerts returned will only be from that project.
+- `scan_node_confirmations` - filter alerts by number of scan nodes confirming the alert
 - `severities` - filter alerts by severity levels
-- `transactionHash` - indicate a transaction hash, alerts returned will only be from that transaction
-- `blockSortDirection` - indicate sorting order by block number, 'desc' or 'asc'. Default is 'desc'.
-- `blockDateRange` - alerts returned will be between the specified start and end block timestamp dates when the threats were detected
-- `blockNumberRange` - alerts for the block number range will be returned
+- `transaction_hash` - indicate a transaction hash, alerts returned will only be from that transaction
+- `block_sort_direction` - indicate sorting order by block number, 'desc' or 'asc'. Default is 'desc'.
+- `block_date_range` - alerts returned will be between the specified start and end block timestamp dates when the threats were detected
+- `block_number_range` - alerts for the block number range will be returned
 
-The returned alerts are formatted to match the SDK `AlertsResponse` class.
+The returned alerts are formatted to match the SDK `AlertsResponse` class, below is an example using this method:
 
+```python
+import forta_agent
+x = forta_agent.get_alerts({
+    'bot_ids': ["0x79af4d8e0ea9bd28ed971f0c54bcfe2e1ba0e6de39c4f3d35726b15843990a51"],
+})
+
+print(x)
+```
 ## create_block_event
 
 A utility function for writing tests. You can use `create_block_event` to easily generate a mock `BlockEvent` object when writing unit tests for your `handle_block` handler. To better understand usage, see the [Python unit test example](https://github.com/forta-protocol/forta-bot-examples/blob/master/minimum-balance-py/src/agent_test.py).

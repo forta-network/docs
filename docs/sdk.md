@@ -171,13 +171,22 @@ When an `Alert` is fired by a bot the data will be avalible to fetch using the [
 - `protocol` - name of protocol being reported on
 - `scanNodeCount` - number of scanners that found the alert
 - `source` - source where the alert was detected
+    - block - block where the threat was detected
+    - bot - bot that triggered the alert
+    - transactionHash - transaction where the threat was detected
 - `projects` - list of Web3 projects related to the alert
+    - contacts - list of contact info
+    - id - project identifier
+    - name - user-friendly name of the project
+    - token
+    - social
+    - website - main website of the project
 - `findingType` -  indicates type of finding:
     - Exploit
     - Suspicious
     - Degraded
     - Info
-    - Umnknown_Type
+    - Unknown_Type
 - `severity` - indicates impact level of finding:
     - Critical - exploitable vulnerabilities, massive impact on users/funds
     - High - exploitable under more specific conditions, significant impact on users/funds
@@ -230,6 +239,34 @@ The returned alerts are formatted to match the SDK `AlertsResponse` interface th
         }
     }
 }
+```
+
+Below is an example of using the sdk:
+
+```javascript
+import { getAlerts } from "forta-agent"
+import { AlertsResponse } from "forta-agent/dist/sdk/graphql/forta";
+
+const main = async () => {
+
+  let hasNext = true;
+  let startingCursor = undefined;
+
+  while(hasNext) {
+    const results: AlertsResponse = await getAlerts({
+      botIds: ["0xddb7c17e370ecd5f99cadcddb39cfa51264e989c5133c490046d63a299dd68f0"], 
+      transactionHash: "0xc65af85a3fab1e538f6f521cd0a6e6d246c2f76c05aa8fba40817b59de7401b6"
+    })
+    
+    hasNext = results.pageInfo.hasNextPage;
+    startingCursor = results.pageInfo.endCursor;
+
+    results.alerts.forEach(a => console.log(`${JSON.stringify(a)} \n`))
+  }
+}
+
+
+main();
 ```
 ## createBlockEvent
 
