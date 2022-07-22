@@ -45,6 +45,7 @@ For each threat detection kit, security experts hand-picked a list of detection 
 
 While the existing threat detection kit bots provide broad coverage for security relevant issues, sometimes the bot needs protocol specific information. Detection bot template allow users to create these custom bots quickly without the need to develop one from scratch.
 
-(coming soon!) Non-technical users can configure and create their own detection bots without touching any code via the bot wizard interface.
+!!! danger "[Bot Wizard](wizard.md) 🧙 is now available!"
+Non-technical users can configure and create their own detection bots without touching any code via the bot wizard interface.
 
 Developers can get access to security detection bot and template source code to fork, customize, and contribute.
