@@ -11,6 +11,7 @@
 | Bot Name | Bot Details/Template Link | Bot Description  |
 |----------|------------------|------------------|
 | Alert Combiner | [Bot Details](starter-kit-bot-details.md#alert-combiner) | Combines past alerts under common adddress to emit a high precision alert. |
+| Anomalous Token Transfers Detection Machine Learning Bot | [Bot Details](starter-kit-bot-details.md#anomalous-token-transfers-detection-machine-learning-bot) | Alerts on anomalous transactions with erc2 token transfers.|
 | Anomalous Transaction Volume | [Bot Details](starter-kit-bot-details.md#anomalous-transaction-volume) | Alerts on anomalous transaction volume (both successful and failed).|
 | Chainalysis Sanctioned Addresses | [Bot Details](starter-kit-bot-details.md#chainalysis-sanctioned-addresses) | Alerts when a Chainalysis sanctioned account interacts with the address monitored. |
 | Events Monitor | [Template Link](https://github.com/arbitraryexecution/forta-bot-templates/tree/main/src/monitor-events) | Monitors blockchain transactions for specified events emitted from specified contract addresses. This template can be used to alert events emitted from functions that should only be callable by privileged roles. |

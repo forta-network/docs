@@ -11,6 +11,7 @@
 | Bot Name | Bot Details/Template Link | Bot Description  |
 |----------|------------------|------------------|
 | Alert Combiner | [Bot Details](starter-kit-bot-details.md#alert-combiner) | Combines past alerts under common adddress to emit a high precision alert. |
+| Anomalous Token Transfers Detection Machine Learning Bot | [Bot Details](starter-kit-bot-details.md#anomalous-token-transfers-detection-machine-learning-bot) | Alerts on anomalous transactions with erc2 token transfers.|
 | Anomalous Transaction Volume | [Bot Details](starter-kit-bot-details.md#anomalous-transaction-volume) | Alerts on anomalous transaction volume (both successful and failed).|
 | Balance Decreases | [Template Link](https://github.com/LimeChain/forta-starter-kits/tree/main/large-balance-decrease) | Identifies when the balance of an account decreases significantly. |
 | Chainalysis Sanctioned Addresses | [Bot Details](starter-kit-bot-details.md#chainalysis-sanctioned-addresses) | Alerts when a Chainalysis sanctioned account interacts with the address monitored. |
