@@ -6,11 +6,11 @@ The approach, however, does not work well when the event itself is frequent or c
 
 The recent Ronin attack illustrates this: We do see many spikes in priority fees over time, but the attacker transaction clearly sticks out. A hard threshold approach will likely raise a lot of unnecessary findings. This is where time series anomaly detection comes in. A time series buckets numeric values (e.g. counts or absolute values) over time
 
-<img src="ronin-attack-priority-fee.png" alt="Ronin Bridge Transaction's Priority Fee over 3 week period" width="800"/>
+<img src="../ronin-attack-priority-fee.png" alt="Ronin Bridge Transaction's Priority Fee over 3 week period" width="800"/>
 
 A time series detection approach learns the historical variability as well as seasonality that may be represented in the data (e.g. gas priority fees may be higher on weekdays than on weekends). It learns a band or range and alerts when a value breaks out of the expected range:
 
-<img src="time-series.png" alt="Ronin Bridge Transaction's Priority Fee over 3 week period" width="800"/>
+<img src="../time-series.png" alt="Ronin Bridge Transaction's Priority Fee over 3 week period" width="800"/>
 Source: https://medium.com/@krzysztofdrelczuk/time-series-anomaly-detection-with-python-example-a92ef262f09a 
 
 To create a time series model in Python, the [Prophet Library](https://facebook.github.io/prophet/docs/quick_start.html) is a good choice. A simple model can be created by querying alerts from other detection bots or hold the timeline data in the bot directly. The following code block creates a model:
