@@ -1,20 +1,16 @@
 ## Security - Deployment
 
-Deployment overall is handled through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests go through a required review that upon the merge are gated by successful tests, node scanner software is gated through an state update in the ScannerNodeVersion contract, and smart contract deployments/changes are handled through OpenZeppelin's Defender product and relayers and are controlled by multisigs. As such, even with a breach of an individual developer, the network can not be changed. 
+The Foundation has required deployment through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests must go through a required review that upon the merge are gated by successful tests, node scanner software is gated through an state update in the ScannerNodeVersion contract, and smart contract deployments/changes are handled through OpenZeppelin’s Defender product and relayers and are controlled by multisigs. This process ensures that the Forta Network cannot be changed,  even in the event of a security breach by an individual involved in any development processes.
+
 
 ### Multi-Sig
 Forta is managed through three main Gnosis Safe Multi Sig contracts: 
 
-- [0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1](https://etherscan.io/address/0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1) (Ethereum mainnet). 4/7 controlled by the [council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
-- [0x30ceaeC1d8Ed347B91d45077721c309242db3D6d](https://polygonscan.com/address/0x30ceaeC1d8Ed347B91d45077721c309242db3D6d) (Polygon mainnet). 4/7 controlled by the [council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
-- [0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e](https://polygonscan.com/address/0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e) (Polygon mainnet). 4/6 controlled by members of the core developers.
+- [0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1](https://etherscan.io/address/0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1) (Ethereum mainnet). 4/7 controlled by the [Council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
+- [0x30ceaeC1d8Ed347B91d45077721c309242db3D6d](https://polygonscan.com/address/0x30ceaeC1d8Ed347B91d45077721c309242db3D6d) (Polygon mainnet). 4/7 controlled by the [Council members](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7)
+- [0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e](https://polygonscan.com/address/0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e) (Polygon mainnet). The Council members may delegate certain roles and corresponding signing authority. Currently, administrative roles have been delegated to a 4/6 multisig with members of the Foundation staff and certain members of the original core development team.
 
-The core developer multisig have the following roles:
-
-**Polygon Mainnet**
-
-- Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3): SLASHER_ROLE, UPGRADER_ROLE, AGENT_ADMIN_ROLE, ROUTER_ADMIN_ROLE, ENS_MANAGER_ROLE, SWEEPER_ROLE, SCANNER_VERSION_ROLE, DISPATCHER_ROLE
-The council member multisigs have the following roles:
+The Council multisigs have the following roles:
 
 **Ethereum Mainnet**
 
@@ -26,12 +22,18 @@ The council member multisigs have the following roles:
 - Forta Token (Bridged) (0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1): ADMIN_ROLE, WHITELISTER_ROLE, MINTER_ROLE
 - Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3): SLASHER_ROLE, UPGRADER_ROLE, AGENT_ADMIN_ROLE, ROUTER_ADMIN_ROLE, ENS_MANAGER_ROLE, SCANNER_VERSION_ROLE
 
+The administrative multisig has the following roles:
+
+**Polygon Mainnet**
+
+- Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3): SLASHER_ROLE, UPGRADER_ROLE, AGENT_ADMIN_ROLE, ROUTER_ADMIN_ROLE, ENS_MANAGER_ROLE, SWEEPER_ROLE, SCANNER_VERSION_ROLE, DISPATCHER_ROLE
+The council member multisigs have the following roles:
 
 ### Contract Administration
 Forta contracts are managed through [OpenZeppelin's Defender product](https://defender.openzeppelin.com/) utilizing relays to manage smart contract deployment and maintenance.
 
 ### Forta On-Chain Monitoring
-Forta on-chain activity is monitored by [Forta Detection Bots](https://app.forta.network/agents/forta) and feeds into Forta's incident response process. The following detection bots were developed specifically for the Forta smart contracts. The code is available on [GitHub](https://github.com/LimeChain/forta-bots).
+Forta on-chain activity is monitored by [Forta Detection Bots](https://app.forta.network/agents/forta) and feeds into Forta Network's incident response process. The following detection bots were developed specifically for the Forta smart contracts. The code is available on [GitHub](https://github.com/LimeChain/forta-bots).
 
 - [Forta Access Control Role Changed](https://explorer.forta.network/agent/0x8e5cfc52606ac22590cf872711f81df8a0d81e3e110dee4f3fb00fafadc962c2)
 - [Forta Access Manager - Router Updated](https://explorer.forta.network/agent/0xacd82110ea6551078e40b58cebd83b9f29c09b5cf85200a5ec9244e374035e6c)

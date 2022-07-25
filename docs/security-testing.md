@@ -1,6 +1,6 @@
 ## Security - Testing and Review
 
-Testing and review starts with a good understanding of the network itself through documentation, transparency, and open-source nature around the components of the network. Key pieces of the network are summarized below:
+Testing and review starts with a good understanding of the Forta Network itself through documentation, transparency, and public nature of the primary components of the network. Key pieces of the network are summarized below:
 
 - Contracts (prod and test)
 
@@ -24,11 +24,12 @@ Testing and review starts with a good understanding of the network itself throug
     - [Forta Infra](https://github.com/forta-network/forta-infra)
     - [Forta Airdrop Interface](https://github.com/forta-network/airdrop-interface)
     - [Forta Airdrop Contracts](https://github.com/forta-network/airdrop)
+    - [Forta GraphQL API](https://github.com/forta-network/forta-alerts-api)
 
 
-Testing of the code happens through GitHub Actions on each pull request and gated upon successful tests. 
+Testing of the code must happen through GitHub Actions on each pull request and gated upon successful tests.
 
-Adopting an attacker mindset, Forta community's efforts spanned beyond secure design, development, deployment and testing towards enlisting external security experts to assess the network after it was built. This helps to surface erroneous assumptions and uncover security gaps that may have remained hidden. Forta primarily engaged OpenZeppelin's smart contract auditing expertise as well as Dedalo's web2 and broad threat assessment expertise for other critical components of the network. All their reports/findings are linked below:
+Adopting an attacker mindset, the Foundation went beyond employing secure design, development, deployment and testing and enlisted external security experts to assess the Forta Network after it was built. This helped to surface erroneous assumptions and uncover security gaps that may have remained hidden. Forta primarily engaged OpenZeppelin's smart contract auditing expertise as well as Dedalo's web2 and broad threat assessment expertise for other critical components of the Network. All such reports/findings are linked below:
 
 - [Dedalo's Airdrop Assessment, June 17th 20222](../2022Q2-FortaAirdrop-AuditReport.pdf)
 - <a href="../Forta Network Airdrop Audit Report.pdf">OpenZeppelin's Airdrop Smart Contract Audit, June 9th 2022</a>
