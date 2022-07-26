@@ -70,6 +70,7 @@ nav:
           - Querying other chains: querying-chains.md
           - Error monitoring: error-monitoring.md
           - Advanced testing: advanced-testing.md
+          - Time series analysis: time-series-analysis.md
       - Useful libraries: useful-libraries.md
       - Javascript/Typescript SDK: sdk.md
       - Python SDK: python.md
@@ -94,6 +95,13 @@ nav:
       - GraphQL API reference: forta-api-reference/index.html
       - Example use cases: api-example-use-cases.md
       - Example queries & tutorials: api-examples-tutorials.md
+  - Security:
+      - Security Overview: security.md
+      - Design: security-design.md
+      - Development: security-develop.md
+      - Deployment: security-deploy.md
+      - Testing and Review: security-testing.md
+      - Maintenance: security-maintain.md
   - Video tutorials: tutorials.md
   - Data science and machine learning on Forta: ds-and-ml.md
   - How to contribute: contributing.md
