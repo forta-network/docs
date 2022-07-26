@@ -54,6 +54,14 @@ hide:
 
     ---
 
+    Learn how Forta network is secured
+
+    [:octicons-arrow-right-24: Security](security.md)
+
+-   :shield:{ .lg .middle } __Security__
+
+    ---
+
     Get a high-level understanding of Forta and learn how it works
 
     [:octicons-arrow-right-24: Learn more](what-is-forta.md)
