@@ -158,6 +158,43 @@ If a bot wants to flag a transaction/block because it meets some condition (e.g.
     - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; key-value map (both keys and values as strings) for providing extra information
 
+## Alerts
+
+When an `Alert` is fired by a bot the data will be avalible to fetch using the [`getAlerts` method](sdk.md#getalerts). `Alert` objects have the following properties:
+
+- `addresses` -  human-readable list of addresses involved in the alert
+- `alertId` -  unique string to identify this class of finding
+- `contracts` -  list of contracts related to the alert
+- `createdAt` -  timestamp when the alert was published
+- `description` - text description of the alert
+- `name` - alert name
+- `protocol` - name of protocol being reported on
+- `scanNodeCount` - number of scanners that found the alert
+- `source` - source where the alert was detected
+    - block - block where the threat was detected
+    - bot - bot that triggered the alert
+    - transactionHash - transaction where the threat was detected
+- `projects` - list of Web3 projects related to the alert
+    - contacts - list of contact info
+    - id - project identifier
+    - name - user-friendly name of the project
+    - token
+    - social
+    - website - main website of the project
+- `findingType` -  indicates type of finding:
+    - Exploit
+    - Suspicious
+    - Degraded
+    - Info
+    - Unknown_Type
+- `severity` - indicates impact level of finding:
+    - Critical - exploitable vulnerabilities, massive impact on users/funds
+    - High - exploitable under more specific conditions, significant impact on users/funds
+    - Medium - notable unexpected behaviours, moderate to low impact on users/funds
+    - Low - minor oversights, negligible impact on users/funds
+    - Info - miscellaneous behaviours worth describing
+- `metadata` - key-value map (both keys and values as strings) for providing extra information
+
 ## getJsonRpcUrl
 
 A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL for your bot. When running in production, this function will return a URL injected by the scan node that is running the bot. When running locally in development, this function will return the `jsonRpcUrl` property specified in your forta.config.json file (or `https://cloudflare-eth.com/` by default).
@@ -170,6 +207,67 @@ A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL
 
 A convenience function called `getTransactionReceipt` can be used to fetch the entire receipt of a transaction and returned in a format matching the SDK `Receipt` interface.
 
+## getAlerts
+
+A method called `getAlerts` can be used to fetch alerts based on input `AlertQueryOptions`. The `getAlerts` method accepts the following input filter properties:
+
+- `botIds` **required**; list of bot ids to fetch alerts for
+- `addresses` -  indicate a list of addresses, alerts returned will have those addresses involved.
+- `alertId` - filter alerts by alert-id
+- `chainId` - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet
+- `createdSince` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago
+- `first` - indicate max number of results.
+- `startingCursor` - query results after the specified cursor
+- `projectId` - indicate a project id, alerts returned will only be from that project.
+- `scanNodeConfirmations` - filter alerts by number of scan nodes confirming the alert
+- `severities` - filter alerts by severity levels
+- `transactionHash` - indicate a transaction hash, alerts returned will only be from that transaction
+- `blockSortDirection` - indicate sorting order by block number, 'desc' or 'asc'. Default is 'desc'.
+- `blockDateRange` - alerts returned will be between the specified start and end block timestamp dates when the threats were detected
+- `blockNumberRange` - alerts for the block number range will be returned
+
+The returned alerts are formatted to match the SDK `AlertsResponse` interface the looks like:
+
+```javascript
+{
+    alerts: Alert[],
+    pageInfo: {
+        hasNextPage: boolean,
+        endCursor?: {
+            alertId: string,
+            blockNumber: number
+        }
+    }
+}
+```
+
+Below is an example of using the sdk:
+
+```javascript
+import { getAlerts } from "forta-agent"
+import { AlertsResponse } from "forta-agent/dist/sdk/graphql/forta";
+
+const main = async () => {
+
+  let hasNext = true;
+  let startingCursor = undefined;
+
+  while(hasNext) {
+    const results: AlertsResponse = await getAlerts({
+      botIds: ["0xddb7c17e370ecd5f99cadcddb39cfa51264e989c5133c490046d63a299dd68f0"], 
+      transactionHash: "0xc65af85a3fab1e538f6f521cd0a6e6d246c2f76c05aa8fba40817b59de7401b6"
+    })
+    
+    hasNext = results.pageInfo.hasNextPage;
+    startingCursor = results.pageInfo.endCursor;
+
+    results.alerts.forEach(a => console.log(`${JSON.stringify(a)} \n`))
+  }
+}
+
+
+main();
+```
 ## createBlockEvent
 
 A utility function for writing tests. You can use `createBlockEvent` to easily generate a mock `BlockEvent` object when writing unit tests for your `handleBlock` handler. To better understand usage, see the [Typescript unit test example](https://github.com/forta-protocol/forta-bot-examples/blob/master/minimum-balance-ts/src/agent.spec.ts).
