@@ -12,6 +12,14 @@
 
 Combines past alerts under a common address to emit a high precision alert.
 
+## Anomalous Token Transfers Detection Machine Learning Bot
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Anomalous Token Transfers Detection Machine Learning Bot | [Stats URL](https://explorer.forta.network/agent/0x2e51c6a89c2dccc16a813bb0c3bf3bbfe94414b6a0ea3fc650ad2a59e148f3c8){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/anomalous-token-transfers-ml-py){:target="_blank"} | Ethereum Mainnet |
+
+This bot utilizes the [Isolation Forest](https://scikit-learn.org/stable/modules/outlier_detection.html#isolation-forest) machine learning technique to detect anomalous transactions with erc20 token transfers.
+
 ## Anomalous Transaction Volume
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
@@ -121,7 +129,7 @@ This bot detects reentrancy based on the call stack provided in the transaction 
 This bot detects when a suspicious contract is created. A suspicious contract can take many forms; initially, this bot will alert on contracts that were created from Tornado cash funded accounts.
 
 
-## Token Impersonation 
+## Token Impersonation
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
