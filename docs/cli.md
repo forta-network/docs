@@ -1,6 +1,6 @@
 # CLI Commands
 
-The following sections describe the CLI commands available to bot developers. You can always use `forta-agent help` to get a quick overview of these commands, as well as details about specific commands e.g. `forta-agent run help`.
+The following sections describe the CLI commands available to bot developers. You can always use `forta-bot help` to get a quick overview of these commands, as well as details about specific commands e.g. `forta-bot run help`. The command `forta-agent` is still supported and can be used interchangeably with `forta-bot`. 
 
 ## Invoke commands programmatically
 
@@ -38,7 +38,7 @@ $ npx forta-agent@latest init --typescript
 
 ## run
 
-Easily verify the behaviour of your bot during local development using the `forta-agent run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your bot with any findings printed to your output console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file.
+Easily verify the behaviour of your bot during local development using the `forta-bot run` command. The default behaviour (i.e. without any options) is to subscribe to a JSON-RPC endpoint and listen for the latest blocks and transactions. A stream of the latest data will be passed to your bot with any findings printed to your output console. The endpoint is specified by the `jsonRpcUrl` property in the forta.config.json file.
 
 Options:
 
@@ -55,7 +55,7 @@ Options:
 Example: Run for a specific transaction
 
 ```bash
-$ forta-agent run --tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
+$ forta-bot run --tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
 ```
 
 or if using locally installed package
@@ -67,7 +67,7 @@ $ npm run tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
 Example: Run for a specific block (by number)
 
 ```
-$ forta-agent run --block 12821978
+$ forta-bot run --block 12821978
 ```
 
 or if using locally installed package
@@ -79,7 +79,7 @@ $ npm run block 12821978
 Example: Run for a specific block (by hash)
 
 ```
-$ forta-agent run --block 0x9e052eb02a3849b650e8b9e0a47b1fae194b928c930168ef19e311dbd7886172
+$ forta-bot run --block 0x9e052eb02a3849b650e8b9e0a47b1fae194b928c930168ef19e311dbd7886172
 ```
 
 or if using locally installed package
@@ -91,7 +91,7 @@ $ npm run block 0x9e052eb02a3849b650e8b9e0a47b1fae194b928c930168ef19e311dbd78861
 Example: Run for a specific block range
 
 ```
-$ forta-agent run --range 12821978..12821980
+$ forta-bot run --range 12821978..12821980
 ```
 
 or if using locally installed package
@@ -103,7 +103,7 @@ $ npm run range 12821978..12821980
 Example: Run for an input file
 
 ```
-$ forta-agent run --file ./test.data.json
+$ forta-bot run --file ./test.data.json
 ```
 
 or if using locally installed package
@@ -114,7 +114,7 @@ $ npm run file ./test.data.json
 
 ## publish
 
-Deploy your bot to the Forta network using the `forta-agent publish` command. This will build a Docker image for your bot and publish it to the image repository. Also, it will create a bot manifest which includes the Docker image reference, sign the manifest using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the Bot Registry contract.
+Deploy your bot to the Forta network using the `forta-bot publish` command. This will build a Docker image for your bot and publish it to the image repository. Also, it will create a bot manifest which includes the Docker image reference, sign the manifest using your keyfile (you will be prompted for password), store it on IPFS and publish the IPFS reference to the Bot Registry contract.
 
 Options:
 
@@ -134,12 +134,14 @@ Options:
 
 ## logs
 
-Retrieves logs for specified bot id and prints them to the console. The default `agentId` is read from `forta.config.json` unless specified.
+Retrieves logs for specified bot id and prints them to the console. The default `botId` is read from `forta.config.json` unless specified.
 
 Options (optional):
 
 ```
---agentId - Specify a bot id to request logs for
+--botId - Bot id to retrieve information for. Default value is this bot. If this option is used do not provide a agentId
+
+--agentId - Bot id to retrieve information for. Default value is this bot. If this option is used do not provide a botId
 
 --before - An ISO timestamp [YYYY-MM-DDTHH:mmZ] representing the latest time to include in logs
 
@@ -151,7 +153,7 @@ Options (optional):
 
 ## info
 
-Inspect the state of your bot. This command prints the bot's IPFS metadata to the console as well as recent bot events. The default `agentId` is read from `forta.config.json` unless specified.
+Inspect the state of your bot. This command prints the bot's IPFS metadata to the console as well as recent bot events. The default `botId` is read from `forta.config.json` unless specified.
 
 Bot events include:
 
@@ -162,17 +164,19 @@ Bot events include:
 Options (optional):
 
 ```
---agentId - Specify a bot id to request info about
+--botId - Bot id to retrieve information for. Default value is this bot. If this option is used do not provide a agentId
+
+--agentId - Bot id to retrieve information for. Default value is this bot. If this option is used do not provide a botId
 ```
 
 ## disable
 
-Disable your deployed bot and stop it from running on the Forta network by using `forta-agent disable`. Your Docker image will still be publicly available, but scan nodes will know not to run your bot.
+Disable your deployed bot and stop it from running on the Forta network by using `forta-bot disable`. Your Docker image will still be publicly available, but scan nodes will know not to run your bot.
 
 ## enable
 
-Enable your bot and start execution on the Forta network by using `forta-agent enable`. By default, your bot is enabled when you deploy to the Forta network. Only use this command if your bot is currently disabled.
+Enable your bot and start execution on the Forta network by using `forta-bot enable`. By default, your bot is enabled when you deploy to the Forta network. Only use this command if your bot is currently disabled.
 
 ## keyfile
 
-You can print out information about your keyfile, including its absolute path and address, using the `forta-agent keyfile` command.
+You can print out information about your keyfile, including its absolute path and address, using the `forta-bot keyfile` command.

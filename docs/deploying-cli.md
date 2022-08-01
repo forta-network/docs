@@ -1,6 +1,6 @@
 # Deploying your bot with the CLI
 
-This page covers how to deploy your bot using the `forta-agent` CLI tool.
+This page covers how to deploy your bot using the `forta-bot` CLI tool.
 
 ## Documentation
 

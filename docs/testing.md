@@ -64,7 +64,7 @@ $ npm start
 ```
 
 !!! info "npm scripts"
-    The package.json file includes a set of npm scripts which invoke the `forta-agent` CLI tool. When invoking `npm start` to run the bot, we are using the `forta-agent run` command.
+    The package.json file includes a set of npm scripts which invoke the `forta-bot` CLI tool. When invoking `npm start` to run the bot, we are using the `forta-bot run` command.
 
 This will run blocks and transactions against your bot as they are mined. By default, blockchain data is pulled from the [Cloudlfare Ethereum gateway](https://cloudflare-eth.com/). You can also specify a JSON-RPC provider in the forta.config.json file (located in ~/.forta) by uncommenting the `jsonRpcUrl` property and setting it to a HTTP provider (e.g. `https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY`).
 

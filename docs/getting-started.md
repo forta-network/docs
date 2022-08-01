@@ -20,7 +20,7 @@ On the far right of the diagram are the users of the Forta Network who are inter
 
 ## Forta development workflows
 
-The primary development workflow for building detection bots involves the `forta-agent` CLI (command line interface) tool. Using the CLI, you can setup a detection bot project within seconds. As a general overview of the workflow, it starts from initialization, to development and testing, then finally deployment and maintenance.
+The primary development workflow for building detection bots involves the `forta-bot` CLI (command line interface) tool. Using the CLI, you can setup a detection bot project within seconds. As a general overview of the workflow, it starts from initialization, to development and testing, then finally deployment and maintenance.
 
 As mentioned earlier, Forta provides easy to use SDKs for detection bot development in [Javascript/Typescript](https://www.npmjs.com/package/forta-agent) and [Python](https://pypi.org/project/forta-agent/). These allow you to focus on your bot’s detection logic while taking care of the rest of the details. Once your bot is ready to deploy, you simply use the CLI to publish it to the Forta Network.
 
