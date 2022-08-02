@@ -14,13 +14,13 @@ The following three steps are required to load and interact with a trained machi
 
 ### Step 1: Save trained model with serialization
 
-To use a model in a different environment without retraining, we’ll need a way to serialize the model. `Pickle`, a built-in python object serialization module, was used to serialize the ATT’s model after training in a python notebook.
+To use a model in a different environment without retraining, we’ll need a way to serialize the model. [`Dill`](https://pypi.org/project/dill/), an extended version of [`Pickle`](https://docs.python.org/3/library/pickle.html), a built-in python object serialization module, was used to serialize the ATT’s model after training in a python notebook.
 
 ```python
-import pickle
+import dill
 
 with open('isolation_forest.pkl','wb') as f:
-    pickle.dump(model, f)
+    dill.dump(model, f)
 ```
 
 For more details on persisting scikit-learn models, please checkout the [model persistence documentation](https://scikit-learn.org/stable/model_persistence.html#model-persistence).
@@ -34,9 +34,8 @@ WORKDIR /app
 COPY ./isolation_forest.pkl ./
 ```
 
-#### **Update base image for faster Docker builds**
-
-Most python detection bots use the alpine base image for installing python dependencies. However, if the bot utilizes python data science packages such as `numpy`, `pandas`, and `scikit-learn`, the build can take 2+ hours. To reduce the build time, it’s recommended to update the `Dockerfile` to use a debian base image. This will bring down the build time down to <10 minutes. To learn more about this, please checkout [this github issue](https://github.com/forta-network/forta-bot-sdk/issues/159).
+!!! important "**Tip: Update base image for faster Docker builds**"
+    Most python detection bots use the alpine base image for installing python dependencies. However, if the bot utilizes python data science packages such as `numpy`, `pandas`, and `scikit-learn`, the build can take 2+ hours. To reduce the build time, it’s recommended to update the `Dockerfile` to use a debian base image. This will bring down the build time down to <10 minutes. To learn more about this, please checkout [this github issue](https://github.com/forta-network/forta-bot-sdk/issues/159).
 
 ### Step 3: Load model in the `initialize` handler
 
@@ -59,18 +58,18 @@ When loading a model, it is important for the scikit-learn version in the bot en
 
 When preparing input data for a model, you can follow the tips below that can help with code readability, feature generation speed, and debugging:
 
-#### **Break down logic into separate files**
+### Tip 1: Break down logic into separate files
 
 Create a separate file for input data processing related functions and keep each function logic readable and simple. The ATT bot has a file called [data_processing.py](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/src/utils/data_processing.py), where feature generation functions are located. This will avoid clutter in the main `agent.py` file and maintain separation of concern.
 
-#### **Caching 3rd Party API Results**
+### Tip 2: Caching 3rd Party API Results
 
 If the model relies on 3rd party data like Etherscan and some data is expected to be requested more than once, consider setting up a lru cache with python’s [`functools.lru_cache`](https://docs.python.org/3/library/functools.html#functools.lru_cache). This will eliminate redundant network calls and improve feature generation speed. The ATT bot has a LRU cache setup for the following functions:
 
 * [Get_first_timestamp](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/src/utils/data_processing.py#L11): Given address A, the function queries [Etherscan](https://etherscan.io/) to get address A’s first transaction timestamp.
 * [Get_token_info](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/src/utils/data_processing.py#L39): Given an erc20 token address, the function requests token name, symbol, and decimals from the [Ethplorer API](https://github.com/EverexIO/Ethplorer/wiki/Ethplorer-API).
 
-#### **Input Validation and Alerting**
+### Tip 3: Input Validation and Alerting
 
 There can be issues during feature generation, especially if requested data from 3rd party APIs are not available. Validating the generated inputs can help surface issues more easily. With validation, we can avoid producing model predictions from invalid inputs. To surface errors more clearly, a finding can be produced for invalid inputs.
 
@@ -101,11 +100,11 @@ class InvalidModelFeatures(TokenTransfersTxFinding):
 
 ## Processing Model Output
 
-#### **Normalizing Prediction Values**
+### Tip 1: Normalizing Prediction Values
 
 For anomaly detection, it’s good practice to normalize a model's prediction to a value range between 0 and 1 where anomalous values are closer to 1. It can help you understand how anomalous a value is and evaluate different ML techniques more easily.
 
-#### **Setting a Classification Threshold**
+### Tip 2: Setting a Classification Threshold
 
 With the normalized value, you can set a `ANOMALY_THRESHOLD` to tweak how often a prediction is classified as an anomaly and reduce the bot’s alerting rate. If precision is more important than recall, the threshold can be set to a higher value (e.g. prediction greater than 0.7 is considered anomalous). If recall is more important, the threshold can be set lower to allow more predictions with low confidence scores to be classified as anomalies.
 
@@ -119,7 +118,7 @@ normalized_score = abs(raw_score)
 prediction = 'ANOMALY' if normalized_score >= ANOMALY_THRESHOLD else 'NORMAL'
 ```
 
-#### **Distinguish Model Outputs in Findings**
+### Tip 3: Distinguish Model Outputs in Findings
 
 If certain model outputs are more important to surface than others, for example an anomaly vs inlier, it’s important to set an appropriate severity and finding type for different model outputs.
 
@@ -169,7 +168,7 @@ ATT bot’s finding outputs (partial):
 
 ## Monitoring Model Performance
 
-#### **Recording Latency**
+### Tip 1: Recording Latency
 
 Finally, it’s also useful to record feature generation time and model response time to gauge the model’s performance in production. This can help you debug and detect issues more easily.
 
@@ -180,13 +179,13 @@ ATT bot’s finding outputs (partial):
 "model_pred_response_time": 0.024292124999999887,
 ```
 
-#### **Retraining ML Model**
+### Tip 2: Retraining ML Model
 
 As time passes, the model performance can degrade due to shifts in real world data distribution. So once the model is deployed, it's important to frequently monitor the model output distribution to detect any deviations from the distribution seen during training. If the deviation is significant, it’s recommended to retrain the model with more recent data.
 
 For example, with the ATT bot, the model can start considering more transactions as anomalous if the more recent transactions no longer share similar patterns or characteristics as the transactions the model was trained on. If the ATT bot starts to alert more anomalies than usual, it may be a good time to retrain the model with recent transaction data.
 
-#### **Monitoring ML Model Performance**
+### Tip 3: Monitoring ML Model Performance
 
 There are two ways to monitor a ML model’s performance:
 
