@@ -71,6 +71,7 @@ nav:
           - Error monitoring: error-monitoring.md
           - Advanced testing: advanced-testing.md
           - Time series analysis: time-series-analysis.md
+          - Deploying Machine Learning Models: deploying-ml-models.md
       - Useful libraries: useful-libraries.md
       - Javascript/Typescript SDK: sdk.md
       - Python SDK: python.md
