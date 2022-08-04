@@ -34,6 +34,14 @@ Also, if you are writing bots for your own protocol it can be useful to think ab
 
 The average consumer laptop is more than sufficient to build bots. If you are using your existing developer machine, you will do great.
 
+## How many resources does my bot have access to when running?
+
+When deployed to a Forta scan node, detection bots are allowed a maximum of 20% CPU and 1GB of memory.
+
+## What determines the uniqueness of an alert?
+
+A set of fields from an alert are used to determine whether or not it has fired before (this is used when de-duplicating alerts fired by the same detection bot across multiple scan nodes). You can see the `calculateAlertID` function used for [transaction alerts](https://github.com/forta-network/forta-node/blob/07716e363c47958d629927f11d6a203ad34a3343/services/scanner/tx_analyzer.go#L40) as well as [block alerts](https://github.com/forta-network/forta-node/blob/07716e363c47958d629927f11d6a203ad34a3343/services/scanner/block_analyzer.go#L41).
+
 ## How can I create alerts that only I can see?
 
 You can write a "private bot" to generate alerts that can only be understood by you. See the [documentation on writing private bots](private-alerts.md).

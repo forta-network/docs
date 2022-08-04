@@ -15,7 +15,7 @@ Before you start, please make sure you have the following:
 
 ## Initializing a project
 
-To initialize a Forta detection bot, you can use the [Forta Hardhat plugin](hardhat.md) or the `forta-agent` CLI tool:
+To initialize a Forta detection bot, you can use the [Forta Hardhat plugin](hardhat.md), the [Forta Detection Bot Wizard](wizard.md) or the `forta-agent` CLI tool:
 
 ```bash
 $ mkdir my-new-bot

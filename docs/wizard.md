@@ -1,8 +1,10 @@
 # Detection Bot Wizard
 
-With the [Forta Detection Bot Wizard](https://app.forta.network/wizard), anyone can deploy a detection bot to scan for conditions they are interested in. The wizard provides a convenient UI that does not require writing any code. Simply select what type of detection bot you want, configure it to your needs, and deploy it using the existing [Forta App](https://app.forta.network).
+With the [Forta Detection Bot Wizard](https://app.forta.network/wizard), anyone can deploy a detection bot to scan for conditions they are interested in. The wizard provides a convenient UI that does not require writing any code. Simply select what type of detection bot you want, configure it to your needs, and deploy it using the existing [Forta App](https://app.forta.network). You can check out the video walkthrough for the wizard here:
 
-This page will guide you through deploying a detection bot using the wizard UI. In this example, we will deploy a bot that alerts when there is a Tether transfer of more than 100,000 USDT.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i5uz19dP5xQ?start=287" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The rest of this page will guide you through deploying a detection bot using the wizard UI. In this example, we will deploy a bot that alerts when there is a Tether transfer of more than 100,000 USDT.
 
 ## Select a template
 
@@ -62,4 +64,10 @@ After clicking the "Deploy Bot" button, you will be redirected to the detection 
 
 Some of the fields will be prepopulated, specifically the "Docker Image" field will contain the image reference of the bot you just generated. Continue to fill out the remaining fields and then deploy the bot.
 
-Once deployed, make sure to [subscribe to the detection bot](subscribing.md) to receive alerts on your preferred channel (i.e. email, Slack, Discord, Telegram or webhook).
+## Subscribing to alerts
+
+After your bot is deployed, you can view the alerts it generates using [Forta Explorer](https://explorer.forta.network/). You can search by your bot's ID or a contract address. Alternatively, you can query for alerts programmatically using the [Forta API](api.md). To learn more about subscribing to alerts, check out [this section](subscribing.md).
+
+## Maintaining your bot
+
+You may need to update your bot code at some point in the future, view its logs or even disable it. To learn more about maintaining your bot, check out [this section](maintaining.md).

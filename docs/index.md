@@ -71,5 +71,5 @@ hide:
 </div>
 
 
-Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.gg/DUju5Dh4J9).<br><br>
+:fontawesome-brands-discord: Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.gg/DUju5Dh4J9).<br><br>
 :material-lock: We have a [bug bounty program on Immunefi](https://immunefi.com/bounty/forta). Please report any security issues you find through the Immunefi dashboard, or reach out to [tech@forta.org](mailto:tech@forta.org)
