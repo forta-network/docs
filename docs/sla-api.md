@@ -4,12 +4,7 @@ To evaluate health of nodes in the network, Forta calculates a score (SLA) based
 
 ## SLA Calculation
 
-Scan nodes are expected to continuously scan the latest blocks and submit results (batches). At this time, "uptime" is the only factor in SLA. The calculation involves a weighted average of two components: number of batches per minute (weighted x1), and whether the latest evaluated block is falling behind (weighted x5).
-
-SLA is calculated periodically for each minute.  This means each minute will be assigned a score.  At this time, scores are only available for times older than one hour.
-
-!!! note "What's a good score?"
-    The score is a fairly raw score, and does not mean a % of time up.  A score >90% is generally good.  A score of .90 does not mean 10% of the time the node was down.  The score is subject to change as the network considers other criteria.  Higher is better.
+See [SLA](sla.md) for details regarding the composition of the SLA score.
 
 ## API
 
@@ -57,6 +52,9 @@ Fields
         - `expected_batch_count` - Expected number of batches for the minute
         - `latest_block` - Latest block sent by scan node in this minute
         - `expected_latest_block` - 75th Percentile block for all peers for this network
+        - `latest_block_threshold` - Threshold used for evaluation of the latest block 
+        - `inspection_score` - The Resource score for the node (see [SLA](sla.md) for details)
+        - `expected_inspection_score` - Always 1 (for reference)
     - `scores` - Subscores that led to overall score for this minute
         - `name` - Name of score
         - `value` - Value of score (0-1)
