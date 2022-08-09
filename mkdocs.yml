@@ -86,9 +86,10 @@ nav:
           - Solace Contest (3/1/2022): contest5-solace.md
           - Forta Contest 2 (4/27/2022): contest6-forta.md
           - Forta Contest 3 (6/17/2022): contest7-forta.md
-  - Scan node operators:
+  - Scan Node operators:
       - Quickstart: scanner-quickstart.md
-      - Scan node SLA API: sla-api.md
+      - SLA Calculation: sla.md
+      - SLA API: sla-api.md
       - Stake on your Scan Node: stake-on-scan-node.md
       - Local mode: scanner-local-mode.md
   - API integration:
