@@ -42,6 +42,12 @@
                     <a href="#query-alerts">alerts</a>
                   </li>
                   <li>
+                    <a href="#query-batch">batch</a>
+                  </li>
+                  <li>
+                    <a href="#query-batches">batches</a>
+                  </li>
+                  <li>
                     <a href="#query-project">project</a>
                   </li>
                   <li>
@@ -79,6 +85,24 @@
                 <a href="#definition-AlertsResponse">AlertsResponse</a>
               </li>
               <li>
+                <a href="#definition-Batch">Batch</a>
+              </li>
+              <li>
+                <a href="#definition-BatchEndCursor">BatchEndCursor</a>
+              </li>
+              <li>
+                <a href="#definition-BatchEndCursorInput">BatchEndCursorInput</a>
+              </li>
+              <li>
+                <a href="#definition-BatchPageInfo">BatchPageInfo</a>
+              </li>
+              <li>
+                <a href="#definition-BatchesInput">BatchesInput</a>
+              </li>
+              <li>
+                <a href="#definition-BatchesResponse">BatchesResponse</a>
+              </li>
+              <li>
                 <a href="#definition-Block">Block</a>
               </li>
               <li>
@@ -98,6 +122,9 @@
               </li>
               <li>
                 <a href="#definition-DateRange">DateRange</a>
+              </li>
+              <li>
+                <a href="#definition-DateTime">DateTime</a>
               </li>
               <li>
                 <a href="#definition-EmailAddress">EmailAddress</a>
@@ -278,6 +305,188 @@
               </div>
             </div>
           </section>
+          <section id="query-batch" class="operation operation-query" data-traverse-target="query-batch">
+            <div class="operation-group-name">
+              <a href="#group-Operations-Queries">Queries</a>
+            </div>
+            <h2 class="operation-heading "> <code>batch</code> </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="operation-description doc-copy-section">
+                  <h5>Description</h5>
+                  <p>Fetches a batch given its batch ID</p>
+                </div>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="operation-response doc-copy-section">
+                  <h5>Response</h5>
+                  <p> Returns a
+                    <a href="#definition-Batch"><code>Batch</code></a>
+                  </p>
+                </div>
+                <div class="operation-arguments doc-copy-section">
+                  <h5>Arguments</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>id</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String!</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <h4 class="example-heading">Example</h4>
+                <div class="example-section example-section-is-code operation-query-example">
+                  <h5>Query</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> Batch<span class="hljs-tag">(<span class="hljs-code">$id</span>:<span class="hljs-type"> String!</span>)</span> <span class="hljs-tag">{
+  <span class="hljs-symbol">batch<span class="hljs-tag">(id: <span class="hljs-code">$id</span>)</span> <span class="hljs-tag">{
+    <span class="hljs-symbol">id</span>
+    <span class="hljs-symbol">parentId</span>
+    <span class="hljs-symbol">createdAt</span>
+    <span class="hljs-symbol">chainId</span>
+    <span class="hljs-symbol">scanNodeId</span>
+    <span class="hljs-symbol">receiptId</span>
+  }</span></span>
+}</span></span>
+</code></pre> </body>
+                  </html>
+                </div>
+                <div class="example-section example-section-is-code operation-variables-example">
+                  <h5>Variables</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+                <div class="example-section example-section-is-code operation-response-example">
+                  <h5>Response</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"data"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"batch"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"parentId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"createdAt"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"chainId"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"scanNodeId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"receiptId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="query-batches" class="operation operation-query" data-traverse-target="query-batches">
+            <div class="operation-group-name">
+              <a href="#group-Operations-Queries">Queries</a>
+            </div>
+            <h2 class="operation-heading "> <code>batches</code> </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="operation-description doc-copy-section">
+                  <h5>Description</h5>
+                  <p>Fetches batches</p>
+                </div>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="operation-response doc-copy-section">
+                  <h5>Response</h5>
+                  <p> Returns a
+                    <a href="#definition-BatchesResponse"><code>BatchesResponse</code></a>
+                  </p>
+                </div>
+                <div class="operation-arguments doc-copy-section">
+                  <h5>Arguments</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>input</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-BatchesInput"><code>BatchesInput</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <h4 class="example-heading">Example</h4>
+                <div class="example-section example-section-is-code operation-query-example">
+                  <h5>Query</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> Batches<span class="hljs-tag">(<span class="hljs-code">$input</span>:<span class="hljs-type"> BatchesInput)</span> {
+  batches(input: <span class="hljs-code">$input</span>)</span> <span class="hljs-tag">{
+    <span class="hljs-symbol">batches <span class="hljs-tag">{
+      <span class="hljs-type">...BatchFragment</span>
+    }</span></span>
+    <span class="hljs-symbol">pageInfo <span class="hljs-tag">{
+      <span class="hljs-type">...BatchPageInfoFragment</span>
+    }</span></span>
+  }</span></span>
+}
+</code></pre> </body>
+                  </html>
+                </div>
+                <div class="example-section example-section-is-code operation-variables-example">
+                  <h5>Variables</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"input"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">BatchesInput</span><span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+                <div class="example-section example-section-is-code operation-response-example">
+                  <h5>Response</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"data"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"batches"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"batches"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Batch</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"pageInfo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">BatchPageInfo</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
           <section id="query-project" class="operation operation-query" data-traverse-target="query-project">
             <div class="operation-group-name">
               <a href="#group-Operations-Queries">Queries</a>
@@ -351,7 +560,7 @@
                   <h5>Variables</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">}</span>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
                 </div>
@@ -363,7 +572,7 @@
   <span class="hljs-attr">"data"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
     <span class="hljs-attr">"project"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
       <span class="hljs-attr">"contacts"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Contacts</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
       <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
       <span class="hljs-attr">"social"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Social</span><span class="hljs-punctuation">,</span>
       <span class="hljs-attr">"token"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Token</span><span class="hljs-punctuation">,</span>
@@ -637,7 +846,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"alertId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"alertId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"addresses"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"abc123"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"contracts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Contract</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"createdAt"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
@@ -646,8 +855,8 @@
   <span class="hljs-attr">"metadata"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"projects"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Project</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"protocol"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"scanNodeCount"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"protocol"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"scanNodeCount"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"severity"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"source"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">AlertSource</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"findingType"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
@@ -757,7 +966,7 @@
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"blockNumber"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">"alertId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">}</span>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"blockNumber"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">"alertId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
                 </div>
@@ -808,7 +1017,7 @@
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"endCursor"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">AlertEndCursor</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">"hasNextPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">}</span>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"endCursor"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">AlertEndCursor</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">"hasNextPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
                 </div>
@@ -873,7 +1082,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"transactionHash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"transactionHash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"bot"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Bot</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"block"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Block</span>
 <span class="hljs-punctuation">}</span>
@@ -935,6 +1144,17 @@
                         </td>
                         <td>
                           <p>Filter alerts by alert-id.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>alertHash</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Get a specific alert by alert hash.</p>
                         </td>
                       </tr>
                       <tr>
@@ -1092,20 +1312,21 @@
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"addresses"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"abc123"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"after"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">AlertEndCursorInput</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"alertId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"alertId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"alertHash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"alertName"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"blockDateRange"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">DateRange</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"blockNumberRange"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">BlockRange</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"blockTimestampRange"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">TimestampRange</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"blockSortDirection"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"asc"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"bots"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"abc123"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"bots"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"chainId"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"createdSince"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"first"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"projectId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"projectId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"scanNodeConfirmations"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">scanNodeFilters</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"severities"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"transactionHash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
+  <span class="hljs-attr">"severities"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">"abc123"</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"transactionHash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -1160,6 +1381,419 @@
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"alerts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Alert</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"pageInfo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">AlertPageInfo</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="definition-Batch" class="definition definition-object" data-traverse-target="definition-Batch">
+            <div class="definition-group-name">
+              <a href="#group-Types">Types</a>
+            </div>
+            <h2 class="definition-heading">Batch</h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="definition-description doc-copy-section">
+                  <h5>Description</h5>
+                  <p>Batch information</p>
+                </div>
+                <div class="definition-properties doc-copy-section">
+                  <h5>Fields</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Field Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>id</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td> Batch id </td>
+                      </tr>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>parentId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td> Id of preceding batch to form chain </td>
+                      </tr>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>createdAt</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td> Timestamp when the batch was published </td>
+                      </tr>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>chainId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                          </span>
+                        </td>
+                        <td> chain id on batch was created from </td>
+                      </tr>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>scanNodeId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td> Reference to scanner that sent this batch request </td>
+                      </tr>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>receiptId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td> Receipt id for the batch </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"parentId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"createdAt"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"chainId"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"scanNodeId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"receiptId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="definition-BatchEndCursor" class="definition definition-object" data-traverse-target="definition-BatchEndCursor">
+            <div class="definition-group-name">
+              <a href="#group-Types">Types</a>
+            </div>
+            <h2 class="definition-heading">BatchEndCursor</h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="definition-properties doc-copy-section">
+                  <h5>Fields</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Field Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>createdAt</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"createdAt"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="definition-BatchEndCursorInput" class="definition definition-input-object" data-traverse-target="definition-BatchEndCursorInput">
+            <div class="definition-group-name">
+              <a href="#group-Types">Types</a>
+            </div>
+            <h2 class="definition-heading">BatchEndCursorInput</h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="definition-description doc-copy-section">
+                  <h5>Description</h5>
+                  <p>Search after specified batch after id</p>
+                </div>
+                <div class="definition-properties doc-copy-section">
+                  <h5>Fields</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Input Field</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>createdAt</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-DateTime"><code>DateTime</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"createdAt"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2007-12-03T10:15:30Z"</span><span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="definition-BatchPageInfo" class="definition definition-object" data-traverse-target="definition-BatchPageInfo">
+            <div class="definition-group-name">
+              <a href="#group-Types">Types</a>
+            </div>
+            <h2 class="definition-heading">BatchPageInfo</h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="definition-properties doc-copy-section">
+                  <h5>Fields</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Field Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>endCursor</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-BatchEndCursor"><code>BatchEndCursor</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>hasNextPage</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-Boolean"><code>Boolean</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"endCursor"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">BatchEndCursor</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">"hasNextPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="definition-BatchesInput" class="definition definition-input-object" data-traverse-target="definition-BatchesInput">
+            <div class="definition-group-name">
+              <a href="#group-Types">Types</a>
+            </div>
+            <h2 class="definition-heading">BatchesInput</h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="definition-description doc-copy-section">
+                  <h5>Description</h5>
+                  <p>Batch list input</p>
+                </div>
+                <div class="definition-properties doc-copy-section">
+                  <h5>Fields</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Input Field</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>after</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-BatchEndCursorInput"><code>BatchEndCursorInput</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Search results after the specified cursor</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>parentId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Filter batch by parent&#39;s Id.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>scanNodeId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Filter batches by scanner.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>receiptId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-String"><code>String</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Filter batches by receiptId.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>chainId</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Indicate a chain Id: EIP155 identifier of the chain Alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>first</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-NonNegativeInt"><code>NonNegativeInt</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Indicate max number of results.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="property-name"><code>createdRange</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-TimestampRange"><code>TimestampRange</code></a>
+                          </span>
+                        </td>
+                        <td>
+                          <p>Batches returned will only be those created in the time range</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"after"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">BatchEndCursorInput</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"parentId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"scanNodeId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"receiptId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"chainId"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"first"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"createdRange"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">TimestampRange</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="definition-BatchesResponse" class="definition definition-object" data-traverse-target="definition-BatchesResponse">
+            <div class="definition-group-name">
+              <a href="#group-Types">Types</a>
+            </div>
+            <h2 class="definition-heading">BatchesResponse</h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="definition-properties doc-copy-section">
+                  <h5>Fields</h5>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Field Name</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>batches</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-Batch"><code>[Batch]</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                      <tr>
+                        <td data-property-name="">
+                          <span class="property-name"><code>pageInfo</code></span> -
+                          <span class="property-type">
+                            <a href="#definition-BatchPageInfo"><code>BatchPageInfo</code></a>
+                          </span>
+                        </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"batches"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Batch</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"pageInfo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">BatchPageInfo</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -1235,8 +1869,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"number"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"hash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"timestamp"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"hash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"timestamp"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"chainId"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
@@ -1374,8 +2008,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"reference"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"image"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
+  <span class="hljs-attr">"reference"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"image"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -1501,7 +2135,7 @@
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"address"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"projectId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
+  <span class="hljs-attr">"projectId"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -1567,6 +2201,30 @@
               </div>
             </div>
           </section>
+          <section id="definition-DateTime" class="definition definition-scalar" data-traverse-target="definition-DateTime">
+            <div class="definition-group-name">
+              <a href="#group-Types">Types</a>
+            </div>
+            <h2 class="definition-heading">DateTime</h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <div class="definition-description doc-copy-section">
+                  <h5>Description</h5>
+                  <p>A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the <code>date-time</code> format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.</p>
+                </div>
+              </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">"2007-12-03T10:15:30Z"</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
+            </div>
+          </section>
           <section id="definition-EmailAddress" class="definition definition-scalar" data-traverse-target="definition-EmailAddress">
             <div class="definition-group-name">
               <a href="#group-Types">Types</a>
@@ -1609,7 +2267,7 @@
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json"><span class="hljs-number">123</span>
+                  <body><pre><code class="hljs language-json"><span class="hljs-number">987</span>
 </code></pre> </body>
                   </html>
                 </div>
@@ -1779,7 +2437,7 @@
   <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"social"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Social</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"token"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Token</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"website"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
+  <span class="hljs-attr">"website"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -1832,7 +2490,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"cursor"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"cursor"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"node"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Project</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
@@ -2064,10 +2722,10 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"coingecko"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"everest"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"coingecko"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"everest"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"github"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"twitter"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
+  <span class="hljs-attr">"twitter"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -2137,7 +2795,7 @@
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">"xyz789"</span>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">"abc123"</span>
 </code></pre> </body>
                   </html>
                 </div>
@@ -2299,10 +2957,10 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"address"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"chainId"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"address"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"chainId"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"decimals"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"symbol"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
