@@ -77,7 +77,7 @@ This bot detects if a transaction contains a flashloan and the borrower made sig
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
-| Flashloan Detection Bot | [Stats URL](https://explorer.forta.network/agent/0x2c8452ff81b4fa918a8df4441ead5fedd1d4302d7e43226f79cb812ea4962ece){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/large-mint-borrow-anomaly-detection){:target="_blank"} | Ethereum Mainnet |
+| Large Mint Borrow Volume Anomaly Detection | [Stats URL](https://explorer.forta.network/agent/0x2c8452ff81b4fa918a8df4441ead5fedd1d4302d7e43226f79cb812ea4962ece){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/large-mint-borrow-anomaly-detection){:target="_blank"} | Ethereum Mainnet |
 
 This bot detects if an anomalous volume of mints and/or borrows occurs.
 
@@ -115,7 +115,7 @@ This bot detects when there are drastic price change anomalies based on on-chain
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
-| nethforta-25 | [Stats URL](https://explorer.forta.network/agent/0x492c05269cbefe3a1686b999912db1fb5a39ce2e4578ac3951b0542440f435d9){:target="_blank"} | [Github Repo URL](https://github.com/NethermindEth/Forta-Agents/tree/a5bd20303669d5a1d0e2163c43904627f8999749/reentrancy-counter#reentrancy-counter){:target="_blank"} | Ethereum Mainnet, BSC, Polygon |
+| Reentrancy Calls Detection Bot | [Stats URL](https://explorer.forta.network/agent/0x492c05269cbefe3a1686b999912db1fb5a39ce2e4578ac3951b0542440f435d9){:target="_blank"} | [Github Repo URL](https://github.com/NethermindEth/Forta-Agents/tree/a5bd20303669d5a1d0e2163c43904627f8999749/reentrancy-counter#reentrancy-counter){:target="_blank"} | Ethereum Mainnet, BSC, Polygon |
 
 This bot detects reentrancy based on the call stack provided in the transaction traces. The bot reports the number of repeated calls with different severities levels.
 
