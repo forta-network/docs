@@ -40,16 +40,16 @@ SLA is calculated per minute.  Nodes are rewarded for each minute they reliably 
 
 Scanners must meet the requirements of the Scan Node.  All of the following requirements must be met. 
 
-- Must run inspections recently
-- Must support trace_block if required for chain (mainnet, fantom)
+- Must have run inspections recently
+- Must support `trace_block` if required for chain (Ethereum Mainnet, Fantom)
 - Must support outbound internet access for Bots
 - Must have accessible JSON-RPC API
-- Must have JSON-RPC that supports net , web, and eth APIs
+- Must have a JSON-RPC API that supports `eth` module
 - Must scan same chain as registered for
-- Must have a minimum amount of Ram (currently >16GB, only enforcing >8GB for now)
+- Must support the minimum memory requirement (currently >16GB, only enforcing >8GB for now)
 
 !!! warning "All requirements must be met"
-    If any requirement is not met, the resource score will be zero, which will cause a zero SLA.
+    If any requirement is not met, the resource score will be zero, which will cause a zero SLA score.
 
 ### Data Quality Score
 
