@@ -2,7 +2,7 @@
 
 There may be cases where developers want to test their bot with more complex interactions using real data, or to test scenarios that have not yet occurred on-chain. One way to do this is to fork the state of the chain locally and point your bot to it. You can then simulate transactions on the forked chain and the bot will scan the resulting blocks and transactions.
 
-This page describes how to conduct more advanced testing using a locally forked chain. The complete code for this example can be found [here](https://github.com/forta-protocol/forta-bot-examples/tree/master/advanced-testing-js).
+This page describes how to conduct more advanced testing using a locally forked chain. The complete code for this example can be found [here](https://github.com/forta-network/forta-bot-examples/tree/master/advanced-testing-js).
 
 ## Run a forked chain
 
@@ -75,7 +75,7 @@ Here we simulate 2 transfers of Tether tokens from the unlocked account. After t
 
 ## Automating the above
 
-While it's cool to be able to manually run the above scripts, it would be amazing to have it all automated. This is exactly what we have done in the provided [agent.spec.js](https://github.com/forta-protocol/forta-bot-examples/blob/master/advanced-testing-js/src/agent.spec.js) file. In it you will find a Jest test suite that will fork a Ganache chain, run simulated transactions and verify that the bot outputs the correct findings.
+While it's cool to be able to manually run the above scripts, it would be amazing to have it all automated. This is exactly what we have done in the provided [agent.spec.js](https://github.com/forta-network/forta-bot-examples/blob/master/advanced-testing-js/src/agent.spec.js) file. In it you will find a Jest test suite that will fork a Ganache chain, run simulated transactions and verify that the bot outputs the correct findings.
 
 ## Other considerations
 

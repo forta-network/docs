@@ -50,4 +50,4 @@ We’re excited to see what sort of innovative bots the community comes up with!
 Be sure to check out [useful libraries](useful-libraries.md) for developing your bots, including a set of low-code templates you can use. To learn more about what makes a good bot, see our [FAQ](faq.md#what-makes-a-good-bot) section.
 ## Examples
 
-You can find some example implementations of Forta bots in our [examples repo](https://github.com/forta-protocol/forta-bot-examples). Another great place to see real bots in action is on the [Forta App Discover](https://app.forta.network/) page.
+You can find some example implementations of Forta bots in our [examples repo](https://github.com/forta-network/forta-bot-examples). Another great place to see real bots in action is on the [Forta App Discover](https://app.forta.network/) page.

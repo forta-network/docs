@@ -1,6 +1,6 @@
 # Javascript/Typescript SDK
 
-The Forta bot Javascript SDK comes with a set of classes and type definitions to provide a consistent interface for developers to write their bots. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Javascript/Typescript bots in our [examples repo](https://github.com/forta-protocol/forta-bot-examples) to learn more.
+The Forta bot Javascript SDK comes with a set of classes and type definitions to provide a consistent interface for developers to write their bots. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Javascript/Typescript bots in our [examples repo](https://github.com/forta-network/forta-bot-examples) to learn more.
 
 ## Handlers
 
@@ -122,7 +122,7 @@ const transfers = transactionEvent.filterLog(transferEvent, erc20TokenAddress);
 console.log(`found ${transfers.length} transfer events`);
 ```
 
-The underlying library used for decoding event logs is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseLog`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`LogDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#LogDescription) objects (which we modified to also include the originating `address` of the log). To better understand usage, see the [Javascript filtering example](https://github.com/forta-protocol/forta-bot-examples/tree/master/filter-event-and-function-js) bot.
+The underlying library used for decoding event logs is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseLog`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`LogDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#LogDescription) objects (which we modified to also include the originating `address` of the log). To better understand usage, see the [Javascript filtering example](https://github.com/forta-network/forta-bot-examples/tree/master/filter-event-and-function-js) bot.
 
 ### filterFunction
 
@@ -135,7 +135,7 @@ const transfers = transactionEvent.filterFunction(transferFromFunction, erc20Tok
 console.log(`found ${transfers.length} function calls`);
 ```
 
-The underlying library used for decoding function calls is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseTransaction`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`TransactionDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription) objects. To better understand usage, see the [Javascript filtering example](https://github.com/forta-protocol/forta-bot-examples/tree/master/filter-event-and-function-js) bot.
+The underlying library used for decoding function calls is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseTransaction`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`TransactionDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription) objects. To better understand usage, see the [Javascript filtering example](https://github.com/forta-network/forta-bot-examples/tree/master/filter-event-and-function-js) bot.
 
 ## Finding
 
@@ -270,8 +270,8 @@ main();
 ```
 ## createBlockEvent
 
-A utility function for writing tests. You can use `createBlockEvent` to easily generate a mock `BlockEvent` object when writing unit tests for your `handleBlock` handler. To better understand usage, see the [Typescript unit test example](https://github.com/forta-protocol/forta-bot-examples/blob/master/minimum-balance-ts/src/agent.spec.ts).
+A utility function for writing tests. You can use `createBlockEvent` to easily generate a mock `BlockEvent` object when writing unit tests for your `handleBlock` handler. To better understand usage, see the [Typescript unit test example](https://github.com/forta-network/forta-bot-examples/blob/master/minimum-balance-ts/src/agent.spec.ts).
 
 ## createTransactionEvent
 
-A utility function for writing tests. You can use `createTransactionEvent` to easily generate a mock `TransactionEvent` object when writing unit tests for your `handleTransaction` handler. To better understand usage, see the [Javascript unit test example](https://github.com/forta-protocol/forta-bot-examples/blob/master/high-gas-js/src/high.gas.used.spec.js).
+A utility function for writing tests. You can use `createTransactionEvent` to easily generate a mock `TransactionEvent` object when writing unit tests for your `handleTransaction` handler. To better understand usage, see the [Javascript unit test example](https://github.com/forta-network/forta-bot-examples/blob/master/high-gas-js/src/high.gas.used.spec.js).

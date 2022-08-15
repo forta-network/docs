@@ -4,7 +4,7 @@ In certain usecases bot developers may want to keep their generated alerts priva
 
 In addition to encrypting the alerts, you likely also want to obfuscate the bot logic (as done in the example code). Bot images are stored in a public repository where anyone can inspect the contents of the image as well as the bot logic to see what is being scanned for. Check out the [pattern for hiding sensitive data](sensitive-data.md) to understand how this is implemented.
 
-This page describes how to write a Javascript bot that emits private alerts using encryption. You can find the code for this example [here](https://github.com/forta-protocol/forta-bot-examples/tree/master/private-agent-js).
+This page describes how to write a Javascript bot that emits private alerts using encryption. You can find the code for this example [here](https://github.com/forta-network/forta-bot-examples/tree/master/private-agent-js).
 
 ## Generating keys
 

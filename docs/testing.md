@@ -70,7 +70,7 @@ This will run blocks and transactions against your bot as they are mined. By def
 
 Since our transfer value threshold is pretty high (10 thousand), we may not flag a lot of transactions. To quickly make changes and see them take effect, try changing the threshold to a lower number and save the agent.ts file. The bot should automatically restart with your new changes.
 
-It is also worth mentioning that bots are long-running processes. This means you can maintain state in-memory across blocks and transactions if needed. See the [high transaction volume bot](https://github.com/forta-protocol/forta-bot-examples/tree/master/high-volume-js) as an example of a stateful bot.
+It is also worth mentioning that bots are long-running processes. This means you can maintain state in-memory across blocks and transactions if needed. See the [high transaction volume bot](https://github.com/forta-network/forta-bot-examples/tree/master/high-volume-js) as an example of a stateful bot.
 
 ## Getting test data
 
@@ -103,7 +103,7 @@ A complete bot testing strategy will include automated unit tests that can quick
 $ npm test
 ```
 
-When writing unit tests, you can easily create mock transactions and blocks using the SDK methods `createTransactionEvent` and `createBlockEvent`. See [here](https://github.com/forta-protocol/forta-bot-examples/blob/master/high-gas-js/src/high.gas.used.spec.js) for an example. Also, you can easily write tests for bots that detect log events or function calls by mocking out the SDK methods `filterLog` and `filterFunction`. See [here](https://github.com/forta-protocol/forta-bot-examples/blob/master/filter-event-and-function-js/src/large.transfer.event.spec.js) for an example.
+When writing unit tests, you can easily create mock transactions and blocks using the SDK methods `createTransactionEvent` and `createBlockEvent`. See [here](https://github.com/forta-network/forta-bot-examples/blob/master/high-gas-js/src/high.gas.used.spec.js) for an example. Also, you can easily write tests for bots that detect log events or function calls by mocking out the SDK methods `filterLog` and `filterFunction`. See [here](https://github.com/forta-network/forta-bot-examples/blob/master/filter-event-and-function-js/src/large.transfer.event.spec.js) for an example.
 
 ## Advanced testing
 

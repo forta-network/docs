@@ -4,7 +4,7 @@ There are cases where developers need to store sensitive information in their bo
 
 It should be noted that obfuscation is not the same as encryption, and that obfuscation can potentially be reversed with enough effort. With this in mind, we do not recommend storing high-value secrets in your bots i.e. private keys with lots of funds. However, secrets that can be easily replaced can still be obfuscated (e.g. Etherscan API key). The goal is to deter the average person from opening up your bot image and copy/pasting your secrets.
 
-This page will demonstrate how to obfuscate your code using an example Javascript bot. You can find the code for this example [here](https://github.com/forta-protocol/forta-bot-examples/tree/master/hiding-sensitive-data-js).
+This page will demonstrate how to obfuscate your code using an example Javascript bot. You can find the code for this example [here](https://github.com/forta-network/forta-bot-examples/tree/master/hiding-sensitive-data-js).
 
 ## Obfuscating code
 
