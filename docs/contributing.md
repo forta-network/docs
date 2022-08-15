@@ -22,11 +22,11 @@ See a bug or have an idea for improvement? Share it in Discord!
 
 ## Improve the documentation
 
-Documentation is one of the most important parts of the Forta ecosystem as it onboards new community members and helps users when troubleshooting. Going through the tutorials and reporting typos or parts that are confusing is a helpful way to contribute. This documentation site is opensource and [available on Github](https://github.com/forta-protocol/docs). See something missing? You can add to the docs by submitting a pull request against the repository (by forking it).
+Documentation is one of the most important parts of the Forta ecosystem as it onboards new community members and helps users when troubleshooting. Going through the tutorials and reporting typos or parts that are confusing is a helpful way to contribute. This documentation site is opensource and [available on Github](https://github.com/forta-network/docs). See something missing? You can add to the docs by submitting a pull request against the repository (by forking it).
 
 ## Develop the SDK
 
-Are you a skilled Javascript, Typescript or Python developer? You can help build out the Forta SDK and developer tools. The SDK and CLI are opensource and [available on Github](https://github.com/forta-protocol/forta-bot-sdk). Got an idea to improve the developer workflow? You can submit a pull request against the repository (by forking it). Reporting or fixing bugs and making suggestions for code improvements are also fantastic ways to contribute.
+Are you a skilled Javascript, Typescript or Python developer? You can help build out the Forta SDK and developer tools. The SDK and CLI are opensource and [available on Github](https://github.com/forta-network/forta-bot-sdk). Got an idea to improve the developer workflow? You can submit a pull request against the repository (by forking it). Reporting or fixing bugs and making suggestions for code improvements are also fantastic ways to contribute.
 
 ## Share useful libraries
 

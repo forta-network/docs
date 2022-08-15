@@ -12,7 +12,7 @@ Ensure that your bot returns findings in a timely manner as requests will timeou
 
 ## Break down large bots into smaller files
 
-Your bot may be looking for multiple conditions that you could write in a single file. We recommend keeping each condition in its own file. This will make testing your bot easier and keep the code more maintainable. You would then combine all the bots in the top-level entrypoint file (i.e. agent.js). See [here](https://github.com/forta-protocol/forta-bot-examples/tree/master/high-gas-js) for an example.
+Your bot may be looking for multiple conditions that you could write in a single file. We recommend keeping each condition in its own file. This will make testing your bot easier and keep the code more maintainable. You would then combine all the bots in the top-level entrypoint file (i.e. agent.js). See [here](https://github.com/forta-network/forta-bot-examples/tree/master/high-gas-js) for an example.
 
 ## Keep findings lean
 
@@ -26,7 +26,7 @@ You are required to populate the `alertId` field of the `Finding` object. Ideall
 
 You should write and maintain unit tests for your bot. This will ensure a high quality bar and also allow you to test all edge cases in your bot. Include both negative (i.e. when alerts should not be created) and positive (i.e. when alerts should be created) test cases for completeness.
 
-When writing tests that involve log events, you can mock out the `filterLog` SDK method instead of having to fiddle around with event topics and signatures. See [here](https://github.com/forta-protocol/forta-bot-examples/blob/master/filter-event-and-function-js/src/large.transfer.event.spec.js) for an example. You can similarly mock out the `filterFunction` SDK method when writing tests that involve function calls. See [here](https://github.com/forta-protocol/forta-bot-examples/blob/master/filter-event-and-function-js/src/transfer.from.function.spec.js) for an example.
+When writing tests that involve log events, you can mock out the `filterLog` SDK method instead of having to fiddle around with event topics and signatures. See [here](https://github.com/forta-network/forta-bot-examples/blob/master/filter-event-and-function-js/src/large.transfer.event.spec.js) for an example. You can similarly mock out the `filterFunction` SDK method when writing tests that involve function calls. See [here](https://github.com/forta-network/forta-bot-examples/blob/master/filter-event-and-function-js/src/transfer.from.function.spec.js) for an example.
 
 ## Conduct code reviews
 

@@ -2,7 +2,7 @@
 
 Forta currently supports scanning on several chains including Ethereum, Polygon, BSC, Avalanche, Arbitrum, Optimism and Fantom. More chains will inevitably be added in the future, but some bots may need to scan data from chains that are not yet officially supported (could be mainnet or testnet). To achieve this, bots can manually read data from any other chain themselves.
 
-This page will describe how to interact with any blockchain using a Javascript example bot. This example builds on the [long running task pattern](long-running-tasks.md) to query the Rinkeby testnet and find transactions with high gas usage. The complete code for this example can be found [here](https://github.com/forta-protocol/forta-bot-examples/tree/master/querying-other-chains-js).
+This page will describe how to interact with any blockchain using a Javascript example bot. This example builds on the [long running task pattern](long-running-tasks.md) to query the Rinkeby testnet and find transactions with high gas usage. The complete code for this example can be found [here](https://github.com/forta-network/forta-bot-examples/tree/master/querying-other-chains-js).
 
 ## Setting up the RPC endpoint
 
