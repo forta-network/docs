@@ -270,6 +270,44 @@ trace:
 #     url: http://your-node:8545
 ```
 
+### Custom Telemetry (Optional)
+
+You can specify a custom telemetry handler in the `config.yml` file if you would like to receive health reports from your nodes regularly:
+
+```yaml
+telemetry:
+  customUrl: http://my.telemetry.data.handler.url
+```
+
+The forwarded content is a gzipped JSON which is similar to the `forta status --format json` output.
+
+```json
+[
+  ...
+  {
+    "name": "forta.container.forta-scanner.service.agent-pool.agents.total",
+    "status": "ok",
+    "details": "14"
+  },
+  {
+    "name": "forta.container.forta-scanner.service.block-analyzer.event.input.time",
+    "status": "ok",
+    "details": "2022-08-17T10:36:20Z"
+  },
+  {
+    "name": "forta.container.forta-scanner.service.block-analyzer.event.output.time",
+    "status": "ok",
+    "details": "2022-08-17T10:36:20Z"
+  },
+  {
+    "name": "forta.container.forta-scanner.service.block-feed.last-block",
+    "status": "info",
+    "details": "15358230"
+  }
+  ...
+]
+```
+
 ## Register Scan Node
 
 Your scan node has an Ethereum address that makes two main features possible:
