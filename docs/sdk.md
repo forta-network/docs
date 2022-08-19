@@ -268,6 +268,41 @@ const main = async () => {
 
 main();
 ```
+
+## fetchJwtToken
+
+Scan nodes allow bots to make authorized requests to external APIs by using the scan node's identity, without letting the scan node modify the requests. You can the `fetchJwtToken` utility function to generate a jwt token from a scan node.
+
+!!! warning "This method will only generate a token if the bot is running on a scan node"
+    If running a bot locally or in a stand alone enviornment (ie. outside of a scanner node), this method will throw an error. For local testing you can run a local scan node and run your bot on it.
+
+The function signature is `fetchJwtToken(claims, expiresAt)`:
+- `claims` [**required**]:  a json object of any data you would like to include in the data portion of the JWT
+- `expiresAt`:  an optional `DateTime` that sets when the JWT will expire
+
+The returned JWT can be decoded using the [`decodeJwtToken` method](sdk.md#decodeJwtToken).
+
+``` javascript
+
+const handleBlock: HandleBlock = async (blockEvent: BlockEvent) => {
+  const findings: Finding[] = [];
+  const token = await fetchJwtToken(claims: {key: value})
+  return findings;
+}
+```
+## decodeJwtToken
+
+A utility method for decoding Jwt tokens returned from a scan node
+
+``` javascript
+
+const handleBlock: HandleBlock = async (blockEvent: BlockEvent) => {
+  const findings: Finding[] = [];
+  const token = await fetchJwtToken(claims: {key: value})
+  const decodedTokenData = decodeJwtToken(token)
+  return findings;
+}
+```
 ## createBlockEvent
 
 A utility function for writing tests. You can use `createBlockEvent` to easily generate a mock `BlockEvent` object when writing unit tests for your `handleBlock` handler. To better understand usage, see the [Typescript unit test example](https://github.com/forta-network/forta-bot-examples/blob/master/minimum-balance-ts/src/agent.spec.ts).
