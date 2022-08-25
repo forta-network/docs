@@ -235,7 +235,7 @@ print(x)
 
 ## fetchJwtToken
 
-Scan nodes allow bots to make authorized requests to external APIs by using the scan node's identity, without letting the scan node modify the requests. You can the `fetch_Jwt_token` utility function to generate a jwt token from a scan node.
+Scan nodes allow bots to make authorized requests to external APIs by using the scan node's identity, without letting the scan node modify the requests. You can use the `fetch_jwt_token` utility function to generate a jwt token from a scan node.
 
 !!! warning "This method will only generate a token if the bot is running on a scan node"
     If running a bot locally or in a stand alone enviornment (ie. outside of a scanner node), this method will throw an error. For local testing you can run a local scan node and run your bot on it.
