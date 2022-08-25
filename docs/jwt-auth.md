@@ -1,8 +1,3 @@
-["letting bots make authorized requests to external APIs by using the scan node's identity, without letting the scan node modify the requests"]: <>
-
-["The scan node now supports a new endpoint that will give your bot a JWT upon request, that a bot dev can then use to call a self-hosted API that then can verify that"]: <>
-
-["The Bot can call whatever it wants externally - and that external thing has to verify the JWT & verify the smart contract that the scanner is valid"]: <>
 # Bot Authentication for third-party API's
 
 There may be a case where you want your detection bot to make an external call to an API you own. The Forta bot sdk provides the following methods for generating a JWT token which allows bots make authorized requests to external APIs by using the scan node's identity which the detection bot is running on:
