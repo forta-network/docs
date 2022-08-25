@@ -72,6 +72,7 @@ nav:
           - Advanced testing: advanced-testing.md
           - Time series analysis: time-series-analysis.md
           - Deploying Machine Learning Models: deploying-ml-models.md
+          - Jwt auth for third-party apps: jwt-auth.md
       - Useful libraries: useful-libraries.md
       - Javascript/Typescript SDK: sdk.md
       - Python SDK: python.md
