@@ -27,6 +27,9 @@ erigon --private.api.addr=localhost:9090
 !!! note "Ethereum node access"
     Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` HTTP APIs. Note that `trace` is only applicable for Ethereum mainnet.
 
+!!! important "The Merge"
+    After Ethereum merge, your Erigon node will need to be run with a CL (consensus layer) client (a.k.a. beacon node). If you are looking forward to running a Prysm node as your CL client, you can follow this documentation: https://docs.prylabs.network/docs/install/install-with-script
+
 ## Synchronize system time
 
 To produce correct timestamps on the alerts and avoid authorization problems at the time of publishing alerts, **you must ensure at all times that the system time is correct.** If the system time is not correct, your node will fail to publish alerts and may generate no rewards as a result.
