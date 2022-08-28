@@ -244,7 +244,7 @@ The function signature is `fetch_jwt_token(claims, expiresAt)`:
 - `claims` [**required**]:  a dictionary of any data you would like to include in the data portion of the JWT
 - `expiresAt`:  an optional `datetime` that sets when the JWT will expire
 
-The returned JWT can be decoded using the [`decode_jwt_token` method](sdk.md#decode_Jwt_token).
+The returned JWT can be decoded using the [`decode_jwt_token` method](sdk.md#decode_jwt_token).
 
 ## decode_jwt_token
 
