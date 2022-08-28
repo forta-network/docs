@@ -240,13 +240,13 @@ Scan nodes allow bots to make authorized requests to external APIs by using the 
 !!! warning "This method will only generate a token if the bot is running on a scan node"
     If running a bot locally or in a stand alone enviornment (ie. outside of a scanner node), this method will throw an error. For local testing you can run a local scan node and run your bot on it.
 
-The function signature is `fetch_Jwt_token(claims, expiresAt)`:
+The function signature is `fetch_jwt_token(claims, expiresAt)`:
 - `claims` [**required**]:  a dictionary of any data you would like to include in the data portion of the JWT
 - `expiresAt`:  an optional `datetime` that sets when the JWT will expire
 
-The returned JWT can be decoded using the [`decode_Jwt_token` method](sdk.md#decode_Jwt_token).
+The returned JWT can be decoded using the [`decode_jwt_token` method](sdk.md#decode_Jwt_token).
 
-## decode_Jwt_token
+## decode_jwt_token
 
 A utility method for decoding Jwt tokens returned from a scan node
 ## create_block_event

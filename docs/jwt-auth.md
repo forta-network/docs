@@ -5,7 +5,7 @@ There may be a case where you want your detection bot to make an external call t
 - `fetchJwtToken(claims, expiresAt)` See method details [javascript/typescript](sdk.md#fetchjwttoken),[python](python.md#fetchjwttoken)
 - `decodeJwtToken(token)` See method details [javascript/typescript](sdk.md#decodejwttoken),[python](python.md#decodejwttoken)
 
-!!! warning "It is up to the external API to verify the JWT & verify the smart contract in the JWT data"
+!!! warning "It is up to the external API to verify the returned JWT. See an example [here](jwt-auth.md#detection-bot-authentication-example).
 
 ## Detection Bot Authentication
 
@@ -13,25 +13,27 @@ Suppose you own an api service and you want your detection bot to have access to
 
 - `bot-id`: address of your deployed detection bot
 
-Here is an example of a detection bot generating a JWT token on every handleBlock callback:
+Here is an example of a detection bot generating a JWT during its initilization, then decoding the token to a json object or dict:
 
-``` javascript
+``` typescript
 
-const handleBlock: HandleBlock = async (blockEvent: BlockEvent) => {
-  const token = await fetchJwtToken({})
+const initialize: Initialize = async () => {
+  const token = await fetchJwtToken()
   const decodedTokenData = decodeJwtToken(token)
-  return [];
+  
+  ...
 }
 ```
 
 ``` python
-def handle_block(block_event):
-    token = fetch_Jwt_token({}, datetime.now())
-    decoded_token_data = decode_Jwt_token(token)
-    return []
+def initialize(block_event):
+    token = fetch_jwt_token({}, datetime.now())
+    decoded_token_data = decode_jwt_token(token)
+    
+    ...
 ```
 
-In this case `token` would be a JWT token and the `decodedTokenData` will look something like this:
+In this case `token` would be a JWT and `decodedTokenData` will look something like this:
 
 ```
 {
@@ -44,21 +46,23 @@ In this case `token` would be a JWT token and the `decodedTokenData` will look s
 }
 ```
 
-Additional data can also be encoded in the JWT token using the `claims` input:
+Every field above except for `bot-id` is defined in the [JWT standard](https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-token-claims#registered-claims). Additional claims can also be encoded in the JWT token using the first input `claims`, you also specify when the token should expire as the second input:
 
-``` javascript
-const handleBlock: HandleBlock = async (blockEvent: BlockEvent) => {
-  const token = await fetchJwtToken({key: "value"})
+``` typescript
+const initialize: Initialize = async () => {
+  const token = await fetchJwtToken({key: "value"}, Date.now())
   const decodedTokenData = decodeJwtToken(token)
-  return [];
+
+  ...
 }
 ```
 
 ``` python
-def handle_block(block_event):
-    token = fetch_Jwt_token({'key': 'value'}, )
-    decoded_token_data = decode_Jwt_token(token)
-    return []
+def initialize():
+    token = fetch_jwt_token({'key': 'value'})
+    decoded_token_data = decode_jwt_token(token)
+
+    ...
 ```
 
 which will result in a `decodedTokenData` like below:
@@ -71,6 +75,79 @@ which will result in a `decodedTokenData` like below:
   "jti": "qkd5cfad-1884-11ed-a5c9-02420a639308",
   "nbf": 1660119383,
   "sub": "0x556f8BE42f76c01F960f32CB1936D2e0e0Eb3F4D",
-  "key": value
+  "key": "value"
 }
+```
+
+A useful tool for manually decoding tokens is [this web app](https://jwt.io/) provided by auth0.
+
+## Detection Bot Authentication Example
+
+Imagine you have a backend service that exposes an API endpoint that you would like your detection bot be authorized to use. Here is an example express api endpoint that uses a JWT for authentication at the host name of `external-api`. This server has a GET endpoint the returns data from an applications database (this example does not add any additional claims):
+
+``` typescript
+import express, { Request, Response } from "express";
+import { decodeJwtToken } from "forta-agent";
+
+const PATH = `/example-endpoint`;
+const PORT = 3000;
+
+const app = express();
+const requestRouter = express.Router();
+
+interface JwtPayload {
+  botId: string,
+  exp: number,
+  iat: number,
+  jti: string,
+  nbf: number,
+  sub: string
+}
+
+// Define /example-endpoint
+requestRouter.get(PATH, async (request: Request, response: Response) => {
+
+    // Assuming the JWT token is passed in the header "x-access-token". You can choose a different method to pass the JWT
+    const token = req.headers["x-access-token"];
+
+    const data: JwtPayload = decodeJwtToken(token);
+
+    // If you add additional claims such as api keys or secrets your verification logic can use those as well
+    if(data && data.botId === "YOUR_BOT_ID") {
+      // Fetch data from database and return it in response
+    } else {
+      // return 401 error for invalid JWT
+    }
+})
+
+app.use("/", requestRouter)
+
+app.listen(PORT, () => {
+  console.log(`Server starting`)
+})
+
+```
+
+Your bot could call this endpoint like the following (using axios for external calls):
+
+``` typescript
+
+let storedToken: string
+
+const initialize: Initialize = async () => {
+  const token = await fetchJwtToken({key: "value"}, Date.now())
+  storedToken = token;
+}
+
+const handleBlock: HandleBlock = async (blockEvent: BlockEvent) => {
+  
+  ...
+  const response = await axios.get('https://external-api/example-endpoint', {
+  headers: {
+    'x-access-token': storedToken
+  }
+
+  ... // Do other stuff
+}
+
 ```
