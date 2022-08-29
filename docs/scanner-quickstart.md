@@ -285,7 +285,7 @@ All Forta nodes are expected to run with the latest release and the latest list 
 ```yaml
 registry:
   jsonRpc:
-    url: https://polygon-mainnet.g.alchemy.com/v2/AbCdEfgH12jk
+    url: https://polygon-mainnet.g.alchemy.com/v2/<your-alchemy-api-key>
 ```
 
 ### Custom Telemetry (Optional)
