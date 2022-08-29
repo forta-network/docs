@@ -216,7 +216,7 @@ Environment="FORTA_DIR=<your_forta_config_dir>"
 Environment="FORTA_PASSPHRASE=<your_forta_passphrase>"
 ```
 
-### Configure config.yml
+### Configure Chain APIs
 
 In your Forta directory, there now is a `config.yml` file. You must configure that file so that your scan node knows how to get its blockchain data.
 
@@ -271,6 +271,21 @@ trace:
 # jsonRpcProxy:
 #   jsonRpc:
 #     url: http://your-node:8545
+```
+
+### Configure Registry API
+
+There are a set of Forta smart contracts on Polygon, which allows finding out:
+
+- the latest list of bots which a scan node should run
+- the latest Forta node service Docker image release
+
+All Forta nodes are expected to run with the latest release and the latest list of the assigned bots. To be able to read these values, Forta nodes use `https://polygon-rpc.com` by default. Please consider changing this to a free Polygon API with high availability, e.g. Alchemy Polygon API, by adding the following configuration:
+
+```yaml
+registry:
+  jsonRpc:
+    url: https://polygon-mainnet.g.alchemy.com/v2/AbCdEfgH12jk
 ```
 
 ### Custom Telemetry (Optional)
