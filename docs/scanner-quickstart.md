@@ -216,6 +216,9 @@ Environment="FORTA_DIR=<your_forta_config_dir>"
 Environment="FORTA_PASSPHRASE=<your_forta_passphrase>"
 ```
 
+!!! note "Alternative Systemd Override Path"
+    In our previous tests, it was confirmed that this approach works in Ubuntu, Debian, CentOS and Fedora. However, it has been reported by several node operators that it sometimes does not work as expected in some distributions. If you are not able to make this work using the suggested path above, you can try writing to `/lib/systemd/system/forta.service.d/env.conf` instead, as an alternative.
+
 ### Configure Chain APIs
 
 In your Forta directory, there now is a `config.yml` file. You must configure that file so that your scan node knows how to get its blockchain data.
