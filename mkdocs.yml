@@ -86,6 +86,7 @@ nav:
           - Solace Contest (3/1/2022): contest5-solace.md
           - Forta Contest 2 (4/27/2022): contest6-forta.md
           - Forta Contest 3 (6/17/2022): contest7-forta.md
+          - Forta Contest 4 (8/31/2022): contest8-forta.md
   - Scan Node operators:
       - Quickstart: scanner-quickstart.md
       - SLA Calculation: sla.md
