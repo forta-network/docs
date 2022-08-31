@@ -11,7 +11,13 @@ In addition to default public scanning, `forta` has a local mode which is useful
 !!! note "Staking and rewards"
     Local nodes do not require staking and do not generate any rewards. Local mode is made available only to suit your private scanning and testing needs.
 
-To enable, `~/.forta/config.yml` file must specify at least these settings after doing `forta init`:
+Steps to run a local node:
+
+- `forta init`
+- Configure `~/.forta/config.yml`
+- `forta run`
+
+To enable the local mode successfully, please specify at least these settings in the config file:
 
 ```yaml
 # id of the chain to scan
