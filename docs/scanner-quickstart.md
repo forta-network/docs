@@ -34,7 +34,7 @@ erigon --private.api.addr=localhost:9090
         * Nimbus
         * Prysm
         * Teku
-    - For more information on versions of these clients, please see the [Ethereum Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) blog post.
+    - For more information on versions of these clients, please see the [Ethereum Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) blog post. **Make sure to upgrade your clients to these versions before september 6th***
     - You can run consensus layer client on the same machine as the execution layer client (erigon) by default erigon's engine API listens on localhost. If you are running CL client on a different machine than erigon, you will need to configure the erigon node to connect to the CL client by passing `--authrpc.addr 0.0.0.0` and `--authrpc.vhosts <CL host>`.
     
     - For **Erigon node (execution layer client)**
