@@ -38,6 +38,8 @@ Deposit FORT to get active shares.
 
     - **amount:** FORT amount, in wei. This should be same as the amount you want to stake (deposit) in the next step. For a new node, input at least the minimum `500000000000000000000` (500 FORT in wei). FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![token approve](stake-images/2-token-approve.png)
 
+    
+
 4. Click _Write_ and approve the transaction in your wallet.
 
 #### Stake FORT
@@ -56,6 +58,12 @@ You can stake only on the registered scan nodes.
 
     - **stakeValue:** Amount of FORT to stake. For a new node, input at least the minimum `500000000000000000000` (500 FORT in wei). If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![stake](stake-images/3-stake.png)
 
+    !!! note "Staking over max"
+        The current maximum stake is 3000 FORT. If you try to stake more than that, the contract won't accept the tokens. For example:
+
+        - If you deposit 4000 FORT in a transaction, only 3000 FORT will be transferred to the staking contract.
+        
+        - If you deposit 3000 FORT in a transaction, then deposit 400 FORT in another one, the 2nd transaction won't fail, but 0 FORT will be transferred. 
 
 4. Click _Write_ and approve the transaction in your wallet.
 
@@ -69,7 +77,7 @@ When this action is executed (`initiateWithdrawal()`), active stake becomes inac
 After _staking delay_ is over, you will be able to `withdraw()` FORT, as described in the next section.
 
 !!! note "Permissions"
-    Only active share holders can init withdrawal. This means you have earned 500 FORT or more in a week during Fortification Phase, thus received staking shares.
+    Only active share holders can init withdrawal.
 
 ![staking init withdrawal](stake-images/staking-init-withdrawal.png)
 
