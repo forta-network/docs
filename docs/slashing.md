@@ -28,7 +28,7 @@ In both cases, adequate documentation of the processes will be published to help
 
 # Slashing Proposal Process
 
-[Process](slashing_process.png)
+![Process](slashing_process.png)
 
 ##  Roles
 
