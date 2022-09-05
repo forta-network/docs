@@ -27,7 +27,7 @@ const initialize: Initialize = async () => {
 
 ``` python
 def initialize(block_event):
-    token = fetch_jwt_token({}, datetime.now())
+    token = fetch_jwt_token({})
     decoded_token_data = decode_jwt_token(token)
     
     ...
@@ -95,13 +95,9 @@ const PORT = 3000;
 const app = express();
 const requestRouter = express.Router();
 
-interface JwtPayload {
-  botId: string,
-  exp: number,
-  iat: number,
-  jti: string,
-  nbf: number,
-  sub: string
+interface DecodedJwt {
+  header: any,
+  payload: any
 }
 
 // Define /example-endpoint
@@ -110,10 +106,11 @@ requestRouter.get(PATH, async (request: Request, response: Response) => {
     // Assuming the JWT token is passed in the header "x-access-token". You can choose a different method to pass the JWT
     const token = req.headers["x-access-token"];
 
-    const data: JwtPayload = decodeJwtToken(token);
+    const claims: DecodedJwt = decodeJwtToken(token).payload;
+    const isValidJwt: boolean = await verifyJwt(token);
 
     // If you add additional claims such as api keys or secrets your verification logic can use those as well
-    if(data && data.botId === "YOUR_BOT_ID") {
+    if(isValidJwt) {
       // Fetch data from database and return it in response
     } else {
       // return 401 error for invalid JWT
