@@ -2,8 +2,9 @@
 
 There may be a case where you want your detection bot to make an external call to an API you own. The Forta bot sdk provides the following methods for generating a JWT token which allows bots make authorized requests to external APIs by using the scan node's identity which the detection bot is running on:
 
-- `fetchJwtToken(claims, expiresAt)` See method details [javascript/typescript](sdk.md#fetchjwttoken),[python](python.md#fetchjwttoken)
-- `decodeJwtToken(token)` See method details [javascript/typescript](sdk.md#decodejwttoken),[python](python.md#decodejwttoken)
+- `fetchJwt(claims, expiresAt)` See method details [javascript/typescript](sdk.md#fetchjwt),[python](python.md#fetchjwt)
+- `decodeJwt(token)` See method details [javascript/typescript](sdk.md#decodejwt),[python](python.md#decodejwt)
+- `verifyJwt(token)` **only javascript/typscript support**  See method details [javascript/typescript](sdk.md#verifyjwt)
 
 !!! warning "It is up to the external API to verify the returned JWT. See an example [here](jwt-auth.md#detection-bot-authentication-example).
 
@@ -83,7 +84,7 @@ A useful tool for manually decoding tokens is [this web app](https://jwt.io/) pr
 
 ## Detection Bot Authentication Example
 
-Imagine you have a backend service that exposes an API endpoint that you would like your detection bot be authorized to use. Here is an example express api endpoint that uses a JWT for authentication at the host name of `external-api`. This server has a GET endpoint the returns data from an applications database (this example does not add any additional claims):
+Imagine you have a backend service that exposes an API endpoint that you would like your detection bot to be authorized to use. Here is an example express api endpoint that uses a JWT for authentication at the host name of `external-api`. This server has a GET endpoint the returns data from an applications database (this example does not add any additional claims):
 
 ``` typescript
 import express, { Request, Response } from "express";
@@ -100,18 +101,17 @@ interface DecodedJwt {
   payload: any
 }
 
-// Define /example-endpoint
 requestRouter.get(PATH, async (request: Request, response: Response) => {
 
     // Assuming the JWT token is passed in the header "x-access-token". You can choose a different method to pass the JWT
     const token = req.headers["x-access-token"];
 
-    const claims: DecodedJwt = decodeJwtToken(token).payload;
     const isValidJwt: boolean = await verifyJwt(token);
 
     // If you add additional claims such as api keys or secrets your verification logic can use those as well
     if(isValidJwt) {
       // Fetch data from database and return it in response
+      ...
     } else {
       // return 401 error for invalid JWT
     }
