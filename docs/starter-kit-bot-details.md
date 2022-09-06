@@ -42,7 +42,7 @@ The bot listens to the [Chainalysis Sanction Oracle Contract](https://go.chainal
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
-| Evidence of Phishing Agent | [Stats URL](https://explorer.forta.network/agent/0xd9fe61cfe875470b80318a96cc0a94ba3adbe1eb4a14827fa018f14925e7da64){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/ice-phishing-detection-bot){:target="_blank"} | Ethereum Mainnet |
+| Evidence of Phishing Agent | [Stats URL](https://explorer.forta.network/agent/0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/ice-phishing-detection-bot){:target="_blank"} | Ethereum Mainnet |
 
 Users approving token transfers to an address or contract may be a behavior indicative of an ice phishing attack.
 
