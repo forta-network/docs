@@ -93,6 +93,10 @@ nav:
       - SLA API: sla-api.md
       - Stake on your Scan Node: stake-on-scan-node.md
       - Local mode: scanner-local-mode.md
+  - Stake Slashing:
+      - Intro and current parameters: slashing-intro-params.md
+      - Proccess workflow: slashing-process.md
+      - Creating a Slash Proposal: slashing-creating-proposal.md
   - API integration:
       - API access: api.md
       - GraphQL API reference: forta-api-reference/index.html
