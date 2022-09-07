@@ -34,7 +34,7 @@ SLA = minimum(
 )
 ```
 
-SLA is calculated per minute.  Nodes are rewarded for each minute they reliably meet the requirements of the network.
+SLA is calculated per hour. Nodes are rewarded for each hour they reliably meet the requirements of the network.
 
 ### Resource Score
 
@@ -55,10 +55,10 @@ Scanners must meet the requirements of the Scan Node.  All of the following requ
 
 Scanners must evaluate recent blocks.  Recent blocks are continuously evaluated by comparing the latest block analyzed with the 75th percentile block for scanners registered for the same chain.  The block used for calculations is the **maximum** block sent for the given minute.  This means it will consider the last block analyzed in the minute. 
 
-The Data Quality Score decreases from 1 to 0 until a node's latest block is 10 minutes behind the 75th percentile.
+The minute score decreases from 1 to 0 until a node's latest block is 10 minutes behind the 75th percentile. The hourly Data Quality Score is derived from the reported minutes by taking the average of all minute scores.
 
 !!! note "Exceeding the Expected Block"
-    It is possible to exceed the 75th percentile, but if it FAR exceeds, it can be because the scanner is pointed to the wrong chain or other issue.  Full credit is given until a block is more than 10 minutes ahead of the 75th percentile, then the score drops to 0.
+    It is possible to exceed the 75th percentile, but if it **far** exceeds, it can be because the scanner is pointed to the wrong chain or other issue.  Full credit is given until a block is more than 10 minutes ahead of the 75th percentile, then the score drops to 0.
 
 ```
 # Latest Block is Ahead of Expected Block
@@ -76,9 +76,11 @@ return 1 - ( (expected block - latest block) / threshold )
 
 Scanners must send data at regular intervals so that the network can deliver timely alerts.  The nodes send a batch file to the Forta API every 15 seconds.  This means there should be 4 batches per minute. 
 
-The uptime score is the percent difference between the number of batches and expected number of batches.  Due to timing, this count can flucutate between 3 and 5, but this does not impact the SLA very much, because the score is not weighted as high as others.  
+The minute score of uptime is the percent difference between the number of batches and expected number of batches.  Due to timing and alert rate, this count can flucutate between 0 and 5, but this does not impact the SLA very much, because the score is not weighted as high as others.
 
-However, if data is not being sent at all, all other scores will be impacted as well.  
+If data is not being sent at all, all other scores will be impacted as well.
+
+Hourly uptime is measured by adding up all of the minute scores within an hour. While idle scan nodes are expected to report at a lower rate, the bot-assigned nodes are expected to report every minute. In both situations, the uptime score derived from the sum falls proportionally as the total score from reported minutes approach zero.
 
 ```
 uptime score = 1 - ( abs ( number of batches - 4 ) ) / 4 )
@@ -155,7 +157,7 @@ Score is **0**
 
 Subscores
 
-- Resouce score is 1  (not required for polygon)
+- Resouce score is 1  (because trace is not required for polygon)
 - Data Quality Score is 1
 - Uptime score is 1
 
@@ -171,27 +173,3 @@ SLA = minimum(
 ```
 
 Score is **1**
-
-### Node sends 2 batches per minute (instead of 4)
-
-!!! note "Irregular Batch Rate"
-    Generally not sending regular batches will also impact other scores.  If somehow only the number of batches is impacted but nothing else, the score is not impacted very much (as in this example).
-
-Subscores
-
-- Resouce score is 1
-- Data Quality Score is 1 
-- Uptime score is 0.5
-
-Calculation 
-```
-SLA = minimum( 
-    1, 
-    weighted_average( 
-        5 * 1,
-        1 * 0.5
-    ) 
-)
-```
-
-Score is **0.916666667**
