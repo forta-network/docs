@@ -19,8 +19,8 @@ Here is an example of a detection bot generating a JWT during its initilization,
 ``` typescript
 
 const initialize: Initialize = async () => {
-  const token = await fetchJwtToken()
-  const decodedTokenData = decodeJwtToken(token)
+  const token = await fetchJwt()
+  const decodedTokenData = decodeJwt(token)
   
   ...
 }
@@ -28,8 +28,8 @@ const initialize: Initialize = async () => {
 
 ``` python
 def initialize(block_event):
-    token = fetch_jwt_token({})
-    decoded_token_data = decode_jwt_token(token)
+    token = fetch_jwt({})
+    decoded_token_data = decode_jwt(token)
     
     ...
 ```
@@ -51,8 +51,8 @@ Every field above except for `bot-id` is defined in the [JWT standard](https://a
 
 ``` typescript
 const initialize: Initialize = async () => {
-  const token = await fetchJwtToken({key: "value"}, Date.now())
-  const decodedTokenData = decodeJwtToken(token)
+  const token = await fetchJwt({key: "value"}, Date.now())
+  const decodedTokenData = decodeJwt(token)
 
   ...
 }
@@ -60,8 +60,8 @@ const initialize: Initialize = async () => {
 
 ``` python
 def initialize():
-    token = fetch_jwt_token({'key': 'value'})
-    decoded_token_data = decode_jwt_token(token)
+    token = fetch_jwt({'key': 'value'})
+    decoded_token_data = decode_jwt(token)
 
     ...
 ```
@@ -88,7 +88,7 @@ Imagine you have a backend service that exposes an API endpoint that you would l
 
 ``` typescript
 import express, { Request, Response } from "express";
-import { decodeJwtToken } from "forta-agent";
+import { verifyJwt } from "forta-agent";
 
 const PATH = `/example-endpoint`;
 const PORT = 3000;
@@ -132,7 +132,7 @@ Your bot could call this endpoint like the following (using axios for external c
 let storedToken: string
 
 const initialize: Initialize = async () => {
-  const token = await fetchJwtToken({key: "value"}, Date.now())
+  const token = await fetchJwt({key: "value"}, Date.now())
   storedToken = token;
 }
 
