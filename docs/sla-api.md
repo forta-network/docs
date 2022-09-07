@@ -77,7 +77,7 @@ Fields
     
 ### Subscores
 
-From minutes:
+#### From minutes (affects hour)
 
   - `batch_score` - 0-1 score for `batch_count` vs `expected_batch_count`
     - Score is proportional (4 = 1, 3 = 0.75, 2 = 0.50, 1 = 0.25, 0 = 0)
@@ -86,6 +86,15 @@ From minutes:
   - `latest_block` - 0-1 score for `latest_block` vs `expected_latest_block`
     - Full credit for being at or above `expected_latest_block` (within 100 blocks)
     - Decreases from 1 to 0 if `latest_block` is below `expected_latest_block`, until 100 blocks behind (score = 0)
+
+#### From hour (affects final score)
+
+  - `reporting_success` - 0-1 score for total `batch_score` within the hour vs. `expected_(min|max)_reporting_success`.
+    - Score is proportional between `[0,min]`. Min is 59 for bot-assigned nodes and 3 for idle nodes.
+    - The sum does not exceed 60 in an hour.
+  - `input_performance` - 0-1 score for average `latest_block` score within the hour vs. `expected_input_performance` (i.e. 1).
+    - The average is calculated using reported minutes.
+    - An idle and a bot-assigned node can have the same score although they report at different rates.
 
 
 Example Response
