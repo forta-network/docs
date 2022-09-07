@@ -51,7 +51,7 @@ Every field above except for `bot-id` is defined in the [JWT standard](https://a
 
 ``` typescript
 const initialize: Initialize = async () => {
-  const token = await fetchJwt({key: "value"}, Date.now())
+  const token = await fetchJwt({key: "value"}, new Date(Date.now() + 5000 /*5 seconds*/))
   const decodedTokenData = decodeJwt(token)
 
   ...
