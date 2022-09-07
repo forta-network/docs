@@ -40,7 +40,6 @@ Fields
   - `scannerId` - ID of scanner requested
   - `startTime` - Start time considered for SLA calculations
   - `endTime` - End time considered for SLA calculations
-  - `scoreFormula` - Short explanation about how the score is calculated
   - `statistics` - Score statistics for the period 
     - `min` - Minimum hour-level score for the period 
     - `max` - Maximum hour-level score for the period 
