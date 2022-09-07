@@ -4,9 +4,9 @@ There may be a case where you want your detection bot to make an external call t
 
 - `fetchJwt(claims, expiresAt)` See method details [javascript/typescript](sdk.md#fetchjwt),[python](python.md#fetchjwt)
 - `decodeJwt(token)` See method details [javascript/typescript](sdk.md#decodejwt),[python](python.md#decodejwt)
-- `verifyJwt(token)` **only javascript/typscript support**  See method details [javascript/typescript](sdk.md#verifyjwt)
+- `verifyJwt(token)` See method details [javascript/typescript](sdk.md#verifyjwt),[python](python.md#verifyjwt)
 
-!!! warning "It is up to the external API to verify the returned JWT. See an example [here](jwt-auth.md#detection-bot-authentication-example).
+!!! warning "It is up to the external API to verify the returned JWT. See an example [here](jwt-auth.md#detection-bot-authentication-example)."
 
 ## Detection Bot Authentication
 
