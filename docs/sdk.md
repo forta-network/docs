@@ -277,6 +277,7 @@ Scan nodes allow bots to make authorized requests to external APIs by using the 
     If running a bot locally or in a stand alone enviornment (ie. outside of a scanner node), this method will return a mock value.
 
 The function signature is `fetchJwt(claims, expiresAt)`:
+
 - `claims`:  a json object of any additional claims you would like to include in the payload of the JWT
 - `expiresAt`:  an optional `Date` object that sets when the JWT will expire
 

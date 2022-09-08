@@ -132,7 +132,7 @@ Your bot could call this endpoint like the following (using axios for external c
 let storedToken: string
 
 const initialize: Initialize = async () => {
-  const token = await fetchJwt({key: "value"}, Date.now())
+  const token = await fetchJwt({key: "value"}, new Date(Date.now() + 5000 /* 5 seconds */))
   storedToken = token;
 }
 
