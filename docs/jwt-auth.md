@@ -2,9 +2,9 @@
 
 There may be a case where you want your detection bot to make an external call to an API you own. The Forta bot sdk provides the following methods for generating a JWT token which allows bots make authorized requests to external APIs by using the scan node's identity which the detection bot is running on:
 
-- `fetchJwt(claims, expiresAt)` See method details [javascript/typescript](sdk.md#fetchjwt),[python](python.md#fetchjwt)
-- `decodeJwt(token)` See method details [javascript/typescript](sdk.md#decodejwt),[python](python.md#decodejwt)
-- `verifyJwt(token)` See method details [javascript/typescript](sdk.md#verifyjwt),[python](python.md#verifyjwt)
+- `fetchJwt(claims, expiresAt)` See method details [javascript/typescript](sdk.md#fetchjwt),[python](python.md#fetch_jwt)
+- `decodeJwt(token)` See method details [javascript/typescript](sdk.md#decodejwt),[python](python.md#decode_jwt)
+- `verifyJwt(token)` See method details [javascript/typescript](sdk.md#verifyjwt),[python](python.md#verify_jwt)
 
 !!! warning "It is up to the external API to verify the returned JWT. See an example [here](jwt-auth.md#detection-bot-authentication-example)."
 
@@ -132,7 +132,7 @@ Your bot could call this endpoint like the following (using axios for external c
 let storedToken: string
 
 const initialize: Initialize = async () => {
-  const token = await fetchJwt({key: "value"}, Date.now())
+  const token = await fetchJwt({key: "value"}, new Date(Date.now() + 5000 /* 5 seconds */))
   storedToken = token;
 }
 
