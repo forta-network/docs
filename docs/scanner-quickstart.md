@@ -334,6 +334,34 @@ The forwarded content is a gzipped JSON which is similar to the `forta status --
 ]
 ```
 
+### Auto-Updates (Optional)
+
+When you install `forta`, set up your node and run it, the CLI starts new service containers which contain the actual work Forta nodes need to do. There is a dynamic updater which is able to follow the "scanner version" smart contract and trigger a node auto-update to get these service containers replaced with the latest version.
+
+Let's assume that you have installed `forta` v0.5.0 through APT or YUM. When you configure and run your node, what happens next is:
+
+- CLI starts the updater with the v0.5.0 container image (bootstrap version)
+- Updater detects from the smart contract that v0.5.1 is the latest
+- CLI learns this, stops the updater, downloads the v0.5.1 image
+- CLI starts the updater with the v0.5.1 container image
+- CLI starts the supervisor with the v0.5.1 container image
+- Supervisor starts new containers on the same host
+
+There is a linear 24h release schedule mechanism which allows each node to auto-update at different moments. To receive the updates immediately whenever there is a new release, it is sufficient to restart `forta` and it will follow the steps described above.
+
+!!! note "Manual Update"
+    You need manual update only if you need to receive the latest CLI features. As in the above example, CLI of an older version is able to successfully run the service container image of the newer version.
+
+To disable the auto-update behavior, you can add this to your config:
+
+```yaml
+autoUpdate:
+  disable: true
+```
+
+!!! warning "Disabling Auto-Updates"
+    Disabling this feature is strongly discouraged. This feature is designed to make updates more comfortable for you and not following the latest version can cause loss of rewards.
+
 ## Register Scan Node
 
 Your scan node has an Ethereum address that makes two main features possible:
