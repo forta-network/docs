@@ -350,7 +350,7 @@ Let's assume that you have installed `forta` v0.5.0 through APT or YUM. When you
 There is a linear 24h release schedule mechanism which allows each node to auto-update at different moments. To receive the updates immediately whenever there is a new release, it is sufficient to restart `forta` and it will follow the steps described above.
 
 !!! note "Manual Update"
-    You need manual update only if you need to receive the latest CLI features. As in the above example, CLI of an older version is able to successfully run the service container image of the newer version.
+    You need manual update through APT or YUM only if you need to receive the latest CLI features. As in the above example, CLI of an older version is able to successfully run the service container image of the newer version.
 
 To disable the auto-update behavior, you can add this to your config:
 
