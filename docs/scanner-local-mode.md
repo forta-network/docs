@@ -13,9 +13,11 @@ In addition to default public scanning, `forta` has a local mode which is useful
 
 Steps to run a local node:
 
-- `forta init`
+- `forta init --passphrase <passphrase>`
 - Configure `~/.forta/config.yml`
-- `forta run`
+- `forta run --passphrase <passphrase>`
+
+You can provide the passphrase by doing `export FORTA_PASSPHRASE=<passphrase>` as an alternative method to the `--passphrase` flag. If you are setting up your node just for testing and development, you can choose a weak and convenient passphrase.
 
 To enable the local mode successfully, please specify at least these settings in the config file:
 
@@ -42,6 +44,8 @@ localMode:
     - my-local-test-bot-image-reference
     - disco.forta.network/bafybeie5xvbbvhlrollwfb3xd4qxs5qw6rhk52ukeq2zbek6tetryqdn5a # remote image
 ```
+
+If `forta` requires trace API to be specified for the configured `chainId` (e.g. Ethereum Mainnet, Fantom) and you don't want to use a trace API for now, you can change the `chainId` to something random like `90909`.
 
 ## Specify a block range
 
