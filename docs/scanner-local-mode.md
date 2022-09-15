@@ -88,6 +88,9 @@ To suit these kind of purposes, we defined [Forta Webhook Specification](https:/
 !!! note "About paths"
     The paths defined in the webhook specification is only for making the definitions easier. Scan node configuration requires the complete webhook URL and ignores all paths defined in the specification.
 
+!!! important "Convert to Discord Webhooks"
+    If you need to convert the webhook requests to Discord webhook requests, make sure you check out this [awesome converter](https://github.com/lidofinance/forta-discord) by Lido Finance. 
+
 ## Simulate JSON-RPC throttling
 
 If you would like to observe how your bots are doing under strict JSON-RPC rate limiting, you can override the token bucket algorithm settings from:
