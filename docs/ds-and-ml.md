@@ -35,6 +35,7 @@ Do you see any missing resource the community can use below? Contribute to [the 
 
 ### Labels
 
+* [Forta Labelled datasets](https://github.com/forta-network/labelled-datasets) - Web3 threat related labelled datasets for data analysis and machine learning developments.
 * [Luabase address tags + labels](https://luabase.notion.site/Tags-521d6955dc1e472ba37dba71569666a3) - Addresses with etherscan labels `exploit`, `heist`, and `phish-hack` are available.
 * [EtherScamDB](https://github.com/CryptoScamDB/EtherScamDB) - Open-source db that keeps track of ethereum scams and involved addresses.
 * [Forta API](https://github.com/forta-network/forta-api) - Query critical alerts via the Forta API and use them as [weak labels](https://www.thoughtworks.com/en-us/insights/blog/data-science-and-analytics/weak-labeling).
