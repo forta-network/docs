@@ -1,3 +1,6 @@
+!!! important "Staking on the App"
+    While you can use this document to find helpful details about staking, **please prefer staking on [Forta App](https://app.forta.network/staking) for a smoother experience**.
+
 # Staking on Scan Nodes
 
 To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf. Staking occurs on Polygon, so if you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
