@@ -3,7 +3,7 @@
 
 # Staking on Scan Nodes
 
-To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf. Staking occurs on Polygon, so if you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
+To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf. Staking occurs on Polygon mainnet, so if you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
 
 !!! important "Minimum Stake Threshold"
     This value is subject to change and can be different per chain in the future.
@@ -26,6 +26,21 @@ Again, please keep in mind that **the values and parameters are subject to chang
 Deposit FORT to get active shares.
 
 ![staking deposit](stake-images/staking-deposit.png)
+
+### Staking using Forta App (recommended)
+
+This section will describe how to stake your FORT on scan nodes through the new Forta App UI.
+
+1. Go to https://app.forta.network/scan-node/**[your_scan_node_address]** replacing “[your_scan_node_address]” with the scan node that you want to stake on
+
+2. Click on “Stake FORT”
+    ![Click on "Stake Fort"](stake-node1.png)
+
+3. Insert the amount FORT you want to stake on the scan node and click on “Approve tokens”
+    ![Enter FORT amount](stake-node2.png)
+
+4. Confirm the transaction
+    ![Confirm transaction](stake-node3.png)
 
 ### Staking using Polyscan
 
