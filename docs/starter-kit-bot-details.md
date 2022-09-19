@@ -10,7 +10,7 @@
 |----------|-----------|------------------|------------------|
 | Alert Combiner | [Stats URL](https://explorer.forta.network/agent/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/alert-combiner-py){:target="_blank"} | All |
 
-Combines past alerts under a common address to emit a high precision alert.
+Combines past alerts under a common address from a variety of underlying bots to emit a high precision alert. It does so by mapping each alert to the four attack stages (Funding, Preparation, Exploitaiton and Money Laundering) applying a variety of heuristics (e.g. an alert has to exist for each of the four stages) to emit an alert.
 
 ## Anomalous Transaction Volume
 
