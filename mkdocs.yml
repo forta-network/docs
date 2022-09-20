@@ -1,10 +1,10 @@
 site_name: Forta Docs
 
 nav:
-  - <strong>Subscribe to Alerts</strong>: 
-    - Receive Forta Alerts: receive-forta-alerts.md
+  - <strong>Receive Forta Alerts</strong>: 
+    - Getting started: receive-forta-alerts.md
     - Threat Detection Kits:
-      - Get started: threat-detection-kits.md
+      - Getting started: threat-detection-kits.md
       - Bridge Threat Detection Kit: bridge-starter-kit.md
       - DeFi Threat Detection Kit: defi-starter-kit.md
       - Governance Threat Detection Kit: governance-starter-kit.md
@@ -16,8 +16,6 @@ nav:
       - GraphQL API reference: forta-api-reference/index.html
       - Example use cases: api-example-use-cases.md
       - Example queries & tutorials: api-examples-tutorials.md
-  - Threat Detection Kits: threat-detection-kits.md
-  - API Integration: forta-api-reference/index.html
   - <strong>Build Detection Bots</strong>: 
     - Getting started: getting-started.md
     - Build your first detection bot:
@@ -45,7 +43,7 @@ nav:
     - Python SDK: python.md
     - CLI commands: cli.md
     - forta.config.json: config.md
-    - Staking on detection bots: stake-on-detection-bot.md
+    - Stake on your Bot: stake-on-detection-bot.md
     - Bot developer contests:
         - Compound Contest (10/20/2021): contest1-compound.md
         - Aave Contest (11/3/2021): contest2-aave.md
@@ -55,17 +53,12 @@ nav:
         - Forta Contest 2 (4/27/2022): contest6-forta.md
         - Forta Contest 3 (6/17/2022): contest7-forta.md
         - Forta Contest 4 (8/31/2022): contest8-forta.md
-  - Getting started: getting-started.md
-  - Bot Developer Contests: contest8-forta.md
-  - Stake on your Bot: stake-on-detection-bot.md
   - <strong>Run a Scan Node</strong>: 
     - Quickstart: scanner-quickstart.md
     - SLA Calculation: sla.md
     - SLA API: sla-api.md
     - Stake on your Scan Node: stake-on-scan-node.md
     - Local mode: scanner-local-mode.md
-  - Quickstart: scanner-quickstart.md
-  - Stake on your Scan Node: stake-on-scan-node.md
   - <strong>About Forta</strong>: 
     - What is Forta: what-is-forta.md
     - Core concepts: concepts.md
@@ -117,12 +110,6 @@ nav:
             - Forta: contracts/token/Forta.md
             - FortaBridgedPolygon: contracts/token/FortaBridgedPolygon.md
             - FortaCommon: contracts/token/FortaCommon.md
-  - FORT token: fort-token.md
-  - Machine Learning: ds-and-ml.md
-  - Security: security.md
-  - FAQ: faq.md
-  - Getting help: help.md
-  - How to contribute: contributing.md
 
 theme:
   name: material
