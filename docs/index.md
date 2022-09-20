@@ -7,7 +7,7 @@ hide:
 
 # Welcome to the Forta Docs!
 
-!!! note "[Detection Bot Development contest](contest8-forta.md) now live!"
+!!! danger "[Detection Bot Development contest](contest8-forta.md) now live!"
 
 <div class="grid cards" markdown>
 
