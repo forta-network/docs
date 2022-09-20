@@ -2,9 +2,11 @@
 
 Forta comprises a decentralized network of independent node operators that scan all transactions and block-by-block state changes for threats and anomalies. When an issue is detected, scan nodes send alerts to subscribers, which enables them to take action.
 
-The scripts - pieces of logic - that tell the network what to watch are called **Detection Bots**. 
+A **Detection Bot** analyzes all transactions and blocks from a network, executes custom logic, then emits information to Forta in the form of **Alerts**.
 
 The network features both generic bots which monitor the broad ecosystem, as well as customized bots built for specific protocols. Please find below the best option for your case:
+
+# Subscribe to existing Forta Detection Bots
 
 ### Threat Detection Kits
 
