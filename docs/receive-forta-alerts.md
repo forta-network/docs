@@ -53,6 +53,8 @@ Create and deploy a Detection Bot through a UI, without the need for any coding
 
 Get connected to community members and development partners who have vast experience writing Detection Bots that can develop taylormade bots based on your requirements.
 
+- [andy@forta.org](mailto:andy@forta.org)
+
 # Integrate with the Forta API
 
 Query Forta’s GraphQL API to get access to alerts and blockchain projects data.
