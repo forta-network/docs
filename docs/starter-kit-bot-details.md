@@ -28,6 +28,15 @@ This bot utilizes the [Isolation Forest](https://scikit-learn.org/stable/modules
 
 This bot detects successful transactions that have one or more failed internal transactions.
 
+## Asset Drained
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Asset Drained Bot | [Stats URL](https://explorer.forta.network/bot/0xe4a8660b5d79c0c64ac6bfd3b9871b77c98eaaa464aa555c00635e9d8b33f77f){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/asset-drained){:target="_blank"} | Ethereum Mainnet, BSC, Fantom, Avalanche |
+
+This bot detects when digital assets are fully drained from a contract.
+
+
 ## Chainalysis Sanctioned Addresses
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
