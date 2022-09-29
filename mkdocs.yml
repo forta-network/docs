@@ -3,14 +3,9 @@ site_name: Forta Docs
 nav:
   - <strong>Receive Forta Alerts</strong>: 
     - Getting started: receive-forta-alerts.md
-    - Threat Detection Kits:
-      - Getting started: threat-detection-kits.md
-      - Bridge Threat Detection Kit: bridge-starter-kit.md
-      - DeFi Threat Detection Kit: defi-starter-kit.md
-      - Governance Threat Detection Kit: governance-starter-kit.md
-      - NFT Threat Detection Kit: nft-starter-kit.md
-      - Stablecoin Threat Detection Kit: stablecoin-starter-kit.md
-      - Threat Detection Kit Bot Details: starter-kit-bot-details.md
+    - Curated Feeds:
+      - Attack Detector Feed: attack-detector-feed.md
+      - Suspicious Events Feed: suspicious-events-feed.md
     - API Integration: 
       - API Access: api.md
       - GraphQL API reference: forta-api-reference/index.html
@@ -24,9 +19,9 @@ nav:
         - 3) Deploying your bot: deploying.md
         - 4) Subscribing to alerts: subscribing.md
         - 5) Maintaining your bot: maintaining.md
-    - Integrating with Hardhat: hardhat.md
+        - Best practices: best-practices.md
+        - Video tutorials: tutorials.md
     - Detection bot wizard: wizard.md
-    - Best practices: best-practices.md
     - Bot development patterns:
         - Hiding sensitive data: sensitive-data.md
         - Private alerts: private-alerts.md
@@ -38,11 +33,12 @@ nav:
         - Time series analysis: time-series-analysis.md
         - Deploying Machine Learning Models: deploying-ml-models.md
         - Jwt auth for third-party apps: jwt-auth.md
-    - Useful libraries: useful-libraries.md
-    - Javascript/Typescript SDK: sdk.md
-    - Python SDK: python.md
-    - CLI commands: cli.md
-    - forta.config.json: config.md
+    - Tools:
+      - Useful libraries: useful-libraries.md
+      - Javascript/Typescript SDK: sdk.md
+      - Python SDK: python.md
+      - CLI commands: cli.md
+      - forta.config.json: config.md
     - Stake on your Bot: stake-on-detection-bot.md
     - Bot developer contests:
         - Compound Contest (10/20/2021): contest1-compound.md
@@ -53,6 +49,7 @@ nav:
         - Forta Contest 2 (4/27/2022): contest6-forta.md
         - Forta Contest 3 (6/17/2022): contest7-forta.md
         - Forta Contest 4 (8/31/2022): contest8-forta.md
+    - Integrating with Hardhat: hardhat.md
   - <strong>Run a Scan Node</strong>: 
     - Quickstart: scanner-quickstart.md
     - SLA Calculation: sla.md
@@ -61,22 +58,9 @@ nav:
     - Local mode: scanner-local-mode.md
   - <strong>About Forta</strong>: 
     - What is Forta: what-is-forta.md
-    - Core concepts: concepts.md
     - FORT token: fort-token.md
-    - Machine Learning: ds-and-ml.md
-    - How to contribute: contributing.md
-    - FAQ: faq.md
-    - Getting help: help.md
-    - How Forta works: how-forta-works.md
     - Governance: governance.md
-    - Video tutorials: tutorials.md
-    - Security:
-      - Security Overview: security.md
-      - Design: security-design.md
-      - Development: security-develop.md
-      - Deployment: security-deploy.md
-      - Testing and Review: security-testing.md
-      - Maintenance: security-maintain.md
+    - Machine Learning: ds-and-ml.md
     - Smart contracts:
       - Intro & Addresses: smart-contracts.md
       - Components:
@@ -110,6 +94,16 @@ nav:
             - Forta: contracts/token/Forta.md
             - FortaBridgedPolygon: contracts/token/FortaBridgedPolygon.md
             - FortaCommon: contracts/token/FortaCommon.md
+    - Security:
+      - Security Overview: security.md
+      - Design: security-design.md
+      - Development: security-develop.md
+      - Deployment: security-deploy.md
+      - Testing and Review: security-testing.md
+      - Maintenance: security-maintain.md
+    - How to contribute: contributing.md
+    - FAQ: faq.md
+    
 
 theme:
   name: material

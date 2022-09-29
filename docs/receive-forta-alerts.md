@@ -6,21 +6,24 @@ A **Detection Bot** analyzes all transactions and blocks from a network, execute
 
 The network features both generic bots which monitor the broad ecosystem, as well as customized bots built for specific protocols. Please find below the best option for your case:
 
-# Subscribe to existing Forta Detection Bots
+![Types of Coverage](receive-forta-alerts1.png)
 
-### Threat Detection Kits
+## Subscribe to existing Forta Detection Bots
+
+### Attack Detector Feed
+
+A Detection Bot that combines past alerts under a common address to emit a high precision alert of an attack.
+
+- [Learn More](starter-kit-bot-details.md)
+- [Subscribe](https://app.forta.network/)
+
+### Suspicious Events Feed
 
 Curated feed of generic Detection Bots that monitor for a broad set of attack patterns for the smart contracts you select.
 
 - [Learn More](threat-detection-kits.md)
 - [Subscribe](https://app.forta.network/)
 
-### Threat Alert Combiner
-
-A Detection Bot that combines past alerts under a common address to emit a high precision alert of an attack.
-
-- [Learn More](starter-kit-bot-details.md)
-- [Subscribe](https://app.forta.network/)
 
 ### Discover Page
 
@@ -34,11 +37,11 @@ Find any Detection Bot in the Network
 
 - [Search](https://explorer.forta.network/bot-search)
 
-# Get Customized Monitoring
+## Get Customized Monitoring
 
 ### Develop a Detection Bot with the SDK
 
-Use the flexible Forta SDK to develop customized Detection Bots for your monitoring needs   
+Use the flexible Forta SDK to develop customized Detection Bots for your monitoring needs
 
 - [Get Started](getting-started.md)
 
@@ -55,9 +58,9 @@ Get connected to community members and development partners who have vast experi
 
 - [andy@forta.org](mailto:andy@forta.org)
 
-# Integrate with the Forta API
+## Integrate with the Forta API
 
 Query Forta’s GraphQL API to get access to alerts and blockchain projects data.
 
- - [Learn More](api.md)
- - [Integrate](forta-api-reference.md)
+- [Learn More](api.md)
+- [Integrate](forta-api-reference.md)
