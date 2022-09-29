@@ -10,10 +10,10 @@
 
 | Bot Name | Bot Details/Template Link | Bot Description  |
 |----------|------------------|------------------|
-| Alert Combiner | [Bot Details](starter-kit-bot-details.md#alert-combiner) | Combines past alerts under common adddress to emit a high precision alert. |
 | Anomalous Token Transfers Detection Machine Learning Bot | [Bot Details](starter-kit-bot-details.md#anomalous-token-transfers-detection-machine-learning-bot) | Alerts on anomalous transactions with erc2 token transfers.|
 | Anomalous Transaction Volume | [Bot Details](starter-kit-bot-details.md#anomalous-transaction-volume) | Alerts on anomalous transaction volume (both successful and failed).|
 | Asset Drained Bot | [Bot Details](starter-kit-bot-details.md#asset-drained) | Alerts on assets being drained from a contract. |
+| Attack Detector Feed (aka Alert Combiner) | [Bot Details](starter-kit-bot-details.md#attack-detector-feed) | Combines past alerts under common adddress to emit a high precision alert around protocol attacks. |
 | Chainalysis Sanctioned Addresses | [Bot Details](starter-kit-bot-details.md#chainalysis-sanctioned-addresses) | Alerts when a Chainalysis sanctioned account interacts with the address monitored. |
 | Exploiter Addresses | [Bot Details](starter-kit-bot-details.md#exploiter-addresses) | Alerts when known exploiter address interacts with the address monitored. |
 | FlashBot Detector | [Bot Details](https://explorer.forta.network/agent/0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5) |  Alerts when transaction is routed through FlashBot framework bypassing the mempool. |
