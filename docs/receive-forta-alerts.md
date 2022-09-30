@@ -14,7 +14,7 @@ The network features both generic bots which monitor the broad ecosystem, as wel
 
 A Detection Bot that combines past alerts under a common address to emit a high precision alert of an attack.
 
-- [Learn More](starter-kit-bot-details.md)
+- [Learn More](attack-detector-feed.md)
 - [Subscribe](https://app.forta.network/)
 
 ### Suspicious Events Feed
@@ -22,7 +22,7 @@ A Detection Bot that combines past alerts under a common address to emit a high 
 Curated feed of generic Detection Bots that monitor for a broad set of attack patterns for the smart contracts you select.
 
 - [Learn More](threat-detection-kits.md)
-- [Subscribe](https://app.forta.network/)
+- [Subscribe](https://app.forta.network/tdk)
 
 
 ### Discover Page
