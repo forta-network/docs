@@ -231,7 +231,7 @@ In your Forta directory, there now is a `config.yml` file. You must configure th
 Your scan node will be registered to scan a single chain. To let your scan node pull chain data, you need to provide a valid `scan.jsonRpc.url`.
 
 !!! warning "Public JSON-RPC APIs"
-    While there are public endpoints available for many chains, **please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing**. We strongly recommend providing your own blockchain node or using a paid provider when possible.
+    While there are public endpoints available for many chains, **please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing.** *We strongly recommend providing your own blockchain node or using [Alchemy](alchemy-partnership.md) to setup your Forta node*
 
 If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method. If you have your own Ethereum node that supports it (e.g. Erigon), you can use that node. If not, you can use an endpoint from a paid plan like Alchemy Growth plan.
 
@@ -527,7 +527,7 @@ To monitor whether your scan node is performing well, use the [SLA-API](sla-api.
 !!! important "Only for Ethereum Mainnet"
     This section was prepared only for Forta node operators who would like to point their Forta nodes to their own Ethereum Mainnet nodes. If your Forta node is scanning chains other than Ethereum Mainnet, you can safely ignore this section altogether.
 
-To prepare for The Merge, your Erigon node (Execution Layer - EL) will need to be run with a beacon node (Consensus Layer - CL). Few consensus layer clients are listed below:
+To prepare for [The Merge](https://www.alchemy.com/the-merge), your Erigon node (Execution Layer - EL) will need to be run with a beacon node (Consensus Layer - CL). Few consensus layer clients are listed below:
 
   - Prysm
   - Lighthouse

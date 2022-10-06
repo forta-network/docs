@@ -34,6 +34,14 @@ hide:
 
     [:octicons-arrow-right-24: Scanner quick start](scanner-quickstart.md)
 
+-   :handshake:{ .lg .middle } __Scan Node Partnerships__
+
+    ---
+
+    Scan Node operators can benefit from Forta's partnerships with discounted services!
+
+    [:octicons-arrow-right-24: View Partnerships](alchemy-partnership.md)
+
 -   :information_source:{ .lg .middle } __Learn How Forta Works__
 
     ---
