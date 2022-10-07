@@ -1,6 +1,8 @@
-# Setup your Forta node using Alchemy
+# Scan With Alchemy
 
 ## *Special Offer*
+If you want your scan node to run faster and avoid rate limiting, beyond our free tier, we’re also offering upgrades to the Alchemy growth tier at a discount for our frens in Forta’s community!
+
 ***Growth Plan - $44/month (10% VIP Discount)**
 *Alchemy Platform*
 
