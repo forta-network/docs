@@ -54,7 +54,7 @@ This section will describe how to stake your FORT on scan nodes through the new 
 
     - **spender:** `FortaStaking` contract address: `0xd2863157539b1D11F39ce23fC4834B62082F6874`
 
-    - **amount:** FORT amount, in wei. This should be same as the amount you want to stake (deposit) in the next step. For a new node, input at least the minimum `500000000000000000000` (500 FORT in wei). FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![token approve](stake-images/2-token-approve.png)
+    - **amount:** FORT amount, in wei. This should be same as the amount you want to stake (deposit) in the next step. For a new node, input at least the minimum `2500000000000000000000` (2500 FORT in wei). FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![token approve](stake-images/2-token-approve.png)
 
     
 
@@ -74,7 +74,7 @@ You can stake only on the registered scan nodes.
 
     - **subject:** Your scan node address **(not the owner address).**
 
-    - **stakeValue:** Amount of FORT to stake. For a new node, input at least the minimum `500000000000000000000` (500 FORT in wei). If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![stake](stake-images/3-stake.png)
+    - **stakeValue:** Amount of FORT to stake. For a new node, input at least the minimum `2500000000000000000000` (2500 FORT in wei). If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![stake](stake-images/3-stake.png)
 
     !!! note "Staking over max"
         The current maximum stake is 3000 FORT. If you try to stake more than that, the contract won't accept the tokens. For example:
