@@ -14,8 +14,8 @@
     - **1st place will receive $3,000 USD (paid in FORT) and a unique Forta NFT.**
     - **Runner up will receive $1,000 USD (paid in FORT) and a unique Forta NFT.**
 - To be eligible for a prize, you will be asked to submit a valid email and Discord username through the Google form, along with a link of your bot on Github.
-- This contest will run from August 31st through September 20th, after which no further submissions will be considered.
-- Winners will be chosen by a panel of detection bot reviewers from Nethermind, and will be announced on October 31st.
+- This contest will run from October 11th through November 1st, after which no further submissions will be considered.
+- Winners will be chosen by a panel of detection bot reviewers from Nethermind, and will be announced on November 8th.
 
 For any questions, please contact a Forta Moderator on **Discord**.
 
