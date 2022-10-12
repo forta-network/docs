@@ -1,22 +1,5 @@
 # Scan With Alchemy
 
-## *Special Offer*
-If you want your scan node to run faster and avoid rate limiting, beyond our free tier, we’re also offering upgrades to the Alchemy growth tier at a discount for our frens in Forta’s community!
-
-***Growth Plan - $44/month (10% VIP Discount)**
-*Alchemy Platform*
-
-- *Alchemy Testnet APIs*
-- *Alchemy Supernode for Mainnet*
-- *Alchemy Notify*
-- *Alchemy Monitor*
-- *Alchemy Build*
-- *Enhanced APIs and Websockets*
-- *Standard Throughput - 660 compute units/second*
-- *Dashboard access (10 user licenses included)*
-
-[Redeem your discount here!](https://alchemy.com/?a=forta&promo=ALCHEMY_FORTA_10_T351FA2)
-
 ## Why use Alchemy?
 Alchemy is the leading web3 blockchain development platform embedded with powerful tools to simplify dApp development, saving countless hours for web3 engineers. Using Alchemy to run your Forta nodes will grant you the accuracy, reliability, and data consistency of Supernode, the proprietary blockchain engine used by leading web3 companies like OpenSea, Meta, Adobe, and Sushi Swap.
 
@@ -37,6 +20,22 @@ If you want to read more about how Supernode is helping developers scale their a
 Now that we know how Alchemy helps your Forta nodes be more reliable and performant, let’s dive into how to create a new Alchemy account completely for free.
 
 If you already have an Alchemy account, feel free to skip the next section.
+
+## *Special Offer*
+Now that we know how Alchemy helps your Forta nodes be more reliable and performant, let's dive into how to create a new Alchemy account completely for free.
+
+If you want to run your nodes at maximum speed, Alchemy also offers a special price for frens in Forta's community, that comes with full support for:
+
+- *Alchemy Testnet APIs*
+- *Alchemy Supernode for Mainnet*
+- *Alchemy Notify*
+- *Alchemy Monitor*
+- *Alchemy Build*
+- *Enhanced APIs and Websockets*
+- *Standard Throughput - 660 compute units/second*
+- *Dashboard access (10 user licenses included)*
+
+[Redeem your discount here!](https://alchemy.com/?a=forta&promo=ALCHEMY_FORTA_10_T351FA2)
 
 ## Create a new Alchemy Account
 
