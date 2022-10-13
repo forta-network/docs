@@ -31,7 +31,7 @@ Deposit FORT to get active shares.
 
 This section will describe how to stake your FORT on scan nodes through the new Forta App UI.
 
-1. Go to https://app.forta.network/scan-node/**[your_scan_node_address]** replacing “[your_scan_node_address]” with the scan node that you want to stake on
+1. Go to `https://app.forta.network/scan-node/{address}` replacing `{address}` with the scan node address that you want to stake on
 
 2. Click on “Stake FORT”
     ![Click on "Stake Fort"](stake-node1.png)
@@ -42,7 +42,7 @@ This section will describe how to stake your FORT on scan nodes through the new 
 4. Confirm the transaction
     ![Confirm transaction](stake-node3.png)
 
-### Staking using Polyscan
+### Staking using Polygonscan
 
 #### Approve FORT
 
@@ -99,7 +99,7 @@ After _staking delay_ is over, you will be able to `withdraw()` FORT, as describ
 
 ![staking init withdrawal](stake-images/staking-init-withdrawal.png)
 
-### Initiate the withdrawal using Polyscan
+### Initiate the withdrawal using Polygonscan
 
 1. Go to Forta staking contract page, [section _Write as Proxy_](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
@@ -123,7 +123,7 @@ Burn inactive shares after _staking delay_ to get staked FORT.
 
 ![staking withdrawal](stake-images/staking-withdrawal.png)
 
-### Withdrawal using Polyscan
+### Withdrawal using Polygonscan
 
 1. When the _staking delay_ is over, go to Forta staking contract page, [section _Write as Proxy_](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
