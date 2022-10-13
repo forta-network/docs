@@ -9,11 +9,12 @@ Before digging deeper into setting up your node using Alchemy, let’s explore w
 Alchemy Supernode is the most widely used Ethereum API with all the functionality of a node, but with supercharged reliability, data accuracy, and scalability.
 
 There are 5 main points that make Supernode a game-changer when it comes to serving blockchain data, faster and more reliably:
-- It ensures that your data is always correct, real-time, and in sync thanks to a proprietary coordinator service
-- It powers each piece of node functionality with a dedicated, distributed system -- the same systems used by Facebook and Amazon for achieving massive scale
-- It scales quickly and seamlessly to maximize your scanning throughput
-- It includes enhanced API methods and upgraded WebSockets to continuously listen for changes and automatically handle reconnection and backfilling missed events
-- It’s a one-line infrastructure API that not only does all the jobs of a single node, but also comes with the uptime, availability, and necessities to run a production application
+
+- It ensures that your data is always correct, real-time, and in sync thanks to a proprietary coordinator service.
+- It powers each piece of node functionality with a dedicated, distributed system -- the same systems used by Facebook and Amazon for achieving massive scale.
+- It scales quickly and seamlessly to maximize your scanning throughput.
+- It includes enhanced API methods and upgraded WebSockets to continuously listen for changes and automatically handle reconnection and backfilling missed events.
+- It’s a one-line infrastructure API that not only does all the jobs of a single node, but also comes with the uptime, availability, and necessities to run a production application.
 
 If you want to read more about how Supernode is helping developers scale their applications, [here are a number of use cases](https://www.alchemy.com/supernode) you might find interesting.
 
