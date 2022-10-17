@@ -57,8 +57,7 @@ nav:
     - SLA API: sla-api.md
     - Stake on your Scan Node: stake-on-scan-node.md
     - Local Scan Node: scanner-local-mode.md
-    - Special Offers:
-      - Scan With Alchemy: alchemy-partnership.md
+    - Scan With Alchemy: alchemy-partnership.md
   - <strong>About Forta</strong>: 
     - What is Forta: what-is-forta.md
     - FORT token: fort-token.md
