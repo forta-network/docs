@@ -62,7 +62,7 @@ nav:
     - What is Forta: what-is-forta.md
     - FORT token: fort-token.md
     - Governance: governance.md
-    - Machine Learning: ds-and-ml.mds
+    - Machine Learning: ds-and-ml.md
     - Smart contracts:
       - Intro & Addresses: smart-contracts.md
       - Components:
