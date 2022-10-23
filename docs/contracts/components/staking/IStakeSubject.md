@@ -1,5 +1,4 @@
-
-
+## IStakeSubject
 
 ### StakeThreshold
 
@@ -21,5 +20,11 @@ function getStakeThreshold(uint256 subject) external view returns (struct IStake
 
 ```solidity
 function isStakedOverMin(uint256 subject) external view returns (bool)
+```
+
+### isRegistered
+
+```solidity
+function isRegistered(uint256 subjectId) external view returns (bool)
 ```
 

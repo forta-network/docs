@@ -1,5 +1,4 @@
-
-
+## ScannerRegistryMetadata
 
 ### ScannerMetadata
 
@@ -13,7 +12,7 @@ struct ScannerMetadata {
 ### _scannerMetadata
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct ScannerRegistryMetadata.ScannerMetadata) _scannerMetadata
+mapping(uint256 => struct ScannerRegistryMetadata.ScannerMetadata) _scannerMetadata
 ```
 
 ### getScanner
@@ -26,14 +25,14 @@ Gets all scanner properties.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | registered | bool | true if scanner exists. |
 | owner | address | address. |
 | chainId | uint256 | the scanner is monitoring. |
-| metadata | string | IPFS pointer for the scanner&#x27;s JSON metadata. |
+| metadata | string | IPFS pointer for the scanner's JSON metadata. |
 
 ### getScannerChainId
 
@@ -45,7 +44,7 @@ Gets scanner chain Ids.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -57,15 +56,15 @@ Gets scanner chain Ids.
 function _getStakeThreshold(uint256 subject) internal view virtual returns (struct IStakeSubject.StakeThreshold)
 ```
 
-_checks the StakeThreshold for the chainId the scanner with id &#x60;subject&#x60; was registered to monitor._
+_checks the StakeThreshold for the chainId the scanner with id `subject` was registered to monitor._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subject | uint256 | ERC1155 token id of the scanner. |
+| subject | uint256 | ERC721 token id of the scanner. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | struct IStakeSubject.StakeThreshold | StakeThreshold registered for &#x60;chainId&#x60;, or StakeThreshold(0,0,false) if &#x60;chainId&#x60; not found. |
+| [0] | struct IStakeSubject.StakeThreshold | StakeThreshold registered for `chainId`, or StakeThreshold(0,0,false) if `chainId` not found. |
 
 ### _scannerUpdate
 
@@ -79,9 +78,9 @@ _adds metadata and chainId for that scanner_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | chainId | uint256 | the scanner scans. |
-| metadata | string | IPFS pointer for the scanner&#x27;s JSON metadata. |
+| metadata | string | IPFS pointer for the scanner's JSON metadata. |
 
 ### __gap
 

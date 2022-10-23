@@ -1,15 +1,4 @@
-
-
-
-Contract that contains the common functionality for all FORT versions in different chains.
-
-This contracts and inheriting contracts do not use `AccessManager` so they must define their roles.
-
-FortaCommon is an upgradeable ERC20 currently not open to the public, so transfers are restricted via check if the sender has `WHITELIST_ROLE` in `_beforeTokenTransfer` hook. Access to the whitelist is granted by `WHITELISTER_ROLE`
-
-This restriction will be removed at a later date via upgrade.
-
-FortaCommon supports Compound-like on-chain governance inheriting from `ERC20VotesUpgradeable`
+## FortaCommon
 
 ### ADMIN_ROLE
 

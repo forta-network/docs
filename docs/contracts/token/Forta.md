@@ -1,5 +1,4 @@
-
-
+## Forta
 
 This version of the Forta token is living on the root (or parent) chain. That would be:
 - Mainnet for production
