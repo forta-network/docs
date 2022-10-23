@@ -32,6 +32,7 @@ If you are going to interact with an Upgradeable contract, **always use the Prox
 | Staking | [0xd2863157539b1D11F39ce23fC4834B62082F6874](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874) | [0xD6eBEbD5B165b56E2F55F69D70F414B8aDc2696d](https://polygonscan.com/address/0xD6eBEbD5B165b56E2F55F69D70F414B8aDc2696d) |
 | StakingParameters | [0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a](https://polygonscan.com/address/0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a) | [0x183f482B927F81FdF11919f098be299eE5dc3CD1](https://polygonscan.com/address/0x183f482B927F81FdF11919f098be299eE5dc3CD1) |
 | ScannerNodeVersion | [0x4720c872425876B6f4b4E9130CDef667aDE553b2](https://polygonscan.com/address/0x4720c872425876B6f4b4E9130CDef667aDE553b2) | [0xCFF69D7e4db098772c85831f4318A1897647488E](https://polygonscan.com/address/0xCFF69D7e4db098772c85831f4318A1897647488E) |
+| SlashingController | [0x6927C25ff30ed86F86A863d987590A1d77509bDb](https://mumbai.polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb) | [0xE7e33d453980e8023d54A70A40753bA7617B08F3](https://mumbai.polygonscan.com/address/0xE7e33d453980e8023d54A70A40753bA7617B08F3) |
 
 
 
@@ -54,7 +55,7 @@ If you are going to interact with an Upgradeable contract, **always use the Prox
 | Dispatch | [0x634C83F3213CcfC895A4e6A2c137b2B572fa64ad](https://mumbai.polygonscan.com/address/0x634C83F3213CcfC895A4e6A2c137b2B572fa64ad) | [0x20b89b26a92Fb40536a27770BA03fd65ad7124eC](https://mumbai.polygonscan.com/address/0x20b89b26a92Fb40536a27770BA03fd65ad7124eC) |
 | Forwarder | -- | [0x4E29Cea6D64be860f5eAba110686DcB585f393D6](https://mumbai.polygonscan.com/address/0x4E29Cea6D64be860f5eAba110686DcB585f393D6) |
 | Forta Token (Bridged) | [0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3](https://mumbai.polygonscan.com/address/0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3) | [0x21b1b0f8e9182c92c2a81f43f305ce25994d9d57](https://mumbai.polygonscan.com/address/0x21b1b0f8e9182c92c2a81f43f305ce25994d9d57) |
-| Staking | [0x8a5EEfA2BAb332DD7666d885e9C9d2775221EB1c](https://mumbai.polygonscan.com/address/0x8a5EEfA2BAb332DD7666d885e9C9d2775221EB1c) | [0x46DF428Fe81441468308D6dBa54f2c4D6C98fd51](https://mumbai.polygonscan.com/address/0x46DF428Fe81441468308D6dBa54f2c4D6C98fd51) |
+| Staking | [0x8a5EEfA2BAb332DD7666d885e9C9d2775221EB1c](https://mumbai.polygonscan.com/address/0x8a5EEfA2BAb332DD7666d885e9C9d2775221EB1c) | [0x7dBD9f6c557af8Dbb0A41281a150C761E57E4C85](https://mumbai.polygonscan.com/address/0x7dBD9f6c557af8Dbb0A41281a150C761E57E4C85) |
 | StakingParameters | [0x2441Ce5eB269505f30F6F434D21E039438aaC342](https://mumbai.polygonscan.com/address/0x2441Ce5eB269505f30F6F434D21E039438aaC342) | [0x1837CF2B32B25B6dDb4d8D004B3DC423d1d72243](https://mumbai.polygonscan.com/address/0x1837CF2B32B25B6dDb4d8D004B3DC423d1d72243) |
-| ScannerNodeVersion | [0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201](https://mumbai.polygonscan.com/address/0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201) | [0x627Baa46bAC06e6E61E237C9bCCf8d0ec9eA165D](https://mumbai.polygonscan.com/address/0x627Baa46bAC06e6E61E237C9bCCf8d0ec9eA165D) |
-
+| ScannerNodeVersion | [0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201](https://mumbai.polygonscan.com/address/0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201) | [0x52a53DCC546c09CECe279F5549d0958433912802](https://mumbai.polygonscan.com/address/0x52a53DCC546c09CECe279F5549d0958433912802) |
+| SlashingController | [0xdc4A1Fe7D5c5546458463F6546bf6Fbe6a1a9704](https://mumbai.polygonscan.com/address/0xdc4A1Fe7D5c5546458463F6546bf6Fbe6a1a9704) | [0xc500d015E69721Ec3D29955EBF15bf9b8Ad832eA](https://mumbai.polygonscan.com/address/0xc500d015E69721Ec3D29955EBF15bf9b8Ad832eA) |
