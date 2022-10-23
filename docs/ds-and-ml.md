@@ -12,15 +12,26 @@ Check out this short clip below to learn more about how the open-source data on 
 * [Anomalous Token Transfers Detection Machine Learning Bot](https://github.com/forta-network/starter-kits/tree/main/anomalous-token-transfers-ml-py)
 * [Smart Price Changes Bot](https://github.com/0xidase/Smart-Price-Changes-Agent)
 * [Time Series Analyzer Bot Template](https://github.com/forta-network/starter-kits/tree/main/time-series-analyzer-template)
+* [Malicious Smart Contract ML Bot](https://github.com/forta-network/starter-kits/tree/main/malicious-smart-contract-ml-py#malicious-smart-contract-ml)
 
 Did you create a ML bot? Share it with the community on the [ML Discord Channel](https://discord.gg/ehKhTDmbHT)!
+
+## Ongoing Data Science Competitions
+
+* [Ethereum Phishing Scam Detection Competition](https://www.kaggle.com/competitions/forta-protect-web3)
 
 ## Blog posts and Guides
 
 * [Blog: Leveraging Machine Learning with Forta to Improve Web3 Security](https://forta.org/blog/leveraging-machine-learning-to-improve-web3-security/)
 * [Blog: Time Series Analysis with Forta](https://forta.org/blog/time-series-analysis-with-forta/)
+* [Blog: Predicting Phishing Scams: A Kaggle Competition](https://forta.org/blog/predicting-phishing-kaggle/)
 * [Guide: Implementing Time Series Analysis](https://docs.forta.network/en/latest/time-series-analysis/)
 * [Guide: Deploying ML Models in Detection Bots](https://docs.forta.network/en/latest/deploying-ml-models/)
+
+## ML Best Practices
+
+* [Secure your machine learning with Semgrep](https://blog.trailofbits.com/2022/10/03/semgrep-maching-learning-static-analysis/)
+* [Never a dill moment: Exploiting machine learning pickle files](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)
 
 ## Sources for Training Data and Labels
 
@@ -35,6 +46,7 @@ Do you see any missing resource the community can use below? Contribute to [the 
 
 ### Labels
 
+* [Forta Labelled datasets](https://github.com/forta-network/labelled-datasets) - Web3 threat related labelled datasets for data analysis and machine learning developments.
 * [Luabase address tags + labels](https://luabase.notion.site/Tags-521d6955dc1e472ba37dba71569666a3) - Addresses with etherscan labels `exploit`, `heist`, and `phish-hack` are available.
 * [EtherScamDB](https://github.com/CryptoScamDB/EtherScamDB) - Open-source db that keeps track of ethereum scams and involved addresses.
 * [Forta API](https://github.com/forta-network/forta-api) - Query critical alerts via the Forta API and use them as [weak labels](https://www.thoughtworks.com/en-us/insights/blog/data-science-and-analytics/weak-labeling).

@@ -4,14 +4,6 @@
     Forta will continue to add more curated security bots in the coming months, so stay tuned and come check this page frequently for new updates!
 
 
-## Alert Combiner
-
-| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
-|----------|-----------|------------------|------------------|
-| Alert Combiner | [Stats URL](https://explorer.forta.network/agent/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/alert-combiner-py){:target="_blank"} | All |
-
-Combines past alerts under a common address to emit a high precision alert.
-
 ## Anomalous Token Transfers Detection Machine Learning Bot
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
@@ -28,6 +20,24 @@ This bot utilizes the [Isolation Forest](https://scikit-learn.org/stable/modules
 
 This bot detects successful transactions that have one or more failed internal transactions.
 
+## Asset Drained
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Asset Drained Bot | [Stats URL](https://explorer.forta.network/bot/0xe4a8660b5d79c0c64ac6bfd3b9871b77c98eaaa464aa555c00635e9d8b33f77f){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/asset-drained){:target="_blank"} | Ethereum Mainnet, BSC, Fantom, Avalanche |
+
+This bot detects when digital assets are fully drained from a contract.
+
+
+## Attack Detector Feed (aka Alert Combiner)
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Attack Detector Feed | [Stats URL](https://explorer.forta.network/agent/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/alert-combiner-py){:target="_blank"} | All |
+
+The attack detector takes past alerts under a common address from a variety of underlying bots to emit a high precision alert for protocol attacks. It does so by mapping each alert to the four attack stages (Funding, Preparation, Exploitaiton and Money Laundering) applying a variety of heuristics (e.g. an alert has to exist for each of the four stages) to emit an alert.
+
+
 ## Chainalysis Sanctioned Addresses
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
@@ -42,7 +52,7 @@ The bot listens to the [Chainalysis Sanction Oracle Contract](https://go.chainal
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
 |----------|-----------|------------------|------------------|
-| Evidence of Phishing Agent | [Stats URL](https://explorer.forta.network/agent/0xd9fe61cfe875470b80318a96cc0a94ba3adbe1eb4a14827fa018f14925e7da64){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/ice-phishing-detection-bot){:target="_blank"} | Ethereum Mainnet |
+| Evidence of Phishing Agent | [Stats URL](https://explorer.forta.network/agent/0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14){:target="_blank"} | [Github Repo URL](https://github.com/LimeChain/forta-starter-kits/tree/main/ice-phishing-detection-bot){:target="_blank"} | Ethereum Mainnet |
 
 Users approving token transfers to an address or contract may be a behavior indicative of an ice phishing attack.
 
@@ -118,6 +128,15 @@ This bot detects when there are drastic price change anomalies based on on-chain
 | Reentrancy Calls Detection Bot | [Stats URL](https://explorer.forta.network/agent/0x492c05269cbefe3a1686b999912db1fb5a39ce2e4578ac3951b0542440f435d9){:target="_blank"} | [Github Repo URL](https://github.com/NethermindEth/Forta-Agents/tree/a5bd20303669d5a1d0e2163c43904627f8999749/reentrancy-counter#reentrancy-counter){:target="_blank"} | Ethereum Mainnet, BSC, Polygon |
 
 This bot detects reentrancy based on the call stack provided in the transaction traces. The bot reports the number of repeated calls with different severities levels.
+
+
+## Scam Detector Feed (aka Alert Combiner)
+
+| Bot Name | Bot Stats | Bot Source Code  | Supported Chains |
+|----------|-----------|------------------|------------------|
+| Scam Detector Feed | [Stats URL](https://explorer.forta.network/agent/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1){:target="_blank"} | [Github Repo URL](https://github.com/forta-network/starter-kits/tree/main/alert-combiner-py){:target="_blank"} | All |
+
+The attack detector takes past alerts under a common address from a variety of underlying bots to emit a high precision alert related to scams (ice phishing, rug pulls, scams). It does so by combining alerts applying a variety of heuristics (e.g. ice phishing and tornado cash funding alert fired) to emit an alert.
 
 
 ## Suspicious Contract Creation

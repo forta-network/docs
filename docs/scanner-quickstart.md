@@ -18,17 +18,22 @@ The following are the requirements for running a Forta scan node.
 
 ### Example: Run your Ethereum full node
 
+If you are planning on setting up a Forta node, your own full node node is the most reliable option as a provider to your Forta node.
+
+Starting from September 6, your Erigon node (Execution Layer) needs to run with a beacon node (Consensus Layer). For more details, please make sure you visit [The Merge](#the-merge) section on this page.
+
 ```bash
-erigon-rpcdaemon --http.vhosts '*' --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain '*' --http.api 'eth,net,web3,trace' --private.api.addr=localhost:9090
+erigon-rpcdaemon \
+  --http.vhosts '*' --http.port 8545 \
+  --http.addr 0.0.0.0 --http.corsdomain '*' \
+  --http.api 'eth,net,web3,trace' --private.api.addr=localhost:9090 \
+  --authrpc.addr 0.0.0.0 --authrpc.jwtsecret <secret>
 
 erigon --private.api.addr=localhost:9090
 ```
 
 !!! note "Ethereum node access"
     Be sure to set `--http.vhosts` to allow hostname access, and enable `eth,net,web3` HTTP APIs. Note that `trace` is only applicable for Ethereum mainnet.
-
-!!! important "The Merge"
-    After Ethereum merge, your Erigon node will need to be run with a CL (consensus layer) client (a.k.a. beacon node). If you are looking forward to running a Prysm node as your CL client, you can follow this documentation: https://docs.prylabs.network/docs/install/install-with-script
 
 ## Synchronize system time
 
@@ -226,7 +231,7 @@ In your Forta directory, there now is a `config.yml` file. You must configure th
 Your scan node will be registered to scan a single chain. To let your scan node pull chain data, you need to provide a valid `scan.jsonRpc.url`.
 
 !!! warning "Public JSON-RPC APIs"
-    While there are public endpoints available for many chains, **please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing**. We strongly recommend providing your own blockchain node or using a paid provider when possible.
+    While there are public endpoints available for many chains, **please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing.** *We strongly recommend providing your own blockchain node or using [Alchemy](alchemy-partnership.md) to setup your Forta node*
 
 If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method. If you have your own Ethereum node that supports it (e.g. Erigon), you can use that node. If not, you can use an endpoint from a paid plan like Alchemy Growth plan.
 
@@ -328,6 +333,34 @@ The forwarded content is a gzipped JSON which is similar to the `forta status --
   ...
 ]
 ```
+
+### Auto-Updates (Optional)
+
+When you install `forta`, set up your node and run it, the CLI starts new service containers which contain the actual work Forta nodes need to do. There is a dynamic updater which is able to follow the "scanner version" smart contract and trigger a node auto-update to get these service containers replaced with the latest version.
+
+Let's assume that you have installed `forta` v0.5.0 through APT or YUM. When you configure and run your node, what happens next is:
+
+- CLI starts the updater with the v0.5.0 container image (bootstrap version)
+- Updater detects from the smart contract that v0.5.1 is the latest
+- CLI learns this, stops the updater, downloads the v0.5.1 image
+- CLI starts the updater with the v0.5.1 container image
+- CLI starts the supervisor with the v0.5.1 container image
+- Supervisor starts new containers on the same host
+
+There is a linear 24h release schedule mechanism which allows each node to auto-update at different moments. To receive the updates immediately whenever there is a new release, it is sufficient to restart `forta` and it will follow the steps described above.
+
+!!! note "Manual Update"
+    You need manual update through APT or YUM only if you need to receive the latest CLI features. As in the above example, CLI of an older version is able to successfully run the service container image of the newer version.
+
+To disable the auto-update behavior, you can add this to your config:
+
+```yaml
+autoUpdate:
+  disable: true
+```
+
+!!! warning "Disabling Auto-Updates"
+    Disabling this feature is strongly discouraged. This feature is designed to make updates more comfortable for you and not following the latest version can cause loss of rewards.
 
 ## Register Scan Node
 
@@ -488,3 +521,61 @@ trace:
 ## Monitor SLA
 
 To monitor whether your scan node is performing well, use the [SLA-API](sla-api.md)
+
+## The Merge
+
+!!! important "Only for Ethereum Mainnet"
+    This section was prepared only for Forta node operators who would like to point their Forta nodes to their own Ethereum Mainnet nodes. If your Forta node is scanning chains other than Ethereum Mainnet, you can safely ignore this section altogether.
+
+To prepare for [The Merge](https://www.alchemy.com/the-merge), your Erigon node (Execution Layer - EL) will need to be run with a beacon node (Consensus Layer - CL). Few consensus layer clients are listed below:
+
+  - Prysm
+  - Lighthouse
+  - Lodestar
+  - Nimbus
+  - Teku
+
+For more information on versions of these clients, please see the [Ethereum Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) blog post. **Make sure to upgrade your clients to these versions before September 6**
+
+You can run consensus layer client on the same machine as the execution layer client (Erigon) by default Erigon's engine API listens on localhost. If you are running CL client on a different machine than Erigon, you will need to configure the Erigon node to connect to the CL client by passing `--authrpc.addr 0.0.0.0` and `--authrpc.vhosts <CL host>`.
+
+### Erigon node (execution layer client)
+
+Upgrade your node to the latest "stable" version of Erigon `2022.08.03-alpha`.
+
+If you are running Erigon directly from the binary (and not using docker-compose), you will need to pass `--authrpc.jwtsecret <secret>`. For more information see [Erigon documentation](https://github.com/ledgerwatch/erigon#beacon-chain-consensus-layer).
+
+If you are running Erigon using [docker-compose](https://github.com/ledgerwatch/erigon/blob/devel/docker-compose.yml), you don't have to pass any extra flags for data dir or JWT secret since these are already configured in the docker-compose file.
+
+### Prysm (consensus layer client)
+
+Upgrade your node to the latest "stable" version of Prysm `v3.0.0`.
+
+#### Use Docker
+
+You can install Prysm and run a beacon node using Docker by following [Prysm Docker](https://docs.prylabs.network/docs/install/install-with-docker).
+
+!!! warning "Architecture Constraints"
+    Running with docker might not work on Linux ARM64.
+
+#### Install binary
+
+Alternatively, you can install Prysm directly by downloading the Prysm client binary and make it executable.
+
+You can run your beacon node with the following commands:
+
+```
+mkdir prysm && cd prysm
+
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh \
+  --output prysm.sh &&\ 
+  chmod +x prysm.sh
+```
+
+#### Follow installation docs
+
+As yet another option, you can run a beacon node using Prysm by following [Prysm Beacon Node](https://docs.prylabs.network/docs/install/install-with-script#step-4-run-a-beacon-node-using-prysm).
+
+You will need to pass `--jwt-secret=<path_to_erigon_jwt_hex>` to the beacon node. It doesn't require `--suggested-fee-recipient` flag unless you are running a [validator](https://docs.prylabs.network/docs/install/install-with-script#step-5-run-a-validator-using-prysm). Additionally you can pass `--slots-per-archive-point=1` to the beacon node to improve the performance of API retrieval. For more information on slots per archive point, please see [Prysm Beacon Node API Rationale](https://docs.prylabs.network/docs/advanced/beacon_node_api#rationale).
+
+After running with any method mentioned above, you should be able to see the beacon node running and syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.

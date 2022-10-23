@@ -1,6 +1,9 @@
+!!! important "Staking on the App"
+    While you can use this document to find helpful details about staking, **please prefer staking on [Forta App](https://app.forta.network/staking) for a smoother experience**.
+
 # Staking on Scan Nodes
 
-To be a part of the Forta Network, a scan node should have at least **500 FORT** of active stake staked on its behalf. Staking occurs on Polygon, so if you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
+To be a part of the Forta Network, a scan node should have at least **2500 FORT** of active stake staked on its behalf. Staking occurs on Polygon mainnet, so if you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
 
 !!! important "Minimum Stake Threshold"
     This value is subject to change and can be different per chain in the future.
@@ -24,7 +27,22 @@ Deposit FORT to get active shares.
 
 ![staking deposit](stake-images/staking-deposit.png)
 
-### Staking using Polyscan
+### Staking using Forta App (recommended)
+
+This section will describe how to stake your FORT on scan nodes through the new Forta App UI.
+
+1. Go to `https://app.forta.network/scan-node/{address}` replacing `{address}` with the scan node address that you want to stake on
+
+2. Click on “Stake FORT”
+    ![Click on "Stake Fort"](stake-node1.png)
+
+3. Insert the amount FORT you want to stake on the scan node and click on “Approve tokens”
+    ![Enter FORT amount](stake-node2.png)
+
+4. Confirm the transaction
+    ![Confirm transaction](stake-node3.png)
+
+### Staking using Polygonscan
 
 #### Approve FORT
 
@@ -36,7 +54,7 @@ Deposit FORT to get active shares.
 
     - **spender:** `FortaStaking` contract address: `0xd2863157539b1D11F39ce23fC4834B62082F6874`
 
-    - **amount:** FORT amount, in wei. This should be same as the amount you want to stake (deposit) in the next step. For a new node, input at least the minimum `500000000000000000000` (500 FORT in wei). FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![token approve](stake-images/2-token-approve.png)
+    - **amount:** FORT amount, in wei. This should be same as the amount you want to stake (deposit) in the next step. For a new node, input at least the minimum `2500000000000000000000` (2500 FORT in wei). FORT has 18 decimals like Ether, so the FORT amount should be followed by 18 zeroes. If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![token approve](stake-images/2-token-approve.png)
 
     
 
@@ -56,7 +74,7 @@ You can stake only on the registered scan nodes.
 
     - **subject:** Your scan node address **(not the owner address).**
 
-    - **stakeValue:** Amount of FORT to stake. For a new node, input at least the minimum `500000000000000000000` (500 FORT in wei). If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![stake](stake-images/3-stake.png)
+    - **stakeValue:** Amount of FORT to stake. For a new node, input at least the minimum `2500000000000000000000` (2500 FORT in wei). If you are unsure, you can use a converter like [https://eth-converter.com/](https://eth-converter.com/). ![stake](stake-images/3-stake.png)
 
     !!! note "Staking over max"
         The current maximum stake is 3000 FORT. If you try to stake more than that, the contract won't accept the tokens. For example:
@@ -81,7 +99,7 @@ After _staking delay_ is over, you will be able to `withdraw()` FORT, as describ
 
 ![staking init withdrawal](stake-images/staking-init-withdrawal.png)
 
-### Initiate the withdrawal using Polyscan
+### Initiate the withdrawal using Polygonscan
 
 1. Go to Forta staking contract page, [section _Write as Proxy_](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
@@ -105,7 +123,7 @@ Burn inactive shares after _staking delay_ to get staked FORT.
 
 ![staking withdrawal](stake-images/staking-withdrawal.png)
 
-### Withdrawal using Polyscan
+### Withdrawal using Polygonscan
 
 1. When the _staking delay_ is over, go to Forta staking contract page, [section _Write as Proxy_](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
 
