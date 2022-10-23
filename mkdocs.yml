@@ -62,8 +62,7 @@ nav:
     - What is Forta: what-is-forta.md
     - FORT token: fort-token.md
     - Stake Slashing:
-      - Intro and current parameters: slashing-intro-params.md
-      - Proccess workflow: slashing-process.md
+      - Slashing Policy: slashing-policy.md
       - Creating a Slash Proposal: slashing-creating-proposal.md
     - Governance: governance.md
     - Machine Learning: ds-and-ml.md

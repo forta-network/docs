@@ -94,11 +94,11 @@ And the resulting file:
 
 2. Approve the Slashing Controller contract address (0xTODO) to spend the amount for the slashing proposal deposit (1000 FORT in wei)
 
-spender: 0xTODO
+*spender*: 0x6927C25ff30ed86F86A863d987590A1d77509bDb
 
-amount: 1000000000000000000000
+*amount*: 1000000000000000000000
 
-   ![Approve FORT](stake-bot2.png)
+   ![Approve FORT](/slashing-images/approve.png)
 
 3. Confirm the transaction<br>
    ![Confirm transaction](stake-bot3.png)
@@ -110,20 +110,19 @@ amount: 1000000000000000000000
 
 ## 2.1 Open SlashingController contract in Polyscan
 
-//TODO: deployment
 
-1. Go to [SlashingController's Polyscan page](https://mumbai.polygonscan.com/address/0xdc4A1Fe7D5c5546458463F6546bf6Fbe6a1a9704#writeProxyContract),
+1. Go to [SlashingController's Polyscan page](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb#writeProxyContract),
     1. Click on "Contract"
     2. Click on "Write as Proxy"
     3. Click on "Connect to Web3"
 
 2. Go to "7. ProposeSlash" and input your parameters:
-    1. _subjectType: 0 for Scanner Node, 1 for Detection Bot
-    2. _subjectId: a Scanner Node address or Bot ID
-    3. _penaltyId: The keccak256 hash of the slash reason, in uppercase separated by underscores.
-        1. MALICIOUS_SUBJECT_SLASH: 0x7449bdb0b279b3f507424b101b4b40b91d5f3964f6fe357761daa21a17f62553
-        2. OPERATIONAL_SLASH: 0x602d37be0dfc88daa6b674e3c42ff4efabf3e86cef482bce18b643e8c0a1b33c
-    4. _evidence: Array of IPFS file urls of the proposal's [evidence descriptor JSONs](#1-preparing-evidence) (at least 1, up to 5)
+    1. *_subjectType*: 0 for Scanner Node, 1 for Detection Bot
+    2. *_subjectId*: a Scanner Node address or Bot ID
+    3. *_penaltyId*: The keccak256 hash of the slash reason, in uppercase separated by underscores.
+        1. *MISCONDUCT_SLASH*: 0xe147df3b4755943b8e7219d7acfd0fd67879bdbf5f62537886a5e2acd476ee7d
+        2. *OPERATIONAL_SLASH*: 0x602d37be0dfc88daa6b674e3c42ff4efabf3e86cef482bce18b643e8c0a1b33c
+    4. *_evidence*: Array of IPFS file urls of the proposal's [evidence descriptor JSONs](#1-preparing-evidence) (at least 1, up to 5)
 
 3. Click "Write" and Approve the transaction to submit the evidence.
 
@@ -135,20 +134,28 @@ After submitting the proposal, the Slashing Arbiters will review it, possibly mo
 
 To check the status of your proposal, you can:
 
-1. Go to [SlashingController's Polyscan page](https://mumbai.polygonscan.com/address/0xdc4A1Fe7D5c5546458463F6546bf6Fbe6a1a9704#writeProxyContract),
+1. Go to [SlashingController's Polyscan page](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb#readProxyContract),
     1. Click on "Contract"
     2. Click on "Read as Proxy";
 
 2. Go to "11. currentState", input your SlashProposal ID, and click Query.
+
 ![check slashing state](slashing-images/slashing-check-state.png)
 
-The return value will be a number, here is the meaning (To learn more, see the [Slashing Process](/slashing-process))
+The return value will be a number, here is the meaning (To learn more, see the [Slashing Policy](/slashing-policy))
 
-0: UNDEFINED (the Slash Proposal ID might be wrong, this Slash Proposal has not being created).
-1: CREATED (proposal just created and awaiting review, the stake of the subject id is frozen).
-2: REJECTED (proposal has been rejected by a Slashing Arbiter. The Slash Proposer's deposit has been sent to the treasury. Stake unfrozen).
-3: DISMISSED (proposal has been dismissed by a Slashing Arbiter. The Slash Proposer's deposit has been returned to the proposer. Stake unfrozen).
-4: IN_REVIEW (proposal being reviewed by a Slash Arbiter).
-5: REVIEWED (proposal is ready for a decission of the Slasher. The Slash Proposer's deposit has been returned to the proposer).
-6: EXECUTED (proposal executed, stake slashed and sent to the proposer and treasury, according to the current split parameters. Stake unfrozen).
-7: REVERTED (proposal not executed by Slasher. Stake unfrozen)
+0: _UNDEFINED_ (the Slash Proposal ID might be wrong, this Slash Proposal has not being created).
+
+1: _CREATED_ (proposal just created and awaiting review, the stake of the subject id is frozen).
+
+2: _REJECTED_ (proposal has been rejected by a Slashing Arbiter. The Slash Proposer's deposit has been sent to the treasury. Stake unfrozen).
+
+3: _DISMISSED_ (proposal has been dismissed by a Slashing Arbiter. The Slash Proposer's deposit has been returned to the proposer. Stake unfrozen).
+
+4: _IN_REVIEW_ (proposal being reviewed by a Slash Arbiter).
+
+5: _REVIEWED_ (proposal is ready for a decission of the Slasher. The Slash Proposer's deposit has been returned to the proposer).
+
+6: _EXECUTED_ (proposal executed, stake slashed and sent to the proposer and treasury, according to the current split parameters. Stake unfrozen).
+
+7: _REVERTED_ (proposal not executed by Slasher. Stake unfrozen)
