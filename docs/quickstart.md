@@ -9,7 +9,7 @@ Before you start, please make sure you have the following:
 - [High-level understanding of Forta detection bot development](getting-started.md)
 - [Node.js v12+](https://nodejs.org/) (which includes the Node package manager i.e. npm)
 - [Python v3.6+](https://www.python.org/) (only if you want to use Python SDK)
-- [Docker v20+](https://www.docker.com/get-started)
+- [Docker v20+](https://www.docker.com/get-started) (including the [buildx](https://docs.docker.com/build/buildx/install/) plugin)
 - Basic understanding of [Ethereum](https://ethereum.org/) and smart contracts
 - MATIC tokens for deploying your bot (see [this guide](matic.md))
 

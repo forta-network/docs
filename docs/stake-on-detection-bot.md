@@ -1,6 +1,6 @@
 # Staking on Detection Bots
 
-This page will describe how to stake on Forta Network detection bots. Staking on bots occurs on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md). The minimum stake remains nil to provide maximum accessibility at the outset of permissionless operations.
+This page will describe how to stake on Forta Network detection bots. Staking on bots occurs on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
 
 ## Staking using Forta Explorer (recommended)
 
