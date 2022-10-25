@@ -23,7 +23,8 @@ nav:
         - Video tutorials: tutorials.md
     - Detection bot wizard: wizard.md
     - Bot development patterns:
-        - Hiding sensitive data: sensitive-data.md
+        - Protecting sensitive data: sensitive-data.md
+        - JWT authentication for bots: jwt-auth.md
         - Private alerts: private-alerts.md
         - Transaction simulation: tx-simulation.md
         - Long running tasks: long-running-tasks.md
@@ -31,8 +32,7 @@ nav:
         - Error monitoring: error-monitoring.md
         - Advanced testing: advanced-testing.md
         - Time series analysis: time-series-analysis.md
-        - Deploying Machine Learning Models: deploying-ml-models.md
-        - Jwt auth for third-party apps: jwt-auth.md
+        - Deploying machine learning models: deploying-ml-models.md
     - Tools:
       - Useful libraries: useful-libraries.md
       - Javascript/Typescript SDK: sdk.md
@@ -126,6 +126,11 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator: !!python/name:materialx.emoji.to_svg
       emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 extra:
   generator: false

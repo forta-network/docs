@@ -31,4 +31,4 @@ Here is a collection of libraries and APIs that bot developers may find useful w
 
 ## Etherscan API
 
-The [Etherscan APIs](https://etherscan.io/apis) are a great resource for bot developers. They can be used to answer questions like "which transactions was a given address involved in?" or "what is the ABI for a given contract address?". **Note: make sure to [use obfuscation](sensitive-data.md) if placing an Etherscan API key in your code.**
+The [Etherscan APIs](https://etherscan.io/apis) are a great resource for bot developers. They can be used to answer questions like "which transactions was a given address involved in?" or "what is the ABI for a given contract address?". **Note: make sure to [use obfuscation](sensitive-data.md) or [JWT authentication](jwt-auth.md) if using an Etherscan API key in your code.**

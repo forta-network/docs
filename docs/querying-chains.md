@@ -18,7 +18,7 @@ async function initialize() {
 }
 ```
 
-Note that the RPC URL is hardcoded in the bot since it will not be passed in by the scan node. When hardcoding an API key, you probably also want to use obfuscation as shown in the pattern for [hiding sensitive data](sensitive-data.md).
+Note that the RPC URL is hardcoded in the bot since it will not be passed in by the scan node. When using an API key, you probably also want to use obfuscation as shown in the pattern for [protecting sensitive data](sensitive-data.md) or load the API key securely using [JWT authentication](jwt-auth.md).
 
 ## Scanning blocks
 
