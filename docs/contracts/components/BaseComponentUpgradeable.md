@@ -1,41 +1,12 @@
-## AccessManager
+## BaseComponentUpgradeable
 
-### version
+_The Forta platform is composed of "component" smart contracts that are upgradeable, share a common access
+control scheme and can send use routed hooks to signal one another. They also support the multicall pattern.
 
-```solidity
-string version
-```
-
-### constructor
-
-```solidity
-constructor(address forwarder) public
-```
-
-### initialize
-
-```solidity
-function initialize(address __admin) external
-```
-
-Initializer method, access point to initialize inheritance tree.
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| __admin | address | address to be the DEFAULT_ADMIN_ROLE. |
-
-### setNewRole
-
-```solidity
-function setNewRole(bytes32 role, bytes32 admin) external
-```
-
-Method for DEFAULT_ADMIN_ROLE to create new roles, and define their role admin.
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| role | bytes32 | id of the new role. Should be keccak256("<ROLE_NAME>"). |
-| admin | bytes32 | role id that will be the role admin for the new role. |
+This contract contains the base of Forta components. Contract  inheriting this will have to call
+- __AccessManaged_init(address manager)
+- __Routed_init(address router)
+in their initialization process._
 
 ### _authorizeUpgrade
 
@@ -43,24 +14,20 @@ Method for DEFAULT_ADMIN_ROLE to create new roles, and define their role admin.
 function _authorizeUpgrade(address newImplementation) internal virtual
 ```
 
-Access control for the upgrade process (UPGRADER_ROLE)
+_Function that should revert when `msg.sender` is not authorized to upgrade the contract. Called by
+{upgradeTo} and {upgradeToAndCall}.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| newImplementation | address | address of the new deployed implementation. |
+Normally, this function will use an xref:access.adoc[access control] modifier such as {Ownable-onlyOwner}.
+
+```solidity
+function _authorizeUpgrade(address) internal override onlyOwner {}
+```_
 
 ### setName
 
 ```solidity
 function setName(address ensRegistry, string ensName) public
 ```
-
-Allow ENS_MANAGER_ROLE to set ENS reverse registration
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| ensRegistry | address | address |
-| ensName | string | the name to set in th registry |
 
 ### _msgSender
 

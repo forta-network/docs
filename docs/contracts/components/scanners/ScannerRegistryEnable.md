@@ -1,5 +1,4 @@
-
-
+## ScannerRegistryEnable
 
 _ScannerRegistry methods and state handling disabling and enabling scanners, and
 recognizing stake changes that might disable a scanner.
@@ -21,7 +20,7 @@ enum Permission {
 ### _disabled
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct BitMaps.BitMap) _disabled
+mapping(uint256 => struct BitMaps.BitMap) _disabled
 ```
 
 ### ScannerEnabled
@@ -40,7 +39,7 @@ Check if scanner is enabled
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -53,11 +52,11 @@ function enableScanner(uint256 scannerId, enum ScannerRegistryEnable.Permission 
 ```
 
 Public method to enable a scanner, if caller has permission. Scanner must be staked over minimum defined
-for the scanner&#x27;s chainId.
+for the scanner's chainId.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the caller claims to have. |
 
 ### disableScanner
@@ -70,8 +69,26 @@ Public method to disable a scanner, if caller has permission.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the caller claims to have. |
+
+### getDisableFlags
+
+```solidity
+function getDisableFlags(uint256 scannerId) public view returns (uint256)
+```
+
+Get the disabled flags for an agentId. Permission (uint8) is used for indexing, so we don't
+need to loop. 
+If not disabled, all flags will be 0
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| scannerId | uint256 | ERC721 token id of the scanner. |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | uint256 | uint256 containing the byte flags. |
 
 ### _hasPermission
 
@@ -85,7 +102,7 @@ _AccessManager is not used since the permission is specific for scannerId_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the caller claims to have. |
 
 | Name | Type | Description |
@@ -104,27 +121,9 @@ _will trigger _before and _after enable hooks within the inheritance tree._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the caller claims to have. |
 | enable | bool | true for enabling, false for disabling |
-
-### _getDisableFlags
-
-```solidity
-function _getDisableFlags(uint256 scannerId) internal view returns (uint256)
-```
-
-Get the disabled flags for an agentId. Permission (uint8) is used for indexing, so we don&#x27;t
-need to loop. 
-If not disabled, all flags will be 0
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | uint256 | uint256 containing the byte flags. |
 
 ### _beforeScannerEnable
 
@@ -138,7 +137,7 @@ _does nothing in this contract_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the sender claims to have to enable the agent. |
 | value | bool | true if enabling, false if disabling. |
 
@@ -154,7 +153,7 @@ _sets the corresponding byte in _disabled bitmap for scannerId. Emits ScannerEna
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the sender claims to have to enable the agent. |
 | value | bool | true if enabling, false if disabling. |
 
@@ -170,7 +169,7 @@ _emits Router hook._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the sender claims to have to enable the agent. |
 | value | bool | true if enabling, false if disabling. |
 
@@ -180,7 +179,7 @@ _emits Router hook._
 function _msgSender() internal view virtual returns (address sender)
 ```
 
-Obligatory inheritance dismambiguation of ForwardedContext&#x27;s _msgSender()
+Obligatory inheritance dismambiguation of ForwardedContext's _msgSender()
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -192,7 +191,7 @@ Obligatory inheritance dismambiguation of ForwardedContext&#x27;s _msgSender()
 function _msgData() internal view virtual returns (bytes)
 ```
 
-Obligatory inheritance dismambiguation of ForwardedContext&#x27;s _msgSender()
+Obligatory inheritance dismambiguation of ForwardedContext's _msgSender()
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |

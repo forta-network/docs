@@ -1,5 +1,4 @@
-
-
+## FortaStakingUtils
 
 ### subjectToActive
 
@@ -7,7 +6,7 @@
 function subjectToActive(uint8 subjectType, uint256 subject) internal pure returns (uint256)
 ```
 
-_Encode &quot;active&quot; and subjectType in subject by hashing them together, shifting left 9 bits,
+_Encode "active" and subjectType in subject by hashing them together, shifting left 9 bits,
 setting bit 9 (to mark as active) and masking subjectType in_
 
 | Name | Type | Description |
@@ -25,7 +24,7 @@ setting bit 9 (to mark as active) and masking subjectType in_
 function subjectToInactive(uint8 subjectType, uint256 subject) internal pure returns (uint256)
 ```
 
-_Encode &quot;inactive&quot; and subjectType in subjectby hashing them together, shifting left 9 bits,
+_Encode "inactive" and subjectType in subject by hashing them together, shifting left 9 bits,
 letting bit 9 unset (to mark as inactive) and masking subjectType in._
 
 | Name | Type | Description |

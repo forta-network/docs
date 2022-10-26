@@ -1,5 +1,4 @@
-
-
+## AgentRegistryMetadata
 
 ### AgentMetadata
 
@@ -14,13 +13,13 @@ struct AgentMetadata {
 ### _agentMetadata
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct AgentRegistryMetadata.AgentMetadata) _agentMetadata
+mapping(uint256 => struct AgentRegistryMetadata.AgentMetadata) _agentMetadata
 ```
 
 ### _agentMetadataUniqueness
 
 ```solidity
-mapping(bytes32 &#x3D;&gt; bool) _agentMetadataUniqueness
+mapping(bytes32 => bool) _agentMetadataUniqueness
 ```
 
 ### MetadataNotUnique
@@ -32,18 +31,18 @@ error MetadataNotUnique(bytes32 hash)
 ### getAgent
 
 ```solidity
-function getAgent(uint256 agentId) public view returns (bool created, address owner, uint256 agentVersion, string metadata, uint256[] chainIds)
+function getAgent(uint256 agentId) public view returns (bool registered, address owner, uint256 agentVersion, string metadata, uint256[] chainIds)
 ```
 
 Gets agent metadata, version and chain Ids.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent. |
+| agentId | uint256 | ERC721 token id of the agent. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| created | bool | if agent exists. |
+| registered | bool | if agent exists. |
 | owner | address | address. |
 | agentVersion | uint256 | of the agent. |
 | metadata | string | IPFS pointer. |
@@ -61,8 +60,8 @@ _checks metadata uniqueness and updates agent metadata and version._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent to be created or updated. |
-| newMetadata | string | IPFS pointer to agent&#x27;s metadata JSON. |
+| agentId | uint256 | ERC721 token id of the agent to be created or updated. |
+| newMetadata | string | IPFS pointer to agent's metadata JSON. |
 | newChainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
 
 ### __gap
