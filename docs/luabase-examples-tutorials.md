@@ -13,6 +13,6 @@ FROM ethereum.tags WHERE label in ('heist', 'exploit', 'phish-hack')
 
 ## Tutorials
 
-* (coming soon!) [Analysis on Forta Early Detection of the Olympus DAO Hack](#).
+* (coming soon!) [Scam Detector Feed Bot Alert Analysis](#).
 
 
