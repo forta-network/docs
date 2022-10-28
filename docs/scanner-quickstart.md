@@ -233,14 +233,14 @@ Your scan node will be registered to scan a single chain. To let your scan node 
 !!! warning "Public JSON-RPC APIs"
     While there are public endpoints available for many chains, **please note that the quality of an endpoint drives the quality of a scan node's output which in turn affects rewards and slashing.** *We strongly recommend providing your own blockchain node or using [Alchemy](alchemy-partnership.md) to setup your Forta node*
 
-If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method. If you have your own Ethereum node that supports it (e.g. Erigon), you can use that node. If not, you can use an endpoint from a paid plan like Alchemy Growth plan.
+If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method. If you have your own Ethereum node that supports it (e.g. Erigon), you can use that node. If not, you can use an endpoint from a paid plan like [Alchemy](alchemy-partnership.md) Growth plan.
 
 !!! note "JSON-RPC APIs"
     Detection bots are able to call JSON-RPC APIs using the scan node's configured endpoints. By default, this is the `scan.jsonRpc.url` but one can separate bot-specific traffic by specifying a `jsonRpcProxy.jsonRpc.url`. We suggest setting this as your own node's JSON-RPC API endpoint if you are running one. If not, it is better to set this as a different JSON-RPC API endpoint than `scan.jsonRpc.url`.
 
 **If your node is scanning chains other than Ethereum mainnet,** please checkout the final section to see options.
 
-Here is an example configuration to scan Ethereum mainnet using Alchemy Growth plan:
+Here is an example configuration to scan Ethereum mainnet using [Alchemy](alchemy-partnership.md) Growth plan:
 
 ```yaml
 chainId: 1
@@ -288,7 +288,7 @@ There are a set of Forta smart contracts on Polygon, which allows finding out:
 - the latest list of bots which a scan node should run
 - the latest Forta node service Docker image release
 
-All Forta nodes are expected to run with the latest release and the latest list of the assigned bots. To be able to read these values, Forta nodes use `https://polygon-rpc.com` by default. Please consider changing this to a free Polygon API with high availability, e.g. Alchemy Polygon API, by adding the following configuration:
+All Forta nodes are expected to run with the latest release and the latest list of the assigned bots. To be able to read these values, Forta nodes use `https://polygon-rpc.com` by default. Please consider changing this to a free Polygon API with high availability, e.g. [Alchemy](alchemy-partnership.md) Polygon API, by adding the following configuration:
 
 ```yaml
 registry:

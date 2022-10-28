@@ -2,6 +2,16 @@
 
 This page covers how to deploy your bot using [Forta App](https://app.forta.network/).
 
+## Enable logging (optional)
+
+Forta provides a logging feature that can be used to see what's happening inside of your bot across multiple scan nodes. To enable this feature, you need to add/uncomment the following line in the bot **Dockerfile**:
+
+```Dockerfile
+LABEL "network.forta.settings.agent-logs.enable"="true"
+```
+
+After deploying, you can [view bot logs](maintaining.md#viewing-bot-logs) using the Forta API.
+
 ## Pushing your bot image
 
 Before you head over to Forta App, you will need one piece of information: your bot's image reference. You can get the image reference by running the following command (**make sure your Docker is running before proceeding**):
@@ -41,19 +51,21 @@ Your Metamask should now be connected to Forta App. You should see your wallet a
 
 ## Deploying
 
-In order to deploy your bot, you will need to complete a short form by navigating to the My Agents page (from the menu at the top right):
+In order to deploy your bot, you will need to complete a short form by navigating to the Detection Bots page (from the menu at the top right):
 
-1. Click the Deploy Agent button to bring up the form. The bot ID will be automatically generated for you
+1. Click the Deploy Bot button to bring up the form. The bot ID will be automatically generated for you
 2. Fill in the rest of the fields with your bot's information like name, description, version and which blockchains you want to scan
 3. For the Documentation field, select the README.md from your project folder. This will be uploaded to IPFS
 4. For the Docker Image field, paste in the image reference you copied earlier from the `npm run push` command
 5. If your code repository is public, fill in the Repository field
 6. Click the "Sign to proceed" button
 7. A Metamask dialog will appear asking you to sign the bot metadata. Click the Sign button
-8. A confirmation form will display your bot metadata, including the IPFS hash of the bot metadata and documentation. If these look good, click the Deploy Agent button to initiate the deployment transaction
+8. A confirmation form will display your bot metadata, including the IPFS hash of the bot metadata and documentation. If these look good, click the Deploy Bot button to initiate the deployment transaction
 9. A Metamask dialog will appear asking you to confirm the deployment transaction. Review the details and click the Confirm button
 
-When successfully deployed, you should see the bot status as Enabled on the My Agents page.
+## Staking
+
+In order to enable your bot, it must be staked with 100 FORT tokens. You can easily stake on your bot by following the steps [here](stake-on-detection-bot.md).
 
 Congratulations! You have successfully deployed your first Forta bot!
 

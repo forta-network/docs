@@ -1,18 +1,20 @@
 site_name: Forta Docs
 
 nav:
-  - <strong>Receive Forta Alerts</strong>: 
+  - <strong>Receive Forta Alerts</strong>:
     - Getting started: receive-forta-alerts.md
     - Curated Feeds:
       - Attack Detector Feed: attack-detector-feed.md
       - Suspicious Events Feed: suspicious-events-feed.md
-    - API Integration: 
+    - Access real-time alerts with GraphQL:
       - API Access: api.md
       - GraphQL API reference: forta-api-reference/index.html
       - Example use cases: api-example-use-cases.md
       - Example queries & tutorials: api-examples-tutorials.md
-      - Subscriptions API: subscriptions-api.md
-  - <strong>Build Detection Bots</strong>: 
+    - Access historical alerts with SQL:
+      - Luabase Access: luabase-access.md
+      - Example SQL queries & tutorials: luabase-examples-tutorials.md
+  - <strong>Build Detection Bots</strong>:
     - Getting started: getting-started.md
     - Build your first detection bot:
         - 1) Quick start: quickstart.md
@@ -24,7 +26,8 @@ nav:
         - Video tutorials: tutorials.md
     - Detection bot wizard: wizard.md
     - Bot development patterns:
-        - Hiding sensitive data: sensitive-data.md
+        - Protecting sensitive data: sensitive-data.md
+        - JWT authentication for bots: jwt-auth.md
         - Private alerts: private-alerts.md
         - Transaction simulation: tx-simulation.md
         - Long running tasks: long-running-tasks.md
@@ -32,8 +35,7 @@ nav:
         - Error monitoring: error-monitoring.md
         - Advanced testing: advanced-testing.md
         - Time series analysis: time-series-analysis.md
-        - Deploying Machine Learning Models: deploying-ml-models.md
-        - Jwt auth for third-party apps: jwt-auth.md
+        - Deploying machine learning models: deploying-ml-models.md
     - Tools:
       - Useful libraries: useful-libraries.md
       - Javascript/Typescript SDK: sdk.md
@@ -52,16 +54,19 @@ nav:
         - Forta Contest 4 (8/31/2022): contest8-forta.md
         - Forta Contest 5 (10/11/2022): contest9-forta.md
     - Integrating with Hardhat: hardhat.md
-  - <strong>Run a Scan Node</strong>: 
+  - <strong>Run a Scan Node</strong>:
     - Quickstart: scanner-quickstart.md
     - SLA Calculation: sla.md
     - SLA API: sla-api.md
     - Stake on your Scan Node: stake-on-scan-node.md
     - Local Scan Node: scanner-local-mode.md
     - Scan With Alchemy: alchemy-partnership.md
-  - <strong>About Forta</strong>: 
+  - <strong>About Forta</strong>:
     - What is Forta: what-is-forta.md
     - FORT token: fort-token.md
+    - Stake Slashing:
+      - Slashing Policy: slashing-policy.md
+      - Creating a Slash Proposal: slashing-creating-proposal.md
     - Governance: governance.md
     - Machine Learning: ds-and-ml.md
     - Smart contracts:
@@ -75,7 +80,10 @@ nav:
             - AgentRegistryEnumerable: contracts/components/agents/AgentRegistryEnumerable.md
             - AgentRegistryMetadata: contracts/components/agents/AgentRegistryMetadata.md
         - Dispatch:
-            - Dispatch: contracts/components/dispatch/Dispatch.md
+            - Dispatch: contracts/components/metatx/EIP712WithNonce.md
+        - MetaTx:
+            - EIP712WithNonce: contracts/components/dispatch/Dispatch.md
+            - Forwarder: docs/contracts/components/metatx/Forwarder.md
         - Scanners:
             - ScannerNodeVersion: contracts/components/scanners/ScannerNodeVersion.md
             - ScannerRegistry: contracts/components/scanners/ScannerRegistry.md
@@ -87,16 +95,26 @@ nav:
             - FortaStaking: contracts/components/staking/FortaStaking.md
             - FortaStakingParameters: contracts/components/staking/FortaStakingParameters.md
             - FortaStakingUtils: contracts/components/staking/FortaStakingUtils.md
+            - ISlashingExecutor: contracts/components/staking/ISlashingExecutor.md
             - IStakeController: contracts/components/staking/IStakeController.md
-            - IStakeSubject.md: contracts/components/staking/IStakeSubject.md
-            - StakeSubject.md: contracts/components/staking/StakeSubject.md
-            - SubjectTypes.md: contracts/components/staking/SubjectTypes.md
+            - IStakeSubject: contracts/components/staking/IStakeSubject.md
+            - SlashingController: contracts/components/staking/SlashingController.md
+            - StakeSubject: contracts/components/staking/StakeSubject.md
+            - SubjectTypes: contracts/components/staking/SubjectTypes.md
+        - Utils:
+            - AccessManaged: contracts/components/utils/AccessManaged.md
+            - ForwardedContext: contracts/components/utils/ForwardedContext.md
+            - IVersioned: contracts/components/utils/IVersioned.md
+            - StateMachines: contracts/components/utils/StateMachines.md
+        - BaseComponentUpgradeable: contracts/components/BaseComponentUpgradeable.md
         - Roles: contracts/components/Roles.md
         - Errors: contracts/errors/GeneralErrors.md
         - Token:
             - Forta: contracts/token/Forta.md
             - FortaBridgedPolygon: contracts/token/FortaBridgedPolygon.md
             - FortaCommon: contracts/token/FortaCommon.md
+        - Tools:
+            - Distributions: contracts/tools/Distributions.md
     - Security:
       - Security Overview: security.md
       - Design: security-design.md
@@ -106,7 +124,7 @@ nav:
       - Maintenance: security-maintain.md
     - How to contribute: contributing.md
     - FAQ: faq.md
-    
+
 
 theme:
   name: material
@@ -127,6 +145,11 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator: !!python/name:materialx.emoji.to_svg
       emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 extra:
   generator: false

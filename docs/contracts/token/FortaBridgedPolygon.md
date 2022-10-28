@@ -1,11 +1,10 @@
-
-
+## FortaBridgedPolygon
 
 This version of the Forta token is living on the child chain. That would be:
 - Polygon for production
 - Mumbai for testing
 
-When tokens are deposited from the root chain, the &#x60;childChainManagerProxy&#x60; will call the
+When tokens are deposited from the root chain, the `childChainManagerProxy` will call the
 {deposit} function, which will mint corresponding tokens on the child chain. The total supply
 on the side chain is expected to match the amount of locked tokens on the parent chain.
 
@@ -57,7 +56,7 @@ function deposit(address user, bytes depositData) external
 ```
 
 _To avoid token locked on the parent chains not being correctly represented on the
-child chain, this should NEVER revert (exception: _mint can revert if totalSupply() &lt;&#x3D; _maxSupply()).
+child chain, this should NEVER revert (exception: _mint can revert if totalSupply() <= _maxSupply()).
 Consequently, we might have to temporarily grant
 WHITELIST_ROLE to the receiver.
 If the receiver is not whitelisted when the deposit happens, tokens are minted but not
@@ -74,7 +73,7 @@ usable until the receiver goes through the whitelisting process._
 function withdraw(uint256 amount) external
 ```
 
-_Burns tokens in L2 so Polygon&#x27;s PoS bridge will unlock them in L1._
+_Burns tokens in L2 so Polygon's PoS bridge will unlock them in L1._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |

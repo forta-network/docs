@@ -6,7 +6,7 @@ While this is useful information, bot developers may want to integrate their bot
 
 ## Initialization
 
-Whatever 3rd party error monitoring tool you decide to use, there will probably be some sort of initialization method you need to invoke, possibly using some API key. A good place to do this would be inside the `initialize` handler of the bot. Also, when placing API keys in your code you probably want to use obfuscation as described in the pattern for [hiding sensitive data](sensitive-data.md).
+Whatever 3rd party error monitoring tool you decide to use, there will probably be some sort of initialization method you need to invoke, possibly using some API key. A good place to do this would be inside the `initialize` handler of the bot. Also, when placing API keys in your code you probably want to use methods described in the pattern for [protecting sensitive data](sensitive-data.md).
 
 ## Catching errors
 

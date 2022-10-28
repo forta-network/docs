@@ -52,9 +52,9 @@ Caching is a great way to improve performance. If you need to store the result o
 
 Try to make use of concurrency to maximize performance. For example, if you are firing multiple http requests to fetch on-chain data, you can use the `ethers-multicall` package to fetch all the data in a single http request. Also, if firing multiple network calls, you can fire all the requests at the same time using something like `Promise.all` in Javascript.
 
-## Obfuscate sensitive information
+## Protect sensitive information
 
-Be sure to obfuscate sensitive information, such as API keys, in your code. Bot images are stored in a public repository where anyone can access and inspect the code. See the pattern for [hiding sensitive data](sensitive-data.md).
+Be sure to protect sensitive information, such as API keys, in your code. Bot images are stored in a public repository where anyone can access and inspect the code. See the pattern for [protecting sensitive data](sensitive-data.md).
 
 ## Beware of case-sensitivity
 

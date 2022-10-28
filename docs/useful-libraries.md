@@ -31,4 +31,8 @@ Here is a collection of libraries and APIs that bot developers may find useful w
 
 ## Etherscan API
 
-The [Etherscan APIs](https://etherscan.io/apis) are a great resource for bot developers. They can be used to answer questions like "which transactions was a given address involved in?" or "what is the ABI for a given contract address?". **Note: make sure to [use obfuscation](sensitive-data.md) if placing an Etherscan API key in your code.**
+The [Etherscan APIs](https://etherscan.io/apis) are a great resource for bot developers. They can be used to answer questions like "which transactions was a given address involved in?" or "what is the ABI for a given contract address?". **Note: make sure to [use obfuscation](sensitive-data.md) or [JWT authentication](jwt-auth.md) if using an Etherscan API key in your code.**
+
+## Luabase
+
+[Luabase](https://luabase.com) is a SQL-based data platform that makes it easy to query blockchain data and Forta alerts. You can request data in real-time via an [API](https://luabase.notion.site/2067e9caa29448ccafe729518cf67ea6?v=a370577950c0407f939df3fa7362daff&p=0bf87e362d9645d2bc2d9876cc549a72&pm=s) in your bot. For example, the [Exploiter Addresses Bot](https://github.com/forta-network/starter-kits/tree/main/exploiter-addresses-py#exploiter-addresses-detection-bot) uses Luabase's API to query known exploiter addresses. For more details on access and example queries, check out docs [here](luabase-access.md).

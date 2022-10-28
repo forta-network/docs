@@ -2,7 +2,7 @@
 
 In certain usecases bot developers may want to keep their generated alerts private. Using encryption, bot developers can publish alerts that are unreadable to anyone but themselves. An alternative to encryption is obscurity i.e. use some sort of error code in the finding, like "42", which only the bot developer would understand.
 
-In addition to encrypting the alerts, you likely also want to obfuscate the bot logic (as done in the example code). Bot images are stored in a public repository where anyone can inspect the contents of the image as well as the bot logic to see what is being scanned for. Check out the [pattern for hiding sensitive data](sensitive-data.md) to understand how this is implemented.
+In addition to encrypting the alerts, you likely also want to obfuscate the bot logic (as done in the example code). Bot images are stored in a public repository where anyone can inspect the contents of the image as well as the bot logic to see what is being scanned for. Check out the pattern for [protecting sensitive data](sensitive-data.md) to understand how this is implemented.
 
 This page describes how to write a Javascript bot that emits private alerts using encryption. You can find the code for this example [here](https://github.com/forta-network/forta-bot-examples/tree/master/private-agent-js).
 
@@ -10,7 +10,7 @@ This page describes how to write a Javascript bot that emits private alerts usin
 
 [OpenPGP](https://www.openpgp.org/) public key encryption will be used in this example, but you can use any public key encryption algorithm you prefer (just make sure you understand the tradeoffs). The first step is to generate the keypair you will use for encryption. This example uses the [OpenPGP.js](https://www.npmjs.com/package/openpgp) library, but you can use any library you prefer. The project has an npm script to generate public and private keys: `npm run keygen`. This will run the `generate-keys.js` file and output a public and private key file in the project folder: public.pem and private.pem, respectively.
 
-The public key can be distributed with the bot, so let's copy paste it into agent.js (be careful with formatting as there should be no spaces at the beginning of each line). The private key should be **secured and kept in a secret place** i.e. do not commit private.pem into version control. If you view the bot code in agent.js, you will see that the public key is setup inside the `initialize` handler function:
+The public key can be distributed with the bot, so let's copy paste it into agent.js (be careful with formatting as there should be no spaces at the beginning of each line). Alternatively, you can load the public key from a secure server using the pattern described in [JWT authentication for bots](jwt-auth.md). The private key should be **secured and kept in a secret place** i.e. do not commit private.pem into version control. If you view the bot code in agent.js, you will see that the public key is setup inside the `initialize` handler function:
 
 ```javascript
 let publicKey;
@@ -112,7 +112,7 @@ This will tell the Forta network not to display the emitted alerts in Forta Expl
 - Make sure to modify the README.md documentation to not reveal anything about the bot since it will be published in the bot manifest. You can keep a separate file (e.g. README_private.md) for your own internal documentation
 - Be careful when populating the package.json `name` and `description` fields as these will get published in the bot manifest. You may not want these to reveal anything about the bot
 - For bots with several files, you can encrypt all findings in the top-level agent.js file. This way you don't need to repeat encryption code across multiple files
-- Do not read the public key from the public.pem file as this would make your bot vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your bot's findings on their own machine
+- Do not programmatically read the public key from the public.pem file as this would make your bot vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your bot's findings on their own machine
 - Make sure that unit tests are also obfuscated, or better yet, just not included in the final image. This could easily reveal what the bot is doing
 
 Awesome! You now have a bot that encrypts findings which do not appear in Forta Explorer.

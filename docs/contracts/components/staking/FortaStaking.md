@@ -1,12 +1,20 @@
+## IRewardReceiver
 
+### onRewardReceived
+
+```solidity
+function onRewardReceived(uint8 subjectType, uint256 subject, uint256 amount) external
+```
+
+## FortaStaking
 
 _This is a generic staking contract for the Forta platform. It allows any account to deposit ERC20 tokens to
-delegate their &quot;power&quot; by staking on behalf of a particular subject. The subject can be scanner, or any other actor
+delegate their "power" by staking on behalf of a particular subject. The subject can be scanner, or any other actor
 in the Forta ecosystem, who need to lock assets in order to contribute to the system.
 
 Stakers take risks with their funds, as bad action from a subject can lead to slashing of the funds. In the
-meantime, stakers are elligible for rewards. Rewards distributed to a particular subject&#x27;s stakers are distributed
-following to each staker&#x27;s share in the subject.
+meantime, stakers are elligible for rewards. Rewards distributed to a particular subject's stakers are distributed
+following to each staker's share in the subject.
 
 Stakers can withdraw their funds, following a withdrawal delay. During the withdrawal delay, funds are no longer
 counting toward the active stake of a subject, but are still slashable.
@@ -23,16 +31,9 @@ be done very carefully.
 
 WARNING: To stake from another smart contract (smart contract wallets included), it must be fully ERC1155 compatible,
 implementing ERC1155Receiver. If not, minting of active and inactive shares will fail.
-Do not deposit on the constructor if you don&#x27;t implement ERC1155Receiver. During the construction, the minting will
+Do not deposit on the constructor if you don't implement ERC1155Receiver. During the construction, the minting will
 succeed but you will not be able to withdraw or mint new shares from the contract. If this happens, transfer your
 shares to an EOA or fully ERC1155 compatible contract._
-
-
-### onRewardReceived
-
-```solidity
-function onRewardReceived(uint8 subjectType, uint256 subject, uint256 amount) external
-```
 
 ### stakedToken
 
@@ -55,7 +56,7 @@ struct Distributions.Balances _inactiveStake
 ### _lockingDelay
 
 ```solidity
-mapping(uint256 &#x3D;&gt; mapping(address &#x3D;&gt; struct Timers.Timestamp)) _lockingDelay
+mapping(uint256 => mapping(address => struct Timers.Timestamp)) _lockingDelay
 ```
 
 ### _rewards
@@ -67,13 +68,13 @@ struct Distributions.Balances _rewards
 ### _released
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct Distributions.SignedBalances) _released
+mapping(uint256 => struct Distributions.SignedBalances) _released
 ```
 
 ### _frozen
 
 ```solidity
-mapping(uint256 &#x3D;&gt; bool) _frozen
+mapping(uint256 => bool) _frozen
 ```
 
 ### _withdrawalDelay
@@ -88,10 +89,28 @@ uint64 _withdrawalDelay
 address _treasury
 ```
 
+### HUNDRED_PERCENT
+
+```solidity
+uint256 HUNDRED_PERCENT
+```
+
 ### _stakingParameters
 
 ```solidity
 contract IStakeController _stakingParameters
+```
+
+### MIN_WITHDRAWAL_DELAY
+
+```solidity
+uint256 MIN_WITHDRAWAL_DELAY
+```
+
+### MAX_WITHDRAWAL_DELAY
+
+```solidity
+uint256 MAX_WITHDRAWAL_DELAY
 ```
 
 ### StakeDeposited
@@ -122,6 +141,12 @@ event Froze(uint8 subjectType, uint256 subject, address by, bool isFrozen)
 
 ```solidity
 event Slashed(uint8 subjectType, uint256 subject, address by, uint256 value)
+```
+
+### SlashedShareSent
+
+```solidity
+event SlashedShareSent(uint8 subjectType, uint256 subject, address by, uint256 value)
 ```
 
 ### Rewarded
@@ -217,13 +242,13 @@ string version
 ### constructor
 
 ```solidity
-constructor(address forwarder) public
+constructor(address _forwarder) public
 ```
 
 ### initialize
 
 ```solidity
-function initialize(address __manager, address __router, contract IERC20 __stakedToken, uint64 __withdrawalDelay, address __treasury) public
+function initialize(address __manager, address __router, uint64 __withdrawalDelay, address __treasury, address __stakedToken) public
 ```
 
 Initializer method, access point to initialize inheritance tree.
@@ -232,9 +257,17 @@ Initializer method, access point to initialize inheritance tree.
 | ---- | ---- | ----------- |
 | __manager | address | address of AccessManager. |
 | __router | address | address of Router. |
-| __stakedToken | contract IERC20 | ERC20 to be staked (FORT). |
 | __withdrawalDelay | uint64 | cooldown period between withdrawal init and withdrawal (in seconds). |
 | __treasury | address | address where the slashed tokens go to. |
+| __stakedToken | address |  |
+
+### treasury
+
+```solidity
+function treasury() public view returns (address)
+```
+
+Returns treasury address (slashed tokens destination)
 
 ### activeStakeFor
 
@@ -399,18 +432,18 @@ Checks if a subject frozen (stake of frozen subject cannot be withdrawn).
 function deposit(uint8 subjectType, uint256 subject, uint256 stakeValue) public returns (uint256)
 ```
 
-Deposit &#x60;stakeValue&#x60; tokens for a given &#x60;subject&#x60;, and mint the corresponding active ERC1155 shares.
+Deposit `stakeValue` tokens for a given `subject`, and mint the corresponding active ERC1155 shares.
 will return tokens staked over maximum for the subject.
 If stakeValue would drive the stake over the maximum, only stakeValue - excess is transferred, but transaction will
 not fail.
 Reverts if max stake for subjectType not set, or subject not found
 
-_NOTE: Subject type is necessary because we can&#x27;t infer subject ID uniqueness between scanners, agents, etc
+_NOTE: Subject type is necessary because we can't infer subject ID uniqueness between scanners, agents, etc
 Emits a ERC1155.TransferSingle event and StakeDeposited (to allow accounting per subject type)
 Emits MaxStakeReached(subjectType, activeSharesId)
 WARNING: To stake from another smart contract (smart contract wallets included), it must be fully ERC1155 compatible,
 implementing ERC1155Receiver. If not, minting of active and inactive shares will fail.
-Do not deposit on the constructor if you don&#x27;t implement ERC1155Receiver. During the construction, the minting will
+Do not deposit on the constructor if you don't implement ERC1155Receiver. During the construction, the minting will
 succeed but you will not be able to withdraw or mint new shares from the contract. If this happens, transfer your
 shares to an EOA or fully ERC1155 compatible contract._
 
@@ -450,7 +483,7 @@ function initiateWithdrawal(uint8 subjectType, uint256 subject, uint256 sharesVa
 ```
 
 Starts the withdrawal process for an amount of shares. Burns active shares and mints inactive
-shares (non transferrable). Stake will be available for withdraw() after _withdrawalDelay. If the 
+shares (non transferrable). Stake will be available for withdraw() after _withdrawalDelay. If the
 subject has not been slashed, the shares will correspond 1:1 with stake.
 
 _Emits a WithdrawalInitiated event._
@@ -471,10 +504,10 @@ _Emits a WithdrawalInitiated event._
 function withdraw(uint8 subjectType, uint256 subject) public returns (uint256)
 ```
 
-Burn &#x60;sharesValue&#x60; inactive shares for a given &#x60;subject&#x60;, and withdraw the corresponding tokens
+Burn `sharesValue` inactive shares for a given `subject`, and withdraw the corresponding tokens
 (if the subject type has not been frozen, and the withdrawal delay time has passed).
 
-_shars must have been marked for withdrawal before by initiateWithdrawal().
+_shares must have been marked for withdrawal before by initiateWithdrawal().
 Emits events WithdrawalExecuted and ERC1155.TransferSingle._
 
 | Name | Type | Description |
@@ -489,10 +522,10 @@ Emits events WithdrawalExecuted and ERC1155.TransferSingle._
 ### slash
 
 ```solidity
-function slash(uint8 subjectType, uint256 subject, uint256 stakeValue) public returns (uint256)
+function slash(uint8 subjectType, uint256 subject, uint256 stakeValue, address proposer, uint256 proposerPercent) public returns (uint256)
 ```
 
-Slash a fraction of a subject stake, and transfer it to the treasury. Restricted to the &#x60;SLASHER_ROLE&#x60;.
+Slash a fraction of a subject stake, and transfer it to the treasury. Restricted to the `SLASHER_ROLE`.
 
 _This will alter the relationship between shares and stake, reducing shares value for a subject.
 Emits a Slashed event._
@@ -501,7 +534,9 @@ Emits a Slashed event._
 | ---- | ---- | ----------- |
 | subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
-| stakeValue | uint256 | amount of staked token. |
+| stakeValue | uint256 | amount of staked token to be slashed. |
+| proposer | address | address of the slash proposer. Must be nonzero address if proposerPercent > 0 |
+| proposerPercent | uint256 | percentage of stakeValue sent to the proposer. From 0 to FortaStakingParameters.maxSlashableStakePercent() |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -513,9 +548,9 @@ Emits a Slashed event._
 function freeze(uint8 subjectType, uint256 subject, bool frozen) public
 ```
 
-Freeze/unfreeze withdrawal of a subject stake. This will be used when something suspicious happens 
+Freeze/unfreeze withdrawal of a subject stake. This will be used when something suspicious happens
 with a subject but there is not a strong case yet for slashing.
-Restricted to the &#x60;SLASHER_ROLE&#x60;.
+Restricted to the `SLASHER_ROLE`.
 
 _Emits a Freeze event._
 
@@ -531,7 +566,7 @@ _Emits a Freeze event._
 function reward(uint8 subjectType, uint256 subject, uint256 value) public
 ```
 
-Deposit reward value for a given &#x60;subject&#x60;. The corresponding tokens will be shared amongst the shareholders
+Deposit reward value for a given `subject`. The corresponding tokens will be shared amongst the shareholders
 of this subject.
 
 _Emits a Reward event._
@@ -561,7 +596,7 @@ _WARNING: thoroughly review the token to b_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | uint256 | amount of tokens swept. For unrelated tokens is FortaStaking&#x27;s balance, for stakedToken its the balance over the active stake + inactive stake + rewards |
+| [0] | uint256 | amount of tokens swept. For unrelated tokens is FortaStaking's balance, for stakedToken its the balance over the active stake + inactive stake + rewards |
 
 ### releaseReward
 
@@ -569,7 +604,7 @@ _WARNING: thoroughly review the token to b_
 function releaseReward(uint8 subjectType, uint256 subject, address account) public returns (uint256)
 ```
 
-Release reward owed by given &#x60;account&#x60; for its current or past share for a given &#x60;subject&#x60;.
+Release reward owed by given `account` for its current or past share for a given `subject`.
 
 _If staking from a contract, said contract may optionally implement ERC165 for IRewardReceiver.
 Emits a Release event._
@@ -590,7 +625,7 @@ Emits a Release event._
 function _availableReward(uint256 activeSharesId, address account) internal view returns (uint256)
 ```
 
-Amount of reward tokens owed by given &#x60;account&#x60; for its current or past share for a given &#x60;subject&#x60;.
+Amount of reward tokens owed by given `account` for its current or past share for a given `subject`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -607,7 +642,7 @@ Amount of reward tokens owed by given &#x60;account&#x60; for its current or pas
 function availableReward(uint8 subjectType, uint256 subject, address account) external view returns (uint256)
 ```
 
-_Amount of reward tokens owed by given &#x60;account&#x60; for its current or past share for a given &#x60;subject&#x60;._
+_Amount of reward tokens owed by given `account` for its current or past share for a given `subject`._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -645,7 +680,7 @@ function _totalHistoricalReward(uint256 activeSharesId) internal view returns (u
 ### _historicalRewardFraction
 
 ```solidity
-function _historicalRewardFraction(uint256 activeSharesId, uint256 amount) internal view returns (uint256)
+function _historicalRewardFraction(uint256 activeSharesId, uint256 amount, enum Math.Rounding rounding) internal view returns (uint256)
 ```
 
 ### _beforeTokenTransfer
@@ -656,29 +691,73 @@ function _beforeTokenTransfer(address operator, address from, address to, uint25
 
 _See {ERC1155-_beforeTokenTransfer}._
 
-### _stakeToActiveShares
+### stakeToActiveShares
 
 ```solidity
-function _stakeToActiveShares(uint256 activeSharesId, uint256 amount) internal view returns (uint256)
+function stakeToActiveShares(uint256 activeSharesId, uint256 amount) public view returns (uint256)
 ```
 
-### _stakeToInactiveShares
+Convert active token stake amount to active shares amount
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| activeSharesId | uint256 | ERC1155 active shares id |
+| amount | uint256 | active stake amount |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | uint256 | ERC1155 active shares amount |
+
+### stakeToInactiveShares
 
 ```solidity
-function _stakeToInactiveShares(uint256 inactiveSharesId, uint256 amount) internal view returns (uint256)
+function stakeToInactiveShares(uint256 inactiveSharesId, uint256 amount) public view returns (uint256)
 ```
 
-### _activeSharesToStake
+Convert inactive token stake amount to inactive shares amount
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inactiveSharesId | uint256 | ERC1155 inactive shares id |
+| amount | uint256 | inactive stake amount |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | uint256 | ERC1155 inactive shares amount |
+
+### activeSharesToStake
 
 ```solidity
-function _activeSharesToStake(uint256 activeSharesId, uint256 amount) internal view returns (uint256)
+function activeSharesToStake(uint256 activeSharesId, uint256 amount) public view returns (uint256)
 ```
 
-### _inactiveSharesToStake
+Convert active shares amount to active stake amount.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| activeSharesId | uint256 | ERC1155 active shares id |
+| amount | uint256 | ERC1155 active shares amount |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | uint256 | active stake amount |
+
+### inactiveSharesToStake
 
 ```solidity
-function _inactiveSharesToStake(uint256 inactiveSharesId, uint256 amount) internal view returns (uint256)
+function inactiveSharesToStake(uint256 inactiveSharesId, uint256 amount) public view returns (uint256)
 ```
+
+Convert inactive shares amount to inactive stake amount.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inactiveSharesId | uint256 | ERC1155 inactive shares id |
+| amount | uint256 | ERC1155 inactive shares amount |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | uint256 | inactive stake amount |
 
 ### setDelay
 

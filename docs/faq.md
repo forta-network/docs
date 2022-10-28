@@ -48,7 +48,7 @@ You can write a "private bot" to generate alerts that can only be understood by 
 
 ## Can I include sensitive information like API keys in my bot?
 
-Bots are stored as Docker images in a public repository i.e. anyone can access and inspect the image and its contents. Currently, there is no supported mechanism for storing secrets on bots. We do not recommend storing high-value secrets on the bot. Please see the pattern for [hiding sensitive data](sensitive-data.md) to learn more.
+Bots are stored as Docker images in a public repository i.e. anyone can access and inspect the image and its contents. Currently, there is no supported mechanism for storing secrets on bots. We do not recommend storing high-value secrets on the bot. Please see the pattern for [protecting sensitive data](sensitive-data.md) to learn more.
 
 ## Where is my keyfile?
 

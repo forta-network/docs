@@ -1,10 +1,9 @@
-
-
+## ScannerRegistryManaged
 
 ### _managers
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct EnumerableSet.AddressSet) _managers
+mapping(uint256 => struct EnumerableSet.AddressSet) _managers
 ```
 
 ### ManagerEnabled
@@ -29,7 +28,7 @@ Checks sender (or metatx signer) is manager of the scanner token.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 
 ### isManager
 
@@ -41,7 +40,7 @@ Checks if address is defined as a manager for a scanner.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | manager | address | address to check. |
 
 | Name | Type | Description |
@@ -60,7 +59,7 @@ _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -72,13 +71,13 @@ _helper for external iteration._
 function getManagerAt(uint256 scannerId, uint256 index) public view virtual returns (address)
 ```
 
-Gets manager address at certain position of the scanner&#x27;s manager set.
+Gets manager address at certain position of the scanner's manager set.
 
 _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | index | uint256 | position in the set. |
 
 | Name | Type | Description |
@@ -95,7 +94,7 @@ Adds or removes a manager to a certain scanner. Restricted to scanner owner.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | manager | address | address to be added or removed fromm manager list for the scanner. |
 | enable | bool | true for adding, false for removing. |
 

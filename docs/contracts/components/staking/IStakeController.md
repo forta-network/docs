@@ -1,5 +1,4 @@
-
-
+## IStakeController
 
 ### StakeSubjectHandlerChanged
 
@@ -29,6 +28,18 @@ function maxStakeFor(uint8 subjectType, uint256 subject) external view returns (
 
 ```solidity
 function minStakeFor(uint8 subjectType, uint256 subject) external view returns (uint256)
+```
+
+### totalStakeFor
+
+```solidity
+function totalStakeFor(uint8 subjectType, uint256 subject) external view returns (uint256)
+```
+
+### maxSlashableStakePercent
+
+```solidity
+function maxSlashableStakePercent() external view returns (uint256)
 ```
 
 ### isStakeActivatedFor

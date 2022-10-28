@@ -1,8 +1,8 @@
-# Hiding sensitive data
+# Protecting sensitive data
 
-There are cases where developers need to store sensitive information in their bot (e.g. some API key) or just hide their bot code from the public. While Forta does not currently support storage of secrets (since all bot images are stored in a public repository), developers can still use code obfuscation as a way to hide sensitive data.
+There are cases where developers need to use sensitive information in their bot (e.g. some API key) or just hide their bot code from the public. While Forta does not currently support storage of secrets (since all bot images are stored in a public repository), developers can still use JWT authentication or code obfuscation as two ways to protect sensitive data.
 
-It should be noted that obfuscation is not the same as encryption, and that obfuscation can potentially be reversed with enough effort. With this in mind, we do not recommend storing high-value secrets in your bots i.e. private keys with lots of funds. However, secrets that can be easily replaced can still be obfuscated (e.g. Etherscan API key). The goal is to deter the average person from opening up your bot image and copy/pasting your secrets.
+It should be noted that obfuscation is not the same as encryption, and that obfuscation can potentially be reversed with enough effort. With this in mind, we do **not** recommend storing high-value secrets in your bots. Instead, you can use the pattern for [JWT authentication for bots](jwt-auth.md) to securely load secrets without storing them in the code.
 
 This page will demonstrate how to obfuscate your code using an example Javascript bot. You can find the code for this example [here](https://github.com/forta-network/forta-bot-examples/tree/master/hiding-sensitive-data-js).
 
