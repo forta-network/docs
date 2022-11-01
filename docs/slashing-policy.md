@@ -119,4 +119,4 @@ If members of the CAC do not stay aligned with the community and resolve dispute
 All data related to staking and slashing in the Forta Network is publicly available on the Polygon network for review. In addition, all activity undertaken by the Arbiter pursuant to this policy will be published in the Discord channel #slashing-proposals in advance of being executed on-chain, subject to redaction only where necessary to protect the security or integrity of the Forta Network. This disclosure should include posting what decisions and classifications were made and a summary of the reasoning. Any Slashing Proposal decided upon by the Council will be published in Council minutes according to the Council Bylaws. 
 
 # Illustrated process
-![Process](/slashing-images/slashing_process.png)
+![Process](slashing-images/slashing_process.png)
