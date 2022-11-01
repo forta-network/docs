@@ -15,13 +15,13 @@ In [FP-2](https://gov.forta.network/t/forta-proposal-2-fp-2-forta-bot-staking-an
 1. **Arbiter Multisig(s)** - responsible for receiving, reviewing and resolving the outcome of complaints (in the form of Slashing Proposals) in the Forta Network 
 2. **Slasher Multisig(s)** - responsible for approving and executing validated Slashing Proposals
 
-Since certain parts of the slashing architecture are not yet expressed in smart contract code running on-chain, the purpose of this Slashing Policy is to establish norms that guide the actions of multisig signors beyond what is currently expressed on-chain. This policy presumes that any signor that does not comply with the norms laid out in this Slashing Policy will be replaced via decentralized governance.
+Since certain parts of the slashing architecture are not yet expressed in smart contract code running on-chain, the purpose of this Slashing Policy is to establish norms that guide the actions of multisig signors beyond what is currently expressed on-chain. This policy presumes that any signor that does not comply with the norms laid out in this Slashing Policy will be replaced via [community governance](https://forta.org/blog/governance/).
 
 The substance of this policy is intended to ensure that the Forta slashing architecture supports a healthy and robust Network where participants perform their work correctly, while minimizing the risk to honest participants of being economically penalized while interacting with the Forta Network in good faith.
 
 ## Forta Slashing Process
 
-The entire Forta slashing process takes place on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon, check out this [guide](https://docs.forta.network/en/latest/bridging-fort/). Please carefully review the [Technical Slashing Guidance](https://docs.google.com/document/d/1edox-TLNUo3QpT2UFj73TbVOtGN1yoPT96ipzqW1voE/edit#bookmark=id.56u96ew8vlup) provided at the bottom of this page to submit a final Slashing Proposal.
+The entire Forta slashing process takes place on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon, check out this [guide](https://docs.forta.network/en/latest/bridging-fort/). Please carefully review the Technical Slashing Guidance provided at the bottom of this page to submit a final Slashing Proposal.
 
 ## **I. PROPOSAL**
 
@@ -42,16 +42,19 @@ If a Slashing Proposal is ultimately validated and executed, the FORT tokens of 
 The Arbiter is a protocol role responsible for receiving, reviewing and resolving technical complaints in the Forta Network. Following review of each Slashing Proposal, one of three possible outcomes will be determined by the Arbiter:
 
 1. **Withdrawn Slashing Proposal** - *no parties are penalized*
+
 - Slashing Proposal is withdrawn from the slashing process by the Arbiter following review
 - 1000 FORT token deposit returned to Proposer; no stake slashed from Slashing Subject
 - e.g. Arbiter review surfaces additional evidence that renders Slashing Proposal complaint moot, or parties mutually agree to alternative resolution or withdraw complaint
 
 2. **Denied Slashing Proposal**: *Proposer is penalized*
+
 - Slashing Proposal is denied as eligible by the Arbiter following review
 - 1000 FORT token deposit of Proposer is slashed to community treasury
 - e.g. Arbiter review determines Slashing Proposal was made in bad faith or did not contain accurate or sufficient evidence proving misconduct
 
 3. **Validated Slashing Proposal** - *Slashing Subject is penalized*
+
 - Slashing Proposal is validated as eligible for slashing by the Arbiter following review and is classified as an “Operational” or “Misconduct” complaint as set out below
 - 1000 FORT token deposit returned to Proposer
 - e.g. Arbiter review determines Slashing Proposal was made in good faith and evidence is sufficient for Arbiter to determine outcome
@@ -63,7 +66,6 @@ Following receipt of a Slashing Proposal, the Arbiter shall make best efforts to
 The Arbiter address will confirm any Validated Slashing Proposal as either an “Operational” or “Misconduct” complaint, with the following consequences:
 
 1. **Misconduct Complaint** - Slashing Subject at risk of up to 90% slash (if executed by Slasher Multisig). For example:
-
 
 - Censoring, forging or tampering with bots alerts
 - Forging or failing to provide performance metrics
@@ -82,8 +84,6 @@ The Arbiter address will confirm any Validated Slashing Proposal as either an �
     - Bots that clog the network (spam)
     - Bots that inappropriately affect Scanner Node SLAs
     - Bots that demand an excessive amount of resources from Scanner Nodes
-
-
 
 ## **IV. EXECUTION OF SLASHING**
 
