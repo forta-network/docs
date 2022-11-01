@@ -13,6 +13,6 @@ FROM ethereum.tags WHERE label in ('heist', 'exploit', 'phish-hack')
 
 ## Tutorials
 
-* (coming soon!) [Scam Detector Feed Bot Alert Analysis](#).
+* [Scam Detector Feed Bot Alert Analysis in Forta blog post: Luabase Integrates with the Forta Network](https://forta.org/blog/luabase-integrates-with-the-forta-network/).
 
 
