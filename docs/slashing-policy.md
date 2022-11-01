@@ -103,7 +103,7 @@ The initial members of the CAC include (Discord usernames, as found in [#slashin
 
 - ba3is#1622
 - slanders#4806
-- roberto13#6156
+- 0xRoberto#8830
 
 
 If members of the CAC do not stay aligned with the community and resolve disputes appropriately, the Forta community may lobby the Council to remove or replace a member, through an [FPP proposal](https://gov.forta.network/t/forta-proposal-process-v1-0/185) or directly.
