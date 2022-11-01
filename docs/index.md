@@ -36,6 +36,14 @@ hide:
 
     [:octicons-arrow-right-24: Scanner quick start](scanner-quickstart.md)
 
+-   :robot:{ .lg .middle } __Machine Learning On Forta__
+
+    ---
+
+    Learn how machine learning improves threat detectection
+
+    [:octicons-arrow-right-24: Learn More](ml-with-forta.md)
+
 -   :information_source:{ .lg .middle } __Learn How Forta Works__
 
     ---
