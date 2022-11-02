@@ -1,5 +1,4 @@
-
-
+## AgentRegistryEnumerable
 
 ### _allAgents
 
@@ -10,7 +9,7 @@ struct EnumerableSet.UintSet _allAgents
 ### _chainAgents
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct EnumerableSet.UintSet) _chainAgents
+mapping(uint256 => struct EnumerableSet.UintSet) _chainAgents
 ```
 
 ### getAgentCount
@@ -86,12 +85,12 @@ function _beforeAgentUpdate(uint256 agentId, string newMetadata, uint256[] newCh
 
 hook fired before agent creation or update.
 
-_stores agent in _allAgents if it wasn&#x27;t there, manages agent arrays by chain._
+_stores agent in _allAgents if it wasn't there, manages agent arrays by chain._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent to be created or updated. |
-| newMetadata | string | IPFS pointer to agent&#x27;s metadata JSON. |
+| agentId | uint256 | ERC721 token id of the agent to be created or updated. |
+| newMetadata | string | IPFS pointer to agent's metadata JSON. |
 | newChainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
 
 ### __gap

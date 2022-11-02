@@ -1,5 +1,4 @@
-
-
+## FortaStakingParameters
 
 ### _fortaStaking
 
@@ -10,7 +9,7 @@ contract FortaStaking _fortaStaking
 ### _stakeSubjectHandlers
 
 ```solidity
-mapping(uint8 &#x3D;&gt; contract IStakeSubject) _stakeSubjectHandlers
+mapping(uint8 => contract IStakeSubject) _stakeSubjectHandlers
 ```
 
 ### FortaStakingChanged
@@ -23,6 +22,12 @@ event FortaStakingChanged(address staking)
 
 ```solidity
 string version
+```
+
+### maxSlashableStakePercent
+
+```solidity
+uint256 maxSlashableStakePercent
 ```
 
 ### constructor
@@ -73,7 +78,7 @@ Sets stake subject handler stake for subject type.
 function maxStakeFor(uint8 subjectType, uint256 subject) external view returns (uint256)
 ```
 
-Get max stake for that &#x60;subjectType&#x60; and &#x60;subject&#x60;. If not set, will return 0.
+Get max stake for that `subjectType` and `subject`. If not set, will return 0.
 
 ### minStakeFor
 
@@ -81,7 +86,7 @@ Get max stake for that &#x60;subjectType&#x60; and &#x60;subject&#x60;. If not s
 function minStakeFor(uint8 subjectType, uint256 subject) external view returns (uint256)
 ```
 
-Get min stake for that &#x60;subjectType&#x60; and &#x60;subject&#x60;. If not set, will return 0.
+Get min stake for that `subjectType` and `subject`. If not set, will return 0.
 
 ### isStakeActivatedFor
 
@@ -89,7 +94,7 @@ Get min stake for that &#x60;subjectType&#x60; and &#x60;subject&#x60;. If not s
 function isStakeActivatedFor(uint8 subjectType, uint256 subject) external view returns (bool)
 ```
 
-Get if staking is activated for that &#x60;subjectType&#x60; and &#x60;subject&#x60;. If not set, will return false.
+Get if staking is activated for that `subjectType` and `subject`. If not set, will return false.
 
 ### activeStakeFor
 
@@ -97,5 +102,21 @@ Get if staking is activated for that &#x60;subjectType&#x60; and &#x60;subject&#
 function activeStakeFor(uint8 subjectType, uint256 subject) external view returns (uint256)
 ```
 
-Gets active stake (amount of staked tokens) on &#x60;subject&#x60; id for &#x60;subjectType&#x60;
+Gets active stake (amount of staked tokens) on `subject` id for `subjectType`
+
+### totalStakeFor
+
+```solidity
+function totalStakeFor(uint8 subjectType, uint256 subject) external view returns (uint256)
+```
+
+Gets active and inactive stake (amount of staked tokens) on `subject` id for `subjectType`
+
+### isRegistered
+
+```solidity
+function isRegistered(uint8 subjectType, uint256 subject) external view returns (bool)
+```
+
+Checks if subject, subjectType is registered
 

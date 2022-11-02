@@ -1,22 +1,4 @@
-
-
-
-Registry of scanners. Unlike agents, scanners are addresses that are expected to be able to send transactions. They could either be EOA or smart contracts.
-
-Scanners can either register themselves by calling the `register` function or can be registered by an admin (`SCANNER_ADMIN_ROLE`). Admins are mostly useful for early migration. Registered scanners have an owner that supervises them and can assign managers. The extent of owner and manager positions is unclear for now.
-
-Each scanner has a single "chainId" that multiple scanners can share. There is currently no workflow that allows anyone to update this metadata.
-
-Similar to the agents, scanners can be enabled or disabled by:
-
-- admins (`SCANNER_ADMIN_ROLE`),
-- the scanner itself,
-- the scanner owner
-- any of the scanner managers
-
-If the scanner Id is staked under the minimum stake, it can’t be `enabled()` and `isEnabled()` will return false, regardless of the flags
-
-Similar to agents, each one of these 4 positions has an independent "disable" flag.
+## ScannerRegistry
 
 ### version
 
@@ -42,28 +24,29 @@ Initializer method, access point to initialize inheritance tree.
 | ---- | ---- | ----------- |
 | __manager | address | address of AccessManager. |
 | __router | address | address of Router. |
-| __name | string | ERC1155 token name. |
-| __symbol | string | ERC1155 token symbol. |
+| __name | string | ERC721 token name. |
+| __symbol | string | ERC721 token symbol. |
 
 ### getScannerState
 
 ```solidity
-function getScannerState(uint256 scannerId) external view returns (bool registered, address owner, uint256 chainId, string metadata, bool enabled)
+function getScannerState(uint256 scannerId) external view returns (bool registered, address owner, uint256 chainId, string metadata, bool enabled, uint256 disabledFlags)
 ```
 
 Gets all scanner properties and state
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | registered | bool | true if scanner exists. |
 | owner | address | address. |
 | chainId | uint256 | the scanner is monitoring. |
-| metadata | string | IPFS pointer for the scanner&#x27;s JSON metadata. |
-| enabled | bool |  |
+| metadata | string | IPFS pointer for the scanner's JSON metadata. |
+| enabled | bool | true if staked over minimum and not disabled. |
+| disabledFlags | uint256 | 0 if not disabled, Permission if disabled. |
 
 ### _scannerUpdate
 
@@ -77,9 +60,9 @@ _Emits ScannerUpdated(scannerId, chainId, metadata)_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | chainId | uint256 | that the scanner will monitor. |
-| metadata | string | IPFS pointer to scanner&#x27;s metadata JSON |
+| metadata | string | IPFS pointer to scanner's metadata JSON |
 
 ### _getStakeThreshold
 

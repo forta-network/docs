@@ -1,5 +1,4 @@
-
-
+## StakeSubjectUpgradeable
 
 ### _stakeController
 
@@ -61,8 +60,8 @@ Internal setter for StakeController, emits StakeControllerUpdated
 function isStakedOverMin(uint256 subject) external view virtual returns (bool)
 ```
 
-Returns true if &#x60;subject&#x60; amount of staked tokens is bigger or equal the minimum stake set
-for it. It&#x27;s for contracts implementing &#x60;StakeSubjectUpgradeable&#x60; to decide what that means.
+Returns true if `subject` amount of staked tokens is bigger or equal the minimum stake set
+for it. It's for contracts implementing `StakeSubjectUpgradeable` to decide what that means.
 
 ### _isStakedOverMin
 

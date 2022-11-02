@@ -1,15 +1,4 @@
-
-
-
-The dispatch contract keeps track of the agent <> scanner links. An agent can be run by multiple scanners and a scanner can run multiple agents.
-
-Links between scanners and agents are managed by the `DISPATCHER_ROLE` which could be given to a future contract that defines some rules to link/unlink (for example reacting to stake variations).
-
-In order to be linked, both agents and scanners have to be enabled and staked over their minimum defined stake.
-
-This contract includes a "hash" mechanism that can be used to produce agent hash or scanner hash. These hash identify the state of the relations for an object and change if one of the associated values changes. For example, if a scanner is linked to an agent, and the agent is updated, the scanner hash will be affected. If an agent is added, removed, or change its enable/disable status, the scanner hash will also be affected.
-
-These hash functions should only be called as part of RPC calls, and not during transaction execution. They are here to help the scanner entity detect changes if event subscriptions are missing or failing.
+## Dispatch
 
 ### _agents
 
@@ -32,13 +21,13 @@ string version
 ### scannerToAgents
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct EnumerableSet.UintSet) scannerToAgents
+mapping(uint256 => struct EnumerableSet.UintSet) scannerToAgents
 ```
 
 ### agentToScanners
 
 ```solidity
-mapping(uint256 &#x3D;&gt; struct EnumerableSet.UintSet) agentToScanners
+mapping(uint256 => struct EnumerableSet.UintSet) agentToScanners
 ```
 
 ### Disabled
@@ -168,7 +157,7 @@ _helper for external iteration._
 ### agentRefAt
 
 ```solidity
-function agentRefAt(uint256 scannerId, uint256 pos) external view returns (bool registered, address owner, uint256 agentId, uint256 agentVersion, string metadata, uint256[] chainIds, bool enabled)
+function agentRefAt(uint256 scannerId, uint256 pos) external view returns (bool registered, address owner, uint256 agentId, uint256 agentVersion, string metadata, uint256[] chainIds, bool enabled, uint256 disabledFlags)
 ```
 
 Get data of an agent linked to a scanner at a certain position.
@@ -189,6 +178,7 @@ _helper for external iteration._
 | metadata | string | IPFS pointer for agent metadata. |
 | chainIds | uint256[] | ordered array of chainId were the agent wants to run. |
 | enabled | bool | bool if agent is enabled, false otherwise. |
+| disabledFlags | uint256 | 0 if not disabled, Permission that disabled the scnner otherwise. |
 
 ### scannerAt
 
@@ -212,7 +202,7 @@ _helper for external iteration._
 ### scannerRefAt
 
 ```solidity
-function scannerRefAt(uint256 agentId, uint256 pos) external view returns (bool registered, uint256 scannerId, address owner, uint256 chainId, string metadata, bool enabled)
+function scannerRefAt(uint256 agentId, uint256 pos) external view returns (bool registered, uint256 scannerId, address owner, uint256 chainId, string metadata, bool enabled, uint256 disabledFlags)
 ```
 
 Get data of ascanner running an agent at a certain position.
@@ -232,6 +222,7 @@ _helper for external iteration._
 | chainId | uint256 | that the scanner monitors. |
 | metadata | string | IPFS pointer for agent metadata. |
 | enabled | bool | true if scanner is enabled, false otherwise. |
+| disabledFlags | uint256 | 0 if not disabled, Permission that disabled the scnner otherwise. |
 
 ### areTheyLinked
 

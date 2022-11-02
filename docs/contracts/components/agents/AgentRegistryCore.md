@@ -1,4 +1,4 @@
-
+## AgentRegistryCore
 
 ### _stakeThreshold
 
@@ -46,7 +46,7 @@ Checks sender (or metatx signer) is owner of the agent token.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent. |
+| agentId | uint256 | ERC721 token id of the agent. |
 
 ### onlySorted
 
@@ -70,7 +70,7 @@ Save commit representing an agent to prevent frontrunning of their creation
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| commit | bytes32 | keccak256 hash of the agent creation&#x27;s parameters |
+| commit | bytes32 | keccak256 hash of the agent creation's parameters |
 
 ### createAgent
 
@@ -78,7 +78,7 @@ Save commit representing an agent to prevent frontrunning of their creation
 function createAgent(uint256 agentId, address owner, string metadata, uint256[] chainIds) public
 ```
 
-Agent creation method. Mints an ERC1155 token with the agent id for the owner and stores metadata.
+Agent creation method. Mints an ERC721 token with the agent id for the owner and stores metadata.
 
 _fires _before and _after hooks within the inheritance tree.
 If front run protection is enabled (disabled by default), it will check if the keccak256 hash of the parameters
@@ -86,22 +86,22 @@ has been committed in prepareAgent(bytes32)._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent to be created. |
+| agentId | uint256 | ERC721 token id of the agent to be created. |
 | owner | address | address to have ownership privileges in the agent methods. |
-| metadata | string | IPFS pointer to agent&#x27;s metadata JSON. |
+| metadata | string | IPFS pointer to agent's metadata JSON. |
 | chainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
 
-### isCreated
+### isRegistered
 
 ```solidity
-function isCreated(uint256 agentId) public view returns (bool)
+function isRegistered(uint256 agentId) public view returns (bool)
 ```
 
 Checks if the agentId has been minted.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent. |
+| agentId | uint256 | ERC721 token id of the agent. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -119,8 +119,8 @@ _fires _before and _after hooks within the inheritance tree._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent to be updated. |
-| metadata | string | IPFS pointer to agent&#x27;s metadata JSON. |
+| agentId | uint256 | ERC721 token id of the agent to be updated. |
+| metadata | string | IPFS pointer to agent's metadata JSON. |
 | chainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
 
 ### setStakeThreshold
@@ -153,7 +153,7 @@ Checks if agent is staked over minimum stake
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | bool | true if agent is staked over the minimum threshold, or staking is not yet enabled (stakeController &#x3D; 0). false otherwise |
+| [0] | bool | true if agent is staked over the minimum threshold and is, or staking is not yet enabled (stakeController = 0). false otherwise |
 
 ### setFrontRunningDelay
 
@@ -179,8 +179,8 @@ _does nothing in this contract._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent to be created or updated. |
-| newMetadata | string | IPFS pointer to agent&#x27;s metadata JSON. |
+| agentId | uint256 | ERC721 token id of the agent to be created or updated. |
+| newMetadata | string | IPFS pointer to agent's metadata JSON. |
 | newChainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
 
 ### _agentUpdate
@@ -195,8 +195,8 @@ _emits AgentUpdated, will be extended by child contracts._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent to be created or updated. |
-| newMetadata | string | IPFS pointer to agent&#x27;s metadata JSON. |
+| agentId | uint256 | ERC721 token id of the agent to be created or updated. |
+| newMetadata | string | IPFS pointer to agent's metadata JSON. |
 | newChainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
 
 ### _afterAgentUpdate
@@ -211,8 +211,8 @@ _emits Router hook._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent to be created or updated. |
-| newMetadata | string | IPFS pointer to agent&#x27;s metadata JSON. |
+| agentId | uint256 | ERC721 token id of the agent to be created or updated. |
+| newMetadata | string | IPFS pointer to agent's metadata JSON. |
 | newChainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
 
 ### _msgSender
@@ -221,7 +221,7 @@ _emits Router hook._
 function _msgSender() internal view virtual returns (address sender)
 ```
 
-Obligatory inheritance dismambiguation of ForwardedContext&#x27;s _msgSender()
+Obligatory inheritance dismambiguation of ForwardedContext's _msgSender()
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -233,7 +233,7 @@ Obligatory inheritance dismambiguation of ForwardedContext&#x27;s _msgSender()
 function _msgData() internal view virtual returns (bytes)
 ```
 
-Obligatory inheritance dismambiguation of ForwardedContext&#x27;s _msgSender()
+Obligatory inheritance dismambiguation of ForwardedContext's _msgSender()
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
