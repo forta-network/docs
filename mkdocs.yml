@@ -53,6 +53,7 @@ nav:
           - Forta Contest 3 (6/17/2022): contest7-forta.md
           - Forta Contest 4 (8/31/2022): contest8-forta.md
           - Forta Contest 5 (10/11/2022): contest9-forta.md
+          - Forta Contest 5 (11/8/2022): contest10-forta.md
       - Integrating with Hardhat: hardhat.md
   - <strong>Run a Scan Node</strong>:
       - Quickstart: scanner-quickstart.md
