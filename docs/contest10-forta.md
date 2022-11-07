@@ -11,8 +11,9 @@
 - After ten qualified submissions are received for the challenge, we will close the form and announce it on the #contests channel at Discord. As long as submissions are open, you are welcome to build and submit detection bots!
 - All developers that submit a qualifying detection bot will receive a Forta NFT.
 - Cash prizes will be awarded to the winner and runner-up of the challenge:
-    - **1st place will receive $3,000 USD (paid in FORT) and a unique Forta NFT.**
-    - **Runner up will receive $1,000 USD (paid in FORT) and a unique Forta NFT.**
+    - **1st place will receive $5,000 USD (paid in FORT) and a unique Forta NFT.**
+    - **2nd place will receive $1,000 USD (paid in FORT) and a unique Forta NFT.**
+    - **3rd place will receive $500 USD (paid in FORT) and a unique Forta NFT.**
 - To be eligible for a prize, you will be asked to submit a valid email and Discord username through the Google form, along with a link of your bot on Github.
 - This contest will run from Nov 7st through Nov 21st, after which no further submissions will be considered.
 - Winners will be chosen by a panel of detection bot reviewers from Nethermind, and will be announced on November 30th.
