@@ -1,4 +1,4 @@
-**Forta is thrilled to announce a new Bot Development Contest**, this time diving into end user protections. Submit your entries for this contest [**HERE**](https://docs.google.com/forms/d/1UoaKI-ZDphw7nHgpZn1_tAU_UCIXeQlbeJ9zSaKXJOA/edit?ts=63444e07).
+**Forta is thrilled to announce a new Bot Development Contest**, this time diving into end user protections. Submit your entries for this contest [**HERE**](https://docs.google.com/forms/d/e/1FAIpQLSe_5TJiam3-6uXg4psnknPw2BqvHFHA9s4akYc6TuFu5YJHNw/viewform?usp=sf_link).
 
 **Forta Detection bots** are pieces of logic (scripts) that look for certain transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any supported chain. Nodes run detection bots against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. For more information on creating your first detection bot, check out our [quickstart guide](quickstart.md) and [video tutorials](tutorials.md).
 
