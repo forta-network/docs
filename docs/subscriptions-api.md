@@ -4,7 +4,7 @@ The Forta Subscriptions API is a REST API that allows developers to manage their
 
 ## Getting Access
 
-In order to use the Subscriptions API, a Forta API key is required. You can use the Forta App UI to generate a new API key, which will return a `keyId` as well as an `apiKey`. Both fields will need to be set in the HTTP request's `Authorization` header in the format `keyId:apiKey`.
+In order to use the Subscriptions API, a Forta API key is required. You can use the Forta App UI to generate a new API key, which will return a `keyId` as well as an `apiKey`. Both fields will need to be set in the HTTP request's `Authorization` header in the format `Bearer keyId:apiKey`.
 
 ## Create Subscription
 
