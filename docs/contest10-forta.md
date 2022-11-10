@@ -1,4 +1,4 @@
-**Forta is thrilled to announce a new Bot Development Contest**, this time diving into end user protections. Submit your entries for this contest [**HERE**](https://docs.google.com/forms/d/e/1FAIpQLSe_5TJiam3-6uXg4psnknPw2BqvHFHA9s4akYc6TuFu5YJHNw/viewform?usp=sf_link).
+**The Forta Foundation is thrilled to announce a new Bot Development Contest**, this time diving into end user protections. Submit your entries for this contest [**HERE**](https://docs.google.com/forms/d/e/1FAIpQLSe_5TJiam3-6uXg4psnknPw2BqvHFHA9s4akYc6TuFu5YJHNw/viewform?usp=sf_link).
 
 **Forta Detection bots** are pieces of logic (scripts) that look for certain transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any supported chain. Nodes run detection bots against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. For more information on creating your first detection bot, check out our [quickstart guide](quickstart.md) and [video tutorials](tutorials.md).
 
@@ -44,7 +44,7 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
 
 ## Challenges
 
-Funding and Money Laundering are essential steps attackers take when attacking a protocol or end users. 
+Anomalous funding and Money Laundering are essential steps attackers take when attacking a protocol or end users. 
 
 Funding is the first signal emitted about an attacker for imminent attacks. Detection coverage is of utmost importance, but existing detection bot coverage is limited to protocol specific bots, like Tornado Cash and Aztec.
 
