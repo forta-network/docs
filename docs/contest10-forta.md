@@ -44,7 +44,7 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
 
 ## Challenges
 
-Funding and Money Laundering are essential steps attackers take when attacking a protocol or end users. 
+Anomalous Funding and Money Laundering are essential steps attackers take when attacking a protocol or end users. 
 
 Funding is the first signal emitted about an attacker for imminent attacks. Detection coverage is of utmost importance, but existing detection bot coverage is limited to protocol specific bots, like Tornado Cash and Aztec.
 
