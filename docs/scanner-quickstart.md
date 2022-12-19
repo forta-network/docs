@@ -576,6 +576,8 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh \
 
 As yet another option, you can run a beacon node using Prysm by following [Prysm Beacon Node](https://docs.prylabs.network/docs/install/install-with-script#step-4-run-a-beacon-node-using-prysm).
 
-You will need to pass `--jwt-secret=<path_to_erigon_jwt_hex>` to the beacon node. It doesn't require `--suggested-fee-recipient` flag unless you are running a [validator](https://docs.prylabs.network/docs/install/install-with-script#step-5-run-a-validator-using-prysm). Additionally you can pass the `--slots-per-archive-point` flag to the beacon node to improve the performance of API retrieval. For more information on slots per archive point, please see [Prysm Beacon Node API Rationale](https://docs.prylabs.network/docs/advanced/beacon_node_api#rationale).
+You will need to pass `--jwt-secret=<path_to_erigon_jwt_hex>` to the beacon node. It doesn't require `--suggested-fee-recipient` flag unless you are running a [validator](https://docs.prylabs.network/docs/install/install-with-script#step-5-run-a-validator-using-prysm).
+
+Additionally, you can pass the `--slots-per-archive-point` flag to the beacon node. A lower number helps improve the CL API performance while increasing the storage cost. For more information on slots per archive point, please refer to [Run an archival node](https://docs.prylabs.network/docs/advanced/beacon_node_api) section in Prysm docs.
 
 After running with any method mentioned above, you should be able to see the beacon node running and syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
