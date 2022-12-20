@@ -25,7 +25,7 @@ For each threat detection kit, security experts hand-picked a list of detection 
 
 ### Monitoring your wallet or contracts
 
-1. To subscribe, first visit the [Forta App](https://app.forta.network/).
+1. To subscribe, first visit the [Forta App](https://app.forta.network/tdk).
 2. Click on "Monitor my contracts" or "Monitor my wallet". If you clicked on "Monitor my contracts", select a threat detection kit.
     <p align="center">
         <img alt="Forta Threat Detection Kits" src="../threat-detection-kits.png">
