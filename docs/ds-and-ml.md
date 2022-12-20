@@ -13,6 +13,7 @@ Check out this short clip below to learn more about how the open-source data on 
 * [Smart Price Changes Bot](https://github.com/0xidase/Smart-Price-Changes-Agent)
 * [Time Series Analyzer Bot Template](https://github.com/forta-network/starter-kits/tree/main/time-series-analyzer-template)
 * [Malicious Smart Contract ML Bot](https://github.com/forta-network/starter-kits/tree/main/malicious-smart-contract-ml-py#malicious-smart-contract-ml)
+* [Text Message Sentiment Analysis Deep Learning Bot](https://github.com/forta-network/forta-bot-examples/tree/master/tx-message-sentiment-analysis-py)
 
 Did you create a ML bot? Share it with the community on the [ML Discord Channel](https://discord.gg/ehKhTDmbHT)!
 
