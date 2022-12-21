@@ -17,9 +17,10 @@ Check out this short clip below to learn more about how the open-source data on 
 
 Did you create a ML bot? Share it with the community on the [ML Discord Channel](https://discord.gg/ehKhTDmbHT)!
 
-## Ongoing Data Science Competitions
+## Data Science Competitions
 
-* [Ethereum Phishing Scam Detection Competition](https://www.kaggle.com/competitions/forta-protect-web3)
+* (Completed) [Ethereum Phishing Scam Detection Competition](https://www.kaggle.com/competitions/forta-protect-web3)
+* More coming up soon!
 
 ## Blog posts and Guides
 
@@ -52,6 +53,7 @@ Do you see any missing resource the community can use below? Contribute to [the 
 * [EtherScamDB](https://github.com/CryptoScamDB/EtherScamDB) - Open-source db that keeps track of ethereum scams and involved addresses.
 * [Forta API](https://github.com/forta-network/forta-api) - Query critical alerts via the Forta API and use them as [weak labels](https://www.thoughtworks.com/en-us/insights/blog/data-science-and-analytics/weak-labeling).
 * [web3rekt.com](https://www.web3rekt.com/) - Query known blockchain incidents and scams.
+* [XBlock](https://xblock.pro/#/) - Access to all blockchain datasets used in academic research.
 
 
 ## Historical Alerts Access
