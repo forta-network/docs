@@ -56,7 +56,7 @@ The Arbiter is a protocol role responsible for receiving, reviewing and resolvin
 - 1000 FORT token deposit returned to Proposer
 - e.g. Arbiter review determines Slashing Proposal was made in good faith and evidence is sufficient for Arbiter to determine outcome
 
-Following receipt of a Slashing Proposal, the Arbiter shall make best efforts to determine the outcome of a Slashing Proposal within 10 days. All activity undertaken by the Arbiter pursuant to this policy will be published in the Discord channel [#slashing-proposals](https://discord.gg/2vvq3zx4) in advance of being executed on-chain, subject to redaction only where necessary to protect the security or integrity of the Forta Network. This disclosure should include the determination made by the Arbiter accompanied by the reasoning for reaching such a determination. 
+Following receipt of a Slashing Proposal, the Arbiter shall make best efforts to determine the outcome of a Slashing Proposal within 10 days. All activity undertaken by the Arbiter pursuant to this policy will be published in the Discord channel [#slashing-proposals](https://discord.com/invite/tpWYdjyc6Q) in advance of being executed on-chain, subject to redaction only where necessary to protect the security or integrity of the Forta Network. This disclosure should include the determination made by the Arbiter accompanied by the reasoning for reaching such a determination. 
 
 ## **III. EXECUTING VALIDATED SLASHING PROPOSALS**
 
@@ -99,7 +99,7 @@ If the Arbiter alters the original classification of a Slashing Proposal from Ma
 
 Initially, the Arbiter role will be delegated by the Forta Governance Council to a 2-of-3 Gnosis Safe multisig dubbed the Community Arbitration Committee (the **“CAC”**). The CAC will determine if each Slashing Proposal is complete and being made in good faith, by investigating the evidence submitted and following up with stakeholders as necessary. Following review, the CAC will publish its determination and reasoning in the #slashing-proposals Discord channel and thereafter execute such decisions on-chain.
 
-The initial members of the CAC include (Discord usernames, as found in [#slashing-proposals](https://discord.gg/2vvq3zx4)):
+The initial members of the CAC include (Discord usernames, as found in [#slashing-proposals](https://discord.com/invite/tpWYdjyc6Q)):
 
 - ba3is#1622
 - slanders#4806
