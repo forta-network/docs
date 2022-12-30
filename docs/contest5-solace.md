@@ -7,7 +7,7 @@ conditions are met. The best bots trigger alerts when specific conditions indica
 
 **Forta bot developer contests** are mini-hackathons where anyone is able to submit a bot and be rewarded in NFTs, stablecoins, and crypto.
 
-Contest discussion, support, and announcements are available on Forta’s [Discord](https://discord.gg/rsc55DqcCy).
+Contest discussion, support, and announcements are available on Forta’s [Discord](https://discord.com/invite/tpWYdjyc6Q).
 
 ## Rules
 
