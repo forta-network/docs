@@ -4,7 +4,7 @@ Forta is a decentralized monitoring network to detect threats and anomalies on D
 
 Underlying Forta is a decentralized network of independent node operators that scan all transactions and block-by-block state changes for outlier transactions and threats. When an issue is detected, node operators send alerts to subscribers of potential risks, which enables them to take action.
 
-For any questions or feedback you may have, please go to the [Forta Discord server](https://discord.gg/DUju5Dh4J9).
+For any questions or feedback you may have, please go to the [Forta Discord server](https://discord.com/invite/tpWYdjyc6Q).
 
 ### Supported chains
 
@@ -22,7 +22,7 @@ However, the rapid speed at which the Web3 industry develops makes it hard for a
 
 **You can develop** and deploy your own detection bots on Forta using the [SDK](quickstart.md). There are many [templates](https://github.com/arbitraryexecution/forta-bot-templates) and [examples](https://github.com/forta-network/forta-bot-examples) you can work from. There are also a growing number of development teams who you can hire to develop Forta bots for your project (visit the [Bot Development Marketplace](https://www.notion.so/forta/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) or contact the Forta Foundation at [andy@forta.org](mailto:andy@forta.org) for more information).
 
-If you are an independent dev that wants to develop detection bots, you can visit Forta’s [Bot Development Marketplace](https://forta.notion.site/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) to discover RFPs, apply for Grants or participate in Forta Development Contests, which are announced in the [Forta Discord](https://discord.com/invite/KACdTEutQq).
+If you are an independent dev that wants to develop detection bots, you can visit Forta’s [Bot Development Marketplace](https://forta.notion.site/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) to discover RFPs, apply for Grants or participate in Forta Development Contests, which are announced in the [Forta Discord](https://discord.com/invite/tpWYdjyc6Q).
 
 The Forta Network has two main components – detection bots and scan nodes.
 
@@ -52,7 +52,7 @@ Performing on-chain actions from within a Forta detection bot is not advised, gi
 
 Other categories of exploits, such as those involving oracle or collateral manipulations, can also be detected by Forta, however prevention may be limited by the fact that such exploits often involve the use of flashloans or other techniques that allow them to occur in the context of a single block which itself may be privately mined. For this category of exploit, fast detection from Forta may still prove useful to mitigate attacks or prevent similar attacks on other chains or protocols.
 
-The Forta community is growing to include even more security researchers, leading organizations, L1 and L2 providers, and other concerned parties, who may use Forta to investigate and develop new techniques and approaches that might lead to prevention against market manipulations and zero-block vulnerabilities in the future. Visit the [Forum](https://gov.forta.network/) or [Discord](https://discord.com/invite/KACdTEutQq) and join the discussion today.
+The Forta community is growing to include even more security researchers, leading organizations, L1 and L2 providers, and other concerned parties, who may use Forta to investigate and develop new techniques and approaches that might lead to prevention against market manipulations and zero-block vulnerabilities in the future. Visit the [Forum](https://gov.forta.network/) or [Discord](https://discord.com/invite/tpWYdjyc6Q) and join the discussion today.
 
 ## Operational monitoring
 
@@ -62,7 +62,7 @@ For example, the total liquidity of pools may fluctuate by ±1% over the course 
 
 ## Other use cases
 
-Since Forta is open for anyone to write and deploy a detection bot, the applications for Forta are limitless. Forta simply acts as the real-time monitoring layer for any use case you can imagine. For example, users might incorporate real-time Forta data as an input in algorithmic asset trading strategies to beat the market or create an automated insurance protocol that identifies a covered loss in real-time and pays out automatically. If you are interested in building on top of Forta, the community would love to hear about it in the [Forum](https://gov.forta.network/) or [Discord](https://discord.com/invite/KACdTEutQq).
+Since Forta is open for anyone to write and deploy a detection bot, the applications for Forta are limitless. Forta simply acts as the real-time monitoring layer for any use case you can imagine. For example, users might incorporate real-time Forta data as an input in algorithmic asset trading strategies to beat the market or create an automated insurance protocol that identifies a covered loss in real-time and pays out automatically. If you are interested in building on top of Forta, the community would love to hear about it in the [Forum](https://gov.forta.network/) or [Discord](https://discord.com/invite/tpWYdjyc6Q).
 
 ## Private monitoring
 

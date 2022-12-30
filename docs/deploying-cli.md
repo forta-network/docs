@@ -58,6 +58,6 @@ In order to enable your bot, it must be staked with 100 FORT tokens. You can eas
 
 Congratulations! You have successfully deployed your first Forta bot!
 
-Great job getting this far! You have created a project, developed a bot, written and run a test, and deployed it to the Forta network. We encourage you to share your bots with the [Discord community](https://discord.gg/DUju5Dh4J9) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.gg/DUju5Dh4J9) as well.
+Great job getting this far! You have created a project, developed a bot, written and run a test, and deployed it to the Forta network. We encourage you to share your bots with the [Discord community](https://discord.com/invite/tpWYdjyc6Q) as a way to showcase your ideas or receive general feedback! For any questions or feedback you may have, you can find us in the [Forta Discord server](https://discord.com/invite/tpWYdjyc6Q) as well.
 
 Continue to the next page where you can learn more about [subscribing to alerts](subscribing.md).
