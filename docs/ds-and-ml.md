@@ -6,7 +6,7 @@ Check out this short clip below to learn more about how the open-source data on 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Uw7n5_mV9aQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-## Detection Bots/Templates Utilizing ML
+## Detection Bots and Templates Utilizing ML
 
 * [Anomalous Gas Usage Bot](https://github.com/kovart/forta-gas-agent)
 * [Anomalous Token Transfers Detection Machine Learning Bot](https://github.com/forta-network/starter-kits/tree/main/anomalous-token-transfers-ml-py)
@@ -24,6 +24,7 @@ Did you create a ML bot? Share it with the community on the [ML Discord Channel]
 
 ## Blog posts and Guides
 
+* [Blog: How Forta’s Predictive ML Models Detect Attacks Before Exploitation](https://forta.org/blog/how-fortas-predictive-ml-models-detect-attacks-before-exploitation/)
 * [Blog: Leveraging Machine Learning with Forta to Improve Web3 Security](https://forta.org/blog/leveraging-machine-learning-to-improve-web3-security/)
 * [Blog: Time Series Analysis with Forta](https://forta.org/blog/time-series-analysis-with-forta/)
 * [Blog: Predicting Phishing Scams: A Kaggle Competition](https://forta.org/blog/predicting-phishing-kaggle/)
@@ -41,7 +42,6 @@ Do you see any missing resource the community can use below? Contribute to [the 
 
 ### Blockchain Data
 
-* [Luabase](https://luabase.com) is a SQL-based data platform that makes it easy to query blockchain data and Forta alerts. For more details on access and example queries, check out docs [here](luabase-access.md).
 * [BigQuery Public Blockchain Datasets](https://github.com/blockchain-etl/public-datasets) - Available to query using BigQuery on [Google Cloud Platform](https://cloud.google.com/free).
 * [Ethereum ETL](https://ethereum-etl.readthedocs.io/en/latest/) - Tool to convert blockchain data into CSV formats and relational databases.
 * [Transaction event](https://docs.forta.network/en/latest/python/#transactionevent) and [block event](https://docs.forta.network/en/latest/python/#blockevent) is available in Forta Bot Container. You can also collect training data on the fly and train periodically like this [Re-entrancy on Uniswap Time Series Bot](https://explorer.forta.network/bot/0x1e3ec10394a46d44ec0802f9e27162236cd61a1f7c13767f0c9ada7b48def6ae)
@@ -49,7 +49,6 @@ Do you see any missing resource the community can use below? Contribute to [the 
 ### Labels
 
 * [Forta Labelled datasets](https://github.com/forta-network/labelled-datasets) - Web3 threat related labelled datasets for data analysis and machine learning developments.
-* [Luabase address tags + labels](https://luabase.notion.site/Tags-521d6955dc1e472ba37dba71569666a3) - Addresses with etherscan labels `exploit`, `heist`, and `phish-hack` are available.
 * [EtherScamDB](https://github.com/CryptoScamDB/EtherScamDB) - Open-source db that keeps track of ethereum scams and involved addresses.
 * [Forta API](https://github.com/forta-network/forta-api) - Query critical alerts via the Forta API and use them as [weak labels](https://www.thoughtworks.com/en-us/insights/blog/data-science-and-analytics/weak-labeling).
 * [web3rekt.com](https://www.web3rekt.com/) - Query known blockchain incidents and scams.
