@@ -11,9 +11,6 @@ nav:
           - GraphQL API reference: forta-api-reference/index.html
           - Example use cases: api-example-use-cases.md
           - Example queries & tutorials: api-examples-tutorials.md
-      - Access historical alerts with SQL:
-          - Luabase Access: luabase-access.md
-          - Example SQL queries & tutorials: luabase-examples-tutorials.md
   - <strong>Build Detection Bots</strong>:
       - Getting started: getting-started.md
       - Build your first detection bot:

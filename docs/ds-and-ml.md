@@ -42,7 +42,6 @@ Do you see any missing resource the community can use below? Contribute to [the 
 
 ### Blockchain Data
 
-* [Luabase](https://luabase.com) is a SQL-based data platform that makes it easy to query blockchain data and Forta alerts. For more details on access and example queries, check out docs [here](luabase-access.md).
 * [BigQuery Public Blockchain Datasets](https://github.com/blockchain-etl/public-datasets) - Available to query using BigQuery on [Google Cloud Platform](https://cloud.google.com/free).
 * [Ethereum ETL](https://ethereum-etl.readthedocs.io/en/latest/) - Tool to convert blockchain data into CSV formats and relational databases.
 * [Transaction event](https://docs.forta.network/en/latest/python/#transactionevent) and [block event](https://docs.forta.network/en/latest/python/#blockevent) is available in Forta Bot Container. You can also collect training data on the fly and train periodically like this [Re-entrancy on Uniswap Time Series Bot](https://explorer.forta.network/bot/0x1e3ec10394a46d44ec0802f9e27162236cd61a1f7c13767f0c9ada7b48def6ae)
@@ -50,7 +49,6 @@ Do you see any missing resource the community can use below? Contribute to [the 
 ### Labels
 
 * [Forta Labelled datasets](https://github.com/forta-network/labelled-datasets) - Web3 threat related labelled datasets for data analysis and machine learning developments.
-* [Luabase address tags + labels](https://luabase.notion.site/Tags-521d6955dc1e472ba37dba71569666a3) - Addresses with etherscan labels `exploit`, `heist`, and `phish-hack` are available.
 * [EtherScamDB](https://github.com/CryptoScamDB/EtherScamDB) - Open-source db that keeps track of ethereum scams and involved addresses.
 * [Forta API](https://github.com/forta-network/forta-api) - Query critical alerts via the Forta API and use them as [weak labels](https://www.thoughtworks.com/en-us/insights/blog/data-science-and-analytics/weak-labeling).
 * [web3rekt.com](https://www.web3rekt.com/) - Query known blockchain incidents and scams.
