@@ -41,7 +41,7 @@ hide:
 
     ---
 
-    Learn how machine learning improves threat detectection
+    Learn how machine learning improves threat detection
 
     [:octicons-arrow-right-24: Learn More](ml-with-forta.md)
 
@@ -52,7 +52,7 @@ hide:
     Get a high-level understanding of Forta and learn how it works
 
     [:octicons-arrow-right-24: Learn more](what-is-forta.md)
-   
+
 </div>
 
 
