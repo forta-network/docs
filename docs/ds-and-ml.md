@@ -6,7 +6,7 @@ Check out this short clip below to learn more about how the open-source data on 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Uw7n5_mV9aQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-## Detection Bots/Templates Utilizing ML
+## Detection Bots and Templates Utilizing ML
 
 * [Anomalous Gas Usage Bot](https://github.com/kovart/forta-gas-agent)
 * [Anomalous Token Transfers Detection Machine Learning Bot](https://github.com/forta-network/starter-kits/tree/main/anomalous-token-transfers-ml-py)
@@ -24,6 +24,7 @@ Did you create a ML bot? Share it with the community on the [ML Discord Channel]
 
 ## Blog posts and Guides
 
+* [Blog: How Forta’s Predictive ML Models Detect Attacks Before Exploitation](https://forta.org/blog/how-fortas-predictive-ml-models-detect-attacks-before-exploitation/)
 * [Blog: Leveraging Machine Learning with Forta to Improve Web3 Security](https://forta.org/blog/leveraging-machine-learning-to-improve-web3-security/)
 * [Blog: Time Series Analysis with Forta](https://forta.org/blog/time-series-analysis-with-forta/)
 * [Blog: Predicting Phishing Scams: A Kaggle Competition](https://forta.org/blog/predicting-phishing-kaggle/)
