@@ -4,7 +4,7 @@
 
 [Chainstack’s managed blockchain services](https://chainstack.com) make it simple to join, launch, and scale decentralized networks and applications. The best way for builders, enterprises, and service providers to deploy, manage, and scale while reducing the time, cost, and the risk involved with leveraging decentralized technologies. With a secure API, membership management, and flexible deployment options, you can immediately accelerate and future-proof your development.
 
-Enjoy lightning-fast node performance and synchronization across an ever-growing list of supported networks with a **10% slash to Forta node runner’s subscription costs in Business and Enterprise plans.**
+Enjoy lightning-fast node performance and synchronization across an ever-growing list of supported networks with a ***[10% slash to Forta node runner’s subscription costs in Business and Enterprise plans](http://pages.chainstack.com/referrals/forta)*** (note the 10% discount will be applied manually by Chainstack after account creation).
 
 It is Chainstack’s mission to provide maximal value for Web3 builders across the world with every new protocol available on the platform. Considering just how rampant blockchain exploits, hacks, and anomalous activity can be, especially as of late, their team saw Forta as a perfect fit for the needs of their customers.
 
