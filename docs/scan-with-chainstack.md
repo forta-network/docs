@@ -22,7 +22,8 @@ So, grab a cold drink and kick your feet up on the table, as you witness the pro
 
 ## *Special Offer*
 
-***Forta scan node runners receive a 10% slash to subscription costs in Chainstack’s Business and Enterprise plans.***
+***Claim your special Forta promo rate by clicking [here](http://pages.chainstack.com/referrals/forta) for a 10% discount on Chainstack Business and Enterprise Plans (note the 10% discount will be applied manually by Chainstack after account creation).***
+
 
 Chainstack’s exceptional engineering and sturdy infrastructure now make lower overhead costs and optimal efficiency when running Forta scan nodes a reality for all. Reap the benefits of flexible affordable commitments that are a perfect fit for your budget, use case, and the needs of your project.
 
