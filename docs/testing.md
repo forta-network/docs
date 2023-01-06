@@ -53,7 +53,7 @@ const handleTransaction: HandleTransaction = async (txEvent: TransactionEvent) =
 };
 ```
 
-The signature of this function is `(txEvent: TransactionEvent) => Promise<Finding[]>`. That is, it accepts a `TransactionEvent` as an input, and returns a Promise of an array of `Finding` objects. In this simple example, we check whether there any Tether token transfer events above 10,000 USDT. If so, we flag the transaction by creating a `Finding` object. We then return what we found in the `findings` array. Pretty straightforward.
+The signature of this function is `(txEvent: TransactionEvent) => Promise<Finding[]>`. That is, it accepts a `TransactionEvent` as an input, and returns a Promise of an array of `Finding` objects. In this simple example, we check whether there are any Tether token transfer events above 10,000 USDT. If so, we flag the transaction by creating a `Finding` object. We then return what we found in the `findings` array. Pretty straightforward.
 
 ## Manual testing
 
@@ -115,6 +115,6 @@ We strongly recommend conducting code reviews within your team as a best practic
 
 ## Best practices
 
-To learn more about bot development best practices, see the [best practices](best-practices.md) section. Be sure to check out [useful libraries](useful-libraries.md) for developing your bots as well. There are also sections describing more advanced bot development patterns like [hiding sensitive data](sensitive-data.md), [publishing private alerts](private-alerts.md), [transaction simulation](tx-simulation.md) and [querying other chains](querying-chains.md).
+To learn more about bot development best practices, see the [best practices](best-practices.md) section. Be sure to check out [useful libraries](useful-libraries.md) for developing your bots as well. There are also sections describing more advanced bot development patterns like [hiding sensitive data](sensitive-data.md), [consuming bot alerts](handle-alert.md), [publishing private alerts](private-alerts.md), [transaction simulation](tx-simulation.md) and [querying other chains](querying-chains.md).
 
 Once you have tested and reviewed your bot, you can move on to [deploying your bot](deploying.md).

@@ -4,17 +4,18 @@ The Forta bot Javascript SDK comes with a set of classes and type definitions to
 
 ## Handlers
 
-The most relevant type definitions for bot developers are the handler types: `Initialize`, `HandleBlock` and `HandleTransaction`. They are function types with the following signatures
+The most relevant type definitions for bot developers are the handler types: `Initialize`, `HandleBlock`, `HandleTransaction` and `HandleAlert`. They are function types with the following signatures:
 
 ```javascript
-type Initialize = () => Promise<void>
+type Initialize = () => Promise<void | InitializeResponse>
 type HandleTransaction = (txEvent: TransactionEvent) => Promise<Finding[]>
 type HandleBlock = (blockEvent: BlockEvent) => Promise<Finding[]>
+type HandleAlert = (alertEvent: AlertEvent) => Promise<Finding[]>
 ```
 
-Your `agent.js`/`agent.ts` file must have a default export object with the `handleBlock` and/or `handleTransaction` properties that provide the handler functions. You can export one or both of these depending on your use case, but at least one must be provided. The return type of these functions is `Promise<Finding[]>`, meaning they are asynchronous functions that return an array of zero or more `Finding` objects.
+Your `agent.js`/`agent.ts` file must have a default export object with at least one of `handleBlock`, `handleTransaction` or `handleAlert` properties that provide the handler functions. You can export one or all of these depending on your use case, but at least one must be provided. The return type of these functions is `Promise<Finding[]>`, meaning they are asynchronous functions that return an array of zero or more `Finding` objects.
 
-You can also optionally export an `initialize` handler that will be executed on bot startup. This is useful for fetching some data from the network or parsing some file before your bot begins.
+You can also optionally export an `initialize` handler that will be executed on bot startup. This is useful for fetching some data from the network or parsing some file before your bot begins. If you are using the `handleAlert` handler, then the `initialize` handler is **required** to specify which bot's alerts you want to subscribe to. The returned object in this case would be of the type `InitializeResponse` (see the pattern for [consuming bot alerts](handle-alert.md) for more information). If you don't want to subscribe to any bot alerts, don't return anything i.e. `void`.
 
 ## BlockEvent
 
@@ -137,9 +138,23 @@ console.log(`found ${transfers.length} function calls`);
 
 The underlying library used for decoding function calls is [ethers.js](https://docs.ethers.io/v5/). The Javascript SDK uses the ethers.js [`parseTransaction`](https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing) method and returns an array of [`TransactionDescription`](https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription) objects. To better understand usage, see the [Javascript filtering example](https://github.com/forta-network/forta-bot-examples/tree/master/filter-event-and-function-js) bot.
 
+## AlertEvent
+
+When an alert is fired from a Forta bot and is detected by the network, any subscribing bots will receive an `AlertEvent` containing various information about the alert (see the pattern for [consuming bot alerts](handle-alert.md) for more information). It contains the following fields:
+
+- `alert` - data object containing an [Alert](sdk.md#alert)
+- `alertId` - alias for `alert.alertId`
+- `name` - alias for `alert.name`
+- `hash` - alias for `alert.hash`
+- `botId` - alias for `alert.source.bot.id`
+- `transactionHash` - alias for `alert.source.transactionHash`
+- `blockHash` - alias for `alert.source.block.hash`
+- `blockNumber` - alias for `alert.source.block.number`
+- `chainId` - alias for `alert.chainId`
+
 ## Finding
 
-If a bot wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` method which accepts the following properties:
+If a bot wants to flag a transaction/block/alert because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object can only be created using the `Finding.fromObject` method which accepts the following properties:
 
 - `name` - **required**; human-readable name of finding e.g. "High Gas"
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
@@ -158,12 +173,13 @@ If a bot wants to flag a transaction/block because it meets some condition (e.g.
     - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; key-value map (both keys and values as strings) for providing extra information
 
-## Alerts
+## Alert
 
-When an `Alert` is fired by a bot the data will be avalible to fetch using the [`getAlerts` method](sdk.md#getalerts). `Alert` objects have the following properties:
+When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent](sdk.md#alertevent) or manually queried using the [`getAlerts`](sdk.md#getalerts) method. `Alert` objects have the following properties:
 
+- `alertId` -  string to identify this class of finding
+- `chainId` - chain ID where this alert was fired
 - `addresses` -  human-readable list of addresses involved in the alert
-- `alertId` -  unique string to identify this class of finding
 - `contracts` -  list of contracts related to the alert
 - `createdAt` -  timestamp when the alert was published
 - `description` - text description of the alert
@@ -171,16 +187,28 @@ When an `Alert` is fired by a bot the data will be avalible to fetch using the [
 - `protocol` - name of protocol being reported on
 - `scanNodeCount` - number of scanners that found the alert
 - `source` - source where the alert was detected
-    - block - block where the threat was detected
-    - bot - bot that triggered the alert
-    - transactionHash - transaction where the threat was detected
+    - `transactionHash` - transaction where the alert was detected
+    - `block` - block where the alert was detected
+        - `timestamp`
+        - `chainId`
+        - `hash`
+        - `number`
+    - `bot` - bot that triggered the alert
+        - `id`
+        - `reference`
+        - `image`
+    - `sourceAlert` - alert that triggered this alert
+        - `hash`
+        - `botId`
+        - `timestamp`
+        - `chainId`
 - `projects` - list of Web3 projects related to the alert
-    - contacts - list of contact info
-    - id - project identifier
-    - name - user-friendly name of the project
-    - token
-    - social
-    - website - main website of the project
+    - `contacts` - list of contact info
+    - `id` - project identifier
+    - `name` - user-friendly name of the project
+    - `token`
+    - `social`
+    - `website` - main website of the project
 - `findingType` -  indicates type of finding:
     - Exploit
     - Suspicious
@@ -209,13 +237,13 @@ A convenience function called `getTransactionReceipt` can be used to fetch the e
 
 ## getAlerts
 
-A method called `getAlerts` can be used to fetch alerts based on input `AlertQueryOptions`. The `getAlerts` method accepts the following input filter properties:
+The `getAlerts` method can be used to fetch alerts based on input `AlertQueryOptions`. The `getAlerts` method accepts the following input filter properties:
 
 - `botIds` **required**; list of bot ids to fetch alerts for
 - `addresses` -  indicate a list of addresses, alerts returned will have those addresses involved.
 - `alertId` - filter alerts by alert-id
 - `chainId` - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet
-- `createdSince` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago
+- `createdSince` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago (note: if not specified, the query will only search the past 24 hours)
 - `first` - indicate max number of results.
 - `startingCursor` - query results after the specified cursor
 - `projectId` - indicate a project id, alerts returned will only be from that project.

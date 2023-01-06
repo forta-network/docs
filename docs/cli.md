@@ -45,6 +45,8 @@ Options:
 ```
 --tx - run your bot with a specific transaction hash
 --block - run your bot against a specific block number/hash, including the transactions in the block
+--alert - run your bot against a specific Forta alert hash
+--sequence - run your bot against a sequence of tx/block/alert events
 --range - run your bot against a specific range of block numbers
 --file - run your bot against a JSON file of test data
 --prod - used for running the bot inside of a production environment i.e. you probably won’t need this during development
@@ -147,7 +149,6 @@ Options (optional):
 
 --scannerId - Filter to only return logs of a given scannerId
 ```
-
 
 ## info
 

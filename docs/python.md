@@ -6,11 +6,11 @@ The Forta bot Python SDK comes with a set of classes to provide a consistent int
 
 ## Handlers
 
-The most relevant functions for bot developers are the handler functions: `initialize`, `handle_block` and `handle_transaction`.
+The most relevant functions for bot developers are the handler functions: `initialize`, `handle_block`, `handle_transaction` and `handle_alert`.
 
-Your `agent.py` file must declare a `handle_block` and/or `handle_transaction` function. You can implement one or both of these depending on your use case, but at least one must be provided. These functions take a `BlockEvent` or `TransactionEvent` as their input, respectively, and return an array of zero or more `Finding` objects.
+Your `agent.py` file must declare at least one of the `handle_block`, `handle_transaction` or `handle_alert` functions. You can implement one or all of these depending on your use case, but at least one must be provided. These functions take a `BlockEvent`, `TransactionEvent` or `AlertEvent` as their input, respectively, and return an array of zero or more `Finding` objects.
 
-You can also optionally declare an `initialize` function that will be executed on bot startup. This is useful for fetching some data from the network or parsing some file before your bot begins.
+You can also optionally declare an `initialize` function that will be executed on bot startup. This is useful for fetching some data from the network or parsing some file before your bot begins. If you are using the `handle_alert` handler, then the `initialize` function is **required** to return which bot's alerts you want to subscribe to (see the pattern for [consuming bot alerts](handle-alert.md) for more information). If you don't want to subscribe to any bot alerts, don't return anything.
 
 ## BlockEvent
 
@@ -133,9 +133,23 @@ print(f'found {transfers.length} function calls')
 
 The underlying library used for decoding function calls is [web3.py](https://web3py.readthedocs.io/en/stable/). The Python SDK uses the web3.py [`decode_function_input`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.Contract.decode_function_input) method and returns an array of ([`ContractFunction`](https://web3py.readthedocs.io/en/stable/contracts.html#web3.contract.ContractFunction), `dict`) tuples. To better understand usage, see the [Python filtering example](https://github.com/forta-network/forta-bot-examples/tree/master/filter-event-and-function-py) bot.
 
+## AlertEvent
+
+When an alert is fired from a Forta bot and is detected by the network, any subscribing bots will receive an `AlertEvent` containing various information about the alert (see the pattern for [consuming bot alerts](handle-alert.md) for more information). It contains the following fields:
+
+- `alert` - data object containing an [Alert](python.md#alert)
+- `alert_id` - alias for `alert.alert_id`
+- `name` - alias for `alert.name`
+- `hash` - alias for `alert.hash`
+- `bot_id` - alias for `alert.source.bot.id`
+- `transaction_hash` - alias for `alert.source.transaction_hash`
+- `block_hash` - alias for `alert.source.block.hash`
+- `block_number` - alias for `alert.source.block.number`
+- `chain_id` - alias for `alert.chain_id`
+
 ## Finding
 
-If a bot wants to flag a transaction/block because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object accepts the following properties:
+If a bot wants to flag a transaction/block/alert because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object accepts the following properties:
 
 - `name` - **required**; human-readable name of finding e.g. "High Gas"
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
@@ -154,12 +168,13 @@ If a bot wants to flag a transaction/block because it meets some condition (e.g.
     - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; dict (both keys and values as strings) for providing extra information
 
-## Alerts
+## Alert
 
-When an `Alert` is fired by a bot the data will be avalible to fetch using the [`get_alerts` method](python.md#getalerts). `Alert` objects have the following properties:
+When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent](python.md#alertevent) or manually queried using the [`get_alerts`](python.md#getalerts) method. `Alert` objects have the following properties:
 
-- `addresses` -  human-readable list of addresses involved in the alert
 - `alert_id` -  unique string to identify this class of finding
+- `chain_id` - chain ID where this alert was fired
+- `addresses` -  human-readable list of addresses involved in the alert
 - `contracts` -  list of contracts related to the alert
 - `created_at` -  timestamp when the alert was published
 - `description` - text description of the alert
@@ -167,16 +182,28 @@ When an `Alert` is fired by a bot the data will be avalible to fetch using the [
 - `protocol` - name of protocol being reported on
 - `scan_node_count` - number of scanners that found the alert
 - `source` - source where the alert was detected
-    - block - block where the threat was detected
-    - bot - bot that triggered the alert
-    - transaction_hash - transaction where the threat was detected
+    - `transaction_hash` - transaction where the alert was detected
+    - `block` - block where the alert was detected
+        - `timestamp`
+        - `chain_id`
+        - `hash`
+        - `number`
+    - `bot` - bot that triggered the alert
+        - `id`
+        - `reference`
+        - `image`
+    - `sourceAlert` - alert that triggered this alert
+        - `hash`
+        - `bot_id`
+        - `timestamp`
+        - `chain_id`
 - `projects` - list of Web3 projects related to the alert
-    - contacts - list of contact info
-    - id - project identifier
-    - name - user-friendly name of the project
-    - token
-    - social
-    - website - main website of the project
+    - `contacts` - list of contact info
+    - `id` - project identifier
+    - `name` - user-friendly name of the project
+    - `token`
+    - `social`
+    - `website` - main website of the project
 - `finding_type` -  indicates type of finding:
     - Exploit
     - Suspicious
@@ -205,13 +232,13 @@ A convenience function called `get_transaction_receipt` can be used to fetch the
 
 ## get_alerts
 
-A method called `get_alerts` can be used to fetch alerts based on input `AlertQueryOptions`. The `get_alerts` method accepts the following input filter properties:
+The `get_alerts` method can be used to fetch alerts based on input `AlertQueryOptions`. The `get_alerts` method accepts the following input filter properties:
 
 - `bot_ids` **required**; list of bot ids to fetch alerts for
 - `addresses` -  indicate a list of addresses, alerts returned will have those addresses involved.
 - `alert_id` - filter alerts by alert-id
 - `chain_id` - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet
-- `created_since` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago
+- `created_since` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago (note: if not specified, the query will only search the past 24 hours)
 - `first` - indicate max number of results.
 - `starting_cursor` - query results after the specified cursor
 - `project_id` - indicate a project id, alerts returned will only be from that project.
