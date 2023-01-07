@@ -26,6 +26,7 @@ nav:
           - Protecting sensitive data: sensitive-data.md
           - JWT authentication for bots: jwt-auth.md
           - Consuming bot alerts: handle-alert.md
+          - Adding labels to findings: labels.md
           - Private alerts: private-alerts.md
           - Transaction simulation: tx-simulation.md
           - Long running tasks: long-running-tasks.md

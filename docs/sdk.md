@@ -172,6 +172,7 @@ If a bot wants to flag a transaction/block/alert because it meets some condition
     - Low - minor oversights, negligible impact on users/funds
     - Info - miscellaneous behaviours worth describing
 - `metadata` - optional; key-value map (both keys and values as strings) for providing extra information
+- `labels` - optional; array of `Label` objects to attach to this finding
 
 ## Alert
 
@@ -222,6 +223,20 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
     - Low - minor oversights, negligible impact on users/funds
     - Info - miscellaneous behaviours worth describing
 - `metadata` - key-value map (both keys and values as strings) for providing extra information
+
+## Label
+
+Labels can be used to add more contextual data to a `Finding` e.g. "is this address an attacker?". The `Label` object has the following properties:
+
+- `entityType` - enum indicating type of entity:
+    - `Address`
+    - `Transaction`
+    - `Block`
+    - `Url`
+    - `Unknown`
+- `entity` - string identifier of the entity being labelled e.g. transaction hash
+- `label` - string label to attach to the entity e.g. "exploit"
+- `confidence` - confidence level of label between 0 and 1
 
 ## getJsonRpcUrl
 
