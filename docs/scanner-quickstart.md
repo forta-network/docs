@@ -238,9 +238,12 @@ If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an
 !!! note "JSON-RPC APIs"
     Detection bots are able to call JSON-RPC APIs using the scan node's configured endpoints. By default, this is the `scan.jsonRpc.url` but one can separate bot-specific traffic by specifying a `jsonRpcProxy.jsonRpc.url`. We suggest setting this as your own node's JSON-RPC API endpoint if you are running one. If not, it is better to set this as a different JSON-RPC API endpoint than `scan.jsonRpc.url`.
 
-**If your node is scanning chains other than Ethereum mainnet,** please checkout the final section to see options.
+!!! important "Other chains"
+    If your node is scanning chains other than Ethereum mainnet, please checkout [Scanning other chains](#scanning-other-chains) section to see examples.
 
-Here is an example configuration to scan Ethereum mainnet using [Alchemy](alchemy-partnership.md) Growth plan:
+#### HTTP
+
+Here is an example configuration to scan Ethereum mainnet using [Alchemy](alchemy-partnership.md) Growth plan and HTTP endpoints:
 
 ```yaml
 chainId: 1
@@ -254,15 +257,15 @@ trace:
   jsonRpc:
     url: https://eth-mainnet.alchemyapi.io/v2/KEY
 
-# The proxy settings are used for detection bots to make their own json-rpc calls.
-# By default, this is set to the scan node url value. We recommend setting
-# this differently than the scan node url value if you are using a paid plan.
+# The proxy settings are used for detection bots to make their own JSON-RPC calls.
+# By default, this is set to the scan node URL value. We recommend setting
+# this differently than the scan node URL value if you are using a paid plan.
 jsonRpcProxy:
   jsonRpc:
     url: http://different-api:8545
 ```
 
-Another example configuration to scan Ethereum mainnet using your Erigon node, which is much simpler:
+Another example configuration to scan Ethereum mainnet using your Erigon node's HTTP endpoint, which is much simpler:
 
 ```yaml
 chainId: 1
@@ -279,6 +282,48 @@ trace:
 # jsonRpcProxy:
 #   jsonRpc:
 #     url: http://your-node:8545
+```
+
+#### WebSocket
+
+If you have a WebSocket endpoint available from your full node or from your JSON-RPC provider (e.g. [Alchemy](alchemy-partnership.md)), you can use that endpoint as `scan.jsonRpc.url`. This will ensure that your node will always fetch the latest block as fast as possible.
+
+!!! warning "Notifications"
+    The WebSocket endpoint needs to support block header notifications. Please check `docker logs forta-scanner -f` output to see any issues after starting the node.
+
+!!! warning "Proxy"
+    If you set the scan API as a WebSocket endpoint, please set `jsonRpcProxy.jsonRpc.url` as an HTTP JSON-RPC API. Your node may get a low score if you skip this!
+
+Example:
+
+```yaml
+chainId: 1
+
+scan:
+  jsonRpc:
+    url: wss://<websocket-api>
+
+trace:
+  jsonRpc:
+    url: wss://<websocket-api>
+
+jsonRpcProxy:
+  jsonRpc:
+    url: https://<http-api>
+```
+
+#### Retries
+
+The block feed in the node always retries any request whenever `eth_getBlockByNumber`, `eth_getLogs` or `trace_block` does not work. The default retry interval is 8 seconds. While this is a sufficient retry interval on average for all chains, you can reduce this interval so your node catches up faster.
+
+!!! important "Effect to score"
+    Reducing the retry interval can help you achieve a higher SLA score in case you have any concerns about your node's current score. Please keep in mind that small retry intervals can cause a bump in the amount of total requests because of the increase in the amount of retries.
+
+To reduce the retry interval to two seconds, you can add `retryIntervalSeconds` to the scan section of your config like:
+
+```yaml
+scan:
+  retryIntervalSeconds: 2
 ```
 
 ### Configure Registry API
