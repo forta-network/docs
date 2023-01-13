@@ -1,14 +1,14 @@
 # Transfer Bot Ownership
 
-Each Bot is an ERC-721 NFT and is minted to the creator of the Bot. This means that the owner can invoke the ERC-721 `transferFrom` function, and it change the owner of the Bot.
+Each Bot is an ERC-721 NFT and is minted to the creator of the Bot. This means that the owner can invoke the ERC-721 `transferFrom` function, and it changes the owner of the Bot.
 
-These instructions walk through transferring ownership via the polyscan UI.
+These instructions walk through transferring ownership via the Polygonscan UI.
 
 !!! note "Bot is the same as Agent"
     Forta renamed Agents to Bots, but the smart contract still uses the Agent terminology. They are the same exact thing. An Agent ID is the same as a Bot ID.
 
 !!! warning "Transferring does not affect Stake Ownership"
-    After transferring ownership, **the current stake on the bot is still owned by the previous staker**. It is recommended to separately stake on the bot as the new owner, which will allow the previous staker to withdrawl their stake without disabling your bot.
+    After transferring ownership, **the current stake on the bot is still owned by the previous staker**. It is recommended to separately stake on the bot as the new owner, which will allow the previous staker to withdraw their stake without disabling your bot.
 
 ## Transferring Bot Ownership
 
@@ -20,7 +20,7 @@ These instructions walk through transferring ownership via the polyscan UI.
 <img src="../registry-write-as-proxy.png" alt="Write as Proxy" width="800"/>
 
 !!! note "Connect the Owner Wallet"
-    Please connect a wallet that is the current owner or the transaction will not be allowed.  If the owner used the SDK with a local private key, one will need to import that key into Metamask/Wallet to use this site.  The key file can be found in `$HOME/.forta/.keys/`
+    Please connect a wallet that is the current owner or the transaction will not be allowed.  If the owner used the SDK with a local private key, one will need to import that key into Metamask/Wallet to use this site.  The keyfile can be found by running `npm run keyfile` in your bot project
 
 ### Fill out the `transferFrom` command as follows
 
