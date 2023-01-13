@@ -42,6 +42,7 @@ nav:
           - CLI commands: cli.md
           - forta.config.json: config.md
       - Stake on your Bot: stake-on-detection-bot.md
+      - Transfer Bot Ownership: bot-transfer-ownership.md
       - Bot developer contests:
           - Compound Contest (10/20/2021): contest1-compound.md
           - Aave Contest (11/3/2021): contest2-aave.md
