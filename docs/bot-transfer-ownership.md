@@ -2,7 +2,7 @@
 
 Each Bot is an ERC-721 NFT and is minted to the creator of the Bot. This means that the owner can invoke the ERC-721 `transferFrom` function, and it change the owner of the Bot.
 
-These instructions walk through doing this via the polyscan UI.
+These instructions walk through transferring ownership via the polyscan UI.
 
 !!! note "Bot is the same as Agent"
     Forta renamed Agents to Bots, but the smart contract still uses the Agent terminology. They are the same exact thing. An Agent ID is the same as a Bot ID.
@@ -29,7 +29,6 @@ These instructions walk through doing this via the polyscan UI.
 - **agentId**: the hexadecimal Bot ID for the bot
 
 <img src="../transfer-from-form.png" alt="Write as Proxy" width="800"/>
-
 
 ### Execute the transaction by clicking **Write**
 
