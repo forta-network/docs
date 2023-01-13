@@ -26,7 +26,7 @@ These instructions walk through transferring ownership via the polyscan UI.
 
 - **from**: The current owner (must be the connected wallet)
 - **to**: the new address
-- **agentId**: the hexadecimal Bot ID for the bot
+- **tokenId**: the hexadecimal Bot ID for the bot
 
 <img src="../transfer-from-form.png" alt="Write as Proxy" width="800"/>
 
