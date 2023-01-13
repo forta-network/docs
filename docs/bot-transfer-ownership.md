@@ -1,4 +1,4 @@
-# Transferring Bot Ownership
+# Transfer Bot Ownership
 
 Each Bot is an ERC-721 NFT and is minted to the creator of the Bot. This means that the owner can invoke the ERC-721 `transferFrom` function, and it change the owner of the Bot.
 
@@ -30,7 +30,7 @@ These instructions walk through transferring ownership via the polyscan UI.
 
 <img src="../transfer-from-form.png" alt="Write as Proxy" width="800"/>
 
-### Execute the transaction by clicking **Write**
+### Execute the transaction by clicking **Write** and sign the transaction
 
 ## Alternative to Transferring
 
