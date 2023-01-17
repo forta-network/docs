@@ -74,9 +74,13 @@ return 1 - ( (expected block - latest block) / threshold )
 
 ### Uptime Score
 
-Scanners must send data at regular intervals so that the network can deliver timely alerts.  The nodes send a batch file to the Forta API every 15 seconds.  This means there should be 4 batches per minute. 
+Scanners must send data at regular intervals so that the network can deliver timely alerts. The nodes send a batch file to the Forta API
 
-The minute score of uptime is the percent difference between the number of batches and expected number of batches.  Due to timing and alert rate, this count can flucutate between 0 and 5, but this does not impact the SLA very much, because the score is not weighted as high as others.
+- every 15 seconds if the node is running bots and there are new alerts,
+- every 1 minute if the node is running bots but there are no alerts,
+- for few times in an hour if the node is not running any bots.
+
+The minute score of uptime is the percent difference between the number of batches and expected number of batches.  Due to timing and alert rate, this count can flucutate between 0 and 5 in a minute, but this does not impact the SLA very much, because the score is not weighted as high as others.
 
 If data is not being sent at all, all other scores will be impacted as well.
 
