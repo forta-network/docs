@@ -45,7 +45,7 @@ Getting started with Forta on Chainstack is as straightforward as counting 1-2-3
 - Select a preferred cloud provider
 - Pick a node location with low latency
 
-![Chainstack Console Screen](chainstack-console.png)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S1rXLEfj_O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 And now that you know just how easy it is to get the ball rolling, you will be even more pleasantly surprised to hear that all details and operations are available within a single seamless Chainstack dashboard. Deploying a Forta scan node is truly a walk in the park with the Chainstack platform and something you are sure to enjoy as a Web3 developer.
 
