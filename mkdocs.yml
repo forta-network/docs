@@ -69,6 +69,7 @@ nav:
   - <strong>About Forta</strong>:
       - What is Forta: what-is-forta.md
       - FORT token: fort-token.md
+      - Stake Delegation: stake-delegation-intro.md
       - Stake Slashing:
           - Slashing Policy: slashing-policy.md
           - Creating a Slash Proposal: slashing-creating-proposal.md
