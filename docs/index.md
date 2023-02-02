@@ -26,13 +26,21 @@ hide:
 
     [:octicons-arrow-right-24: Start building](quickstart.md)
 
--   :material-server:{ .lg .middle } __Run a Scan Node__
+-   :material-server:{ .lg .middle } __Run a Scanner Pool__
 
     ---
 
-    Setup a scan node to run detection bots and operate the Forta network
+    Setup a Scanner Pool to run detection bots and operate the Forta network
 
     [:octicons-arrow-right-24: Scanner quick start](scanner-quickstart.md)
+
+-   :coin:{ .lg .middle } __Delegate to a Scanner Pool_
+
+    ---
+
+    Delegate to a Scanner Pool and get rewarded for increasing Forta network security
+
+    [:octicons-arrow-right-24: Delegation info](delegators-why.md)
 
 -   :robot:{ .lg .middle } __Machine Learning On Forta__
 
