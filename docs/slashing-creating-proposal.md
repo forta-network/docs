@@ -59,7 +59,7 @@ const evidenceDescriptor = {
     fileHash: 'bafybeihmnuxjiq4vd4r3ga3cebcn43o7v7nsovdn2n6rqis23dohcja72u',
     fileTypeExtension: 'txt',
     fileName: 'logs',
-    description: 'The logs provided in the file proves the Scanner Node 0x123... is censuring the alerts from my bot',
+    description: 'The logs provided in the file proves the Scanner Node 0x123 registered in Scanner Pool 456 ... is censuring the alerts from my bot',
     checksum: null,
 };
 
@@ -80,7 +80,7 @@ And the resulting file:
   "fileHash": "bafybeihmnuxjiq4vd4r3ga3cebcn43o7v7nsovdn2n6rqis23dohcja72u",
   "fileTypeExtension": "txt",
   "fileName": "logs",
-  "description": "The logs provided in the file proves the Scanner Node 0x123... is censuring the alerts from my bot",
+  "description": "The logs provided in the file proves the Scanner Node 0x123 registered in Scanner Pool 456 ... is censuring the alerts from my bot",
   "checksum": "0x7c2c3e9954d792269b84ee976c29153771886ddd81d4b4073bc5d3f0eb0a9099"
 }
 ```
@@ -117,8 +117,8 @@ And the resulting file:
     3. Click on "Connect to Web3"
 
 2. Go to "7. ProposeSlash" and input your parameters:
-    1. *_subjectType*: 0 for Scanner Node, 1 for Detection Bot
-    2. *_subjectId*: a Scanner Node address or Bot ID
+    1. *_subjectType*: 1 for Detection Bot, 2 for Scanner Pool
+    2. *_subjectId*: a Bot ID or Scanner Pool ID
     3. *_penaltyId*: The keccak256 hash of the slash reason, in uppercase separated by underscores.
         1. *MISCONDUCT_SLASH*: 0xe147df3b4755943b8e7219d7acfd0fd67879bdbf5f62537886a5e2acd476ee7d
         2. *OPERATIONAL_SLASH*: 0x602d37be0dfc88daa6b674e3c42ff4efabf3e86cef482bce18b643e8c0a1b33c
