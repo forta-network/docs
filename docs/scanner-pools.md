@@ -15,7 +15,11 @@ In addition, the scanner pools allow other FORT token holders (delegators) to st
 
 ### Depositing on your own pool
 
+**TODO:** Add screenshots and describe the steps.
+
 ### Delegating to a pool
+
+**TODO:** Add screenshots and describe the steps.
 
 ## Creating new nodes
 
