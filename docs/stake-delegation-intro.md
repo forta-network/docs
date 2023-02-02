@@ -45,6 +45,8 @@ Pool has:
     
 Every reward epoch, SLA scores for scanners of the pool will be measured, along with the variations on stake allocation. After the end of the epoch, a reward in FORT will be assigned to the pool in the reward distribution smart contract, where the rewarded parties may claim.
 
+To learn more about rewards, visit the [Rewards Formula page](/rewards).
+
 Network rewards for Scanner Pools will be shared among pool owners and delegators proportional to the percentage of stake supplied and the moment when it was allocated. Pool owners will be able to specify a commission percentage that they will keep from delegator rewards. Changes in the commission (or fee) will take effect on the next reward epoch, and subsequent changes will have to wait for a lockdown period.
 
 !!! important "Reward epochs"
