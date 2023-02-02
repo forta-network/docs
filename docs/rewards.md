@@ -10,6 +10,12 @@ The score of scan node j during an epoch is:
 
 ![scan node rewards formula](rewards-images/scannode.png)
 
+!!! important "Reward epochs"
+    - **epoch duration**: 1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC
+    - **lockdown to set a different delegation fee after a change**: 2 epochs.
+
+    Values subject to change.
+
 Consequently, the total score of a scanner pool i during an epoch is:
 
 ![scan pool rewards formula](rewards-images/scannerpools.png)
@@ -39,6 +45,7 @@ Delegators rewards on scanner pool i:
 ![where](rewards-images/delegatorsexplain.png)
 
 The values of parameters α and β are set to 3 and 0.5 respectively and are subject to change in the future.
+
 
 
 How to Claim Rewards
