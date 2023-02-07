@@ -63,9 +63,8 @@ nav:
       - Local Scan Node: scanner-local-mode.md
       - Scan With Alchemy: alchemy-partnership.md
       - Scan With Chainstack: scan-with-chainstack.md
-  - <strong>Machine Learning on Forta</strong>:
-      - Intro to Machine Learning: ml-with-forta.md
-      - Machine Learning on Forta: ds-and-ml.md
+  - <strong>Machine Learning at Forta</strong>:
+      - Machine Learning at Forta: ml-at-forta.md
   - <strong>About Forta</strong>:
       - What is Forta: what-is-forta.md
       - FORT token: fort-token.md

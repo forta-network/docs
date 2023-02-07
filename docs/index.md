@@ -40,7 +40,7 @@ hide:
 
     Learn how machine learning improves threat detection
 
-    [:octicons-arrow-right-24: Learn More](ml-with-forta.md)
+    [:octicons-arrow-right-24: Learn More](ml-at-forta.md)
 
 -   :information_source:{ .lg .middle } __Learn How Forta Works__
 
