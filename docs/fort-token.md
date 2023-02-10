@@ -2,7 +2,7 @@
 
 FORT is an ERC-20 token in the Ethereum network. (Address: *0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29*)
 
-Staking is only available in Polygon, so anyone who wants to stake needs to bridge FORT to Polygon to do so ([https://wallet.polygon.technology/bridge](https://wallet.polygon.technology/bridge)).  
+Staking is only available in Polygon, so anyone who wants to stake needs to bridge FORT to Polygon to do so ([https://wallet.polygon.technology/](https://wallet.polygon.technology/)).  
 
 ## How is the FORT token used in Forta?
 
