@@ -29,7 +29,7 @@ You can now interact with the Polygon network using your Metamask.
 
 ## 3. Move ETH to Polygon using the bridge
 
-1. Navigate to the [Polygon bridge](https://wallet.polygon.technology/bridge/)
+1. Navigate to the [Polygon bridge](https://wallet.polygon.technology)
 2. Connect your Metamask wallet if needed (you will be prompted to sign a message)
 3. Select Ether from the dropdown as the token to transfer
 4. Enter how much ETH you want to transfer (for reference, 1 [MATIC](https://coinmarketcap.com/currencies/polygon/) will allow you to publish ~80 bots)
