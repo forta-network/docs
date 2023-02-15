@@ -192,9 +192,9 @@ _"I lost my scan node data, now what?"_
 
 **The scan node private key does not own or control the staked FORT.**
 
-Losing the scan node private key will require you to dispose your old scan node and create a new one. This is as easy as disabling the lost scan node in your pool and registering a new one.
+Losing the scan node private key will require you to dispose your old scan node and create a new one. This is as easy as disabling the lost scan node from your pool and registering a new one.
 
-- Disable the lost node in your pool on https://app.forta.network.
+- Disable the lost node from your pool on https://app.forta.network.
 - Do `forta init --passphrase <your-passphrase>` to initialize a new node.
 - Now you have a new `~/.forta` directory with a new private key.
 - Copy your backed up config to `~/.forta/config.yml` or configure that file from scratch.
