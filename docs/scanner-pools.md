@@ -40,7 +40,7 @@ In addition, the scanner pools allow other FORT token holders (delegators) to st
 
 ![Add Stake](AddStakeToPool.png)
 
-- In order to stake, there are two transactions that must be excecuted:
+- In order to stake, there are two transactions that must be executed:
     - Approve the amount of FORT to stake
     - Stake the approved FORT
 
@@ -71,11 +71,11 @@ In addition, the scanner pools allow other FORT token holders (delegators) to st
 
 ![Delegated Staking Approve](DelegatedStakingApprove.png)
 
-- Enter the amount of approved FORT want to delegate and click “Delegate” and approve the transaction. Wait for the transaction to confirm
+- Enter the amount of approved FORT you want to delegate and click “Delegate” and approve the transaction. Wait for the transaction to confirm
 
 ![Delegated Staking FORT](DSFORT.png)
 
-- Navigate to “My Stakes” or  “Overview” on your profile and you can see your staked FORT
+- Navigate to “My Stakes” or “Overview” on your profile and you can see your staked FORT
 
 ## Creating new nodes
 
@@ -104,7 +104,7 @@ If a node is no longer used, it should be disabled to free up allocated stake fo
 
 ## Adjusting stake allocation
 
-While it's always possible to add more stake to a pool, it is allocated proportional to the amount of scan nodes in the pool. Total allocated stake can only be `node_count × max_stake_per_scan_node`.
+While it's always possible to add more stake to a pool, it is allocated proportionally to the amount of scan nodes in the pool. Total allocated stake can only be `node_count × max_stake_per_scan_node`.
 
 For example, if there are two scan nodes in a pool, a total of 35k FORT deposited and only 15k FORT worth of max stake allocation is allowed per scan node, then the pool can allocate a maximum of `15k × 2 = 30k` FORT in total. This is the amount that is effective in calculating the rewards and the rest of `35k - 30k = 5k` remains unallocated until more scan nodes are registered to the pool.
 
@@ -134,7 +134,7 @@ When you deposit more stake on your pool as the operator and then register a nod
 
 ![Allocate Stake On Node](AllocateStakeOnNode.png)
 
-- From here you can either allocate or unallocate stake. To adjust you own stake make sure the subject is *Owner*
+- From here you can either allocate or unallocate stake. To adjust owner stake make sure the subject is *Owner*
 
 ![Allocate Modal](AllocationModal.png)
 
@@ -147,7 +147,7 @@ When you deposit more stake on your pool as the operator and then register a nod
 In addition to the allocation adjustment, operators can decide how much of the delegators' rewards they would like to keep as commission.
 
 !!! important "Phase II feature"
-    Until claiming rewards are available on Forta App, only the pool owners will generate rewards and the rewards will be transferred directly. Meanwhile, the pool owners can still expect delegators to stake on their pools and adjust allocation and commission to get ready for the second phase.
+    These commissions will be effective when Forta App supports claiming the rewards. Meanwhile, the pool owners can still expect delegators to stake on their pools and adjust allocation and commission to get ready for the second phase.
 
 - Click on the node pool you would like to adjust the stake allocation (you must be the owner)
 
@@ -162,6 +162,21 @@ In addition to the allocation adjustment, operators can decide how much of the d
 ## Claiming rewards
 
 !!! important "Phase II feature"
-    This is a feature that will be activated and useful in the second phase of the transition to delegated staking. At the time of reading these docs, the feature may not be available on Forta App just yet. The rewards accrued in FORT will be forwarded to pool owner wallets until this feature is available.
+    This feature that will be available in Forta App in the second phase of the transition to delegated staking. Meanwhile, you can claim pool owner rewards from Polygonscan.
 
 After the rewards are calculated at the end of each epoch, they are transferred to the rewards distributor contract. This contract allows the pool owner and the delegators to claim their rewards.
+
+To claim pool owner rewards over Polygonscan **after Monday 00:00:00 UTC**:
+
+- find out the `RewardsDistributor` contract address from the [smart contract addresses page](smart-contracts.md),
+- visit it on Polygonscan,
+- visit "Contract" tab,
+- find "Read as Proxy",
+- find the current epoch number from `getCurrentEpochNumber`
+- find "Write as Proxy",
+- click on "Connect to Web3" to connect your wallet,
+- find the `claimRewards` method and fill in:
+    - **subjectType:** 2
+    - **subjectId:** Your pool ID
+    - **epochNumbers:** Do epoch number minus 1 and input like `[2561]` if current is 2562
+- click on "Write" to send the transaction.
