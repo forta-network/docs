@@ -4,7 +4,7 @@
 
 A scanner pool contains a group of nodes that scan a specific chain. Each pools belongs to a specific owner and is minted as an NFT (ERC-721) upon registration. These pools require the operators to deposit a total amount of stake which covers the minimum-per-scan-node amount for each node.
 
-When registering any node to a pool, make sure to stake this minimum amount of **2500 FORT** on the pool first.
+When registering any node to a pool, make sure to stake this minimum amount of **500 FORT** on the pool first.
 
 In addition, the scanner pools allow other FORT token holders (delegators) to stake on your pool and earn rewards. As the pool operator, you can decide
 
@@ -109,21 +109,45 @@ For example, if there are two scan nodes in a pool, a total of 25k FORT deposite
 
 It is up to the pool owner to allocate more from own stake or more from the delegators so the share of the rewards can be adjusted accordingly.
 
-### Adjusting own stake
+### Adjusting stake
 
-**TODO:** Add screenshots and describe the steps.
+- In the Forta App navigate to “My Node Pools”
 
-### Adjusting delegator stake
+![My Node Pools](MyNodePoolsDropdown.png)
 
-**TODO:** Add screenshots and describe the steps.
+- Click on the node pool you would like to adjust the stake allocation
 
+![My Node Pools List](MyNodePoolsList.png)
+
+- Click on "Allocate Stake"
+
+![Allocate Stake On Node](AllocateStakeOnNode.png)
+
+- From here you can either allocate or unallocate stake. To adjust you own stake make sure the subject is *Owner*
+
+![Allocate Modal](AllocationModal.png)
+
+- To adjust the stake of delegators select the *Delegators* subject
+
+![AllocateDelegates](AllocateDelegates.png)
 ## Changing the commission
 
 The pool owners can adjust the ratio of the shares they would like to keep for themselves or the delegators, by changing the allocated amounts as described in the previous sections. It can be the case that it's more desirable for the operator to not stake more on the pool but let the delegators fill up the available allocation capacity.
 
 In this case, the commission allows the operators to earn a portion of the delegators' rewards.
 
-**TODO:** Add screenshots and describe the steps.
+!!! warning "Changing Commission"
+    In order to change the commission on a node pool. The pool must be eligible for rewards
+
+- Click on the node pool you would like to adjust the stake allocation (you must be the owner)
+
+- Click on "Change commission rate"
+
+![Change commission Rate](ChangeCommision.png)
+
+- Enter the commission that you would like to set on your pool
+
+![Update commision](UpdateCommissionModal.png)
 
 
 ## Claiming rewards
