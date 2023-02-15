@@ -4,7 +4,7 @@
 
 A scanner pool contains a group of nodes that scan a specific chain. Each pools belongs to a specific owner and is minted as an NFT (ERC-721) upon registration. These pools require the operators to deposit a total amount of stake which covers the minimum-per-scan-node amount for each node.
 
-When registering any node to a pool, make sure to stake this minimum amount of **500 FORT** on the pool first.
+When registering any node to a pool, make sure to stake this minimum amount of **2500 FORT** on the pool first.
 
 In addition, the scanner pools allow other FORT token holders (delegators) to stake on your pool and earn rewards. As the pool operator, you can decide
 
@@ -101,15 +101,26 @@ If a node is no longer used, it should be disabled to free up allocated stake fo
 - Select the disable action on the node you want to disable
 
 ![Disable Scan Node](DisableScanNode.png)
+
 ## Adjusting stake allocation
 
 While it's always possible to add more stake to a pool, it is allocated proportional to the amount of scan nodes in the pool. Total allocated stake can only be `node_count × max_stake_per_scan_node`.
 
-For example, if there are two scan nodes in a pool, a total of 25k FORT deposited and only 5k FORT worth of stake is allowed per scan node, then the pool can allocate a maximum of `5k × 2 = 10k` FORT in total. This is the amount that is effective in calculating the rewards and the rest of `25k - 10k = 15k` remains unallocated until more scan nodes are registered to the pool.
+For example, if there are two scan nodes in a pool, a total of 35k FORT deposited and only 15k FORT worth of max stake allocation is allowed per scan node, then the pool can allocate a maximum of `15k × 2 = 30k` FORT in total. This is the amount that is effective in calculating the rewards and the rest of `35k - 30k = 5k` remains unallocated until more scan nodes are registered to the pool.
 
 It is up to the pool owner to allocate more from own stake or more from the delegators so the share of the rewards can be adjusted accordingly.
 
-### Adjusting stake
+For each node in a pool:
+
+- The operator needs to allocate at least 2500 FORT.
+- The total capacity is 15000 FORT.
+
+When you deposit more stake on your pool as the operator and then register a node, your stake is allocated automatically. It is up to you to decide how much of own and delegated stake to be allocated.
+
+!!! warning "Risk of shutting down the pool"
+    After unallocating own stake as the operator, if your own allocated stake does not satisfy `node_count × min_stake_per_scan_node`, your pool faces the risk of shutting down and will generate no rewards! Please take into account the warnings and your calculations before proceeding.
+
+    E.g. for a pool with two nodes, 4k FORT stake on the pool means that both of the nodes in the pool are non-operational until it can be topped up to 5k (`2500 × 2`) and allocation of own stake is adjusted accordingly.
 
 - In the Forta App navigate to “My Node Pools”
 
@@ -130,14 +141,13 @@ It is up to the pool owner to allocate more from own stake or more from the dele
 - To adjust the stake of delegators select the *Delegators* subject
 
 ![AllocateDelegates](AllocateDelegates.png)
+
 ## Changing the commission
 
-The pool owners can adjust the ratio of the shares they would like to keep for themselves or the delegators, by changing the allocated amounts as described in the previous sections. It can be the case that it's more desirable for the operator to not stake more on the pool but let the delegators fill up the available allocation capacity.
+In addition to the allocation adjustment, operators can decide how much of the delegators' rewards they would like to keep as commission.
 
-In this case, the commission allows the operators to earn a portion of the delegators' rewards.
-
-!!! warning "Changing Commission"
-    In order to change the commission on a node pool. The pool must be eligible for rewards
+!!! important "Phase II feature"
+    Until claiming rewards are available on Forta App, only the pool owners will generate rewards and the rewards will be transferred directly. Meanwhile, the pool owners can still expect delegators to stake on their pools and adjust allocation and commission to get ready for the second phase.
 
 - Click on the node pool you would like to adjust the stake allocation (you must be the owner)
 
@@ -149,10 +159,9 @@ In this case, the commission allows the operators to earn a portion of the deleg
 
 ![Update commision](UpdateCommissionModal.png)
 
-
 ## Claiming rewards
 
-!!! warning "Phase II feature"
+!!! important "Phase II feature"
     This is a feature that will be activated and useful in the second phase of the transition to delegated staking. At the time of reading these docs, the feature may not be available on Forta App just yet. The rewards accrued in FORT will be forwarded to pool owner wallets until this feature is available.
 
 After the rewards are calculated at the end of each epoch, they are transferred to the rewards distributor contract. This contract allows the pool owner and the delegators to claim their rewards.
