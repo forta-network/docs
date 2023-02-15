@@ -58,7 +58,6 @@ nav:
   - <strong>Run a Scan Node</strong>:
       - Quickstart: scanner-quickstart.md
       - Manage your scanner pools: scanner-pools.md
-      - Manage your profile: node-operators.md
       - SLA score calculation: sla.md
       - SLA API: sla-api.md
       - Local mode: scanner-local-mode.md
