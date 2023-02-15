@@ -40,7 +40,7 @@ In addition, the scanner pools allow other FORT token holders (delegators) to st
 
 ![Add Stake](AddStakeToPool.png)
 
-- In order to stake there are 2 transactions that must be excecuted
+- In order to stake, there are two transactions that must be excecuted:
     - Approve the amount of FORT to stake
     - Stake the approved FORT
 
@@ -88,7 +88,7 @@ Each node needs to be registered to a specific pool in order to be operational. 
 - Click on the node pool you would like to add a node
 ![My Node Pools List](MyNodePoolsList.png)
 
-- Make sure you have at least 2,500 FORT staked and click “Add Scan Node”. Use the sdk to generate the auth encoded key needed to claim a node into a pool
+- Make sure you have at least 2,500 FORT staked for the new node. Click “Add Scan Node”. Use the Forta node CLI to generate the scanner authorization token (described [here](scanner-quickstart#register-scan-node)) needed to claim a node into a pool.
 
 ![Add Scan Node](AddScanNode.png)
 
@@ -129,7 +129,6 @@ In this case, the commission allows the operators to earn a portion of the deleg
 ## Claiming rewards
 
 !!! warning "Phase II feature"
-    This is a feature that will be activated and useful in the second phase of the transition to delegated staking. At the time of reading these docs, the feature may not be available on Forta App just yet. The rewards accrued in FORT will be forwarded to owner wallets until this feature is available.
+    This is a feature that will be activated and useful in the second phase of the transition to delegated staking. At the time of reading these docs, the feature may not be available on Forta App just yet. The rewards accrued in FORT will be forwarded to pool owner wallets until this feature is available.
 
 After the rewards are calculated at the end of each epoch, they are transferred to the rewards distributor contract. This contract allows the pool owner and the delegators to claim their rewards.
-
