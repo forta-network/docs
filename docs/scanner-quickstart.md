@@ -194,7 +194,7 @@ _"I lost my scan node data, now what?"_
 
 Losing the scan node private key will require you to dispose your old scan node and create a new one. This is as easy as disabling the lost scan node in your pool and registering a new one.
 
-- Disable the lost node in your node on https://app.forta.network.
+- Disable the lost node in your pool on https://app.forta.network.
 - Do `forta init --passphrase <your-passphrase>` to initialize a new node.
 - Now you have a new `~/.forta` directory with a new private key.
 - Copy your backed up config to `~/.forta/config.yml` or configure that file from scratch.
@@ -428,7 +428,7 @@ Alternatively, you can
 
 ## Stake FORT
 
-To ensure network reliablity, Forta Network requires staking FORT tokens on your node. You can follow the guide in the [Mange your scanner pools](https://docs.forta.network/en/latest/scanner-pools/) page to find out how to manage stake for nodes.
+To ensure network reliablity, Forta Network requires staking FORT tokens on your node. You can follow the guide in the [Manage your scanner pools](https://docs.forta.network/en/latest/scanner-pools/) page to find out how to manage stake for nodes.
 
 !!! warning "All pools require stake"
     Scan nodes in the unstaked or understaked pools will not be assigned any detection bots and will not generate any rewards.
@@ -436,7 +436,7 @@ To ensure network reliablity, Forta Network requires staking FORT tokens on your
 Forta Network makes good use of the stake by enforcing two main mechanisms:
 
 - **Rewarding:** Node operators are incentivized with rewards to ensure that their Forta nodes are running with good health and as expected.
-- **Slashing:** Node operators are discouraged from harmful actions. Upon detection, they lose rewards and a specific portion of the is removed from the deposited stake. This can cause the staked amount to go under minimum required and the node to enter into disabled state.
+- **Slashing:** Node operators are discouraged from harmful actions. Upon detection, they lose rewards and a specific portion is removed from the deposited pool stake. This can cause the staked amount to go under minimum required and all nodes in the pool to enter into disabled state.
 
 ## Run Scan Node
 
