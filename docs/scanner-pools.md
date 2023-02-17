@@ -165,6 +165,19 @@ In addition to the allocation adjustment, operators can decide how much of the d
 
 By default, all pools start with 100% commission, meaning that all delegator rewards will be received by the pool owners. This should be adjusted to a desired number by the pool owner if delegators are expected.
 
+For example, let's assume:
+
+- Delegator 1 deposits 12000 FORT.
+- Delegator 2 deposits 6000 FORT.
+- Pool commission is 10% (1000 BPS).
+- The pool delegators are rewarded 2000 FORT in total.
+
+In this case, `2000 × 0.1 = 200` FORT is credited to the pool owner as commission. From the remaining 1800 FORT,
+ each of the delegators earn proportionally to their deposited stake:
+
+- Delegator 1: 12000 => 1200
+- Delegator 2: 6000  => 600 
+
 - Click on the node pool you would like to adjust the stake allocation (you must be the owner)
 
 - Click on "Change commission rate"
