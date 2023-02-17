@@ -420,11 +420,9 @@ You can register your node by
 Alternatively, you can
 
 - do `forta authorize pool --id <your-pool-id> --polygonscan`,
-- find out the `ScannerPoolRegistry` contract address from the [smart contract addresses page](smart-contracts.md),
-- visit it on Polygonscan,
-- visit "Contract" tab and find "Write as Proxy",
-- click on "Connect to Web3" to connect your wallet,
-- find the `registerScannerNode` method, copy the values from the first step, send the transaction.
+- visit the [`registerScannerNode`](https://polygonscan.com/address/0x90ff9c193d6714e0e7a923b2bd481fb73fec731d#writeProxyContract#F9) method,
+- click on "Connect to Web3" on the top and connect your wallet,
+- copy the values from the first step, click on "Write".
 
 ## Stake FORT
 
