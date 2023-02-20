@@ -9,13 +9,17 @@ In exchange of the delegated stake, pool owners share their rewards with delegat
 - how much of the delegated stake should allocated,
 - what percentage of delegators' rewards should be withheld as commission.
 
-After every reward epoch ends, rewards in FORT are assigned to the pools in the reward distribution smart contract, at the earliest convenience. This smart contract decides how to distribute the rewards between owners and delegators.
+After every reward epoch ends (1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC), rewards in FORT are assigned to the pools in the reward distribution smart contract, at the earliest convenience. This smart contract decides how to distribute the rewards between owners and delegators.
 
 To learn more about rewards, visit the [Rewards Formula page](delegated-staking-rewards.md).
 
 In accordance with Forta Network's mission of securing Web3, delegated stakes are subject to the possibility of a small partial reduction in case the pool they are delegating to is slashed (either because of technical reasons or misconduct).
 
-Delegators are subject to a waiting period of 10 days to reclaim their FORT after initiating a stake withdrawal.
+!!! warning "Delays"
+    - Delegators are subject to a waiting period of 10 days to reclaim their FORT after initiating a stake withdrawal.
+    - When the pool owner changes the commission percentage, it becomes effective after two epochs (including current epoch).
+
+	These values are subject to change.
 
 # Choosing a Scanner Pool
 

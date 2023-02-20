@@ -40,7 +40,7 @@ hide:
 
     Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security
 
-    [:octicons-arrow-right-24: Delegation info](delegated-staking-introduction.md)
+    [:octicons-arrow-right-24: Learn more](delegated-staking-introduction.md)
 
 -   :robot:{ .lg .middle } __Machine Learning On Forta__
 
