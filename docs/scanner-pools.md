@@ -6,10 +6,10 @@ A scanner pool contains a group of nodes that scan a specific chain. Each pool b
 
 When registering any node to a pool, make sure to stake this minimum amount of **2500 FORT** on the pool first.
 
-In addition, the scanner pools allow other FORT token holders (delegators) to stake on your pool and earn rewards. As the pool operator, you can decide
+In addition, the scanner pools allow FORT token holders (delegators) to stake on pools of node operators and earn rewards. The pool operator can decide
 
-- how much of the delegator or operator stake to be allocated,
-- how much commission you want from delegators' rewards.
+- how much of the delegator or operator stake should be allocated,
+- what percentage to keep as commission from delegators' rewards.
 
 ## Creating a new scanner pool
 - In the Forta App navigate to “My Node Pools”
@@ -27,14 +27,15 @@ In addition, the scanner pools allow other FORT token holders (delegators) to st
 
 ## Depositing stake
 
-In order to make scan nodes operational and generate rewards, a node pool must have stake. While there is no upper bound on the stake:
+In order to make scan nodes operational and generate rewards, a node pool must have stake.
 
 - Both the pool owner and delegators can stake on a pool.
-- More nodes in a pool means more of the deposited stake can be allocated.
+- There is no limit on how much FORT can be staked on a pool.
+- There _is_ a limit on how much FORT can be allocated: More nodes in a pool means a higher limit.
 - The pool owner decides how much of the owner and delegated stake should be allocated.
 
 !!! danger "Density affects the rewards"
-    When staking on a pool, please prefer the ones that have allocation capacity or have low amount of unallocated stake. While all depositors share the pool rewards proportionally to their stake amount, the rewards are generated based only on allocated stake.
+    When staking on a pool, please prefer the ones that have allocation capacity or have low amount of unallocated stake. While a lot of depositors can share the rewards of a pool proportionally to their active stake amount on the pool, the rewards are generated based only on the amount of allocated stake.
 
 Please also see the [Adjusting stake allocation](adjusting-stake-allocation) section before depositing any stake.
 
@@ -122,7 +123,7 @@ If a node is no longer used, it should be disabled to free up allocated stake fo
 
 ## Adjusting stake allocation
 
-While it's always possible to add more stake to a pool, it is allocated proportionally to the amount of scan nodes in the pool. Total allocated stake can only be `node_count × max_stake_per_scan_node`.
+While it's always possible to add more stake to a pool, it is allocated proportionally to the amount of scan nodes in the pool. The maximum amount of total allocated stake can only be `node_count × max_stake_per_scan_node`.
 
 - The operator needs to allocate at least 2500 FORT for each node in a pool.
 - The total allocation capacity is 15000 FORT for each node in a pool.
