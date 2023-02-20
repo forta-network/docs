@@ -34,6 +34,14 @@ hide:
 
     [:octicons-arrow-right-24: Scanner quick start](scanner-quickstart.md)
 
+-   :bank:{ .lg .middle } __Stake FORT Tokens and Earn Rewards__
+
+    ---
+
+    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security
+
+    [:octicons-arrow-right-24: Delegation info](delegated-staking-introduction.md)
+
 -   :robot:{ .lg .middle } __Machine Learning On Forta__
 
     ---
