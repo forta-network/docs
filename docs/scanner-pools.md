@@ -1,4 +1,4 @@
-# Manage Scanner Pools
+# Manage Scanner Pools and Stake
 
 ## Introduction
 

@@ -57,7 +57,7 @@ nav:
       - Integrating with Hardhat: hardhat.md
   - <strong>Run a Scan Node</strong>:
       - Quickstart: scanner-quickstart.md
-      - Manage scanner pools: scanner-pools.md
+      - Manage pools and stake: scanner-pools.md
       - SLA score calculation: sla.md
       - SLA API: sla-api.md
       - Local mode: scanner-local-mode.md
