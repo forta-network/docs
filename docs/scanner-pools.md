@@ -1,4 +1,4 @@
-# Manage Your Scanner Pools
+# Manage Scanner Pools
 
 ## Introduction
 
@@ -30,7 +30,7 @@ In addition, the scanner pools allow other FORT token holders (delegators) to st
 In order to make scan nodes operational and generate rewards, a node pool must have stake. While there is no upper bound on the stake:
 
 - Both the pool owner and delegators can stake on a pool.
-- Node count of the pool affects how much of the deposited stake can be allocated.
+- More nodes in a pool means more of the deposited stake can be allocated.
 - The pool owner decides how much of the owner and delegated stake should be allocated.
 
 !!! danger "Density affects the rewards"

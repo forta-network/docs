@@ -426,7 +426,7 @@ Alternatively, you can
 
 ## Stake FORT
 
-To ensure network reliablity, Forta Network requires staking FORT tokens on your node. You can follow the guide in the [Manage your scanner pools](https://docs.forta.network/en/latest/scanner-pools/) page to find out how to manage stake for nodes.
+To ensure network reliablity, Forta Network requires staking FORT tokens on your node. You can follow the guide in the [Manage scanner pools](https://docs.forta.network/en/latest/scanner-pools/) page to find out how to manage stake for nodes.
 
 !!! warning "All pools require stake"
     Scan nodes in the unstaked or understaked pools will not be assigned any detection bots and will not generate any rewards.
