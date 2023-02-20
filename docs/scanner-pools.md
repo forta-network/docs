@@ -88,6 +88,13 @@ Please also see the [Adjusting stake allocation](adjusting-stake-allocation) sec
 
 - Navigate to “My Stakes” or “Overview” on your profile and you can see your staked FORT
 
+### Withdrawal
+
+You can withdraw your stakes by navigating to the “My Stakes” page from the top right menu.
+
+!!! warning "Stake lockdown"
+    Once the stake withdrawal is initiated, it becomes inactive immediately but cannot be withdrawn for 10 days. Please keep in mind that this delay is subject to change.
+
 ## Creating new nodes
 
 Each node needs to be registered to a specific pool in order to be operational. While one can register many scan nodes on a pool, the pool needs to be populated with more stake first in order to avoid registration issues. This is for preventing pool shutdown conditions that occur when the average per-scanner stake is below minimum.
@@ -164,6 +171,9 @@ In this **example** case, then this is how allocation and node registration play
 In addition to the allocation adjustment, operators can decide how much of the delegators' rewards they would like to keep as commission.
 
 By default, all pools start with 100% commission, meaning that all delegator rewards will be received by the pool owners. This should be adjusted to a desired number by the pool owner if delegators are expected.
+
+!!! warning "Commission lockdown"
+    Once the commission is modified, it cannot be changed for two epochs (including the current one). Please keep in mind that this delay is subject to change.
 
 For example, let's assume:
 
