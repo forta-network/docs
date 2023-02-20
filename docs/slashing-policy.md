@@ -70,7 +70,7 @@ The Arbiter address will confirm any Validated Slashing Proposal as either an â€
 - Bot is part of an attack against Network or its participants 
 - Any other evidenced misconduct in the Network
 - Bots whose alert misrepresents the purpose stated on their description or that fail to alert subscribers in the way they advertise
-- Any other evidenced operational failures in the Network 
+- Any other evidenced operational failures in the Network
 
 2. **Operational Complaint** - Slashing Subject at risk of up to 15% slash (if executed by Slasher Multisig). For example:
 
@@ -78,14 +78,14 @@ The Arbiter address will confirm any Validated Slashing Proposal as either an â€
     - Failure to run a Node with the minimum technical requirements set out in the [Forta Docs](https://docs.forta.network/en/latest/scanner-quickstart/)
     - Failure to run a Node at expected quality standards not captured by the SLA calculation
     - The Scanner Pool stake will be slashed by 15% of the min stake per individual Scanner Node.
-    - A to-be-determined percentage of amount slashed from the pool owner will also be slashed from the delegated stake on that pool.
+    - A percentage of 30% of the slashed amount to the pool owner will also be slashed from the delegated stake to that pool.
 
 - Detection Bot Slashing Subject:
     - Bots that clog the network (spam)
     - Bots that inappropriately affect Scanner Node SLAs
     - Bots that demand an excessive amount of resources from Scanner Nodes
 
-
+The on-chain rules are the ultimate authority of this logic, and in the case where the on-chain rules differ from this, it will prevail.
 
 ## **IV. EXECUTION OF SLASHING**
 
