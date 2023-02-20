@@ -2,9 +2,9 @@
 
 ## Slashing in the Forta Network
 
-Both Node Runners and Detection Bots are required to stake FORT tokens in order to participate in the Forta Network and earn FORT rewards. Soon, delegated staking will allow other Forta community members to stake tokens on node operations. Staking aligns incentives amongst Network participants and also acts as a sybil resistance mechanism. As a further security feature, Network participants also risk their staked FORT being slashed as follows:
+Both Scanner Pool Owners and Detection Bots are required to stake FORT tokens in order to participate in the Forta Network and earn FORT rewards. Soon, delegated staking will allow other Forta community members to stake tokens on node operations. Staking aligns incentives amongst Network participants and also acts as a sybil resistance mechanism. As a further security feature, Network participants also risk their staked FORT being slashed as follows:
 
-- **Slashing Node Runners.** Although the Forta work assignment algorithm takes into account SLA performance and node runners that fail to execute their assigned work correctly should be organically pushed out of the Network over time, for additional reliability, Node Runners are also subject to slashing if they fail to execute their assigned work correctly outside of the SLA factors or if they attempt misconduct. 
+- **Slashing Scanner Pool Owners.** Although the Forta work assignment algorithm takes into account SLA performance and pool owners that fail to execute their assigned work correctly should be organically pushed out of the Network over time, for additional reliability, Scanner Pool Owners are also subject to slashing if they fail to execute their assigned work correctly outside of the SLA factors or if they attempt misconduct.
 
 - **Slashing Detection Bots.** Although Detection Bots are deployed via docker containers and must meet specific technical criteria in order to be assigned by the Forta work assignment algorithm, for additional reliability, Detection Bots are also subject to slashing if they fail to meet Detection Bot guidelines or negatively impact the Network, or attempt malicious behavior.
 
@@ -74,9 +74,11 @@ The Arbiter address will confirm any Validated Slashing Proposal as either an â€
 
 2. **Operational Complaint** - Slashing Subject at risk of up to 15% slash (if executed by Slasher Multisig). For example:
 
-- Scan Node Slashing Subject:
+- Scanner Pool Slashing Subject:
     - Failure to run a Node with the minimum technical requirements set out in the [Forta Docs](https://docs.forta.network/en/latest/scanner-quickstart/)
     - Failure to run a Node at expected quality standards not captured by the SLA calculation
+    - The Scanner Pool stake will be slashed by 15% of the min stake per individual Scanner Node.
+    - A to-be-determined percentage of amount slashed from the pool owner will also be slashed from the delegated stake on that pool.
 
 - Detection Bot Slashing Subject:
     - Bots that clog the network (spam)
