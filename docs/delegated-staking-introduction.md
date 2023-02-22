@@ -9,7 +9,7 @@ In exchange of the delegated stake, pool owners share their rewards with delegat
 - how much of the delegated stake should allocated,
 - what percentage of delegators' rewards should be withheld as commission.
 
-After every reward epoch ends (1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC), rewards in FORT are assigned to the pools in the reward distribution smart contract, at the earliest convenience. This smart contract decides how to distribute the rewards between owners and delegators by following the rewards formulas.
+After every reward epoch ends (1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC), rewards in FORT are assigned to the pools in the reward distribution smart contract during the following 48 hours. This smart contract decides how to distribute the rewards between owners and delegators by following the rewards formulas.
 
 To learn more about rewards, visit the [Rewards Formula page](delegated-staking-rewards.md).
 
