@@ -6,6 +6,8 @@ For other information including rewards, please check out our [node operators pa
 
 ## Scan Node Requirements
 
+### Resources
+
 The following are the requirements for running a Forta scan node.
 
 - 64-bit Linux distribution
@@ -16,11 +18,20 @@ The following are the requirements for running a Forta scan node.
 - 100GB SSD (in addition to full node requirements)
 - **Recommended:** Full node (any chain)
 
-### Example: Run your Ethereum full node
+### Stake
+
+All nodes need to be registered to run within a specific pool. In order to make your node operational in the network, please visit the [scanner pool management guide](scanner-pools.md) to find out how you can create, manage and stake on a scanner pool.
+
+In the following steps, you will be able to use your pool ID for scan node registration.
+
+!!! important "Stake on the pool first"
+    Make sure you stake on your pool first before registering any scan node to it, as suggested in [scanner pool management guide](scanner-pools.md). There is a minimum per-scan-node stake amount that needs to be satisfied in every pool. Adding a scan node to a pool without adding extra stake can render all nodes in a scan node non-operational so this is not allowed by the contract.
+
+### Optional: Run your Ethereum full node
 
 If you are planning on setting up a Forta node, your own full node node is the most reliable option as a provider to your Forta node.
 
-Starting from September 6, your Erigon node (Execution Layer) needs to run with a beacon node (Consensus Layer). For more details, please make sure you visit [The Merge](#the-merge) section on this page.
+The most preferred full node option for Ethereum mainnet is running an Erigon node. Your Erigon node (Execution Layer) needs to run with a beacon node (Consensus Layer). For more details, please make sure you visit [The Merge](#the-merge) section on this page.
 
 ```bash
 erigon-rpcdaemon \
@@ -172,40 +183,22 @@ Successfully initialized at /yourname/.forta
 This is the value that will be registered in the scan node registry smart contract (as `uint256`).
 If you need to find out your address later again, you can run `forta account address`.
 
-### Backup Forta Directory
-
-🚨 **If you delete scan node data without backup, you cannot restore your scan node.** 🚨
-
-🔐 **You should never lose your private key in `~/.forta/.keys` and your passphrase.** 🔐
-
-To avoid losing the control of your node address and save yourself configuration time, you can back up your Forta directory at `~/.forta` to some place only you can access. At the time of setting up your node on a new server and restore your scan node data, it is sufficient to just copy the backed up Forta directory to `~/.forta`. After doing this, you can verify that it has worked by doing `forta account address` and seeing if the outputted node address is correct.
-
-Without your passphrase, your private key cannot be decrypted so backing up your passphrase is as equally important as backing up the directory. Losing the passphrase is another way of losing your private key file in `~/.forta/.keys`. If you choose to back up your passphrase, make sure you store it in a different location than your `~/.forta` directory to reduce risks of losing the control of your node if a backup location of yours gets exposed to an attacker.
-
-
 ### Recovery
 
 !!! important "Not required for node setup"
-    If you have visited this documentation to set up your node, you can safely skip this _Recovery_ section. It is placed here to inform you about potential problems if you lose data and for troubleshooting if needed later.
+    If you have visited this documentation to set up your node, you can safely skip this _Recovery_ section. Just keep in mind that it can save you time later to back up your config now.
 
 _"I lost my scan node data, now what?"_
 
-Losing the scan node private key will require you to transfer your stake to a new scan node address after you finish setting up your new node. Same applies if your node private key and/or passphrase was stolen and you would like to switch to a new address.
-
 **The scan node private key does not own or control the staked FORT.**
 
-The first thing to check to see is if you own the shares to your stake by querying `11. sharesOf` method in Forta staking contract [on Polygonscan](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#readProxyContract) by inputting:
+Losing the scan node private key will require you to dispose your old scan node and create a new one. This is as easy as disabling the lost scan node from your pool and registering a new one.
 
-- **subjectType:** 0
-
-- **subject:** Your scan node address
-
-- **account:** Your owner wallet address
-
-If the result is 0 after clicking the _Query_ button, your owner wallet does not own the stake shares for your node and thus you cannot move your stake.
-
-If you are able to move your stake, you can follow the steps in the [_Stake on your Scan Node_ section](https://docs.forta.network/en/latest/stake-on-scan-node/). Due to security reasons, this can take time.
-
+- Disable the lost node from your pool on https://app.forta.network.
+- Do `forta init --passphrase <your-passphrase>` to initialize a new node.
+- Now you have a new `~/.forta` directory with a new private key.
+- Copy your backed up config to `~/.forta/config.yml` or configure that file from scratch.
+- [Register the scan node](#register-scan-node).
 
 ### Configure systemd
 
@@ -409,31 +402,39 @@ autoUpdate:
 
 ## Register Scan Node
 
-Your scan node has an Ethereum address that makes two main features possible:
+Your scan node has an Ethereum address that makes some features possible:
 
 - Receiving detection bots to run
-- Asserting an authority on the outputted alerts
+- Asserting authority on the outputted alerts
+- Identification for rewards and slashing
   
-While this address remains as the main identity, it must be owned by a different wallet. After registration, the scan node is minted as an NFT (ERC721) and transferred to this owner. You can check the [smart contract documentation here](smart-contracts.md).
+The private key for the scan node is generated at the `forta init` step. Please prefer continuing with this private key and do not replace it with your custom private key in order to avoid confusion and security risks.
 
-In the future, the owner wallet will allow you to disable your scan node remotely and avoid slashing while you do maintenance (for a short period) or when you decide to shut down your node entirely. Right now, `forta disable` and `forta enable` commands are available to you to do the same using the scan node private key.
+**Make sure you have set the `chainId` in your config.yml correctly before registering your node.** Your scan node can be registered only once and to scan a specific chain.
 
-To register your node to the registry contract, you can run `forta register --owner-address <address>`. **Make sure you have set the `chainId` in your config.yml correctly before executing this.** Your scan node can be registered only once and to scan a specific chain. The owner wallet address needs to be a different address than your scan node address.
+You can register your node by
 
-!!! warning "Action requires funds"
-    You need to fund your scan node address with some Polygon (Mainnet) MATIC to be able to send this transaction. You can find out your scan node address with `forta account address`.
+- doing `forta authorize pool --id <your-pool-id>`,
+- copying the token over to Forta App as described in the [scanner pool management](scanner-pools.md) page of the docs.
+
+Alternatively, you can
+
+- do `forta authorize pool --id <your-pool-id> --polygonscan`,
+- visit the [`registerScannerNode`](https://polygonscan.com/address/0x90ff9c193d6714e0e7a923b2bd481fb73fec731d#writeProxyContract#F9) method,
+- click on "Connect to Web3" on the top and connect your wallet,
+- copy the values from the first step, click on "Write".
 
 ## Stake FORT
 
-To ensure network reliablity, Forta Network requires staking FORT tokens on your node. You can follow the [staking guide](https://docs.forta.network/en/latest/stake-on-scan-node/) to learn how to manage stake for a node.
+To ensure network reliablity, Forta Network requires staking FORT tokens on your node. You can follow the guide in the [Manage pools and stake](https://docs.forta.network/en/latest/scanner-pools/) page to find out how to manage stake for nodes.
 
-!!! warning "All nodes require stake"
-    Unstaked nodes node will not be assigned any detection bots and will not generate any rewards.
+!!! warning "All pools require stake"
+    Scan nodes in the unstaked or understaked pools will not be assigned any detection bots and will not generate any rewards.
 
 Forta Network makes good use of the stake by enforcing two main mechanisms:
 
-- **Rewarding:** Node operators are incentivized with rewards to ensure that their Forta nodes are running with good health and as expected. To gain rewards, a node operator must `deposit()` the minimum amount of FORT required using the staking contract.
-- **Slashing:** Node operators are discouraged from harmful actions. Upon detection, they lose rewards and a determined amount is removed from the deposited stake. This can cause the staked amount to go under minimum required and the node to enter into disabled state.
+- **Rewarding:** Node operators are incentivized with rewards to ensure that their Forta nodes are running with good health and as expected.
+- **Slashing:** Node operators are discouraged from harmful actions. Upon detection, they lose rewards and a specific portion is removed from the deposited pool stake. This can cause the staked amount to go under minimum required and all nodes in the pool to enter into disabled state.
 
 ## Run Scan Node
 

@@ -57,12 +57,16 @@ nav:
       - Integrating with Hardhat: hardhat.md
   - <strong>Run a Scan Node</strong>:
       - Quickstart: scanner-quickstart.md
-      - SLA Calculation: sla.md
+      - Manage pools and stake: scanner-pools.md
+      - SLA score calculation: sla.md
       - SLA API: sla-api.md
-      - Stake on your Scan Node: stake-on-scan-node.md
-      - Local Scan Node: scanner-local-mode.md
-      - Scan With Alchemy: alchemy-partnership.md
-      - Scan With Chainstack: scan-with-chainstack.md
+      - Local mode: scanner-local-mode.md
+      - Scan with Alchemy: alchemy-partnership.md
+      - Scan with Chainstack: scan-with-chainstack.md
+  - <strong>Stake FORT Tokens</strong>:
+      - Delegated staking: delegated-staking-introduction.md
+      - Manage pools and stake: scanner-pools.md
+      - Rewards formula: delegated-staking-rewards.md
   - <strong>Machine Learning at Forta</strong>:
       - Machine Learning at Forta: ml-with-forta.md
       - Machine Learning Datasets and Resources: ml-data-resources.md

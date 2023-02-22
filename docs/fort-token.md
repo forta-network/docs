@@ -10,7 +10,7 @@ To ensure the accuracy and integrity of the data provided by the network, Forta 
 
 FORT has two primary uses that are indispensable to the proper functioning of the network:
 
-1. **Node Runner Staking**. Node runners must deposit FORT tokens to be discoverable in the network and to provide economic security for the work they are performing, since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously. Once FORT is staked, it may only be withdrawn subject to a thawing period, which provides ample opportunity for verification and dispute resolution.
+1. **Scanner Pool Staking**. Scanner pool owners must deposit FORT tokens on their pools to be discoverable in the network and to provide economic security for the work they are performing, since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously. Once FORT is staked, it may only be withdrawn subject to a thawing period, which provides ample opportunity for verification and dispute resolution. If the Pool is staked over the minimum by the pool owner, delegators may also stake on that pool, with the same withdrawal restrictions. The Delegators may face a small percentage of deduction from the stake in case the pool gets slashed.
 2. **Detection Bot Signaling**. Developers may stake FORT tokens on bots, signaling bot quality to the network and also providing a sybil resistance mechanism. Having fake or low quality bots on the network makes it harder to find the best risk detection offerings.
 
 In addition, FORT holders can participate in governance to shape the evolution of Forta. Please read more in the governance section of the docs.
