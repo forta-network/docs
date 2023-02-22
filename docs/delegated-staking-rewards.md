@@ -5,13 +5,7 @@ With the introduction of delegated staking, there are new reward formulas for po
 - encourage node runners to ensure the reliability and performance of the Forta network by achieving the highest possible SLA scores in their nodes,
 - encourage node runners and delegators to stake more and increase the economic security of the network. 
 
-The approach involves distributing rewards to participants by using a function of the
-
-- SLA score,
-- deposited stake,
-- time online,
-
-using the Cobb-Douglas production function.
+The approach involves distributing rewards to participants as a function of the proportional scan node SLA, scan node uptime and allocated pool stake on the network, using the Cobb-Douglas production function.
 
 !!! important "Important definitions"
     - **epoch duration**: 1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC

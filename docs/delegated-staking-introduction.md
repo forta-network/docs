@@ -22,9 +22,17 @@ In accordance with Forta Network's mission of securing Web3, delegated stakes ar
 
 # Choosing a Scanner Pool
 
-Making a more careful choice can help you generate more rewards. There are several things to consider before delegating stake to a pool:
+Please visit the [pools page](https://app.forta.network/network/node-pools) to see the list of available pools for delegating your stake to.
 
-- **SLA (uptime) score of the pool's scanners:** Bad score means low rewards.
-- **Commission:** What percentage of delegator rewards is withheld by the pool owner
-- **Available stake allocation capacity:** Unallocated stake does not generate rewards.
-- **Communication with delegators in Forta Discord server**
+For instructions on how to delegate your stake to a scanner pool and withdraw your stake, please visit the [pool and stake management](scanner-pools.md) page.
+
+Making a careful choice can help you generate more rewards. There are several things to consider before delegating stake to a pool:
+
+- **SLA score of the pool's scanners:** A higher score results in higher rewards.
+- **Time online (uptime) of the pool's scanners:** More time online results in higher rewards.
+- **Commission set by the pool owner:** A lower commission results in higher rewards for delegators. Be aware that pool owners can modify their commissions periodically.
+- **Available stake allocation capacity:** Unallocated stake does not generate rewards. Each node can have up to 15,000 FORT staked, so the capacity of the pool is the number of nodes it has multiplied by 15,000.
+
+All of this variables can change quickly so it’s important to monitor your delegations.
+
+Choosing the right pool operator requires careful consideration, as there are many factors to take into account. We strongly advise you to explore Forta Discord community to identify the Pool Operators who have both a strong social and technical reputation and who consistently reward their Delegators fairly. You’ll find that many Operators are highly engaged in the community and willing to provide answers to any questions you may have.

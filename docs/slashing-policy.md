@@ -42,19 +42,22 @@ If a Slashing Proposal is ultimately validated and executed, the FORT tokens of 
 The Arbiter is a protocol role responsible for receiving, reviewing and resolving technical complaints in the Forta Network. Following review of each Slashing Proposal, one of three possible outcomes will be determined by the Arbiter:
 
 1. **Withdrawn Slashing Proposal** - *no parties are penalized*
-- Slashing Proposal is withdrawn from the slashing process by the Arbiter following review
-- 1000 FORT token deposit returned to Proposer; no stake slashed from Slashing Subject
-- e.g. Arbiter review surfaces additional evidence that renders Slashing Proposal complaint moot, or parties mutually agree to alternative resolution or withdraw complaint
+
+    - Slashing Proposal is withdrawn from the slashing process by the Arbiter following review
+    - 1000 FORT token deposit returned to Proposer; no stake slashed from Slashing Subject
+    - e.g. Arbiter review surfaces additional evidence that renders Slashing Proposal complaint moot, or parties mutually agree to alternative resolution or withdraw complaint
 
 2. **Denied Slashing Proposal**: *Proposer is penalized*
-- Slashing Proposal is denied as eligible by the Arbiter following review
-- 1000 FORT token deposit of Proposer is slashed to community treasury
-- e.g. Arbiter review determines Slashing Proposal was made in bad faith or did not contain accurate or sufficient evidence proving misconduct
+
+    - Slashing Proposal is denied as eligible by the Arbiter following review
+    - 1000 FORT token deposit of Proposer is slashed to community treasury
+    - e.g. Arbiter review determines Slashing Proposal was made in bad faith or did not contain accurate or sufficient evidence proving misconduct
 
 3. **Validated Slashing Proposal** - *Slashing Subject is penalized*
-- Slashing Proposal is validated as eligible for slashing by the Arbiter following review and is classified as an “Operational” or “Misconduct” complaint as set out below
-- 1000 FORT token deposit returned to Proposer
-- e.g. Arbiter review determines Slashing Proposal was made in good faith and evidence is sufficient for Arbiter to determine outcome
+
+    - Slashing Proposal is validated as eligible for slashing by the Arbiter following review and is classified as an “Operational” or “Misconduct” complaint as set out below
+    - 1000 FORT token deposit returned to Proposer
+    - e.g. Arbiter review determines Slashing Proposal was made in good faith and evidence is sufficient for Arbiter to determine outcome
 
 Following receipt of a Slashing Proposal, the Arbiter shall make best efforts to determine the outcome of a Slashing Proposal within 10 days. All activity undertaken by the Arbiter pursuant to this policy will be published in the Discord channel [#slashing-proposals](https://discord.com/invite/tpWYdjyc6Q) in advance of being executed on-chain, subject to redaction only where necessary to protect the security or integrity of the Forta Network. This disclosure should include the determination made by the Arbiter accompanied by the reasoning for reaching such a determination. 
 
@@ -65,25 +68,31 @@ The Arbiter address will confirm any Validated Slashing Proposal as either an �
 1. **Misconduct Complaint** - Slashing Subject at risk of up to 90% slash (if executed by Slasher Multisig). For example:
 
 
-- Censoring, forging or tampering with bots alerts
-- Forging or failing to provide performance metrics
-- Bot is part of an attack against Network or its participants 
-- Any other evidenced misconduct in the Network
-- Bots whose alert misrepresents the purpose stated on their description or that fail to alert subscribers in the way they advertise
-- Any other evidenced operational failures in the Network
+    - Censoring, forging or tampering with bots alerts
+    - Forging or failing to provide performance metrics
+    - Bot is part of an attack against Network or its participants
+    - Any other evidenced misconduct in the Network
+    - Bots whose alert misrepresents the purpose stated on their description or that fail to alert subscribers in the way they advertise
+    - Any other evidenced operational failures in the Network
+
+    The pool owner stake will be slashed by up to 90% of his staking in the scanner node.
+
+    A percentage of 30% of the slashed amount to the pool owner will also be slashed from the delegated stake to that pool.
 
 2. **Operational Complaint** - Slashing Subject at risk of up to 15% slash (if executed by Slasher Multisig). For example:
 
-- Scanner Pool Slashing Subject:
-    - Failure to run a Node with the minimum technical requirements set out in the [Forta Docs](https://docs.forta.network/en/latest/scanner-quickstart/)
-    - Failure to run a Node at expected quality standards not captured by the SLA calculation
-    - The Scanner Pool stake will be slashed by 15% of the min stake per individual Scanner Node.
-    - A percentage of 30% of the slashed amount to the pool owner will also be slashed from the delegated stake to that pool.
+    - Scanner Pool Slashing Subject:
+        - Failure to run a Node with the minimum technical requirements set out in the [Forta Docs](https://docs.forta.network/en/latest/scanner-quickstart/)
+        - Failure to run a Node at expected quality standards not captured by the SLA calculation
 
-- Detection Bot Slashing Subject:
-    - Bots that clog the network (spam)
-    - Bots that inappropriately affect Scanner Node SLAs
-    - Bots that demand an excessive amount of resources from Scanner Nodes
+        The pool owner stake will be slashed by up to 90% of his staking in the scanner node.
+
+        A percentage of 30% of the slashed amount to the pool owner will also be slashed from the delegated stake to that pool.
+
+    - Detection Bot Slashing Subject:
+        - Bots that clog the network (spam)
+        - Bots that inappropriately affect Scanner Node SLAs
+        - Bots that demand an excessive amount of resources from Scanner Nodes
 
 The on-chain rules are the ultimate authority of this logic, and in the case where the on-chain rules differ from this, it will prevail.
 

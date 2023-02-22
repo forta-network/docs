@@ -2,11 +2,11 @@
 
 ## Introduction
 
-A scanner pool contains a group of nodes that scan a specific chain. Each pool belongs to a specific owner and is minted as an NFT (ERC-721) upon registration. These pools require the operators to deposit a total amount of stake which covers the minimum-per-scan-node amount for each node.
+A scanner pool contains a group of nodes that scan a specific chain. Each pool belongs to a specific owner and is minted as an NFT (ERC-721) upon registration. These pools require the operators to deposit a total amount of stake which covers the minimum-per-scan-node amount (**2500 FORT**) for each node.
 
-When registering any node to a pool, make sure to stake this minimum amount of **2500 FORT** on the pool first.
+When registering an extra node to a pool, make sure to top up your pool with this minimum amount first.
 
-In addition, the scanner pools allow FORT token holders (delegators) to stake on pools of node operators and earn rewards. The pool operator can decide
+The pool owners which allocate at least the minimum amount required per scanner for their monitored chain, may allow delegation to their pools (up to the max stake allowed: 15,000 FORT per node). Operators can decide
 
 - how much of the delegator or operator stake should be allocated,
 - what percentage to keep as commission from delegators' rewards.
