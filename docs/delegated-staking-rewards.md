@@ -15,7 +15,8 @@ using the Cobb-Douglas production function.
 
 !!! important "Important definitions"
     - **epoch duration**: 1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC
-    - **commission lockdown after any change**: two epochs (including the current one)
+    - **commission becomes effective**: next epoch
+    - **commission lockdown after any change**: two epochs (excluding the current one)
 
     These values subject to change.
 
