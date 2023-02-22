@@ -15,7 +15,8 @@ In accordance with Forta Network's mission of securing Web3, delegated stakes ar
 
 !!! warning "Delays"
     - Delegators are subject to a waiting period of 10 days to reclaim their FORT after initiating a stake withdrawal.
-    - When the pool owner changes the commission percentage, it becomes effective after two epochs (excluding current epoch).
+    - When the pool owner changes the commission percentage, it becomes effective in the next epoch.
+    - Once the commission is changed, it cannot be changed for two epochs (excluding current epoch).
 
 	These values are subject to change.
 

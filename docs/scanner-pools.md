@@ -174,7 +174,7 @@ In addition to the allocation adjustment, operators can decide how much of the d
 By default, all pools start with 100% commission, meaning that all delegator rewards will be received by the pool owners. This should be adjusted to a desired number by the pool owner if delegators are expected.
 
 !!! warning "Commission lockdown"
-    Once the commission is modified, it cannot be changed for two epochs (excluding the current one). Please keep in mind that this delay is subject to change.
+    Once the commission is modified, it becomes effective at the start of the next epoch and cannot be changed for two epochs (excluding the current one). Please keep in mind that this delay is subject to change.
 
 For example, let's assume:
 
