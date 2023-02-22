@@ -4,10 +4,10 @@ Forta node runners set up scan nodes and register nodes in pools of their own. W
 
 By delegating FORT tokens, participants are increasing the security and reliability of the network and earning rewards as a result. Pool owners share their rewards with delegators by setting up:
 
-- how much of the delegated stake should allocated,
-- what percentage of delegators' rewards should be withheld as commission.
+- how much of the delegated stake is allocated,
+- what percentage of delegators' rewards are withheld as commission.
 
-After every reward epoch ends (1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC), rewards in FORT are assigned to the pools in the reward distribution smart contract during the following 48 hours. This smart contract decides how to distribute the rewards between owners and delegators by following the rewards formulas.
+After every reward epoch ends (1 week, from Monday 00:00:00 UTC to Sunday 23:59:59 UTC), rewards in FORT are assigned to the pools in the reward distribution smart contract, within the next 48 hours. The smart contract distributes the rewards between owners and delegators following the rewards formulas.
 
 To learn more about rewards, visit the [Rewards Formula page](delegated-staking-rewards.md).
 
