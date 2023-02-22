@@ -2,9 +2,7 @@
 
 Forta node runners set up scan nodes and register nodes in pools of their own. While they are required to deposit stake to signal the reliable pools and earn rewards, others can delegate their FORT tokens to these pools and generate rewards for themselves.
 
-By delegating FORT tokens, participants are increasing the security and reliability of the network, having more skin in the game, signaling the best and most reliable Forta Scanner Pools and helping them get incentivized.
-
-In exchange of the delegated stake, pool owners share their rewards with delegators by setting up
+By delegating FORT tokens, participants are increasing the security and reliability of the network and earning rewards as a result. Pool owners share their rewards with delegators by setting up:
 
 - how much of the delegated stake should allocated,
 - what percentage of delegators' rewards should be withheld as commission.
