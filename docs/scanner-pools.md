@@ -6,7 +6,7 @@ A scanner pool contains a group of nodes that scan a specific chain. Each pool b
 
 When registering an extra node to a pool, make sure to top up your pool with this minimum amount first.
 
-The pool owners which allocate at least the minimum amount required per scanner for their monitored chain, may allow delegation to their pools (up to the max stake allowed: 15,000 FORT per node). Operators can decide
+The pool owners which allocate at least the minimum amount required per scanner for their monitored chain, may allow delegations to their pools (up to the max stake allowed: 15,000 FORT per node). Operators can decide
 
 - how much of the delegator or operator stake should be allocated,
 - what percentage to keep as commission from delegators' rewards.
@@ -123,10 +123,15 @@ If a node is no longer used, it should be disabled to free up allocated stake fo
 
 ## Adjusting stake allocation
 
+The pool owner has the ability to decide how much of the tokens staked in the pool (owner stake and delegated stake) are allocated. This allocation is divided by the number of scan nodes at the time of:
+
+- checking if the pool satisfies the minimum stake allocation per node,
+- calculating rewards using the [rewards formulas](delegated-staking-rewards.md).
+
 While it's always possible to add more stake to a pool, it is allocated proportionally to the amount of scan nodes in the pool. The maximum amount of total allocated stake can only be `node_count × max_stake_per_scan_node`.
 
-- The operator needs to allocate at least 2500 FORT for each node in a pool.
-- The total allocation capacity is 15000 FORT for each node in a pool.
+- The owner of the pool needs to allocate at least 2,500 FORT of his own stake for each node in a pool, for the pool to be active.
+- The total allocation capacity is 15,000 FORT for each node in a pool.
 
 When you deposit more stake on your pool as the owner of the pool and then register a node to it, your stake is allocated automatically. It is up to the pool owner to allocate more from owner stake or more from the delegators so the partitioning of pool rewards (owner vs. delegator) can be adjusted accordingly.
 
