@@ -37,7 +37,7 @@ In order to make scan nodes operational and generate rewards, a node pool must h
 !!! danger "Density affects the rewards"
     When staking on a pool, please prefer the ones that have allocation capacity or have low amount of unallocated stake. While a lot of depositors can share the rewards of a pool proportionally to their active stake amount on the pool, the rewards are generated based only on the amount of allocated stake.
 
-Please also see the [Adjusting stake allocation](adjusting-stake-allocation) section before depositing any stake.
+Please also see the [Adjusting stake allocation](#adjusting-stake-allocation) section before depositing any stake.
 
 ### Depositing on your own pool
 - In the Forta App navigate to “My Node Pools”
