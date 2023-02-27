@@ -66,7 +66,7 @@ nav:
   - <strong>Stake FORT Tokens</strong>:
       - Delegated staking: delegated-staking-introduction.md
       - Manage pools and stake: scanner-pools.md
-      - Rewards formula: delegated-staking-rewards.md
+      - Claim rewards: delegated-staking-rewards.md
   - <strong>Machine Learning at Forta</strong>:
       - Machine Learning at Forta: ml-with-forta.md
       - Machine Learning Datasets and Resources: ml-data-resources.md
