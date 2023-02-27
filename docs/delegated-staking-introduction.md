@@ -2,6 +2,9 @@
 
 Forta node runners set up scan nodes and register nodes in pools of their own. While they are required to deposit stake to signal the reliable pools and earn rewards, others can delegate their FORT tokens to these pools and generate rewards for themselves.
 
+!!! important "Polygon"
+    Delegated staking is done by using the staking contract on Polygon. Please check [this guide](https://docs.forta.network/en/latest/bridging-fort/) to find out how to bridge FORT tokens to Polygon.
+
 By delegating FORT tokens, participants are increasing the security and reliability of the network and earning rewards as a result. Pool owners share their rewards with delegators by setting up:
 
 - how much of the delegated stake is allocated,
