@@ -203,18 +203,3 @@ In this case, `2000 × 0.1 = 200` FORT is credited to the pool owner as commissi
 - Enter the commission that you would like to set on your pool
 
 ![Update commision](delegated-staking/UpdateCommissionModal.png)
-
-## Claiming rewards
-
-After the end of each epoch (**Monday 00:00:00 UTC**), reward calculation starts. The rewards are written to the rewards distributor contract as soon as the calculation is completed. When the rewards are avaialble in the contract, pool owners and delegators can claim their portion of the rewards.
-
-To claim pool owner rewards over Polygonscan:
-
-- visit the [`getCurrentEpochNumber`](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507#readProxyContract#F7) and take a note of the epoch number,
-- visit the [`claimRewards`](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507#writeProxyContract#F1) method
-- click on "Connect to Web3" on the top and connect your wallet,
-- and fill in:
-    - **subjectType:** 2
-    - **subjectId:** Your pool ID
-    - **epochNumbers:** Do number from first step minus 1 and input e.g. `[2561]` if the number was 2562
-- click on "Write" to send the transaction.
