@@ -63,6 +63,7 @@ nav:
       - Local mode: scanner-local-mode.md
       - Scan with Alchemy: alchemy-partnership.md
       - Scan with Chainstack: scan-with-chainstack.md
+      - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>Stake FORT Tokens</strong>:
       - Delegated staking: delegated-staking-introduction.md
       - Manage pools and stake: scanner-pools.md
