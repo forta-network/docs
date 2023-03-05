@@ -414,12 +414,12 @@ The private key for the scan node is generated at the `forta init` step. Please 
 
 You can register your node by
 
-- doing `forta authorize pool --id <your-pool-id>`,
+- doing `forta authorize pool --passphrase <your-passphrase> --id <your-pool-id>`,
 - copying the token over to Forta App as described in the [scanner pool management](scanner-pools.md) page of the docs.
 
 Alternatively, you can
 
-- do `forta authorize pool --id <your-pool-id> --polygonscan`,
+- do `forta authorize pool --passphrase <your-passphrase> --id <your-pool-id> --polygonscan`,
 - visit the [`registerScannerNode`](https://polygonscan.com/address/0x90ff9c193d6714e0e7a923b2bd481fb73fec731d#writeProxyContract#F9) method,
 - click on "Connect to Web3" on the top and connect your wallet,
 - copy the values from the first step, click on "Write".
