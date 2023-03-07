@@ -89,7 +89,32 @@ To suit these kind of purposes, we defined [Forta Webhook Specification](https:/
     The paths defined in the webhook specification is only for making the definitions easier. Scan node configuration requires the complete webhook URL and ignores all paths defined in the specification.
 
 !!! important "Convert to Discord Webhooks"
-    If you need to convert the webhook requests to Discord webhook requests, make sure you check out this [awesome converter](https://github.com/lidofinance/forta-discord) by Lido Finance. 
+    If you need to convert the webhook requests to Discord webhook requests, make sure you check out this [awesome converter](https://github.com/lidofinance/forta-discord) by Lido Finance.
+
+## Alert deduplication
+
+If you wish to avoid outputting an alert multiple times from a cluster of local nodes, you can set up Redis and point your nodes using the deduplication config.
+
+```yaml
+deduplication:
+  ttlSeconds: 300
+  redis:
+    address: <host>:<port>
+    password: '123'
+    db: 1 # database to be selected after connecting to the server
+```
+
+Alternatively, if you are running a Redis cluster:
+
+```yaml
+deduplication:
+  ttlSeconds: 300
+  redisCluster:
+    addresses:
+      - host1:<port>
+      - host2:<port>
+    password: '123'
+```
 
 ## Simulate JSON-RPC throttling
 
