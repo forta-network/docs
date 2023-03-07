@@ -109,7 +109,7 @@ Alternatively, if you are running a Redis cluster:
 ```yaml
 deduplication:
   ttlSeconds: 300
-  redis:
+  redisCluster:
     addresses:
       - host1:<port>
       - host2:<port>
