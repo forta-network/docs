@@ -13,7 +13,7 @@ To claim pool owner rewards over Polygonscan:
 - visit the [`claimRewards`](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507#writeProxyContract#F1) method
 - click on "Connect to Web3" on the top and connect your wallet,
 - and fill in:
-    - **subjectType:** 2
+    - **subjectType:** 2 for pool owner, 3 for delegator
     - **subjectId:** The pool ID to claim the rewards from
     - **epochNumbers:** Do number from first step minus 1 and input e.g. `[2561]` if the number was 2562
 - click on "Write" to send the transaction.
