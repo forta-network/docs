@@ -11,13 +11,23 @@ In addition to default public scanning, `forta` has a local mode which is useful
 !!! note "Staking and rewards"
     Local nodes do not require staking and do not generate any rewards. Local mode is made available only to suit your private scanning and testing needs.
 
-Steps to run a local node:
+## Steps to run
+
+### Using the CLI
+
+Steps to run a local node using the CLI:
 
 - `forta init --passphrase <passphrase>`
 - Configure `~/.forta/config.yml`
 - `forta run --passphrase <passphrase>`
 
 You can provide the passphrase by doing `export FORTA_PASSPHRASE=<passphrase>` as an alternative method to the `--passphrase` flag. If you are setting up your node just for testing and development, you can choose a weak and convenient passphrase.
+
+### Using Docker Compose
+
+Alternatively, if you would like to run the local mode using a single `docker-compose.yml` file make sure you check out the  [**standalone mode**](#standalone-mode) section!
+
+## Start configuring
 
 To enable the local mode successfully, please specify at least these settings in the config file:
 
@@ -171,3 +181,60 @@ Please see [Forta Webhook Specification](https://github.com/forta-network/forta-
 | `jsonrpc.request`   | JSON-RPC request count                       |
 | `jsonrpc.success`   | JSON-RPC request success count               |
 | `jsonrpc.throttled` | Throttled JSON-RPC request count             |
+
+## Standalone mode
+
+We crafted a more specialized version of the local mode, called _standalone mode_, which allows running the node using a single `docker-compose.yml` file and without having to deal with the Forta node CLI and the `~/.forta` directory.
+
+In this mode,
+
+- all of the required Forta node service containers and the bots are defined under `services`,
+- container dependencies are set by using `depends_on` definitions,
+- Forta config is defined under `x-forta-config` instead of using a separate `config.yml` file.
+
+The `docker-compose.yml` file looks something like this:
+
+```yaml
+services:
+  service-forta-scanner:
+    container_name: forta-scanner
+    image: forta-network/forta-scanner:latest
+    ...
+    depends_on:
+      - bot-1
+  ...
+
+  bot-1:
+    container_name: forta-bot-1
+    ...
+
+x-forta-config:
+  ...
+
+  localMode:
+    enable: true
+    logToStdout: true
+    privateKeyHex: abcdefg0...
+    standalone:
+      enable: true
+      botContainers:
+        - forta-bot-1
+```
+
+For a more detailed reference, please check out to the Docker Compose file defined in the forta-node repository [here](https://github.com/forta-network/forta-node/blob/master/docker-compose/standalone/docker-compose.yml). You can use that file as boilerplate for your purposes.
+
+!!! important "This is still local mode"
+    The other local mode settings are valid to use in this mode and other explanations also apply to it, since standalone is just a specialized sub-mode of the local mode.
+
+The steps to run the standalone mode using that file are:
+
+- Set `privateKeyHex` to something that makes sense to you. The webhook requests include a JWT that is signed using that. (More about verification [here](https://github.com/forta-network/forta-core-go/blob/master/security/jwt.go))
+- Optionally, specify the webhook URL you would like to use.
+- Configure the bot containers under `services` and let the scanner container depend on them (by using `depends_on`).
+- List down the names of the bot containers (not service names!) under `localmode.standalone.botContainers` so the scanner container can attach to them.
+- Specify the service container images. You can get this in two different ways:
+
+    - Follow the IPFS hash in the `forta version` output and find the Docker image reference. Then use that reference like `disco.forta.network/bafybei...` in the Docker Compose file.
+    - At the project root, do `make containers` and it will build the `forta-network/forta-scanner:latest` image for you.
+
+- Run the Docker Compose file like `docker compose up --remove-orphans --abort-on-container-exit`.
