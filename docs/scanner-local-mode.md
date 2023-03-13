@@ -85,6 +85,14 @@ localMode:
   logFileName: testlogs.txt
 ```
 
+Or, you could let them be outputted to stdout as info-level logs. Please keep in mind that this disables the other types of outputs described in this section.
+
+```yaml
+localMode:
+  ...
+  logToStdout: true
+```
+
 If you would like to forward the alerts to a specific destination instead, you can specify a webhook handler:
 
 ```yaml
