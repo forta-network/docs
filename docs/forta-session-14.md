@@ -6,6 +6,7 @@ In this session we will cover the following topics:
 [Session 14 Slides](https://docs.google.com/presentation/d/1FGFhB-1we0LIi4WF6MPewzrITtGtHa-anKNFn5jnB-U/edit#slide=id.p2)
 
 Assignments:
+
 - Review Forta documentation on developing a detection bot
 - Assignment 8: Ethernaut Challenge DoubleEntryPoint
 - Assignment 9: Implement a Forta Detection Bot. 
