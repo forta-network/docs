@@ -124,13 +124,34 @@ nav:
                   - FortaCommon: contracts/token/FortaCommon.md
               - Tools:
                   - Distributions: contracts/tools/Distributions.md
-      - Security:
+      - Security at Forta:
           - Security Overview: security.md
           - Design: security-design.md
           - Development: security-develop.md
           - Deployment: security-deploy.md
           - Testing and Review: security-testing.md
           - Maintenance: security-maintain.md
+      - Web3 Security Course:
+          - Introduction & Goals: forta-session-1a.md
+          - Motivation of Blockchain: forta-session-1b.md
+          - Blockchain History: forta-session-2a.md
+          - Ethereum & Blockchain Use Cases: forta-session-2b.md
+          - Cryptography Pt.1: forta-session-3.md
+          - Cryptography Pt.2: forta-session-4a.md
+          - Cryptography Pt.3: forta-session-4b.md
+          - Ethereum Scratching the Surface: forta-session-5.md
+          - Blockchain Explorer and DevCon Notes: forta-session-6.md
+          - Practical Lesson - Web3 APIs: forta-session-7.md
+          - Smart Contracts Pt.1: forta-session-8a.md
+          - Smart Contracts Pt.2: forta-session-8b.md
+          - Storage Slots, Deployment with Remix & Tenderly: forta-session-9.md
+          - Smart Contract Security: forta-session-10.md
+          - Guest Lecture with Elizabeth Dinella: forta-session-11a.md
+          - Blockchain Security Introduction: forta-session-11b.md
+          - Comprehensive Security Strategies in Web3: forta-session-12.md
+          - Threat Modeling Exercise: forta-session-13.md
+          - Ethernaut Challenge Walkthrough: forta-session-14.md
+          - Where Is the Industry Going: forta-session-15.md
       - How to contribute: contributing.md
       - FAQ: faq.md
 
