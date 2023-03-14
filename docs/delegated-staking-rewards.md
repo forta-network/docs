@@ -9,7 +9,7 @@ After the end of each epoch (**Monday 00:00:00 UTC**), reward calculation starts
 
 To claim pool owner rewards over Polygonscan:
 
-- visit the [`getCurrentEpochNumber`](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507#readProxyContract#F7) and take a note of the epoch number,
+- visit the [`getCurrentEpochNumber`](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507#readProxyContract#F7) method and take a note of the epoch number,
 - visit the [`claimRewards`](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507#writeProxyContract#F1) method
 - click on "Connect to Web3" on the top and connect your wallet,
 - and fill in:
@@ -17,6 +17,15 @@ To claim pool owner rewards over Polygonscan:
     - **subjectId:** The pool ID to claim the rewards from
     - **epochNumbers:** Do number from first step minus 1 and input e.g. `[2561]` if the number was 2562
 - click on "Write" to send the transaction.
+
+This transaction may fail if you have no rewards from that epoch. To verify this over Polygonscan:
+
+- visit the [`availableReward`](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507#readProxyContract#F1) method,
+- and fill in:
+    - **subjectType:** 2 for pool owner, 3 for delegator
+    - **subjectId:** The pool ID to claim the rewards from
+    - **epochNumber:** Same as in the `claimRewards` example above
+    - **staker:** Your wallet address which you used to stake on this pool
 
 ## Formula
 
