@@ -168,6 +168,7 @@ theme:
     - navigation.top
 
 markdown_extensions:
+  - footnotes
   - admonition
   - attr_list
   - md_in_html
