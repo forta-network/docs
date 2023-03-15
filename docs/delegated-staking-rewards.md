@@ -74,8 +74,16 @@ Delegator rewards on scanner pool `i`:
  
 ![delegator rewards](rewards-images/delegators-reward.png)
 
+where:
+
 ![where](rewards-images/delegators-explain.png)
 
 The values of parameters α and β are set to 3 and 0.5 respectively and are subject to change in the future.
 
 The total amount of the delegator rewards are distributed to each delegator proportionally to their deposited stake. The on-chain rules are the ultimate authority of this logic, and in the case where the on-chain rules differ from this, it will prevail.
+
+[^1]: For this calculation, only the periods when the SLA is at least 0.75 are considered.
+
+[^2]: For this calculation, only the periods where the stake is at least 2,500 are considered. When the stake is less than that, the node is not considered to be online, so that’s already captured on the time online parameter.
+
+[^3]: Rewardable time online requires the SLA to be at least 0.75.
