@@ -2,7 +2,7 @@
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains | Documentation |
 |----------|-----------|------------------|------------------|---------------|
-| Scam Detector | [Stats](https://explorer.forta.network/agent/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) | [Github Repo](https://github.com/forta-network/starter-kits/tree/main/scam-combiner-py) | All | [Docs](https://ipfs.forta.network/ipfs/QmZHKr91MBxqKxoY8cjjsKPeZcstP2FcNjJzeYtDcnr6bf) |
+| Scam Detector | [Stats](https://explorer.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) | [Github Repo](https://github.com/forta-network/starter-kits/tree/main/scam-combiner-py) | All | [Docs](https://ipfs.forta.network/ipfs/QmZHKr91MBxqKxoY8cjjsKPeZcstP2FcNjJzeYtDcnr6bf) |
 
 The Scam Detector bot combines past alerts under a common address from a variety of underlying base bots to emit a high precision alert. It does so by mapping each alert to the four attack stages (Funding, Preparation, Exploitaiton and Money Laundering/ Post Exploitation) utilizing a heuristic detection approach.
 

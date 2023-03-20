@@ -22,7 +22,7 @@ A Detection Bot that combines past alerts under a common address to emit a high 
 A Detection Bot that combines past alerts under a common address to emit a high precision alert of a end user attack.
 
 - [Learn More](scam-detector-bot.md)
-- [Subscribe](https://app.forta.network/)
+- [Subscribe](https://explorer.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23)
 
 
 ### Discover Page
