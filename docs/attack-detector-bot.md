@@ -11,13 +11,16 @@ The Attack Detector bot combines past alerts under a common address from a varie
 Individual alerts can have low precision (in other words raise false positives). This bot combines past alerts from base bots to separate the signal from noise. 
 
 It does so with the realization that an attack usually consists of 4 distinct phases:
+
 - funding (e.g. tornado cash funding)
 - preparation (e.g. creation of an attacker contract)
 - exploitation (e.g. draining funds from a contract)
 - money laundering (e.g. sending funds to tornado cash)/ post exploitation (e.g. on-chain txt messages)
 
 As such, this feed combines previously raised alerts under the initiating address (i.e. the attacker address/ addresses) and emits a cricial alert when:
+
 1. Anomaly Detection Appoach
+
    1. Alert Criteria
     - each alert emits an anomaly score
     - anomaly score from each base bot is mapped to an attack stage
@@ -32,28 +35,30 @@ As such, this feed combines previously raised alerts under the initiating addres
     - The overall anomaly score would be min_preparation_anomaly_score(0.0001, 0.01) * min_exploitation_anomaly_score(0.0005) results in an overall anomaly score of 5*10-8. Since 3 alerts were raised in total, the Attack Detector would emit a critical alert.
 
 2. Heuristic Approach utilizing highly precise alert from a subset of the base bots (currently the ML contract model bot and the attack simulation bot)
-   1. Alert Criteria
-    - a highly precise alert is emitted plus one more additional alert is emitted for a common cluster (a set of addresses clustered by the cluster entity bot)
-    - is not part of a FP mitigation alert
 
-   2. Example 
-   - AK-ATTACK-SIMULATION-0 (this is a highly precise alert)
-   - CEX-FUNDING-1
+    1. Alert Criteria
+     - a highly precise alert is emitted plus one more additional alert is emitted for a common cluster (a set of addresses clustered by the cluster entity bot)
+     - is not part of a FP mitigation alert
 
-   3. Result
-    - The anomaly score is not relevant, but rather a heurstic would cause the bot to trigger a critical alert.
+    2. Example 
+    - AK-ATTACK-SIMULATION-0 (this is a highly precise alert)
+    - CEX-FUNDING-1
+
+    3. Result
+     - The anomaly score is not relevant, but rather a heurstic would cause the bot to trigger a critical alert.
 
 3. Heuristic Approach utilizing the alert to attack stage mapping
-   1. Alert Criteria
-    - an alert is emitted in each of the 4 attack stages for a common cluster (a set of addresses clustered by the cluster entity bot)
-    - is not part of a FP mitigation alert
-   2. Example
-    - CEX-FUNDING-1 (Funding)
-    - SUSPICIOUS-CONTRACT-CREATION (Preparation)
-    - FLASHBOT-TRANSACTION (Exploitation)
-    - POSSIBLE-MONEY-LAUNDERING-TORNADO-CASH (Money Laundering)
-   3. Result
-    - The anomaly score is not relevant, but rather a heurstic would cause the bot to trigger a critical alert. 
+
+    1. Alert Criteria
+     - an alert is emitted in each of the 4 attack stages for a common cluster (a set of addresses clustered by the cluster entity bot)
+     - is not part of a FP mitigation alert
+    2. Example
+     - CEX-FUNDING-1 (Funding)
+     - SUSPICIOUS-CONTRACT-CREATION (Preparation)
+     - FLASHBOT-TRANSACTION (Exploitation)
+     - POSSIBLE-MONEY-LAUNDERING-TORNADO-CASH (Money Laundering)
+    3. Result
+     - The anomaly score is not relevant, but rather a heurstic would cause the bot to trigger a critical alert. 
 
 As a result, the precision of this alert is quite high, but also some attacks may be missed. Note, in the case where attacks are missed, the broader set of detection bots deployed on Forta will still raise individual alerts that users can subscribe to.
 
@@ -66,35 +71,35 @@ As a result, the precision of this alert is quite high, but also some attacks ma
 The Attack Detector bot emits the following alerts:
 
 - ATTACK-DETECTOR-1
-  - Fired when 4 alerts in each stages fire (this is consistent with attack detector V1 behavior)
-  - Severity is always set to "critical" 
-  - Type is always set to "exploit" 
-  - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
-  - Note: the detection bot will only alert once per cluster observed
+   - Fired when 4 alerts in each stages fire (this is consistent with attack detector V1 behavior)
+   - Severity is always set to "critical" 
+   - Type is always set to "exploit" 
+   - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
+   - Note: the detection bot will only alert once per cluster observed
 
 
 - ATTACK-DETECTOR-2
-  - Fired when 2 alerts in each stage fire, but do involve a highly precice bot (e.g. contract ML model or attack simulation)
-  - Severity is always set to "critical" 
-  - Type is always set to "exploit" 
-  - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
-  - Note: the detection bot will only alert once per cluster observed
+   - Fired when 2 alerts in each stage fire, but do involve a highly precice bot (e.g. contract ML model or attack simulation)
+   - Severity is always set to "critical" 
+   - Type is always set to "exploit" 
+   - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
+   - Note: the detection bot will only alert once per cluster observed
 
 
 - ATTACK-DETECTOR-3
-  - Fired when 3 alerts are fired and anomaly score across the stages (per cluster) exceed the strict threshold (1 * 10-7)
-  - Severity is always set to "critical" 
-  - Type is always set to "exploit" 
-  - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
-  - Note: the detection bot will only alert once per cluster observed
+   - Fired when 3 alerts are fired and anomaly score across the stages (per cluster) exceed the strict threshold (1 * 10-7)
+   - Severity is always set to "critical" 
+   - Type is always set to "exploit" 
+   - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
+   - Note: the detection bot will only alert once per cluster observed
 
 
 - ATTACK-DETECTOR-4
-  - Fired when 3 alerts are fired and anomaly score across the stages (per cluster) exceed the loose threshold 1 * 10-4)
-  - Severity is always set to "low" 
-  - Type is always set to "exploit" 
-  - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
-  - Note: the detection bot will only alert once per cluster observed
+   - Fired when 3 alerts are fired and anomaly score across the stages (per cluster) exceed the loose threshold 1 * 10-4)
+   - Severity is always set to "low" 
+   - Type is always set to "exploit" 
+   - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
+   - Note: the detection bot will only alert once per cluster observed
 
 ## Labels
 
