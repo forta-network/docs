@@ -3,9 +3,9 @@ site_name: Forta Docs
 nav:
   - <strong>Receive Forta Alerts</strong>:
       - Getting started: receive-forta-alerts.md
-      - Curated Feeds:
-          - Attack Detector Feed: attack-detector-feed.md
-          - Suspicious Events Feed: suspicious-events-feed.md
+      - Curated Bots:
+          - Scam Detector Bot: scam-detector-bot.md
+          - Attack Detector Bot: attack-detector-bot.md
       - Access real-time alerts with GraphQL:
           - API Access: api.md
           - GraphQL API reference: forta-api-reference/index.html
