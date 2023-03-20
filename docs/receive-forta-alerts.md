@@ -10,19 +10,19 @@ The network features both generic bots which monitor the broad ecosystem, as wel
 
 ## Subscribe to existing Forta Detection Bots
 
-### Attack Detector Feed
+### Attack Detector Bot
 
-A Detection Bot that combines past alerts under a common address to emit a high precision alert of an attack.
+A Detection Bot that combines past alerts under a common address to emit a high precision alert of a protocol attack.
 
-- [Learn More](attack-detector-feed.md)
+- [Learn More](attack-detector-bot.md)
 - [Subscribe](https://app.forta.network/)
 
-### Suspicious Events Feed
+### Scam Detector Bot
 
-Curated feed of generic Detection Bots that monitor for a broad set of attack patterns for the smart contracts you select.
+A Detection Bot that combines past alerts under a common address to emit a high precision alert of a end user attack.
 
-- [Learn More](threat-detection-kits.md)
-- [Subscribe](https://app.forta.network/tdk)
+- [Learn More](scam-detector-bot.md)
+- [Subscribe](https://app.forta.network/)
 
 
 ### Discover Page
