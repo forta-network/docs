@@ -51,6 +51,7 @@ The Attack Detector bot emits labels for each attacker address observed. The met
 ## Base Bots Utilized By Attack Detector
 
 The following bots are considered by the Attack Detector bot and mapped to the stages in the following way:
+
 | BotID | Name | AlertId | Stage |
 |-------|------|---------|-------|
 | 0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14 | ice phishing | ICE-PHISHING-HIGH-NUM-APPROVALS | Preparation |
