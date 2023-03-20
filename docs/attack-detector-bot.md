@@ -20,45 +20,17 @@ It does so with the realization that an attack usually consists of 4 distinct ph
 As such, this feed combines previously raised alerts under the initiating address (i.e. the attacker address/ addresses) and emits a cricial alert when:
 
 1. Anomaly Detection Appoach
-
-   1. Alert Criteria
     - each alert emits an anomaly score
     - anomaly score from each base bot is mapped to an attack stage
     - the minimum anomaly scores per attack stage are combined (multiplied) across all stages for a common cluster (a set of addresses clustered by the cluster entity bot)
     - thresholds on the number of total alerts (3) and anomaly score (threshold of 1 * 10-7 for critical, 1 * 10-4 for low severity alerts)
     - is not part of a FP mitigation alert
-   2. Example
-    - ICE-PHISHING-HIGH-NUM-APPROVALS with an anomaly score of 0.0001 and an attack stage mapping of Preparation
-    - ICE-PHISHING-PREV-APPROVED-TRANSFERED with an anomaly score of 0.0005 and an attack stage mapping of Exploitation
-    - SUSPICIOUS-CONTRACT-CREATION with an anomaly score of 0.01 and an attack stage mapping of Preparation
-   3. Result
-    - The overall anomaly score would be min_preparation_anomaly_score(0.0001, 0.01) * min_exploitation_anomaly_score(0.0005) results in an overall anomaly score of 5*10-8. Since 3 alerts were raised in total, the Attack Detector would emit a critical alert.
-
 2. Heuristic Approach utilizing highly precise alert from a subset of the base bots (currently the ML contract model bot and the attack simulation bot)
-
-    1. Alert Criteria
      - a highly precise alert is emitted plus one more additional alert is emitted for a common cluster (a set of addresses clustered by the cluster entity bot)
      - is not part of a FP mitigation alert
-
-    2. Example 
-    - AK-ATTACK-SIMULATION-0 (this is a highly precise alert)
-    - CEX-FUNDING-1
-
-    3. Result
-     - The anomaly score is not relevant, but rather a heurstic would cause the bot to trigger a critical alert.
-
 3. Heuristic Approach utilizing the alert to attack stage mapping
-
-    1. Alert Criteria
      - an alert is emitted in each of the 4 attack stages for a common cluster (a set of addresses clustered by the cluster entity bot)
      - is not part of a FP mitigation alert
-    2. Example
-     - CEX-FUNDING-1 (Funding)
-     - SUSPICIOUS-CONTRACT-CREATION (Preparation)
-     - FLASHBOT-TRANSACTION (Exploitation)
-     - POSSIBLE-MONEY-LAUNDERING-TORNADO-CASH (Money Laundering)
-    3. Result
-     - The anomaly score is not relevant, but rather a heurstic would cause the bot to trigger a critical alert. 
 
 As a result, the precision of this alert is quite high, but also some attacks may be missed. Note, in the case where attacks are missed, the broader set of detection bots deployed on Forta will still raise individual alerts that users can subscribe to.
 

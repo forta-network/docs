@@ -27,42 +27,22 @@ As a result, the precision of this alert is quite high, but also some scams may 
 
 The Scam Detector bot emits the following alerts:
 
-- SCAM-DETECTOR-ICE-PHISHING
-   - Fired when alert combination is observed that points to an ice phishing attack
-
-- SCAM-DETECTOR-WASH-TRADE
-   - Fired when a NFT wash trade has been observed
-
-- SCAM-DETECTOR-FRAUDULENT-SEAPORT-ORDER
-   - Fired when alert combination is observed that points to an fraudulent seaport order
-
-- SCAM-DETECTOR-SOCIAL-ENG-NATIVE-ICE-PHISHING
-   - Fired when alert combination is observed that points to an native ice phishing involving social engineering techniques (e.g. SecurityUpdate() function sig in the input data field)
-
-- SCAM-DETECTOR-ADDRESS-POISONING
-   - Fired when alert combination is observed that points to address poisoning attack
-
-- SCAM-DETECTOR-1
-   - Fired when alert combination is observed that points to attack on chain that spans the 4 stages of an attack (funding, preparaiton, exploitation, and money laundering) Many of the alerts here point to rug pulls and rake tokens.
+- SCAM-DETECTOR-ICE-PHISHING - Fired when alert combination is observed that points to an ice phishing attack
+- SCAM-DETECTOR-WASH-TRADE - Fired when a NFT wash trade has been observed
+- SCAM-DETECTOR-FRAUDULENT-SEAPORT-ORDER - Fired when alert combination is observed that points to an fraudulent seaport order
+- SCAM-DETECTOR-SOCIAL-ENG-NATIVE-ICE-PHISHING - Fired when alert combination is observed that points to an native ice phishing involving social engineering techniques (e.g. SecurityUpdate() function sig in the input data field)
+- SCAM-DETECTOR-ADDRESS-POISONING - Fired when alert combination is observed that points to address poisoning attack
+- SCAM-DETECTOR-1 - Fired when alert combination is observed that points to attack on chain that spans the 4 stages of an attack (funding, preparaiton, exploitation, and money laundering) Many of the alerts here point to rug pulls and rake tokens.
 
 
 The properties for the alerts above are identical:
 - Severity is always set to "critical" 
 - Type is always set to "exploit" 
 - Meta data will contain the date range when attack took place, the attacker address, a list of detection bots that triggered that were utilized by this detection bot to make a decision as well as any of the transactions and addresses that were mentioned in any of the underlying alerts
-  - attacker_address: string
-  - start_date: date str (%Y-%m-%d)
-  - end_date: date str (%Y-%m-%d)
-  - involved_addresses_x: string
-  - involved_alert_id_x: string
-  - involved_alert_hashes_x: string
 
 In addition, this bot also emits an alert in case a false positive has been observed. 
 
-- SCAM-DETECTOR-ICE-PHISHING-FALSE-POSITIVE
-   - Fired when an FP has been identified
-   - Severity is always set to "info" 
-   - Type is always set to "info" 
+- SCAM-DETECTOR-ICE-PHISHING-FALSE-POSITIVE - Fired when an FP has been identified; severity and type is set to 'info'
 
 
 The Scam Detector bot emits labels for each scammer address observed. The meta data contains the corresponding alertID. E.g.
