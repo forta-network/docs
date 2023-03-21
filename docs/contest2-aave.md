@@ -11,7 +11,7 @@ Below you will find five challenges. Each challenge has a specific security conc
 - This contest will run from Nov 3rd through Nov 10th, after which no further submissions will be considered.
   Winners will be chosen by a panel of bot reviewers from Forta community member Arbitrary Execution, and will be announced on Nov 12th.
 
-- For any questions, please contact a Forta Moderator on [Discord](https://discord.com/invite/tpWYdjyc6Q).
+- For any questions, please contact a Forta Moderator on [Discord](https://discord.com/invite/fortanetwork).
 
 Check out the Aave liquidity protocol and the Aave Grants DAO for more information: [https://governance.aave.com/](https://governance.aave.com/)
 

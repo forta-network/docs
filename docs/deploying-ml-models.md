@@ -207,4 +207,4 @@ With the ATT bot, LIME produces a list of features and their weights to indicate
 
 ## Was the guide helpful?
 
-If you made it all the way here, thanks for taking the time to read this guide! Was it useful or are there other guides or anything you’d like to see? Did you integrate ML in a detection bot or need help? Let the community know how Forta can help, and don’t forget to share your bot, thoughts, and/or feedback in [the “machine-learning” discord channel](https://discord.com/invite/tpWYdjyc6Q)!
+If you made it all the way here, thanks for taking the time to read this guide! Was it useful or are there other guides or anything you’d like to see? Did you integrate ML in a detection bot or need help? Let the community know how Forta can help, and don’t forget to share your bot, thoughts, and/or feedback in [the “machine-learning” discord channel](https://discord.com/invite/fortanetwork)!
