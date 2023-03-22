@@ -35,7 +35,7 @@ Get inspired and subscribe to customized Detection Bots which top protocols use 
 
 Find any Detection Bot in the Network
 
-- [Search](https://explorer.forta.network/bot-search)
+- [Search](https://explorer.forta.network)
 
 ## Get Customized Monitoring
 
