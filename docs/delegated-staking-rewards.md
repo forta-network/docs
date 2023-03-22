@@ -4,8 +4,11 @@
 
 After the end of each epoch (**Monday 00:00:00 UTC**), reward calculation starts. The rewards are written to the rewards distributor contract as soon as the calculation is completed. When the rewards are avaialble in the contract, pool owners and delegators can claim their portion of the rewards.
 
-!!! important "Forta App"
-    Forta App will soon have a feature to view and claim your rewards. Meanwhile, you can use Polygonscan to do this.
+### Forta App
+
+Visit "My Rewards" page from the top right menu on [Forta App](https://app.forta.network)! You can see on the rewards page if you have any available rewards and claim rewards from multiple epochs with single action.
+
+### Polygonscan
 
 To claim pool owner rewards over Polygonscan:
 
