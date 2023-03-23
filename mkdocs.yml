@@ -23,6 +23,7 @@ nav:
           - Video tutorials: tutorials.md
       - Detection bot wizard: wizard.md
       - Bot development patterns:
+          - Increasing bot throughput: sharding.md
           - Protecting sensitive data: sensitive-data.md
           - JWT authentication for bots: jwt-auth.md
           - Consuming bot alerts: handle-alert.md
