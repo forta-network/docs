@@ -177,6 +177,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 - `alert_id` -  unique string to identify this class of finding
 - `chain_id` - chain ID where this alert was fired
 - `addresses` -  list of addresses involved in the alert (currently truncated at 50 addresses)
+- `labels` - list of [Labels](python.md#label) associated to the alert
 - `contracts` -  list of contracts related to the alert
 - `created_at` -  timestamp when the alert was published
 - `description` - text description of the alert
@@ -237,7 +238,7 @@ Labels can be used to add more contextual data to a `Finding` e.g. "is this addr
 - `entity` - string identifier of the entity being labelled e.g. transaction hash
 - `label` - string label to attach to the entity e.g. "exploit"
 - `confidence` - confidence level of label between 0 and 1
-
+- `metadata` - key-value map (both keys and values as strings) for providing extra information
 
 ## get_json_rpc_url
 
