@@ -151,6 +151,7 @@ When an alert is fired from a Forta bot and is detected by the network, any subs
 - `blockHash` - alias for `alert.source.block.hash`
 - `blockNumber` - alias for `alert.source.block.number`
 - `chainId` - alias for `alert.chainId`
+- `hasAddress` - alias function for [`alert.hasAddress`](sdk.md#hasaddress)
 
 ## Finding
 
@@ -180,7 +181,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 
 - `alertId` -  string to identify this class of finding
 - `chainId` - chain ID where this alert was fired
-- `addresses` -  human-readable list of addresses involved in the alert
+- `addresses` -  list of addresses involved in the alert (currently truncated at 50 addresses)
 - `contracts` -  list of contracts related to the alert
 - `createdAt` -  timestamp when the alert was published
 - `description` - text description of the alert
@@ -215,7 +216,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
     - Suspicious
     - Degraded
     - Info
-    - Unknown_Type
+    - Unknown
 - `severity` - indicates impact level of finding:
     - Critical - exploitable vulnerabilities, massive impact on users/funds
     - High - exploitable under more specific conditions, significant impact on users/funds
@@ -223,6 +224,10 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
     - Low - minor oversights, negligible impact on users/funds
     - Info - miscellaneous behaviours worth describing
 - `metadata` - key-value map (both keys and values as strings) for providing extra information
+
+### hasAddress
+
+`hasAddress` is a convenience function on `Alert` meant for checking the existence of an address involved in the alert. The `addresses` array is truncated for space-efficiency, so this method uses a bloom filter to check for existence. It accepts a single string parameter: the address to check
 
 ## Label
 
