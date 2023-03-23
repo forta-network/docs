@@ -566,7 +566,11 @@ trace:
 
 ## Monitor SLA
 
-To monitor whether your scan node is performing well, use the [SLA-API](sla-api.md)
+To view your scan node's uptime and SLA simply copy and paste https://explorer.forta.network/scan-node/[YOUR SCAN NODE ADDRESS] into your browser's search bar.
+
+![View scan node SLA example](scan-node-view.png)
+
+For more detailed insights, use the [SLA-API](sla-api.md)
 
 ## The Merge
 
