@@ -26,12 +26,15 @@ Finding.from({
         "0xfb141d179b40d895ba227c26860d7f49744fe50bdf89a6e6e21978c09c7ac05f",
       label: "flashloan-attack",
       confidence: 0.7,
+      metadata: {
+        exploitedProtocol: "someDAO"
+      }
     },
   ],
 });
 ```
 
-The first label in the above code snippet is saying with 90% certainty that the specified address is an attacker. The second label is saying with 70% certainty that the specified transaction is a flashloan attack.
+The first label in the above code snippet is saying with 90% certainty that the specified address is an attacker. The second label is saying with 70% certainty that the specified transaction is a flashloan attack. You can also optionally add more data using the `metadata` field.
 
 You can add one or more label objects to a Finding. Each label object should specify all the 4 required fields: `entity`, `entityType`, `label` and `confidence`. The `label` field can be any string you choose to allow flexibility of supporting many different types of labels. The `entity` is the item being described and is of `entityType` which supports 5 different types: `Address`, `Transaction`, `Block`, `Url` and `Unknown`. The `confidence` level should be a number between 0 and 1.
 
