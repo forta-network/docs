@@ -7,7 +7,7 @@
 * [Smart Price Changes Bot](https://github.com/0xidase/Smart-Price-Changes-Agent)
 * [Time Series Analyzer Bot Template](https://github.com/forta-network/starter-kits/tree/main/time-series-analyzer-template)
 * [Malicious Smart Contract ML Bot](https://github.com/forta-network/starter-kits/tree/main/malicious-smart-contract-ml-py#malicious-smart-contract-ml)
-* [Token Impersonation ML Bot](https://github.com/forta-network/starter-kits/tree/main/https://github.com/forta-network/starter-kits/tree/main/malicious-token-contract-ml-py#malicious-token-smart-contract-ml)
+* [Token Impersonation ML Bot](https://github.com/forta-network/starter-kits/tree/main/malicious-token-contract-ml-py#malicious-token-smart-contract-ml)
 * [Text Message Sentiment Analysis Deep Learning Bot](https://github.com/forta-network/forta-bot-examples/tree/master/tx-message-sentiment-analysis-py)
 
 Did you create a ML bot? Share it with the community on the [ML Discord Channel](https://discord.com/invite/fortanetwork)!
