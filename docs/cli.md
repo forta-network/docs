@@ -66,6 +66,18 @@ or if using locally installed package
 $ npm run tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
 ```
 
+Example: Run for a sequence of specific transactions
+
+```bash
+$ forta-agent run --sequence tx0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543,tx0xdc6fd3c2846f330aec65615341789397e1a9bb37a471851fe68b2db20a5a7b9f
+```
+
+or if using locally installed package
+
+```bash
+$ npm run sequence tx0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543,tx0xdc6fd3c2846f330aec65615341789397e1a9bb37a471851fe68b2db20a5a7b9f
+```
+
 Example: Run for a specific block (by number)
 
 ```
