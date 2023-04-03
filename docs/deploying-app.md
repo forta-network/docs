@@ -54,7 +54,7 @@ Your Metamask should now be connected to Forta App. You should see your wallet a
 In order to deploy your bot, you will need to complete a short form by navigating to the Detection Bots page (from the menu at the top right):
 
 1. Click the Deploy Bot button to bring up the form. The bot ID will be automatically generated for you
-2. Fill in the rest of the fields with your bot's information like name, description, version and which blockchains you want to scan
+2. Fill in the rest of the fields with your bot's information like name, description, version and which blockchains you want to scan (currently supported chains are Ethereum, Polygon, Binance Smart Chain, Avalanche, Arbitrum, Optimism, and Fantom)
 3. For the Documentation field, select the README.md from your project folder. This will be uploaded to IPFS
 4. For the Docker Image field, paste in the image reference you copied earlier from the `npm run push` command
 5. If your code repository is public, fill in the Repository field
