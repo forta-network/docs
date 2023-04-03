@@ -27,7 +27,6 @@ nav:
           - Protecting sensitive data: sensitive-data.md
           - JWT authentication for bots: jwt-auth.md
           - Consuming bot alerts: handle-alert.md
-          - Adding labels to findings: labels.md
           - Private alerts: private-alerts.md
           - Transaction simulation: tx-simulation.md
           - Long running tasks: long-running-tasks.md
@@ -56,6 +55,8 @@ nav:
           - Forta Contest 5 (10/11/2022): contest9-forta.md
           - Forta Contest 6 (11/8/2022): contest10-forta.md
       - Integrating with Hardhat: hardhat.md
+  - <strong>Labels API</strong>:
+      - Adding Labels to Findings: labels.md
   - <strong>Run a Scan Node</strong>:
       - Quickstart: scanner-quickstart.md
       - Manage pools and stake: scanner-pools.md
