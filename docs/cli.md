@@ -50,11 +50,11 @@ Options:
 --range - run your bot against a specific range of block numbers
 --file - run your bot against a JSON file of test data
 --prod - used for running the bot inside of a production environment i.e. you probably won’t need this during development
---config - specify a config file to use (default: forta.config.json)
+--config - specify a config file to use (default: ~/.forta/forta.config.json)
 --nocache - disables writing block/tx data to local disk cache (but reads are still enabled)
 ```
 
-Example: Run for a specific transaction
+**Example: Run a specific transaction (or a comma-delimited list)**
 
 ```bash
 $ forta-agent run --tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
@@ -66,7 +66,7 @@ or if using locally installed package
 $ npm run tx 0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
 ```
 
-Example: Run for a specific block (by number)
+**Example: Run a specific block by number (or a comma-delimited list)**
 
 ```
 $ forta-agent run --block 12821978
@@ -74,11 +74,11 @@ $ forta-agent run --block 12821978
 
 or if using locally installed package
 
-```bash
+```
 $ npm run block 12821978
 ```
 
-Example: Run for a specific block (by hash)
+**Example: Run a specific block by hash (or a comma-delimited list)**
 
 ```
 $ forta-agent run --block 0x9e052eb02a3849b650e8b9e0a47b1fae194b928c930168ef19e311dbd7886172
@@ -90,7 +90,31 @@ or if using locally installed package
 $ npm run block 0x9e052eb02a3849b650e8b9e0a47b1fae194b928c930168ef19e311dbd7886172
 ```
 
-Example: Run for a specific block range
+**Example: Run a specific Forta alert (or a comma-delimited list)**
+
+```
+$ forta-agent run --alert 0x40ba810affa9ae3df9420be08fdb2f5db1122ce6a3ea8f6ec87016905d870082
+```
+
+or if using locally installed package
+
+```bash
+$ npm run alert 0x40ba810affa9ae3df9420be08fdb2f5db1122ce6a3ea8f6ec87016905d870082
+```
+
+**Example: Run a sequence of blocks, transactions and Forta alerts**
+
+```
+$ forta-agent run --sequence 0x40ba810affa9ae3df9420be08fdb2f5db1122ce6a3ea8f6ec87016905d870082,12821978,tx0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
+```
+
+or if using locally installed package
+
+```bash
+$ npm run sequence 0x40ba810affa9ae3df9420be08fdb2f5db1122ce6a3ea8f6ec87016905d870082,12821978,tx0xf9c43e15ef2abfec163ec3b1165f18a5119ba119b6e059fc924903e5251e3543
+```
+
+**Example: Run a specific block range**
 
 ```
 $ forta-agent run --range 12821978..12821980
@@ -98,11 +122,11 @@ $ forta-agent run --range 12821978..12821980
 
 or if using locally installed package
 
-```bash
+```
 $ npm run range 12821978..12821980
 ```
 
-Example: Run for an input file
+**Example: Run an input file**
 
 ```
 $ forta-agent run --file ./test.data.json
