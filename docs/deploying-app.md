@@ -12,6 +12,12 @@ LABEL "network.forta.settings.agent-logs.enable"="true"
 
 After deploying, you can [view bot logs](maintaining.md#viewing-bot-logs) using the Forta API.
 
+## Documentation
+
+Documentation for your bot is **required** in order to deploy. It should let others know what conditions your bot is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific bot.
+
+You will also find the [Forta Detection Bot License](https://github.com/forta-network/forta-bot-sdk/blob/master/starter-project/LICENSE.md){:target="_blank"} included in your project LICENSE.md file (and copied over in your Dockerfile). This is **required** for every detection bot deployed to the network.
+
 ## Pushing your bot image
 
 Before you head over to Forta App, you will need one piece of information: your bot's image reference. You can get the image reference by running the following command (**make sure your Docker is running before proceeding**):

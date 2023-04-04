@@ -16,6 +16,8 @@ After deploying, you can [view bot logs](maintaining.md#viewing-bot-logs) using 
 
 Documentation for your bot is **required** in order to deploy. It should let others know what conditions your bot is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific bot.
 
+You will also find the [Forta Detection Bot License](https://github.com/forta-network/forta-bot-sdk/blob/master/starter-project/LICENSE.md){:target="_blank"} included in your project LICENSE.md file (and copied over in your Dockerfile). This is **required** for every detection bot deployed to the network.
+
 ## Configuration
 
 A few configuration values must be set in your package.json in order to deploy:
