@@ -66,39 +66,4 @@ Notice that all values of the label are the same, but we just added `remove: tru
 
 ## Querying labels
 
-You can query for labels using the Forta Labels API which currently returns a list of label events. These label events tell you when certain labels were added/removed, ordered by timestamp. You can access the REST API at `https://api.forta.network/labels/events`.
-
-If instead you only want the _latest state_ of the labels for an entity (i.e. instead of all the add/remove label events as above), you can use the endpoint at `https://api.forta.network/labels/state`.
-
-The API supports the following query parameters (**at least one** of `entities`, `labels`, or `sourceIds` is required):
-
-- `entities` - comma-delimited string of entities to query e.g. `?entities=0x062dB680e5DCA653248432fC1B4F788E41c83234,0x062dB680e5DCA653248432fC1B4F788E41c83235`
-- `labels` - comma-delimited string of labels to query e.g. `?labels=attacker,exploit`
-- `sourceIds` - comma-delimited string of source IDs which can include bot IDs but also things like Etherscan e.g. `?sourceIds=etherscan,0xbotId`
-- `entityType` - string of one of the supported entity types e.g. `?entityType=ADDRESS`
-- `limit` - maximum number of label events to return
-- `pageToken` - for retrieving pages of paginated results
-
-Here is an example API response:
-
-```javascript
-{
-  "pageToken": 1234567890,
-  "events": [
-    {
-      "id": "0x41e32412deaac79caf9ed12c71054ba97f15c360aa83e3270b5750305df0ae8d",
-      "created_at": "2023-01-04T19:34:54.463513035Z",
-      "label": {
-        "label": "exploit",
-        "confidence": 1,
-        "entity": "0xfcf6738cabd9ce27f908a480ecaea53219fc08f4",
-        "entityType": "ADDRESS",
-        "remove": false
-      },
-      "source": {
-        "id": "etherscan"
-      }
-    }
-  ]
-}
-```
+You can query for labels using the [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/). 
