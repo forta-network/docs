@@ -36,18 +36,62 @@ New threat types are regularly added to the Scam Detector by the Forta community
 Here’s a [glossary](https://forta.org/attacks/) defining threat types in more detail. 
 
 ## Using the Scam Detector  
-Scam Detector *labels* and *alerts* are each available via their respective APIs. For accessing threat intel from the Scam Detector we recommend using the Labels API. **Currently, no API key is required.** 
+Scam Detector *labels* and *alerts* are each available in the [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/). **Currently, no API key is required.** 
 
 ### *Labels*
-There are two approaches to querying for labels:
+Labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/) documentation. 
 
+This is an example query one can use to query Labels.
+```
+query Labels($input: LabelsInput) {
+  labels(input: $input) {
+    pageInfo {
+      hasNextPage
+      endCursor {
+        pageToken
+      }
+    }
+    labels {
+      createdAt
+      id
+      label {
+        confidence
+        entity
+        entityType
+        label
+        metadata
+        remove
+      }
+      source {
+        alertHash
+        alertId
+        id
+        bot {
+          id
+          image
+          imageHash
+          manifest
+        }
+      }
+    }
+  }
+}
+```
 
-1. (*Recommended*) If you want the latest *state* of the labels for an entity (i.e. if you want to know whether an address is currently labeled “scam”), you can use the endpoint at [https://api.forta.network/labels/state](https://api.forta.network/labels/state).
+These inputs will find the first 100 scammer-eoa and scammer-contract labels for the Scam Detector feed, since a certain date.  If a label was later removed, it will not be returned because `state:true` is set.
+```
+{
+  "input": {
+    "labels": ["scammer-eoa", "scammer-contract"],
+    "first": 100,
+    "state": true,
+    "createdSince": 1680877408000,
+    "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"]
+  }
+}
+```
 
-
-2. You can also query for label *events*. Label events tell you when certain labels were added/removed, ordered by timestamp. You can access the REST API at [https://api.forta.network/labels/events](https://api.forta.network/labels/events). Here is an example response: ![Labels API example response](Labels-API-example.png)
-
-More details on querying the Labels API can be found [here](https://docs.forta.network/en/latest/labels/#querying-labels). 
+For more information on searching for labels, see the `LabelsInput` structure in the [API Documentation](https://docs.forta.network/en/latest/forta-api-reference/#definition-LabelsInput).
 
 ### *Alerts*
 
