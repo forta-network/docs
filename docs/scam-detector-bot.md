@@ -79,7 +79,7 @@ query Labels($input: LabelsInput) {
 ```
 
 These inputs will find the first 100 scammer-eoa and scammer-contract labels for the Scam Detector feed, since a certain date.  If a label was later removed, it will not be returned because `state:true` is set.
-```
+```json
 {
   "input": {
     "labels": ["scammer-eoa", "scammer-contract"],
@@ -87,6 +87,51 @@ These inputs will find the first 100 scammer-eoa and scammer-contract labels for
     "state": true,
     "createdSince": 1680877408000,
     "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"]
+  }
+}
+```
+
+Example Response
+```json
+{
+  "data": {
+    "labels": {
+      "pageInfo": {
+        "hasNextPage": true,
+        "endCursor": {
+          "pageToken": "32916172"
+        }
+      },
+      "labels": [
+        {
+          "createdAt": "2023-04-07T14:41:44.649268492Z",
+          "id": "0xa1d58f65ca4617b7085dee770c7d1efcbc85bc4de7c2828e6293fcde09c58089",
+          "label": {
+            "confidence": 0.8,
+            "entity": "0x49dc14dd851b6eae8d685715e12a06cc1bfc5d8d",
+            "entityType": "ADDRESS",
+            "label": "scammer-eoa",
+            "metadata": [
+              "alert_id=SCAM-DETECTOR-ICE-PHISHING",
+              "chain_id=1",
+              "threat_description_url=https://forta.org/attacks#ice-phishing"
+            ],
+            "remove": false
+          },
+          "source": {
+            "alertHash": "0x9ee892023e08504f5a5e0bd8caf36411364db7e470f9053d9785874332ddecb2",
+            "alertId": "SCAM-DETECTOR-ICE-PHISHING",
+            "id": "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23",
+            "bot": {
+              "id": "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23",
+              "image": "disco.forta.network/bafybeih3dudmzdkxxmtmzddlrcqu4znpp2udyjeunxa5heubpeaw5u352y@sha256:0f09f3094c98a03f3881249ce9c49bff8bd469c574a689c69e070b036397e154",
+              "imageHash": "0f09f3094c98a03f3881249ce9c49bff8bd469c574a689c69e070b036397e154",
+              "manifest": "QmTB47j3yjwVak4Unr5NzHBk9WJiuhM6T3WoXYKB5gKbhk"
+            }
+          }
+        }
+      ]
+    }
   }
 }
 ```
