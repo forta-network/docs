@@ -40,6 +40,7 @@ Labels allow a contributor to tag an entity (like an address) with a label.  Lab
 Labels will also contain references to other artifacts, such as Alerts, in the **source** properties of the response.  One can also use the GraphQL API to retrieve the alert which will contain other key information about the moment the Label was produced.
 
 **Note:** 
+
 To request entries that are *currently* accurate (and not later removed), pass **state: true** as part of the input.  Otherwise, the response will contain point-in-time events (which may contain removal (remove:true) events). 
 
 At least one of:  **labels**, **sourceIds**, or **entities** is required.
