@@ -1,11 +1,7 @@
 # Scam Detector Docs
 
-| Bot Name | Bot ID | Bot Stats | Bot Source Code  | Supported Chains | 
-|----------|--------|-----------|------------------|------------------|
-| Scam Detector | 0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23 | [Stats](https://explorer.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) | [Github Repo](https://github.com/forta-network/starter-kits/tree/main/scam-combiner-py) | All | 
-
 ## Overview
-The Scam Detector is an ideal source of threat intel for Web 3 wallets and dashboard tools, as well as for security and compliance solutions serving a retail or institutional audience. Use the Scam Detector to build or supplement a black list, or as a transaction analysis tool by querying the Scam Detector at the point of approval or transaction to determine whether they are malicious. 
+The Scam Detector is an ideal source of threat intel for Web3 wallets and dashboard tools, as well as for security and compliance solutions serving a retail or institutional audience. Use the Scam Detector to build or supplement a black list, or as a transaction analysis tool by querying the Scam Detector at the point of approval or transaction to determine whether they are malicious. 
 
 
 The Scam Detector provides threat intelligence about malicious smart contracts and EOAs engaging in scams and other end user attacks. It relies on a *bundle* of underlying Forta bots, each monitoring for a specific threat type (ex: Ice Phishing). The Scam Detector and its underlying bots are collectively maintained by the Forta community, including the Forta Foundation, Nethermind, and dozens of individual security researchers and developers.
@@ -14,7 +10,7 @@ The Scam Detector provides threat intelligence about malicious smart contracts a
 Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuristic-based approach, others leverage machine learning to identify malicious activity. When bots identify an attack or scam on-chain, they create two types of threat intelligence:
 
 
-- **Labels.** A persistent tag placed on an entity (smart contract or EOA) responsible for a scam or attack. Today, the Scam Detector assigns two labels: “scammer-eoa” and “scammer-contract”. Labels also feature the threat type via the alert ID field (ex: ICE PHISHING), a link to the description of the alert ID, and a confidence score from 0 to 1. 
+- **Labels.** A persistent tag placed on an entity (smart contract or EOA) responsible for a scam or attack. Today, the Scam Detector assigns two labels: “scammer-eoa” and “scammer-contract”. Labels also feature the threat type via the alert ID field (ex: ICE PHISHING), a link to the description of the alert ID, and a confidence score from 0 to 1.  
 
 
 - **Alerts.** Findings emitted in real-time by a bot about something that happened on-chain. Example, if a flashloan occurred in the last block, a bot monitoring for flashloan transactions would emit an alert on that flashloan when the next block is confirmed. Alerts from the Scam Detector contain metadata about the transaction(s) that triggered the alert, the entities involved and the threat type.      
@@ -36,111 +32,83 @@ New threat types are regularly added to the Scam Detector by the Forta community
 Here’s a [glossary](https://forta.org/attacks/) defining threat types in more detail. 
 
 ## Using the Scam Detector  
-Scam Detector *labels* and *alerts* are each available in the [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/). **Currently, no API key is required.** 
+Scam Detector *labels* and *alerts* are each available in the Forta GraphQL API. For accessing threat intel from the Scam Detector, we recommend querying labels.  **Currently, no API key is required.** 
 
 ### *Labels*
-Labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/) documentation. 
+Labels allow a contributor to tag an entity (like an address) with a label.  Labels are available via our [GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels).  This API allows one to search by date range and page over results.
 
-This is an example query one can use to query Labels.
-```
-query Labels($input: LabelsInput) {
-  labels(input: $input) {
-    pageInfo {
-      hasNextPage
-      endCursor {
-        pageToken
-      }
-    }
-    labels {
-      createdAt
-      id
-      label {
-        confidence
-        entity
-        entityType
-        label
-        metadata
-        remove
-      }
-      source {
-        alertHash
-        alertId
-        id
-        bot {
-          id
-          image
-          imageHash
-          manifest
-        }
-      }
-    }
-  }
-}
-```
+Labels will also contain references to other artifacts, such as Alerts, in the **source** properties of the response.  One can also use the GraphQL API to retrieve the alert which will contain other key information about the moment the Label was produced.
 
-These inputs will find the first 100 scammer-eoa and scammer-contract labels for the Scam Detector feed, since a certain date.  If a label was later removed, it will not be returned because `state:true` is set.
+**Note:** 
+
+To request entries that are *currently* accurate (and not later removed), pass **state: true** as part of the input.  Otherwise, the response will contain point-in-time events (which may contain removal (remove:true) events). 
+
+At least one of:  **labels**, **sourceIds**, or **entities** is required.
+
+Example Request
 ```json
 {
-  "input": {
-    "labels": ["scammer-eoa", "scammer-contract"],
-    "first": 100,
-    "state": true,
-    "createdSince": 1680877408000,
-    "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"]
-  }
+ "input": {
+   "labels": ["scammer-eoa", "scammer-contract"],   
+   "state": true,  // set this to false if you want duplicates and removals 
+   "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],
+   "createdBefore": 1680875204000,
+   "createdSince": 1680874204000,
+   "after": {
+     "pageToken": "12345" // set this to the pageInfo.endCursor.pageToken of a response to page
+   }
+ }
 }
 ```
+
+For a complete list of options, see the [LabelsInput](https://docs.forta.network/en/latest/forta-api-reference/#definition-LabelsInput) specification
 
 Example Response
 ```json
 {
-  "data": {
-    "labels": {
-      "pageInfo": {
-        "hasNextPage": true,
-        "endCursor": {
-          "pageToken": "32916172"
-        }
-      },
-      "labels": [
-        {
-          "createdAt": "2023-04-07T14:41:44.649268492Z",
-          "id": "0xa1d58f65ca4617b7085dee770c7d1efcbc85bc4de7c2828e6293fcde09c58089",
-          "label": {
-            "confidence": 0.8,
-            "entity": "0x49dc14dd851b6eae8d685715e12a06cc1bfc5d8d",
-            "entityType": "ADDRESS",
-            "label": "scammer-eoa",
-            "metadata": [
-              "alert_id=SCAM-DETECTOR-ICE-PHISHING",
-              "chain_id=1",
-              "threat_description_url=https://forta.org/attacks#ice-phishing"
-            ],
-            "remove": false
-          },
-          "source": {
-            "alertHash": "0x9ee892023e08504f5a5e0bd8caf36411364db7e470f9053d9785874332ddecb2",
-            "alertId": "SCAM-DETECTOR-ICE-PHISHING",
-            "id": "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23",
-            "bot": {
-              "id": "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23",
-              "image": "disco.forta.network/bafybeih3dudmzdkxxmtmzddlrcqu4znpp2udyjeunxa5heubpeaw5u352y@sha256:0f09f3094c98a03f3881249ce9c49bff8bd469c574a689c69e070b036397e154",
-              "imageHash": "0f09f3094c98a03f3881249ce9c49bff8bd469c574a689c69e070b036397e154",
-              "manifest": "QmTB47j3yjwVak4Unr5NzHBk9WJiuhM6T3WoXYKB5gKbhk"
-            }
-          }
-        }
-      ]
-    }
-  }
-}
+ "data": {
+   "labels": {
+     "pageInfo": {
+       "hasNextPage": true,
+       "endCursor": {
+         "pageToken": "21193"
+       }
+     },
+     "labels": [
+       {
+         "createdAt": "2023-03-31T19:08:41.574277485Z",
+         "id": "0xcf652c19db1b816c975440202d9bc4b0ee3c3182b6ba44c5b6e8c6247cb1cefd",
+         "label": {
+           "confidence": 0.5,
+           "entity": "0xd9bc52751d9e4462e0bbae5836d344d3f3ad9dc4",
+           "entityType": "ADDRESS",
+           "label": "scammer-eoa",
+           "metadata": null,
+           "remove": false
+         },
+         "source": {
+           "alertHash": "0xfa67c24930e927f4a61430fc2229aeba3b40a29bb1e3a135c63b33d666fc17a9",
+           "alertId": "IMPERSONATED-TOKEN-DEPLOYMENT",
+           "id": "0x6aa2012744a3eb210fc4e4b794d9df59684d36d502fd9efe509a867d0efa5127",
+           "bot": {
+             "id": "0x6aa2012744a3eb210fc4e4b794d9df59684d36d502fd9efe509a867d0efa5127",
+             "image": "...",
+             "imageHash": "053edfda50c1cdfef0d822ff5b2f48621e0274f7c44ea7b470da15b6cd294079",
+             "manifest": "QmXFdLehNtaq6W9N8RWETopKyhPy7nQEmGadnDYX33XJym"
+           }
+         }
+       }
+     ]
+   }
+ }
 ```
 
-For more information on searching for labels, see the `LabelsInput` structure in the [API Documentation](https://docs.forta.network/en/latest/forta-api-reference/#definition-LabelsInput).
+More details on querying labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels)  documentation. 
+
 
 ### *Alerts*
 
-Whereas labels tell you what the Forta Network knows about a particular entity, alerts tell you something happened (i.e. an attack). There are two ways to access alerts: the API (pull) and subscription (push). You can access the Alerts API [here](https://docs.forta.network/en/latest/api/). Alternatively, If you want alerts *pushed* to you in real-time, you can also [subscribe](https://explorer.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) to the Scam Detector directly and select your desired communication channel (webhook, email, Discord, Telegram, Slack).    
+Whereas labels tell you what the Forta Network knows about a particular entity, alerts tell you something happened (i.e. an attack). There are two ways to access alerts: the API (pull) and subscription (push). Use the GraphQL API to query for alerts - more info [here](https://docs.forta.network/en/latest/forta-api-reference/#query-alerts). Alternatively, if you want alerts *pushed* to you in real-time, you can also [subscribe](https://explorer.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) to the Scam Detector directly and select your desired communication channel (webhook, email, Discord, Telegram, Slack).    
 
 ## What chains are supported?
 
@@ -156,7 +124,7 @@ The Forta community evaluates new chains on an ongoing basis.
 
 
 ## False Positives
-While the Scam Detector maintains high precision, it’s possible that it identifies a false positive. To address this risk, the Forta community manually verifies certain Scam Detector alerts within one business day. If a false positive is identified during the manual verification process, an FP alert will be emitted by the Scam Detector and the label will be removed. If you’re accessing the Labels API via the state endpoint, all labels are up to date and take into account the latest FP information. 
+While the Scam Detector maintains high precision, it’s possible that it identifies a false positive. To address this risk, the Forta community manually verifies certain Scam Detector alerts within one business day. If a false positive is identified during the manual verification process, an FP alert will be emitted by the Scam Detector and the label will be removed. If you’re accessing the Labels API via the state endpoint, all labels are up to date and take into account the latest FP information.  
 
 ## Confidence Scores
 The confidence score associated with a label is hard coded and based on the precision analysis performed by the Forta community. The score is updated on a monthly basis, and reflects the accuracy of the Scam Detector for a particular alert ID/threat type *before* manual verification. 
