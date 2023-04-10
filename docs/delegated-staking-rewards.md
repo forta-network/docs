@@ -83,7 +83,10 @@ where:
 
 The values of parameters α and β are set to 3 and 0.5 respectively and are subject to change in the future.
 
-The total amount of the delegator rewards are distributed to each delegator proportionally to their deposited stake. The on-chain rules are the ultimate authority of this logic, and in the case where the on-chain rules differ from this, it will prevail.
+!!! important "Initial values"
+    For new pools during their first week, the formulas will be modified slightly and instead of using the stake at the beginning of the epoch, the rewards will be calculated using the time-weighted average stake during the epoch. For the following epochs, the distribution will be based on the initial stake values in each epoch.
+
+The total amount of the delegator rewards are distributed to each delegator proportionally to their initial deposited stake value in each epoch. The on-chain rules are the ultimate authority of this logic, and in the case where the on-chain rules differ from this, it will prevail.
 
 [^1]: For this calculation, only the periods when the SLA is at least 0.75 are considered.
 
