@@ -48,13 +48,16 @@ At least one of:  **labels**, **sourceIds**, or **entities** is required.
 Example Request
 ```json
 {
-  "input": {
-    "labels": ["scammer-eoa", "scammer-contract"],
-    "first": 100,
-    "state": true,
-    "createdSince": 1680877408000,
-    "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"]
-  }
+ "input": {
+   "labels": ["scammer-eoa", "scammer-contract"],   
+   "state": true,  // set this to false if you want duplicates and removals 
+   "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],
+   "createdBefore": 1680875204000,
+   "createdSince": 1680874204000,
+   "after": {
+     "pageToken": "12345" // set this to the pageInfo.endCursor.pageToken of a response to page
+   }
+ }
 }
 ```
 
@@ -63,46 +66,41 @@ For a complete list of options, see the [LabelsInput](https://docs.forta.network
 Example Response
 ```json
 {
-  "data": {
-    "labels": {
-      "pageInfo": {
-        "hasNextPage": true,
-        "endCursor": {
-          "pageToken": "32916172"
-        }
-      },
-      "labels": [
-        {
-          "createdAt": "2023-04-07T14:41:44.649268492Z",
-          "id": "0xa1d58f65ca4617b7085dee770c7d1efcbc85bc4de7c2828e6293fcde09c58089",
-          "label": {
-            "confidence": 0.8,
-            "entity": "0x49dc14dd851b6eae8d685715e12a06cc1bfc5d8d",
-            "entityType": "ADDRESS",
-            "label": "scammer-eoa",
-            "metadata": [
-              "alert_id=SCAM-DETECTOR-ICE-PHISHING",
-              "chain_id=1",
-              "threat_description_url=https://forta.org/attacks#ice-phishing"
-            ],
-            "remove": false
-          },
-          "source": {
-            "alertHash": "0x9ee892023e08504f5a5e0bd8caf36411364db7e470f9053d9785874332ddecb2",
-            "alertId": "SCAM-DETECTOR-ICE-PHISHING",
-            "id": "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23",
-            "bot": {
-              "id": "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23",
-              "image": "disco.forta.network/bafybeih3dudmzdkxxmtmzddlrcqu4znpp2udyjeunxa5heubpeaw5u352y@sha256:0f09f3094c98a03f3881249ce9c49bff8bd469c574a689c69e070b036397e154",
-              "imageHash": "0f09f3094c98a03f3881249ce9c49bff8bd469c574a689c69e070b036397e154",
-              "manifest": "QmTB47j3yjwVak4Unr5NzHBk9WJiuhM6T3WoXYKB5gKbhk"
-            }
-          }
-        }
-      ]
-    }
-  }
-}
+ "data": {
+   "labels": {
+     "pageInfo": {
+       "hasNextPage": true,
+       "endCursor": {
+         "pageToken": "21193"
+       }
+     },
+     "labels": [
+       {
+         "createdAt": "2023-03-31T19:08:41.574277485Z",
+         "id": "0xcf652c19db1b816c975440202d9bc4b0ee3c3182b6ba44c5b6e8c6247cb1cefd",
+         "label": {
+           "confidence": 0.5,
+           "entity": "0xd9bc52751d9e4462e0bbae5836d344d3f3ad9dc4",
+           "entityType": "ADDRESS",
+           "label": "scammer-eoa",
+           "metadata": null,
+           "remove": false
+         },
+         "source": {
+           "alertHash": "0xfa67c24930e927f4a61430fc2229aeba3b40a29bb1e3a135c63b33d666fc17a9",
+           "alertId": "IMPERSONATED-TOKEN-DEPLOYMENT",
+           "id": "0x6aa2012744a3eb210fc4e4b794d9df59684d36d502fd9efe509a867d0efa5127",
+           "bot": {
+             "id": "0x6aa2012744a3eb210fc4e4b794d9df59684d36d502fd9efe509a867d0efa5127",
+             "image": "...",
+             "imageHash": "053edfda50c1cdfef0d822ff5b2f48621e0274f7c44ea7b470da15b6cd294079",
+             "manifest": "QmXFdLehNtaq6W9N8RWETopKyhPy7nQEmGadnDYX33XJym"
+           }
+         }
+       }
+     ]
+   }
+ }
 ```
 
 More details on querying labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels)  documentation. 
