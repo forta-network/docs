@@ -18,6 +18,13 @@ The following are the requirements for running a Forta scan node.
 - 100GB SSD (in addition to full node requirements)
 - **Recommended:** Full node (any chain)
 
+
+!!! important "Security"
+    Forta scan node software uses isolation techniques to prevent detection bot code from executing malicious actions. Please make sure you take extra measures and strengthen your host machines:
+
+      - Implement iptables rules the disallow access to sensitive subnetworks.
+      - Do not equip your machines with strong cloud privileges.
+
 ### Stake
 
 All nodes need to be registered to run within a specific pool. In order to make your node operational in the network, please visit the [scanner pool management guide](scanner-pools.md) to find out how you can create, manage and stake on a scanner pool.
