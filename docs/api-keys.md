@@ -1,6 +1,6 @@
 # API Keys
 
-In order to use the Forta GraphQL API, you will need an API key.
+In order to use the [Forta GraphQL API](api.md), you will need an API key.
 
 ## Creating an API Key
 
@@ -22,8 +22,20 @@ Initially you will see an empty list, but you can generate a new API key by clic
 
 ## Using the API key
 
-In order to use the API key, you must set it as a Bearer token in the Authorization header of your HTTP request. For example, if your API key is `abc123` your header would look like `"Authorization": "Bearer abc123"`. Here is an example curl usage:
+When querying the Forta GraphQL API directly, you must set the API key as a Bearer token in the Authorization header of your HTTP request. For example, if your API key is `abc123` your header would look like `"Authorization": "Bearer abc123"`. Here is an example curl usage:
 
 ```
-curl POST --header "content-type: application/json" --header "Authorization: Bearer abc123" --url "https://api.forta.network/graphql"
+curl POST --header "Authorization: Bearer abc123" --header "content-type: application/json" --url "https://api.forta.network/graphql"
+```
+
+### Using with a bot locally
+
+If you have a bot that uses the `getAlerts` SDK method and you want to run the bot locally, you will need to provide the API key through the forta.config.json file. Simply set the `fortaApiKey` property in forta.config.json e.g.:
+
+```
+{
+  ...
+  "fortaApiKey": "abc123"
+  ...
+}
 ```
