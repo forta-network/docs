@@ -2,17 +2,6 @@
 
 This page will describe how to stake on Forta Network detection bots. Staking on bots occurs on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
 
-## Staking using Forta Explorer (recommended)
-
-1. Go to [https://explorer.forta.network/bot-search](https://explorer.forta.network/bot-search)
-2. Search for the bot you want to stake on. In this example we are going to stake on a bot from Lido (but you can choose any bot you prefer).
-3. Click on "Add Stake"
-   ![Add Stake](stake-bot-ui1.png)
-4. Enter the amount of FORT to stake on the bot.
-   ![Enter FORT amount](stake-bot-ui2.png)
-5. Confirm the transaction
-   ![Confirm transaction](stake-bot-ui3.png)
-
 ## Staking using Polygonscan
 ### Approve FORT
 
