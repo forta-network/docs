@@ -132,25 +132,25 @@ The confidence score associated with a label is hard coded and based on the prec
 ## Bots included in the Scam Feed
 Here’s a list of the underlying bots supporting the Scam Detector:
 
-| BotID | Name | AlertId | Stage |
-|-------|------|---------|-------|
-| 0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c | nft-transfer-alert | SEAPORT-PHISHING-TRANSFER | Exploitation |
-| 0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14 | ice phishing | ICE-PHISHING-HIGH-NUM-APPROVALS | Preparation |
-| 0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14 | ice phishing | ICE-PHISHING-PREV-APPROVED-TRANSFERED | Exploitation |
-| 0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400 | tornado cash withdrawl | FUNDING-TORNADO-CASH | Funding |
-| 0x617c356a4ad4b755035ef8024a87d36d895ee3cb0864e7ce9b3cf694dd80c82a | tornado cash funding | TORNADO-CASH-FUNDED-ACCOUNT-INTERACTION | Funding |
-| 0x4adff9a0ed29396d51ef3b16297070347aab25575f04a4e2bd62ec43ca4508d2 | money laundering | POSSIBLE-MONEY-LAUNDERING-TORNADO-CASH | MoneyLaundering |
-| 0x11b3d9ffb13a72b776e1aed26616714d879c481d7a463020506d1fb5f33ec1d4 | txt messaging bot | forta-text-messages-possible-hack | Exploitation |
-| 0x4c7e56a9a753e29ca92bd57dd593bdab0c03e762bdd04e2bc578cb82b842c1f3 | unverified contract creation | UNVERIFIED-CODE-CONTRACT-CREATION | Preparation |
-| 0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5 | flashbot attack bot | FLASHBOT-TRANSACTION | Exploitation |
-| 0x11b3d9ffb13a72b776e1aed26616714d879c481d7a463020506d1fb5f33ec1d4 | text messages agent | forta-text-messages-possible-hack (high severity only) | MoneyLaundering |
-| 0xd935a697faab13282b3778b2cb8dd0aa4a0dde07877f9425f3bf25ac7b90b895 | Malicious Address Bot | AE-MALICIOUS-ADDR | Exploitation |
-| 0x46ce98e921e2766a922840a56e89f24409001052c284e0bd6cbaa4fecd95e9b6 | Sleep Minting | SLEEPMINT-2, SLEEPMINT-1 | Preparation |
-| 0x127e62dffbe1a9fa47448c29c3ef4e34f515745cb5df4d9324c2a0adae59eeef | Aztec funded contract interaction | AK-AZTEC-PROTOCOL-FUNDED-ACCOUNT-INTERACTION-0 | Exploitation |
-| 0xf496e3f522ec18ed9be97b815d94ef6a92215fc8e9a1a16338aee9603a5035fb | CEX Funding bot | CEX-FUNDING-1 | Funding |
-| 0x9fbf4db19f23627633d86bb1936dabad0b27ebe09b7a38028a126392156f7f32 | Aztec Funding bot | AK-AZTEC-PROTOCOL-FUNDING | Funding |
-| 0x2df302b07030b5ff8a17c91f36b08f9e2b1e54853094e2513f7cda734cf68a46 | Malicious Account Funding Bot | MALICIOUS-ACCOUNT-FUNDING | Funding |
-| 0xdba64bc69511d102162914ef52441275e651f817e297276966be16aeffe013b0 | Umbra bot | UMBRA-RECEIVE | Funding |
-| 0x9324d7865e1bcb933c19825be8482e995af75c9aeab7547631db4d2cd3522e0e | ChangeNow Funding | FUNDING-CHANGENOW-NEW-ACCOUNT | Funding |
-| 0x887678a85e645ad060b2f096812f7c71e3d20ed6ecf5f3acde6e71baa4cf86ad | Malicious Token ML | SUSPICIOUS-TOKEN-CONTRACT-CREATION | Preparation |
-| 0x067e4c4f771f288c686efa574b685b98a92918f038a478b82c9ac5b5b6472732 | Wash trading bot | NFT-WASH-TRADE | Preparation | 
+| Name | BotID | AlertId | Stage |
+|------|-------|---------|-------|
+| [Address Poisoning](https://explorer.forta.network/bot/0x98b87a29ecb6c8c0f8e6ea83598817ec91e01c15d379f03c7ff781fd1141e502) |  0x98b87a29ecb6c8c0f8e6ea83598817ec91e01c15d379f03c7ff781fd1141e502 | ADDRESS-POISONING-ZERO-VALUE | Exploitation |
+| [Fraudulent Seaport](https://explorer.forta.network/bot/0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c) |  0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c | NIP-1 | Exploitation |
+| [Ice phishing](https://explorer.forta.network/bot/0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14) |  0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14 | ICE-PHISHING-HIGH-NUM-APPROVALS | Preparation |
+| [Social engineering](https://explorer.forta.network/bot/0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0) |  0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0 | NIP-1, NIP-2, NIP-3, NIP-4 | Exploitation |
+| [tornado cash withdrawl](https://explorer.forta.network/bot/0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400) |  0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400 | FUNDING-TORNADO-CASH | Funding |
+| [tornado cash funding](https://explorer.forta.network/bot/0x617c356a4ad4b755035ef8024a87d36d895ee3cb0864e7ce9b3cf694dd80c82a) |  0x617c356a4ad4b755035ef8024a87d36d895ee3cb0864e7ce9b3cf694dd80c82a | TORNADO-CASH-FUNDED-ACCOUNT-INTERACTION | Funding |
+| [money laundering](https://explorer.forta.network/bot/0x4adff9a0ed29396d51ef3b16297070347aab25575f04a4e2bd62ec43ca4508d2) | 0x4adff9a0ed29396d51ef3b16297070347aab25575f04a4e2bd62ec43ca4508d2 | POSSIBLE-MONEY-LAUNDERING-TORNADO-CASH | MoneyLaundering |
+| [txt messaging bot](https://explorer.forta.network/bot/0x11b3d9ffb13a72b776e1aed26616714d879c481d7a463020506d1fb5f33ec1d4) |  0x11b3d9ffb13a72b776e1aed26616714d879c481d7a463020506d1fb5f33ec1d4| forta-text-messages-possible-hack | Exploitation |
+| [unverified contract creation](https://explorer.forta.network/bot/0x4c7e56a9a753e29ca92bd57dd593bdab0c03e762bdd04e2bc578cb82b842c1f3) |  0x4c7e56a9a753e29ca92bd57dd593bdab0c03e762bdd04e2bc578cb82b842c1f3 | UNVERIFIED-CODE-CONTRACT-CREATION | Preparation |
+| [flashbot attack bot](https://explorer.forta.network/bot/0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5) |  0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5 | FLASHBOT-TRANSACTION | Exploitation |
+| [Malicious Address Bot](https://explorer.forta.network/bot/0xd935a697faab13282b3778b2cb8dd0aa4a0dde07877f9425f3bf25ac7b90b895) |  0xd935a697faab13282b3778b2cb8dd0aa4a0dde07877f9425f3bf25ac7b90b895 | AE-MALICIOUS-ADDR | Exploitation |
+| [Sleep Minting](https://explorer.forta.network/bot/0x46ce98e921e2766a922840a56e89f24409001052c284e0bd6cbaa4fecd95e9b6) |  0x46ce98e921e2766a922840a56e89f24409001052c284e0bd6cbaa4fecd95e9b6 | SLEEPMINT-2, SLEEPMINT-1 | Preparation |
+| [Aztec funded contract interaction](https://explorer.forta.network/bot/0x127e62dffbe1a9fa47448c29c3ef4e34f515745cb5df4d9324c2a0adae59eeef) | 0x127e62dffbe1a9fa47448c29c3ef4e34f515745cb5df4d9324c2a0adae59eeef| AK-AZTEC-PROTOCOL-FUNDED-ACCOUNT-INTERACTION-0 | Exploitation |
+| [CEX Funding bot](https://explorer.forta.network/bot/0xf496e3f522ec18ed9be97b815d94ef6a92215fc8e9a1a16338aee9603a5035fb) |  0xf496e3f522ec18ed9be97b815d94ef6a92215fc8e9a1a16338aee9603a5035fb | CEX-FUNDING-1 | Funding |
+| [Aztec Funding bot](https://explorer.forta.network/bot/0x9fbf4db19f23627633d86bb1936dabad0b27ebe09b7a38028a126392156f7f32) |  0x9fbf4db19f23627633d86bb1936dabad0b27ebe09b7a38028a126392156f7f32 | AK-AZTEC-PROTOCOL-FUNDING | Funding |
+| [Malicious Account Funding Bot](https://explorer.forta.network/bot/0x2df302b07030b5ff8a17c91f36b08f9e2b1e54853094e2513f7cda734cf68a46) | 0x2df302b07030b5ff8a17c91f36b08f9e2b1e54853094e2513f7cda734cf68a46 | MALICIOUS-ACCOUNT-FUNDING | Funding |
+| [Umbra bot](https://explorer.forta.network/bot/0xdba64bc69511d102162914ef52441275e651f817e297276966be16aeffe013b0) |  0xdba64bc69511d102162914ef52441275e651f817e297276966be16aeffe013b0 | UMBRA-RECEIVE | Funding |
+| [ChangeNow Funding](https://explorer.forta.network/bot/0x9324d7865e1bcb933c19825be8482e995af75c9aeab7547631db4d2cd3522e0e) |  0x9324d7865e1bcb933c19825be8482e995af75c9aeab7547631db4d2cd3522e0e | FUNDING-CHANGENOW-NEW-ACCOUNT | Funding |
+| [Malicious Token ML](https://explorer.forta.network/bot/0x887678a85e645ad060b2f096812f7c71e3d20ed6ecf5f3acde6e71baa4cf86ad) |  0x887678a85e645ad060b2f096812f7c71e3d20ed6ecf5f3acde6e71baa4cf86ad | SUSPICIOUS-TOKEN-CONTRACT-CREATION | Preparation |
+| [NFT Washtrading](https://explorer.forta.network/bot/0x067e4c4f771f288c686efa574b685b98a92918f038a478b82c9ac5b5b6472732) |  0x067e4c4f771f288c686efa574b685b98a92918f038a478b82c9ac5b5b6472732 | NFT-WASH-TRADE | Preparation | 
