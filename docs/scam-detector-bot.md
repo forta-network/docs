@@ -19,7 +19,7 @@ Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuri
 The Scam Detector currently monitors on-chain activity for the following threat types:
 
 
-- [Ice phishing](https://explorer.forta.network/bot/0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0)
+- [Ice phishing](https://explorer.forta.network/bot/0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14)
 - [Social engineering native ice phishing](https://explorer.forta.network/bot/0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0)
 - [Fraudulent Seaport/Blur orders](https://explorer.forta.network/bot/0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c)
 - [Address poisoning](https://explorer.forta.network/bot/0x98b87a29ecb6c8c0f8e6ea83598817ec91e01c15d379f03c7ff781fd1141e502)
