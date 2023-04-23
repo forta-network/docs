@@ -10,7 +10,7 @@ The Scam Detector provides threat intelligence about malicious smart contracts a
 Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuristic-based approach, others leverage machine learning to identify malicious activity. When bots identify an attack or scam on-chain, they create two types of threat intelligence:
 
 
-- **Labels.** A persistent tag placed on an entity (smart contract or EOA) responsible for a scam or attack. Today, the Scam Detector assigns two labels: “scammer-eoa” and “scammer-contract”. Labels also feature the threat type via the alert ID field (ex: ICE PHISHING), a link to the description of the alert ID, and a confidence score from 0 to 1.  
+- **Labels.** A persistent tag placed on an entity (smart contract or EOA) responsible for a scam or attack. Today, the Scam Detector assigns two labels: “scammer-eoa” and “scammer-contract”. Labels also feature the threat type via the alert ID field (ex: ICE PHISHING), a link to the description of the alert ID, and a confidence score from 0 to 1. 
 
 
 - **Alerts.** Findings emitted in real-time by a bot about something that happened on-chain. Example, if a flashloan occurred in the last block, a bot monitoring for flashloan transactions would emit an alert on that flashloan when the next block is confirmed. Alerts from the Scam Detector contain metadata about the transaction(s) that triggered the alert, the entities involved and the threat type.      
@@ -19,11 +19,11 @@ Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuri
 The Scam Detector currently monitors on-chain activity for the following threat types:
 
 
-- Ice phishing
-- Social engineering native ice phishing
-- Fraudulent Seaport/Blur orders
-- Address poisoning
-- NFT Wash trading
+- [Ice phishing](https://explorer.forta.network/bot/0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0)
+- [Social engineering native ice phishing](https://explorer.forta.network/bot/0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0)
+- [Fraudulent Seaport/Blur orders](https://explorer.forta.network/bot/0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c)
+- [Address poisoning](https://explorer.forta.network/bot/0x98b87a29ecb6c8c0f8e6ea83598817ec91e01c15d379f03c7ff781fd1141e502)
+- [NFT Wash trading](https://explorer.forta.network/bot/0x067e4c4f771f288c686efa574b685b98a92918f038a478b82c9ac5b5b6472732)
 
 
 New threat types are regularly added to the Scam Detector by the Forta community. 
@@ -32,12 +32,14 @@ New threat types are regularly added to the Scam Detector by the Forta community
 Here’s a [glossary](https://forta.org/attacks/) defining threat types in more detail. 
 
 ## Using the Scam Detector  
-Scam Detector *labels* and *alerts* are each available in the Forta GraphQL API. For accessing threat intel from the Scam Detector, we recommend querying labels.  **Currently, no API key is required.** 
+The Scam Detector *labels* and *alerts* are each available via Forta's GraphQL API. For accessing threat intel from the Scam Detector, we recommend querying labels.  **Currently, no API key is required.** 
 
 ### *Labels*
-Labels allow a contributor to tag an entity (like an address) with a label.  Labels are available via our [GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels).  This API allows one to search by date range and page over results.
+Labels allow a contributor to tag an entity (like an address) with a label.  Labels are available via our [GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels). This API allows one to search by date range and page over results.
 
 Labels will also contain references to other artifacts, such as Alerts, in the **source** properties of the response.  One can also use the GraphQL API to retrieve the alert which will contain other key information about the moment the Label was produced.
+
+A recent two week sample of the labels can be downloaded [here](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230406-20230420.csv).
 
 **Note:** 
 
