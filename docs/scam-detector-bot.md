@@ -39,7 +39,7 @@ Labels allow a contributor to tag an entity (like an address) with a label.  Lab
 
 Labels will also contain references to other artifacts, such as Alerts, in the **source** properties of the response.  One can also use the GraphQL API to retrieve the alert which will contain other key information about the moment the Label was produced.
 
-A recent two week sample of the labels can be downloaded [here](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230406-20230420.csv).
+A recent two week sample of the labels can be downloaded [here](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230410-20230424.csv).
 
 **Note:** 
 
