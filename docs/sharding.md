@@ -1,8 +1,10 @@
 # Increasing bot throughput with sharding
 
-Some detection bots may have difficulty keeping up with the volume of blocks/transactions (either because of the bot's logic, or due to the speed of the blockchain being scanned). One solution is to use sharding to increase throughput for your detection bot. With sharding, you can increase the number of instances of your detection bot and split the blocks/transactions across these instances.
+Some detection bots may have difficulty keeping up with the volume of blocks/transactions/alerts (either because of the bot's logic, or due to the speed of the blockchain being scanned). One solution is to use sharding to increase throughput for your detection bot. With sharding, you can increase the number of instances of your detection bot and split the blocks/transactions/alerts across these instances.
 
-By default, each detection bot is deployed to multiple scan nodes (currently, 3 per each chain being scanned) and each of these 3 bot instances receive **all** of the blocks/transactions for the chain being scanned. Another way to say this: by default, a detection bot _targets_ 3 instances with only 1 _shard_ per instance.
+By default, each detection bot is deployed to multiple scan nodes (currently, 3 per each chain being scanned) and each of these 3 bot instances receive **all** of the blocks/transactions/alerts for the chain being scanned. Another way to say this: by default, a detection bot _targets_ 3 instances with only 1 _shard_ per instance.
+
+Sharding for transactions/blocks is based on the block number; sharding for alerts is based on the alert timestamp.
 
 ## Enabling sharding
 
@@ -17,7 +19,7 @@ To enable sharding, you need to configure it in your package.json using the `cha
 }
 ```
 
-The above configuration only applies to the Ethereum chain (as indicated by the `"1"` key), and targets 2 bot instances with 2 shards each i.e. the total number of bot shards will be 2 x 2 = 4. Each shard will receive only half of the Ethereum blocks/transactions. With this configuration in package.json, you just need to publish the bot using `npm run publish` to deploy the shards.
+The above configuration only applies to the Ethereum chain (as indicated by the `"1"` key), and targets 2 bot instances with 2 shards each i.e. the total number of bot shards will be 2 x 2 = 4. Each shard will receive only half of the Ethereum blocks/transactions/alerts. With this configuration in package.json, you just need to publish the bot using `npm run publish` to deploy the shards.
 
 Currently, the maximum number of possible shards is 6. It is also worth mentioning that each shard can potentially be running on a different scan node.
 
@@ -43,7 +45,7 @@ In this configuration, the bot is deployed to 4 different chains (as indicated b
 
 ## How to determine the right sharding configuration?
 
-Sharding is needed if your bot is unable to keep up with the transaction throughput of the chain. It essentially is too slow. For instance, BSC adds a block every 3 seconds; recently, there are about 70 tx in each block on average. This means, the bot needs to process a tx in approximately 40ms. If your bot is slower than this, the bot may fall behind and transactions are dropped. 
+Sharding is needed if your bot is unable to keep up with the transaction/block/alert throughput of the chain. It essentially is too slow. For instance, BSC adds a block every 3 seconds; recently, there are about 70 tx in each block on average. This means, the bot needs to process a tx in approximately 40ms. If your bot is slower than this, the bot may fall behind and transactions are dropped. 
 
 The first step would be to assess whether the bot indeed drops transactions. The bot health page provides insights through the Dropped view ([example](https://explorer.forta.network/bot/0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400)).
 
