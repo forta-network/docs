@@ -12,7 +12,7 @@ If [logging is enabled](deploying.md#enable-logging-optional), bot logs are upda
 
 In the Forta App, you can view the latest logs from your bot's health page (i.e. `https://explorer.forta.network/bot/YOUR_BOT_ID`). Simply click on the 'Log Data' button near the top of the page.
 
-Using the Forta API, you can programmatically fetch the latest logs from `https://api.forta.network/logs/agents/YOUR_BOT_ID`. To enable JSON format responses, you can specify the `Accept: application/json` header in your request. By default, the logs API will return the most recent logs but you can query previous logs using the `minute` query param. By specifying a minute in RFC3339 format (e.g. `https://api.forta.network/logs/agents/YOUR_BOT_ID?minute=2019-10-12T07:20:50.52Z`), you can view previous logs. Note that not every minute may have logs.
+Using the Forta API, you can programmatically fetch the latest logs from `https://api.forta.network/logs/agents/YOUR_BOT_ID`. To enable JSON format responses, you can specify the `Accept: application/json` header in your request. By default, the logs API will return the most recent logs but you can query previous logs using the `minute` query param. By specifying a minute in RFC3339 format (e.g. `https://api.forta.network/logs/agents/YOUR_BOT_ID?minute=2023-04-12T07:20:00.00Z`), you can view previous logs. Note that not every minute may have logs.
 
 You can also use the [CLI command](cli.md#logs) `npm run logs` to see recent logs.
 
