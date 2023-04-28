@@ -1,5 +1,8 @@
 # Increasing bot throughput with sharding
 
+!!! note "Only supported in CLI"
+      Sharding is currently only supported by the `forta-agent` CLI (i.e. you cannot enable sharding from the Forta App UI)
+
 Some detection bots may have difficulty keeping up with the volume of blocks/transactions/alerts (either because of the bot's logic, or due to the speed of the blockchain being scanned). One solution is to use sharding to increase throughput for your detection bot. With sharding, you can increase the number of instances of your detection bot and split the blocks/transactions/alerts across these instances.
 
 By default, each detection bot is deployed to multiple scan nodes (currently, 3 per each chain being scanned) and each of these 3 bot instances receive **all** of the blocks/transactions/alerts for the chain being scanned. Another way to say this: by default, a detection bot _targets_ 3 instances with only 1 _shard_ per instance.
