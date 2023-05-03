@@ -1,4 +1,4 @@
-# Machine Learning at Forta
+# Why Machine Learning?
 
 Machine learning is an essential tool in a defender’s toolbox. The Forta Network supports a broad range of machine learning approaches, which are manifested in several bots deployed on the network today, which empowers the network to identify similar attacks as well as completely unknown attacks.
 
