@@ -16,7 +16,7 @@ hide:
 
     Subscribe to get real-time alerts on threats and anomalies.
 
-    [:octicons-arrow-right-24: Subscribe to security alerts](receive-forta-alerts.md)
+    [:octicons-arrow-right-24: Subscribe to security alerts](getting-started.md)
 
 -   :tools:{ .lg .middle } __Build Detection Bots__
 
