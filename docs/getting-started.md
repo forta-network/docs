@@ -28,6 +28,6 @@ You can also explore the 1,000+ individual bots running on the network using the
 
 As a developer, you can use a suite of tools to develop new detection bots. 
 
-- **Build Detection Bots with the SDK**: Use the flexible Forta SDK to develop customized Detection Bots for your monitoring needs. [Get started here](https://docs.forta.network/en/latest/getting-started-with-bots/).
+- **Build Detection Bots with the SDK**: Use the flexible Forta SDK to develop customized Detection Bots for your monitoring needs. [Get started here](https://docs.forta.network/en/latest/forta-quickstart/).
 - **Build Detection Bots with the Bot Wizard**: Create and deploy a Detection Bot through a UI, no code required. [Learn how to create your custom bot.](https://docs.forta.network/en/latest/wizard/)
 - **Commission Bots to the Community**: Get connected to community members and development partners who have vast experience developing taylormade bots based on your requirements. Reach out to [andy@forta.org](andy@forta.org) for more details.
