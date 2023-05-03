@@ -16,7 +16,7 @@ Helping test the following tools by simply using them is a great way to contribu
 
 - [Forta App](https://app.forta.network/): Deploy new bots and subscribe to alerts.
 - [Forta Explorer](https://explorer.forta.network/): Monitor bots and alerts.
-- [Forta API](api.md): Integrate alerts into your monitoring tools or dApps.
+- [Forta API](authentication.md): Integrate alerts into your monitoring tools or dApps.
 
 See a bug or have an idea for improvement? Share it in Discord!
 
@@ -40,4 +40,4 @@ Scan nodes are a key piece of Forta infrastructure as they help run bots and sha
 
 There’s a unique opportunity for the community to take advantage of the open data and collaborate on new data science and machine learning solutions together. For example, the community can begin to extract trends and insights from historical alerts that may be helpful to improving blockchain security. And with the right tools and data, Forta can also begin to detect threats and exploits before they happen with increasing accuracy over time.
 
-Do you need access to historical alerts soon for data analysis or for your bot? If so, check out [Forta API](api.md).
+Do you need access to historical alerts soon for data analysis or for your bot? If so, check out [Forta API](authentication.md).

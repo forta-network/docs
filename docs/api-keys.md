@@ -1,6 +1,6 @@
 # API Keys
 
-In order to use the [Forta GraphQL API](api.md), you will need an API key.
+In order to use the [Forta GraphQL API](authentication.md), you will need an API key.
 
 ## Creating an API Key
 
