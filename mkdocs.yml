@@ -1,6 +1,11 @@
 site_name: Forta Docs
 
 nav:
+  - <strong>Using Forta</strong>:
+    - Getting Started: getting-started.md
+    - Scam Detector Bot: scam-detector-bot.md
+    - Attack Detector Bot: attack-detector-bot.md
+    - Use Cases: api-example-use-cases.md
   - <strong>Receive Forta Alerts</strong>:
       - Getting started: receive-forta-alerts.md
       - Curated Bots:
@@ -9,10 +14,8 @@ nav:
       - Access real-time alerts with GraphQL:
           - API Access: api.md
           - GraphQL API reference: forta-api-reference/index.html
-          - Example use cases: api-example-use-cases.md
           - Example queries & tutorials: api-examples-tutorials.md
   - <strong>Build Detection Bots</strong>:
-      - Getting started: getting-started.md
       - Build your first detection bot:
           - 1) Quick start: quickstart.md
           - 2) Testing your bot: testing.md
