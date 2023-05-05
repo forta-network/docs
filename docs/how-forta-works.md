@@ -1,6 +1,6 @@
 # How Forta works
 
-The Forta Network has two main components – detection bots and scan nodes. Detection bots are pieces of logic (scripts) that look for certain transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any supported chain. Nodes run detection bots against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. Forta will also maintain an automated public registry of all alerts, and anyone interested in the security of a contract can consume relevant alerts via the [Forta Explorer](https://explorer.forta.network/) or [API](authentication.md).
+The Forta Network has two main components – detection bots and scan nodes. Detection bots are pieces of logic (scripts) that look for certain transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any supported chain. Nodes run detection bots against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. Forta will also maintain an automated public registry of all alerts, and anyone interested in the security of a contract can consume relevant alerts via the [Forta Explorer](https://explorer.forta.network/) or [API](api.md).
 
 There is value in the negative signal too – knowing that detection bots are running 24/7 and not triggering alerts. Forta will maintain an automated record of the detection bots run by each node, for each block.
 
