@@ -14,7 +14,7 @@ nav:
       - Scam Detector: scam-detector-bot.md
       - Attack Detector: attack-detector-bot.md
   - <strong>Build Detection Bots</strong>:
-    - Quickstart: bots-quickstart.md
+    - Quickstart: forta-quickstart.md
     - Develop a Bot with the SDK:
       - 1) Quick start: quickstart.md
       - 2) Testing your bot: testing.md

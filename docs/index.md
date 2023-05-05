@@ -16,7 +16,7 @@ hide:
 
     Access Forta's Threat Intel to detect Web3 hacks.
 
-    [:octicons-arrow-right-24: Subscribe to security alerts](getting-started.md)
+    [:octicons-arrow-right-24: Learn How to Use Forta](getting-started.md)
 
 -   :gear:{ .lg .middle } __Integrate With the API__
 
@@ -32,7 +32,7 @@ hide:
 
     As a developer, you can use a suite of tools to develop new detection bots.
 
-    [:octicons-arrow-right-24: Bots quick start](bots-quickstart.md)
+    [:octicons-arrow-right-24: Bots quick start](forta-quickstart.md)
 
 -   :material-server:{ .lg .middle } __Run a Scan Node__
 
