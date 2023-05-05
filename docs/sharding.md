@@ -9,6 +9,8 @@ By default, each detection bot is deployed to multiple scan nodes (currently, 3 
 
 Sharding for transactions/blocks is based on the block number; sharding for alerts is based on the alert timestamp.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tTUrtvFgC34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Enabling sharding
 
 To enable sharding, you need to configure it in your package.json using the `chainSettings` property. Here is a simple example of a sharding configuration:

@@ -1,160 +1,118 @@
 site_name: Forta Docs
 
 nav:
-  - <strong>Receive Forta Alerts</strong>:
-      - Getting started: receive-forta-alerts.md
-      - Curated Bots:
-          - Scam Detector Bot: scam-detector-bot.md
-          - Attack Detector Bot: attack-detector-bot.md
-      - Access real-time alerts with GraphQL:
-          - API Access: api.md
-          - GraphQL API reference: forta-api-reference/index.html
-          - Example use cases: api-example-use-cases.md
-          - Example queries & tutorials: api-examples-tutorials.md
+  - <strong>Using Forta</strong>:
+    - Getting Started: getting-started.md
+    - Scam Detector Bot: scam-detector-bot.md
+    - Attack Detector Bot: attack-detector-bot.md
+    - Use Cases: api-example-use-cases.md
+  - <strong>Integrate With the API</strong>:
+    - Overview: api.md
+    - Authentication: api-keys.md
+    - GraphQL Reference: forta-api-reference/index.html
+    - Examples:
+      - Scam Detector: scam-detector-bot.md
+      - Attack Detector: attack-detector-bot.md
   - <strong>Build Detection Bots</strong>:
-      - Getting started: getting-started.md
-      - Build your first detection bot:
-          - 1) Quick start: quickstart.md
-          - 2) Testing your bot: testing.md
-          - 3) Deploying your bot: deploying.md
-          - 4) Subscribing to alerts: subscribing.md
-          - 5) Maintaining your bot: maintaining.md
-          - Best practices: best-practices.md
-          - Video tutorials: tutorials.md
-      - Detection bot wizard: wizard.md
-      - Bot development patterns:
-          - Increasing bot throughput: sharding.md
-          - Protecting sensitive data: sensitive-data.md
-          - JWT authentication for bots: jwt-auth.md
-          - Consuming bot alerts: handle-alert.md
-          - Adding labels to findings: labels.md
-          - Private alerts: private-alerts.md
-          - Transaction simulation: tx-simulation.md
-          - Long running tasks: long-running-tasks.md
-          - Querying other chains: querying-chains.md
-          - Error monitoring: error-monitoring.md
-          - Advanced testing: advanced-testing.md
-          - Time series analysis: time-series-analysis.md
-          - Deploying machine learning models: deploying-ml-models.md
+    - Quickstart: bots-quickstart.md
+    - Develop a Bot with the SDK:
+      - 1) Quick start: quickstart.md
+      - 2) Testing your bot: testing.md
+      - 3) Deploying your bot: deploying.md
+      - 4) Subscribing to alerts: subscribing.md
+      - 5) Maintaining your bot: maintaining.md
       - Tools:
           - Useful libraries: useful-libraries.md
           - Javascript/Typescript SDK: sdk.md
           - Python SDK: python.md
           - CLI commands: cli.md
           - forta.config.json: config.md
-      - Stake on your Bot: stake-on-detection-bot.md
-      - Transfer Bot Ownership: bot-transfer-ownership.md
-      - Bot developer contests:
-          - Compound Contest (10/20/2021): contest1-compound.md
-          - Aave Contest (11/3/2021): contest2-aave.md
-          - OpenZeppelin Contest (11/18/2021): contest3-oz.md
-          - Forta Contest (12/17/2021): contest4-forta.md
-          - Solace Contest (3/1/2022): contest5-solace.md
-          - Forta Contest 2 (4/27/2022): contest6-forta.md
-          - Forta Contest 3 (6/17/2022): contest7-forta.md
-          - Forta Contest 4 (8/31/2022): contest8-forta.md
-          - Forta Contest 5 (10/11/2022): contest9-forta.md
-          - Forta Contest 6 (11/8/2022): contest10-forta.md
+      - Best practices: best-practices.md
+      - Video tutorials: tutorials.md
       - Integrating with Hardhat: hardhat.md
+      - CLI Reference: deploying-cli.md
+    - Develop a Bot with the Bot Wizard: wizard.md
+    - Bot Examples: https://github.com/forta-network/forta-bot-examples
+    - Bot Development:
+      - Intro: bot-development-patterns.md
+      - Adding labels to findings: labels.md
+      - Error monitoring: error-monitoring.md
+      - Increasing bot throughput: sharding.md
+      - Long running tasks: long-running-tasks.md
+      - Protecting sensitive data: sensitive-data.md
+      - Private alerts: private-alerts.md
+      - JWT authentication for bots: jwt-auth.md
+      - Deploying machine learning models: deploying-ml-models.md
+      - Time series analysis: time-series-analysis.md
+      - Consuming bot alerts: handle-alert.md
+      - Transfer Bot Ownership: bot-transfer-ownership.md
+      - Transaction simulation: tx-simulation.md
+      - Advanced testing: advanced-testing.md
+      - Querying other chains: querying-chains.md
+    - Bot Development Contests:
+      - Compound Contest (10/20/2021): contest1-compound.md
+      - Aave Contest (11/3/2021): contest2-aave.md
+      - OpenZeppelin Contest (11/18/2021): contest3-oz.md
+      - Forta Contest (12/17/2021): contest4-forta.md
+      - Solace Contest (3/1/2022): contest5-solace.md
+      - Forta Contest 2 (4/27/2022): contest6-forta.md
+      - Forta Contest 3 (6/17/2022): contest7-forta.md
+      - Forta Contest 4 (8/31/2022): contest8-forta.md
+      - Forta Contest 5 (10/11/2022): contest9-forta.md
+      - Forta Contest 6 (11/8/2022): contest10-forta.md
   - <strong>Run a Scan Node</strong>:
       - Quickstart: scanner-quickstart.md
-      - Manage pools and stake: scanner-pools.md
-      - SLA score calculation: sla.md
-      - SLA API: sla-api.md
       - Local mode: scanner-local-mode.md
       - Scan with Alchemy: alchemy-partnership.md
       - Scan with Chainstack: scan-with-chainstack.md
-      - Direct withdrawal: scanner-direct-withdrawal.md
-  - <strong>Stake FORT Tokens</strong>:
-      - Delegated staking: delegated-staking-introduction.md
       - Manage pools and stake: scanner-pools.md
+      - Monitoring SLA:
+        - SLA Score Calculation: sla.md
+        - SLA API: sla-api.md
+  - <strong>Delegate FORT token</strong>:
+      - Delegated staking: delegated-staking-introduction.md
       - Claim rewards: delegated-staking-rewards.md
-  - <strong>Machine Learning at Forta</strong>:
-      - Machine Learning at Forta: ml-with-forta.md
-      - Machine Learning Datasets and Resources: ml-data-resources.md
+      - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>About Forta</strong>:
-      - What is Forta: what-is-forta.md
-      - FORT token: fort-token.md
-      - Stake Slashing:
-          - Slashing Policy: slashing-policy.md
-          - Creating a Slash Proposal: slashing-creating-proposal.md
-      - Governance: governance.md
-      - Smart contracts:
-          - Intro & Addresses: smart-contracts.md
-          - Components:
-              - Access: contracts/components/access/AccessManager.md
-              - Agents (Detection Bots):
-                  - AgentRegistry: contracts/components/agents/AgentRegistry.md
-                  - AgentRegistryCore: contracts/components/agents/AgentRegistryCore.md
-                  - AgentRegistryEnable: contracts/components/agents/AgentRegistryEnable.md
-                  - AgentRegistryEnumerable: contracts/components/agents/AgentRegistryEnumerable.md
-                  - AgentRegistryMetadata: contracts/components/agents/AgentRegistryMetadata.md
-              - Dispatch:
-                  - Dispatch: contracts/components/metatx/EIP712WithNonce.md
-              - MetaTx:
-                  - EIP712WithNonce: contracts/components/dispatch/Dispatch.md
-                  - Forwarder: docs/contracts/components/metatx/Forwarder.md
-              - Scanners:
-                  - ScannerNodeVersion: contracts/components/scanners/ScannerNodeVersion.md
-                  - ScannerRegistry: contracts/components/scanners/ScannerRegistry.md
-                  - ScannerRegistryCore: contracts/components/scanners/ScannerRegistryCore.md
-                  - ScannerRegistryEnable: contracts/components/scanners/ScannerRegistryEnable.md
-                  - ScannerRegistryManaged: contracts/components/scanners/ScannerRegistryManaged.md
-                  - ScannerRegistryMetadata: contracts/components/scanners/ScannerRegistryMetadata.md
-              - Staking:
-                  - FortaStaking: contracts/components/staking/FortaStaking.md
-                  - FortaStakingParameters: contracts/components/staking/FortaStakingParameters.md
-                  - FortaStakingUtils: contracts/components/staking/FortaStakingUtils.md
-                  - ISlashingExecutor: contracts/components/staking/ISlashingExecutor.md
-                  - IStakeController: contracts/components/staking/IStakeController.md
-                  - IStakeSubject: contracts/components/staking/IStakeSubject.md
-                  - SlashingController: contracts/components/staking/SlashingController.md
-                  - StakeSubject: contracts/components/staking/StakeSubject.md
-                  - SubjectTypes: contracts/components/staking/SubjectTypes.md
-              - Utils:
-                  - AccessManaged: contracts/components/utils/AccessManaged.md
-                  - ForwardedContext: contracts/components/utils/ForwardedContext.md
-                  - IVersioned: contracts/components/utils/IVersioned.md
-                  - StateMachines: contracts/components/utils/StateMachines.md
-              - BaseComponentUpgradeable: contracts/components/BaseComponentUpgradeable.md
-              - Roles: contracts/components/Roles.md
-              - Errors: contracts/errors/GeneralErrors.md
-              - Token:
-                  - Forta: contracts/token/Forta.md
-                  - FortaBridgedPolygon: contracts/token/FortaBridgedPolygon.md
-                  - FortaCommon: contracts/token/FortaCommon.md
-              - Tools:
-                  - Distributions: contracts/tools/Distributions.md
-      - Security at Forta:
-          - Security Overview: security.md
-          - Design: security-design.md
-          - Development: security-develop.md
-          - Deployment: security-deploy.md
-          - Testing and Review: security-testing.md
-          - Maintenance: security-maintain.md
-      - Web3 Security Course:
-          - Introduction & Goals: forta-session-1a.md
-          - Motivation of Blockchain: forta-session-1b.md
-          - Blockchain History: forta-session-2a.md
-          - Ethereum & Blockchain Use Cases: forta-session-2b.md
-          - Cryptography Pt.1: forta-session-3.md
-          - Cryptography Pt.2: forta-session-4a.md
-          - Cryptography Pt.3: forta-session-4b.md
-          - Ethereum Scratching the Surface: forta-session-5.md
-          - Blockchain Explorer and DevCon Notes: forta-session-6.md
-          - Practical Lesson - Web3 APIs: forta-session-7.md
-          - Smart Contracts Pt.1: forta-session-8a.md
-          - Smart Contracts Pt.2: forta-session-8b.md
-          - Storage Slots, Deployment with Remix & Tenderly: forta-session-9.md
-          - Smart Contract Security: forta-session-10.md
-          - Guest Lecture with Elizabeth Dinella: forta-session-11a.md
-          - Blockchain Security Introduction: forta-session-11b.md
-          - Comprehensive Security Strategies in Web3: forta-session-12.md
-          - Threat Modeling Exercise: forta-session-13.md
-          - Ethernaut Challenge Walkthrough: forta-session-14.md
-          - Where Is the Industry Going: forta-session-15.md
-      - How to contribute: contributing.md
-      - FAQ: faq.md
+    - What is Forta: what-is-forta.md
+    - FORT token: fort-token.md
+    - Governance: governance.md
+    - How to contribute: contributing.md
+    - Web3 Security Course:
+      - Introduction & Goals: forta-session-1a.md
+      - Motivation of Blockchain: forta-session-1b.md
+      - Blockchain History: forta-session-2a.md
+      - Ethereum & Blockchain Use Cases: forta-session-2b.md
+      - Cryptography Pt.1: forta-session-3.md
+      - Cryptography Pt.2: forta-session-4a.md
+      - Cryptography Pt.3: forta-session-4b.md
+      - Ethereum Scratching the Surface: forta-session-5.md
+      - Blockchain Explorer and DevCon Notes: forta-session-6.md
+      - Practical Lesson - Web3 APIs: forta-session-7.md
+      - Smart Contracts Pt.1: forta-session-8a.md
+      - Smart Contracts Pt.2: forta-session-8b.md
+      - Storage Slots, Deployment with Remix & Tenderly: forta-session-9.md
+      - Smart Contract Security: forta-session-10.md
+      - Guest Lecture with Elizabeth Dinella: forta-session-11a.md
+      - Blockchain Security Introduction: forta-session-11b.md
+      - Comprehensive Security Strategies in Web3: forta-session-12.md
+      - Threat Modeling Exercise: forta-session-13.md
+      - Ethernaut Challenge Walkthrough: forta-session-14.md
+      - Where Is the Industry Going: forta-session-15.md
+    - Stake Slashing:
+        - Slashing Policy: slashing-policy.md
+        - Creating a Slash Proposal: slashing-creating-proposal.md
+    - Security at Forta:
+      - Security Overview: security.md
+      - Design: security-design.md
+      - Development: security-develop.md
+      - Deployment: security-deploy.md
+      - Testing and Review: security-testing.md
+      - Maintenance: security-maintain.md
+    - FAQ: faq.md
+  - <strong>About Machine Learning</strong>:
+      - Why Machine Learning?: ml-with-forta.md
+      - Datasets and Resources: ml-data-resources.md
 
 theme:
   name: material
