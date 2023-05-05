@@ -14,7 +14,7 @@ hide:
 
     ---
 
-    Subscribe to get real-time alerts on threats and anomalies
+    Access Forta's Threat Intel to detect Web3 hacks.
 
     [:octicons-arrow-right-24: Subscribe to security alerts](getting-started.md)
 
@@ -22,7 +22,7 @@ hide:
 
     ---
 
-    Use the Forta SDK to start detecting on-chain events of interest
+    Query Forta's data via the Forta API to detect hacks and scams.
 
     [:octicons-arrow-right-24: Start building](api.md)
 
@@ -30,31 +30,31 @@ hide:
 
     ---
 
-    Use the Forta SDK to start detecting on-chain events of interest
+    As a developer, you can use a suite of tools to develop new detection bots.
 
-    [:octicons-arrow-right-24: Scanner quick start](scanner-quickstart.md)
+    [:octicons-arrow-right-24: Bots quick start](bots-quickstart.md)
 
 -   :material-server:{ .lg .middle } __Run a Scan Node__
 
     ---
 
-    Setup a scan node to run detection bots and operate the Forta network
+    Setup a scan node to run detection bots and operate the Forta network.
 
-    [:octicons-arrow-right-24: Learn more](delegated-staking-introduction.md)
+    [:octicons-arrow-right-24: Learn more](scanner-quickstart.md)
 
 -   :bank:{ .lg .middle } __Delegate FORT token__
 
     ---
 
-    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security
+    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security.
 
-    [:octicons-arrow-right-24: Learn More](ml-with-forta.md)
+    [:octicons-arrow-right-24: Learn More](delegated-staking-introduction.md)
 
 -   :information_source:{ .lg .middle } __About Forta__
 
     ---
 
-    Get a high-level understanding of Forta and learn how it works
+    Get a high-level understanding of Forta and learn how it works.
 
     [:octicons-arrow-right-24: Learn more](what-is-forta.md)
 
