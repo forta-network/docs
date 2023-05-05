@@ -7,8 +7,8 @@ nav:
     - Attack Detector Bot: attack-detector-bot.md
     - Use Cases: api-example-use-cases.md
   - <strong>Integrate With the API</strong>:
-    - Overview: a.md
-    - Authentication: authentication.md
+    - Overview: api.md
+    - Authentication: api-keys.md
     - GraphQL Reference: forta-api-reference/index.html
     - Examples:
       - Scam Detector: scam-detector-bot.md
