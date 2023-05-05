@@ -112,6 +112,38 @@ More details on querying labels can be found in our [Forta GraphQL API](https://
 
 Whereas labels tell you what the Forta Network knows about a particular entity, alerts tell you something happened (i.e. an attack). There are two ways to access alerts: the API (pull) and subscription (push). Use the GraphQL API to query for alerts - more info [here](https://docs.forta.network/en/latest/forta-api-reference/#query-alerts). Alternatively, if you want alerts *pushed* to you in real-time, you can also [subscribe](https://explorer.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) to the Scam Detector directly and select your desired communication channel (webhook, email, Discord, Telegram, Slack).    
 
+## Matching Threat Intelligence
+Forta’s threat intelligence indicators consist of scammer contracts and EOAs that can be matched against transaction data (either pre-signing, during transaction simulation, or after block building.) 
+
+Independent on the type of transaction data that will be used to match Forta's threat intelligence, specific matching logic need to be applied to obtain all relevant transactions based on the threat category observed as outlined below:
+
+### SCAM-DETECTOR-ICE-PHISHING
+Ice phishing involves a user issuing an approval, approvaForAll, increaseApproval or permit transaction. The to address is a benign token contract, but approval is granted to the scammer address specified in the input data of the transaction. As such, the input data or corresponding emitted events for approvals, approval for all and permit transactions need to be parse and the spender value ought to be matched against Forta’s threat intelligence.
+
+### SCAM-DETECTOR-FRAUDULENT-SEAPORT-ORDER
+Fraudulent seaport orders are challenging to match against the Forta’s threat intelligence as the order is merely signed by a user, collected through web2 infrastructure (such as a web site) and then submitted by the scammer on the user’s behalf. The order itself does not include the scammer address. 
+
+However, the order gets executed by the scammer, so matching the from field will match those transactions. Once executed, the seaport protocol will transfer the digital assets to the scammer (which could be a different address from the invoking EOA) and matching emitted events for transfers would yield all relevant transactions. 
+
+### SCAM-DETECTOR-ADDRESS-POISONING
+Address poisoning results in a user’s address history to be poisoned using token transfers or native asset dust. Matching should happen at two levels:
+1. Match on any parsed transfer input data fields or corresponding event emissions for tokens. Note, either the to or the from could match the scammer.
+2. Match on the from address for native assets transfers. 
+
+### SCAM-DETECTOR-ADDRESS-POISONER
+Address poisoners are the initiator of the address poisoning activity. A simple matching of the from and to field (if a contract) would yield the relevant transactions.
+
+### SCAM-DETECTOR-NATIVE-ICE-PHISHING/ SCAM-DETECTOR-SOCIAL-ENG-NATIVE-ICE-PHISHING
+Native ice phishing are straight transfers of native assets to the scammer. Matching the to address of the transaction against Forta threat intelligence yield transactions for this type of scam.
+
+### SCAM-DETECTOR-WASH-TRADE
+Wash trading artificially inflates the value and trading volume of digital assets the user may hold. In order identify transactions associated with these wash traded digital assets, the scammer addresses need to be matched against to/ from/ input data fields/ and emitted events. 
+
+In addition, however, the actual wash traded digital asset is tainted and can be tracked by the transfer function. Note, given the contract could emit events with incorrect information - if created by the scammer; it is not a reliable data source. 
+
+### SCAM-DETECTOR-SLEEP-MINTING
+Sleep minting is similar to wash trading in that the provenance of an NFT is no longer guaranteed. In order track the sleep minted token by the transfer function. Note, given the contract could emit events with incorrect information, which is prevalent in sleep minting attacks; it is not a reliable data source. 
+
 ## What chains are supported?
 
 - Ethereum
