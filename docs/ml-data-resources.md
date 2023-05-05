@@ -1,4 +1,4 @@
-# Machine Learning Datasets and Resources
+# Datasets and Resources
 
 ## Detection Bots and Templates Utilizing ML
 

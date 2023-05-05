@@ -10,7 +10,7 @@ In this session we will cover the following topics:
 ## Assignments
 **Complete the following readings:** 
 
-- [Review Forta documentation on developing a detection bot](/getting-started/)
+- [Review Forta documentation on developing a detection bot](/forta-quickstart/)
 
 **Complete the following assigments:** 
 
