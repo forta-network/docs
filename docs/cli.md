@@ -158,6 +158,16 @@ Options:
 --config - specify a config file to use (default: forta.config.json)
 ```
 
+## stake
+
+Stake on your detection bot to make it operational on the Forta Network. This command will deposit a stake of 100 FORT tokens on your detection bot (if not already staked).
+
+Options:
+
+```
+--agentId - specify an agent ID to stake on (defaults to this bot)
+```
+
 ## logs
 
 Retrieves logs for specified bot id and prints them to the console. The default `agentId` is read from `forta.config.json` unless specified.

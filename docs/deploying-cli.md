@@ -56,7 +56,13 @@ This message contains your bot ID (i.e. `0x855b1556a45637abf05c63407437f6f305b46
 
 ## Staking
 
-In order to enable your bot, it must be staked with 100 FORT tokens. You can easily stake on your bot by following the steps [here](stake-on-detection-bot.md).
+In order to enable your bot, it must be staked with 100 FORT tokens. You can easily stake on your detection bot using the following command:
+
+```
+npm run stake
+```
+
+If you prefer to stake using a UI, you can do so by following the steps [here](stake-on-detection-bot.md).
 
 Congratulations! You have successfully deployed your first Forta bot!
 
