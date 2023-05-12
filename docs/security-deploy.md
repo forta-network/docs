@@ -30,6 +30,7 @@ The administrative multisig has the following roles:
 ### Roles
 
 Complete list of roles with a description:
+
 - Forta Token (0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29):
     - ADMIN_ROLE: General admin role granted to account with ability to set ENS and upgrade contract.
     - MINTER_ROLE: Role granted to account with the access to mint more FORT tokens.
@@ -84,23 +85,23 @@ If you are going to interact with an Upgradeable contract, **always use the Prox
 | Access | [0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3](https://polygonscan.com/address/0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3) | [0xc855d842ff0af97b0d18cc81eecbb702ea1a0706](https://polygonscan.com/address/0xc855d842ff0af97b0d18cc81eecbb702ea1a0706) |
 | Agents (Detection Bots) | [0x61447385B019187daa48e91c55c02AF1F1f3F863](https://polygonscan.com/address/0x61447385B019187daa48e91c55c02AF1F1f3F863) | [0xb779fF917F824740Dd64C0568C346A4C918EF095](https://polygonscan.com/address/0xb779fF917F824740Dd64C0568C346A4C918EF095) |
 | Scanners **(Deprecated)** | [0xbF2920129f83d75DeC95D97A879942cCe3DcD387](https://polygonscan.com/address/0xbF2920129f83d75DeC95D97A879942cCe3DcD387) | [0x75c46283dE6b08bE4bb4425b94aC338f2802e3B0](https://polygonscan.com/address/0x75c46283dE6b08bE4bb4425b94aC338f2802e3B0) |
-| Scanner Pools | [0x90FF9C193D6714E0e7a923b2Bd481Fb73FEC731d](https://polygonscan.com/address/0x90FF9C193D6714E0e7a923b2Bd481Fb73FEC731d) | [0xA27317F2F17617d8325605bD87252bCc6A64fD40](https://polygonscan.com/address/0xA27317F2F17617d8325605bD87252bCc6A64fD40) |
+| Scanner Pools | [0x90FF9C193D6714E0e7a923b2Bd481Fb73FEC731d](https://polygonscan.com/address/0x90FF9C193D6714E0e7a923b2Bd481Fb73FEC731d) | [0xF57ecf24d9Fd1CfA5cCF5BB46d8FF6aB49F5F9c0](https://polygonscan.com/address/0xF57ecf24d9Fd1CfA5cCF5BB46d8FF6aB49F5F9c0) |
 | Dispatch | [0xd46832F3f8EA8bDEFe5316696c0364F01b31a573](https://polygonscan.com/address/0xd46832F3f8EA8bDEFe5316696c0364F01b31a573) | [0x5eED79eC2D48be67e6D956C59110f123116C3EAD](https://polygonscan.com/address/0x5eED79eC2D48be67e6D956C59110f123116C3EAD) |
 | Forwarder | -- | [0x356A8ee5D3bCc183c2c7853F11D19f4C7622396F](https://polygonscan.com/address/0x356A8ee5D3bCc183c2c7853F11D19f4C7622396F) |
 | Forta Token (Bridged) | [0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1](https://polygonscan.com/address/0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1) | [0xd6b3139108e271c812acc6ffebad28e935d61e24](https://polygonscan.com/address/0xd6b3139108e271c812acc6ffebad28e935d61e24) |
 | Staking | [0xd2863157539b1D11F39ce23fC4834B62082F6874](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874) | [0x543D94657fA8C710818f0D9F7eDeC7F4Ca03CCDA](https://polygonscan.com/address/0x543D94657fA8C710818f0D9F7eDeC7F4Ca03CCDA) |
-| StakingParameters | [0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a](https://polygonscan.com/address/0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a) | [0x183f482B927F81FdF11919f098be299eE5dc3CD1](https://polygonscan.com/address/0x183f482B927F81FdF11919f098be299eE5dc3CD1) |
+| StakingParameters | [0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a](https://polygonscan.com/address/0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a) | [0xBe7AfebC79c40338B485a75792a510E32283fb70](https://polygonscan.com/address/0xBe7AfebC79c40338B485a75792a510E32283fb70) |
 | ScannerNodeVersion | [0x4720c872425876B6f4b4E9130CDef667aDE553b2](https://polygonscan.com/address/0x4720c872425876B6f4b4E9130CDef667aDE553b2) | [0xCFF69D7e4db098772c85831f4318A1897647488E](https://polygonscan.com/address/0xCFF69D7e4db098772c85831f4318A1897647488E) |
 | SlashingController | [0x6927C25ff30ed86F86A863d987590A1d77509bDb](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb) | [0xE7e33d453980e8023d54A70A40753bA7617B08F3](https://polygonscan.com/address/0xE7e33d453980e8023d54A70A40753bA7617B08F3) |
-| StakeAllocator | [0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA](https://polygonscan.com/address/0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA) | [0x2b8AB51156501FBbF122F1001bC6134629f343d5](https://polygonscan.com/address/0x2b8AB51156501FBbF122F1001bC6134629f343d5) |
-| RewardsDistributor | [0xf7239f26b79145297737166b0c66f4919af9c507](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507) | [0x70B1b7756868d03a5fC7AFb63657475b59BA5Ff9](https://polygonscan.com/address/0x70B1b7756868d03a5fC7AFb63657475b59BA5Ff9) |
+| StakeAllocator | [0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA](https://polygonscan.com/address/0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA) | [0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7](https://polygonscan.com/address/0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7) |
+| RewardsDistributor | [0xf7239f26b79145297737166b0c66f4919af9c507](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507) | [0x98e664dE6EC29FF7606ab26E05678ab9d34012E4](https://polygonscan.com/address/0x98e664dE6EC29FF7606ab26E05678ab9d34012E4) |
 | ScannerToScannerPoolMigration | [0x1365fa3FE7F52db912daBc8e439f0843461fee16](https://polygonscan.com/address/0x1365fa3FE7F52db912daBc8e439f0843461fee16) | [0xEBb33FD780757d745213CF57838c0E5b66D824Bc](https://polygonscan.com/address/0xEBb33FD780757d745213CF57838c0E5b66D824Bc) |
 
 **Goerli Testnet**
 
 | Name | Proxy | Implementation |
 | -- | -- | -- |
-| Forta Token | [0x848F1fF1fa76Dc882Ca2F3521265ba3F27e42158](https://goerli.etherscan.io/address/0x848f1ff1fa76dc882ca2f3521265ba3f27e42158) | [0x1b8CCBf5E8dBE1599905349E24b92a61175F9A10](https://goerli.etherscan.io/address/0x1b8CCBf5E8dBE1599905349E24b92a61175F9A10) |
+| Forta Token | [0x848F1fF1fa76Dc882Ca2F3521265ba3F27e42158](https://goerli.etherscan.io/address/0x848f1ff1fa76dc882ca2f3521265ba3f27e42158) | [0x86f09B8B8d0315Cca71a89953Aa3f7982a122eAd](https://goerli.etherscan.io/address/0x86f09B8B8d0315Cca71a89953Aa3f7982a122eAd) |
 
 **Mumbai Testnet**
 
