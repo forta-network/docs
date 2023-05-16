@@ -3,10 +3,15 @@
 _The Forta platform is composed of "component" smart contracts that are upgradeable, share a common access
 control scheme and can send use routed hooks to signal one another. They also support the multicall pattern.
 
-This contract contains the base of Forta components. Contract  inheriting this will have to call
-- __AccessManaged_init(address manager)
-- __Routed_init(address router)
+This contract contains the base of Forta components. Contracts that inherit this component must call
+- __BaseComponentUpgradeable_init(address manager)
 in their initialization process._
+
+### __BaseComponentUpgradeable_init
+
+```solidity
+function __BaseComponentUpgradeable_init(address __manager) internal
+```
 
 ### _authorizeUpgrade
 
@@ -64,4 +69,3 @@ msg.data must have the signer address (encoded in the last 20 bytes of msg.data)
 ```solidity
 uint256[50] __gap
 ```
-

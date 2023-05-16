@@ -10,21 +10,20 @@ struct StakeThreshold {
 }
 ```
 
-### getStakeThreshold
+### StakeThresholdMaxLessOrEqualMin
 
 ```solidity
-function getStakeThreshold(uint256 subject) external view returns (struct IStakeSubject.StakeThreshold)
-```
-
-### isStakedOverMin
-
-```solidity
-function isStakedOverMin(uint256 subject) external view returns (bool)
+error StakeThresholdMaxLessOrEqualMin()
 ```
 
 ### isRegistered
 
 ```solidity
-function isRegistered(uint256 subjectId) external view returns (bool)
+function isRegistered(uint256 subject) external view returns (bool)
 ```
 
+### ownerOf
+
+```solidity
+function ownerOf(uint256 subject) external view returns (address)
+```

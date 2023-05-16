@@ -18,7 +18,7 @@ mapping(uint256 => struct ScannerRegistryMetadata.ScannerMetadata) _scannerMetad
 ### getScanner
 
 ```solidity
-function getScanner(uint256 scannerId) public view returns (bool registered, address owner, uint256 chainId, string metadata)
+function getScanner(uint256 scannerId) public view virtual returns (bool registered, address owner, uint256 chainId, string metadata)
 ```
 
 Gets all scanner properties.
@@ -65,22 +65,6 @@ _checks the StakeThreshold for the chainId the scanner with id `subject` was reg
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | [0] | struct IStakeSubject.StakeThreshold | StakeThreshold registered for `chainId`, or StakeThreshold(0,0,false) if `chainId` not found. |
-
-### _scannerUpdate
-
-```solidity
-function _scannerUpdate(uint256 scannerId, uint256 chainId, string metadata) internal virtual
-```
-
-internal logic for scanner update.
-
-_adds metadata and chainId for that scanner_
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| scannerId | uint256 | ERC721 token id of the scanner. |
-| chainId | uint256 | the scanner scans. |
-| metadata | string | IPFS pointer for the scanner's JSON metadata. |
 
 ### __gap
 

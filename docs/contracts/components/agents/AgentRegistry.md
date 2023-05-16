@@ -15,7 +15,7 @@ constructor(address forwarder) public
 ### initialize
 
 ```solidity
-function initialize(address __manager, address __router, string __name, string __symbol) public
+function initialize(address __manager, string __name, string __symbol) public
 ```
 
 Initializer method, access point to initialize inheritance tree.
@@ -23,7 +23,6 @@ Initializer method, access point to initialize inheritance tree.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | __manager | address | address of AccessManager. |
-| __router | address | address of Router. |
 | __name | string | ERC721 token name. |
 | __symbol | string | ERC721 token symbol. |
 
