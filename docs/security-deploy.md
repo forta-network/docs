@@ -122,6 +122,14 @@ If you are going to interact with an Upgradeable contract, **always use the Prox
 | RewardsDistributor | [0xb23696793ffc58315Ed8e4c63cf1ef454a7479EC](https://mumbai.polygonscan.com/address/0xb23696793ffc58315Ed8e4c63cf1ef454a7479EC) | [0x253Eca8E7f01708b7dFD7277D814c33451A2211B](https://mumbai.polygonscan.com/address/0x253Eca8E7f01708b7dFD7277D814c33451A2211B) |
 | ScannerToScannerPoolMigration | [0x1b2D1D6aCD3381d355dAa1133CFc1fe384917cC8](https://mumbai.polygonscan.com/address/0x1b2D1D6aCD3381d355dAa1133CFc1fe384917cC8) | [0xB983B38dd4620419E5214A3bFE2E7Ed827859586](https://mumbai.polygonscan.com/address/0xB983B38dd4620419E5214A3bFE2E7Ed827859586) |
 
+**Pause Functionality**
+
+Currently, Forta does not implement Pause functionality in its smart contracts. In lieu of Pause functionality, the contracts’ upgradability could be utilized to pause the contracts in the event of responding to an incident.
+
+**Timelock**
+
+Forta has no implementation of a _Timelock_. Since changes to the contracts require an execution from the 4/7 Forta Council multisig, this process fulfills the need of a _Timelock_’s functionality.
+
 ### Forta On-Chain Monitoring
 Forta on-chain activity is monitored by [Forta Detection Bots](https://app.forta.network/agents/forta) and feeds into Forta Network's incident response process. The following detection bots were developed specifically for the Forta smart contracts. The code is available on [GitHub](https://github.com/LimeChain/forta-bots).
 
