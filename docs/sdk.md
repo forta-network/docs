@@ -234,6 +234,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 
 Labels can be used to add more contextual data to a `Finding` e.g. "is this address an attacker?". The `Label` object has the following properties:
 
+- `id` - string identifier of this label
 - `entityType` - enum indicating type of entity:
     - `Address`
     - `Transaction`
@@ -244,6 +245,17 @@ Labels can be used to add more contextual data to a `Finding` e.g. "is this addr
 - `label` - string label to attach to the entity e.g. "exploit"
 - `confidence` - confidence level of label between 0 and 1
 - `metadata` - key-value map (both keys and values as strings) for providing extra information
+- `createdAt` - string containing timestamp of label creation
+- `source` - object with information about where this label came from
+    - `alertHash`
+    - `alertId`
+    - `id`
+    - `chainId`
+    - `bot`
+        - `id`
+        - `image`
+        - `imageHash`
+        - `manifest`
 
 ## getJsonRpcUrl
 
@@ -291,21 +303,20 @@ The returned alerts are formatted to match the SDK `AlertsResponse` interface th
 }
 ```
 
-Below is an example of using the sdk:
+Here is an example usage:
 
 ```javascript
-import { getAlerts } from "forta-agent"
-import { AlertsResponse } from "forta-agent/dist/sdk/graphql/forta";
+import { getAlerts, AlertsResponse } from "forta-agent"
 
 const main = async () => {
-
   let hasNext = true;
   let startingCursor = undefined;
 
   while(hasNext) {
     const results: AlertsResponse = await getAlerts({
       botIds: ["0xddb7c17e370ecd5f99cadcddb39cfa51264e989c5133c490046d63a299dd68f0"], 
-      transactionHash: "0xc65af85a3fab1e538f6f521cd0a6e6d246c2f76c05aa8fba40817b59de7401b6"
+      transactionHash: "0xc65af85a3fab1e538f6f521cd0a6e6d246c2f76c05aa8fba40817b59de7401b6",
+      startingCursor
     })
     
     hasNext = results.pageInfo.hasNextPage;
@@ -314,8 +325,59 @@ const main = async () => {
     results.alerts.forEach(a => console.log(`${JSON.stringify(a)} \n`))
   }
 }
+main();
+```
 
+## getLabels
 
+The `getLabels` method can be used to fetch labels based on input `LabelQueryOptions`. The `getLabels` method accepts the following input filter properties (at least one of `entities`, `labels` or `sourceIds` is **required**):
+
+- `entities` - string array to filter by label entities (e.g. wallet addresses, block/tx hashes)
+- `labels` - string array to filter the label value (e.g. "attacker")
+- `sourceIds` - string array to filter the label sources (e.g. bot IDs)
+- `entityType` - string to filter labels by `EntityType` (see [label](#label) section for possible types)
+- `state` - boolean, set to `true` if only the current state is desired
+- `createdSince` - integer timestamp in milliseconds, labels returns will be created after this timestamp
+- `createdBefore` - integer timestamp in milliseconds, labels returned will be created before this timestamp
+- `first` - integer indicating max number of results
+- `startingCursor` - query results after the specified cursor object
+
+The returned labels are formatted to match the SDK `LabelsResponse` interface which looks like:
+
+```javascript
+{
+    labels: Label[];
+    pageInfo: {
+        hasNextPage: boolean;
+        endCursor?: {
+            pageToken: string;
+        };
+    };
+}
+```
+
+Here is an example usage:
+
+```javascript
+import { getLabels, LabelsResponse } from "forta-agent"
+
+const main = async () => {
+  let hasNext = true;
+  let startingCursor = undefined;
+
+  while(hasNext) {
+    const results: LabelsResponse = await getLabels({
+      sourceIds: ["0xddb7c17e370ecd5f99cadcddb39cfa51264e989c5133c490046d63a299dd68f0"],
+      createdSince: 1684407014000,
+      startingCursor
+    })
+    
+    hasNext = results.pageInfo.hasNextPage;
+    startingCursor = results.pageInfo.endCursor;
+
+    results.labels.forEach(l => console.log(`${JSON.stringify(l)} \n`))
+  }
+}
 main();
 ```
 
