@@ -229,6 +229,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 
 Labels can be used to add more contextual data to a `Finding` e.g. "is this address an attacker?". The `Label` object has the following properties:
 
+- `id` - string identifier of this label
 - `entity_type` - enum indicating type of entity:
     - `Address`
     - `Transaction`
@@ -239,6 +240,17 @@ Labels can be used to add more contextual data to a `Finding` e.g. "is this addr
 - `label` - string label to attach to the entity e.g. "exploit"
 - `confidence` - confidence level of label between 0 and 1
 - `metadata` - key-value map (both keys and values as strings) for providing extra information
+- `created_at` - string containing timestamp of label creation
+- `source` - object with information about where this label came from
+    - `alert_hash`
+    - `alert_id`
+    - `id`
+    - `chain_id`
+    - `bot`
+        - `id`
+        - `image`
+        - `image_hash`
+        - `manifest`
 
 ## get_json_rpc_url
 
@@ -274,12 +286,39 @@ The `get_alerts` method can be used to fetch alerts based on input `AlertQueryOp
 The returned alerts are formatted to match the SDK `AlertsResponse` class, below is an example using this method:
 
 ```python
-import forta_agent
-x = forta_agent.get_alerts({
+from forta_agent import get_alerts
+
+response = get_alerts({
     'bot_ids': ["0x79af4d8e0ea9bd28ed971f0c54bcfe2e1ba0e6de39c4f3d35726b15843990a51"],
 })
+has_next = response.page_info.has_next_page
+alerts = response.alerts
+```
 
-print(x)
+## get_labels
+
+The `get_labels` method can be used to fetch labels based on input `LabelQueryOptions`. The `get_labels` method accepts the following input filter properties (at least one of `entities`, `labels` or `source_ids` is **required**):
+
+- `entities` - string array to filter by label entities (e.g. wallet addresses, block/tx hashes)
+- `labels` - string array to filter the label value (e.g. "attacker")
+- `source_ids` - string array to filter the label sources (e.g. bot IDs)
+- `entity_type` - string to filter labels by `EntityType` (see [label](#label) section for possible types)
+- `state` - boolean, set to `true` if only the current state is desired
+- `created_since` - integer timestamp in milliseconds, labels returns will be created after this timestamp
+- `created_before` - integer timestamp in milliseconds, labels returned will be created before this timestamp
+- `first` - integer indicating max number of results
+- `starting_cursor` - query results after the specified cursor object
+
+The returned labels are formatted to match the SDK `LabelsResponse` class, below is an example using this method:
+
+```python
+from forta_agent import get_labels
+
+response = get_labels({
+    'source_ids': ["0x79af4d8e0ea9bd28ed971f0c54bcfe2e1ba0e6de39c4f3d35726b15843990a51"],
+})
+has_next = response.page_info.has_next_page
+labels = response.labels
 ```
 
 ## fetch_jwt
