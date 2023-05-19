@@ -1,4 +1,4 @@
-## Security - Deployment
+## Security - Deployment & Smart Contracts
 
 The Foundation has required deployment through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests must go through a required review that upon the merge are gated by successful tests, node scanner software is gated through a state update in the ScannerNodeVersion contract, and smart contract deployments/changes are handled through OpenZeppelin’s Defender product and relayers and are controlled by multisigs. This process ensures that the Forta Network cannot be changed, even in the event of a security breach by an individual involved in any of the development processes.
 
@@ -63,7 +63,7 @@ Forta contracts are managed through [OpenZeppelin's Defender product](https://de
 
 Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network via the ERC20 FORT Token.
 
-To learn more, read the [smart contracts github repo](https://github.com/forta-network/forta-contracts), or the documentation for the contracts in this site.
+To learn more, read the [smart contracts github repo](https://github.com/forta-network/forta-contracts), [the documentation for the contracts](smart-contracts-intro.md), or the smart contract architecture diagram in the [_Design_ page](security-design.md).
 
 
 **Deployments**

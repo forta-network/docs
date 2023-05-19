@@ -102,14 +102,8 @@ nav:
     - Stake Slashing:
         - Slashing Policy: slashing-policy.md
         - Creating a Slash Proposal: slashing-creating-proposal.md
-    - Security at Forta:
-      - Security Overview: security.md
-      - Design: security-design.md
-      - Development: security-develop.md
-      - Deployment: security-deploy.md
-      - Testing and Review: security-testing.md
-      - Maintenance: security-maintain.md
     - Smart Contracts:
+      - Intro: smart-contracts-intro.md
       - Access Manager: contracts/components/access/AccessManager.md
       - Agent Registry: contracts/components/agents/AgentRegistry.md
       - Dispatch: contracts/components/dispatch/Dispatch.md
@@ -142,6 +136,13 @@ nav:
       - Base Component Upgradeable: contracts/components/BaseComponentUpgradeable.md
       - Roles: contracts/components/Roles.md
     - FAQ: faq.md
+  - <strong>Security at Forta</strong>:
+    - Security Overview: security.md
+    - Design: security-design.md
+    - Development: security-develop.md
+    - Deployment & Smart Contracts: security-deploy.md
+    - Testing and Review: security-testing.md
+    - Maintenance: security-maintain.md
   - <strong>About Machine Learning</strong>:
       - Why Machine Learning?: ml-with-forta.md
       - Datasets and Resources: ml-data-resources.md
