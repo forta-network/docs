@@ -21,7 +21,7 @@ The substance of this policy is intended to ensure that the Forta slashing archi
 
 ## Forta Slashing Process
 
-The entire Forta slashing process takes place on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon, check out this [guide](https://docs.forta.network/en/latest/bridging-fort/). Please carefully review the [Technical Slashing Guidance](https://docs.google.com/document/d/1edox-TLNUo3QpT2UFj73TbVOtGN1yoPT96ipzqW1voE/edit#bookmark=id.56u96ew8vlup) provided at the bottom of this page to submit a final Slashing Proposal.
+The entire Forta slashing process takes place on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon, check out this [guide](https://docs.forta.network/en/latest/bridging-fort/). Please carefully review the Technical Slashing Guidance provided at the bottom of this page to submit a final Slashing Proposal.
 
 ## **I. PROPOSAL**
 
