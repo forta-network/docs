@@ -15,6 +15,11 @@ function slash(uint8 subjectType, uint256 subject, uint256 stakeValue, address p
 ### treasury
 
 ```solidity
-function treasury() external returns (address)
+function treasury() external view returns (address)
 ```
 
+### MAX_SLASHABLE_PERCENT
+
+```solidity
+function MAX_SLASHABLE_PERCENT() external view returns (uint256)
+```

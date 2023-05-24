@@ -8,7 +8,7 @@ When tokens are deposited from the root chain, the `childChainManagerProxy` will
 {deposit} function, which will mint corresponding tokens on the child chain. The total supply
 on the side chain is expected to match the amount of locked tokens on the parent chain.
 
-In order to bridge tokens back from the child chain to the parent chain, any (whitelisted) user
+In order to bridge tokens back from the child chain to the parent chain, any user
 can call either the {withdraw} or the {withdrawTo} function. This will burn tokens here,
 emitting a burn event (Transfer event from the user to address(0)) in the process. This burn event
 is needed to trigger unlocking the corresponding tokens on the parent chain.
@@ -23,12 +23,6 @@ address childChainManagerProxy
 
 ```solidity
 error DepositOnlyByChildChainManager()
-```
-
-### flashWhitelistRole
-
-```solidity
-modifier flashWhitelistRole(address user)
 ```
 
 ### constructor
@@ -56,11 +50,7 @@ function deposit(address user, bytes depositData) external
 ```
 
 _To avoid token locked on the parent chains not being correctly represented on the
-child chain, this should NEVER revert (exception: _mint can revert if totalSupply() <= _maxSupply()).
-Consequently, we might have to temporarily grant
-WHITELIST_ROLE to the receiver.
-If the receiver is not whitelisted when the deposit happens, tokens are minted but not
-usable until the receiver goes through the whitelisting process._
+child chain, this should NEVER revert (exception: _mint can revert if totalSupply() <= _maxSupply())._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -87,9 +77,7 @@ function withdrawTo(uint256 amount, address receiver) external
 
 _In order for a token holder on the child chain to be able to withdraw tokens to
 another address on the parent chain, this function will temporarily transfer the tokens to
-the address of the receiver on the parent chain so that the burn event is correct.
-
-In order to do so, the receiver address must be temporarily granted WHITELIST_ROLE._
+the address of the receiver on the parent chain so that the burn event is correct._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -116,4 +104,3 @@ we need to implement the interface with a method instead of immutable variable._
 ```solidity
 uint256[49] __gap
 ```
-

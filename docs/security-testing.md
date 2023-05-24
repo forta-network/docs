@@ -27,7 +27,7 @@ Testing and review starts with a good understanding of the Forta Network itself 
     - [Forta GraphQL API](https://github.com/forta-network/forta-alerts-api)
 
 
-Testing of the code must happen through GitHub Actions on each pull request and gated upon successful tests.
+Testing of the code must happen through GitHub Actions on each pull request and gated upon successful tests. Code coverage data for the contract's tests can be found in the Codecov dashboard [here](https://app.codecov.io/github/forta-network/forta-contracts). (Note: Code coverage tests exclude contracts in the `contracts/components/_old` folder since those are deprecated contracts.)
 
 Adopting an attacker mindset, the Foundation went beyond employing secure design, development, deployment and testing and enlisted external security experts to assess the Forta Network after it was built. This helped to surface erroneous assumptions and uncover security gaps that may have remained hidden. Forta primarily engaged OpenZeppelin's smart contract auditing expertise as well as Dedalo's web2 and broad threat assessment expertise for other critical components of the Network. All such reports/findings are linked below:
 

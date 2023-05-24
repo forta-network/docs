@@ -117,10 +117,10 @@ mapping(bytes32 => struct SlashingController.SlashPenalty) penalties
 contract ISlashingExecutor slashingExecutor
 ```
 
-### stakingParameters
+### subjectGateway
 
 ```solidity
-contract FortaStakingParameters stakingParameters
+contract StakeSubjectGateway subjectGateway
 ```
 
 ### depositAmount
@@ -181,18 +181,6 @@ event SlashProposalUpdated(address updater, uint256 proposalId, enum StateMachin
 
 ```solidity
 event EvidenceSubmitted(uint256 proposalId, enum StateMachines.State stateId, string[] evidence)
-```
-
-### SlashingExecutorChanged
-
-```solidity
-event SlashingExecutorChanged(address slashingExecutor)
-```
-
-### StakingParametersManagerChanged
-
-```solidity
-event StakingParametersManagerChanged(address stakingParametersManager)
 ```
 
 ### DepositAmountChanged
@@ -276,7 +264,7 @@ constructor(address _forwarder, address _depositToken) public
 ### initialize
 
 ```solidity
-function initialize(address __manager, address __router, contract ISlashingExecutor __executor, contract FortaStakingParameters __stakingParameters, uint256 __depositAmount, uint256 __slashPercentToProposer, bytes32[] __slashPenaltyIds, struct SlashingController.SlashPenalty[] __slashPenalties) public
+function initialize(address __manager, contract ISlashingExecutor __executor, contract StakeSubjectGateway __subjectGateway, uint256 __depositAmount, uint256 __slashPercentToProposer, bytes32[] __slashPenaltyIds, struct SlashingController.SlashPenalty[] __slashPenalties) public
 ```
 
 Initializer method, access point to initialize inheritance tree.
@@ -284,9 +272,8 @@ Initializer method, access point to initialize inheritance tree.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | __manager | address | address of AccessManager. |
-| __router | address | address of Router. |
 | __executor | contract ISlashingExecutor |  |
-| __stakingParameters | contract FortaStakingParameters |  |
+| __subjectGateway | contract StakeSubjectGateway |  |
 | __depositAmount | uint256 |  |
 | __slashPercentToProposer | uint256 |  |
 | __slashPenaltyIds | bytes32[] |  |
@@ -370,6 +357,12 @@ Changing the penalty will affect slashing amounts.
 | _penaltyId | bytes32 | if of the SlashPenalty to inflict upon the subject if the proposal goes through. |
 | _evidence | string[] | IPFS hashes of the evidence files, proof of need for proposal changes. |
 
+### _updateProposal
+
+```solidity
+function _updateProposal(uint256 _proposalId, uint8 _subjectType, uint256 _subjectId, bytes32 _penaltyId) private
+```
+
 ### markAsReviewedSlashProposal
 
 ```solidity
@@ -435,18 +428,6 @@ function getSubject(uint256 _proposalId) external view returns (uint8 subjectTyp
 function getProposer(uint256 _proposalId) external view returns (address)
 ```
 
-### setSlashingExecutor
-
-```solidity
-function setSlashingExecutor(contract ISlashingExecutor _executor) external
-```
-
-### setStakingParametersManager
-
-```solidity
-function setStakingParametersManager(contract FortaStakingParameters _stakingParameters) external
-```
-
 ### setDepositAmount
 
 ```solidity
@@ -471,16 +452,28 @@ function setSlashPenalties(bytes32[] _slashReasons, struct SlashingController.Sl
 function _authorizeRevertSlashProposal(uint256 _proposalId) private view
 ```
 
+### _unfreeze
+
+```solidity
+function _unfreeze(uint256 _proposalId) private
+```
+
+### _freeze
+
+```solidity
+function _freeze(uint8 _subjectType, uint256 _subjectId) private
+```
+
 ### _setSlashingExecutor
 
 ```solidity
 function _setSlashingExecutor(contract ISlashingExecutor _executor) private
 ```
 
-### _setStakingParametersManager
+### _setsubjectGateway
 
 ```solidity
-function _setStakingParametersManager(contract FortaStakingParameters _stakingParameters) private
+function _setsubjectGateway(contract StakeSubjectGateway _subjectGateway) private
 ```
 
 ### _setDepositAmount
