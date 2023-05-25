@@ -63,7 +63,7 @@ Forta contracts are managed through [OpenZeppelin's Defender product](https://de
 
 Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network via the ERC20 FORT Token.
 
-To learn more, read the [smart contracts github repo](https://github.com/forta-network/forta-contracts), [the documentation for the contracts](smart-contracts-intro.md), or the smart contract architecture diagram in the [_Design_ page](security-design.md).
+To learn more, read the [smart contracts github repo](https://github.com/forta-network/forta-contracts), [the documentation for the contracts](smart-contracts.md), or the smart contract architecture diagram in the [_Design_ page](security-design.md).
 
 
 **Deployments**
