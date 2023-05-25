@@ -111,7 +111,7 @@ nav:
     - Testing and Review: security-testing.md
     - Maintenance: security-maintain.md
     - Smart Contracts:
-      - Intro: smart-contracts-intro.md
+      - Intro: smart-contracts.md
       - Access Manager: contracts/components/access/AccessManager.md
       - Agent Registry: contracts/components/agents/AgentRegistry.md
       - Dispatch: contracts/components/dispatch/Dispatch.md
