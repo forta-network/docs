@@ -2,6 +2,8 @@
 
 The Foundation has required deployment through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests must go through a required review that upon the merge are gated by successful tests, node scanner software is gated through a state update in the ScannerNodeVersion contract, and smart contract deployments/changes are handled through OpenZeppelin’s Defender product and relayers and are controlled by multisigs. This process ensures that the Forta Network cannot be changed, even in the event of a security breach by an individual involved in any of the development processes.
 
+Lastly, most of the contracts in the Forta Network are [upgradeable](https://docs.openzeppelin.com/contracts/4.x/upgradeable). Therefore, if you are going to interact with an Upgradeable contract, **always use the Proxy address**.
+
 
 ### Multi-Sig
 Forta is managed through three main Gnosis Safe Multi Sig contracts: 
@@ -59,17 +61,11 @@ Complete list of roles with a description:
 ### Contract Administration
 Forta contracts are managed through [OpenZeppelin's Defender product](https://defender.openzeppelin.com/) utilizing relays to manage smart contract deployment and maintenance.
 
-### Smart Contracts
+### Smart Contracts Deployments
 
 Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network via the ERC20 FORT Token.
 
 To learn more, read the [smart contracts github repo](https://github.com/forta-network/forta-contracts), [the documentation for the contracts](smart-contracts.md), or the smart contract architecture diagram in the [_Design_ page](security-design.md).
-
-
-**Deployments**
-
-Most of the contracts in Forta Network are [upgradeable](https://docs.openzeppelin.com/contracts/4.x/upgradeable).
-If you are going to interact with an Upgradeable contract, **always use the Proxy address**.
 
 
 **Ethereum Mainnet**
@@ -124,7 +120,7 @@ If you are going to interact with an Upgradeable contract, **always use the Prox
 
 **Pause Functionality**
 
-Currently, Forta does not implement Pause functionality in its smart contracts. In lieu of Pause functionality, the contracts’ upgradability could be utilized to pause the contracts in the event of responding to an incident.
+Currently, Forta does not implement _Pause_ functionality in its smart contracts. In lieu of _Pause_ functionality, the contracts’ upgradability could be utilized to pause the contracts in the event of responding to an incident. Additionally, Forta does not incorporate the usage of Oracles, and therefore has no risk of Oracle manipulation attacks.
 
 **Timelock**
 
