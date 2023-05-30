@@ -235,7 +235,7 @@ Your scan node will be registered to scan a single chain. To let your scan node 
 If you are scanning Ethereum mainnet, `trace.jsonRpc.url` must also be set as an endpoint that supports `trace_block` method. If you have your own Ethereum node that supports it (e.g. Erigon), you can use that node. If not, you can use an endpoint from a paid plan like [Alchemy](alchemy-partnership.md) Growth plan.
 
 !!! note "JSON-RPC APIs"
-    Detection bots are able to call JSON-RPC APIs using the scan node's configured endpoints. By default, this is the `scan.jsonRpc.url` but one can separate bot-specific traffic by specifying a `jsonRpcProxy.jsonRpc.url`. We suggest setting this as your own node's JSON-RPC API endpoint if you are running one. If not, it is better to set this as a different JSON-RPC API endpoint than `scan.jsonRpc.url`.
+    Detection bots are able to call JSON-RPC APIs using the scan node's configured endpoints. By default, this is the `scan.jsonRpc.url` but one can separate bot-specific traffic by specifying a `jsonRpcProxy.jsonRpc.url`. We suggest setting this as your own node's JSON-RPC API endpoint if you are running one. If you are not running a full node, you can use `scan.jsonRpc.url` to point the bots to another reliable API.
 
 !!! important "Other chains"
     If your node is scanning chains other than Ethereum mainnet, please checkout [Scanning other chains](#scanning-other-chains) section to see examples.
@@ -252,19 +252,19 @@ scan:
   jsonRpc:
     url: https://eth-mainnet.alchemyapi.io/v2/KEY
 
+# This is needed only for scanning Ethereum Mainnet and Fantom
 trace:
   jsonRpc:
     url: https://eth-mainnet.alchemyapi.io/v2/KEY
 
-# The proxy settings are used for detection bots to make their own JSON-RPC calls.
-# By default, this is set to the scan node URL value. We recommend setting
-# this differently than the scan node URL value if you are using a paid plan.
+# Optional: Bots make extra requests to check the chain state. You can point
+# them to a different reliable API by using this. This defaults to `scan.jsonRpc.url`. 
 jsonRpcProxy:
   jsonRpc:
     url: http://different-api:8545
 ```
 
-Another example configuration to scan Ethereum mainnet using your Erigon node's HTTP endpoint, which is much simpler:
+Another example configuration to scan Ethereum mainnet using your Erigon node's HTTP endpoint:
 
 ```yaml
 chainId: 1
@@ -277,7 +277,7 @@ trace:
   jsonRpc:
     url: http://your-node:8545
 
-# Defaulting to scan node url because it is not set - the best option when running a node
+# Defaulting to `scan.jsonRpc.url` if not set - the best option when running a node
 # jsonRpcProxy:
 #   jsonRpc:
 #     url: http://your-node:8545
