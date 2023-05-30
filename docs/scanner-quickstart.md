@@ -332,7 +332,7 @@ There are a set of Forta smart contracts on Polygon, which allows finding out:
 - the latest list of bots which a scan node should run
 - the latest Forta node service Docker image release
 
-All Forta nodes are expected to run with the latest release and the latest list of the assigned bots. To be able to read these values, Forta nodes use `https://polygon-rpc.com` by default. Please consider changing this to a free Polygon API with high availability, e.g. [Alchemy](alchemy-partnership.md) Polygon API, by adding the following configuration:
+All Forta nodes are expected to run with the latest release and the latest list of the assigned bots. To be able to read these values, Forta nodes use `https://rpc.ankr.com/polygon` by default but this API can rate-limit your node. Please consider changing this to a free Polygon API with high availability, e.g. [Alchemy](alchemy-partnership.md) Polygon API, [Chainstack](scan-with-chainstack.md) Polygon API, by adding the following configuration:
 
 ```yaml
 registry:
