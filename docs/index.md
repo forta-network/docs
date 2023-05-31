@@ -56,7 +56,7 @@ hide:
 
     Get a high-level understanding of Forta and learn how it works.
 
-    [:octicons-arrow-right-24: Learn more](what-is-forta.md)
+    [:octicons-arrow-right-24: Learn more](why-forta.md)
 
 
 </div>
