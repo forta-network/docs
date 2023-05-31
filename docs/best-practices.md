@@ -6,10 +6,6 @@ This page describes some of the best practices observed for bot development.
 
 Write your bot to target a specific condition so that it does not generate findings for every other block/transaction. Verbose bots can make it hard to distinguish the signal from the noise i.e. if a bot alerts on more than 5% of transactions, the usefulness of those alerts would not be very high as it is difficult to know what to pay attention to.
 
-## Return findings in a timely manner
-
-Ensure that your bot returns findings in a timely manner as requests will timeout after 30 seconds. If your bot needs to execute for longer than 30 seconds, check out the pattern for [long running tasks](long-running-tasks.md).
-
 ## Break down large bots into smaller files
 
 Your bot may be looking for multiple conditions that you could write in a single file. We recommend keeping each condition in its own file. This will make testing your bot easier and keep the code more maintainable. You would then combine all the bots in the top-level entrypoint file (i.e. agent.js). See [here](https://github.com/forta-network/forta-bot-examples/tree/master/high-gas-js) for an example.
@@ -51,10 +47,6 @@ Caching is a great way to improve performance. If you need to store the result o
 ## Use concurrency where possible
 
 Try to make use of concurrency to maximize performance. For example, if you are firing multiple http requests to fetch on-chain data, you can use the `ethers-multicall` package to fetch all the data in a single http request. Also, if firing multiple network calls, you can fire all the requests at the same time using something like `Promise.all` in Javascript.
-
-## Protect sensitive information
-
-Be sure to protect sensitive information, such as API keys, in your code. Bot images are stored in a public repository where anyone can access and inspect the code. See the pattern for [protecting sensitive data](sensitive-data.md).
 
 ## Beware of case-sensitivity
 

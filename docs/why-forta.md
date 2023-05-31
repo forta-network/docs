@@ -1,38 +1,8 @@
-# What is Forta
-
-Forta is a decentralized monitoring network to detect threats and anomalies on DeFi, NFT, governance, bridges and other Web3 systems in real-time.
-
-Underlying Forta is a decentralized network of independent node operators that scan all transactions and block-by-block state changes for outlier transactions and threats. When an issue is detected, node operators send alerts to subscribers of potential risks, which enables them to take action.
-
-For any questions or feedback you may have, please go to the [Forta Discord server](https://discord.com/invite/fortanetwork).
-
-### Supported chains
-
-The future is multi-chain. That is why Forta continues to expand into the emerging landscape of new L1s and L2s, bringing runtime monitoring and anomaly detection to Ethereum, Avalanche, Polygon, BNB Chain, Fantom, Arbitrum, and Optimism.
-
-## Why Forta
+# Why Forta
 
 As the Web3 economy grows in value and complexity, security has become increasingly critical. More than $1 billion was lost in the first quarter of 2022 due to hacks and exploits, some of which have only been discovered several days after the attack happened. The need for real-time security and operational monitoring has become clear, allowing protocols and investors to react quickly to neutralize threats and prevent or minimize loss of funds.
 
 However, the rapid speed at which the Web3 industry develops makes it hard for a centralized entity to watch it all. That’s where Forta comes in.
-
-## How to get started
-
-[**You can subscribe**](getting-started.md) to the Forta data feeds through a variety of applications, including the [Forta App](https://app.forta.network/), [OpenZeppelin Defender](https://openzeppelin.com/defender/), or directly by using the public [Forta API](https://www.youtube.com/watch?v=xkxS7d2i5ms).
-
-**You can develop** and deploy your own detection bots on Forta using the [SDK](quickstart.md). There are many [templates](https://github.com/arbitraryexecution/forta-bot-templates) and [examples](https://github.com/forta-network/forta-bot-examples) you can work from. There are also a growing number of development teams who you can hire to develop Forta bots for your project (visit the [Bot Development Marketplace](https://www.notion.so/forta/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) or contact the Forta Foundation at [andy@forta.org](mailto:andy@forta.org) for more information).
-
-If you are an independent dev that wants to develop detection bots, you can visit Forta’s [Bot Development Marketplace](https://forta.notion.site/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) to discover RFPs, apply for Grants or participate in Forta Development Contests, which are announced in the [Forta Discord](https://discord.com/invite/fortanetwork).
-
-The Forta Network has two main components – detection bots and scan nodes.
-
-### Detection Bots
-
-Detection bots refer to a set of code scripts within a Docker container that process some blockchain data (i.e. a block or transaction) and detect specific threat conditions (e.g. whether a flash loan attack occured, or whether a particular account balance fell below some threshold). Bots emit alerts for their findings. Bots are executed by scan nodes. To learn more about bots, see our [FAQ](faq.md#what-makes-a-good-bot) section.
-
-### Scan Nodes
-
-A scan node is a specific type of Forta node that executes detection bots for every transaction and every new block on a specific blockchain network. The scan node manages and coordinates bots (e.g. by instantiating and running bots, and restarting bots that become unresponsive). The scan node ferries blockchain data to bots to process the transaction/block. To learn more about scan nodes, see our [FAQ](faq.md#how-do-i-run-a-scan-node) section.
 
 ## Threat detection monitoring
 
@@ -70,7 +40,7 @@ There are multiple options for users that prefer private monitoring. Forta bots 
 
 ## Fees
 
-At the moment, no fees are required for subscribing to receive Forta alerts or for the execution of bots, although Forta encourages projects to fund experienced developers to create quality Forta detection bots for their specific use cases.
+[FP-5](https://snapshot.org/#/forta.eth/proposal/0x6830fcecbd8acd028daf19e8d49e82cb8e46c001eaa6cffe6c0ca6c485ffe174) was approved via Snapshot with a total of 96% “yes” votes. The proposal was a monumental step forward for the Network as it will introduce fees in the coming months. Fees on Forta can be paid out in USDC and FORT, and both general and specialized plans will be available. With the passing of FP-5, Forta’s cryptoeconomic engine will be fully vitalized, creating a healthy and unique business model that will reward Forta Network participants.
 
 ## Security
 
@@ -89,17 +59,3 @@ Reliability on Forta is solved through detection bot redundancy and the monitori
 ### How are Forta alerts and findings validated?
 
 Forta scan nodes gather findings from detection bots for each block and then store a proof of scan on IPFS and broadcast the finding details to the Forta analyzer node. Users can obtain the detailed information from the Forta analyzer node via the public API, which can be validated against the proof of scan data on IPFS. The analyzer node performs data indexing and may provide additional analysis.
-
-## Core concepts
-
-### Bot Registry
-
-The Bot Registry refers to a smart contract (currently deployed on the Polygon public mainnet) that records the existence of all detection bots. Developers publish their bot manifests to this registry, and scan nodes listen for events from this contract to know how to manage the bots they are running.
-
-### Bot Manifest
-
-A bot manifest refers to a signed JSON document that describes the contents of a bot container. Specifically, it provides information like the bot version as well as an IPFS reference to the bot container image. Manifests are stored on the IPFS network, with their IPFS references stored in the Bot Registry.
-
-### Disco
-
-Disco is an open-source, decentralized and distributed container registry. This registry is used to store and distribute bot container images. Scan nodes request bot images from a Disco repository.
