@@ -1,6 +1,8 @@
-## Security - Deployment
+## Security - Deployment & Smart Contracts
 
 The Foundation has required deployment through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests must go through a required review that upon the merge are gated by successful tests, node scanner software is gated through a state update in the ScannerNodeVersion contract, and smart contract deployments/changes are handled through OpenZeppelin’s Defender product and relayers and are controlled by multisigs. This process ensures that the Forta Network cannot be changed, even in the event of a security breach by an individual involved in any of the development processes.
+
+Lastly, most of the contracts in the Forta Network are [upgradeable](https://docs.openzeppelin.com/contracts/4.x/upgradeable). Therefore, if you are going to interact with an Upgradeable contract, **always use the Proxy address**.
 
 
 ### Multi-Sig
@@ -59,17 +61,11 @@ Complete list of roles with a description:
 ### Contract Administration
 Forta contracts are managed through [OpenZeppelin's Defender product](https://defender.openzeppelin.com/) utilizing relays to manage smart contract deployment and maintenance.
 
-### Smart Contracts
+### Smart Contracts Deployments
 
 Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network via the ERC20 FORT Token.
 
-To learn more, read the [smart contracts github repo](https://github.com/forta-network/forta-contracts), or the documentation for the contracts in this site.
-
-
-**Deployments**
-
-Most of the contracts in Forta Network are [upgradeable](https://docs.openzeppelin.com/contracts/4.x/upgradeable).
-If you are going to interact with an Upgradeable contract, **always use the Proxy address**.
+To learn more, read the [smart contracts github repo](https://github.com/forta-network/forta-contracts), [the documentation for the contracts](smart-contracts.md), or the smart contract architecture diagram in the [_Design_ page](security-design.md).
 
 
 **Ethereum Mainnet**
@@ -121,6 +117,14 @@ If you are going to interact with an Upgradeable contract, **always use the Prox
 | StakeAllocator | [0x4b4272E78ec45A08D91B495c690078e3B196904C](https://mumbai.polygonscan.com/address/0x4b4272E78ec45A08D91B495c690078e3B196904C) | [0x1064ac57d149CF99fCda690625676787C4C4Ad5a](https://mumbai.polygonscan.com/address/0x1064ac57d149CF99fCda690625676787C4C4Ad5a) |
 | RewardsDistributor | [0xb23696793ffc58315Ed8e4c63cf1ef454a7479EC](https://mumbai.polygonscan.com/address/0xb23696793ffc58315Ed8e4c63cf1ef454a7479EC) | [0x253Eca8E7f01708b7dFD7277D814c33451A2211B](https://mumbai.polygonscan.com/address/0x253Eca8E7f01708b7dFD7277D814c33451A2211B) |
 | ScannerToScannerPoolMigration | [0x1b2D1D6aCD3381d355dAa1133CFc1fe384917cC8](https://mumbai.polygonscan.com/address/0x1b2D1D6aCD3381d355dAa1133CFc1fe384917cC8) | [0xB983B38dd4620419E5214A3bFE2E7Ed827859586](https://mumbai.polygonscan.com/address/0xB983B38dd4620419E5214A3bFE2E7Ed827859586) |
+
+**Pause Functionality**
+
+Currently, Forta does not implement _Pause_ functionality in its smart contracts. In lieu of _Pause_ functionality, the contracts’ upgradability could be utilized to pause the contracts in the event of responding to an incident. Additionally, Forta does not incorporate the usage of Oracles, and therefore has no risk of Oracle manipulation attacks.
+
+**Timelock**
+
+Forta has no implementation of a _Timelock_. Since changes to the contracts require an execution from the 4/7 Forta Council multisig, this process fulfills the need of a _Timelock_’s functionality.
 
 ### Forta On-Chain Monitoring
 Forta on-chain activity is monitored by [Forta Detection Bots](https://app.forta.network/agents/forta) and feeds into Forta Network's incident response process. The following detection bots were developed specifically for the Forta smart contracts. The code is available on [GitHub](https://github.com/LimeChain/forta-bots).

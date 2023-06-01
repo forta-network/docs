@@ -17,12 +17,6 @@ enum Permission {
 }
 ```
 
-### _disabled
-
-```solidity
-mapping(uint256 => struct BitMaps.BitMap) _disabled
-```
-
 ### ScannerEnabled
 
 ```solidity
@@ -72,10 +66,10 @@ Public method to disable a scanner, if caller has permission.
 | scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the caller claims to have. |
 
-### getDisableFlags
+### _getDisableFlags
 
 ```solidity
-function getDisableFlags(uint256 scannerId) public view returns (uint256)
+function _getDisableFlags(uint256 scannerId) internal view returns (uint256)
 ```
 
 Get the disabled flags for an agentId. Permission (uint8) is used for indexing, so we don't
@@ -124,54 +118,6 @@ _will trigger _before and _after enable hooks within the inheritance tree._
 | scannerId | uint256 | ERC721 token id of the scanner. |
 | permission | enum ScannerRegistryEnable.Permission | the caller claims to have. |
 | enable | bool | true for enabling, false for disabling |
-
-### _beforeScannerEnable
-
-```solidity
-function _beforeScannerEnable(uint256 scannerId, enum ScannerRegistryEnable.Permission permission, bool value) internal virtual
-```
-
-Hook _before scanner enable
-
-_does nothing in this contract_
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| scannerId | uint256 | ERC721 token id of the scanner. |
-| permission | enum ScannerRegistryEnable.Permission | the sender claims to have to enable the agent. |
-| value | bool | true if enabling, false if disabling. |
-
-### _scannerEnable
-
-```solidity
-function _scannerEnable(uint256 scannerId, enum ScannerRegistryEnable.Permission permission, bool value) internal virtual
-```
-
-Logic for enabling or disabling the scanner.
-
-_sets the corresponding byte in _disabled bitmap for scannerId. Emits ScannerEnabled event._
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| scannerId | uint256 | ERC721 token id of the scanner. |
-| permission | enum ScannerRegistryEnable.Permission | the sender claims to have to enable the agent. |
-| value | bool | true if enabling, false if disabling. |
-
-### _afterScannerEnable
-
-```solidity
-function _afterScannerEnable(uint256 scannerId, enum ScannerRegistryEnable.Permission permission, bool value) internal virtual
-```
-
-Hook _after scanner enable
-
-_emits Router hook._
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| scannerId | uint256 | ERC721 token id of the scanner. |
-| permission | enum ScannerRegistryEnable.Permission | the sender claims to have to enable the agent. |
-| value | bool | true if enabling, false if disabling. |
 
 ### _msgSender
 

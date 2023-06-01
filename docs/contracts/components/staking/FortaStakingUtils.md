@@ -11,7 +11,7 @@ setting bit 9 (to mark as active) and masking subjectType in_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -29,7 +29,7 @@ letting bit 9 unset (to mark as inactive) and masking subjectType in._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -98,5 +98,4 @@ _Extracts subject type encoded in shares id_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | uint8 | subject type (see SubjectTypes.sol) |
-
+| [0] | uint8 | subject type (see SubjectTypeValidator.sol) |

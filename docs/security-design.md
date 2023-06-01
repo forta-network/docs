@@ -15,3 +15,9 @@ Further, the design of the Forta Network adopted three important security practi
 - Where are the community touch points and how could a compromise within that setting manifest?
 
 As an example, the [Forta Litepaper](../2022-7-11 Forta Litepaper.pdf) detailed how those guiding principles and questions were incorporated into the original Forta Network design.
+
+### Smart Contracts
+
+The architecture of the Forta smart contracts can be seen in the below diagram.
+
+![Forta Network Smart Contract architecture](Forta-Contract-Architecture.jpg)

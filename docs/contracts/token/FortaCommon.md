@@ -1,5 +1,12 @@
 ## FortaCommon
 
+Contract with the common functionality for both L1 FORT and L2 FortaBridgedPolygon.
+NOTE: Whitelisting functionality, used before the token was public, is deprecated.
+The whitelist was disabled setting whitelistDisabled = true, the current code keeps that storage
+layout for compatibility and removes whitelist code from _beforeTokenTransfer() to save gas.
+We are keeping the related roles to not break StakingEscrowFactory (already deployed), and the 
+_setRoleAdmin() in the initializer for historical context.
+
 ### ADMIN_ROLE
 
 ```solidity
@@ -18,16 +25,10 @@ bytes32 WHITELISTER_ROLE
 bytes32 WHITELIST_ROLE
 ```
 
-### whitelistDisabled
+### deprecated_whitelistDisabled
 
 ```solidity
-bool whitelistDisabled
-```
-
-### NotWhitelisted
-
-```solidity
-error NotWhitelisted(string name, address guilty)
+bool deprecated_whitelistDisabled
 ```
 
 ### constructor
@@ -50,22 +51,6 @@ _sets token name and symbol, permit init and RBAC structure._
 | ---- | ---- | ----------- |
 | admin | address | address for the ADMIN_ROLE of the token. |
 
-### grantWhitelister
-
-```solidity
-function grantWhitelister(address to) public
-```
-
-Allow whitelister to assign other whitelisters
-
-### _beforeTokenTransfer
-
-```solidity
-function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual
-```
-
-Only allow transfer to whitelisted accounts
-
 ### _authorizeUpgrade
 
 ```solidity
@@ -80,21 +65,8 @@ Access control for the upgrade process
 function setName(address ensRegistry, string ensName) external
 ```
 
-### disableWhitelist
-
-```solidity
-function disableWhitelist() public
-```
-
-### enableWhitelist
-
-```solidity
-function enableWhitelist() public
-```
-
 ### __gap
 
 ```solidity
 uint256[49] __gap
 ```
-

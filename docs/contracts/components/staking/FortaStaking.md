@@ -1,11 +1,3 @@
-## IRewardReceiver
-
-### onRewardReceived
-
-```solidity
-function onRewardReceived(uint8 subjectType, uint256 subject, uint256 amount) external
-```
-
 ## FortaStaking
 
 _This is a generic staking contract for the Forta platform. It allows any account to deposit ERC20 tokens to
@@ -19,7 +11,7 @@ following to each staker's share in the subject.
 Stakers can withdraw their funds, following a withdrawal delay. During the withdrawal delay, funds are no longer
 counting toward the active stake of a subject, but are still slashable.
 
-The SLASHER_ROLE should be given to a future smart contract that will be in charge of resolving disputes.
+The SLASHER_ROLE should be given to a smart contract that will be in charge of handling the slashing proposal process.
 
 Stakers receive ERC1155 shares in exchange for their stake, making the active stake transferable. When a withdrawal
 is initiated, similarly the ERC1155 tokens representing the (transferable) active shares are burned in exchange for
@@ -71,10 +63,10 @@ struct Distributions.Balances _rewards
 mapping(uint256 => struct Distributions.SignedBalances) _released
 ```
 
-### _frozen
+### _deprecated_frozen
 
 ```solidity
-mapping(uint256 => bool) _frozen
+mapping(uint256 => bool) _deprecated_frozen
 ```
 
 ### _withdrawalDelay
@@ -89,16 +81,34 @@ uint64 _withdrawalDelay
 address _treasury
 ```
 
-### HUNDRED_PERCENT
+### subjectGateway
 
 ```solidity
-uint256 HUNDRED_PERCENT
+contract IStakeSubjectGateway subjectGateway
 ```
 
-### _stakingParameters
+### slashDelegatorsPercent
 
 ```solidity
-contract IStakeController _stakingParameters
+uint256 slashDelegatorsPercent
+```
+
+### allocator
+
+```solidity
+contract IStakeAllocator allocator
+```
+
+### openProposals
+
+```solidity
+mapping(uint256 => uint256) openProposals
+```
+
+### _reentrancyStatus
+
+```solidity
+uint256 _reentrancyStatus
 ```
 
 ### MIN_WITHDRAWAL_DELAY
@@ -111,6 +121,18 @@ uint256 MIN_WITHDRAWAL_DELAY
 
 ```solidity
 uint256 MAX_WITHDRAWAL_DELAY
+```
+
+### MAX_SLASHABLE_PERCENT
+
+```solidity
+uint256 MAX_SLASHABLE_PERCENT
+```
+
+### HUNDRED_PERCENT
+
+```solidity
+uint256 HUNDRED_PERCENT
 ```
 
 ### StakeDeposited
@@ -149,18 +171,6 @@ event Slashed(uint8 subjectType, uint256 subject, address by, uint256 value)
 event SlashedShareSent(uint8 subjectType, uint256 subject, address by, uint256 value)
 ```
 
-### Rewarded
-
-```solidity
-event Rewarded(uint8 subjectType, uint256 subject, address from, uint256 value)
-```
-
-### Released
-
-```solidity
-event Released(uint8 subjectType, uint256 subject, address to, uint256 value)
-```
-
 ### DelaySet
 
 ```solidity
@@ -173,10 +183,10 @@ event DelaySet(uint256 newWithdrawalDelay)
 event TreasurySet(address newTreasury)
 ```
 
-### StakeParamsManagerSet
+### StakeHelpersConfigured
 
 ```solidity
-event StakeParamsManagerSet(address newManager)
+event StakeHelpersConfigured(address subjectGateway, address allocator)
 ```
 
 ### MaxStakeReached
@@ -189,6 +199,12 @@ event MaxStakeReached(uint8 subjectType, uint256 subject)
 
 ```solidity
 event TokensSwept(address token, address to, uint256 amount)
+```
+
+### SlashDelegatorsPercentSet
+
+```solidity
+event SlashDelegatorsPercentSet(uint256 percent)
 ```
 
 ### WithdrawalNotReady
@@ -248,7 +264,7 @@ constructor(address _forwarder) public
 ### initialize
 
 ```solidity
-function initialize(address __manager, address __router, uint64 __withdrawalDelay, address __treasury, address __stakedToken) public
+function initialize(address __manager, contract IERC20 __stakedToken, uint64 __withdrawalDelay, address __treasury) public
 ```
 
 Initializer method, access point to initialize inheritance tree.
@@ -256,10 +272,29 @@ Initializer method, access point to initialize inheritance tree.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | __manager | address | address of AccessManager. |
-| __router | address | address of Router. |
+| __stakedToken | contract IERC20 | ERC20 to be staked (FORT). |
 | __withdrawalDelay | uint64 | cooldown period between withdrawal init and withdrawal (in seconds). |
 | __treasury | address | address where the slashed tokens go to. |
-| __stakedToken | address |  |
+
+### setReentrancyGuard
+
+```solidity
+function setReentrancyGuard() public
+```
+
+Reinitializer to setup the reentrancy guard (introduced in v0.1.2)
+
+### _setStatus
+
+```solidity
+function _setStatus(uint256 newStatus) internal virtual
+```
+
+### _getStatus
+
+```solidity
+function _getStatus() internal virtual returns (uint256)
+```
 
 ### treasury
 
@@ -279,7 +314,7 @@ Get stake of a subject (not marked for withdrawal).
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -308,7 +343,7 @@ Get inactive stake of a subject (marked for withdrawal).
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -340,7 +375,7 @@ shifted 9 bits, with the 9th bit set and uint8(subjectType) masked in_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 | account | address | holder of the ERC1155 staking shares. |
 
@@ -361,7 +396,7 @@ shifted 9 bits, with the 9th bit set and uint8(subjectType) masked in_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -381,7 +416,7 @@ shifted 9 bits, with the 9th bit unset and uint8(subjectType) masked in._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 | account | address | holder of the ERC1155 staking shares. |
 
@@ -402,7 +437,7 @@ shifted 9 bits, with the 9th bit unset and uint8(subjectType) masked in_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -419,7 +454,7 @@ Checks if a subject frozen (stake of frozen subject cannot be withdrawn).
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -429,14 +464,14 @@ Checks if a subject frozen (stake of frozen subject cannot be withdrawn).
 ### deposit
 
 ```solidity
-function deposit(uint8 subjectType, uint256 subject, uint256 stakeValue) public returns (uint256)
+function deposit(uint8 subjectType, uint256 subject, uint256 stakeValue) external returns (uint256)
 ```
 
 Deposit `stakeValue` tokens for a given `subject`, and mint the corresponding active ERC1155 shares.
 will return tokens staked over maximum for the subject.
 If stakeValue would drive the stake over the maximum, only stakeValue - excess is transferred, but transaction will
 not fail.
-Reverts if max stake for subjectType not set, or subject not found
+Reverts if max stake for subjectType not set, or subject not found.
 
 _NOTE: Subject type is necessary because we can't infer subject ID uniqueness between scanners, agents, etc
 Emits a ERC1155.TransferSingle event and StakeDeposited (to allow accounting per subject type)
@@ -449,13 +484,24 @@ shares to an EOA or fully ERC1155 compatible contract._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 | stakeValue | uint256 | amount of staked token. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | [0] | uint256 | amount of ERC1155 active shares minted. |
+
+### migrate
+
+```solidity
+function migrate(uint8 oldSubjectType, uint256 oldSubject, uint8 newSubjectType, uint256 newSubject, address staker) external
+```
+
+deposits active stake from SCANNER to SCANNER_POOL if not frozen. Inactive stake remains for withdrawal in old subject
+Burns active stake and shares for old subject.
+
+_No slash has been executed, so new SCANNER_POOL share proportions apply._
 
 ### _getInboundStake
 
@@ -479,7 +525,7 @@ Calculates how much of the incoming stake fits for subject.
 ### initiateWithdrawal
 
 ```solidity
-function initiateWithdrawal(uint8 subjectType, uint256 subject, uint256 sharesValue) public returns (uint64)
+function initiateWithdrawal(uint8 subjectType, uint256 subject, uint256 sharesValue) external returns (uint64)
 ```
 
 Starts the withdrawal process for an amount of shares. Burns active shares and mints inactive
@@ -490,7 +536,7 @@ _Emits a WithdrawalInitiated event._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 | sharesValue | uint256 | amount of shares token. |
 
@@ -501,7 +547,7 @@ _Emits a WithdrawalInitiated event._
 ### withdraw
 
 ```solidity
-function withdraw(uint8 subjectType, uint256 subject) public returns (uint256)
+function withdraw(uint8 subjectType, uint256 subject) external returns (uint256)
 ```
 
 Burn `sharesValue` inactive shares for a given `subject`, and withdraw the corresponding tokens
@@ -512,7 +558,7 @@ Emits events WithdrawalExecuted and ERC1155.TransferSingle._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 
 | Name | Type | Description |
@@ -522,30 +568,47 @@ Emits events WithdrawalExecuted and ERC1155.TransferSingle._
 ### slash
 
 ```solidity
-function slash(uint8 subjectType, uint256 subject, uint256 stakeValue, address proposer, uint256 proposerPercent) public returns (uint256)
+function slash(uint8 subjectType, uint256 subject, uint256 stakeValue, address proposer, uint256 proposerPercent) external returns (uint256)
 ```
 
 Slash a fraction of a subject stake, and transfer it to the treasury. Restricted to the `SLASHER_ROLE`.
 
 _This will alter the relationship between shares and stake, reducing shares value for a subject.
-Emits a Slashed event._
+Emits a Slashed event.
+Unallocated stake if needed.
+A slash over a DELEGATED type will propagate to DELEGATORs according to proposerPercent._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 | stakeValue | uint256 | amount of staked token to be slashed. |
 | proposer | address | address of the slash proposer. Must be nonzero address if proposerPercent > 0 |
-| proposerPercent | uint256 | percentage of stakeValue sent to the proposer. From 0 to FortaStakingParameters.maxSlashableStakePercent() |
+| proposerPercent | uint256 | percentage of stakeValue sent to the proposer. From 0 to MAX_SLASHABLE_PERCENT |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | [0] | uint256 | stakeValue |
 
+### _slash
+
+```solidity
+function _slash(uint256 activeSharesId, uint8 subjectType, uint256 subject, uint256 stakeValue) private
+```
+
+burns slashed stake from active and/or inactive stake for subjectType/subject.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| activeSharesId | uint256 | ERC1155 id of the shares being slashed |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
+| subject | uint256 | id identifying subject (external to FortaStaking). |
+| stakeValue | uint256 | amount of staked token to be slashed. |
+
 ### freeze
 
 ```solidity
-function freeze(uint8 subjectType, uint256 subject, bool frozen) public
+function freeze(uint8 subjectType, uint256 subject, bool frozen) external
 ```
 
 Freeze/unfreeze withdrawal of a subject stake. This will be used when something suspicious happens
@@ -556,38 +619,35 @@ _Emits a Freeze event._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
+| subjectType | uint8 | type id of Stake Subject. See SubjectTypeValidator.sol |
 | subject | uint256 | id identifying subject (external to FortaStaking). |
 | frozen | bool | true to freeze, false to unfreeze. |
 
-### reward
+### _migrateFrozenToOpenProposals
 
 ```solidity
-function reward(uint8 subjectType, uint256 subject, uint256 value) public
+function _migrateFrozenToOpenProposals(uint256 activeSharesId) private
 ```
 
-Deposit reward value for a given `subject`. The corresponding tokens will be shared amongst the shareholders
-of this subject.
-
-_Emits a Reward event._
+If there is open cases before upgrading to openProposals (frozen == true), we increment as an extra proposal
+and set to false. There could be more than 1 open, in that case SLASHING_ARBITER_ROLE should be cautious with not unfreezing.
+This method will be obsolete when all the _deprecated_frozen are false
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
-| subject | uint256 | id identifying subject (external to FortaStaking). |
-| value | uint256 | amount of reward tokens. |
+| activeSharesId | uint256 | of the subject |
 
 ### sweep
 
 ```solidity
-function sweep(contract IERC20 token, address recipient) public returns (uint256)
+function sweep(contract IERC20 token, address recipient) external returns (uint256)
 ```
 
 Sweep all token that might be mistakenly sent to the contract. This covers both unrelated tokens and staked
 tokens that would be sent through a direct transfer. Restricted to SWEEPER_ROLE.
-If tokens are the same as staked tokens, only the extra tokens (no stake or rewards) will be transferred.
+If tokens are the same as staked tokens, only the extra tokens (no stake) will be transferred.
 
-_WARNING: thoroughly review the token to b_
+_WARNING: thoroughly review the token to sweep._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -596,68 +656,12 @@ _WARNING: thoroughly review the token to b_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | uint256 | amount of tokens swept. For unrelated tokens is FortaStaking's balance, for stakedToken its the balance over the active stake + inactive stake + rewards |
-
-### releaseReward
-
-```solidity
-function releaseReward(uint8 subjectType, uint256 subject, address account) public returns (uint256)
-```
-
-Release reward owed by given `account` for its current or past share for a given `subject`.
-
-_If staking from a contract, said contract may optionally implement ERC165 for IRewardReceiver.
-Emits a Release event._
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| subjectType | uint8 | agents, scanner or future types of stake subject. See SubjectTypes.sol |
-| subject | uint256 | id identifying subject (external to FortaStaking). |
-| account | address | that staked on the subject. |
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | uint256 | available reward transferred. |
-
-### _availableReward
-
-```solidity
-function _availableReward(uint256 activeSharesId, address account) internal view returns (uint256)
-```
-
-Amount of reward tokens owed by given `account` for its current or past share for a given `subject`.
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| activeSharesId | uint256 | ERC1155 id representing the active shares of a subject / subjectType pair. |
-| account | address | address of the staker |
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | uint256 | rewards available for staker on that subject. |
-
-### availableReward
-
-```solidity
-function availableReward(uint8 subjectType, uint256 subject, address account) external view returns (uint256)
-```
-
-_Amount of reward tokens owed by given `account` for its current or past share for a given `subject`._
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| subjectType | uint8 | type of staking subject (see SubjectTypes.sol) |
-| subject | uint256 | ID of subject |
-| account | address | address of the staker |
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | uint256 | rewards available for staker on that subject. |
+| [0] | uint256 | amount of tokens swept. For unrelated tokens is FortaStaking's balance, for stakedToken its the balance over the active stake + inactive stake |
 
 ### relayPermit
 
 ```solidity
-function relayPermit(uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) public
+function relayPermit(uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) external
 ```
 
 _Relay a ERC2612 permit signature to the staked token. This cal be bundled with a {deposit} or a {reward}
@@ -670,18 +674,6 @@ operation using Multicall._
 | v | uint8 | part of signature |
 | r | bytes32 | part of signature |
 | s | bytes32 | part of signature |
-
-### _totalHistoricalReward
-
-```solidity
-function _totalHistoricalReward(uint256 activeSharesId) internal view returns (uint256)
-```
-
-### _historicalRewardFraction
-
-```solidity
-function _historicalRewardFraction(uint256 activeSharesId, uint256 amount, enum Math.Rounding rounding) internal view returns (uint256)
-```
 
 ### _beforeTokenTransfer
 
@@ -762,7 +754,7 @@ Convert inactive shares amount to inactive stake amount.
 ### setDelay
 
 ```solidity
-function setDelay(uint64 newDelay) public
+function setDelay(uint64 newDelay) external
 ```
 
 Sets withdrawal delay. Restricted to DEFAULT_ADMIN_ROLE
@@ -774,7 +766,7 @@ Sets withdrawal delay. Restricted to DEFAULT_ADMIN_ROLE
 ### setTreasury
 
 ```solidity
-function setTreasury(address newTreasury) public
+function setTreasury(address newTreasury) external
 ```
 
 Sets destination of slashed tokens. Restricted to DEFAULT_ADMIN_ROLE
@@ -783,16 +775,22 @@ Sets destination of slashed tokens. Restricted to DEFAULT_ADMIN_ROLE
 | ---- | ---- | ----------- |
 | newTreasury | address | address. |
 
-### setStakingParametersManager
+### configureStakeHelpers
 
 ```solidity
-function setStakingParametersManager(contract IStakeController newStakingParameters) public
+function configureStakeHelpers(contract IStakeSubjectGateway _subjectGateway, contract IStakeAllocator _allocator) external
+```
+
+### setSlashDelegatorsPercent
+
+```solidity
+function setSlashDelegatorsPercent(uint256 percent) external
 ```
 
 ### setURI
 
 ```solidity
-function setURI(string newUri) public
+function setURI(string newUri) external
 ```
 
 Sets URI of the ERC1155 tokens. Restricted to DEFAULT_ADMIN_ROLE
@@ -820,6 +818,5 @@ Helper to get msg.data if not a meta transaction, forwarder data in metatx if it
 ### __gap
 
 ```solidity
-uint256[40] __gap
+uint256[36] __gap
 ```
-

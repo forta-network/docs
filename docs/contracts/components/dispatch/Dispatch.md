@@ -1,35 +1,5 @@
 ## Dispatch
 
-### _agents
-
-```solidity
-contract AgentRegistry _agents
-```
-
-### _scanners
-
-```solidity
-contract ScannerRegistry _scanners
-```
-
-### version
-
-```solidity
-string version
-```
-
-### scannerToAgents
-
-```solidity
-mapping(uint256 => struct EnumerableSet.UintSet) scannerToAgents
-```
-
-### agentToScanners
-
-```solidity
-mapping(uint256 => struct EnumerableSet.UintSet) agentToScanners
-```
-
 ### Disabled
 
 ```solidity
@@ -40,6 +10,24 @@ error Disabled(string name)
 
 ```solidity
 error InvalidId(string name, uint256 id)
+```
+
+### SetAgentRegistry
+
+```solidity
+event SetAgentRegistry(address registry)
+```
+
+### SetScannerRegistry
+
+```solidity
+event SetScannerRegistry(address registry)
+```
+
+### SetScannerPoolRegistry
+
+```solidity
+event SetScannerPoolRegistry(address registry)
 ```
 
 ### AlreadyLinked
@@ -63,7 +51,7 @@ constructor(address forwarder) public
 ### initialize
 
 ```solidity
-function initialize(address __manager, address __router, address __agents, address __scanners) public
+function initialize(address __manager, address __agents, address __scanners, address __scannerPools) public
 ```
 
 Initializer method, access point to initialize inheritance tree.
@@ -71,9 +59,9 @@ Initializer method, access point to initialize inheritance tree.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | __manager | address | address of AccessManager. |
-| __router | address | address of Router. |
 | __agents | address | address of AgentRegistry. |
 | __scanners | address | address of ScannerRegistry. |
+| __scannerPools | address | address of ScannerPoolRegistry. |
 
 ### agentRegistry
 
@@ -81,23 +69,17 @@ Initializer method, access point to initialize inheritance tree.
 function agentRegistry() public view returns (contract AgentRegistry)
 ```
 
-Getter for AgentRegistry.
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | contract AgentRegistry | AgentRegistry. |
-
 ### scannerRegistry
 
 ```solidity
 function scannerRegistry() public view returns (contract ScannerRegistry)
 ```
 
-Getter for ScannerRegistry.
+### scannerPoolRegistry
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | contract ScannerRegistry | ScannerRegistry. |
+```solidity
+function scannerPoolRegistry() public view returns (contract ScannerPoolRegistry)
+```
 
 ### numAgentsFor
 
@@ -111,7 +93,7 @@ _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | address of the scanner converted to uint256 |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -129,7 +111,7 @@ _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent. |
+| agentId | uint256 | ERC721 token id of the agent. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -147,12 +129,12 @@ _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | address of the scanner converted to uint256 |
 | pos | uint256 | index for iteration. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | uint256 | ERC1155 token id of the agent. |
+| [0] | uint256 | ERC721 token id of the agent. |
 
 ### agentRefAt
 
@@ -166,14 +148,14 @@ _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | address of the scanner converted to uint256 |
 | pos | uint256 | index for iteration. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | registered | bool | bool if agent exists, false otherwise. |
 | owner | address | address. |
-| agentId | uint256 | ERC1155 token id of the agent. |
+| agentId | uint256 | ERC721 token id of the agent. |
 | agentVersion | uint256 | agent version number. |
 | metadata | string | IPFS pointer for agent metadata. |
 | chainIds | uint256[] | ordered array of chainId were the agent wants to run. |
@@ -192,17 +174,17 @@ _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the scanner. |
+| agentId | uint256 | ERC721 token id of the scanner. |
 | pos | uint256 | index for iteration. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | uint256 | ERC1155 token id of the scanner. |
+| [0] | uint256 | ERC721 token id of the scanner. |
 
 ### scannerRefAt
 
 ```solidity
-function scannerRefAt(uint256 agentId, uint256 pos) external view returns (bool registered, uint256 scannerId, address owner, uint256 chainId, string metadata, bool enabled, uint256 disabledFlags)
+function scannerRefAt(uint256 agentId, uint256 pos) external view returns (bool registered, uint256 scannerId, address owner, uint256 chainId, string metadata, bool operational, bool disabled)
 ```
 
 Get data of ascanner running an agent at a certain position.
@@ -211,18 +193,18 @@ _helper for external iteration._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent. |
+| agentId | uint256 | ERC721 token id of the agent. |
 | pos | uint256 | index for iteration. |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | registered | bool | true if scanner is registered. |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | ERC721 token id of the scanner. |
 | owner | address | address. |
 | chainId | uint256 | that the scanner monitors. |
 | metadata | string | IPFS pointer for agent metadata. |
-| enabled | bool | true if scanner is enabled, false otherwise. |
-| disabledFlags | uint256 | 0 if not disabled, Permission that disabled the scnner otherwise. |
+| operational | bool | true if scanner is not disabled and staked over min, false otherwise. |
+| disabled | bool | true if disabled by ScannerPool or scanner itself. |
 
 ### areTheyLinked
 
@@ -245,8 +227,8 @@ emits Link(agentId, scannerId, true) event._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent. |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| agentId | uint256 | ERC721 token id of the agent. |
+| scannerId | uint256 | address of the scanner converted to uint256 |
 
 ### unlink
 
@@ -261,8 +243,8 @@ emits Link(agentId, scannerId, false) event._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| agentId | uint256 | ERC1155 token id of the agent. |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| agentId | uint256 | ERC721 token id of the agent. |
+| scannerId | uint256 | address of the scanner converted to uint256 |
 
 ### setAgentRegistry
 
@@ -278,6 +260,12 @@ _only DEFAULT_ADMIN_ROLE (governance)._
 | ---- | ---- | ----------- |
 | newAgentRegistry | address | agent of the new AgentRegistry. |
 
+### _setAgentRegistry
+
+```solidity
+function _setAgentRegistry(address newAgentRegistry) private
+```
+
 ### setScannerRegistry
 
 ```solidity
@@ -291,6 +279,20 @@ _only DEFAULT_ADMIN_ROLE (governance)._
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | newScannerRegistry | address | agent of the new ScannerRegistry. |
+
+### setScannerPoolRegistry
+
+```solidity
+function setScannerPoolRegistry(address newScannerPoolRegistry) external
+```
+
+Sets ScannerPool registry address.
+
+_only DEFAULT_ADMIN_ROLE (governance)._
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| newScannerPoolRegistry | address | agent of the new ScannerRegistry. |
 
 ### agentHash
 
@@ -314,7 +316,7 @@ their enabled state or version has changed so they can start managing changes
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| scannerId | uint256 | ERC1155 token id of the scanner. |
+| scannerId | uint256 | address of the scanner converted to uint256 |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -324,6 +326,6 @@ their enabled state or version has changed so they can start managing changes
 ### __gap
 
 ```solidity
-uint256[48] __gap
+uint256[47] __gap
 ```
 

@@ -12,6 +12,18 @@ In addition to all the common forta features, the version is mintable by a speci
 bytes32 MINTER_ROLE
 ```
 
+### SUPPLY
+
+```solidity
+uint256 SUPPLY
+```
+
+### MintingMoreThanSupply
+
+```solidity
+error MintingMoreThanSupply()
+```
+
 ### initialize
 
 ```solidity
@@ -52,4 +64,3 @@ we need to implement the interface with a method instead of immutable variable._
 ```solidity
 uint256[50] __gap
 ```
-

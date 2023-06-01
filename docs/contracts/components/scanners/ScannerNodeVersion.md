@@ -58,7 +58,7 @@ constructor(address forwarder) public
 ### initialize
 
 ```solidity
-function initialize(address __manager, address __router) public
+function initialize(address __manager) public
 ```
 
 Initializer method, access point to initialize inheritance tree.
@@ -66,7 +66,6 @@ Initializer method, access point to initialize inheritance tree.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | __manager | address | address of AccessManager. |
-| __router | address | address of Router. |
 
 ### setScannerNodeVersion
 

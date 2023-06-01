@@ -72,24 +72,33 @@ Save commit representing an agent to prevent frontrunning of their creation
 | ---- | ---- | ----------- |
 | commit | bytes32 | keccak256 hash of the agent creation's parameters |
 
-### createAgent
+### registerAgent
 
 ```solidity
-function createAgent(uint256 agentId, address owner, string metadata, uint256[] chainIds) public
+function registerAgent(uint256 agentId, string metadata, uint256[] chainIds) public
 ```
 
-Agent creation method. Mints an ERC721 token with the agent id for the owner and stores metadata.
+Agent registration method. Mints an ERC721 token with the agent id for the sender and stores metadata.
 
-_fires _before and _after hooks within the inheritance tree.
+_Agent Ids are generated through the Forta Bot SDK (by hashing UUIDs) so the agentId collision risk is minimized.
+Fires _before and _after hooks within the inheritance tree.
 If front run protection is enabled (disabled by default), it will check if the keccak256 hash of the parameters
 has been committed in prepareAgent(bytes32)._
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | agentId | uint256 | ERC721 token id of the agent to be created. |
-| owner | address | address to have ownership privileges in the agent methods. |
 | metadata | string | IPFS pointer to agent's metadata JSON. |
 | chainIds | uint256[] | ordered list of chainIds where the agent wants to run. |
+
+### createAgent
+
+```solidity
+function createAgent(uint256 agentId, address, string metadata, uint256[] chainIds) external
+```
+
+_Create agent method with old signature for backwards compatibility. Owner parameter is ignore in favour of sender.
+This method is deprecated and it will be removed in future versions of AgentRegistryCore_
 
 ### isRegistered
 
@@ -139,6 +148,12 @@ function getStakeThreshold(uint256) public view returns (struct IStakeSubject.St
 
 _stake threshold common for all agents_
 
+### _isStakeActivated
+
+```solidity
+function _isStakeActivated() internal view returns (bool)
+```
+
 ### _isStakedOverMin
 
 ```solidity
@@ -153,7 +168,7 @@ Checks if agent is staked over minimum stake
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | bool | true if agent is staked over the minimum threshold and is, or staking is not yet enabled (stakeController = 0). false otherwise |
+| [0] | bool | true if agent is staked over the minimum threshold and is, or staking is not enabled (stakeController = 0 or activated = false ). false otherwise |
 
 ### setFrontRunningDelay
 
@@ -239,9 +254,14 @@ Obligatory inheritance dismambiguation of ForwardedContext's _msgSender()
 | ---- | ---- | ----------- |
 | [0] | bytes | sender msg.data if not a meta transaction, forwarder data in metatx if it is. |
 
+### ownerOf
+
+```solidity
+function ownerOf(uint256 subject) public view virtual returns (address)
+```
+
 ### __gap
 
 ```solidity
 uint256[41] __gap
 ```
-
