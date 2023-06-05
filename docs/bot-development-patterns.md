@@ -1,4 +1,8 @@
-# Bot Development Patterns
+# Intro
+
+This page provides a brief summary of some of the most common approaches to bot development and [best practices](/best-practices).
+
+## Bot Development Patterns
 
 - [Adding labels to findings](https://docs.forta.network/en/latest/labels/)
 
@@ -54,4 +58,4 @@ This page describes how to conduct more advanced testing using a locally forked 
 
 - [Querying other chains](https://docs.forta.network/en/latest/querying-chains/)
 
-Dots can manually read data from any other chain themselves.This page will describe how to interact with any blockchain using a Javascript example bot. 
+Bots can manually read data from any other chain themselves. This page will describe how to interact with any blockchain using a Javascript example bot. 

@@ -27,7 +27,6 @@ nav:
           - Python SDK: python.md
           - CLI commands: cli.md
           - forta.config.json: config.md
-      - Best practices: best-practices.md
       - Video tutorials: tutorials.md
       - Integrating with Hardhat: hardhat.md
       - CLI Reference: deploying-cli.md
@@ -35,6 +34,7 @@ nav:
     - Bot Examples: https://github.com/forta-network/forta-bot-examples
     - Bot Development:
       - Intro: bot-development-patterns.md
+      - Best Practices: best-practices.md
       - Adding labels to findings: labels.md
       - Error monitoring: error-monitoring.md
       - Increasing bot throughput: sharding.md
@@ -74,7 +74,7 @@ nav:
       - Claim rewards: delegated-staking-rewards.md
       - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>About Forta</strong>:
-    - What is Forta: what-is-forta.md
+    - What is Forta: why-forta.md
     - FORT token: fort-token.md
     - Governance: governance.md
     - How to contribute: contributing.md
