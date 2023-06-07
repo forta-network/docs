@@ -71,6 +71,7 @@ nav:
         - SLA API: sla-api.md
   - <strong>Delegate FORT token</strong>:
       - Delegated staking: delegated-staking-introduction.md
+      - FORT Holder Staking Guide: fort-holder-staking-guide.md
       - Claim rewards: delegated-staking-rewards.md
       - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>About Forta</strong>:
