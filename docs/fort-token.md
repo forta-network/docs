@@ -41,10 +41,16 @@ Other FORT token allocations include tokens held by Backers, Initial Core Contri
 
 The Forta Network received early support from a group of dedicated backers who not only provided funding for the development of Forta, but also became some of the earliest members of the Forta community, providing key networking and support across various functions. Backers also represented some of the first node operators in the Forta Network. Backers’ transfer restrictions are enforced through on-chain vesting smart contracts, so they are able to stake and participate in the Network before their transfer restrictions vest.
 
+![Backers Allocation](backers-allocation.png)
+
 ### Initial Core Contributors
 
 The Forta Network was originally developed and brought to the community by an innovative and interdisciplinary team of individuals within OpenZeppelin. 20% of the total FORT token supply has been allocated for these individuals as Initial Core Contributors and is subject to 4-year linear vesting periods with a 1-year cliff, enforced by OpenZeppelin. The earliest vesting commencement date for Initial Core Contributors’ FORT token allocations is September 1, 2021, which aligns with the transfer restrictions for the Backers.
 
+![Initial Core Contributors Allocation](initial-core-contributors-alloc.png)
+
 ### OpenZeppelin
 
 OpenZeppelin is a leading blockchain security company that founded and incubated the Forta Network. 10% of the total FORT token supply has been allocated to OpenZeppelin and is subject to 4-year linear vesting periods with a 1-year cliff. The vesting commencement date for OpenZeppelin’s FORT token allocation is September 1, 2021. 
+
+![OpenZeppelin Allocation](open-zeppelin-allocation.png)
