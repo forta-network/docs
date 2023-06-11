@@ -40,7 +40,7 @@ SLA is calculated per hour. Nodes are rewarded for each hour they reliably meet 
 
 Scanners must meet the requirements of the Scan Node.  All of the following requirements must be met. 
 
-- [Must run the latest container version](scanner-quickstart.md#keep-your-node-up-to-date)
+- [Must run the latest container version](scan-node/upgrade.md)
 - Must have run inspections recently
 - Must support `trace_block` if required for chain (Ethereum Mainnet, Fantom)
 - Must support outbound internet access for Bots
