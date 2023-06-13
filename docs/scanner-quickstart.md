@@ -1,3 +1,6 @@
+!!! danger "Out of date"
+    **This page is deprecated and no longer maintained.** For the latest information, please visit the [Guide](scan-node/introduction.md).
+
 # Run a Scan Node
 
 This page contains the steps and technical recommendations to help you set up your node. Please always refer to this documentation for the most up-to-date node setup and configuration details.

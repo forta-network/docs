@@ -10,11 +10,11 @@ You can subscribe to alerts from specific bots or contracts using the [Forta App
 
 ## How do I run a scan node?
 
-Please see the [quickstart](scanner-quickstart.md) guide to learn how to setup a scan node.
+Please see the [scan node guide](scan-node/introduction.md) guide to learn how to setup a scan node.
 
 ## Do I need special hardware to run scan nodes?
 
-The hardware requirements for running a Forta scan node are described [here](scanner-quickstart.md#scan-node-requirements).
+The hardware requirements for running a Forta scan node are described [here](scan-node/machine-setup.md).
 
 ## Can I scan other blockchains like BSC?
 
