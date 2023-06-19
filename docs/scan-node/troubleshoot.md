@@ -21,7 +21,8 @@ forta.container.forta-supervisor.summary
 
 Upon extending this command with `--show all --format oneline` or by simply using `status all`, it returns a full list of statuses from the trackers internally used.
 
-Positive numbers mean a successful result. `-1` is failure and `-3` means unknown/irrelevant. The ones that are `-1` one can effect the SLA score and this might be visible from the `inspector.expected-score` report.
+!!! important "Values"
+    Positive numbers mean a successful result. `-1` is failure and `-3` means unknown/irrelevant. The ones that are `-1` one can effect the SLA score and the effect of this can be visible from `inspector.expected-score` report value (it would be zero).
 
 Let's visit some of the useful ones:
 
