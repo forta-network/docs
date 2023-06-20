@@ -73,6 +73,9 @@ Example Input
 ```json
 {
   "input": {
+    "sourceIds": [
+      "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"
+    ],
     "labels": [
       "scammer-eoa"
     ],
@@ -81,10 +84,10 @@ Example Input
     "metadata": {
       "chain_id": 56
     },
-    "afterCreatedAtDate": "2023-04-03T14:49:58Z",
-    "beforeCreatedAtDate": "2023-04-03T14:55:58Z",
+    "afterCreatedAtDate": "2023-04-03T15:01:33Z",
+    "beforeCreatedAtDate": "2023-04-03T15:10:45Z",
     "after": {
-      "pageToken": "29420099"
+      "pageToken": "29427820"
     }
   }
 }
@@ -101,13 +104,24 @@ Example Response
         {
           "label": {
             "label": "scammer-eoa",
-            "entity": "0x39826756a129977b99bc729a19139cc0336d35aa",
+            "entity": "0x0359d5c3c70087c1aa19f1861885cc4c62a1710c",
+            "metadata": [
+              "alert_id=SCAM-DETECTOR-WASH-TRADE",
+              "chain_id=56"
+            ]
+          },
+          "createdAt": "2023-04-03T15:01:54.984226113Z"
+        },
+        {
+          "label": {
+            "label": "scammer-eoa",
+            "entity": "0xa59123269777b344812530af2352fac15581e118",
             "metadata": [
               "alert_id=SCAM-DETECTOR-SOCIAL-ENG-NATIVE-ICE-PHISHING",
               "chain_id=56"
             ]
           },
-          "createdAt": "2023-04-03T14:50:14.652395512Z"
+          "createdAt": "2023-04-03T15:02:08.331371187Z"
         },
         {
           "label": {
@@ -118,45 +132,34 @@ Example Response
               "chain_id=56"
             ]
           },
-          "createdAt": "2023-04-03T14:50:14.652395512Z"
+          "createdAt": "2023-04-03T15:02:08.331371187Z"
         },
         {
           "label": {
             "label": "scammer-eoa",
-            "entity": "0xe7f39de7a0bac97426374607ba387c25eea7d52c",
-            "metadata": [
-              "alert_id=SCAM-DETECTOR-ICE-PHISHING",
-              "chain_id=56"
-            ]
-          },
-          "createdAt": "2023-04-03T14:50:23.889718011Z"
-        },
-        {
-          "label": {
-            "label": "scammer-eoa",
-            "entity": "0xb96b2eb882d599c8cacc37cdb9c73802a1be36ff",
+            "entity": "0x8d651b658dfaae2aa584df9000ffe433b4574269",
             "metadata": [
               "alert_id=SCAM-DETECTOR-SOCIAL-ENG-NATIVE-ICE-PHISHING",
               "chain_id=56"
             ]
           },
-          "createdAt": "2023-04-03T14:50:23.889718011Z"
+          "createdAt": "2023-04-03T15:02:08.331371187Z"
         },
         {
           "label": {
             "label": "scammer-eoa",
-            "entity": "0x52a100e4d7d02e2c6c2348fdc20320bac91f4275",
+            "entity": "0xbc3a34a8663424708812917bc0c1764c1faf6703",
             "metadata": [
               "alert_id=SCAM-DETECTOR-SOCIAL-ENG-NATIVE-ICE-PHISHING",
               "chain_id=56"
             ]
           },
-          "createdAt": "2023-04-03T14:50:34.253537138Z"
+          "createdAt": "2023-04-03T15:02:17.334014065Z"
         }
       ],
       "pageInfo": {
         "endCursor": {
-          "pageToken": "29420467"
+          "pageToken": "29428039"
         },
         "hasNextPage": true
       }
@@ -170,7 +173,7 @@ Example as curl
 curl --request POST \
     --header 'content-type: application/json' \
     --url 'https://api.forta.network/graphql' \
-    --data '{"query":"query Labels($input: LabelsInput) {\n  labels(input: $input) {\n    labels {\n      label {\n        label\n        entity\n        metadata\n      }\n      createdAt\n    }\n    pageInfo {\n      endCursor {\n        pageToken\n      }\n      hasNextPage\n    }\n  }\n}","variables":{"input":{"labels":["scammer-eoa"],"state":true,"first":5,"metadata":{"chain_id":56},"afterCreatedAtDate":"2023-04-03T14:49:58Z","beforeCreatedAtDate":"2023-04-03T14:55:58Z","after":{"pageToken":"29420099"}}}}'
+    --data '{"query":"query Labels($input: LabelsInput) {\n  labels(input: $input) {\n    labels {\n      label {\n        label\n        entity\n        metadata\n      }\n      createdAt\n    }\n    pageInfo {\n      endCursor {\n        pageToken\n      }\n      hasNextPage\n    }\n  }\n}","variables":{"input":{"sourceIds":["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],"labels":["scammer-eoa"],"state":true,"first":5,"metadata":{"chain_id":56},"afterCreatedAtDate":"2023-04-03T15:01:33Z","beforeCreatedAtDate":"2023-04-03T15:10:45Z","after":{"pageToken":"29427820"}}}}'
 ```
 
 More details on querying labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels)  documentation. 
