@@ -6,12 +6,16 @@ Staking is only available in Polygon, so anyone who wants to stake needs to brid
 
 ## How is the FORT token used in Forta?
 
-To ensure the accuracy and integrity of the data provided by the network, Forta adopts a work token model, where node runners must stake FORT tokens in order to broadcast real-time security and operational data to the network, and anyone may stake FORT tokens in order to signal detection bot quality in the network.
+To ensure the accuracy and integrity of the data provided by the network, Forta adopts a work token model, where both scan node pools and detection bots must have FORT staked above a minimum requirement. This acts as an economic security mechanism of their actions in their network, as the stake can be slashed if participants act maliciously.
 
 FORT has two primary uses that are indispensable to the proper functioning of the network:
 
-1. **Scanner Pool Staking**. Scanner pool owners must deposit FORT tokens on their pools to be discoverable in the network and to provide economic security for the work they are performing, since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously. Once FORT is staked, it may only be withdrawn subject to a thawing period, which provides ample opportunity for verification and dispute resolution. If the Pool is staked over the minimum by the pool owner, delegators may also stake on that pool, with the same withdrawal restrictions. The Delegators may face a small percentage of deduction from the stake in case the pool gets slashed.
-2. **Detection Bot Signaling**. Developers may stake FORT tokens on bots, signaling bot quality to the network and also providing a sybil resistance mechanism. Having fake or low quality bots on the network makes it harder to find the best risk detection offerings.
+1. **Scanner Pool Staking:**
+    1. **Scanner pool owners** must deposit FORT tokens on their pools to be discoverable in the network and to provide economic security for the work they are performing, since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously. Once FORT is staked, it may only be withdrawn subject to a thawing period, which provides ample opportunity for verification and dispute resolution.
+
+    2. **Delegators** may also stake on a pool, with the same withdrawal restrictions. The Delegators may face a smaller percentage of deduction from the stake in case the pool gets slashed.
+  
+2. **Detection Bot Staking:** Developers must stake FORT tokens on bots, signaling bot quality to the network and also providing a sybil resistance mechanism.
 
 In addition, FORT holders can participate in governance to shape the evolution of Forta. Please read more in the governance section of the docs.
 
@@ -41,10 +45,16 @@ Other FORT token allocations include tokens held by Backers, Initial Core Contri
 
 The Forta Network received early support from a group of dedicated backers who not only provided funding for the development of Forta, but also became some of the earliest members of the Forta community, providing key networking and support across various functions. Backers also represented some of the first node operators in the Forta Network. Backers’ transfer restrictions are enforced through on-chain vesting smart contracts, so they are able to stake and participate in the Network before their transfer restrictions vest.
 
+![Backers Allocation](backers-allocation.png)
+
 ### Initial Core Contributors
 
 The Forta Network was originally developed and brought to the community by an innovative and interdisciplinary team of individuals within OpenZeppelin. 20% of the total FORT token supply has been allocated for these individuals as Initial Core Contributors and is subject to 4-year linear vesting periods with a 1-year cliff, enforced by OpenZeppelin. The earliest vesting commencement date for Initial Core Contributors’ FORT token allocations is September 1, 2021, which aligns with the transfer restrictions for the Backers.
 
+![Initial Core Contributors Allocation](initial-core-contributors-alloc.png)
+
 ### OpenZeppelin
 
 OpenZeppelin is a leading blockchain security company that founded and incubated the Forta Network. 10% of the total FORT token supply has been allocated to OpenZeppelin and is subject to 4-year linear vesting periods with a 1-year cliff. The vesting commencement date for OpenZeppelin’s FORT token allocation is September 1, 2021. 
+
+![OpenZeppelin Allocation](open-zeppelin-allocation.png)

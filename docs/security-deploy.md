@@ -61,7 +61,7 @@ Complete list of roles with a description:
 ### Contract Administration
 Forta contracts are managed through [OpenZeppelin's Defender product](https://defender.openzeppelin.com/) utilizing relays to manage smart contract deployment and maintenance.
 
-### Smart Contracts Deployments
+### Deployed Smart Contract Addresses
 
 Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network via the ERC20 FORT Token.
 

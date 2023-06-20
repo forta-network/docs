@@ -207,7 +207,7 @@ function registerScannerNode(struct ScannerPoolRegistryCore.ScannerNodeRegistrat
 Method to register a Scanner Node and associate it with a scannerPoolId. Before executing this method,
 make sure to have enough FORT staked by the owner of the Scanner Pool to be allocated to the new scanner,
 then register a scanner with Forta Scan Node CLI and obtain the parameters for this methods by executing forta auth.
-Follow the instructions here https://docs.forta.network/en/latest/scanner-quickstart/
+Follow the instructions https://docs.forta.network/en/latest/scan-node/introduction/
 This method will try to allocate stake from unallocated stake if necessary.
 Individual ownership of a scaner node is not transferrable.
 A scanner node can be disabled, but not unregistered
