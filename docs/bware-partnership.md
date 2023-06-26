@@ -1,3 +1,6 @@
+!!! info "Disclosure" 
+    The following documentation was written by the team at Bware Labs and does not reflect the views of the Forta Foundation.
+
 # Scan with Blast API by Bware Labs
 
 ## What’s the problem and how can it be solved?
