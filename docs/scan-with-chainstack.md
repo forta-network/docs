@@ -1,3 +1,6 @@
+!!! info "Disclosure" 
+    The following documentation was written by the team at Chainstack and does not reflect the views of the Forta Foundation.
+
 # Scan With Chainstack
 
 ## Why Use Chainstack?

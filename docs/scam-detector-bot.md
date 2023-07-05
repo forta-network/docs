@@ -62,19 +62,49 @@ To request entries that are *currently* accurate (and not later removed), pass *
 
 At least one of:  **labels**, **sourceIds**, or **entities** is required.
 
-Example Request
+Example Query
+```gql
+query Labels($input: LabelsInput) {
+  labels(input: $input) {
+    labels {
+      label {
+        label
+        entity
+        metadata
+      }
+      createdAt
+    }
+    pageInfo {
+      endCursor {
+        pageToken
+      }
+      hasNextPage
+    }
+  }
+}
+```
+
+Example Input
 ```json
 {
- "input": {
-   "labels": ["scammer"],   
-   "state": true,  // set this to false if you want duplicates and removals 
-   "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],
-   "createdBefore": 1680875204000,
-   "createdSince": 1680874204000,
-   "after": {
-     "pageToken": "12345" // set this to the pageInfo.endCursor.pageToken of a response to page
-   }
- }
+  "input": {
+    "sourceIds": [
+      "0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"
+    ],
+    "labels": [
+      "scammer"
+    ],
+    "state": true,
+    "first": 5,
+    "metadata": {
+      "chain_id": 56
+    },
+    "afterCreatedAtDate": "2023-04-03T15:01:33Z",
+    "beforeCreatedAtDate": "2023-04-03T15:10:45Z",
+    "after": {
+      "pageToken": "29427820"
+    }
+  }
 }
 ```
 
@@ -127,7 +157,16 @@ Example Response
         }
      ]
    }
- }
+  }
+}
+```
+
+Example as curl
+```
+curl --request POST \
+    --header 'content-type: application/json' \
+    --url 'https://api.forta.network/graphql' \
+    --data '{"query":"query Labels($input: LabelsInput) {\n  labels(input: $input) {\n    labels {\n      label {\n        label\n        entity\n        metadata\n      }\n      createdAt\n    }\n    pageInfo {\n      endCursor {\n        pageToken\n      }\n      hasNextPage\n    }\n  }\n}","variables":{"input":{"sourceIds":["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],"labels":["scammer"],"state":true,"first":5,"metadata":{"chain_id":56},"afterCreatedAtDate":"2023-04-03T15:01:33Z","beforeCreatedAtDate":"2023-04-03T15:10:45Z","after":{"pageToken":"29427820"}}}}'
 ```
 
 More details on querying labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels)  documentation. 

@@ -1,3 +1,7 @@
+!!! info "Disclosure" 
+    The following documentation was written by the team at Alchemy and does not reflect the views of the Forta Foundation.
+
+
 # Scan With Alchemy
 
 ## Why use Alchemy?
