@@ -3,43 +3,58 @@
 ## Overview
 The Scam Detector is an ideal source of threat intel for Web3 wallets and dashboard tools, as well as for security and compliance solutions serving a retail or institutional audience. Use the Scam Detector to build or supplement a black list, or as a transaction analysis tool by querying the Scam Detector at the point of approval or transaction to determine whether they are malicious. 
 
+The Scam Detector provides threat intelligence about malicious smart contracts, EOAs, and Urls engaging in scams and other end user attacks. It relies on a *bundle* of underlying Forta bots, each monitoring for a specific threat type (ex: Ice Phishing). 
 
-The Scam Detector provides threat intelligence about malicious smart contracts and EOAs engaging in scams and other end user attacks. It relies on a *bundle* of underlying Forta bots, each monitoring for a specific threat type (ex: Ice Phishing). The Scam Detector and its underlying bots are collectively maintained by the Forta community, including the Forta Foundation, Nethermind, and dozens of individual security researchers and developers.
+The Scam Detector and its underlying bots are collectively maintained by the Forta community, including the Forta Foundation, Nethermind, and dozens of individual security researchers and developers.
 
 ## How it works
 Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuristic-based approach, others leverage machine learning to identify malicious activity. When bots identify an attack or scam on-chain, they create two types of threat intelligence:
 
 
-- **Labels.** A persistent tag placed on an entity (smart contract or EOA) responsible for a scam or attack. Today, the Scam Detector assigns two labels: “scammer-eoa” and “scammer-contract”. Labels also feature the threat type via the alert ID field (ex: ICE PHISHING), a link to the description of the alert ID, and a confidence score from 0 to 1. 
+**Labels.** A persistent tag placed on an entity (smart contract, EOA, Url) responsible for a scam or attack. Today, the Scam Detector assigns one label: “scammer” (additional labels, like "victim" and "stolen asset" may fllow). The label will contain the following information:
+
+- label/entity - the address (either EOA or contract address) or Url
+- label/entityType - EntityType.ADDRESS or EntityType.Url
+- label/confidence - a confidence score from 0-1.0 with 1.0 being most confident the label is correct
+- label/remove - a flag indicating whether the label is being added or removed
+- label/label - a string denoting the label that was placed on the entity. It currently is set to 'scammer'
+- label/metadata/bot_version - version of the bot when the label was added
+- label/metadata/threat_category - (see below)
+- label/metadata/address_type - EOA or contract (addresses only)
+- label/metadata/logic - (passhthrough, ml, manual)
+- label/metadata/threat_description_url - URL that describes the threat_category in more detail
 
 
-- **Alerts.** Findings emitted in real-time by a bot about something that happened on-chain. Example, if a flashloan occurred in the last block, a bot monitoring for flashloan transactions would emit an alert on that flashloan when the next block is confirmed. Alerts from the Scam Detector contain metadata about the transaction(s) that triggered the alert, the entities involved and the threat type.      
+The Scam Detector currently monitors on-chain activity for the following threat categories:
 
-
-The Scam Detector currently monitors on-chain activity for the following threat types:
-
-
-- [Ice phishing](https://explorer.forta.network/bot/0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14)
-- [Social engineering native ice phishing](https://explorer.forta.network/bot/0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0)
-- [Fraudulent Seaport/Blur orders](https://explorer.forta.network/bot/0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c)
-- [Address poisoning](https://explorer.forta.network/bot/0x98b87a29ecb6c8c0f8e6ea83598817ec91e01c15d379f03c7ff781fd1141e502)
-- [NFT Wash trading](https://explorer.forta.network/bot/0x067e4c4f771f288c686efa574b685b98a92918f038a478b82c9ac5b5b6472732)
-
+- sleep-minting - Fired when alert combination is observed that points to a sleep minting attack
+- ice-phishing - Fired when alert combination is observed that points to an ice phishing attack
+- wash-trading - Fired when a NFT wash trade has been observed
+- fraudulent-nft-order - Fired when alert combination is observed that points to an fraudulent NFT order
+- native-ice-phishing-social-engineering - Fired when alert combination is observed that points to an native ice phishing involving social engineering techniques (e.g. SecurityUpdate() function sig in the input data field)
+- native-ice-phishing - Fired when alert combination is observed that points to an native ice phishing without social engineering component
+- hard-rug-pull - Fired when a contract with hard rug pull techniques is identified
+- soft-rug-pull - Fired when a contract with soft rug pull techniques is identified
+- rake-token - Fired when a contract with a rake is identified
+- impersonating-token - Fired when a token contract has been identified that is impersonating a known established token (e.g. USDC or USDT)
+- address-poisoning - Fired when alert combination is observed that points to address poisoning attack; this threat category is used for labeling poisoning addresses
+- address-poisoner - Fired when alert combination is observed that points to address poisoning attack; this threat category is used for labeling poisoner addresses, aka the address that is initiating the poisoning and the contract performing the poisioning
+- attack-stages - Fired when alert combination is observed that points to attack on chain that spans the 4 stages of an attack (funding, preparaiton, exploitation, and money laundering) Many of the alerts here point to rug pulls and rake tokens.
+- similar contract - Fired when a similar contract to a previously identified scammer contract has been identified
+- scammer association - Fired when an EOA is associated with a known scammer account (e.g. receiving or sending funds)
+- scammer-deployed-contract - When a known scammer deploys a contract
 
 New threat types are regularly added to the Scam Detector by the Forta community. 
-
 
 Here’s a [glossary](https://forta.org/attacks/) defining threat types in more detail. 
 
 ## Using the Scam Detector  
-The Scam Detector *labels* and *alerts* are each available via Forta's GraphQL API. For accessing threat intel from the Scam Detector, we recommend querying labels generated by this bot (sourceIds parameter needs to be set to ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"].) The two primarily labels are 'scammer-eoa' and 'scammer-contract'.  **Currently, no API key is required.** 
+The Scam Detector *labels* are each available via Forta's GraphQL API. For accessing threat intel from the Scam Detector, we recommend querying labels generated by this bot (sourceIds parameter needs to be set to ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"].) The primary label is 'scammer'.  **Currently, no API key is required.** 
 
 ### *Labels*
 Labels allow a contributor to tag an entity (like an address) with a label.  Labels are available via our [GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels). This API allows one to search by date range and page over results.
 
-Labels will also contain references to other artifacts, such as Alerts, in the **source** properties of the response.  One can also use the GraphQL API to retrieve the alert which will contain other key information about the moment the Label was produced.
-
-A recent one month sample of the labels can be downloaded [here](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230501-20230531.csv).
+A recent one month sample of the labels can be downloaded [here (prod, V1 label format)](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230601-20230630.csv).
 
 **Note:** 
 
@@ -51,7 +66,7 @@ Example Request
 ```json
 {
  "input": {
-   "labels": ["scammer-eoa", "scammer-contract"],   
+   "labels": ["scammer"],   
    "state": true,  // set this to false if you want duplicates and removals 
    "sourceIds": ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],
    "createdBefore": 1680875204000,
@@ -78,28 +93,38 @@ Example Response
      },
      "labels": [
        {
-         "createdAt": "2023-03-31T19:08:41.574277485Z",
-         "id": "0xcf652c19db1b816c975440202d9bc4b0ee3c3182b6ba44c5b6e8c6247cb1cefd",
-         "label": {
-           "confidence": 0.5,
-           "entity": "0xd9bc52751d9e4462e0bbae5836d344d3f3ad9dc4",
-           "entityType": "ADDRESS",
-           "label": "scammer-eoa",
-           "metadata": null,
-           "remove": false
-         },
-         "source": {
-           "alertHash": "0xfa67c24930e927f4a61430fc2229aeba3b40a29bb1e3a135c63b33d666fc17a9",
-           "alertId": "IMPERSONATED-TOKEN-DEPLOYMENT",
-           "id": "0x6aa2012744a3eb210fc4e4b794d9df59684d36d502fd9efe509a867d0efa5127",
-           "bot": {
-             "id": "0x6aa2012744a3eb210fc4e4b794d9df59684d36d502fd9efe509a867d0efa5127",
-             "image": "...",
-             "imageHash": "053edfda50c1cdfef0d822ff5b2f48621e0274f7c44ea7b470da15b6cd294079",
-             "manifest": "QmXFdLehNtaq6W9N8RWETopKyhPy7nQEmGadnDYX33XJym"
-           }
-         }
-       }
+          "createdAt": "2023-07-04T23:09:35.614989763Z",
+          "id": "0x97555444ff87aa9a56431571c906c6ef7ab25a24165fed6b72969964d455dadb",
+          "label": {
+            "label": "scammer",
+            "metadata": [
+              "address_type=contract",
+              "base_bot_alert_hashes=0x8f5e07151a1666d387a163bf91efdb346bc65c53c260e9e043125e762437ea84",
+              "base_bot_alert_ids=SOFT-RUG-PULL-SUS-POOL-REMOVAL",
+              "bot_version=2.15.3",
+              "chain_id=1",
+              "deployer_info=Deployer 0x02caf8b1e4b59529c9c100e8f0f90a3faeeeb2e4 involved in SCAM-DETECTOR-SOFT-RUG-PULL scam; this contract has been associated with this scam.",
+              "feature_vector=",
+              "label_version=2.1.0",
+              "logic=passthrough",
+              "model_name=v3_scammer_model.joblib",
+              "threat_category=soft-rug-pull",
+              "threat_description_url=https://forta.org/attacks#rug-pull"
+            ],
+            "remove": false,
+            "entityType": "ADDRESS",
+            "entity": "0x9bc388edeeb94c8017e0a6e178a8e7cb40f3d1f3",
+            "confidence": 0.477
+          },
+          "source": {
+            "chainId": 1,
+            "alertId": "SCAM-DETECTOR-SOFT-RUG-PULL",
+            "bot": {
+              "id": "0x47c45816807d2eac30ba88745bf2778b61bc106bc76411b520a5289495c76db8"
+            },
+            "alertHash": "0x1b11901bfca2873e83a1cba50ee937a35279b873eff56214eaaefbe068c3582a"
+          }
+        }
      ]
    }
  }
@@ -108,40 +133,39 @@ Example Response
 More details on querying labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels)  documentation. 
 
 
-### *Alerts*
-
-Whereas labels tell you what the Forta Network knows about a particular entity, alerts tell you something happened (i.e. an attack). There are two ways to access alerts: the API (pull) and subscription (push). Use the GraphQL API to query for alerts - more info [here](https://docs.forta.network/en/latest/forta-api-reference/#query-alerts). Alternatively, if you want alerts *pushed* to you in real-time, you can also [subscribe](https://explorer.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) to the Scam Detector directly and select your desired communication channel (webhook, email, Discord, Telegram, Slack).    
-
 ## Matching Threat Intelligence
-Forta’s threat intelligence indicators consist of scammer contracts and EOAs that can be matched against transaction data (either pre-signing, during transaction simulation, or after block building.) 
+Forta’s threat intelligence indicators consist of scammer contracts, EOAs, and Urls that can be matched against transaction data (either pre-signing, during transaction simulation, or after block building.) 
 
 Independent on the type of transaction data that will be used to match Forta's threat intelligence, specific matching logic need to be applied to obtain all relevant transactions based on the threat category observed as outlined below:
 
-### SCAM-DETECTOR-ICE-PHISHING
+### ice-phishing
 Ice phishing involves a user issuing an approval, approvaForAll, increaseApproval or permit transaction. The to address is a benign token contract, but approval is granted to the scammer address specified in the input data of the transaction. As such, the input data or corresponding emitted events for approvals, approval for all and permit transactions need to be parse and the spender value ought to be matched against Forta’s threat intelligence.
 
-### SCAM-DETECTOR-FRAUDULENT-SEAPORT-ORDER
-Fraudulent seaport orders are challenging to match against the Forta’s threat intelligence as the order is merely signed by a user, collected through web2 infrastructure (such as a web site) and then submitted by the scammer on the user’s behalf. The order itself does not include the scammer address. 
+### fraudulent-nft-order
+Fraudulent nft orders are challenging to match against the Forta’s threat intelligence as the order is merely signed by a user, collected through web2 infrastructure (such as a web site) and then submitted by the scammer on the user’s behalf. The order itself does not include the scammer address. 
 
 However, the order gets executed by the scammer, so matching the from field will match those transactions. Once executed, the seaport protocol will transfer the digital assets to the scammer (which could be a different address from the invoking EOA) and matching emitted events for transfers would yield all relevant transactions. 
 
-### SCAM-DETECTOR-ADDRESS-POISONING
+### address-poisoning
 Address poisoning results in a user’s address history to be poisoned using token transfers or native asset dust. Matching should happen at two levels:
 1. Match on any parsed transfer input data fields or corresponding event emissions for tokens. Note, either the to or the from could match the scammer.
 2. Match on the from address for native assets transfers. 
 
-### SCAM-DETECTOR-ADDRESS-POISONER
+### address-poisoner
 Address poisoners are the initiator of the address poisoning activity. A simple matching of the from and to field (if a contract) would yield the relevant transactions.
 
-### SCAM-DETECTOR-NATIVE-ICE-PHISHING/ SCAM-DETECTOR-SOCIAL-ENG-NATIVE-ICE-PHISHING
+### native-ice-phishing/ native-ice-phishing-social-engineering
 Native ice phishing are straight transfers of native assets to the scammer. Matching the to address of the transaction against Forta threat intelligence yield transactions for this type of scam.
 
-### SCAM-DETECTOR-WASH-TRADE
+### hard-rug-pull/ soft-rug-pull/ token-impersonation/ rake-token
+These threat categories are indicative of malicious token contracts that can be matched based on the transaction to address and/or log fields (e.g. transfer logs) post tx simulation. 
+
+### wash-trading
 Wash trading artificially inflates the value and trading volume of digital assets the user may hold. In order identify transactions associated with these wash traded digital assets, the scammer addresses need to be matched against to/ from/ input data fields/ and emitted events. 
 
 In addition, however, the actual wash traded digital asset is tainted and can be tracked by the transfer function. Note, given the contract could emit events with incorrect information - if created by the scammer; it is not a reliable data source. 
 
-### SCAM-DETECTOR-SLEEP-MINTING
+### sleep minting
 Sleep minting is similar to wash trading in that the provenance of an NFT is no longer guaranteed. In order track the sleep minted token by the transfer function. Note, given the contract could emit events with incorrect information, which is prevalent in sleep minting attacks; it is not a reliable data source. 
 
 ## What chains are supported?
@@ -161,30 +185,4 @@ The Forta community evaluates new chains on an ongoing basis.
 While the Scam Detector maintains high precision, it’s possible that it identifies a false positive. To address this risk, the Forta community manually verifies certain Scam Detector alerts within one business day. If a false positive is identified during the manual verification process, an FP alert will be emitted by the Scam Detector and the label will be removed. If you’re accessing the Labels API via the state endpoint, all labels are up to date and take into account the latest FP information.  
 
 ## Confidence Scores
-The confidence score associated with a label is hard coded and based on the precision analysis performed by the Forta community. The score is updated on a monthly basis, and reflects the accuracy of the Scam Detector for a particular alert ID/threat type *before* manual verification. 
-
-## Bots included in the Scam Feed
-Here’s a list of the underlying bots supporting the Scam Detector:
-
-| Name | BotID | AlertId | Stage |
-|------|-------|---------|-------|
-| [Address Poisoning](https://explorer.forta.network/bot/0x98b87a29ecb6c8c0f8e6ea83598817ec91e01c15d379f03c7ff781fd1141e502) |  0x98b87a29ecb6c8c0f8e6ea83598817ec91e01c15d379f03c7ff781fd1141e502 | ADDRESS-POISONING-ZERO-VALUE | Exploitation |
-| [Fraudulent Seaport](https://explorer.forta.network/bot/0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c) |  0xd9584a587a469f3cdd8a03ffccb14114bc78485657e28739b8036aee7782df5c | NIP-1 | Exploitation |
-| [Ice phishing](https://explorer.forta.network/bot/0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14) |  0x8badbf2ad65abc3df5b1d9cc388e419d9255ef999fb69aac6bf395646cf01c14 | ICE-PHISHING-HIGH-NUM-APPROVALS | Preparation |
-| [Social engineering](https://explorer.forta.network/bot/0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0) |  0x1a69f5ec8ef436e4093f9ec4ce1a55252b7a9a2d2c386e3f950b79d164bc99e0 | NIP-1, NIP-2, NIP-3, NIP-4 | Exploitation |
-| [tornado cash withdrawl](https://explorer.forta.network/bot/0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400) |  0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400 | FUNDING-TORNADO-CASH | Funding |
-| [tornado cash funding](https://explorer.forta.network/bot/0x617c356a4ad4b755035ef8024a87d36d895ee3cb0864e7ce9b3cf694dd80c82a) |  0x617c356a4ad4b755035ef8024a87d36d895ee3cb0864e7ce9b3cf694dd80c82a | TORNADO-CASH-FUNDED-ACCOUNT-INTERACTION | Funding |
-| [money laundering](https://explorer.forta.network/bot/0x4adff9a0ed29396d51ef3b16297070347aab25575f04a4e2bd62ec43ca4508d2) | 0x4adff9a0ed29396d51ef3b16297070347aab25575f04a4e2bd62ec43ca4508d2 | POSSIBLE-MONEY-LAUNDERING-TORNADO-CASH | MoneyLaundering |
-| [txt messaging bot](https://explorer.forta.network/bot/0x11b3d9ffb13a72b776e1aed26616714d879c481d7a463020506d1fb5f33ec1d4) |  0x11b3d9ffb13a72b776e1aed26616714d879c481d7a463020506d1fb5f33ec1d4| forta-text-messages-possible-hack | Exploitation |
-| [unverified contract creation](https://explorer.forta.network/bot/0x4c7e56a9a753e29ca92bd57dd593bdab0c03e762bdd04e2bc578cb82b842c1f3) |  0x4c7e56a9a753e29ca92bd57dd593bdab0c03e762bdd04e2bc578cb82b842c1f3 | UNVERIFIED-CODE-CONTRACT-CREATION | Preparation |
-| [flashbot attack bot](https://explorer.forta.network/bot/0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5) |  0xbc06a40c341aa1acc139c900fd1b7e3999d71b80c13a9dd50a369d8f923757f5 | FLASHBOT-TRANSACTION | Exploitation |
-| [Malicious Address Bot](https://explorer.forta.network/bot/0xd935a697faab13282b3778b2cb8dd0aa4a0dde07877f9425f3bf25ac7b90b895) |  0xd935a697faab13282b3778b2cb8dd0aa4a0dde07877f9425f3bf25ac7b90b895 | AE-MALICIOUS-ADDR | Exploitation |
-| [Sleep Minting](https://explorer.forta.network/bot/0x46ce98e921e2766a922840a56e89f24409001052c284e0bd6cbaa4fecd95e9b6) |  0x46ce98e921e2766a922840a56e89f24409001052c284e0bd6cbaa4fecd95e9b6 | SLEEPMINT-2, SLEEPMINT-1 | Preparation |
-| [Aztec funded contract interaction](https://explorer.forta.network/bot/0x127e62dffbe1a9fa47448c29c3ef4e34f515745cb5df4d9324c2a0adae59eeef) | 0x127e62dffbe1a9fa47448c29c3ef4e34f515745cb5df4d9324c2a0adae59eeef| AK-AZTEC-PROTOCOL-FUNDED-ACCOUNT-INTERACTION-0 | Exploitation |
-| [CEX Funding bot](https://explorer.forta.network/bot/0xf496e3f522ec18ed9be97b815d94ef6a92215fc8e9a1a16338aee9603a5035fb) |  0xf496e3f522ec18ed9be97b815d94ef6a92215fc8e9a1a16338aee9603a5035fb | CEX-FUNDING-1 | Funding |
-| [Aztec Funding bot](https://explorer.forta.network/bot/0x9fbf4db19f23627633d86bb1936dabad0b27ebe09b7a38028a126392156f7f32) |  0x9fbf4db19f23627633d86bb1936dabad0b27ebe09b7a38028a126392156f7f32 | AK-AZTEC-PROTOCOL-FUNDING | Funding |
-| [Malicious Account Funding Bot](https://explorer.forta.network/bot/0x2df302b07030b5ff8a17c91f36b08f9e2b1e54853094e2513f7cda734cf68a46) | 0x2df302b07030b5ff8a17c91f36b08f9e2b1e54853094e2513f7cda734cf68a46 | MALICIOUS-ACCOUNT-FUNDING | Funding |
-| [Umbra bot](https://explorer.forta.network/bot/0xdba64bc69511d102162914ef52441275e651f817e297276966be16aeffe013b0) |  0xdba64bc69511d102162914ef52441275e651f817e297276966be16aeffe013b0 | UMBRA-RECEIVE | Funding |
-| [ChangeNow Funding](https://explorer.forta.network/bot/0x9324d7865e1bcb933c19825be8482e995af75c9aeab7547631db4d2cd3522e0e) |  0x9324d7865e1bcb933c19825be8482e995af75c9aeab7547631db4d2cd3522e0e | FUNDING-CHANGENOW-NEW-ACCOUNT | Funding |
-| [Malicious Token ML](https://explorer.forta.network/bot/0x887678a85e645ad060b2f096812f7c71e3d20ed6ecf5f3acde6e71baa4cf86ad) |  0x887678a85e645ad060b2f096812f7c71e3d20ed6ecf5f3acde6e71baa4cf86ad | SUSPICIOUS-TOKEN-CONTRACT-CREATION | Preparation |
-| [NFT Washtrading](https://explorer.forta.network/bot/0x067e4c4f771f288c686efa574b685b98a92918f038a478b82c9ac5b5b6472732) |  0x067e4c4f771f288c686efa574b685b98a92918f038a478b82c9ac5b5b6472732 | NFT-WASH-TRADE | Preparation | 
+The confidence score associated with a label is hard coded and based on the precision analysis performed by the Forta community or derived from the machine learning score. The hard coded score is updated on a monthly basis, and reflects the precision of the Scam Detector for a particular threat-category *before* manual verification. 
