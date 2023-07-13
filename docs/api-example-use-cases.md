@@ -1,7 +1,7 @@
 # Example Use Cases
 
 The Forta API will allow protocols, DAOs, investors, and the community to integrate alerts in dApps and tools.
-There are many use cases for this, but here are three examples to give you a better idea how this API can be used. 
+There are many use cases for this, but here are three examples to give you a better idea of how this API can be used. 
 
 You can also learn about these three examples and one Forta community member's API integration in the following youtube videos:
 
