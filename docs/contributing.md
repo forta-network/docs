@@ -30,7 +30,7 @@ Are you a skilled Javascript, Typescript or Python developer? You can help build
 
 ## Share useful libraries
 
-Have you written an awesome library to help you develop bots? Sharing such tools and libraries helps the community also improve their bots. If you have identified a common pattern when writing your bots, you could share a set of templates that others can use to speed up their bot development process. Check out the [useful libaries](useful-libraries.md) page to see what is currently recommended.
+Have you written an awesome library to help you develop bots? Sharing such tools and libraries helps the community also improve their bots. If you have identified a common pattern when writing your bots, you could share a set of templates that others can use to speed up their bot development process. Check out the [useful libraries](useful-libraries.md) page to see what is currently recommended.
 
 ## Run a scan node
 
