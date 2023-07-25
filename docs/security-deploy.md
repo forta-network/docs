@@ -90,7 +90,7 @@ To learn more, read the [smart contracts github repo](https://github.com/forta-n
 | ScannerNodeVersion | [0x4720c872425876B6f4b4E9130CDef667aDE553b2](https://polygonscan.com/address/0x4720c872425876B6f4b4E9130CDef667aDE553b2) | [0xCFF69D7e4db098772c85831f4318A1897647488E](https://polygonscan.com/address/0xCFF69D7e4db098772c85831f4318A1897647488E) |
 | SlashingController | [0x6927C25ff30ed86F86A863d987590A1d77509bDb](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb) | [0xE7e33d453980e8023d54A70A40753bA7617B08F3](https://polygonscan.com/address/0xE7e33d453980e8023d54A70A40753bA7617B08F3) |
 | StakeAllocator | [0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA](https://polygonscan.com/address/0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA) | [0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7](https://polygonscan.com/address/0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7) |
-| RewardsDistributor | [0xf7239f26b79145297737166b0c66f4919af9c507](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507) | [0x98e664dE6EC29FF7606ab26E05678ab9d34012E4](https://polygonscan.com/address/0x98e664dE6EC29FF7606ab26E05678ab9d34012E4) |
+| RewardsDistributor | [0xf7239f26b79145297737166b0c66f4919af9c507](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507) | [0xf87A30F7677f03982780a377C793c796FDAf52F8](https://polygonscan.com/address/0xf87A30F7677f03982780a377C793c796FDAf52F8) |
 | ScannerToScannerPoolMigration | [0x1365fa3FE7F52db912daBc8e439f0843461fee16](https://polygonscan.com/address/0x1365fa3FE7F52db912daBc8e439f0843461fee16) | [0xEBb33FD780757d745213CF57838c0E5b66D824Bc](https://polygonscan.com/address/0xEBb33FD780757d745213CF57838c0E5b66D824Bc) |
 
 **Goerli Testnet**
