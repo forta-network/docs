@@ -2,6 +2,10 @@
 
 Here is a collection of libraries and APIs that bot developers may find useful when building their bots. Want to add your library here? Check out [this section](/contributing/#improve-the-documentation) to suggest an edit.
 
+## forta-helpers
+
+[`forta-helpers`](https://github.com/kovart/forta-helpers) is a useful library from community member Artem Kovalchuk to speed up bot development. It provides solutions to often-repeated patterns of bot development like working with data storage, executing asynchronous requests, extracting useful information from transactions and contracts, and much more.
+
 ## forta-bot-templates
 
 [`forta-bot-templates`](https://github.com/arbitraryexecution/forta-bot-templates) is a repository of low-code bot templates developed by Forta community member [Arbitrary Execution](https://www.arbitraryexecution.com/). All you have to do is modify a single json config file to build your bot. Some example templates include listening for a set of events and filtering by some conditions, or scanning for accounts that have interacted with Tornado Cash.

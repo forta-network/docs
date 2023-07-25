@@ -59,3 +59,9 @@ Second, start measuring the performance of your bot through a unit test. In this
 Once the performance is known, one can derive a sharding configuration. For instance, if your bot takes 120ms on average to process a transaction, it would be too slow for the BSC chain. In that case, you would want to distribute the transactions to approximately 3 shards.
 
 Once configured, it is essential to deploy the bot and review the bot stats page. You tested your bot on your local machine and the performance of your machine may differ from the scan nodes on the network. Some experimentation and iteration may be needed to utilize sharding in a way where every transaction/block gets processed reliably.
+
+## Sharding alternatives
+
+The above sharding solution not quite working for your bot? You can also consider these community-developed libraries to help with sharding your bot:
+
+- [forta-sharding](https://github.com/kovart/forta-sharding) by Artem Kovalchuk

@@ -82,7 +82,7 @@ The Arbiter address will confirm any Validated Slashing Proposal as either an â€
 2. **Operational Complaint** - Slashing Subject at risk of up to 15% slash (if executed by Slasher Multisig). For example:
 
     - Scanner Pool Slashing Subject:
-        - Failure to run a Node with the minimum technical requirements set out in the [Forta Docs](https://docs.forta.network/en/latest/scanner-quickstart/)
+        - Failure to run a Node with the minimum technical requirements set out in the [Forta Docs](scan-node/introduction.md)
         - Failure to run a Node at expected quality standards not captured by the SLA calculation
 
         The pool owner stake will be slashed by up to 90% of his staking in the scanner node.

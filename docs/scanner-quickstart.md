@@ -1,3 +1,6 @@
+!!! danger "Out of date"
+    **This page is deprecated and no longer maintained.** For the latest information, please visit the [Guide](scan-node/introduction.md).
+
 # Run a Scan Node
 
 This page contains the steps and technical recommendations to help you set up your node. Please always refer to this documentation for the most up-to-date node setup and configuration details.
@@ -327,6 +330,9 @@ scan:
 
 ### Configure Registry API
 
+!!! warning
+    Quality of this API is as important as the rest of the APIs configured for scanning.
+
 There are a set of Forta smart contracts on Polygon, which allows finding out:
 
 - the latest list of bots which a scan node should run
@@ -398,6 +404,8 @@ The nodes which run unallowed versions may receive a low SLA score.
 ### Auto-updates
 
 To help you in this process, the node software includes an auto-updater that detects new container images, pulls, stops old containers and starts new containers.
+
+In order to ensure that this feature works at all times, please set the registry API to a reliable one, as suggested in the [Configure Registry API](#configure-registry-api) section.
 
 Each node updates at a specific time within 24 hours, unless overridden by the config in [the release made on GitHub](https://github.com/forta-network/forta-node/releases):
 ```yaml

@@ -40,7 +40,7 @@ hide:
 
     Setup a scan node to run detection bots and operate the Forta network.
 
-    [:octicons-arrow-right-24: Learn more](scanner-quickstart.md)
+    [:octicons-arrow-right-24: Learn more](scan-node/introduction.md)
 
 -   :bank:{ .lg .middle } __Delegate FORT token__
 

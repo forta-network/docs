@@ -61,16 +61,31 @@ nav:
       - Forta Contest 5 (10/11/2022): contest9-forta.md
       - Forta Contest 6 (11/8/2022): contest10-forta.md
   - <strong>Run a Scan Node</strong>:
-      - Quickstart: scanner-quickstart.md
+      - Guide:
+        - Introduction: scan-node/introduction.md
+        - Machine setup: scan-node/machine-setup.md
+        - Install Forta node: scan-node/install-forta-node.md
+        - Configure: scan-node/configure.md
+        - Register: scan-node/register.md
+        - Run: scan-node/run.md
+        - Troubleshoot: scan-node/troubleshoot.md
+        - Monitor: scan-node/monitor.md
+        - Upgrade: scan-node/upgrade.md
+        - FAQ: scan-node/faq.md
+        - Miscellaneous: scan-node/miscellaneous.md
       - Local mode: scanner-local-mode.md
       - Scan with Alchemy: alchemy-partnership.md
+      - Scan with Bware: bware-partnership.md
       - Scan with Chainstack: scan-with-chainstack.md
+      - Scan with Quicknode: quicknode-partnership.md
       - Manage pools and stake: scanner-pools.md
       - Monitoring SLA:
         - SLA Score Calculation: sla.md
         - SLA API: sla-api.md
+      - Quickstart (deprecated): scanner-quickstart.md
   - <strong>Delegate FORT token</strong>:
       - Delegated staking: delegated-staking-introduction.md
+      - FORT Holder Staking Guide: fort-holder-staking-guide.md
       - Claim rewards: delegated-staking-rewards.md
       - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>About Forta</strong>:

@@ -107,7 +107,7 @@ Each node needs to be registered to a specific pool in order to be operational. 
 - Click on the node pool you would like to add a node
 ![My Node Pools List](delegated-staking/MyNodePoolsList.png)
 
-- Make sure you have at least 2,500 FORT staked for the new node. Click “Add Scan Node”. Use the Forta node CLI to generate the scanner authorization token (described [here](scanner-quickstart.md#register-scan-node)) needed to claim a node into a pool.
+- Make sure you have at least 2,500 FORT staked for the new node. Click “Add Scan Node”. Use the Forta node CLI to generate the scanner authorization token (described [here](scan-node/register.md#register)) needed to claim a node into a pool.
 
 ![Add Scan Node](delegated-staking/AddScanNode.png)
 

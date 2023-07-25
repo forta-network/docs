@@ -39,7 +39,7 @@ If you are an independent dev that wants to develop detection bots, you can visi
 
 ### Scan node operators
 
-Scan node operators run the detection bots that Forta’s work assigner directs to them, against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. If you want to become a node operator, please check out the following [link](scanner-quickstart.md).
+Scan node operators run the detection bots that Forta’s work assigner directs to them, against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. If you want to become a node operator, please check out the following [link](scan-node/introduction.md).
 
 ## Security
 

@@ -1,3 +1,7 @@
+!!! info "Disclosure" 
+    The following documentation was written by the team at Alchemy and does not reflect the views of the Forta Foundation.
+
+
 # Scan With Alchemy
 
 ## Why use Alchemy?
@@ -71,7 +75,7 @@ Then, click on the “View Key” button to reveal your API Key:
 Now that you have your HTTPS RPC URL, we’ll need to connect Alchemy Supernode to the Forta scan node running on your terminal.
 
 ## Configure your Alchemy Chain APIs
-If you haven’t already installed Forta on your terminal, make sure to go through the [quickstart guide](scanner-quickstart.md) for kickstarting your Forta scan node.
+If you haven’t already installed Forta on your terminal, make sure to go through the [scan node guide](scan-node/introduction.md) for kickstarting your Forta scan node.
 
 Once your Forta directory has been initialised, you’ll find a file named  `config.yml`. We’ll need to configure that file so that our scan node knows how to pull data from the blockchain.
 
