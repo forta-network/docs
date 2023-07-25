@@ -60,6 +60,11 @@ nav:
       - Forta Contest 4 (8/31/2022): contest8-forta.md
       - Forta Contest 5 (10/11/2022): contest9-forta.md
       - Forta Contest 6 (11/8/2022): contest10-forta.md
+  - <strong>Network Fees and Developer Rewards</strong>:
+    - Why Fees?: fees-why.md
+    - Tutorial - How to Pay for Forta: fees-tut-how-pay.md
+    - Tutorial - How to earch developing on Forta: fees-tut-how-earn.md
+    - FAQs about fees: fees-faqs.md
   - <strong>Run a Scan Node</strong>:
       - Guide:
         - Introduction: scan-node/introduction.md
