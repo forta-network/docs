@@ -28,7 +28,7 @@ Plans can be bought directly through the respective Plan’s smart contracts or 
 
 **How long do plans last?**
 
-*Plans have a duration of 30 days and are automatically renewed until canceled.* If you do not hold sufficient funds in the wallet you subscribed with at the time of renewal (plus, the gas fees needed on the Polygon Network), the renewal <u>will fail and your subscription will lapse.</u>
+*Plans have a duration of 30 days and are automatically renewed until canceled.* If you do not hold sufficient funds in the wallet you subscribed with at the time of renewal, the renewal will fail and your subscription will lapse.
 
 **How to cancel a plan?**
 
