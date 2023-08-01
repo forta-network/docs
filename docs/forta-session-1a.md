@@ -24,4 +24,4 @@ In this session we will introduce the instructor, Dr. Christian Seifert, and go 
 [Session 1 Slides](https://docs.google.com/presentation/d/1_2lYyZs048eEMErI1c2mNIMeWVSe6lPrtOz-Qo6F30w/edit#slide=id.p1)
 
 ## Assignments
-None
+None.
