@@ -1,0 +1,3642 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../security-develop/">
+      
+      
+        <link rel="next" href="../security-testing/">
+      
+      <link rel="icon" href="../forta-logo.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Deployment & Smart Contracts - Forta Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-WNVX2Q6");</script>
+<!-- End Google Tag Manager -->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<meta property="og:image" content="https://docs.forta.network/en/latest/social-preview2.png" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:site" content="@FortaNetwork" />
+<meta property="twitter:title" content="Forta Docs" />
+<meta property="twitter:description" content="Welcome to the Forta docs" />
+<meta property="twitter:image" content="https://docs.forta.network/en/latest/social-preview2.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue-grey">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#security-deployment-smart-contracts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to configuration -->
+
+
+
+<!-- Header -->
+<header class="md-header" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label=""
+  >
+
+    <!-- Link to home -->
+    <a
+      href=".."
+      title="Forta Docs"
+      class="md-header__button md-logo"
+      aria-label="Forta Docs"
+      data-md-component="logo"
+    >
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            <a href="..">Forta Docs</a>
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            <a href="..">
+            
+              Deployment & Smart Contracts
+            
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette -->
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    <label class="md-header__button md-icon" for="__search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+
+    <!-- Search interface -->
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Repository information -->
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNVX2Q6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Forta Docs" class="md-nav__button md-logo" aria-label="Forta Docs" data-md-component="logo">
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+    Forta Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <strong>Using Forta</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>Using Forta</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scam-detector-bot/" class="md-nav__link">
+        Scam Detector Bot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attack-detector-bot/" class="md-nav__link">
+        Attack Detector Bot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-example-use-cases/" class="md-nav__link">
+        Use Cases
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <strong>Integrate With the API</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>Integrate With the API</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-keys/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-api-reference/" class="md-nav__link">
+        GraphQL Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scam-detector-bot/" class="md-nav__link">
+        Scam Detector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attack-detector-bot/" class="md-nav__link">
+        Attack Detector
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <strong>Build Detection Bots</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>Build Detection Bots</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Develop a Bot with the SDK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Develop a Bot with the SDK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        1) Quick start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/" class="md-nav__link">
+        2) Testing your bot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying/" class="md-nav__link">
+        3) Deploying your bot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subscribing/" class="md-nav__link">
+        4) Subscribing to alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintaining/" class="md-nav__link">
+        5) Maintaining your bot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-libraries/" class="md-nav__link">
+        Useful libraries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk/" class="md-nav__link">
+        Javascript/Typescript SDK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Python SDK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        CLI commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        forta.config.json
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        Video tutorials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardhat/" class="md-nav__link">
+        Integrating with Hardhat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying-cli/" class="md-nav__link">
+        CLI Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wizard/" class="md-nav__link">
+        Develop a Bot with the Bot Wizard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/forta-network/forta-bot-examples" class="md-nav__link">
+        Bot Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          Bot Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Bot Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-development-patterns/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../labels/" class="md-nav__link">
+        Adding labels to findings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-monitoring/" class="md-nav__link">
+        Error monitoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharding/" class="md-nav__link">
+        Increasing bot throughput
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-running-tasks/" class="md-nav__link">
+        Long running tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitive-data/" class="md-nav__link">
+        Protecting sensitive data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../private-alerts/" class="md-nav__link">
+        Private alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jwt-auth/" class="md-nav__link">
+        JWT authentication for bots
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying-ml-models/" class="md-nav__link">
+        Deploying machine learning models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-series-analysis/" class="md-nav__link">
+        Time series analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handle-alert/" class="md-nav__link">
+        Consuming bot alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-transfer-ownership/" class="md-nav__link">
+        Transfer Bot Ownership
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tx-simulation/" class="md-nav__link">
+        Transaction simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-testing/" class="md-nav__link">
+        Advanced testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querying-chains/" class="md-nav__link">
+        Querying other chains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          Bot Development Contests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Bot Development Contests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest1-compound/" class="md-nav__link">
+        Compound Contest (10/20/2021)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest2-aave/" class="md-nav__link">
+        Aave Contest (11/3/2021)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest3-oz/" class="md-nav__link">
+        OpenZeppelin Contest (11/18/2021)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest4-forta/" class="md-nav__link">
+        Forta Contest (12/17/2021)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest5-solace/" class="md-nav__link">
+        Solace Contest (3/1/2022)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest6-forta/" class="md-nav__link">
+        Forta Contest 2 (4/27/2022)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest7-forta/" class="md-nav__link">
+        Forta Contest 3 (6/17/2022)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest8-forta/" class="md-nav__link">
+        Forta Contest 4 (8/31/2022)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest9-forta/" class="md-nav__link">
+        Forta Contest 5 (10/11/2022)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest10-forta/" class="md-nav__link">
+        Forta Contest 6 (11/8/2022)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <strong>Network Fees and Developer Rewards</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>Network Fees and Developer Rewards</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-why/" class="md-nav__link">
+        Why Fees?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-tut-how-pay/" class="md-nav__link">
+        Tutorial - How to Pay for Forta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-tut-how-earn/" class="md-nav__link">
+        Tutorial - How to earn developing on Forta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-faqs/" class="md-nav__link">
+        FAQs about fees
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <strong>Run a Scan Node</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>Run a Scan Node</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/machine-setup/" class="md-nav__link">
+        Machine setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/install-forta-node/" class="md-nav__link">
+        Install Forta node
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/configure/" class="md-nav__link">
+        Configure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/register/" class="md-nav__link">
+        Register
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/run/" class="md-nav__link">
+        Run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/troubleshoot/" class="md-nav__link">
+        Troubleshoot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/monitor/" class="md-nav__link">
+        Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/upgrade/" class="md-nav__link">
+        Upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/miscellaneous/" class="md-nav__link">
+        Miscellaneous
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-local-mode/" class="md-nav__link">
+        Local mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alchemy-partnership/" class="md-nav__link">
+        Scan with Alchemy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bware-partnership/" class="md-nav__link">
+        Scan with Bware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-with-chainstack/" class="md-nav__link">
+        Scan with Chainstack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quicknode-partnership/" class="md-nav__link">
+        Scan with Quicknode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-pools/" class="md-nav__link">
+        Manage pools and stake
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+          Monitoring SLA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          Monitoring SLA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla/" class="md-nav__link">
+        SLA Score Calculation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla-api/" class="md-nav__link">
+        SLA API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-quickstart/" class="md-nav__link">
+        Quickstart (deprecated)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <strong>Delegate FORT token</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>Delegate FORT token</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delegated-staking-introduction/" class="md-nav__link">
+        Delegated staking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fort-holder-staking-guide/" class="md-nav__link">
+        FORT Holder Staking Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delegated-staking-rewards/" class="md-nav__link">
+        Claim rewards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-direct-withdrawal/" class="md-nav__link">
+        Direct withdrawal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <strong>About Forta</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>About Forta</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-forta/" class="md-nav__link">
+        What is Forta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fort-token/" class="md-nav__link">
+        FORT token
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/" class="md-nav__link">
+        Governance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          Web3 Security Course
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Web3 Security Course
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-1a/" class="md-nav__link">
+        Introduction & Goals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-1b/" class="md-nav__link">
+        Motivation of Blockchain
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-2a/" class="md-nav__link">
+        Blockchain History
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-2b/" class="md-nav__link">
+        Ethereum & Blockchain Use Cases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-3/" class="md-nav__link">
+        Cryptography Pt.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-4a/" class="md-nav__link">
+        Cryptography Pt.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-4b/" class="md-nav__link">
+        Cryptography Pt.3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-5/" class="md-nav__link">
+        Ethereum Scratching the Surface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-6/" class="md-nav__link">
+        Blockchain Explorer and DevCon Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-7/" class="md-nav__link">
+        Practical Lesson - Web3 APIs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-8a/" class="md-nav__link">
+        Smart Contracts Pt.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-8b/" class="md-nav__link">
+        Smart Contracts Pt.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-9/" class="md-nav__link">
+        Storage Slots, Deployment with Remix & Tenderly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-10/" class="md-nav__link">
+        Smart Contract Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-11a/" class="md-nav__link">
+        Guest Lecture with Elizabeth Dinella
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-11b/" class="md-nav__link">
+        Blockchain Security Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-12/" class="md-nav__link">
+        Comprehensive Security Strategies in Web3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-13/" class="md-nav__link">
+        Threat Modeling Exercise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-14/" class="md-nav__link">
+        Ethernaut Challenge Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-session-15/" class="md-nav__link">
+        Where Is the Industry Going
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          Stake Slashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Stake Slashing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slashing-policy/" class="md-nav__link">
+        Slashing Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slashing-creating-proposal/" class="md-nav__link">
+        Creating a Slash Proposal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <strong>Security and Smart Contracts</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>Security and Smart Contracts</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-design/" class="md-nav__link">
+        Design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-develop/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Deployment & Smart Contracts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Deployment & Smart Contracts
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#security-deployment-smart-contracts" class="md-nav__link">
+    Security - Deployment &amp; Smart Contracts
+  </a>
+  
+    <nav class="md-nav" aria-label="Security - Deployment & Smart Contracts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-sig" class="md-nav__link">
+    Multi-Sig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contract-administration" class="md-nav__link">
+    Contract Administration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployed-smart-contract-addresses" class="md-nav__link">
+    Deployed Smart Contract Addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forta-on-chain-monitoring" class="md-nav__link">
+    Forta On-Chain Monitoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forta-off-chain-monitoring" class="md-nav__link">
+    Forta Off-Chain Monitoring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-testing/" class="md-nav__link">
+        Testing and Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-maintain/" class="md-nav__link">
+        Maintenance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
+          Smart Contracts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          Smart Contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart-contracts/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/access/AccessManager/" class="md-nav__link">
+        Access Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/agents/AgentRegistry/" class="md-nav__link">
+        Agent Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/dispatch/Dispatch/" class="md-nav__link">
+        Dispatch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/metatx/Forwarder/" class="md-nav__link">
+        Meta-transaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/scanner_pools/ScannerPoolRegistry/" class="md-nav__link">
+        Scanner Pool Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/scanners/ScannerRegistry/" class="md-nav__link">
+        Scanner Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/scanners/ScannerToNodeRunnerMigration/" class="md-nav__link">
+        Scanner To Scanner Pool Migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7_9" id="__nav_8_7_9_label" tabindex="0">
+          Staking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_7_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Staking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_9_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7_9_1" id="__nav_8_7_9_1_label" tabindex="0">
+          Allocation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_7_9_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_9_1">
+          <span class="md-nav__icon md-icon"></span>
+          Allocation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/StakeAllocator/" class="md-nav__link">
+        Stake Allocator
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_9_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7_9_2" id="__nav_8_7_9_2_label" tabindex="0">
+          Rewards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_7_9_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Rewards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/Accumulators/" class="md-nav__link">
+        Accumulators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/RewardsDistributor/" class="md-nav__link">
+        Rewards Distributor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_9_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7_9_3" id="__nav_8_7_9_3_label" tabindex="0">
+          Slashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_7_9_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          Slashing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/SlashingController/" class="md-nav__link">
+        Slashing Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/SlashReasons/" class="md-nav__link">
+        Slash Reasons
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_9_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7_9_4" id="__nav_8_7_9_4_label" tabindex="0">
+          Stake Subjects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_7_9_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          Stake Subjects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/DelegatedStakeSubject/" class="md-nav__link">
+        Delegated Stake Subject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/DirectStakeSubject/" class="md-nav__link">
+        Direct Stake Subject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/StakeSubjectGateway/" class="md-nav__link">
+        Stake Subject Gateway
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/FortaStaking/" class="md-nav__link">
+        Forta Staking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/FortaStakingUtils/" class="md-nav__link">
+        Forta Staking Utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/SubjectTypeValidator/" class="md-nav__link">
+        Subject Type Validator
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_7_10" id="__nav_8_7_10_label" tabindex="0">
+          Utils
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_7_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7_10">
+          <span class="md-nav__icon md-icon"></span>
+          Utils
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/AccessManaged/" class="md-nav__link">
+        Access Managed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/ForwardedContext/" class="md-nav__link">
+        Forwarded Context
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/ReentrancyGuardHandler/" class="md-nav__link">
+        Reentrancy Guard Handler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/Routed/" class="md-nav__link">
+        Routed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/StateMachines/" class="md-nav__link">
+        State Machines
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/BaseComponentUpgradeable/" class="md-nav__link">
+        Base Component Upgradeable
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/Roles/" class="md-nav__link">
+        Roles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <strong>About Machine Learning</strong>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          <strong>About Machine Learning</strong>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-with-forta/" class="md-nav__link">
+        Why Machine Learning?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-data-resources/" class="md-nav__link">
+        Datasets and Resources
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#security-deployment-smart-contracts" class="md-nav__link">
+    Security - Deployment &amp; Smart Contracts
+  </a>
+  
+    <nav class="md-nav" aria-label="Security - Deployment & Smart Contracts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-sig" class="md-nav__link">
+    Multi-Sig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contract-administration" class="md-nav__link">
+    Contract Administration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployed-smart-contract-addresses" class="md-nav__link">
+    Deployed Smart Contract Addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forta-on-chain-monitoring" class="md-nav__link">
+    Forta On-Chain Monitoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forta-off-chain-monitoring" class="md-nav__link">
+    Forta Off-Chain Monitoring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Deployment & Smart Contracts</h1>
+
+<h2 id="security-deployment-smart-contracts">Security - Deployment &amp; Smart Contracts</h2>
+<p>The Foundation has required deployment through GitHub CI and OpenZeppelin's Defender product. For off-chain assets, critical pull requests must go through a required review that upon the merge are gated by successful tests, node scanner software is gated through a state update in the ScannerNodeVersion contract, and smart contract deployments/changes are handled through OpenZeppelin’s Defender product and relayers and are controlled by multisigs. This process ensures that the Forta Network cannot be changed, even in the event of a security breach by an individual involved in any of the development processes.</p>
+<p>Lastly, most of the contracts in the Forta Network are <a href="https://docs.openzeppelin.com/contracts/4.x/upgradeable">upgradeable</a>. Therefore, if you are going to interact with an Upgradeable contract, <strong>always use the Proxy address</strong>.</p>
+<h3 id="multi-sig">Multi-Sig</h3>
+<p>Forta is managed through three main Gnosis Safe Multi Sig contracts: </p>
+<ul>
+<li><a href="https://etherscan.io/address/0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1">0xC0eb11fBC755D31c6FECEaAc8760ddCb88C64fE1</a> (Ethereum mainnet). 4/7 controlled by the <a href="https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7">Council members</a></li>
+<li><a href="https://polygonscan.com/address/0x30ceaeC1d8Ed347B91d45077721c309242db3D6d">0x30ceaeC1d8Ed347B91d45077721c309242db3D6d</a> (Polygon mainnet). 4/7 controlled by the <a href="https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202/7">Council members</a></li>
+<li><a href="https://polygonscan.com/address/0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e">0xd1d4FaFd400fCD643132bb7eAF7682eE97E09C3e</a> (Polygon mainnet). The Council members may delegate certain roles and corresponding signing authority. Currently, administrative roles have been delegated to a 3/9 multisig with members of the Foundation staff and certain members of the original core development team.</li>
+</ul>
+<p>The Council multisigs have the following roles:</p>
+<p><strong>Ethereum Mainnet</strong></p>
+<ul>
+<li>Forta Token (0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29): ADMIN_ROLE</li>
+</ul>
+<p><strong>Polygon Mainnet</strong></p>
+<ul>
+<li>Forta Token (Bridged) (0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1): ADMIN_ROLE</li>
+<li>Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3): DEFAULT_ADMIN_ROLE, AGENT_ADMIN_ROLE, ENS_MANAGER_ROLE, SCANNER_ADMIN_ROLE, SCANNER_VERSION_ROLE, SLASHER_ROLE, STAKING_ADMIN_ROLE, UPGRADER_ROLE</li>
+</ul>
+<p>The administrative multisig has the following roles:</p>
+<p><strong>Polygon Mainnet</strong></p>
+<ul>
+<li>Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3): AGENT_ADMIN_ROLE, DISPATCHER_ROLE, ENS_MANAGER_ROLE, SCANNER_POOL_ADMIN_ROLE, SCANNER_VERSION_ROLE, SLASHER_ROLE, SWEEPER_ROLE, UPGRADER_ROLE</li>
+</ul>
+<h3 id="roles">Roles</h3>
+<p>Complete list of roles with a description:</p>
+<ul>
+<li>Forta Token (0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29):<ul>
+<li>ADMIN_ROLE: General admin role granted to account with ability to set ENS and upgrade contract.</li>
+<li>MINTER_ROLE: Role granted to account with the access to mint more FORT tokens.</li>
+</ul>
+</li>
+<li>Forta Token (Bridged) (0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1):<ul>
+<li>ADMIN_ROLE: General admin role granted to account with ability to set ENS and upgrade contract.</li>
+</ul>
+</li>
+<li>Access (0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3):<ul>
+<li>DEFAULT_ADMIN_ROLE: General admin role that is set during the initialization of the Access contract. Most notable ability is to grant new roles to other accounts and/or contracts.</li>
+<li>ENS_MANAGER_ROLE: Role granted to an account with the ability to set ENS reverse registration.</li>
+<li>UPGRADER_ROLE: Role granted to an account with the ability to upgrade a proxy to use a new implementation.</li>
+<li>AGENT_ADMIN_ROLE: Role granted to account with the ability to set the bot stake threshold, activate frontrunning protection, and enable and/or disable a given bot.</li>
+<li>SCANNER_ADMIN_ROLE: Role granted to account with the ability to set the stake threshold for a given chain, and enable and/or disable a given scanner.</li>
+<li>SCANNER_POOL_ADMIN_ROLE: Role granted to account with the ability to set the scanner pool stake parameters, set scanner node registration delay, and update the amount of enabled scanners in a pool.</li>
+<li>SCANNER_2_SCANNER_POOL_MIGRATOR_ROLE: Role granted to ScannerToScannerPoolMigration contract to be able to de-register scanners from the previous system and register scanner pools under delegated staking.</li>
+<li>DISPATCHER_ROLE: Role granted to account with ability to assign and/or unassign bots to scanner nodes.</li>
+<li>MIGRATION_EXECUTOR_ROLE: Role granted to account with ability to migrate scanners. Role granted to a Forta controlled EOA, <a href="https://polygonscan.com/address/0xe9a105b355a14d11ea3468410dfe6b31998c8384">0xe9a105b355A14D11eA3468410Dfe6B31998C8384</a>.</li>
+<li>SLASHER_ROLE: Role granted to the SlashingController contract to slash a stake subject.</li>
+<li>SWEEPER_ROLE: Role granted to account with ability to transfer out tokens mistakenly sent to the staking contract.</li>
+<li>REWARDER_ROLE: Role granted to account with ability to reward scanner pools. Role granted to a Forta controlled EOA, <a href="https://polygonscan.com/address/0x15d3c7e811582Be09Bb8673cD603Bb2F22D1e47B">0x15d3c7e811582Be09Bb8673cD603Bb2F22D1e47B</a>.</li>
+<li>SLASHING_ARBITER_ROLE: Role granted to account with ability to execute various actions in the slashing process. Role granted to the 2/3 Arbiter multisig, <a href="https://polygonscan.com/address/0x044f6Db7F0ba9e5F0AccD797E2AD5B1bA4E1E853">0x044f6Db7F0ba9e5F0AccD797E2AD5B1bA4E1E853</a>. Slashing detailed further <a href="https://docs.forta.network/en/latest/slashing-policy/">here</a>.</li>
+<li>STAKING_CONTRACT_ROLE: Role granted to the Staking contract with the ability to increase or decrease a subject’s stake allocation.</li>
+<li>STAKING_ADMIN_ROLE: Role granted to account with the ability to set the percentage of a delegator’s stake than can be slashed.</li>
+<li>ALLOCATOR_CONTRACT_ROLE: Role granted to the Allocator contract with the ability to increase and/or decrease a subject's allocated stake amount for rewards calculation.</li>
+<li>SCANNER_VERSION_ROLE: Role granted to an account with the ability to set a new scanner node version.</li>
+<li>SCANNER_BETA_VERSION_ROLE: Role granted to an account with the ability to set a new scanner node beta version.</li>
+</ul>
+</li>
+</ul>
+<h3 id="contract-administration">Contract Administration</h3>
+<p>Forta contracts are managed through <a href="https://defender.openzeppelin.com/">OpenZeppelin's Defender product</a> utilizing relays to manage smart contract deployment and maintenance.</p>
+<h3 id="deployed-smart-contract-addresses">Deployed Smart Contract Addresses</h3>
+<p>Forta Network uses smart contracts to coordinate registration and ownership of Scanner Nodes and Detection Bots (referred by their former name of Agents in this release), the assignments of Bots and Scanners, the accepted Scanner Node software version and the economic safety mechanisms of the network via the ERC20 FORT Token.</p>
+<p>To learn more, read the <a href="https://github.com/forta-network/forta-contracts">smart contracts github repo</a>, <a href="../smart-contracts/">the documentation for the contracts</a>, or the smart contract architecture diagram in the <a href="../security-design/"><em>Design</em> page</a>.</p>
+<p><strong>Ethereum Mainnet</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Proxy</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forta Token</td>
+<td><a href="https://etherscan.io/address/0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29">0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29</a></td>
+<td><a href="https://etherscan.io/address/0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a">0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Polygon</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Proxy</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access</td>
+<td><a href="https://polygonscan.com/address/0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3">0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3</a></td>
+<td><a href="https://polygonscan.com/address/0xc855d842ff0af97b0d18cc81eecbb702ea1a0706">0xc855d842ff0af97b0d18cc81eecbb702ea1a0706</a></td>
+</tr>
+<tr>
+<td>Agents (Detection Bots)</td>
+<td><a href="https://polygonscan.com/address/0x61447385B019187daa48e91c55c02AF1F1f3F863">0x61447385B019187daa48e91c55c02AF1F1f3F863</a></td>
+<td><a href="https://polygonscan.com/address/0xb779fF917F824740Dd64C0568C346A4C918EF095">0xb779fF917F824740Dd64C0568C346A4C918EF095</a></td>
+</tr>
+<tr>
+<td>Scanners <strong>(Deprecated)</strong></td>
+<td><a href="https://polygonscan.com/address/0xbF2920129f83d75DeC95D97A879942cCe3DcD387">0xbF2920129f83d75DeC95D97A879942cCe3DcD387</a></td>
+<td><a href="https://polygonscan.com/address/0x75c46283dE6b08bE4bb4425b94aC338f2802e3B0">0x75c46283dE6b08bE4bb4425b94aC338f2802e3B0</a></td>
+</tr>
+<tr>
+<td>Scanner Pools</td>
+<td><a href="https://polygonscan.com/address/0x90FF9C193D6714E0e7a923b2Bd481Fb73FEC731d">0x90FF9C193D6714E0e7a923b2Bd481Fb73FEC731d</a></td>
+<td><a href="https://polygonscan.com/address/0xF57ecf24d9Fd1CfA5cCF5BB46d8FF6aB49F5F9c0">0xF57ecf24d9Fd1CfA5cCF5BB46d8FF6aB49F5F9c0</a></td>
+</tr>
+<tr>
+<td>Dispatch</td>
+<td><a href="https://polygonscan.com/address/0xd46832F3f8EA8bDEFe5316696c0364F01b31a573">0xd46832F3f8EA8bDEFe5316696c0364F01b31a573</a></td>
+<td><a href="https://polygonscan.com/address/0x5eED79eC2D48be67e6D956C59110f123116C3EAD">0x5eED79eC2D48be67e6D956C59110f123116C3EAD</a></td>
+</tr>
+<tr>
+<td>Forwarder</td>
+<td>--</td>
+<td><a href="https://polygonscan.com/address/0x356A8ee5D3bCc183c2c7853F11D19f4C7622396F">0x356A8ee5D3bCc183c2c7853F11D19f4C7622396F</a></td>
+</tr>
+<tr>
+<td>Forta Token (Bridged)</td>
+<td><a href="https://polygonscan.com/address/0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1">0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1</a></td>
+<td><a href="https://polygonscan.com/address/0xd6b3139108e271c812acc6ffebad28e935d61e24">0xd6b3139108e271c812acc6ffebad28e935d61e24</a></td>
+</tr>
+<tr>
+<td>Staking</td>
+<td><a href="https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874">0xd2863157539b1D11F39ce23fC4834B62082F6874</a></td>
+<td><a href="https://polygonscan.com/address/0x543D94657fA8C710818f0D9F7eDeC7F4Ca03CCDA">0x543D94657fA8C710818f0D9F7eDeC7F4Ca03CCDA</a></td>
+</tr>
+<tr>
+<td>StakingParameters</td>
+<td><a href="https://polygonscan.com/address/0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a">0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a</a></td>
+<td><a href="https://polygonscan.com/address/0xBe7AfebC79c40338B485a75792a510E32283fb70">0xBe7AfebC79c40338B485a75792a510E32283fb70</a></td>
+</tr>
+<tr>
+<td>ScannerNodeVersion</td>
+<td><a href="https://polygonscan.com/address/0x4720c872425876B6f4b4E9130CDef667aDE553b2">0x4720c872425876B6f4b4E9130CDef667aDE553b2</a></td>
+<td><a href="https://polygonscan.com/address/0xCFF69D7e4db098772c85831f4318A1897647488E">0xCFF69D7e4db098772c85831f4318A1897647488E</a></td>
+</tr>
+<tr>
+<td>SlashingController</td>
+<td><a href="https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb">0x6927C25ff30ed86F86A863d987590A1d77509bDb</a></td>
+<td><a href="https://polygonscan.com/address/0xE7e33d453980e8023d54A70A40753bA7617B08F3">0xE7e33d453980e8023d54A70A40753bA7617B08F3</a></td>
+</tr>
+<tr>
+<td>StakeAllocator</td>
+<td><a href="https://polygonscan.com/address/0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA">0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA</a></td>
+<td><a href="https://polygonscan.com/address/0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7">0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7</a></td>
+</tr>
+<tr>
+<td>RewardsDistributor</td>
+<td><a href="https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507">0xf7239f26b79145297737166b0c66f4919af9c507</a></td>
+<td><a href="https://polygonscan.com/address/0xf87A30F7677f03982780a377C793c796FDAf52F8">0xf87A30F7677f03982780a377C793c796FDAf52F8</a></td>
+</tr>
+<tr>
+<td>ScannerToScannerPoolMigration</td>
+<td><a href="https://polygonscan.com/address/0x1365fa3FE7F52db912daBc8e439f0843461fee16">0x1365fa3FE7F52db912daBc8e439f0843461fee16</a></td>
+<td><a href="https://polygonscan.com/address/0xEBb33FD780757d745213CF57838c0E5b66D824Bc">0xEBb33FD780757d745213CF57838c0E5b66D824Bc</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Goerli Testnet</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Proxy</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forta Token</td>
+<td><a href="https://goerli.etherscan.io/address/0x848f1ff1fa76dc882ca2f3521265ba3f27e42158">0x848F1fF1fa76Dc882Ca2F3521265ba3F27e42158</a></td>
+<td><a href="https://goerli.etherscan.io/address/0x86f09B8B8d0315Cca71a89953Aa3f7982a122eAd">0x86f09B8B8d0315Cca71a89953Aa3f7982a122eAd</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mumbai Testnet</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Proxy</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access</td>
+<td><a href="https://mumbai.polygonscan.com/address/0xbb12476ab9f27d3b441964B0aFC03D14a82e1D64">0xbb12476ab9f27d3b441964B0aFC03D14a82e1D64</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0xDCFC2E4037a5d5524A957D7771C6Fd328f1D8ECE">0xDCFC2E4037a5d5524A957D7771C6Fd328f1D8ECE</a></td>
+</tr>
+<tr>
+<td>Agents (Detection Bots)</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x4519Eaeb9A5c1a9d870Fe35452E54AD04E6e8428">0x4519Eaeb9A5c1a9d870Fe35452E54AD04E6e8428</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x36b6b021CCE5cF26E9462dd3c76F835e12F636F1">0x36b6b021CCE5cF26E9462dd3c76F835e12F636F1</a></td>
+</tr>
+<tr>
+<td>Scanners <strong>(Deprecated)</strong></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x569c785b4744e582c65a12827726fc03c8d08a4a">0x569c785b4744e582c65a12827726fc03c8d08a4a</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x0FF4A7603EB4FB7A5c8D4cd25199046942fb968B">0x0FF4A7603EB4FB7A5c8D4cd25199046942fb968B</a></td>
+</tr>
+<tr>
+<td>Scanner Pools</td>
+<td><a href="https://mumbai.polygonscan.com/address/0xfD745747eC40B439feE9248Ae9D57EB846F7eBF5">0xfD745747eC40B439feE9248Ae9D57EB846F7eBF5</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x075C9fbDa553e4D616dC301aEB5347fa42A79096">0x075C9fbDa553e4D616dC301aEB5347fa42A79096</a></td>
+</tr>
+<tr>
+<td>Dispatch</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x4B71C61400F5da35518DE10dEcd21D1Aa4d7f283">0x4B71C61400F5da35518DE10dEcd21D1Aa4d7f283</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x485F9c35d90E639f5B591DA5281199Ae59A9794F">0x485F9c35d90E639f5B591DA5281199Ae59A9794F</a></td>
+</tr>
+<tr>
+<td>Forwarder</td>
+<td>--</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x4E29Cea6D64be860f5eAba110686DcB585f393D6">0x4E29Cea6D64be860f5eAba110686DcB585f393D6</a></td>
+</tr>
+<tr>
+<td>Forta Token (Bridged)</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3">0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x21b1b0f8e9182c92c2a81f43f305ce25994d9d57">0x21b1b0f8e9182c92c2a81f43f305ce25994d9d57</a></td>
+</tr>
+<tr>
+<td>Staking</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x64d5192F03bD98dB1De2AA8B4abAC5419eaC32CE">0x64d5192F03bD98dB1De2AA8B4abAC5419eaC32CE</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0xc02de30306d913C46610ae0ad5C296CE7D3060AE">0xc02de30306d913C46610ae0ad5C296CE7D3060AE</a></td>
+</tr>
+<tr>
+<td>StakingParameters</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x02304eC24ba2996a83F595D7cf80e5571a406EFA">0x02304eC24ba2996a83F595D7cf80e5571a406EFA</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x22C74d1Ef9568EEc71E6EBe7b338A9E381eb99c8">0x22C74d1Ef9568EEc71E6EBe7b338A9E381eb99c8</a></td>
+</tr>
+<tr>
+<td>ScannerNodeVersion</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201">0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x52a53DCC546c09CECe279F5549d0958433912802">0x52a53DCC546c09CECe279F5549d0958433912802</a></td>
+</tr>
+<tr>
+<td>SlashingController</td>
+<td><a href="https://mumbai.polygonscan.com/address/0xdc4A1Fe7D5c5546458463F6546bf6Fbe6a1a9704">0xdc4A1Fe7D5c5546458463F6546bf6Fbe6a1a9704</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0xc500d015E69721Ec3D29955EBF15bf9b8Ad832eA">0xc500d015E69721Ec3D29955EBF15bf9b8Ad832eA</a></td>
+</tr>
+<tr>
+<td>StakeAllocator</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x4b4272E78ec45A08D91B495c690078e3B196904C">0x4b4272E78ec45A08D91B495c690078e3B196904C</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x1064ac57d149CF99fCda690625676787C4C4Ad5a">0x1064ac57d149CF99fCda690625676787C4C4Ad5a</a></td>
+</tr>
+<tr>
+<td>RewardsDistributor</td>
+<td><a href="https://mumbai.polygonscan.com/address/0xb23696793ffc58315Ed8e4c63cf1ef454a7479EC">0xb23696793ffc58315Ed8e4c63cf1ef454a7479EC</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0x253Eca8E7f01708b7dFD7277D814c33451A2211B">0x253Eca8E7f01708b7dFD7277D814c33451A2211B</a></td>
+</tr>
+<tr>
+<td>ScannerToScannerPoolMigration</td>
+<td><a href="https://mumbai.polygonscan.com/address/0x1b2D1D6aCD3381d355dAa1133CFc1fe384917cC8">0x1b2D1D6aCD3381d355dAa1133CFc1fe384917cC8</a></td>
+<td><a href="https://mumbai.polygonscan.com/address/0xB983B38dd4620419E5214A3bFE2E7Ed827859586">0xB983B38dd4620419E5214A3bFE2E7Ed827859586</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pause Functionality</strong></p>
+<p>Currently, Forta does not implement <em>Pause</em> functionality in its smart contracts. In lieu of <em>Pause</em> functionality, the contracts’ upgradability could be utilized to pause the contracts in the event of responding to an incident. Additionally, Forta does not incorporate the usage of Oracles, and therefore has no risk of Oracle manipulation attacks.</p>
+<p><strong>Timelock</strong></p>
+<p>Forta has no implementation of a <em>Timelock</em>. Since changes to the contracts require an execution from the 4/7 Forta Council multisig, this process fulfills the need of a <em>Timelock</em>’s functionality.</p>
+<h3 id="forta-on-chain-monitoring">Forta On-Chain Monitoring</h3>
+<p>Forta on-chain activity is monitored by <a href="https://app.forta.network/agents/forta">Forta Detection Bots</a> and feeds into Forta Network's incident response process. The following detection bots were developed specifically for the Forta smart contracts. The code is available on <a href="https://github.com/LimeChain/forta-bots">GitHub</a>.</p>
+<ul>
+<li><a href="https://explorer.forta.network/agent/0x8e5cfc52606ac22590cf872711f81df8a0d81e3e110dee4f3fb00fafadc962c2">Forta Access Control Role Changed</a></li>
+<li><a href="https://explorer.forta.network/agent/0xacd82110ea6551078e40b58cebd83b9f29c09b5cf85200a5ec9244e374035e6c">Forta Access Manager - Router Updated</a></li>
+<li><a href="https://explorer.forta.network/agent/0x15022cd09034e6247336e5937f2c738d572d5f42a9c3fd53551f8c6c1766994b">Forta Admin Bot Scanner Disable</a></li>
+<li><a href="https://explorer.forta.network/agent/0x2f2d455136d8584088e2c5466d5c7b5a77f95ef40dca3e8c1ba0990b363c24e9">Forta Agent Updated</a></li>
+<li><a href="https://explorer.forta.network/agent/0x9e1e98b397bcbe38e1604f03f36e91aeb1e9a2a719d5a68dc7ae327d2bf33ca8">Forta Agents Linked</a></li>
+<li><a href="https://explorer.forta.network/agent/0x6dbd2e5c9e7c2261c6d36d7f8a2bd66974d8917b311dff1738589e6d6a1fced2">Forta Core Monitoring</a></li>
+<li><a href="https://explorer.forta.network/agent/0x04feb3b868f738cfac42faa29a24179ddd25018be8e09c5ef05655c7cfd69522">Forta Emitting Upgraded</a></li>
+<li><a href="https://explorer.forta.network/agent/0xd76cb2ce08c467ad328caa9582bfc3c226964ae8dd922ee7ae0bcdb9e8b4f5ce">Forta Mint Mainnet</a></li>
+<li><a href="https://explorer.forta.network/agent/0x33bb8d279150938d062ce3d98dea48514828971611a5b9a64789576bb0a0152c">Forta Scanner Node Software Updated</a></li>
+<li><a href="https://explorer.forta.network/agent/0x83fad460c7e30ad0a4ec8f082fbd068edfe6e0f02cacd4e136120b201ed83a05">Forta Staking Events</a></li>
+<li><a href="https://explorer.forta.network/agent/0x16d30698283b688f7266b2fcd9d6c5edc8e0551a212edcd2d010e54a8ffcf0ba">Forta Staking Parameters</a></li>
+<li><a href="https://explorer.forta.network/agent/0xef163df6a354c8166d51eba7fb3b16bfc21e1b7be414fa0fe5c19e53794f65de">Forta High Number Of Bot Deployments</a></li>
+<li><a href="https://explorer.forta.network/agent/0xef163df6a354c8166d51eba7fb3b16bfc21e1b7be414fa0fe5c19e53794f65de">Forta Routing Updated</a></li>
+<li><a href="https://explorer.forta.network/agent/0xc44bf7b5f04444e8939ed0c29a90fc772baf3df6d2abb3edbd03adc31e9b5cf6">Forta Stake Controller Changed</a></li>
+<li><a href="https://explorer.forta.network/agent/0xe600b501cad9eae7e6885721cb44d0d79e98d7413f5cf8b75f848692ebb635ad">Forta Stake Threshold Changed</a></li>
+<li><a href="https://explorer.forta.network/agent/0xe6eebc466ba3dc71bf701719f8012bd9e1c80bfa63224684271be80ea2f93338">Forta Token Role Changes</a></li>
+<li><a href="https://explorer.forta.network/agent/0x11b5412d0d56b1b7bec8b15f18e8976416b93482961c50cf1161fbf9c4445c70">Forta Whitelist Disabling</a></li>
+</ul>
+<p>Forta is also monitored by the bots in the <a href="https://docs.forta.network/en/latest/threat-detection-kits/">Threat Detection Kits</a>.</p>
+<h3 id="forta-off-chain-monitoring">Forta Off-Chain Monitoring</h3>
+<p>Lastly, several operational monitors exist around the performance of the network, such as latency, API usage, deployments, etc. </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/FortaNetwork" target="_blank" rel="noopener" title="Forta on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.com/invite/fortanetwork" target="_blank" rel="noopener" title="Forta on Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/forta-network" target="_blank" rel="noopener" title="Forta on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/channel/UC_jxKtYfj7iLn4hTpQmBcYA" target="_blank" rel="noopener" title="Forta on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://forta.org/blog/" target="_blank" rel="noopener" title="Forta Blog" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:community@forta.org" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
