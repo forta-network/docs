@@ -12,7 +12,7 @@ Allowing bot developers to collect fees from users has several important advanta
 
 
 1. **Uncapped upside potential**. High quality bots with broad appeal can attract hundreds, even thousands of subscribers. The more effort a bot developer is willing to put towards maintaining and promoting a bot also increases the likelihood of attracting more paying subscribers. For individual developers that may not want to build and operate a security company, Forta offers an opportunity to monetize their skills in an asymmetric way. For security teams, building on Forta offers an opportunity to sell into an existing ecosystem of potential subscribers or users . 
-2. **Recurring revenue**. As described below, a monthly subscription model allows bot developers to generate a recurring stream of revenue from their bots. Over time, this could result in an exponential increase in earnings when compared to one-time bounties  and grant payouts. 
+2. **Recurring revenue**. As described below, a monthly subscription model allows bot developers to generate a recurring stream of revenue from their bots. Over time, this could result in an exponential increase in earnings when compared to one-time bounties and grant payouts. 
 3. **Market-based pricing**. Bounties and grants compensate the developer for their time at an agreed-upon hourly rate. On the other hand, subscription fees allow  the market to determine a detection bot’s value. The higher the value, or perceived value, the more a bot developer can justifiably charge.  
 
 
