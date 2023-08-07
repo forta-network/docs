@@ -16,7 +16,7 @@ hide:
 
     Access Forta's Threat Intel to detect Web3 hacks.
 
-    [:octicons-arrow-right-24: Getting Started](getting-startedv2.md)
+    [:octicons-arrow-right-24: Getting Started](getting-started.md)
 
 -   :gear:{ .lg .middle } __Build on Forta__
 

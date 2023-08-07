@@ -2,7 +2,7 @@ site_name: Forta Docs
 
 nav:
   - <strong>Use Forta</strong>: 
-    - Getting Started: getting-startedv2.md #getting-started.md should errase? 
+    - Getting Started: getting-started.md #ready
     - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md #namme is large for UI
     - Using the API: api-reference.md #needs to resolve page ishue
     - GraphQL Reference: forta-api-reference/index.html
