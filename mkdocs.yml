@@ -10,7 +10,7 @@ nav:
     - Use Cases: https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c
     - Tutorial - How to pay for Forta: fees-tut-how-pay.md #ready
   - <strong>Build on Forta</strong>:
-    - Intrduction to Bot Development: intro-to-bot-dev.md #ready, check the link to quickstart
+    - Introduction to Bot Development: intro-to-bot-dev.md #ready, check the link to quickstart
     - Develop a Bot with the SDK:
       - 1) Quick start: quickstart.md
       - 2) Testing your bot: testing.md
@@ -28,9 +28,8 @@ nav:
         - CLI Reference: deploying-cli.md
     - Develop a Bot with Bot Wizard: wizard.md 
     - Bot Examples: https://github.com/forta-network/forta-bot-examples
-    - Bot Examples: https://github.com/forta-network/forta-bot-examples
-    - Bot Development Pattern:
-      - Intro: bot-development-patterns.md
+    - Bot Development Patterns:
+      - Index: bot-development-patterns.md
       - Best Practices: best-practices.md
       - Adding labels to findings: labels.md
       - Error monitoring: error-monitoring.md
@@ -61,11 +60,11 @@ nav:
     - Machine Learning on Forta:  
       - Why Machine Learning?: ml-with-forta.md
       - Datasets and Resources: ml-data-resources.md
-    - Tutorial- How to earn developing on Forta: fees-tut-how-earn.md #ready
+    - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md #ready
   - <strong>Network Fees and Developer Rewards</strong>:
     - Why Fees?: fees-why.md #ready
-    - Tutorial - How to Pay for Forta: fees-tut-how-pay.md #ready
-    - Tutorial - How to earn developing on Forta: fees-tut-how-earn.md #ready
+    - Tutorial | How to Pay for Forta: fees-tut-how-pay.md #ready
+    - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md #ready
     - FAQs about fees: fees-faqs.md #check last version
   - <strong>Run a Node</strong>: #ready
     - Quickstart:
@@ -89,9 +88,6 @@ nav:
       - Scan with Chainstack: scan-with-chainstack.md
       - Scan with Bware: bware-partnership.md
       - Scan with Quicknode: quicknode-partnership.md
-    - Scam Detector Bot: scam-detector-bot.md
-    - Attack Detector Bot: attack-detector-bot.md
-    - Use Cases: api-example-use-cases.md
   - <strong>Staking on Forta</strong>:
     - Delegated staking: delegated-staking-introduction.md #ready
     - FORT Holder Staking Guide: fort-holder-staking-guide.md #ready
@@ -144,43 +140,7 @@ nav:
       - Stake Slashing:
         - Slashing Policy: slashing-policy.md
         - Creating a Slash Proposal: slashing-creating-proposal.md
-#end
-  - <strong>Other</strong>:
-    - <strong>Integrate With the API</strong>:
-      - Overview: api.md
-      - Authentication: api-keys.md
-      - GraphQL Reference: forta-api-reference/index.html
-      - Examples:
-        - Scam Detector: scam-detector-bot.md
-        - Attack Detector: attack-detector-bot.md
-    - <strong>Build Detection Bots</strong>:
-      - Quickstart: forta-quickstart.md
-    - <strong>About Forta</strong>:
-      - What is Forta: why-forta.md
-      - How to contribute: contributing.md
-      - Web3 Security Course:
-        - Introduction & Goals: forta-session-1a.md
-        - Motivation of Blockchain: forta-session-1b.md
-        - Blockchain History: forta-session-2a.md
-        - Ethereum & Blockchain Use Cases: forta-session-2b.md
-        - Cryptography Pt.1: forta-session-3.md
-        - Cryptography Pt.2: forta-session-4a.md
-        - Cryptography Pt.3: forta-session-4b.md
-        - Ethereum Scratching the Surface: forta-session-5.md
-        - Blockchain Explorer and DevCon Notes: forta-session-6.md
-        - Practical Lesson - Web3 APIs: forta-session-7.md
-        - Smart Contracts Pt.1: forta-session-8a.md
-        - Smart Contracts Pt.2: forta-session-8b.md
-        - Storage Slots, Deployment with Remix & Tenderly: forta-session-9.md
-        - Smart Contract Security: forta-session-10.md
-        - Guest Lecture with Elizabeth Dinella: forta-session-11a.md
-        - Blockchain Security Introduction: forta-session-11b.md
-        - Comprehensive Security Strategies in Web3: forta-session-12.md
-        - Threat Modeling Exercise: forta-session-13.md
-        - Ethernaut Challenge Walkthrough: forta-session-14.md
-        - Where Is the Industry Going: forta-session-15.md
-      - FAQ: faq.md
-  
+
     
 
 theme:
