@@ -10,53 +10,55 @@ hide:
 <div class="grid cards" markdown>
 
 
--   :zap:{ .lg .middle } __Using Forta__
+-   :zap:{ .lg .middle } __Use Forta__
 
     ---
 
     Access Forta's Threat Intel to detect Web3 hacks.
 
-    [:octicons-arrow-right-24: Learn How to Use Forta](getting-started.md)
+    [:octicons-arrow-right-24: Getting Started](getting-started.md)
 
--   :gear:{ .lg .middle } __Integrate With the API__
-
-    ---
-
-    Query Forta's data via the Forta API to detect hacks and scams.
-
-    [:octicons-arrow-right-24: Start building](api.md)
-
--   :tools:{ .lg .middle } __Build Detection Bots__
+-   :gear:{ .lg .middle } __Build on Forta__
 
     ---
 
-    As a developer, you can use a suite of tools to develop new detection bots.
+    Build detection bots and earn recurring monthly revenue
 
-    [:octicons-arrow-right-24: Bots quick start](forta-quickstart.md)
+    [:octicons-arrow-right-24: Start building](intro-to-bot-dev.md )
 
--   :material-server:{ .lg .middle } __Run a Scan Node__
+-   :material-server:{ .lg .middle } __Run a Node__
 
     ---
-
-    Setup a scan node to run detection bots and operate the Forta network.
+    Setup a scan node to run detection bots and operate the Forta network
 
     [:octicons-arrow-right-24: Learn more](scan-node/introduction.md)
 
--   :bank:{ .lg .middle } __Delegate FORT token__
+-   :bank:{ .lg .middle } __Network Fees and Developer Rewards__
 
     ---
 
-    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security.
+    Users that want to consume Forta Threat Intel will need to purchase one or more monthly subscription plans. Developers that create and maintain those data feeds get rewards
 
-    [:octicons-arrow-right-24: Learn More](delegated-staking-introduction.md)
+    [:octicons-arrow-right-24: Getting Started](fees-why.md)
 
--   :information_source:{ .lg .middle } __About Forta__
+-   :information_source:{ .lg .middle } __Staking on Forta__
 
     ---
 
-    Get a high-level understanding of Forta and learn how it works.
+    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security
 
-    [:octicons-arrow-right-24: Learn more](why-forta.md)
+    [:octicons-arrow-right-24: Getting Started](delegated-staking-introduction.md)
+
+-   :tools:{ .lg .middle } __Network Overview__
+
+    ---
+
+    Get a high-level understanding of the Forta Network, its governance, the FORT token and a security overview
+
+    [:octicons-arrow-right-24: Learn more](network-overview.md)
+
+
+  
 
 
 </div>
