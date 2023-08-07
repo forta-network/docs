@@ -10,7 +10,7 @@ hide:
 <div class="grid cards" markdown>
 
 
--   :zap:{ .lg .middle } __Using Forta__
+-   :zap:{ .lg .middle } __Use Forta__
 
     ---
 
@@ -18,45 +18,48 @@ hide:
 
     [:octicons-arrow-right-24: Learn How to Use Forta](getting-started.md)
 
--   :gear:{ .lg .middle } __Integrate With the API__
-
-    ---
-
-    Query Forta's data via the Forta API to detect hacks and scams.
-
-    [:octicons-arrow-right-24: Start building](api.md)
-
--   :tools:{ .lg .middle } __Build Detection Bots__
+-   :gear:{ .lg .middle } __Build on Forta__
 
     ---
 
     As a developer, you can use a suite of tools to develop new detection bots.
 
-    [:octicons-arrow-right-24: Bots quick start](forta-quickstart.md)
+    [:octicons-arrow-right-24: Network-overview](network-overview.md)
 
--   :material-server:{ .lg .middle } __Run a Scan Node__
+-   :material-server:{ .lg .middle } __Run a Node__
 
     ---
 
     Setup a scan node to run detection bots and operate the Forta network.
 
-    [:octicons-arrow-right-24: Learn more](scan-node/introduction.md)
+    [:octicons-arrow-right-24: Learn more](scanner-quickstart.md)
 
--   :bank:{ .lg .middle } __Delegate FORT token__
-
-    ---
-
-    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security.
-
-    [:octicons-arrow-right-24: Learn More](delegated-staking-introduction.md)
-
--   :information_source:{ .lg .middle } __About Forta__
+-   :bank:{ .lg .middle } __Network Fees and Developer Rewards__
 
     ---
 
-    Get a high-level understanding of Forta and learn how it works.
+    To be changed
 
-    [:octicons-arrow-right-24: Learn more](why-forta.md)
+    [:octicons-arrow-right-24: Learn More](fees-why.md)
+
+-   :information_source:{ .lg .middle } __Staking on Forta__
+
+    ---
+
+    To be changed
+
+    [:octicons-arrow-right-24: Learn more](intro-to-staking.md)
+
+-   :tools:{ .lg .middle } __Network Overview__
+
+    ---
+
+    To be changed
+
+    [:octicons-arrow-right-24: Learn more](network-overview.md)
+
+
+  
 
 
 </div>
