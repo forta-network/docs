@@ -1,3 +1,5 @@
+
+
 # Governance
 
 The decentralized architecture of the Forta Network supports its growing community of node operators, detection bot developers and the ecosystem built on top. The vision of Forta posits that only a community-based platform will be powerful enough to address the rapidly evolving risk landscape on blockchains, where every new smart contract deployed introduces novel risk vectors that could affect thousands of interconnected protocols and millions of users.
@@ -6,20 +8,24 @@ It is integral that governance over the architecture of the Forta Network is als
 
 The Forta Foundation is an independent, non-profit organization (the “Foundation”) that holds certain assets (e.g. public and open source IP, Github repos, and FORT tokens) in the Network and will facilitate governance of Forta by its community members. To further decentralize governance over Forta, the Foundation introduced a community governance framework with two primary components:
 
-1. **Forta Proposal Process** – a formal, yet flexible framework designed for the community to self-organize and advance proposals and signal support by FORT token holder voting; and
 
+
+1. **Forta Proposal Process** – a formal, yet flexible framework designed for the community to self-organize and advance proposals and signal support by FORT token holder voting; and
 2. **Forta Governance Council** – decision making authority was delegated by the community to an initial council of representatives elected by FORT token holders, always allowing the community to provide input and share sentiment through the Forta Proposal Process.
 
 Forta’s initial community governance is simple by design, shaped by key learnings from the current state of Web3 governance:
 
-- Complex governance systems can lead to voter fatigue and voter apathy
-- Radical democracy invites plutocracy and it takes time for tokens to become widely dispersed amongst a network’s users
-- Governance should be flexible enough to meet the unique needs of each community, as such needs emerge
-- The stakeholders of a network like Forta extend outside of token holders and should be represented
-- Proposals to alter the protocol should be public and permissionless and decision makers should be accountable to the community
-- Governance should minimize over time as the protocol hardens
+
+
+* Complex governance systems can lead to voter fatigue and voter apathy
+* Radical democracy invites plutocracy and it takes time for tokens to become widely dispersed amongst a network’s users
+* Governance should be flexible enough to meet the unique needs of each community, as such needs emerge
+* The stakeholders of a network like Forta extend outside of token holders and should be represented
+* Proposals to alter the protocol should be public and permissionless and decision makers should be accountable to the community
+* Governance should minimize over time as the protocol hardens
 
 The initial community governance framework should allow anyone to easily participate in shaping the evolution of Forta, allowing the Network to evolve naturally over time. It should also maintain the security and robustness of the Network needed for Forta to further its mission to monitor all transactions and protect all assets in Web3.
+
 
 ## Forta Governance Council
 
@@ -29,12 +35,14 @@ The Council reduces the need for individual voters to actively participate in ev
 
 The Council Bylaws set out the Council governance authority and responsibilities, which in short allow the Council to:
 
-- Support initiatives that contribute to the growth and sustainability of Forta
-- Facilitate the development of features and changes in the Network, or adjacent products and services
-- Enable Forta security programs to ensure the long-term security of the Network and security procedures so Forta can react to potential vulnerabilities
-- Educate the Web3 ecosystem about the importance of decentralized runtime security and advocate for the vision of Forta and the decentralized web
-- Attract and retain node runners, bot developers, core developers and other community members through community-building and marketing initiatives
-- Carry out actions that would otherwise further the Council’s mission
+
+
+* Support initiatives that contribute to the growth and sustainability of Forta
+* Facilitate the development of features and changes in the Network, or adjacent products and services
+* Enable Forta security programs to ensure the long-term security of the Network and security procedures so Forta can react to potential vulnerabilities
+* Educate the Web3 ecosystem about the importance of decentralized runtime security and advocate for the vision of Forta and the decentralized web
+* Attract and retain node runners, bot developers, core developers and other community members through community-building and marketing initiatives
+* Carry out actions that would otherwise further the Council’s mission
 
 The Council generally may exercise its authority under the Bylaws on a majority vote basis, although appointment or removal of other council members requires a two-thirds majority vote. If Council members do not stay aligned with the community and represent their interests well, the community may lobby the Council to remove a council member, through an FPP proposal or directly.
 
@@ -42,8 +50,12 @@ The Council also holds admin signing privileges on the Forta multi-signature wal
 
 The Council should help reduce the real problems that would be created by a more complex governance system introduced at the outset that requires FORT token holder voting on every single issue. An initial governance council should reduce the attention-taxing process of FORT holders needing to keep up with an ever-changing system, which provides them more time and attention that can be used to provide value in the Forta Network, furthering its mission to monitor all transactions and protect all assets in Web3.
 
+
 ### Current Forta Governance Council
+
 The current Forta Governance Council consists of the following members. They were elected by FP-1 on June 5th 2022.
+
+
 
 1. [Demian Brener](https://www.linkedin.com/in/demianbrener/) - Founder & CEO @ OpenZeppelin, the company that founded and incubated Forta
 2. [Hart Lambur](https://www.linkedin.com/in/hartlambur/) - Co-Founder @ UMA, proven Web3 protocol and active Forta user
@@ -52,6 +64,7 @@ The current Forta Governance Council consists of the following members. They wer
 5. [Juan Garre](https://www.linkedin.com/in/juangarre/) - Director @ the Forta Foundation, a serial entrepreneur running operations for the Forta Foundation since its inception
 6. [Mat Travizano](https://www.linkedin.com/in/mtravizano/) - Founder @ Rewilder, serial entrepreneur now focused on tackling environmental issues with blockchain technology
 7. [Tomasz Stańczak](https://www.linkedin.com/in/tomaszkajetanstanczak/) - Founder @ Nethermind, one of the earliest members of the Forta community, developing detection bots, contributing to core development, running scan nodes and actively involved in the ecosystem
+
 
 ## Forta Proposal Process
 
@@ -63,11 +76,22 @@ The FPP is divided into four distinct phases, but it is not a rigid framework th
 
 Within the FPP, Phase 3 or the “Community Vote” is the most consequential phase, because if a proposal successfully passes this phase, then the Council must deliberate and decide on whether or not to implement the respective proposal. In the beginning, successful Community Votes will be persuasive but not strictly binding on the Council. This allows the Council to act as a check and balance on whether a community proposal is in the best interests of Forta, until the community matures and strengthens its governance muscles over time.
 
+
 ## Links
 
-- [Governance Forum](https://gov.forta.network/)
-- [Forta Proposal Process](https://gov.forta.network/t/forta-proposal-process-v1-0/185)
+
+
+* [Governance Forum](https://gov.forta.network/)
+* [Forta Proposal Process](https://gov.forta.network/t/forta-proposal-process-v1-0/185)
+
 
 ## Proposals
 
-- FP-1 ([Governance Forum](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202?u=forta) / [Snapshot Voting](https://snapshot.org/#/forta.eth/proposal/0xe4ac40876e9525d975d7d204354d2f9a058135e611f455226f97a712bc0227b2))
+
+
+* FP-1 ([Governance Forum](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202?u=forta) / [Snapshot Voting](https://snapshot.org/#/forta.eth/proposal/0xe4ac40876e9525d975d7d204354d2f9a058135e611f455226f97a712bc0227b2))
+* FP-2 (Governance Forum / Snapshot Voting)
+* FP-3 (Governance Forum / Snapshot Voting)
+* FP-4 (Governance Forum / Snapshot Voting)
+* FP-5 (Governance Forum / Snapshot Voting)
+* FP-6 (Governance Forum / Snapshot Voting)

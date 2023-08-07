@@ -16,45 +16,44 @@ hide:
 
     Access Forta's Threat Intel to detect Web3 hacks.
 
-    [:octicons-arrow-right-24: Learn How to Use Forta](getting-started.md)
+    [:octicons-arrow-right-24: Getting Started](getting-startedv2.md)
 
 -   :gear:{ .lg .middle } __Build on Forta__
 
     ---
 
-    As a developer, you can use a suite of tools to develop new detection bots.
+    Build detection bots and earn recurring monthly revenue
 
-    [:octicons-arrow-right-24: Network-overview](network-overview.md)
+    [:octicons-arrow-right-24: Start building](intro-to-bot-dev.md )
 
 -   :material-server:{ .lg .middle } __Run a Node__
 
     ---
+    Setup a scan node to run detection bots and operate the Forta network
 
-    Setup a scan node to run detection bots and operate the Forta network.
-
-    [:octicons-arrow-right-24: Learn more](scanner-quickstart.md)
+    [:octicons-arrow-right-24: Learn more](scan-node/introduction.md)
 
 -   :bank:{ .lg .middle } __Network Fees and Developer Rewards__
 
     ---
 
-    To be changed
+    Users that want to consume Forta Threat Intel will need to purchase one or more monthly subscription plans. Developers that create and maintain those data feeds get rewards
 
-    [:octicons-arrow-right-24: Learn More](fees-why.md)
+    [:octicons-arrow-right-24: Getting Started](fees-why.md)
 
 -   :information_source:{ .lg .middle } __Staking on Forta__
 
     ---
 
-    To be changed
+    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security
 
-    [:octicons-arrow-right-24: Learn more](intro-to-staking.md)
+    [:octicons-arrow-right-24: Getting Started](delegated-staking-introduction.md)
 
 -   :tools:{ .lg .middle } __Network Overview__
 
     ---
 
-    To be changed
+    Get a high-level understanding of the Forta Network, its governance, the FORT token and a security overview
 
     [:octicons-arrow-right-24: Learn more](network-overview.md)
 
