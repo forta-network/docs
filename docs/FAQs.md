@@ -1,5 +1,5 @@
-
 # _Use Forta_
+
 
 ### **What can Forta be used for?**
 
@@ -37,7 +37,15 @@ A good way to start is to look at the premium feeds featured in the Forta App, w
 
 In addition, you can also use the search function in Forta Explorer to look for the bot that best fits your needs, among the hundreds of existing bots in the network.
 
+
+
+
+
 # _Build Detection Bots_
+
+
+
+
 
 ### **How do I write a detection bot with the SDK?**
 
@@ -75,7 +83,15 @@ No, developing and deploying detection bots is permissionless. Just remember tha
 
 Yes, the open source Forta detection bot Wizard is a no-code tool that enables anyone to create simple bots with just a few clicks, based on existing templates. [Here](https://docs.forta.network/en/latest/wizard/) you can learn how and start using the Wizard.
 
+
+
+
+
 # _Running a Scan Node_
+
+
+
+
 
 ### **How do I run a scan node?**
 
@@ -85,7 +101,15 @@ Please see [the scan node guide ](https://docs.forta.network/en/latest/scan-node
 
 Scan nodes get rewards according to their performance (measured via their uptime and SLA) and their security (measured via their stake). [Here](https://docs.forta.network/en/latest/delegated-staking-rewards/#formula) you can find more detail on the rewards formula, and [here](https://forta.notion.site/Rewards-2152a115a3df4f70ae05971a6fa6ac3e) you can find updates regarding weekly rewards.
 
+
+
+
+
 # _FORT Token_
+
+
+
+
 
 ### **What is the FORT token used for?**
 
@@ -107,7 +131,15 @@ The total supply is 1,000,000,000 FORT.
 
 Delegating FORT to secure scan pools in the network can be done with just a few clicks from the Forta App. Here you can find a detailed guide.
 
-# _General_
+
+
+
+
+# _General_ 
+
+
+
+
 
 ### **What are detection bots?**
 
