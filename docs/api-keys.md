@@ -30,7 +30,7 @@ curl POST --header "Authorization: Bearer abc123" --header "content-type: applic
 
 ### Using with a bot locally
 
-If you have a bot that uses the `getAlerts` SDK method and you want to run the bot locally, you will need to provide the API key through the forta.config.json file. Simply set the `fortaApiKey` property in forta.config.json e.g.:
+If you have a bot that uses the `getAlerts` or `getLabels` SDK method and you want to run the bot locally, you will need to provide the API key through the forta.config.json file. Simply set the `fortaApiKey` property in forta.config.json e.g.:
 
 ```
 {
