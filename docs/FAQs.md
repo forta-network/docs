@@ -41,7 +41,7 @@ In addition, you can also use the search function in Forta Explorer to look for 
 
 
 
-# _Build Detection Bots_
+## _Build Detection Bots_
 
 
 
@@ -87,7 +87,7 @@ Yes, the open source Forta detection bot Wizard is a no-code tool that enables a
 
 
 
-# _Running a Scan Node_
+## _Running a Scan Node_
 
 
 
@@ -105,7 +105,7 @@ Scan nodes get rewards according to their performance (measured via their uptime
 
 
 
-# _FORT Token_
+## _FORT Token_
 
 
 
@@ -135,7 +135,7 @@ Delegating FORT to secure scan pools in the network can be done with just a few 
 
 
 
-# _General_ 
+## _General_
 
 
 
