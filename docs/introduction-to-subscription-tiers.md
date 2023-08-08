@@ -13,8 +13,8 @@ Premium Feeds provide users with the ability to access specific feeds that must 
 
 The currently available Premium Feeds are: 
 
-**Scam Detector:** This feed is maintained by the Forta Foundation, in collaboration with the Forta community, including Blocksec and Nethermind. 
+[**Scam Detector:**](https://app.forta.network/bot/0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23) This feed is maintained by the Forta Foundation, in collaboration with the Forta community, including Blocksec and Nethermind. 
 
-**Spam Detector:** This feed is built and maintained by Artem Kovalchuk, a Forta community developer.
+[**Spam Detector:**](https://app.forta.network/bot/0xd45f7183783f5893f4b8e187746eaf7294f73a3bb966500d237bd0d5978673fa) This feed is built and maintained by Artem Kovalchuk, a Forta community developer.
 
-**Rull Pull Detector:** This feed is built and maintained by Solidus Labs. 
+[**Rull Pull Detector:**]( https://app.forta.network/bot/0xc608f1aff80657091ad14d974ea37607f6e7513fdb8afaa148b3bff5ba305c15) This feed is built and maintained by Solidus Labs. 

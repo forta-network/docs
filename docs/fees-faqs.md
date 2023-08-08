@@ -122,7 +122,7 @@ Yes, if a bot owner wishes to receive data from the Forta Network they will need
 For premium plans, all fees are currently paid directly to the plan owner, so if you are the owner and are required to pay, effectively you will get 100% of that amount back as rewards. 
 
 If a bot belongs to the General Plan, the fees collected will be part of the general pool and distributed to all the bots in the plan according to the *bot rewards formula*, so the owner who is paying to access his own bot from the general plan may have their costs offset.<br/><br/>
-<img src="../fees-faq_bot_rewards_formula.png" alt="Bot Rewards Formula" width="600"/>
+<img src="../fees-faq_bot_rewards_formula2.png" alt="Bot Rewards Formula" width="600"/>
 
 **Do I need to purchase a plan if my bots read Forta data from other bots?**
 
