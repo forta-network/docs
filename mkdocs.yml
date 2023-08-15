@@ -79,8 +79,9 @@ nav:
       - Upgrade: scan-node/upgrade.md
       - FAQ: scan-node/faq.md
       - Miscellaneous: scan-node/miscellaneous.md
-    - Localmode: scanner-local-mode.md
-    - Monitoring SLA: 
+    - Local mode: scanner-local-mode.md
+    - Monitoring SLA:
+      - SLA Score Calculation: sla.md
       - SLA API: sla-api.md
     - Manage pools and stake: scanner-pools.md
     - Node Resources:
