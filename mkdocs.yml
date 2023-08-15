@@ -6,7 +6,7 @@ nav:
     - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md #namme is large for UI
     - Using the API: api-reference.md #needs to resolve page ishue
     - GraphQL Reference: forta-api-reference/index.html
-    - Suscribing to a bot: subcribing-to-bot.md #ready
+    - Subscribing to a bot: subscribing-to-bot.md #ready
     - Use Cases: https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c
     - Tutorial - How to pay for Forta: fees-tut-how-pay.md #ready
   - <strong>Build on Forta</strong>:
