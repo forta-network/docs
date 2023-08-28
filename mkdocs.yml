@@ -2,15 +2,16 @@ site_name: Forta Docs
 
 nav:
   - <strong>Use Forta</strong>: 
-    - Getting Started: getting-started.md #ready
-    - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md #namme is large for UI
-    - Using the API: api-reference.md #needs to resolve page ishue
+    - Getting Started: getting-started.md 
+    - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md
+    - Using the API: api-reference.md 
     - GraphQL Reference: forta-api-reference/index.html
-    - Subscribing to a bot: subscribing-to-bot.md #ready
+    - Subscribing to a bot: subscribing-to-bot.md 
     - Use Cases: https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c
-    - Tutorial - How to pay for Forta: fees-tut-how-pay.md #ready
+    - Tutorial - How to pay for Forta: fees-tut-how-pay.md 
+    - Forta for Metamask: Forta-for-Metamask.md
   - <strong>Build on Forta</strong>:
-    - Introduction to Bot Development: intro-to-bot-dev.md #ready, check the link to quickstart
+    - Introduction to Bot Development: intro-to-bot-dev.md 
     - Develop a Bot with the SDK:
       - 1) Quick start: quickstart.md
       - 2) Testing your bot: testing.md
@@ -60,13 +61,13 @@ nav:
     - Machine Learning on Forta:  
       - Why Machine Learning?: ml-with-forta.md
       - Datasets and Resources: ml-data-resources.md
-    - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md #ready
+    - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md 
   - <strong>Network Fees and Developer Rewards</strong>:
-    - Why Fees?: fees-why.md #ready
-    - Tutorial | How to Pay for Forta: fees-tut-how-pay.md #ready
-    - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md #ready
-    - FAQs about fees: fees-faqs.md #check last version
-  - <strong>Run a Node</strong>: #ready
+    - Why Fees?: fees-why.md 
+    - Tutorial | How to Pay for Forta: fees-tut-how-pay.md 
+    - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md 
+    - FAQs about fees: fees-faqs.md 
+  - <strong>Run a Node</strong>: 
     - Quickstart:
       - Introduction: scan-node/introduction.md
       - Machine setup: scan-node/machine-setup.md
@@ -90,14 +91,14 @@ nav:
       - Scan with Bware: bware-partnership.md
       - Scan with Quicknode: quicknode-partnership.md
   - <strong>Staking on Forta</strong>:
-    - Delegated staking: delegated-staking-introduction.md #ready
-    - FORT Holder Staking Guide: fort-holder-staking-guide.md #ready
-    - Direct withdrawal: scanner-direct-withdrawal.md #ready
+    - Delegated staking: delegated-staking-introduction.md 
+    - FORT Holder Staking Guide: fort-holder-staking-guide.md 
+    - Direct withdrawal: scanner-direct-withdrawal.md 
   - <strong>Network Overview</strong>: 
-    - Network Overview: network-overview.md #ready
-    - Tokenomics: fort-token.md #last chganges
-    - Governance: governance.md #review last links
-    - FAQs: FAQs.md #all data
+    - Network Overview: network-overview.md 
+    - Tokenomics: fort-token.md 
+    - Governance: governance.md 
+    - FAQs: FAQs.md 
     - Security Overview: 
       - Intro: security.md
       - Design: security-design.md
