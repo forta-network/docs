@@ -2,12 +2,12 @@
 
 The Forta Snap for MetaMask is a plugin that automatically scans the addresses in a user’s pre-signed transaction against Forta’s database of known scammers. Based on the results, the plugin will display a “high-risk” or “low-risk” warning message to the user. . Some of the scam types covered by the Forta Snap include: 
 
-    * Ice phishing
-    * token impersonation
-    * pig butchering
-    * gas minting
-    * sleep minting
-    * hard and soft rug pulls
+   
+    * Token impersonation
+    * Pig butchering
+    * Gas minting
+    * Sleep minting
+    * Hard and soft rug Pulls
     * NFT wash trading   
 
 2. What is Forta? Forta is the largest network of security intelligence in Web3. The network provides real-time intelligence about scams, exploits and other suspicious activity to 100+ teams, including DeFi protocols, centralized exchanges, Web3 wallets, security tools and crypto compliance platforms. 
