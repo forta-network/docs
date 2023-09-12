@@ -47,7 +47,7 @@ Scanners must meet the requirements of the Scan Node.  All of the following requ
 - Must have accessible JSON-RPC API
 - Must have a JSON-RPC API that supports `eth` module
 - Must scan same chain as registered for
-- Must support the minimum memory requirement (currently >16GB, only enforcing >8GB for now)
+- Must support the minimum memory requirement (currently 16GB)
 - Must load an automated hourly test bot at least once per 2-hour period
 
 !!! warning "All requirements must be met"
