@@ -9,7 +9,7 @@ mkdocs==1.5.2
 git+https://${MKDOCS_MATERIAL_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
 mkdocs-material-extensions==1.1
 packaging==21.0
-Pygments==2.14
+Pygments==2.16
 pymdown-extensions==9.9.1
 pyparsing==2.4.7
 python-dateutil==2.8.2
