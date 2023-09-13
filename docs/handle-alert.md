@@ -2,7 +2,7 @@
 
 With the addition of the new `handleAlert` handler, bots are now able to subscribe to alerts from the Forta network. This enables increased composability and higher reuse of existing bots when building your own bot.
 
-Prior to this change, developers could manually query for alerts using the [`getAlerts`](sdk.md#getalerts) SDK method or directly using the [Forta Alerts GraphQL API](api.md). With the `handleAlert` function, Forta makes threat detection more modular by treating bot reuse as a first-class feature. This page will cover how to use this powerful new handler function.
+Prior to this change, developers could manually query for alerts using the [`getAlerts`](sdk.md#getalerts) SDK method or directly using the [Forta Alerts GraphQL API](api.md). With the `handleAlert` function, Forta makes threat detection more modular by treating bot reuse as a first-class feature. When developing locally, **you will need to set the [`fortaApiKey`](api-keys.md) property** in your forta.config.json to consume alerts (and also have a paid plan). This page will cover how to use this powerful new handler function.
 
 !!! info "Apply for subsidy"
     Developers building this type of bots that consume data from other bots can apply for a subsidy to receive free use of the General Plan until their bots earn enough recurring revenue. Please fill this [form](https://docs.google.com/forms/d/e/1FAIpQLSfZUMvSVCThWx78rCw2Xibvgigwk_-THnkBWjPT8u08JZVsNg/viewform) to submit your application

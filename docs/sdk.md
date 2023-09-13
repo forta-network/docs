@@ -271,7 +271,7 @@ A convenience function called `getTransactionReceipt` can be used to fetch the e
 
 ## getAlerts
 
-The `getAlerts` method can be used to fetch alerts based on input `AlertQueryOptions`. The `getAlerts` method accepts the following input filter properties:
+The `getAlerts` method can be used to fetch alerts based on input `AlertQueryOptions`. When developing locally, **you will need to set the [`fortaApiKey`](api-keys.md) property** in your forta.config.json (and also have a paid plan) for this method to work. The `getAlerts` method accepts the following input filter properties:
 
 - `botIds` **required**; list of bot ids to fetch alerts for
 - `addresses` -  indicate a list of addresses, alerts returned will have those addresses involved.
@@ -288,7 +288,7 @@ The `getAlerts` method can be used to fetch alerts based on input `AlertQueryOpt
 - `blockDateRange` - alerts returned will be between the specified start and end block timestamp dates when the threats were detected
 - `blockNumberRange` - alerts for the block number range will be returned
 
-The returned alerts are formatted to match the SDK `AlertsResponse` interface the looks like:
+The returned alerts are formatted to match the SDK `AlertsResponse` interface which looks like:
 
 ```javascript
 {
@@ -330,7 +330,7 @@ main();
 
 ## getLabels
 
-The `getLabels` method can be used to fetch labels based on input `LabelQueryOptions`. The `getLabels` method accepts the following input filter properties (at least one of `entities`, `labels` or `sourceIds` is **required**):
+The `getLabels` method can be used to fetch labels based on input `LabelQueryOptions`. When developing locally, **you will need to set the [`fortaApiKey`](api-keys.md) property** in your forta.config.json (and also have a paid plan) for this method to work. The `getLabels` method accepts the following input filter properties (at least one of `entities`, `labels` or `sourceIds` is **required**):
 
 - `entities` - string array to filter by label entities (e.g. wallet addresses, block/tx hashes)
 - `labels` - string array to filter the label value (e.g. "attacker")
@@ -435,3 +435,7 @@ A utility function for writing tests. You can use `createBlockEvent` to easily g
 ## createTransactionEvent
 
 A utility function for writing tests. You can use `createTransactionEvent` to easily generate a mock `TransactionEvent` object when writing unit tests for your `handleTransaction` handler. To better understand usage, see the [Javascript unit test example](https://github.com/forta-network/forta-bot-examples/blob/master/high-gas-js/src/high.gas.used.spec.js).
+
+## createAlertEvent
+
+A utility function for writing tests. You can use `createAlertEvent` to easily generate a mock `AlertEvent` object when writing unit tests for your `handleAlert` handler.

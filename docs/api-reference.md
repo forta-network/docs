@@ -103,7 +103,7 @@ After making your selections and jumping through the Documentation window your O
 
 ### **Using with a bot locally**
 
-If you have a bot that uses the getAlerts SDK method and you want to run the bot locally, you will need to provide the API key through the forta.config.json file. Simply set the fortaApiKey property in forta.config.json e.g.:
+If you have a bot that uses the `handleAlert` handler or the `getAlerts` or `getLabels` SDK method and you want to run the bot locally, you will need to provide the API key through the forta.config.json file. Simply set the `fortaApiKey` property in forta.config.json e.g.:
 
 
 

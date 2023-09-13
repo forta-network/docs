@@ -17,4 +17,4 @@ Here are the following supported configuration properties:
 - `keyfile` - optional; specify the name of a keyfile in ~/.forta to use for publishing (by default we assume there is only one keyfile)
 - `keyfilePassword` - optional; specify the password to decrypt the keyfile, useful for CI/CD pipelines
 - `agentId` - optional; specify the agentId of this bot, to be used for bos deployed with Forta App
-- `fortaApiKey` - optional; specify your Forta API key for local development (required if using the `getAlerts` or `getLabels` SDK method)
+- `fortaApiKey` - optional; specify your Forta API key for local development (required if using the `getAlerts` or `getLabels` SDK method, or the `handleAlerts` handler)
