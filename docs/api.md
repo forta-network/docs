@@ -1,6 +1,6 @@
 # API Access
 
-Forta currently supports free [GraphQL](https://graphql.org/) API access to alerts and blockchain projects data.
+Forta requires a paid plan for [GraphQL](https://graphql.org/) API access to alerts and blockchain projects data.
 
 ## How can I access the API?
 
