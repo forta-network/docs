@@ -92,6 +92,10 @@ To learn more, read the [smart contracts github repo](https://github.com/forta-n
 | StakeAllocator | [0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA](https://polygonscan.com/address/0x5B73756e637A77Fa52e5Ce71EC6189A4C775c6FA) | [0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7](https://polygonscan.com/address/0x3C8DA61348823A59df1C1c2265Cdb8a55f06b4f7) |
 | RewardsDistributor | [0xf7239f26b79145297737166b0c66f4919af9c507](https://polygonscan.com/address/0xf7239f26b79145297737166b0c66f4919af9c507) | [0xf87A30F7677f03982780a377C793c796FDAf52F8](https://polygonscan.com/address/0xf87A30F7677f03982780a377C793c796FDAf52F8) |
 | ScannerToScannerPoolMigration | [0x1365fa3FE7F52db912daBc8e439f0843461fee16](https://polygonscan.com/address/0x1365fa3FE7F52db912daBc8e439f0843461fee16) | [0xEBb33FD780757d745213CF57838c0E5b66D824Bc](https://polygonscan.com/address/0xEBb33FD780757d745213CF57838c0E5b66D824Bc) |
+| General Plan | [0x4e0c80548e67a6e05464e540729222eb9812444d](https://polygonscan.com/address/0x4e0c80548e67a6e05464e540729222eb9812444d) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
+| Scam Detector Plan | [0x54089510aec879ca42e08bc4b166be8362b56bb2](https://polygonscan.com/address/0x54089510aec879ca42e08bc4b166be8362b56bb2) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
+| Rug Pull Detector Plan | [0x525d8d73f11a8586482f4f74c105d9d8b7cf73da](https://polygonscan.com/address/0x525d8d73f11a8586482f4f74c105d9d8b7cf73da) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
+| Spam Detector Plan | [0x6453379cbc14f7a277319b6c8b7577ae78524968](https://polygonscan.com/address/0x6453379cbc14f7a277319b6c8b7577ae78524968) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
 
 **Goerli Testnet**
 
