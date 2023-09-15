@@ -68,7 +68,7 @@ nav:
     - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md 
     - FAQs about fees: fees-faqs.md 
   - <strong>Run a Node</strong>: 
-    - Quickstart:
+    - Guide:
       - Introduction: scan-node/introduction.md
       - Machine setup: scan-node/machine-setup.md
       - Install Forta node: scan-node/install-forta-node.md
