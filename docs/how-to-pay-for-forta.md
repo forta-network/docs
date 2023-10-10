@@ -4,12 +4,12 @@ Users can now purchase new plans on the Forta App.
 
 
 
-1-  Discover all the premium plans available on Forta on the Forta &lt;App Homepage>, you can also explore what is included on the General Plan on the &lt;Forta Explorer>.
+1-  Discover all the premium plans available on Forta on the Forta &lt;App Homepage>, you can also explore what is included in the General Plan on the &lt;Forta Explorer>.
 
 ![discover](fees-1.png)
 
 
-2- Click on any of the premium plans cards to learn more about that specific premium plan (from the bot’s performance, to the number of subscribers it has).
+2- Click on any of the premium plans cards to learn more about that specific premium plan (from the bot’s performance to the number of subscribers it has).
 
 
 
@@ -22,7 +22,7 @@ Users can now purchase new plans on the Forta App.
 
 4- Log in to your account connecting your wallet to access to your “My Account” section (or sign up if it is the first time you are logging in).
 
-5- You will be redirected to the Forta’s Unlock checkout page to complete the transaction
+5- You will be redirected to Forta’s Unlock checkout page to complete the transaction
 
     
 ![Unlock](fees-3.png)
