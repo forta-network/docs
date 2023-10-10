@@ -4,7 +4,7 @@ Forta Network is currently scanning seven chains. Please make sure you have deci
 
 - Ethereum
 - Polygon
-- Binance Chain
+- BNB Chain
 - Avalanche
 - Arbitrum
 - Optimism
@@ -17,16 +17,16 @@ You can find info about the per-week reward pool and previously distributed week
 !!! important "JSON-RPC API quality matters"
     This is the most important step of configuring a Forta scan node as it has a critical impact on alerting and the SLA (performance) score.
 
-There are four types of JSON-RPC APIs which are configurable in `~/.forta/config.yml` after the next step and each can have critical impact on the SLA score of the node.
+There are four types of JSON-RPC APIs which are configurable in `~/.forta/config.yml` after the next step and each can have a critical impact on the SLA score of the node.
 
-- `scan`: This is the API used as source of the chain data (blocks, transactions) which are fed into running detection bots.
+- `scan`: This is the API used as the source of the chain data (blocks, transactions) which are fed into running detection bots.
 - `trace`: This is usually the same as the scan API and it needs to support the `trace_block` method. It is not required for scanning every chain (currently only Ethereum and Fantom).
 - `jsonRpc`: This defaults to scan API by default. It allows bots to make extra JSON-RPC requests to check the chain state. Please make sure that this API can take load as some bots can be heavy.
 - `registry`: This API is different from the other APIs as it always needs to be a _Polygon Mainnet_ JSON-RPC API. It is used for retrieving the list of assigned bots and the latest node releases for auto-upgrade purposes. It is used much more lightly compared to the other APIs listed here.
 
 **We strongly recommend:**
 
-- running your own full node as the provider of first three APIs,
+- running your own full node as the provider of the first three APIs,
 - picking a _private_ registry API to avoid disconnection from the network state.
 
 If you would like to run an Ethereum full node you can follow [these steps](miscellaneous.md#run-an-ethereum-full-node). 
@@ -173,7 +173,7 @@ jsonRpcProxy:
 The block feed in the node always retries any request whenever `eth_getBlockByNumber`, `eth_getLogs` or `trace_block` does not work. The default retry interval is 8 seconds. While this is a sufficient retry interval on average for all chains, you can reduce this interval so your node catches up faster.
 
 !!! tip "Effect to score"
-    Reducing the retry interval can help you achieve a higher SLA score in case you have any concerns about your node's current score. Please keep in mind that small retry intervals can cause a bump in the amount of total requests because of the increase in the amount of retries.
+    Reducing the retry interval can help you achieve a higher SLA score in case you have any concerns about your node's current score. Please keep in mind that small retry intervals can cause a bump in the number of total requests because of the increase in the number of retries.
 
 To reduce the retry interval to two seconds, you can add `retryIntervalSeconds` to the scan section of your config like:
 
