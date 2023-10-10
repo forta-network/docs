@@ -46,7 +46,7 @@ Scanners must meet the requirements of the Scan Node.  All of the following requ
 - Must support outbound internet access for Bots
 - Must have accessible JSON-RPC API
 - Must have a JSON-RPC API that supports `eth` module
-- Must scan same chain as registered for
+- Must scan the same chain as registered for
 - Must support the minimum memory requirement (currently 16GB)
 - Must load an automated hourly test bot at least once per 2-hour period
 
@@ -60,7 +60,7 @@ Scanners must evaluate recent blocks.  Recent blocks are continuously evaluated 
 The minute score decreases from 1 to 0 until a node's latest block is 10 minutes behind the 75th percentile. The hourly Data Quality Score is derived from the reported minutes by taking the average of all minute scores.
 
 !!! note "Exceeding the Expected Block"
-    It is possible to exceed the 75th percentile, but if it **far** exceeds, it can be because the scanner is pointed to the wrong chain or other issue.  Full credit is given until a block is more than 10 minutes ahead of the 75th percentile, then the score drops to 0.
+    It is possible to exceed the 75th percentile, but if it **far** exceeds, it can be because the scanner is pointed to the wrong chain or another issue.  Full credit is given until a block is more than 10 minutes ahead of the 75th percentile, then the score drops to 0.
 
 ```
 # Latest Block is Ahead of Expected Block
@@ -80,13 +80,13 @@ Scanners must send data at regular intervals so that the network can deliver tim
 
 - every 15 seconds if the node is running bots and there are new alerts,
 - every 1 minute if the node is running bots but there are no alerts,
-- for few times in an hour if the node is not running any bots.
+- a few times in an hour if the node is not running any bots.
 
-The minute score of uptime is the percent difference between the number of batches and expected number of batches.  Due to timing and alert rate, this count can flucutate between 0 and 5 in a minute, but this does not impact the SLA very much, because the score is not weighted as high as others.
+The minute score of uptime is the percent difference between the number of batches and the expected number of batches.  Due to timing and alert rate, this count can fluctuate between 0 and 5 in a minute, but this does not impact the SLA very much, because the score is not weighted as high as others.
 
 If data is not being sent at all, all other scores will be impacted as well.
 
-Hourly uptime is measured by adding up all of the minute scores within an hour. While idle scan nodes are expected to report at a lower rate, the bot-assigned nodes are expected to report every minute. In both situations, the uptime score derived from the sum falls proportionally as the total score from reported minutes approach zero.
+Hourly uptime is measured by adding up all of the minute scores within an hour. While idle scan nodes are expected to report at a lower rate, the bot-assigned nodes are expected to report every minute. In both situations, the uptime score derived from the sum falls proportionally as the total score from reported minutes approaches zero.
 
 ```
 uptime score = 1 - ( abs ( number of batches - 4 ) ) / 4 )
@@ -98,7 +98,7 @@ uptime score = 1 - ( abs ( number of batches - 4 ) ) / 4 )
 
 Subscores
 
-- Resouce score is 1
+- Resource score is 1
 - Data Quality Score is 0.8837
 - Uptime score is 1
 
@@ -121,7 +121,7 @@ Score is **0.9031**
 
 Subscores
 
-- Resouce score is 1
+- Resource score is 1
 - Data Quality Score is 0, because 43 blocks is the threshold
 - Uptime score is 1
 
@@ -142,7 +142,7 @@ Score is **0.166666**
 
 Subscores
 
-- Resouce score is 0
+- Resource score is 0
 - Data Quality Score is 1
 - Uptime score is 1
 
@@ -163,7 +163,7 @@ Score is **0**
 
 Subscores
 
-- Resouce score is 1  (because trace is not required for polygon)
+- Resource score is 1  (because trace is not required for polygon)
 - Data Quality Score is 1
 - Uptime score is 1
 
