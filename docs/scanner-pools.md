@@ -35,7 +35,7 @@ In order to make scan nodes operational and generate rewards, a node pool must h
 - The pool owner decides how much of the owner and delegated stake should be allocated.
 
 !!! danger "Density affects the rewards"
-    When staking on a pool, please prefer the ones that have allocation capacity or have low amount of unallocated stake. While a lot of depositors can share the rewards of a pool proportionally to their active stake amount on the pool, the rewards are generated based only on the amount of allocated stake.
+    When staking on a pool, please prefer the ones that have allocation capacity or have a low amount of unallocated stake. While a lot of depositors can share the rewards of a pool proportionally to their active stake amount on the pool, the rewards are generated based only on the amount of allocated stake.
 
 Please also see the [Adjusting stake allocation](#adjusting-stake-allocation) section before depositing any stake.
 
@@ -44,7 +44,7 @@ Please also see the [Adjusting stake allocation](#adjusting-stake-allocation) se
 
 ![My Node Pools](delegated-staking/MyNodePoolsDropdown.png)
 
-- Click on node pool you would like to add stake
+- Click on the node pool you would like to add stake
 
 ![My Node Pools Tab](delegated-staking/MyNodePoolsTab.png)
 
@@ -148,9 +148,9 @@ In this **example** case, then this is how allocation and node registration play
 ![Stake Allocation Flow](delegated-staking/StakeAllocationFlow.png)
 
 !!! danger "Risk of shutting down the pool"
-    After unallocating owner stake as the operator, if allocated owner stake does not satisfy `node_count × min_stake_per_scan_node`, the pool faces the risk of shutting down and will generate no rewards! Please take into account the warnings and your calculations before proceeding.
+    After unallocating owner stake as the operator, if the allocated owner stake does not satisfy `node_count × min_stake_per_scan_node`, the pool faces the risk of shutting down and will generate no rewards! Please take into account the warnings and your calculations before proceeding.
 
-    E.g. for a pool with two nodes, 4k FORT stake on the pool means that both of the nodes in the pool are non-operational until it can be topped up to 5k (`2500 × 2`) by the pool owner and allocation of owner stake is adjusted accordingly.
+    E.g. for a pool with two nodes, a 4k FORT stake on the pool means that both of the nodes in the pool are non-operational until it can be topped up to 5k (`2500 × 2`) by the pool owner and allocation of owner stake is adjusted accordingly.
 
 - In the Forta App navigate to “My Node Pools”
 
@@ -189,7 +189,7 @@ For example, let's assume:
 - The pool delegators are rewarded 2000 FORT in total.
 
 In this case, `2000 × 0.1 = 200` FORT is credited to the pool owner as commission. From the remaining 1800 FORT,
- each of the delegators earn proportionally to their deposited stake:
+ each of the delegators earns proportionally to their deposited stake:
 
 - Delegator 1: 12000 => 1200
 - Delegator 2: 6000  => 600 
