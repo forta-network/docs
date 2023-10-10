@@ -12,9 +12,9 @@ To prevent spam and malicious bots from being published and consuming network re
 
 _Scan Nodes_
 
-The other component of the network are scan nodes, and you can think of scan nodes as servers that provide capacity to the Forta Network. Scan nodes are responsible for running detection bots, providing them blockchain data and publishing any alerts. 
+The other component of the network is scan nodes, and you can think of scan nodes as servers that provide capacity to the Forta Network. Scan nodes are responsible for running detection bots, providing them with blockchain data and publishing any alerts. 
 
-Anyone can run a scan node as long as they stake the required amount of FORT tokens. Each scan node listens for blocks and transactions from a blockchain. Currently the Forta Network runs scan nodes for EVM blockchains such as Ethereum, Polygon and BNB (complete list of supported chains [here](https://explorer.forta.network/network)). Each scan node is assigned a set of detection bots to run by the Forta Network. 
+Anyone can run a scan node as long as they stake the required amount of FORT tokens. Each scan node listens for blocks and transactions from a blockchain. Currently, the Forta Network runs scan nodes for EVM blockchains such as Ethereum, Polygon and BNB Chain (complete list of supported chains [here](https://explorer.forta.network/network)). Each scan node is assigned a set of detection bots to run by the Forta Network. 
 
 When a new bot is published, it is randomly assigned to one or more scan nodes and begins running shortly thereafter. The scan node collects any alerts reported by the detection bots and publishes them.
 
