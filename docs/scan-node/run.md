@@ -1,6 +1,6 @@
 ## Start Docker
 
-Ensure Docker is running use the docker command `docker ps`.  If it is not running, start docker before running Forta.
+Ensure Docker is running by using the docker command `docker ps`.  If it is not running, start docker before running Forta.
 
 ## Start Forta
 
