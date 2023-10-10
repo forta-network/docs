@@ -207,9 +207,9 @@ Here are some configuration examples that use free APIs for chains other than Et
 !!! danger "Free APIs"
     The performance of free APIs can be unpredictable as they have unknown rate limits. This can cause your node to have a low SLA score.
 
-### BSC
+### BNB Chain
 
-You can choose from public BSC endpoints at https://docs.binance.org/smart-chain/developer/rpc.html.
+You can choose from public BNB Chain endpoints at https://docs.binance.org/smart-chain/developer/rpc.html.
 
 ```yaml
 chainId: 56
