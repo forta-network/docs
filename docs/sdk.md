@@ -61,7 +61,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 - `blockNumber` - alias for `block.number`
 - `blockHash` - alias for `block.hash`
 - `addresses` - map of addresses involved in the transaction (generated from transaction to/from address, any event log address and trace data address if available)
-- `block` - data object containing following fields:
+- `block` - data object containing the following fields:
     - `hash`
     - `number`
     - `timestamp`
@@ -77,7 +77,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `r`
     - `s`
     - `v`
-- `logs` - list of log objects with following fields:
+- `logs` - list of log objects with the following fields:
     - `address`
     - `topics`
     - `data`
@@ -87,7 +87,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `transactionIndex`
     - `transactionHash`
     - `removed`
-- `traces` - only with tracing enabled; list of trace objects with following fields:
+- `traces` - only with tracing enabled; list of trace objects with the following fields:
     - `blockHash`
     - `blockNumber`
     - `subtraces`
@@ -96,7 +96,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `transactionPosition`
     - `type`
     - `error`
-    - `action` - object with following fields:
+    - `action` - object with the following fields:
         - `callType`
         - `to`
         - `from`
@@ -106,7 +106,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
         - `address`
         - `balance`
         - `refundAddress`
-    - `result` - object with following fields:
+    - `result` - object with the following fields:
         - `gasUsed`
         - `address`
         - `code`
@@ -160,13 +160,13 @@ If a bot wants to flag a transaction/block/alert because it meets some condition
 - `name` - **required**; human-readable name of finding e.g. "High Gas"
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
 - `alertId` - **required**; unique string to identify this class of finding, primarily used to group similar findings for the end user
-- `protocol` - **required**; name of protocol being reported on e.g. "aave", defaults to "ethereum" if left blank
-- `type` - **required**; indicates type of finding:
+- `protocol` - **required**; name of the protocol being reported on e.g. "aave", defaults to "ethereum" if left blank
+- `type` - **required**; indicates the type of finding:
     - Exploit
     - Suspicious
     - Degraded
     - Info
-- `severity` - **required**; indicates impact level of finding:
+- `severity` - **required**; indicates the impact level of finding:
     - Critical - exploitable vulnerabilities, massive impact on users/funds
     - High - exploitable under more specific conditions, significant impact on users/funds
     - Medium - notable unexpected behaviours, moderate to low impact on users/funds
@@ -187,7 +187,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 - `createdAt` -  timestamp when the alert was published
 - `description` - text description of the alert
 - `name` - alert name
-- `protocol` - name of protocol being reported on
+- `protocol` - name of the protocol being reported on
 - `scanNodeCount` - number of scanners that found the alert
 - `source` - source where the alert was detected
     - `transactionHash` - transaction where the alert was detected
@@ -212,13 +212,13 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
     - `token`
     - `social`
     - `website` - main website of the project
-- `findingType` -  indicates type of finding:
+- `findingType` -  indicates the type of finding:
     - Exploit
     - Suspicious
     - Degraded
     - Info
     - Unknown
-- `severity` - indicates impact level of finding:
+- `severity` - indicates the impact level of finding:
     - Critical - exploitable vulnerabilities, massive impact on users/funds
     - High - exploitable under more specific conditions, significant impact on users/funds
     - Medium - notable unexpected behaviours, moderate to low impact on users/funds
@@ -228,14 +228,14 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 
 ### hasAddress
 
-`hasAddress` is a convenience function on `Alert` meant for checking the existence of an address involved in the alert. The `addresses` array is truncated for space-efficiency, so this method uses a bloom filter to check for existence. It accepts a single string parameter: the address to check
+`hasAddress` is a convenience function on `Alert` meant for checking the existence of an address involved in the alert. The `addresses` array is truncated for space efficiency, so this method uses a bloom filter to check for existence. It accepts a single string parameter: the address to check
 
 ## Label
 
 Labels can be used to add more contextual data to a `Finding` e.g. "is this address an attacker?". The `Label` object has the following properties:
 
 - `id` - string identifier of this label
-- `entityType` - enum indicating type of entity:
+- `entityType` - enum indicating the type of entity:
     - `Address`
     - `Transaction`
     - `Block`
@@ -245,7 +245,7 @@ Labels can be used to add more contextual data to a `Finding` e.g. "is this addr
 - `label` - string label to attach to the entity e.g. "exploit"
 - `confidence` - confidence level of label between 0 and 1
 - `metadata` - key-value map (both keys and values as strings) for providing extra information
-- `createdAt` - string containing timestamp of label creation
+- `createdAt` - string containing the timestamp of label creation
 - `source` - object with information about where this label came from
     - `alertHash`
     - `alertId`
@@ -267,7 +267,7 @@ A convenience function called `getJsonRpcUrl` can be used to load a JSON-RPC URL
 
 ## getTransactionReceipt
 
-A convenience function called `getTransactionReceipt` can be used to fetch the entire receipt of a transaction and returned in a format matching the SDK `Receipt` interface.
+A convenience function called `getTransactionReceipt` can be used to fetch the entire receipt of a transaction and is returned in a format matching the SDK `Receipt` interface.
 
 ## getAlerts
 
@@ -278,17 +278,17 @@ The `getAlerts` method can be used to fetch alerts based on input `AlertQueryOpt
 - `alertId` - filter alerts by alert-id
 - `chainId` - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet
 - `createdSince` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago (note: if not specified, the query will only search the past 24 hours)
-- `first` - indicate max number of results.
+- `first` - indicates max number of results.
 - `startingCursor` - query results after the specified cursor
-- `projectId` - indicate a project id, alerts returned will only be from that project.
+- `projectId` - indicates a project id, alerts returned will only be from that project.
 - `scanNodeConfirmations` - filter alerts by number of scan nodes confirming the alert
 - `severities` - filter alerts by severity levels
-- `transactionHash` - indicate a transaction hash, alerts returned will only be from that transaction
-- `blockSortDirection` - indicate sorting order by block number, 'desc' or 'asc'. Default is 'desc'.
+- `transactionHash` - indicates a transaction hash, alerts returned will only be from that transaction
+- `blockSortDirection` - indicates sorting order by block number, 'desc' or 'asc'. The default is 'desc'.
 - `blockDateRange` - alerts returned will be between the specified start and end block timestamp dates when the threats were detected
 - `blockNumberRange` - alerts for the block number range will be returned
 
-The returned alerts are formatted to match the SDK `AlertsResponse` interface which looks like:
+The returned alerts are formatted to match the SDK `AlertsResponse` interface which looks like this:
 
 ```javascript
 {
@@ -386,11 +386,11 @@ main();
 Scan nodes allow bots to make authorized requests to external APIs by using the scan node's identity, without letting the scan node modify the requests. You can use the `fetchJwt` utility function to generate a jwt token from a scan node.
 
 !!! warning "This method will only generate a token if the bot is running on a scan node"
-    If running a bot locally or in a stand alone enviornment (ie. outside of a scanner node), this method will return a mock value.
+    If running a bot locally or in a stand-alone environment (ie. outside of a scanner node), this method will return a mock value.
 
 The function signature is `fetchJwt(claims, expiresAt)`:
 
-- `claims`:  a json object of any additional claims you would like to include in the payload of the JWT
+- `claims`:  a JSON object of any additional claims you would like to include in the payload of the JWT
 - `expiresAt`:  an optional `Date` object that sets when the JWT will expire
 
 The returned JWT can be decoded using the [`decodeJwt` method](sdk.md#decodeJwt).
