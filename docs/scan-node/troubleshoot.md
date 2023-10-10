@@ -22,20 +22,20 @@ forta.container.forta-supervisor.summary
 Upon extending this command with `--show all --format oneline` or by simply using `status all`, it returns a full list of statuses from the trackers internally used.
 
 !!! important "Values"
-    Positive numbers mean a successful result. `-1` is failure and `-3` means unknown/irrelevant. The ones that are `-1` one can effect the SLA score and the effect of this can be visible from `inspector.expected-score` report value (it would be zero).
+    Positive numbers mean a successful result. `-1` is failure and `-3` means unknown/irrelevant. The ones that are `-1` can effect the SLA score and the effect of this can be visible from `inspector.expected-score` report value (it would be zero).
 
 Let's visit some of the useful ones:
 
 ### `inspector`
 
-These are the result of the inspections made in the node periodically. It runs once at startup and then approximately every 10 minutes.
+These are the results of the inspections made in the node periodically. It runs once at startup and then approximately every 10 minutes.
 
 For chains other than Ethereum Mainnet, `is-eth2` is irrelevant.
 
 - `api.refs.valid`: Scan, trace and proxy should have the same hash for the same API call. This tells about the configuration consistency.
 - `expected-score`: This is the expected inspection score according to the node's knowledge. The inspection score has a critical effect on your node's SLA score.
 - `proxy-api`:  Should have positive numbers.
-- `registry-api`: This tells if your node is able load the detection bots. This might affect your SLA score.
+- `registry-api`: This tells if your node is able to load the detection bots. This might affect your SLA score.
 - `resources.memory`: Total memory must be at least 16 GB and available must be at least 2 GB.
 - `scan-api`:  Should have positive numbers.
 - `trace-api`:  Should have positive numbers if scanning chains with ID 1 and 250.
@@ -59,7 +59,7 @@ If it's an error different than a periodically appearing and disappearing "not f
 ### `bot-registry`
 
 - `event.checked.time`: Should not be much longer than 10m. If it is, then please check your bandwidth.
-- `event.checked.error`: This is a sign that your node is failing to load the bot list or auto-upgrade. It is okay if an error appear sometimes. Make sure that it is not persistent and visit [this section](configure.md#configure-registry-api) in case it is persistent.
+- `event.checked.error`: This is a sign that your node is failing to load the bot list or auto-upgrade. It is okay if an error appears sometimes. Make sure that it is not persistent and visit [this section](configure.md#configure-registry-api) in case it is persistent.
 
 ```
 $ forta status all
