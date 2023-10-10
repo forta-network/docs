@@ -18,7 +18,7 @@ By default, detection bot alerts are sent from Scan Nodes to a Forta maintained 
 
 1. Subscriptions through the Forta App - Currently email address and/or a Slack webhook, but you can request that other options be added by the Forta Foundation.
 2. OpenZeppelin Defender Forta Sentinels - Monitors the Forta Public API for new alerts and delivers those alerts to Defender Autotasks and/or Defender Notifications (email, Discord, Slack, Datadog, Telegram, other webhooks).
-3. Custom solution - Manually polling the Forta Public API on local or cloud hosted machine.
+3. Custom solution - Manually polling the Forta Public API on a local or cloud hosted machine.
 4. Pushing data directly from the Forta detection bot to an External API Endpoint - As in the case of the data sources, there is no mechanism for keeping an API key secret. This is ill-advised.
 
 #### Reacting to alerts
@@ -27,7 +27,7 @@ Performing on-chain actions from within a Forta detection bot is not advised, gi
 
 #### Private monitoring
 
-There are multiple options for users that prefer private monitoring. Forta bots are not required to publish their source code, and the bot code in the deployed container can be obfuscated in a variety of ways, as described in the [Forta docs](https://docs.forta.network/en/latest/private-alerts/). Alert findings output from bots can be coded or encrypted. For users that prefer to deploy bots to a private environment without any public exposure, or that simply want redundancy for their bots on the public network, Forta also can support these users running private nodes, which remain completely independent of the public Forta network and do not participate in public detection bot assignment or public broadcast of detection bot findings.
+There are multiple options for users who prefer private monitoring. Forta bots are not required to publish their source code, and the bot code in the deployed container can be obfuscated in a variety of ways, as described in the [Forta docs](https://docs.forta.network/en/latest/private-alerts/). Alert findings output from bots can be coded or encrypted. For users who prefer to deploy bots to a private environment without any public exposure, or who simply want redundancy for their bots on the public network, Forta also can support these users running private nodes, which remain completely independent of the public Forta network and do not participate in public detection bot assignment or public broadcast of detection bot findings.
 
 ### Detection bot developers
 
@@ -49,7 +49,7 @@ Bots are executed in individual containers and are not able to affect scan nodes
 
 Scan nodes must produce proof of scan for every block, which provides the ability for community monitoring. Malicious or inaccurate scan nodes can be slashed and disabled.
 
-The Forta smart contracts, node software, and other components of the network receive regular security review and the reports will be made public.
+The Forta smart contracts, node software, and other components of the network receive regular security reviews and the reports will be made public.
 
 ### How does Forta ensure reliable monitoring?
 
@@ -57,7 +57,7 @@ Reliability on Forta is solved through detection bot redundancy and the monitori
 
 ### How are Forta alerts and findings validated?
 
-Forta scan nodes gather findings from detection bots for each block and then store a proof of scan on IPFS and broadcast the finding details to the Forta analyzer node. Users can obtain the detailed information from the Forta analyzer node via the public API, which can be validated against the proof of scan data on IPFS. The analyzer node performs data indexing and may provide additional analysis.
+Forta scan nodes gather findings from detection bots for each block and then store a proof of scan on IPFS and broadcast the finding details to the Forta analyzer node. Users can obtain detailed information from the Forta analyzer node via the public API, which can be validated against the proof of scan data on IPFS. The analyzer node performs data indexing and may provide additional analysis.
 
 ## Fees
 
