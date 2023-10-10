@@ -15,7 +15,7 @@ When this action is executed (`initiateWithdrawal()`), active stake becomes inac
 After _staking delay_ is over, you will be able to `withdraw()` FORT, as described in the next section.
 
 !!! note "Permissions"
-    Only active share holders can init withdrawal.
+    Only active shareholders can initiate a withdrawal.
 
 ![staking init withdrawal](stake-images/staking-init-withdrawal.png)
 
@@ -25,7 +25,7 @@ After _staking delay_ is over, you will be able to `withdraw()` FORT, as describ
 
 2. Connect your scan node owner wallet and make sure that you have selected the Polygon network. ![connect](stake-images/1-connect.png)
 
-3. Go to `4. initiateWithdrawal` and input the folowing:
+3. Go to `4. initiateWithdrawal` and input the following:
 
     - **subjectType:** 0
 
@@ -35,7 +35,7 @@ After _staking delay_ is over, you will be able to `withdraw()` FORT, as describ
 
 4. Click _Write_ and approve the transaction in your wallet.
 
-5. After confirmation, the _staking delay_ starts. If the current active shares are under minimum stake threshold, the node enters into disabled state.
+5. After confirmation, the _staking delay_ starts. If the current active shares are under the minimum stake threshold, the node enters into disabled state.
 
 ## Withdrawal
 
@@ -49,7 +49,7 @@ Burn inactive shares after _staking delay_ to get staked FORT.
 
 2. Connect your scan node owner wallet and make sure that you have selected the Polygon network. ![connect](stake-images/1-connect.png)
 
-3. Go to `23. withdraw` and input the folowing:
+3. Go to `23. withdraw` and input the following:
 
     - **subjectType:** 0
 
