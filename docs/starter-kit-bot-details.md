@@ -100,7 +100,7 @@ This bot detects if an anomalous volume of mints and/or borrows occurs.
 
 This bot detects transactions that may indicate NFT Sleep Minting.
 
-Sleep Minting is when an attacker mints an NFT directly to a famous creator's wallet with permission to reclaim or pull the NFT back out of the creator's wallet. This creates the appearance that (1) a famous creator minted an NFT to themselves, and (2) the creator sent that NFT to an attacker. Based on â€œon-chainâ€ provenance, the attacker can claim they own an NFT created by a famous artist and sell it for a high value.
+Sleep Minting is when an attacker mints an NFT directly to a famous creator's wallet with permission to reclaim or pull the NFT back out of the creator's wallet. This creates the appearance that (1) a famous creator minted an NFT to themselves, and (2) the creator sent that NFT to an attacker. Based on on-chain provenance, the attacker can claim they own an NFT created by a famous artist and sell it for a high value.
 
 You can read more about what this is and why it matters [here](https://a16z.com/2022/03/09/sleep-minting-nfts/)
 
