@@ -8,17 +8,17 @@ To verify that you have eliminated the problem, please visit the [troubleshootin
 
 Please also make sure that you are running the latest version of the Forta node. See the [upgrade page](upgrade.md) for more details on how to keep your node _automatically_ up-to-date.
 
-### Q2: Why is my node still having low SLA score after changing the scan API from free API X to free API Y?
+### Q2: Why is my node still having a low SLA score after changing the scan API from free API X to free API Y?
 
 Free APIs can enforce unexpected rate limits which might disallow your node from pulling chain data, at some point. Changing from one free API to another does not guarantee that your node will start having good performance.
 
-To avoid these kind of situations and loss of rewards, please reconsider the recommendations in the [Pick a provider](configure.md#pick-a-provider) section.
+To avoid this kind of situations and loss of rewards, please reconsider the recommendations in the [Pick a provider](configure.md#pick-a-provider) section.
 
 ### Q3: Why do my nodes have a different score than the SLA API on the pool page?
 
-The SLA API returns the last hours couple of hours by default, unless you specify a time range. The score shows on the top is the average of those hours.
+The SLA API returns the last couple of hours by default, unless you specify a time range. The score shown on the top is the average of those hours.
 
-The pool page on Forta App and the scan node page on Forta Explorer shows the average of past 168h (an epoch) continuously. As your node works better and time passes, this number improves. This is useful for the delegators to understand how reliable one pool is over the course of an epoch-long time window.
+The pool page on Forta App and the scan node page on Forta Explorer show the average of the past 168h (an epoch) continuously. As your node works better and time passes, this number improves. This is useful for the delegators to understand how reliable one pool is over the course of an epoch-long time window.
 
 You might sometimes find that even though you have fixed the problem with your node and the SLA API returns a higher score, the pool page still shows a lower score. These two numbers can differ due to the time range difference explained above.
 
@@ -28,7 +28,7 @@ Please visit the [troubleshooting](troubleshoot.md) page to find out more.
 
 ### Q5: Why are my rewards so low this week?
 
-There are multiple factors that affect the rewards. While the allocated stake amount plays a large role in the proportion of rewards, having low SLA score has critical effect on the rewards. If the nodes do not perform well, it does not matter how much stake is deposited. Please see the [formula](../delegated-staking-rewards.md#formula) for exact details.
+There are multiple factors that affect the rewards. While the allocated stake amount plays a large role in the proportion of rewards, having a low SLA score has a critical effect on the rewards. If the nodes do not perform well, it does not matter how much stake is deposited. Please see the [formula](../delegated-staking-rewards.md#formula) for exact details.
 
 As an alternative, you can use the estimator to simplify the calculation:
 
@@ -36,7 +36,7 @@ As an alternative, you can use the estimator to simplify the calculation:
 2. Make a copy of the file to your own Google Drive (File => Make a Copy).
 3. Use the input cells (the yellow ones) to play with different combinations of commission and stake and see the results in the output cells.
 
-Please not that this is _just an estimation_ and may not reflect the exact reward amounts. It is for giving pool owners and delegators a sense of possible outcomes under different conditions.
+Please note that this is _just an estimation_ and may not reflect the exact reward amounts. It is for giving pool owners and delegators a sense of possible outcomes under different conditions.
 
 ### Q6: Why are my rewards lower after accepting delegation to my pool?
 
@@ -48,11 +48,11 @@ This error occurs whenever the scan node is requesting the next block from the s
 
 This is still displayed in order to capture whatever error is produced.
 
-### Q8: Why is the forta-scanner container is showing many "not found" errors?
+### Q8: Why is the forta-scanner container showing many "not found" errors?
 
 The answer is same as Q3.
 
-### Q9: Why is the forta-scanner container is showing many "error invoking bot" errors?
+### Q9: Why is the forta-scanner container showing many "error invoking bot" errors?
 
 The bot seems to be having a problem while handling inputs given by the node. Please check first if there is a problem with the JSON-RPC API:
 

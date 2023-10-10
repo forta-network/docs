@@ -59,7 +59,7 @@ If `forta` requires trace API to be specified for the configured `chainId` (e.g.
 
 ## Specify a block range
 
-This allows limiting the runtime inputs, test different bots under the same conditions and comparing outputs. Since bot processing delay can be unexpected, it is important to specify a `stopTimeoutSeconds` to wait for all bots to finish and the alerts to get logged or sent (webhook). It is useful to reduce the publishing interval to a short time in order to keep `stopTimeoutSeconds` at a lower value.
+This allows limiting the runtime inputs, testing different bots under the same conditions and comparing outputs. Since bot processing delay can be unexpected, it is important to specify a `stopTimeoutSeconds` to wait for all bots to finish and the alerts to get logged or sent (webhook). It is useful to reduce the publishing interval to a short time in order to keep `stopTimeoutSeconds` at a lower value.
 
 ```yaml
 publish:
@@ -101,7 +101,7 @@ localMode:
   webhookUrl: http://my-webhook-handler.url
 ```
 
-To suit these kind of purposes, we defined [Forta Webhook Specification](https://github.com/forta-network/forta-core-go/blob/master/protocol/webhook/swagger.yml). In local mode, a scan node conforms with this specification and sends authorized webhook requests.
+To suit these kinds of purposes, we defined [Forta Webhook Specification](https://github.com/forta-network/forta-core-go/blob/master/protocol/webhook/swagger.yml). In local mode, a scan node conforms with this specification and sends authorized webhook requests.
 
 !!! note "About paths"
     The paths defined in the webhook specification is only for making the definitions easier. Scan node configuration requires the complete webhook URL and ignores all paths defined in the specification.
@@ -148,7 +148,7 @@ jsonRpcProxy:
 
 ## Bot metrics
 
-As part of the alert batches (mentioned in the webhook specification), some bot metrics are forwarded. These metrics are bucketed into the specified interval in the config and a summary object for each go out with the soonest batch possible as soon as the interval is over.
+As part of the alert batches (mentioned in the webhook specification), some bot metrics are forwarded. These metrics are bucketed into the specified interval in the config and a summary object for each goes out with the soonest batch possible as soon as the interval is over.
 
 Metrics are especially helpful to understand the performance of your bots. However, please keep in mind that `forta` does not yet come with a tool to further analyze or visualize this data.
 
@@ -192,7 +192,7 @@ Please see [Forta Webhook Specification](https://github.com/forta-network/forta-
 
 ## Standalone mode
 
-We crafted a more specialized version of the local mode, called _standalone mode_, which allows running the node using a single `docker-compose.yml` file and without having to deal with the Forta node CLI and the `~/.forta` directory.
+We crafted a more specialized version of the local mode, called _standalone mode_, which allows running the node using a single `docker-compose.yml` file without having to deal with the Forta node CLI and the `~/.forta` directory.
 
 In this mode,
 

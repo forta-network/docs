@@ -1,6 +1,6 @@
 **Forta Snap for Metamask**
 
-The Forta Snap for MetaMask is a plugin that automatically scans the addresses in a user’s pre-signed transaction against Forta’s database of known scammers. Based on the results, the plugin will display a “high-risk” or “low-risk” warning message to the user. . Some of the scam types covered by the Forta Snap include: 
+The Forta Snap for MetaMask is a plugin that automatically scans the addresses in a user’s pre-signed transaction against Forta’s database of known scammers. Based on the results, the plugin will display a “high-risk” or “low-risk” warning message to the user. Some of the scam types covered by the Forta Snap include: 
 
    
     * Token impersonation

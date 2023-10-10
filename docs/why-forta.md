@@ -50,7 +50,7 @@ Bots are executed in individual containers and are not able to affect scan nodes
 
 Scan nodes must produce proof of scan for every block, which provides the ability for community monitoring. Malicious or inaccurate scan nodes can be slashed and disabled.
 
-The Forta smart contracts, node software, and other components of the network receive regular security review and the reports will be made public.Learn more about it [here](security.md).
+The Forta smart contracts, node software, and other components of the network receive regular security review and the reports will be made public. Learn more about it [here](security.md).
 
 ### How does Forta ensure reliable monitoring?
 
@@ -58,4 +58,4 @@ Reliability on Forta is solved through detection bot redundancy and the monitori
 
 ### How are Forta alerts and findings validated?
 
-Forta scan nodes gather findings from detection bots for each block and then store a proof of scan on IPFS and broadcast the finding details to the Forta analyzer node. Users can obtain the detailed information from the Forta analyzer node via the public API, which can be validated against the proof of scan data on IPFS. The analyzer node performs data indexing and may provide additional analysis.
+Forta scan nodes gather findings from detection bots for each block and then store a proof of scan on IPFS and broadcast the finding details to the Forta analyzer node. Users can obtain detailed information from the Forta analyzer node via the public API, which can be validated against the proof of scan data on IPFS. The analyzer node performs data indexing and may provide additional analysis.

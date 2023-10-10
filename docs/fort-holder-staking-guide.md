@@ -58,6 +58,6 @@ To withdraw your stake, navigate to the "My Stakes" page from the top right menu
 For detailed instructions on how to delegate your stake to a scanner pool and withdraw your stake using the Forta App, visit the [pool and stake management](https://docs.forta.network/en/latest/scanner-pools/) page.
 
 ### Claiming Rewards
-To claim rewards, visit the "My Rewards" page from the top right menu of the Forta App. You check on the rewards page to see if you have any available rewards and claim rewards from multiple epochs with single action.
+To claim rewards, visit the "My Rewards" page from the top right menu of the Forta App. You check on the rewards page to see if you have any available rewards and claim rewards from multiple epochs with a single action.
 
-Reward calculation starts after the end of each epoch (Monday 00:00:00 UTC). Rewards are written to the rewards distributor contract as soon as the calculation is completed. As soon as the rewards are available in the contract, pool owners and delegators can claim their portion of reward via the Forta App. If you wish to collect rewards manually via Polyscan, you can follow the guide [here](https://docs.forta.network/en/latest/delegated-staking-rewards/#claiming-rewards).
+Reward calculation starts after the end of each epoch (Monday 00:00:00 UTC). Rewards are written to the rewards distributor contract as soon as the calculation is completed. As soon as the rewards are available in the contract, pool owners and delegators can claim their portion of reward via the Forta App. If you wish to collect rewards manually via Polygonscan, you can follow the guide [here](https://docs.forta.network/en/latest/delegated-staking-rewards/#claiming-rewards).

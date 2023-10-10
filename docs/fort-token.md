@@ -8,7 +8,7 @@ Staking is only available in Polygon, so anyone who wants to stake needs to brid
 
 To ensure the accuracy and integrity of the data provided by the network, Forta adopts a work token model, where both scan node pools and detection bots must have FORT staked above a minimum requirement. This acts as an economic security mechanism of their actions in their network, as the stake can be slashed if participants act maliciously.
 
-FORT has the folowing primary uses that are indispensable to the proper functioning of the network:
+FORT has the following primary uses that are indispensable to the proper functioning of the network:
 
 1. **Scanner Pool Staking:**
     1. **Scanner pool owners** must deposit FORT tokens on their pools to be discoverable in the network and to provide economic security for the work they are performing, since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously. Once FORT is staked, it may only be withdrawn subject to a thawing period, which provides ample opportunity for verification and dispute resolution.

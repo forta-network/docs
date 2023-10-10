@@ -1,6 +1,6 @@
 Users can now purchase new plans on the Forta App.
 
-1. Discover all the premium plans available on Forta on the Forta App Homepage, you can also explore what is included on the General Plan on the Forta Explorer.<br/>
+1. Discover all the premium plans available on Forta on the Forta App Homepage, you can also explore what is included in the General Plan on the Forta Explorer.<br/>
 ![Step 1](fees-tut-how-pay_1.png)
 
 2. Click on any of the premium plans cards to learn more about that specific premium plan (from the bot’s performance, to the number of subscribers it has).<br/>
@@ -14,7 +14,7 @@ Users can now purchase new plans on the Forta App.
 <img src="../fees-tut-how-pay_5.png" alt="Step 5" width="250"/>
 
 6. Please, confirm that the wallet that will receive the plan is correct or select a different one. Although optional, we strongly suggest you share an email so that any updates on the Plan you are purchasing can be shared with you!
-- It is also important to complete the company you are part of (or you represent) to better understand how you will be using Forta. Please, fill the company field if possible!<br/>
+- It is also important to complete the company you are part of (or you represent) to better understand how you will be using Forta. Please, fill in the company field if possible!<br/>
 <img src="../fees-tut-how-pay_6.png" alt="Step 6" width="250"/>
 
 7. Check that the plan’s price is correct and select “Pay via cryptocurrency”.<br/>

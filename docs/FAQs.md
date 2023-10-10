@@ -159,7 +159,7 @@ Forta scan nodes gather findings from detection bots for each block and then sto
 
 ### **What chains does Forta support?**
 
-Forta supports monitoring on the following chains: Ethereum, Polygon, BSC, Avalanche, Arbitrum, Optimism and Fantom.
+Forta supports monitoring on the following chains: Ethereum, Polygon, BNB Chain, Avalanche, Arbitrum, Optimism and Fantom.
 
 ### **What machine learning techniques are being used in Forta?**
 

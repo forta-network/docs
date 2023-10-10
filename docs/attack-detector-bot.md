@@ -15,26 +15,26 @@ It does so with the realization that an attack usually consists of 4 distinct ph
 - funding (e.g. tornado cash funding)
 - preparation (e.g. creation of an attacker contract)
 - exploitation (e.g. draining funds from a contract)
-- money laundering (e.g. sending funds to tornado cash)/ post exploitation (e.g. on-chain txt messages)
+- money laundering (e.g. sending funds to tornado cash)/ post exploitation (e.g. on-chain text messages)
 
 As such, this feed combines previously raised alerts under the initiating address (i.e. the attacker address/ addresses) and emits a crucial alert. As a result, the precision of this alert is quite high, but also some attacks may be missed. Note, in the case where attacks are missed, the broader set of detection bots deployed on Forta will still raise individual alerts that users can subscribe to.
 
 ## Supported Chains
 
-- All EVM compatible chains
+- All EVM-compatible chains
 
 ## Alerts
 
 The Attack Detector bot emits the following alerts:
 
 - ATTACK-DETECTOR-1 - heuristic alert that triggers when an alert is observed in each stage of the attack stages.
-- ATTACK-DETECTOR-2 - heuristic alert that triggers when a highly precise (e.g. attack simulation) alert and one additional alert is observed.
+- ATTACK-DETECTOR-2 - heuristic alert that triggers when a highly precise (e.g. attack simulation) alert and one additional alert are observed.
 - ATTACK-DETECTOR-3 - anomaly detection alert where anomaly scores of the base bots are combined (multiplied) per stage and the resulting anomaly score is lower than 1 * 10-7 (critical alert)
 - ATTACK-DETECTOR-4 - anomaly detection alert where anomaly scores of the base bots are combined (multiplied) per stage and the resulting anomaly score is lower than 1 * 10-4 (low alert)
 
 ## Labels
 
-The Attack Detector bot emits labels for each attacker address observed. The meta data contains the corresponding alertID. E.g.
+The Attack Detector bot emits labels for each attacker address observed. The metadata contains the corresponding alertID. E.g.
 ```
     'entityType': EntityType.Address,
     'label': "attacker",

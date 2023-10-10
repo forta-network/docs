@@ -5,7 +5,7 @@
 
 Some detection bots may have difficulty keeping up with the volume of blocks/transactions/alerts (either because of the bot's logic, or due to the speed of the blockchain being scanned). One solution is to use sharding to increase throughput for your detection bot. With sharding, you can increase the number of instances of your detection bot and split the blocks/transactions/alerts across these instances.
 
-By default, each detection bot is deployed to multiple scan nodes (currently, 3 per each chain being scanned) and each of these 3 bot instances receive **all** of the blocks/transactions/alerts for the chain being scanned. Another way to say this: by default, a detection bot _targets_ 3 instances with only 1 _shard_ per instance.
+By default, each detection bot is deployed to multiple scan nodes (currently, 3 per each chain being scanned) and each of these 3 bot instances receives **all** of the blocks/transactions/alerts for the chain being scanned. Another way to say this: by default, a detection bot _targets_ 3 instances with only 1 _shard_ per instance.
 
 Sharding for transactions/blocks is based on the block number; sharding for alerts is based on the alert timestamp.
 
@@ -50,18 +50,18 @@ In this configuration, the bot is deployed to 4 different chains (as indicated b
 
 ## How to determine the right sharding configuration?
 
-Sharding is needed if your bot is unable to keep up with the transaction/block/alert throughput of the chain. It essentially is too slow. For instance, BSC adds a block every 3 seconds; recently, there are about 70 tx in each block on average. This means, the bot needs to process a tx in approximately 40ms. If your bot is slower than this, the bot may fall behind and transactions are dropped. 
+Sharding is needed if your bot is unable to keep up with the transaction/block/alert throughput of the chain. It essentially is too slow. For instance, BNB Chain adds a block every 3 seconds; recently, there are about 70 tx in each block on average. This means, the bot needs to process a tx in approximately 40ms. If your bot is slower than this, the bot may fall behind and transactions are dropped. 
 
 The first step would be to assess whether the bot indeed drops transactions. The bot health page provides insights through the Dropped view ([example](https://explorer.forta.network/bot/0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400)).
 
 Second, start measuring the performance of your bot through a unit test. In this test, you would want to exercise the different code paths of your bot (the cheap and expensive paths) and calculate a weighted average processing time based on the performance of these code paths ([example](https://github.com/forta-network/starter-kits/blob/main/funding-tornado-cash-py/src/agent_test.py)). 
 
-Once the performance is known, one can derive a sharding configuration. For instance, if your bot takes 120ms on average to process a transaction, it would be too slow for the BSC chain. In that case, you would want to distribute the transactions to approximately 3 shards.
+Once the performance is known, one can derive a sharding configuration. For instance, if your bot takes 120ms on average to process a transaction, it would be too slow for the BNB Chain. In that case, you would want to distribute the transactions to approximately 3 shards.
 
 Once configured, it is essential to deploy the bot and review the bot stats page. You tested your bot on your local machine and the performance of your machine may differ from the scan nodes on the network. Some experimentation and iteration may be needed to utilize sharding in a way where every transaction/block gets processed reliably.
 
 ## Sharding alternatives
 
-The above sharding solution not quite working for your bot? You can also consider these community-developed libraries to help with sharding your bot:
+Is the above sharding solution not quite working for your bot? You can also consider these community-developed libraries to help with sharding your bot:
 
 - [forta-sharding](https://github.com/kovart/forta-sharding) by Artem Kovalchuk

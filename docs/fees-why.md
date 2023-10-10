@@ -36,6 +36,6 @@ Because bot developers are the primary value creators on the network, 100% of su
 
 _Impact on Users_
 
-Subscription plan purchases will occur on chain in either FORT or USDC using [Unlock Protocol](https://unlock-protocol.com/). For simplicity’s sake, all subscriptions will be monthly and can be auto-renewed to the extent there are sufficient assets in your wallet. We are currently evaluating different way to implement usage based pricing which has been requested by certain community members. Currently, both the Premium and General plans will be available for a flat monthly price and will support unlimited API calls. 
+Subscription plan purchases will occur on chain in either FORT or USDC using [Unlock Protocol](https://unlock-protocol.com/). For simplicity’s sake, all subscriptions will be monthly and can be auto-renewed to the extent there are sufficient assets in your wallet. We are currently evaluating different ways to implement usage based pricing which has been requested by certain community members. Currently, both the Premium and General plans will be available for a flat monthly price and will support unlimited API calls. 
 
-Post-fees launch, accessing Forta data will continue to work the same. Users that purchase one or more plans can access alerts and other intel by subscribing directly to a bot or via Forta’s GraphQL API. 
+Post-fees launch, accessing Forta data will continue to work the same. Users who purchase one or more plans can access alerts and other intel by subscribing directly to a bot or via Forta’s GraphQL API. 

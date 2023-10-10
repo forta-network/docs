@@ -56,7 +56,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
 - `block_number` - alias for `block.number`
 - `block_hash` - alias for `block.hash`
 - `addresses` - map of addresses involved in the transaction (generated from transaction to/from address, any event log address and trace data address if available)
-- `block` - data object containing following fields:
+- `block` - data object containing the following fields:
     - `hash`
     - `number`
     - `timestamp`
@@ -82,7 +82,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `transaction_index`
     - `transaction_hash`
     - `removed`
-- `traces` - only with tracing enabled; list of trace objects with following fields:
+- `traces` - only with tracing enabled; list of trace objects with the following fields:
     - `block_hash`
     - `block_number`
     - `subtraces`
@@ -91,7 +91,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
     - `transaction_position`
     - `type`
     - `error`
-    - `action` - object with following fields:
+    - `action` - object with the following fields:
         - `call_type`
         - `to`
         - `from_`
@@ -101,7 +101,7 @@ When a transaction is mined and detected by a Forta scan node, it will generate 
         - `address`
         - `balance`
         - `refund_address`
-    - `result` - object with following fields:
+    - `result` - object with the following fields:
         - `gas_used`
         - `address`
         - `code`
@@ -152,10 +152,10 @@ When an alert is fired from a Forta bot and is detected by the network, any subs
 
 If a bot wants to flag a transaction/block/alert because it meets some condition (e.g. flash loan attack), the handler function would return a `Finding` object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A `Finding` object accepts the following properties:
 
-- `name` - **required**; human-readable name of finding e.g. "High Gas"
+- `name` - **required**; human-readable name of the finding e.g. "High Gas"
 - `description` - **required**; brief description e.g. "High gas used: 1,000,000"
 - `alert_id` - **required**; unique string to identify this class of finding, primarily used to group similar findings for the end user
-- `protocol` - **required**; name of protocol being reported on e.g. "aave", defaults to "ethereum" if left blank
+- `protocol` - **required**; name of the protocol being reported on e.g. "aave", defaults to "ethereum" if left blank
 - `type` - **required**; indicates type of finding:
     - Exploit
     - Suspicious
@@ -182,7 +182,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 - `created_at` -  timestamp when the alert was published
 - `description` - text description of the alert
 - `name` - alert name
-- `protocol` - name of protocol being reported on
+- `protocol` - name of the protocol being reported on
 - `scan_node_count` - number of scanners that found the alert
 - `source` - source where the alert was detected
     - `transaction_hash` - transaction where the alert was detected
@@ -207,7 +207,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
     - `token`
     - `social`
     - `website` - main website of the project
-- `finding_type` -  indicates type of finding:
+- `finding_type` -  indicates the type of finding:
     - Exploit
     - Suspicious
     - Degraded
@@ -223,7 +223,7 @@ When an `Alert` is fired by a Forta bot, it can be consumed using an [AlertEvent
 
 ### has_address
 
-`has_address` is a convenience function on `Alert` meant for checking the existence of an address involved in the alert. The `addresses` array is truncated for space-efficiency, so this method uses a bloom filter to check for existence. It accepts a single string parameter: the address to check
+`has_address` is a convenience function on `Alert` meant for checking the existence of an address involved in the alert. The `addresses` array is truncated for space efficiency, so this method uses a bloom filter to check for existence. It accepts a single string parameter: the address to check
 
 ## Label
 
@@ -240,7 +240,7 @@ Labels can be used to add more contextual data to a `Finding` e.g. "is this addr
 - `label` - string label to attach to the entity e.g. "exploit"
 - `confidence` - confidence level of label between 0 and 1
 - `metadata` - key-value map (both keys and values as strings) for providing extra information
-- `created_at` - string containing timestamp of label creation
+- `created_at` - string containing the timestamp of label creation
 - `source` - object with information about where this label came from
     - `alert_hash`
     - `alert_id`
@@ -269,17 +269,17 @@ A convenience function called `get_transaction_receipt` can be used to fetch the
 The `get_alerts` method can be used to fetch alerts based on input `AlertQueryOptions`. The `get_alerts` method accepts the following input filter properties:
 
 - `bot_ids` **required**; list of bot ids to fetch alerts for
-- `addresses` -  indicate a list of addresses, alerts returned will have those addresses involved.
+- `addresses` -  indicates a list of addresses, alerts returned will have those addresses involved.
 - `alert_id` - filter alerts by alert-id
 - `chain_id` - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet
-- `created_since` - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago (note: if not specified, the query will only search the past 24 hours)
-- `first` - indicate max number of results.
+- `created_since` - indicates number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago (note: if not specified, the query will only search the past 24 hours)
+- `first` - indicates max number of results.
 - `starting_cursor` - query results after the specified cursor
-- `project_id` - indicate a project id, alerts returned will only be from that project.
+- `project_id` - indicates a project id, alerts returned will only be from that project.
 - `scan_node_confirmations` - filter alerts by number of scan nodes confirming the alert
 - `severities` - filter alerts by severity levels
-- `transaction_hash` - indicate a transaction hash, alerts returned will only be from that transaction
-- `block_sort_direction` - indicate sorting order by block number, 'desc' or 'asc'. Default is 'desc'.
+- `transaction_hash` - indicates a transaction hash, alerts returned will only be from that transaction
+- `block_sort_direction` - indicates sorting order by block number, 'desc' or 'asc'. The default is 'desc'.
 - `block_date_range` - alerts returned will be between the specified start and end block timestamp dates when the threats were detected
 - `block_number_range` - alerts for the block number range will be returned
 
@@ -326,7 +326,7 @@ labels = response.labels
 Scan nodes allow bots to make authorized requests to external APIs by using the scan node's identity, without letting the scan node modify the requests. You can use the `fetch_jwt` utility function to generate a jwt token from a scan node.
 
 !!! warning "This method will only generate a token if the bot is running on a scan node"
-    If running a bot locally or in a stand alone enviornment (ie. outside of a scanner node), this method will throw an error. For local testing you can run a local scan node and run your bot on it.
+    If running a bot locally or in a stand-alone environment (ie. outside of a scanner node), this method will throw an error. For local testing, you can run a local scan node and run your bot on it.
 
 The function signature is `fetch_jwt(claims, expiresAt)`:
 - `claims` [**required**]:  a dictionary of any data you would like to include in the data portion of the JWT

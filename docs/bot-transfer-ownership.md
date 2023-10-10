@@ -34,4 +34,4 @@ These instructions walk through transferring ownership via the Polygonscan UI.
 
 ## Alternative to Transferring
 
-Instead of transfering ownership of a bot, one can also create a new bot and refer to the image of the existing bot.  This mints a new ERC-721 with a new Bot ID.  Any updates to this new bot will not affect the old bot.  
+Instead of transferring ownership of a bot, one can also create a new bot and refer to the image of the existing bot.  This mints a new ERC-721 with a new Bot ID.  Any updates to this new bot will not affect the old bot.  

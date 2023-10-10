@@ -3,7 +3,7 @@
 !!! important "Only for Ethereum Mainnet"
     This section was prepared only for Forta node operators who would like to point their Forta nodes to their own Ethereum Mainnet nodes. If your Forta node is scanning chains other than Ethereum Mainnet, you can safely ignore this section altogether.
 
-If you are planning on setting up a Forta node, your own full node node is the most reliable option as a provider to your Forta node and we strongly recommend it.
+If you are planning on setting up a Forta node, your own full node is the most reliable option as a provider to your Forta node and we strongly recommend it.
 
 The final command to run the Ethereum node will be:
 
@@ -22,7 +22,7 @@ erigon --private.api.addr=localhost:9090
 
 ### The Merge
 
-To make your Ethereum node support [The Merge](https://www.alchemy.com/the-merge), your Erigon node (Execution Layer - EL) will need to be run with a beacon node (Consensus Layer - CL). Few consensus layer clients are listed below:
+To make your Ethereum node support [The Merge](https://www.alchemy.com/the-merge), your Erigon node (Execution Layer - EL) will need to be run with a beacon node (Consensus Layer - CL). A few consensus layer clients are listed below:
 
   - Prysm
   - Lighthouse
@@ -32,7 +32,7 @@ To make your Ethereum node support [The Merge](https://www.alchemy.com/the-merge
 
 For more information on versions of these clients, please see the [Ethereum Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) blog post.
 
-You can run consensus layer client on the same machine as the execution layer client (Erigon) by default Erigon's engine API listens on localhost. If you are running CL client on a different machine than Erigon, you will need to configure the Erigon node to connect to the CL client by passing `--authrpc.addr 0.0.0.0` and `--authrpc.vhosts <CL host>`.
+You can run the consensus layer client on the same machine as the execution layer client (Erigon) by default Erigon's engine API listens on localhost. If you are running CL client on a different machine than Erigon, you will need to configure the Erigon node to connect to the CL client by passing `--authrpc.addr 0.0.0.0` and `--authrpc.vhosts <CL host>`.
 
 ### Erigon node (execution layer client)
 
@@ -55,7 +55,7 @@ You can install Prysm and run a beacon node using Docker by following [Prysm Doc
 
 #### Install binary
 
-Alternatively, you can install Prysm directly by downloading the Prysm client binary and make it executable.
+Alternatively, you can install Prysm directly by downloading the Prysm client binary and making it executable.
 
 You can run your beacon node with the following commands:
 
@@ -75,4 +75,4 @@ You will need to pass `--jwt-secret=<path_to_erigon_jwt_hex>` to the beacon node
 
 Additionally, you can pass the `--slots-per-archive-point` flag to the beacon node. A lower number helps improve the CL API performance while increasing the storage cost. For more information on slots per archive point, please refer to [Run an archival node](https://docs.prylabs.network/docs/advanced/beacon_node_api) section in Prysm docs.
 
-After running with any method mentioned above, you should be able to see the beacon node running and syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
+After running with any method mentioned above, you should be able to see the beacon node running and syncing. This usually takes a couple of days, but it can take longer depending on your network and hardware specs.
