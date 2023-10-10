@@ -108,10 +108,10 @@ And the resulting file:
 # 2. Submitting Slash Proposal
 
 
-## 2.1 Open SlashingController contract in Polyscan
+## 2.1 Open SlashingController contract in Polygonscan
 
 
-1. Go to [SlashingController's Polyscan page](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb#writeProxyContract),
+1. Go to [SlashingController's Polygonscan page](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb#writeProxyContract),
     1. Click on "Contract"
     2. Click on "Write as Proxy"
     3. Click on "Connect to Web3"
