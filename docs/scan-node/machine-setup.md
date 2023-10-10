@@ -1,6 +1,6 @@
 ## Resources
 
-You can use any machine from any cloud hosting provider or your very own phyiscal computer, as long as the option you choose is able to satisfy the resource requirements.
+You can use any machine from any cloud hosting provider or your very own physical computer, as long as the option you choose is able to satisfy the resource requirements.
 
 The following are the host requirements for running **one** Forta scan node.
 
