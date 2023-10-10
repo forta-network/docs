@@ -1,25 +1,25 @@
 # Creating a Slashing Proposal.
 
-Anyone that detects a slashable offence perpetrated by a Scan Node or Bot may report a Slash Proposal, if they meet the following requirements:
+Anyone who detects a slashable offence perpetrated by a Scan Node or Bot may report a Slash Proposal, if they meet the following requirements:
 
 ## Requirements.
 
-- Have 1000 FORT bridged to Polygon, per proposal. ** This deposit can be slashed if the proposal does not follow appropiate formatting, it is malicious, false or spam**. Check the [slashing process](./slashing-process.md) for more info.
+- Have 1000 FORT bridged to Polygon, per proposal. ** This deposit can be slashed if the proposal does not follow appropriate formatting, it is malicious, false or spam**. Check the [slashing process](./slashing-process.md) for more info.
 - Present verifiable evidence, in the form of screen captures, log files or any file that proves the accusations.
 - Have knowledge of uploading files to IPFS.
-- Is able to present evidence following Forta's the [Evidence Format](#evidence-format)
-- Is able to interact with the SlashingController contract, either via [PolygonScan](https://polygonscan.com/) or interacting directly with the contracts via a web3 library and JSON RPC endpoint.
+- Is able to present evidence following Forta's [Evidence Format](#evidence-format)
+- Is able to interact with the SlashingController contract, either via [PolygonScan](https://polygonscan.com/) or interacting directly with the contracts via a web3 library and a JSON RPC endpoint.
 
 
 !!! warning "Proposal Deposit slashing"
-    This deposit can be slashed if the proposal does not follow appropiate formatting and file limitations (see below), it is malicious, false or spam.
-    Follow carefully this guide to follow correct conventions.
+    This deposit can be slashed if the proposal does not follow appropriate formatting and file limitations (see below), it is malicious, false or spam.
+    Follow carefully this guide to follow the correct conventions.
 
 
 
 # 1. Preparing Evidence
 
-Each case can have several files with evidence (logs, screenshots), and each evicende file should have an JSON file describing it, both hosted and pinned in IPFS.
+Each case can have several files with evidence (logs, screenshots), and each evidence file should have a JSON file describing it, both hosted and pinned in IPFS.
 
 Both evidence file and evidence descriptor must be downloadable during the Slash Proposal lifecycle, or the Slash Deposit might be slashed and the Slash Proposal not executed.
 
@@ -50,7 +50,7 @@ Evidence description JSON:
 - description: description of what the evidence portrays. 500 char max.
 - checksum: keccak256 hash of all the other concatenated key,value pairs of the JSON.
 
-Example js script producing a evidence descriptor JSON:
+Example js script producing an evidence descriptor JSON:
 
 ```
 
@@ -122,11 +122,11 @@ And the resulting file:
     3. *_penaltyId*: The keccak256 hash of the slash reason, in uppercase separated by underscores.
         1. *MISCONDUCT_SLASH*: 0xe147df3b4755943b8e7219d7acfd0fd67879bdbf5f62537886a5e2acd476ee7d
         2. *OPERATIONAL_SLASH*: 0x602d37be0dfc88daa6b674e3c42ff4efabf3e86cef482bce18b643e8c0a1b33c
-    4. *_evidence*: Array of IPFS file urls of the proposal's [evidence descriptor JSONs](#1-preparing-evidence) (at least 1, up to 5)
+    4. *_evidence*: Array of IPFS file URLs of the proposal's [evidence descriptor JSONs](#1-preparing-evidence) (at least 1, up to 5)
 
 3. Click "Write" and Approve the transaction to submit the evidence.
 
-4. Go to the transaction's page in Polyscan. Go to the 'Logs' Tab and look for the event 'SlashProposalUpdated'. The second parameter is your Slash Proposal ID.
+4. Go to the transaction's page in Polygonscan. Go to the 'Logs' Tab and look for the event 'SlashProposalUpdated'. The second parameter is your Slash Proposal ID.
 
 ## 3. Check Slash Proposal state
 
@@ -134,7 +134,7 @@ After submitting the proposal, the Slashing Arbiters will review it, possibly mo
 
 To check the status of your proposal, you can:
 
-1. Go to [SlashingController's Polyscan page](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb#readProxyContract),
+1. Go to [SlashingController's Polygonscan page](https://polygonscan.com/address/0x6927C25ff30ed86F86A863d987590A1d77509bDb#readProxyContract),
     1. Click on "Contract"
     2. Click on "Read as Proxy";
 
@@ -144,7 +144,7 @@ To check the status of your proposal, you can:
 
 The return value will be a number, here is the meaning (To learn more, see the [Slashing Policy](/slashing-policy))
 
-0: _UNDEFINED_ (the Slash Proposal ID might be wrong, this Slash Proposal has not being created).
+0: _UNDEFINED_ (the Slash Proposal ID might be wrong, this Slash Proposal has not been created).
 
 1: _CREATED_ (proposal just created and awaiting review, the stake of the subject id is frozen).
 
@@ -154,7 +154,7 @@ The return value will be a number, here is the meaning (To learn more, see the [
 
 4: _IN_REVIEW_ (proposal being reviewed by a Slash Arbiter).
 
-5: _REVIEWED_ (proposal is ready for a decission of the Slasher. The Slash Proposer's deposit has been returned to the proposer).
+5: _REVIEWED_ (proposal is ready for a decision of the Slasher. The Slash Proposer's deposit has been returned to the proposer).
 
 6: _EXECUTED_ (proposal executed, stake slashed and sent to the proposer and treasury, according to the current split parameters. Stake unfrozen).
 
