@@ -2,11 +2,11 @@
 
 ## Claiming rewards
 
-After the end of each epoch (**Monday 00:00:00 UTC**), reward calculation starts. The rewards are written to the rewards distributor contract as soon as the calculation is completed. When the rewards are avaialble in the contract, pool owners and delegators can claim their portion of the rewards.
+After the end of each epoch (**Monday 00:00:00 UTC**), reward calculation starts. The rewards are written to the rewards distributor contract as soon as the calculation is completed. When the rewards are available in the contract, pool owners and delegators can claim their portion of the rewards.
 
 ### Forta App
 
-Visit "My Rewards" page from the top right menu on [Forta App](https://app.forta.network)! You can see on the rewards page if you have any available rewards and claim rewards from multiple epochs with single action.
+Visit "My Rewards" page from the top right menu on [Forta App](https://app.forta.network)! You can see on the rewards page if you have any available rewards and claim rewards from multiple epochs with a single action.
 
 ### Polygonscan
 
@@ -44,7 +44,7 @@ The approach involves distributing rewards to participants as a function of the 
     - **commission becomes effective**: next epoch
     - **commission lockdown after any change**: two epochs (excluding the current one)
 
-    These values subject to change.
+    These values are subject to change.
 
 
 The score of scan node `j` during an epoch is:
@@ -86,7 +86,7 @@ The values of parameters α and β are set to 3 and 0.5 respectively and are sub
 !!! important "Initial values"
     For new pools during their first week, the formulas will be modified slightly and instead of using the stake at the beginning of the epoch, the rewards will be calculated using the time-weighted average stake during the epoch. For the following epochs, the distribution will be based on the initial stake values in each epoch.
 
-The total amount of the delegator rewards are distributed to each delegator proportionally to their initial deposited stake value in each epoch. The on-chain rules are the ultimate authority of this logic, and in the case where the on-chain rules differ from this, it will prevail.
+The total amount of the delegator rewards is distributed to each delegator proportionally to their initial deposited stake value in each epoch. The on-chain rules are the ultimate authority of this logic, and in the case where the on-chain rules differ from this, it will prevail.
 
 [^1]: For this calculation, only the periods when the SLA is at least 0.75 are considered.
 
