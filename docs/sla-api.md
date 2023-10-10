@@ -1,6 +1,6 @@
 # Scan Node SLA API
 
-To evaluate health of nodes in the network, Forta calculates a score (SLA) based on node activity.  This score is a 0-1 score where higher is better.  This calculation will evolve as more factors are considered.
+To evaluate the health of nodes in the network, Forta calculates a score (SLA) based on node activity.  This score is a 0-1 score where higher is better.  This calculation will evolve as more factors are considered.
 
 ## SLA Calculation
 
