@@ -1,6 +1,6 @@
 # Deploying a Machine Learning Model in a Detection Bot
 
-This guide will share tips and tricks on deploying a [scikit-learn](https://scikit-learn.org/stable/index.html) machine learning model in a python detection bot. To help illustrate the outlined steps, the guide will make references to the  [Anomalous Token Transfer ML Detection Bot’s code (ATT)](https://explorer.forta.network/agent/0x2e51c6a89c2dccc16a813bb0c3bf3bbfe94414b6a0ea3fc650ad2a59e148f3c8). Throughout the guide, we’ll use the abbreviation ATT to refer to this bot.
+This guide will share tips and tricks on deploying a [scikit-learn](https://scikit-learn.org/stable/index.html) machine learning model in a Python detection bot. To help illustrate the outlined steps, the guide will make references to the  [Anomalous Token Transfer ML Detection Bot’s code (ATT)](https://explorer.forta.network/agent/0x2e51c6a89c2dccc16a813bb0c3bf3bbfe94414b6a0ea3fc650ad2a59e148f3c8). Throughout the guide, we’ll use the abbreviation ATT to refer to this bot.
 
 The ATT bot utilizes [the Isolation Forest](https://scikit-learn.org/stable/modules/outlier_detection.html#isolation-forest), an unsupervised outlier detection algorithm to detect anomalous transactions with erc20 token transfers. For more details on its training process, please check out the [bot’s readme](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/README.md).
 
@@ -8,9 +8,9 @@ The ATT bot utilizes [the Isolation Forest](https://scikit-learn.org/stable/modu
 
 The following three steps are required to load and interact with a trained machine learning model in the detection bot container:
 
-1. Save trained model with serialization.
+1. Save the trained model with serialization.
 2. Add model to Dockerfile.
-3. Load model in the `initialize` function.
+3. Load the model in the `initialize` function.
 
 ### Step 1: Save trained model with serialization
 
@@ -23,7 +23,7 @@ with open('isolation_forest.pkl','wb') as f:
     dill.dump(model, f)
 ```
 
-For more details on persisting scikit-learn models, please checkout the [model persistence documentation](https://scikit-learn.org/stable/model_persistence.html#model-persistence).
+For more details on persisting scikit-learn models, please check out the [model persistence documentation](https://scikit-learn.org/stable/model_persistence.html#model-persistence).
 
 ### Step 2: Add model to Dockerfile
 
@@ -35,7 +35,7 @@ COPY ./isolation_forest.pkl ./
 ```
 
 !!! important "**Tip: Update base image for faster Docker builds**"
-    Most python detection bots use the alpine base image for installing python dependencies. However, if the bot utilizes python data science packages such as `numpy`, `pandas`, and `scikit-learn`, the build can take 2+ hours. To reduce the build time, it’s recommended to update the `Dockerfile` to use a debian base image. This will bring down the build time down to <10 minutes. To learn more about this, please checkout [this github issue](https://github.com/forta-network/forta-bot-sdk/issues/159).
+    Most Python detection bots use the alpine base image for installing Python dependencies. However, if the bot utilizes Python data science packages such as `numpy`, `pandas`, and `scikit-learn`, the build can take 2+ hours. To reduce the build time, it’s recommended to update the `Dockerfile` to use a debian base image. This will bring the build time down to <10 minutes. To learn more about this, please check out [this github issue](https://github.com/forta-network/forta-bot-sdk/issues/159).
 
 ### Step 3: Load model in the `initialize` handler
 
@@ -64,7 +64,7 @@ Create a separate file for input data processing related functions and keep each
 
 ### Tip 2: Caching 3rd Party API Results
 
-If the model relies on 3rd party data like Etherscan and some data is expected to be requested more than once, consider setting up a lru cache with python’s [`functools.lru_cache`](https://docs.python.org/3/library/functools.html#functools.lru_cache). This will eliminate redundant network calls and improve feature generation speed. The ATT bot has a LRU cache setup for the following functions:
+If the model relies on 3rd party data like Etherscan and some data is expected to be requested more than once, consider setting up an LRU cache with python’s [`functools.lru_cache`](https://docs.python.org/3/library/functools.html#functools.lru_cache). This will eliminate redundant network calls and improve feature generation speed. The ATT bot has an LRU cache setup for the following functions:
 
 * [Get_first_timestamp](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/src/utils/data_processing.py#L11): Given address A, the function queries [Etherscan](https://etherscan.io/) to get address A’s first transaction timestamp.
 * [Get_token_info](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/src/utils/data_processing.py#L39): Given an erc20 token address, the function requests token name, symbol, and decimals from the [Ethplorer API](https://github.com/EverexIO/Ethplorer/wiki/Ethplorer-API).
@@ -84,7 +84,7 @@ def valid_features(features) -> bool:
    return True
 ```
 
-If the features are invalid, the ATT bot creates an [`InvalidModelFeatures`](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/src/utils/findings.py) finding with severity  level set to info. These findings can be easily queryable via the [Forta API](https://docs.forta.network/en/latest/forta-api-reference/) and examined.
+If the features are invalid, the ATT bot creates an [`InvalidModelFeatures`](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/src/utils/findings.py) finding with severity level set to info. These findings can be easily queryable via the [Forta API](https://docs.forta.network/en/latest/forta-api-reference/) and examined.
 
 ```python
 class InvalidModelFeatures(TokenTransfersTxFinding):
@@ -106,7 +106,7 @@ For anomaly detection, it’s good practice to normalize a model's prediction to
 
 ### Tip 2: Setting a Classification Threshold
 
-With the normalized value, you can set a `ANOMALY_THRESHOLD` to tweak how often a prediction is classified as an anomaly and reduce the bot’s alerting rate. If precision is more important than recall, the threshold can be set to a higher value (e.g. prediction greater than 0.7 is considered anomalous). If recall is more important, the threshold can be set lower to allow more predictions with low confidence scores to be classified as anomalies.
+With the normalized value, you can set an `ANOMALY_THRESHOLD` to tweak how often a prediction is classified as an anomaly and reduce the bot’s alerting rate. If precision is more important than recall, the threshold can be set to a higher value (e.g. prediction greater than 0.7 is considered anomalous). If recall is more important, the threshold can be set lower to allow more predictions with low confidence scores to be classified as anomalies.
 
 Here’s how the ATT model’s scores are updated and predictions defined based on a threshold.
 
@@ -149,7 +149,7 @@ class AnomalousTransaction(TokenTransfersTxFinding):
 
 Also, over time you may update and improve the model, so to be able to distinguish and evaluate different models, it’s important to include the model version, score, classification label, and used threshold in the finding. When the model is updated, the model version can help separate out findings produced by the old and new model.
 
-The agent docker image hash can technically be used as a version, but the hash will not be able to tell apart a code update, model update or both, so maintaining separate model and bot versions is key. It may also be helpful to keep a log of the model version and the changes you made so that you’re aware of the techniques you tried before and avoid re-evaluating past experiments.
+The agent docker image hash can technically be used as a version, but the hash will not be able to tell apart a code update, model update, or both, so maintaining separate model and bot versions is key. It may also be helpful to keep a log of the model version and the changes you made so that you’re aware of the techniques you tried before and avoid re-evaluating past experiments.
 
 ATT bot’s finding outputs (partial):
 ```python
@@ -197,7 +197,7 @@ There are two ways to monitor a ML model’s performance:
 
 ## Interpreting Model Predictions
 
-It may be challenging to trust a model’s predictions without understanding the rationale behind it. There are explainable AI packages such as  [Local Interpretable Model-Agnostic Explantions (LIME)](https://www.oreilly.com/content/introduction-to-local-interpretable-model-agnostic-explanations-lime/) or [SHapley Additive exPlanations (SHAP)](https://github.com/slundberg/shap) that can explain model predictions. These explanations can help you see the particular features the model considered to make a prediction.
+It may be challenging to trust a model’s predictions without understanding the rationale behind it. There are explainable AI packages such as  [Local Interpretable Model-Agnostic Explanations (LIME)](https://www.oreilly.com/content/introduction-to-local-interpretable-model-agnostic-explanations-lime/) or [SHapley Additive exPlanations (SHAP)](https://github.com/slundberg/shap) that can explain model predictions. These explanations can help you see the particular features the model considered to make a prediction.
 
 With the ATT bot, LIME produces a list of features and their weights to indicate the feature’s influence on the prediction. For example, LIME shows below that the ATT model considered the number of USDC/USDT token transfers an important feature in labeling a transaction anomalous.
 
