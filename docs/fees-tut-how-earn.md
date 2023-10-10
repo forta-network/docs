@@ -30,11 +30,11 @@ A Premium Plan proposal must include the following information for the respectiv
 
 1. You owned a bot that is running on the Network? You can submit a proposal for it to become a premium plan.
 
-2. Draft a proposal with the description of your Bot following the minimum requirements stated above. [Here is one](https://gov.forta.network/t/scam-detector-premium-feed-proposal/714) of the proposals that has been submitted to use as an example!
+2. Draft a proposal with the description of your Bot following the minimum requirements stated above. [Here is one](https://gov.forta.network/t/scam-detector-premium-feed-proposal/714) of the proposals that have been submitted to use as an example!
 
 3. Publish it on the Forta Forum on the [Premium Feeds Proposals section](https://gov.forta.network/c/governance-process/premium-feed-proposals/68) by clicking on the New Topic button. 
 
-4. Although your proposal is live - and will be taken into consideration for governance approval - make sure the community is aware about it by sharing it on your social media, the Forta Network Discord or reaching out to the Foundation’s team to get it posted on the official channels.
+4. Although your proposal is live - and will be taken into consideration for governance approval - make sure the community is aware of it by sharing it on your social media, the Forta Network Discord or reaching out to the Foundation’s team to get it posted on the official channels.
 
 5. Provided that a submission to create a Premium Plan submission includes all the requisite information, a Premium Plan can be approved in one of two ways through the community governance process:
 
