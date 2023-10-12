@@ -7,7 +7,7 @@ conditions are met. The best bots trigger alerts when specific conditions indica
 
 **Forta bot developer contests** are mini-hackathons where anyone is able to submit a bot and be rewarded in NFTs, and crypto!
 
-Contest discussion group and announcements are available on our [Discord here](https://discord.com/invite/fortanetwork).
+Contest discussion group and announcements are available on our [Discord here](https://discord.com).
 
 You will find two challenges listed below. Each challenge has a specific security concern that a Forta bot monitors for. Please submit your completed bots to the contest judges through the Google form linked above and on [connect.forta.network](https://connect.forta.network/).
 
@@ -26,7 +26,7 @@ You will find two challenges listed below. Each challenge has a specific securit
 
 - This contest will run from November 18th through December 2nd, after which no further submissions will be considered. Winners will be chosen by a panel of bot reviewers from Forta community member Nethermind, and will be announced on December 4th.
 
-- For any questions, please contact a Forta Moderator on [Discord](https://discord.com/invite/fortanetwork).
+- For any questions, please contact a Forta Moderator on [Discord](https://discord.com).
 
 ## Assessment Criteria
 

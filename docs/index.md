@@ -64,4 +64,4 @@ hide:
 </div>
 
 
-:fontawesome-brands-discord: Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.com/invite/fortanetwork).<br><br>
+:fontawesome-brands-discord: Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.com).<br><br>

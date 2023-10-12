@@ -4,7 +4,7 @@ Thank you for being a part of the Forta network! All contributions from the comm
 
 ## Join the Forta Discord
 
-One of the best ways to contribute is to just be a positive and helpful member of the [Forta Discord](https://discord.com/invite/fortanetwork) community. Participating in the conversation to help answer questions or contribute ideas/advice is extremely valuable, including feedback on how to improve the product and UX. If you have a good understanding of Forta, helping others when they have a question or get stuck is an excellent way to grow the community.
+One of the best ways to contribute is to just be a positive and helpful member of the [Forta Discord](https://discord.com) community. Participating in the conversation to help answer questions or contribute ideas/advice is extremely valuable, including feedback on how to improve the product and UX. If you have a good understanding of Forta, helping others when they have a question or get stuck is an excellent way to grow the community.
 
 ## Spread the word
 

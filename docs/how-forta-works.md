@@ -35,7 +35,7 @@ The vehicles for monitoring smart contracts on Forta are called detection bots �
 
 **You can develop** and deploy your own detection bots on Forta using the [SDK](https://docs.forta.network/en/latest/quickstart/). There are many [templates](https://github.com/arbitraryexecution/forta-bot-templates) and [examples](https://github.com/forta-network/forta-bot-examples) you can work from. There are also a growing number of development teams who you can hire to develop Forta bots for your project (visit the [Bot Development Marketplace](https://www.notion.so/forta/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) or contact the Forta Foundation at [info@forta.org](mailto:info@forta.org) for more information).
 
-If you are an independent dev that wants to develop detection bots, you can visit Forta’s [Bot Development Marketplace](https://forta.notion.site/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) to discover RFPs, apply for Grants or participate in Forta Development Contests, which are announced in the [Forta Discord](https://discord.com/invite/fortanetwork).
+If you are an independent dev that wants to develop detection bots, you can visit Forta’s [Bot Development Marketplace](https://forta.notion.site/Agent-Development-Marketplace-f8584bee618746319e9615f7a045df37) to discover RFPs, apply for Grants or participate in Forta Development Contests, which are announced in the [Forta Discord](https://discord.com).
 
 ### Scan node operators
 
