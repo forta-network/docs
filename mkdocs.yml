@@ -91,9 +91,11 @@ nav:
       - Scan with Bware: bware-partnership.md
       - Scan with Quicknode: quicknode-partnership.md
   - <strong>Staking on Forta</strong>:
-    - Delegated staking: delegated-staking-introduction.md 
-    - FORT Holder Staking Guide: fort-holder-staking-guide.md 
-    - Direct withdrawal: scanner-direct-withdrawal.md 
+    - Delegated staking:
+      - Introduction: delegated-staking-introduction.md
+      - Rewards: delegated-staking-rewards.md
+    - FORT Holder Staking Guide: fort-holder-staking-guide.md
+    - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>Network Overview</strong>: 
     - Network Overview: network-overview.md 
     - Tokenomics: fort-token.md 
