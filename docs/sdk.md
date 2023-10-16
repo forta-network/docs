@@ -328,6 +328,10 @@ const main = async () => {
 main();
 ```
 
+## sendAlerts
+
+The `sendAlerts` method enables submitting alerts via the GraphQL API. See the [external bots](external-bots.md) page for more information.
+
 ## getLabels
 
 The `getLabels` method can be used to fetch labels based on input `LabelQueryOptions`. When developing locally, **you will need to set the [`fortaApiKey`](api-keys.md) property** in your forta.config.json (and also have a paid plan) for this method to work. The `getLabels` method accepts the following input filter properties (at least one of `entities`, `labels` or `sourceIds` is **required**):

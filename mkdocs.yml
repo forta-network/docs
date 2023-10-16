@@ -39,6 +39,7 @@ nav:
       - Protecting sensitive data: sensitive-data.md
       - Private alerts: private-alerts.md
       - JWT authentication for bots: jwt-auth.md
+      - External bots: external-bots.md
       - Deploying machine learning models: deploying-ml-models.md
       - Time series analysis: time-series-analysis.md
       - Consuming bot alerts: handle-alert.md

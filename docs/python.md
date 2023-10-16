@@ -295,6 +295,10 @@ has_next = response.page_info.has_next_page
 alerts = response.alerts
 ```
 
+## send_alerts
+
+The `send_alerts` method enables submitting alerts via the GraphQL API. See the [external bots](external-bots.md) page for more information.
+
 ## get_labels
 
 The `get_labels` method can be used to fetch labels based on input `LabelQueryOptions`. The `get_labels` method accepts the following input filter properties (at least one of `entities`, `labels` or `source_ids` is **required**):
