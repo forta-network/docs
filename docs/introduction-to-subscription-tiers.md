@@ -17,4 +17,4 @@ The currently available Premium Feeds are:
 
 [**Spam Detector:**](https://app.forta.network/bot/0xd45f7183783f5893f4b8e187746eaf7294f73a3bb966500d237bd0d5978673fa) This feed is built and maintained by Artem Kovalchuk, a Forta community developer.
 
-[**Rull Pull Detector:**]( https://app.forta.network/bot/0xc608f1aff80657091ad14d974ea37607f6e7513fdb8afaa148b3bff5ba305c15) This feed is built and maintained by Solidus Labs. 
+[**Rull Pull Detector:**]( https://app.forta.network/rug-pull-detector) This feed is built and maintained by Solidus Labs. 
