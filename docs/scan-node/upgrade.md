@@ -2,7 +2,7 @@
 
 ## Deprecation
 
-All nodes need to start running the latest **container** versions within 7 days after the latest release, by default. [The releases made on GitHub](https://github.com/forta-network/forta-node/releases) may contain a release config that overrides the version support and reduces the deprecation time:
+All nodes need to start running the latest **container** versions within 48 hours after the latest release, by default. [The releases made on GitHub](https://github.com/forta-network/forta-node/releases) may contain a release config that overrides the version support and reduces the deprecation time:
 
 ```yaml
 # @begin release_config
@@ -21,7 +21,7 @@ To help you in this process, the node software includes an auto-updater that det
 
 In order to ensure that this feature works at all times, please set the registry API to a reliable one, as suggested in the [Configure Registry API](configure.md#configure-registry-api) section.
 
-Each node updates at a specific time within 24 hours, unless overridden by the config in [the release made on GitHub](https://github.com/forta-network/forta-node/releases):
+Each node updates at a specific time within the release interval. This interval is 24 hours unless overridden by the config in [the release made on GitHub](https://github.com/forta-network/forta-node/releases):
 ```yaml
 # @begin release_config
 autoUpdateInHours: 6
