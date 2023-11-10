@@ -1,6 +1,6 @@
 # How Forta works
 
-The Forta Network has two main components – detection bots and scan nodes. Detection bots are pieces of logic (scripts) that look for certain transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any supported chain. Nodes run detection bots against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. Forta will also maintain an automated public registry of all alerts, and anyone interested in the security of a contract can consume relevant alerts via the [Forta Explorer](https://explorer.forta.network/) or [API](api.md).
+The Forta Network has two main components – detection bots and scan nodes. Detection bots are pieces of logic (scripts) that look for certain transaction characteristics or state changes (e.g. anomaly detection) on smart contracts across any supported chain. Nodes run detection bots against each block of transactions. When the bots detect a specific condition or event, the network emits an alert which is stored on IPFS. Forta will also maintain an automated public registry of all alerts, and anyone interested in the security of a contract can consume relevant alerts via the [Forta App](https://app.forta.network/alerts) or [API](api.md).
 
 There is value in the negative signal too – knowing that detection bots are running 24/7 and not triggering alerts. Forta will maintain an automated record of the detection bots run by each node, for each block.
 
@@ -14,7 +14,7 @@ Protocols, DAOs, investors and individuals can use Forta to monitor transaction 
 
 #### Notification channels
 
-By default, detection bot alerts are sent from Scan Nodes to a Forta maintained ElasticSearch database and then displayed in the Forta Explorer dashboard. If the detection bot is specified as private, the alerts will not appear in the Forta Explorer dashboard, but they will still be accessible through the Forta Public GraphQL API via queries specifying the detection bot ID. For accessing alerts, Forta detection bots have a few built-in options and a number of extended options:
+By default, detection bot alerts are sent from Scan Nodes to a Forta maintained ElasticSearch database and then displayed in the Forta App dashboard. If the detection bot is specified as private, the alerts will not appear in the Forta App dashboard, but they will still be accessible through the Forta Public GraphQL API via queries specifying the detection bot ID. For accessing alerts, Forta detection bots have a few built-in options and a number of extended options:
 
 1. Subscriptions through the Forta App - Currently email address and/or a Slack webhook, but you can request that other options be added by the Forta Foundation.
 2. OpenZeppelin Defender Forta Sentinels - Monitors the Forta Public API for new alerts and delivers those alerts to Defender Autotasks and/or Defender Notifications (email, Discord, Slack, Datadog, Telegram, other webhooks).

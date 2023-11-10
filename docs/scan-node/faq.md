@@ -18,7 +18,7 @@ To avoid this kind of situations and loss of rewards, please reconsider the reco
 
 The SLA API returns the last couple of hours by default, unless you specify a time range. The score shown on the top is the average of those hours.
 
-The pool page on Forta App and the scan node page on Forta Explorer show the average of the past 168h (an epoch) continuously. As your node works better and time passes, this number improves. This is useful for the delegators to understand how reliable one pool is over the course of an epoch-long time window.
+The pool page on Forta App and the scan node page on Forta App show the average of the past 168h (an epoch) continuously. As your node works better and time passes, this number improves. This is useful for the delegators to understand how reliable one pool is over the course of an epoch-long time window.
 
 You might sometimes find that even though you have fixed the problem with your node and the SLA API returns a higher score, the pool page still shows a lower score. These two numbers can differ due to the time range difference explained above.
 

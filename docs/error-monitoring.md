@@ -1,6 +1,6 @@
 # Error monitoring
 
-You can [verify the health of your bot](maintaining.md#verifying-bot-health) from the status dashboard on Forta Explorer (i.e. `https://explorer.forta.network/agent/YOUR_AGENT_ID`). This will give you information like how many transactions the bot has processed or the latency of its responses. You can also use Forta's logging feature to [view bot logs](maintaining.md#viewing-bot-logs).
+You can [verify the health of your bot](maintaining.md#verifying-bot-health) from the status dashboard on Forta App (i.e. `https://app.forta.network/bot/YOUR_BOT_ID`). This will give you information like how many transactions the bot has processed or the latency of its responses. You can also use Forta's logging feature to [view bot logs](maintaining.md#viewing-bot-logs).
 
 While this is useful information, bot developers may want to integrate their bot into an existing error monitoring solution (e.g. [Sentry](https://sentry.io/)).
 

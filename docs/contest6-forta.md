@@ -6,7 +6,7 @@
 
 ## Rules
 
-- You will find two challenges listed below. Each challenge has a specific security concern that a Forta detection bot monitors for. Please submit your completed bots to the contest judges through the Google form linked above and on Forta Explorer.
+- You will find two challenges listed below. Each challenge has a specific security concern that a Forta detection bot monitors for. Please submit your completed bots to the contest judges through the Google form linked above and on Forta App.
 - Only the first **ten (10) QUALIFIED** submissions to each challenge that meet the requirements below will be considered.
 - After ten qualified submissions are received for each challenge, we will close the form and announce it on the #contests channel at Discord. As long as submissions are open, you are welcome to build and submit detection bots for all challenges!
 - All developers that submit a qualifying detection bot will receive a Forta NFT.
@@ -57,9 +57,9 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
 
     <br/><br/>
     - Winner: **soptq**
-    - Winning bot: [https://explorer.forta.network/agent/0xe2786...4555](https://explorer.forta.network/agent/0xe27867c40008e0e3533d6dba7d3c1f26a61a3923bc016747d131f868f8f34555)
+    - Winning bot: [https://app.forta.network/bot/0xe2786...4555](https://app.forta.network/bot/0xe27867c40008e0e3533d6dba7d3c1f26a61a3923bc016747d131f868f8f34555)
     - 2nd place: **kovart**
-    - 2nd place bot: [https://explorer.forta.network/agent/0x3054...13ed](https://explorer.forta.network/agent/0x30547600c8b10757a559fc94a124cc27e560c8fe3af66087d8a8fadb309513ed)
+    - 2nd place bot: [https://app.forta.network/bot/0x3054...13ed](https://app.forta.network/bot/0x30547600c8b10757a559fc94a124cc27e560c8fe3af66087d8a8fadb309513ed)
     - 3rd place: **hex.marc**
 
 2. **Monitor unusual price changes**
@@ -76,5 +76,5 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
 
     <br/><br/>
     - Winner: **vvlovsky**
-    - Winning bot: [https://explorer.forta.network/agent/0xe2786...4555](https://explorer.forta.network/agent/0xe27867c40008e0e3533d6dba7d3c1f26a61a3923bc016747d131f868f8f34555)
+    - Winning bot: [https://app.forta.network/bot/0xe2786...4555](https://app.forta.network/bot/0xe27867c40008e0e3533d6dba7d3c1f26a61a3923bc016747d131f868f8f34555)
     - 2nd place: **khayalievartur**

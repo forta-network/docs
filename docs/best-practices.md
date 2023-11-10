@@ -16,7 +16,7 @@ There is a `metadata` field in the `Finding` object that you can use to store an
 
 ## Create useful alertIds
 
-You are required to populate the `alertId` field of the `Finding` object. Ideally, you would want it to be unique so that when you search for your `alertId` in [Forta Explorer](https://explorer.forta.network/) it only shows your bot's alerts. Typically, an `alertId` has a string component (describing either the protocol or project) and a numeric component (to distinguish between different types of alerts about the same protocol or project) e.g. `TETHER-1`. It is left to the bot developer to choose what makes sense for their bot.
+You are required to populate the `alertId` field of the `Finding` object. Ideally, you would want it to be unique so that when you search for your `alertId` in [Forta App](https://app.forta.network/alerts) it only shows your bot's alerts. Typically, an `alertId` has a string component (describing either the protocol or project) and a numeric component (to distinguish between different types of alerts about the same protocol or project) e.g. `TETHER-1`. It is left to the bot developer to choose what makes sense for their bot.
 
 ## Write unit tests
 

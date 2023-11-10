@@ -84,7 +84,7 @@ Another way to deploy your bot is using the [Forta App](https://app.forta.networ
 
 ## Subscribing to alerts
 
-After your bot is deployed, you can view the alerts it generates using [Forta Explorer](https://explorer.forta.network/). You can search by your bot's ID or a contract address.
+After your bot is deployed, you can view the alerts it generates using [Forta App](https://app.forta.network/alerts). You can search by your bot's ID or a contract address.
 
 Alternatively, you can query for alerts programmatically using the [Forta API](api.md).
 

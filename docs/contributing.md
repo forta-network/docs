@@ -15,7 +15,7 @@ Runtime blockchain security is a relatively new concept and many people do not k
 Helping test the following tools by simply using them is a great way to contribute:
 
 - [Forta App](https://app.forta.network/): Deploy new bots and subscribe to alerts.
-- [Forta Explorer](https://explorer.forta.network/): Monitor bots and alerts.
+- [Forta App](https://app.forta.network/alerts): Monitor bots and alerts.
 - [Forta API](api.md): Integrate alerts into your monitoring tools or dApps.
 
 See a bug or have an idea for improvement? Share it in Discord!

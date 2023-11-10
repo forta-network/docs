@@ -2,15 +2,15 @@
 
 ## Verifying bot health
 
-When your bot is published **and picked up by a scan node**, you can view the findings it generates using [Forta Explorer](https://explorer.forta.network/). You can filter findings using your bot ID (which looks like a SHA-256 hash e.g. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) using the search bar near the top of the page.
+When your bot is published **and picked up by a scan node**, you can view the findings it generates using [Forta App](https://app.forta.network/alerts). You can filter findings using your bot ID (which looks like a SHA-256 hash e.g. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) using the search bar near the top of the page.
 
-Also, you can verify that your bot is healthy by visiting the bot status page on Forta Explorer. The URL for this page looks like `https://explorer.forta.network/bot/YOUR_BOT_ID`. You can see various information about the bot including how many transactions it processed, the different severities of alerts it produced and how long it took to respond to requests.
+Also, you can verify that your bot is healthy by visiting the bot status page on Forta App. The URL for this page looks like `https://app.forta.network/bot/YOUR_BOT_ID`. You can see various information about the bot including how many transactions it processed, the different severities of alerts it produced and how long it took to respond to requests.
 
 ## Viewing bot logs
 
 If [logging is enabled](deploying.md#enable-logging-optional), bot logs are updated by scan nodes every minute. You can view your bot's logs via Forta App, Forta API, or the CLI. Only logs from the past 30 days are stored.
 
-In the Forta App, you can view the latest logs from your bot's health page (i.e. `https://explorer.forta.network/bot/YOUR_BOT_ID`). Simply click on the 'Log Data' button near the top of the page.
+In the Forta App, you can view the latest logs from your bot's health page (i.e. `https://app.forta.network/bot/YOUR_BOT_ID`). Simply click on the 'Log Data' button near the top of the page.
 
 Using the Forta API, you can programmatically fetch the latest logs from `https://api.forta.network/logs/agents/YOUR_BOT_ID`. To enable JSON format responses, you can specify the `Accept: application/json` header in your request. By default, the logs API will return the most recent logs but you can query previous logs using the `minute` query param. By specifying a minute in RFC3339 format (e.g. `https://api.forta.network/logs/agents/YOUR_BOT_ID?minute=2023-04-12T07:20:00.00Z`), you can view previous logs. Note that not every minute may have logs.
 

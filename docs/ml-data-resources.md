@@ -29,7 +29,7 @@ Do you see any missing resources the community can use below? Contribute to [the
 
 * [BigQuery Public Blockchain Datasets](https://github.com/blockchain-etl/public-datasets) - Available to query using BigQuery on [Google Cloud Platform](https://cloud.google.com/free).
 * [Ethereum ETL](https://ethereum-etl.readthedocs.io/en/latest/) - Tool to convert blockchain data into CSV formats and relational databases.
-* [Transaction event](https://docs.forta.network/en/latest/python/#transactionevent) and [block event](https://docs.forta.network/en/latest/python/#blockevent) is available in Forta Bot Container. You can also collect training data on the fly and train periodically like this [Re-entrancy on Uniswap Time Series Bot](https://explorer.forta.network/bot/0x1e3ec10394a46d44ec0802f9e27162236cd61a1f7c13767f0c9ada7b48def6ae)
+* [Transaction event](https://docs.forta.network/en/latest/python/#transactionevent) and [block event](https://docs.forta.network/en/latest/python/#blockevent) is available in Forta Bot Container. You can also collect training data on the fly and train periodically like this [Re-entrancy on Uniswap Time Series Bot](https://app.forta.network/bot/0x1e3ec10394a46d44ec0802f9e27162236cd61a1f7c13767f0c9ada7b48def6ae)
 
 ## Data Science Competitions
 

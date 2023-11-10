@@ -3,7 +3,7 @@
 
 | Bot Name | Bot Stats | Bot Source Code  | Supported Chains | Documentation |
 |----------|-----------|------------------|------------------|---------------|
-| Attack Detector | [Stats](https://explorer.forta.network/bot/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1) | [Github Repo](https://github.com/forta-network/starter-kits/tree/main/alert-combiner-py) | All | [Docs](https://ipfs.forta.network/ipfs/QmW776kaGG2AWq2E8Z15LwS1afTrACV5XPbVH9YjkNhDUR) |
+| Attack Detector | [Stats](https://app.forta.network/bot/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1) | [Github Repo](https://github.com/forta-network/starter-kits/tree/main/alert-combiner-py) | All | [Docs](https://ipfs.forta.network/ipfs/QmW776kaGG2AWq2E8Z15LwS1afTrACV5XPbVH9YjkNhDUR) |
 
 
 The Attack Detector bot combines past alerts under a common address from a variety of underlying base bots to emit a high precision alert. It does so by mapping each alert to the four attack stages (Funding, Preparation, Exploitation and Money Laundering/ Post Exploitation) utilizing an anomaly as well as heuristic detection approach.
