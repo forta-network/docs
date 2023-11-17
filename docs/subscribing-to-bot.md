@@ -32,13 +32,12 @@ Step 1: Navigate to [https://app.forta.network/](https://app.forta.network/) and
 
 Step 2: Click on your wallet address in the top right corner in order to reveal a dropdown menu and click on ‘My Subscriptions’.
 
-![alt_text](Suscribe-to-bot-3.png "image_tooltip")
+![alt_text](Suscribe_3.png "image_tooltip")
 
 Step 3: Here you can manage your list of different subscriptions. If this is your first time setting up a subscription, you will need to click on the purple ‘Add Subscription’ button and a window will appear. 
 
 
-![alt_text](Suscribe-to-bot-4.png "image_tooltip")
-
+![alt_text](Suscribe_4.png "image_tooltip")
 
 
 
