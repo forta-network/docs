@@ -55,26 +55,33 @@ Scanners must meet the requirements of the Scan Node.  All of the following requ
 
 ### Data Quality Score
 
-Scanners must evaluate recent blocks.  Recent blocks are continuously evaluated by comparing the latest block analyzed with the 75th percentile block for scanners registered for the same chain.  The block used for calculations is the **maximum** block sent for the given minute.  This means it will consider the last block analyzed in the minute. 
+!!! important "Alternative naming"
+    This score is also known as `input performance` in the SLA API response.
 
-The minute score decreases from 1 to 0 until a node's latest block is 10 minutes behind the 75th percentile. The hourly Data Quality Score is derived from the reported minutes by taking the average of all minute scores.
+All scanners report the latest known block in the batches they send. This score is calculated by measuring a scanner's distance to the latest block at the time of reporting.
 
-!!! note "Exceeding the Expected Block"
-    It is possible to exceed the 75th percentile, but if it **far** exceeds, it can be because the scanner is pointed to the wrong chain or another issue.  Full credit is given until a block is more than 10 minutes ahead of the 75th percentile, then the score drops to 0.
+Each scanner reports at an arbitrary time within any given minute. If the scanner reported at 13:05:34, then the closest block can be estimated by using:
+- `report_time_seconds`: Seconds elapsed within a given minute. This value is 34.
+- `current_minute_max`: The highest block reported in minute 13:05:00. Let's use 20.
+- `previous_minute_max`: The highest block reported in minute 13:04:00. Let's use 12.
+
+and then by doing
 
 ```
-# Latest Block is Ahead of Expected Block
-if Latest Block is ahead of Expected Block:
-    if Difference is within 10 minutes Expected Block:
-        return 1
-    else:
-        return 0
-
-# Latest Block is Behind Expected Block
-return 1 - ( (expected block - latest block) / threshold )
+previous_minute_max + ((current_minute_max - previous_minute_max) * (report_time_seconds / 60))
 ```
+
+If we evaluate the numbers above, the elapsed blocks can be calculated as 5 and the estimated block number becomes `12 + 5 = 17`. Then this number is compared with the block number the scanner reported and divided by a threshold. There are two outcomes:
+- If the reported block is at least 17, then the score is 1.
+- If the reported block is e.g. 15 and the threshold is 10 blocks, then the score is `1 - ((17 - 15) / 10) = 0.8`.
+
+!!! note "Reporting too high block numbers"
+    The SLA calculation takes into account that some scanners can report extremely high block numbers. The selection of max numbers and final SLA calculation makes sure that these scanners are defaulted to zero because of their faulty operation.
 
 ### Uptime Score
+
+!!! important "Alternative naming"
+    This score is also known as `reporting success` in the SLA API response.
 
 Scanners must send data at regular intervals so that the network can deliver timely alerts. The nodes send a batch file to the Forta API
 
