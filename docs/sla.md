@@ -61,6 +61,7 @@ Scanners must meet the requirements of the Scan Node.  All of the following requ
 All scanners report the latest known block in the batches they send. This score is calculated by measuring a scanner's distance to the latest block at the time of reporting.
 
 Each scanner reports at an arbitrary time within any given minute. If the scanner reported at 13:05:34, then the closest block can be estimated by using:
+
 - `report_time_seconds`: Seconds elapsed within a given minute. This value is 34.
 - `current_minute_max`: The highest block reported in minute 13:05:00. Let's use 20.
 - `previous_minute_max`: The highest block reported in minute 13:04:00. Let's use 12.
@@ -71,7 +72,8 @@ and then by doing
 previous_minute_max + ((current_minute_max - previous_minute_max) * (report_time_seconds / 60))
 ```
 
-If we evaluate the numbers above, the elapsed blocks can be calculated as 5 and the estimated block number becomes `12 + 5 = 17`. Then this number is compared with the block number the scanner reported and divided by a threshold. There are two outcomes:
+If we evaluate the numbers above, the elapsed blocks can be calculated as 5 and the estimated block number becomes `12 + 5 = 17`. Then this number is compared with the block number the scanner reported and divided by a threshold. There are two possible outcomes:
+
 - If the reported block is at least 17, then the score is 1.
 - If the reported block is e.g. 15 and the threshold is 10 blocks, then the score is `1 - ((17 - 15) / 10) = 0.8`.
 
