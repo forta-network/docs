@@ -66,7 +66,7 @@ Some of the fields will be prepopulated, specifically the "Docker Image" field w
 
 ## Subscribing to alerts
 
-After your bot is deployed, you can view the alerts it generates using [Forta Explorer](https://explorer.forta.network/). You can search by your bot's ID or a contract address. Alternatively, you can query for alerts programmatically using the [Forta API](api.md). To learn more about subscribing to alerts, check out [this section](subscribing.md).
+After your bot is deployed, you can view the alerts it generates using [Forta App](https://app.forta.network/alerts). You can search by your bot's ID or a contract address. Alternatively, you can query for alerts programmatically using the [Forta API](api.md). To learn more about subscribing to alerts, check out [this section](subscribing.md).
 
 ## Maintaining your bot
 

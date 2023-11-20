@@ -7,7 +7,7 @@ The largest factor in SLA calculation is the number of the latest block scanned.
 To view your scan node's uptime and SLA simply copy and paste
 
 ```
-https://explorer.forta.network/scan-node/{enter-your-scan-node-address-here}
+https://app.forta.network/scan-node/{enter-your-scan-node-address-here}
 ```
 
 into your browser's search bar.
@@ -16,7 +16,7 @@ into your browser's search bar.
 
 You can use the [SLA API](sla-api.md) for more details insights.
 
-Please note that the number in Forta Explorer can differ from what SLA API returns because of time range differences (see Q3 in [FAQ](faq.md)).
+Please note that the number in Forta App can differ from what SLA API returns because of time range differences (see Q3 in [FAQ](faq.md)).
 
 ## Prometheus
 

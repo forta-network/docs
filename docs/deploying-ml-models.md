@@ -1,6 +1,6 @@
 # Deploying a Machine Learning Model in a Detection Bot
 
-This guide will share tips and tricks on deploying a [scikit-learn](https://scikit-learn.org/stable/index.html) machine learning model in a Python detection bot. To help illustrate the outlined steps, the guide will make references to the  [Anomalous Token Transfer ML Detection Bot’s code (ATT)](https://explorer.forta.network/agent/0x2e51c6a89c2dccc16a813bb0c3bf3bbfe94414b6a0ea3fc650ad2a59e148f3c8). Throughout the guide, we’ll use the abbreviation ATT to refer to this bot.
+This guide will share tips and tricks on deploying a [scikit-learn](https://scikit-learn.org/stable/index.html) machine learning model in a Python detection bot. To help illustrate the outlined steps, the guide will make references to the  [Anomalous Token Transfer ML Detection Bot’s code (ATT)](https://app.forta.network/bot/0x2e51c6a89c2dccc16a813bb0c3bf3bbfe94414b6a0ea3fc650ad2a59e148f3c8). Throughout the guide, we’ll use the abbreviation ATT to refer to this bot.
 
 The ATT bot utilizes [the Isolation Forest](https://scikit-learn.org/stable/modules/outlier_detection.html#isolation-forest), an unsupervised outlier detection algorithm to detect anomalous transactions with erc20 token transfers. For more details on its training process, please check out the [bot’s readme](https://github.com/forta-network/starter-kits/blob/main/anomalous-token-transfers-ml-py/README.md).
 

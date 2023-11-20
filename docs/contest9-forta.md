@@ -43,11 +43,11 @@ See Forta’s [Code Review checklist](https://github.com/forta-network/bot-revie
 
 ## Challenges
 
-The [Attack Detector Feed Bot](https://explorer.forta.network/bot/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1) combines various alerts across the attack chain to emit a highly precise alert for protocol attacks. It does its job well and alerts emitted by this bot are shared on the [@FortaAlerts twitter handle](https://twitter.com/FortaAlerts). However, it lacks context that is needed to swiftly understand what is going on. One primary question arises on what protocols are/were attacked and where were assets drained from?
+The [Attack Detector Feed Bot](https://app.forta.network/bot/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1) combines various alerts across the attack chain to emit a highly precise alert for protocol attacks. It does its job well and alerts emitted by this bot are shared on the [@FortaAlerts twitter handle](https://twitter.com/FortaAlerts). However, it lacks context that is needed to swiftly understand what is going on. One primary question arises on what protocols are/were attacked and where were assets drained from?
 
 1. **Attacked Protocol/Asset Source Identification Bot**
 
-    The [Attack Detector Feed Bot](https://explorer.forta.network/bot/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1) aggregates all addresses observed in the underlying alerts and exposes those in the metadata fields. For instance, the Wintermute attack resulted in the following alert: [https://explorer.forta.network/alert/0x186becf1ad85541067d2244a3daacfdfe4e4de4733840832b0a8b0d5a8f84b9e](https://explorer.forta.network/alert/0x186becf1ad85541067d2244a3daacfdfe4e4de4733840832b0a8b0d5a8f84b9e)
+    The [Attack Detector Feed Bot](https://app.forta.network/bot/0x80ed808b586aeebe9cdd4088ea4dea0a8e322909c0e4493c993e060e89c09ed1) aggregates all addresses observed in the underlying alerts and exposes those in the metadata fields. For instance, the Wintermute attack resulted in the following alert: [https://app.forta.network/alert/0x186becf1ad85541067d2244a3daacfdfe4e4de4733840832b0a8b0d5a8f84b9e](https://app.forta.network/alert/0x186becf1ad85541067d2244a3daacfdfe4e4de4733840832b0a8b0d5a8f84b9e)
 
     As can be seen, the alert contains a lot of addresses that were involved in the attack. As the attacker obtained various digital assets and used several exchanges to swap those assets and various protocols to launder the funds, who was actually attacked is lost.
 

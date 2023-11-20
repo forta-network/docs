@@ -52,7 +52,7 @@ In this configuration, the bot is deployed to 4 different chains (as indicated b
 
 Sharding is needed if your bot is unable to keep up with the transaction/block/alert throughput of the chain. It essentially is too slow. For instance, BNB Chain adds a block every 3 seconds; recently, there are about 70 tx in each block on average. This means, the bot needs to process a tx in approximately 40ms. If your bot is slower than this, the bot may fall behind and transactions are dropped. 
 
-The first step would be to assess whether the bot indeed drops transactions. The bot health page provides insights through the Dropped view ([example](https://explorer.forta.network/bot/0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400)).
+The first step would be to assess whether the bot indeed drops transactions. The bot health page provides insights through the Dropped view ([example](https://app.forta.network/bot/0xa91a31df513afff32b9d85a2c2b7e786fdd681b3cdd8d93d6074943ba31ae400)).
 
 Second, start measuring the performance of your bot through a unit test. In this test, you would want to exercise the different code paths of your bot (the cheap and expensive paths) and calculate a weighted average processing time based on the performance of these code paths ([example](https://github.com/forta-network/starter-kits/blob/main/funding-tornado-cash-py/src/agent_test.py)). 
 

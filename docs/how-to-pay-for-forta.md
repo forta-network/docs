@@ -4,7 +4,7 @@ Users can now purchase new plans on the Forta App.
 
 
 
-1-  Discover all the premium plans available on Forta on the Forta &lt;App Homepage>, you can also explore what is included in the General Plan on the &lt;Forta Explorer>.
+1-  Discover all the premium plans available on Forta on the Forta &lt;App Homepage>, you can also explore what is included in the General Plan on the &lt;Forta App>.
 
 ![discover](fees-1.png)
 

@@ -5,7 +5,7 @@ Subscription to the Forta Network is currently available in 2 options; the Gener
 
 ### **General Plan**
 
-The General Plan provides users with the ability to access 99%+ of the bots available on the Network, you can browse the available bots [here](https://explorer.forta.network/?_gl=1*10isp51*_ga*MTIwMTk4MjY4NC4xNjM3MzMxNDc4*_ga_3ERDDVRGQQ*MTY5MDMxODgxOS40NDIuMC4xNjkwMzE4ODE5LjAuMC4w). Developers interested in building their own detection bot and start earning rewards can check out the developer page [here](https://forta.org/developers/). 
+The General Plan provides users with the ability to access 99%+ of the bots available on the Network, you can browse the available bots [here](https://app.forta.network/?_gl=1*10isp51*_ga*MTIwMTk4MjY4NC4xNjM3MzMxNDc4*_ga_3ERDDVRGQQ*MTY5MDMxODgxOS40NDIuMC4xNjkwMzE4ODE5LjAuMC4w). Developers interested in building their own detection bot and start earning rewards can check out the developer page [here](https://forta.org/developers/). 
 
 ### **Premium Feeds**
 

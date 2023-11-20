@@ -22,7 +22,7 @@ There are two curated Threat Intel Feeds today:
 - **Scam Detector**: an ideal source of intel about threats impacting end users (phishing, rug pulls, etc.). Users of the Scam Detector include Web3 wallets, end-user security tools, centralized exchanges, crypto compliance platforms and many others. [Learn More](https://docs.forta.network/en/latest/scam-detector-bot/) and [Integrate with the API](https://docs.forta.network/en/latest/api/).
 - **Attack Detector**: a real-time feed of alerts about smart contract exploits impacting DeFi protocols and bridges. [Learn More](https://docs.forta.network/en/latest/attack-detector-bot/) and [Subscribe](https://app.forta.network/).
 
-You can also explore the 1,000+ individual bots running on the network using the [Forta Explorer](http://explorer.forta.network). 
+You can also explore the 1,000+ individual bots running on the network using the [Forta App](http://app.forta.network). 
 
 ### **Developers**
 

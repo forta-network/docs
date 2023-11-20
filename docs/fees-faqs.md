@@ -16,7 +16,7 @@ Other fees may be added to the Forta Network through future community governance
 
 **What Threat Intel plans are available?**
 
-1. The General Plan: Forta’s General Subscription Plan plan gives you access to 99%+ of the Network’s hundreds of detection bots (ie. everything except Premium Feeds).You can also browse the 1,000+ other bots on the network [here](https://explorer.forta.network/).<br/>
+1. The General Plan: Forta’s General Subscription Plan plan gives you access to 99%+ of the Network’s hundreds of detection bots (ie. everything except Premium Feeds).You can also browse the 1,000+ other bots on the network [here](https://app.forta.network/).<br/>
 The General Plan can only be paid in FORT.
 
 2. Premium Plans:  Premium Feeds are owned and maintained by one or more reputable community members (teams and/or individuals) and must meet certain requirements for performance and precision. The price for each Premium Feed is set by the owner. You can see all the Premium Feeds on the homepage of the Forta App once fees are live.<br/>

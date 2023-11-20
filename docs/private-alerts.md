@@ -94,7 +94,7 @@ The above code should print out the finding that was passed into the `encryptFin
 
 ## setPrivateFindings
 
-As an added layer of security, bots can indicate that they do not want their findings indexed by Forta Explorer. An adversary could potentially look for alerts that use encryption and with enough alerts could infer what condition the bot is looking for. To avoid this, simply invoke `setPrivateFindings(true)` in the `initialize` handler:
+As an added layer of security, bots can indicate that they do not want their findings indexed by Forta App. An adversary could potentially look for alerts that use encryption and with enough alerts could infer what condition the bot is looking for. To avoid this, simply invoke `setPrivateFindings(true)` in the `initialize` handler:
 
 ```javascript
 const { setPrivateFindings } = require("forta-agent")
@@ -105,7 +105,7 @@ async function initialize() {
 }
 ```
 
-This will tell the Forta network not to display the emitted alerts in Forta Explorer, as well as not to associate the alert with any block/transaction. If you would like to reference the block/transaction, you would need to set the data yourself in the finding `metadata`.
+This will tell the Forta network not to display the emitted alerts in Forta App, as well as not to associate the alert with any block/transaction. If you would like to reference the block/transaction, you would need to set the data yourself in the finding `metadata`.
 
 ## Other considerations
 
@@ -115,4 +115,4 @@ This will tell the Forta network not to display the emitted alerts in Forta Expl
 - Do not programmatically read the public key from the public.pem file as this would make your bot vulnerable to an exploit where an attacker can replace the public.pem file with their own public key and decrypt your bot's findings on their own machine
 - Make sure that unit tests are also obfuscated, or better yet, just not included in the final image. This could easily reveal what the bot is doing
 
-Awesome! You now have a bot that encrypts findings which do not appear in Forta Explorer.
+Awesome! You now have a bot that encrypts findings which do not appear in Forta App.

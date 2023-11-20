@@ -623,7 +623,7 @@ trace:
 
 ## Monitor SLA
 
-To view your scan node's uptime and SLA simply copy and paste https://explorer.forta.network/scan-node/[YOUR SCAN NODE ADDRESS] into your browser's search bar.
+To view your scan node's uptime and SLA simply copy and paste https://app.forta.network/scan-node/[YOUR SCAN NODE ADDRESS] into your browser's search bar.
 
 ![View scan node SLA example](scan-node-view.png)
 

@@ -35,7 +35,7 @@ You can use Forta’s GraphQL API to query the data, or subscribe to notificatio
 
 A good way to start is to look at the premium feeds featured in the Forta App, which are offered by dedicated bot developers and can offer sophisticated and curated detection bots that provide high value for a specific use case. 
 
-In addition, you can also use the search function in Forta Explorer to look for the bot that best fits your needs, among the hundreds of existing bots in the network.
+In addition, you can also use the search function in Forta App to look for the bot that best fits your needs, among the hundreds of existing bots in the network.
 
 
 
@@ -65,7 +65,7 @@ The open source Forta SDK is extremely flexible and encourages bot developers to
 
 ### **Where can I find examples of detection bots?**
 
-[Here](https://github.com/forta-network/forta-bot-examples) you can take a look at some examples of detection bots. In addition, you can use the Forta Explorer to search for bots.
+[Here](https://github.com/forta-network/forta-bot-examples) you can take a look at some examples of detection bots. In addition, you can use the Forta App to search for bots.
 
 ### **Do I get compensated for building detection bots?**
 

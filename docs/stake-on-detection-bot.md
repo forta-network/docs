@@ -2,9 +2,9 @@
 
 This page will describe how to stake on Forta Network detection bots. Staking on bots occurs on Polygon mainnet. If you need to bridge your FORT tokens from Ethereum to Polygon check out [this guide](bridging-fort.md).
 
-## Staking using Forta Explorer (recommended)
+## Staking using Forta App (recommended)
 
-1. Go to [https://explorer.forta.network/bot-search](https://explorer.forta.network/bot-search)
+1. Go to [https://app.forta.network/bots](https://app.forta.network/bots)
 2. Search for the bot you want to stake on. In this example we are going to stake on a bot from Lido (but you can choose any bot you prefer).
 3. Click on "Add Stake"
    ![Add Stake](stake-bot-ui1.png)
@@ -28,17 +28,17 @@ This page will describe how to stake on Forta Network detection bots. Staking on
 
 ### Stake FORT
 
-Once approved, you can search for a bot by name using Forta Explorer
+Once approved, you can search for a bot by name using Forta App
 
-1. Go to [https://explorer.forta.network/bot-search](https://explorer.forta.network/bot-search)
-2. Search for the bot you want to stake on. In this example we are going to stake on a bot from Lido (but you can choose any bot you prefer). The bot ID can be found on the Bot Report Page specific to each bot on Forta Explorer
+1. Go to [https://app.forta.network/bots](https://app.forta.network/bots)
+2. Search for the bot you want to stake on. In this example we are going to stake on a bot from Lido (but you can choose any bot you prefer). The bot ID can be found on the Bot Report Page specific to each bot on Forta App
     1. Search for the bot
     2. Copy the bot ID
-   ![Forta Explorer](stake-bot4.png)
+   ![Forta App](stake-bot4.png)
 3. Go to the [Forta Staking contract page](https://polygonscan.com/address/0xd2863157539b1D11F39ce23fC4834B62082F6874#writeProxyContract)
     1. Click on "Connect to Web3"
     2. In the "deposit" section, enter 1 for the "subjectType" field
-    3. Enter the bot ID you copied from Forta Explorer in the "subject" field
+    3. Enter the bot ID you copied from Forta App in the "subject" field
     4. Enter the amount of FORT to stake (in Wei units) in the "stakeValue" field
    ![Staking contract](stake-bot5.png)
 4. Confirm the transaction<br>

@@ -32,7 +32,7 @@ The command to publish the bot is the exact same: `forta-agent publish` (or `npm
 
 ## Submitting alerts
 
-Before you can submit any alerts, you need to [generate an API key](api-keys.md) in order to interact with the GraphQL API. Any alerts submitted can be queried for through the GraphQL API or via the Forta Explorer UI.
+Before you can submit any alerts, you need to [generate an API key](api-keys.md) in order to interact with the GraphQL API. Any alerts submitted can be queried for through the GraphQL API or via the Forta App UI.
 
 ### via the SDK
 

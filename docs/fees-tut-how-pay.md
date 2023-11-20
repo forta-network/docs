@@ -1,6 +1,6 @@
 Users can now purchase new plans on the Forta App.
 
-1. Discover all the premium plans available on Forta on the Forta App Homepage, you can also explore what is included in the General Plan on the Forta Explorer.<br/>
+1. Discover all the premium plans available on Forta on the Forta App Homepage, you can also explore what is included in the General Plan on the Forta App.<br/>
 ![Step 1](fees-tut-how-pay_1.png)
 
 2. Click on any of the premium plans cards to learn more about that specific premium plan (from the bot’s performance, to the number of subscribers it has).<br/>
