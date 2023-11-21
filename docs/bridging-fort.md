@@ -16,3 +16,4 @@ You may need to bridge your FORT tokens from Ethereum to Polygon in order to sta
    ![Select FORT](bridging-6.png)
 7. Select the amount of FORT you want to bridge and then click "Transfer" to bridge your tokens to Polygon
    ![Transfer FORT](bridging-7.png)
+8. Wait for the bridge transaction to be completed and you will get the assets in the FORT contract address in Polygon (0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1)
