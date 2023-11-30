@@ -49,6 +49,7 @@ Scanners must meet the requirements of the Scan Node.  All of the following requ
 - Must scan the same chain as registered for
 - Must support the minimum memory requirement (currently 16GB)
 - Must load an automated hourly test bot at least once per 2-hour period
+- Must not fail Proof of Detection
 
 !!! warning "All requirements must be met"
     If any requirement is not met, the resource score will be zero, which will cause a zero SLA score.
