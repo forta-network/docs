@@ -80,6 +80,23 @@ If we evaluate the numbers above, the elapsed blocks can be calculated as 5 and 
 !!! note "Reporting too high block numbers"
     The SLA calculation takes into account that some scanners can report extremely high block numbers. The selection of max numbers and final SLA calculation makes sure that these scanners are defaulted to zero because of their faulty operation.
 
+### Proof of Detection
+Scan nodes must execute assigned bots, provide metrics and deliver any alerts emitted by the assigned bot. If a scan 
+node falsely claims bot execution, sensors or tampers any alert, SLA score will be 0 for the whole scan node pool.
+
+Types of failure:
+- Missing Proof
+- Bad Proof
+
+#### Missing Proof
+
+If a scan node sends more than 30 `agent.health.success` metrics, mechanism assumes to bot was healthy to emit a proof. In case node did not emit an alert, will be treated as failure of Proof of Detection.
+
+#### Bad Proof
+
+SLA Evaluator recalculates the hash given by the bot. If there is a mismatch, it proves that the node did not do the 
+work it deemed to do and is a reason to fail Proof of Detection
+
 ### Uptime Score
 
 !!! important "Alternative naming"
