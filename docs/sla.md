@@ -49,6 +49,7 @@ Scanners must meet the requirements of the Scan Node.  All of the following requ
 - Must scan the same chain as registered for
 - Must support the minimum memory requirement (currently 16GB)
 - Must load an automated hourly test bot at least once per 2-hour period
+- Must not fail Proof of Detection
 
 !!! warning "All requirements must be met"
     If any requirement is not met, the resource score will be zero, which will cause a zero SLA score.
@@ -79,6 +80,21 @@ If we evaluate the numbers above, the elapsed blocks can be calculated as 5 and 
 
 !!! note "Reporting too high block numbers"
     The SLA calculation takes into account that some scanners can report extremely high block numbers. The selection of max numbers and final SLA calculation makes sure that these scanners are defaulted to zero because of their faulty operation.
+
+### Proof of Detection
+Scan nodes must execute assigned bots, provide metrics and deliver any alerts emitted by them. If a scan node falsely claims bot execution, censors or tampers with any alert, SLA score will be 0 for the whole scan node pool for the calculated hour.
+
+Types of failures:
+- Missing Proof
+- Bad Proof
+
+#### Missing Proof
+
+If a scan node sends more than 30 `agent.health.success` metrics, the mechanism assumes that the bot was healthy enough to emit a proof. In case the node does not emit an alert, it will be treated as Proof of Detection failure.
+
+#### Bad Proof
+
+SLA calculator recalculates the hash given by the bot. If there is a mismatch, then it means that the node did not do the work it was deemed to do and fails Proof of Detection.
 
 ### Uptime Score
 
