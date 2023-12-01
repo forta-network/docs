@@ -84,9 +84,7 @@ If we evaluate the numbers above, the elapsed blocks can be calculated as 5 and 
 ### Proof of Detection
 Scan nodes must execute assigned bots, provide metrics and deliver any alerts emitted by them. If a scan node falsely claims bot execution, censors or tampers with any alert, SLA score will be 0 for the whole scan node pool for the calculated hour.
 
-Types of failures:
-- Missing Proof
-- Bad Proof
+There are two types of failures:
 
 #### Missing Proof
 
