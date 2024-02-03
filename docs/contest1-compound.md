@@ -16,7 +16,7 @@ Below you will find five challenges. Each challenge has a specific security conc
 
 - Winners will be chosen by a panel of bot reviewers from Forta community member Nethermind, and will be announced on Oct. 29th.
 
-- For any questions, please contact a Forta Moderator on [Discord](https://discord.com).
+- For any questions, please contact a Forta Moderator on [Discord](https://discord.gg/KACdTEutQq).
 
 Check out Compound docs for more information on Compound Protocol: [https://compound.finance/docs](https://compound.finance/docs)
 

@@ -10,7 +10,7 @@
 * [Token Impersonation ML Bot](https://github.com/forta-network/starter-kits/tree/main/malicious-token-contract-ml-py#malicious-token-smart-contract-ml)
 * [Text Message Sentiment Analysis Deep Learning Bot](https://github.com/forta-network/forta-bot-examples/tree/master/tx-message-sentiment-analysis-py)
 
-Did you create an ML bot? Share it with the community on the [ML Discord Channel](https://discord.com)!
+Did you create an ML bot? Share it with the community on the [ML Discord Channel](https://discord.com/channels/869983523371642921/979123596880396349)!
 
 ## Sources for Training Data
 
@@ -53,4 +53,4 @@ Do you see any missing resources the community can use below? Contribute to [the
 
 ## Join the Forta ML Discord
 
-Do you have ideas on how machine learning can be used on the Forta Network? Share your thoughts and ideas on the [ML Discord Channel](https://discord.com)
+Do you have ideas on how machine learning can be used on the Forta Network? Share your thoughts and ideas on the [ML Discord Channel](https://discord.com/channels/869983523371642921/979123596880396349)
