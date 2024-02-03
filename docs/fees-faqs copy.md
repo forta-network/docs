@@ -56,7 +56,7 @@ The user can manage their API keys in the API Keys section of the Forta App.
 
 You might not have access to that bot intel on the plan you have purchased. Please, make sure the plan you’ve purchased includes access to the bot you are trying to subscribe to.
 
-If the problem persists, you can always get technical support on [Discord](https://discord.com).
+If the problem persists, you can always get technical support on [Discord](https://discord.gg/KACdTEutQq).
 
 **I want to try Forta before purchasing, are there free trials?**
 
