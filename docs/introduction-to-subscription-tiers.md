@@ -20,3 +20,5 @@ The currently available Premium Feeds are:
 [**Rull Pull Detector:**]( https://app.forta.network/rug-pull-detector) This feed is built and maintained by Solidus Labs. 
 
 [**Attack Detector:**]( https://app.forta.network/attack-detector) This feed is maintained by the Forta Foundation, in collaboration with the Forta community, including Blocksec and Nethermind. 
+
+[**Sybil Defender:**]( https://app.forta.network/sybil-defender) This feed is maintained by Fwrd Labs, a community team.
