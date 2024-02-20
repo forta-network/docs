@@ -4,6 +4,10 @@
 
 The Forta Network acts like a giant, shared security camera and alarm system, monitoring public blockchains in real-time for threats, anomalies, security-related events and other noteworthy activity. Put differently, Forta is the “real-time monitoring layer” in the Web3 tech stack. The Network is comprised of two primary components - _detection bots_ and _scan nodes_. 
 
+
+[**Forta Network Metrics Dashboard**](https://dune.com/rodri_forta/forta-network-metrics) 
+
+
 _Detection Bots_
 
 Detection bots are the equivalent of tiny cameras, built by developers and published on the network. What each bot monitors for is determined by the logic written by its developer. Bots vary in complexity, with some monitoring for a single condition (ex: a multi-sig transaction above a certain amount threshold), and others monitoring for a combination of different factors (ex: scam activity using a combination of advanced heuristics and machine learning models). When a bot finds what it’s looking for, it emits an alert. 
