@@ -122,6 +122,29 @@ To learn more, read the [smart contracts GitHub repo](https://github.com/forta-n
 | RewardsDistributor | [0x404afc59Cacd74A28d0D5651460Cc950b42FAf08](https://mumbai.polygonscan.com/address/0x404afc59Cacd74A28d0D5651460Cc950b42FAf08) | [0x09803F257AB3D8a390837640ED9D9F4Eb22c1453](https://mumbai.polygonscan.com/address/0x09803F257AB3D8a390837640ED9D9F4Eb22c1453) |
 | ScannerToScannerPoolMigration | [0xd6F0cDcc0200B5582784973873801A4Ec8712423](https://mumbai.polygonscan.com/address/0xd6F0cDcc0200B5582784973873801A4Ec8712423) | [0x84D8F29994983768d698C71f6816F61B6a42DE49](https://mumbai.polygonscan.com/address/0x84D8F29994983768d698C71f6816F61B6a42DE49) |
 
+**Sepolia Testnet**
+
+| Name | Proxy | Implementation |
+| -- | -- | -- |
+| Forta Token | [0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79](https://sepolia.etherscan.io/address/0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79) | [0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed](https://sepolia.etherscan.io/address/0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed) |
+
+**Amoy Testnet**
+
+| Name | Proxy | Implementation |
+| ----- | ----- | -------------- |
+| Access | [0x2441Ce5eB269505f30F6F434D21E039438aaC342](https://www.oklink.com/amoy/address/0x2441ce5eb269505f30f6f434d21e039438aac342) | [0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79](https://www.oklink.com/amoy/address/0x95d9a757ad9c25999ffe93f3067221f04ce1cc79) |
+| Agents (Detection Bots) | [0xa862CcbD51acFf3de6C6D4e46A62914E1B9D57F6](https://www.oklink.com/amoy/address/0xa862ccbd51acff3de6c6d4e46a62914e1b9d57f6) | [0x6D30A5bcA7b2c02Dd05720DCfF34A1603c4B4546](https://www.oklink.com/amoy/address/0x6d30a5bca7b2c02dd05720dcff34a1603c4b4546) |
+| Scanner Pools | [0x17c1a0Ba9251429F0638F575111f17Dd436801ec](https://www.oklink.com/amoy/address/0x17c1a0ba9251429f0638f575111f17dd436801ec) | [0x1bf8973A38ce1cD3d8cFE1E2F34cd721caf2f25E](https://www.oklink.com/amoy/address/0x1bf8973a38ce1cd3d8cfe1e2f34cd721caf2f25e) |
+| Dispatch | [0x988B794f73b78eae329DDFC1E07945C7FaE385f1](https://www.oklink.com/amoy/address/0x988b794f73b78eae329ddfc1e07945c7fae385f1) | [0xf1fa4ea73ab7468B85D6e6863218BCCBC31eB589](https://www.oklink.com/amoy/address/0xf1fa4ea73ab7468b85d6e6863218bccbc31eb589) |
+| Forwarder | -- | [0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed](https://www.oklink.com/amoy/address/0x6a434647a4a3de2f915bb49b6227444ebbe67aed) |
+| Forta Token (Bridged) | [0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201](https://www.oklink.com/amoy/address/0x67d4d0654d6ba56d41a7a6ec8f33430c3d778201) | [0xBeDC289BdE5BA0395CF84927CB3f82b1d2423283](https://www.oklink.com/amoy/address/0xbedc289bde5ba0395cf84927cb3f82b1d2423283) |
+| Staking | [0x34e023721dD940C7bDE591738C4FEa0aeEb24C61](https://www.oklink.com/amoy/address/0x34e023721dd940c7bde591738c4fea0aeeb24c61) | [0xA1663c4002d3F166C5D90750ae1B7266167a0Ba4](https://www.oklink.com/amoy/address/0xa1663c4002d3f166c5d90750ae1b7266167a0ba4) |
+| StakeSubjectGateway | [0x71076Bdb44Eb60E46e67AbC3d209FB5609dE9feC](https://www.oklink.com/amoy/address/0x71076bdb44eb60e46e67abc3d209fb5609de9fec) | [0x3D46F1CE3934b3c9D6790e74b89C65E44bf3b235](https://www.oklink.com/amoy/address/0x3d46f1ce3934b3c9d6790e74b89c65e44bf3b235) |
+| ScannerNodeVersion | [0x5a8e8d955f6Ea8fB2C9Cb0E5Ec960D761dD4281e](https://www.oklink.com/amoy/address/0x5a8e8d955f6ea8fb2c9cb0e5ec960d761dd4281e) | [0x5c5eA992BCA469eB3Bb69187831CE77e4280FD75](https://www.oklink.com/amoy/address/0x5c5ea992bca469eb3bb69187831ce77e4280fd75) |
+| SlashingController | [0x2D317315A2788fE4B64333CE93297413c669CF92](https://www.oklink.com/amoy/address/0x2d317315a2788fe4b64333ce93297413c669cf92) | [0x0cF1f4D2D675c48dE6726A3b9A78eE9d3A8eB4cf](https://www.oklink.com/amoy/address/0x0cf1f4d2d675c48de6726a3b9a78ee9d3a8eb4cf) |
+| StakeAllocator | [0x8a5EEfA2BAb332DD7666d885e9C9d2775221EB1c](https://www.oklink.com/amoy/address/0x8a5eefa2bab332dd7666d885e9c9d2775221eb1c) | [0xE1205BEf00dc86043A54FB1b44e99A46f6060Fd4](https://www.oklink.com/amoy/address/0xe1205bef00dc86043a54fb1b44e99a46f6060fd4) |
+| RewardsDistributor | [0x8E5Cc9C1003AF663f2609AC35F607a05464137b6](https://www.oklink.com/amoy/address/0x8e5cc9c1003af663f2609ac35f607a05464137b6) | [0xd5e35048eA5d248E698b153e45a84dcE3Ab2D458](https://www.oklink.com/amoy/address/0xd5e35048ea5d248e698b153e45a84dce3ab2d458) |
+
 **Pause Functionality**
 
 Currently, Forta does not implement _Pause_ functionality in its smart contracts. In lieu of _Pause_ functionality, the contracts’ upgradability could be utilized to pause the contracts in the event of responding to an incident. Additionally, Forta does not incorporate the usage of Oracles, and therefore has no risk of Oracle manipulation attacks.
