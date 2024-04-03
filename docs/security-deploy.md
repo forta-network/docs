@@ -128,22 +128,22 @@ To learn more, read the [smart contracts GitHub repo](https://github.com/forta-n
 | -- | -- | -- |
 | Forta Token | [0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79](https://sepolia.etherscan.io/address/0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79) | [0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed](https://sepolia.etherscan.io/address/0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed) |
 
-**Amoy Testnet**
+**Base Sepolia Testnet**
 
 | Name | Proxy | Implementation |
 | ----- | ----- | -------------- |
-| Access | [0x2441Ce5eB269505f30F6F434D21E039438aaC342](https://www.oklink.com/amoy/address/0x2441ce5eb269505f30f6f434d21e039438aac342) | [0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79](https://www.oklink.com/amoy/address/0x95d9a757ad9c25999ffe93f3067221f04ce1cc79) |
-| Agents (Detection Bots) | [0xa862CcbD51acFf3de6C6D4e46A62914E1B9D57F6](https://www.oklink.com/amoy/address/0xa862ccbd51acff3de6c6d4e46a62914e1b9d57f6) | [0x6D30A5bcA7b2c02Dd05720DCfF34A1603c4B4546](https://www.oklink.com/amoy/address/0x6d30a5bca7b2c02dd05720dcff34a1603c4b4546) |
-| Scanner Pools | [0x17c1a0Ba9251429F0638F575111f17Dd436801ec](https://www.oklink.com/amoy/address/0x17c1a0ba9251429f0638f575111f17dd436801ec) | [0x1bf8973A38ce1cD3d8cFE1E2F34cd721caf2f25E](https://www.oklink.com/amoy/address/0x1bf8973a38ce1cd3d8cfe1e2f34cd721caf2f25e) |
-| Dispatch | [0x988B794f73b78eae329DDFC1E07945C7FaE385f1](https://www.oklink.com/amoy/address/0x988b794f73b78eae329ddfc1e07945c7fae385f1) | [0xf1fa4ea73ab7468B85D6e6863218BCCBC31eB589](https://www.oklink.com/amoy/address/0xf1fa4ea73ab7468b85d6e6863218bccbc31eb589) |
-| Forwarder | -- | [0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed](https://www.oklink.com/amoy/address/0x6a434647a4a3de2f915bb49b6227444ebbe67aed) |
-| Forta Token (Bridged) | [0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201](https://www.oklink.com/amoy/address/0x67d4d0654d6ba56d41a7a6ec8f33430c3d778201) | [0xBeDC289BdE5BA0395CF84927CB3f82b1d2423283](https://www.oklink.com/amoy/address/0xbedc289bde5ba0395cf84927cb3f82b1d2423283) |
-| Staking | [0x34e023721dD940C7bDE591738C4FEa0aeEb24C61](https://www.oklink.com/amoy/address/0x34e023721dd940c7bde591738c4fea0aeeb24c61) | [0xA1663c4002d3F166C5D90750ae1B7266167a0Ba4](https://www.oklink.com/amoy/address/0xa1663c4002d3f166c5d90750ae1b7266167a0ba4) |
-| StakeSubjectGateway | [0x71076Bdb44Eb60E46e67AbC3d209FB5609dE9feC](https://www.oklink.com/amoy/address/0x71076bdb44eb60e46e67abc3d209fb5609de9fec) | [0x3D46F1CE3934b3c9D6790e74b89C65E44bf3b235](https://www.oklink.com/amoy/address/0x3d46f1ce3934b3c9d6790e74b89c65e44bf3b235) |
-| ScannerNodeVersion | [0x5a8e8d955f6Ea8fB2C9Cb0E5Ec960D761dD4281e](https://www.oklink.com/amoy/address/0x5a8e8d955f6ea8fb2c9cb0e5ec960d761dd4281e) | [0x5c5eA992BCA469eB3Bb69187831CE77e4280FD75](https://www.oklink.com/amoy/address/0x5c5ea992bca469eb3bb69187831ce77e4280fd75) |
-| SlashingController | [0x2D317315A2788fE4B64333CE93297413c669CF92](https://www.oklink.com/amoy/address/0x2d317315a2788fe4b64333ce93297413c669cf92) | [0x0cF1f4D2D675c48dE6726A3b9A78eE9d3A8eB4cf](https://www.oklink.com/amoy/address/0x0cf1f4d2d675c48de6726a3b9a78ee9d3a8eb4cf) |
-| StakeAllocator | [0x8a5EEfA2BAb332DD7666d885e9C9d2775221EB1c](https://www.oklink.com/amoy/address/0x8a5eefa2bab332dd7666d885e9c9d2775221eb1c) | [0xE1205BEf00dc86043A54FB1b44e99A46f6060Fd4](https://www.oklink.com/amoy/address/0xe1205bef00dc86043a54fb1b44e99a46f6060fd4) |
-| RewardsDistributor | [0x8E5Cc9C1003AF663f2609AC35F607a05464137b6](https://www.oklink.com/amoy/address/0x8e5cc9c1003af663f2609ac35f607a05464137b6) | [0xd5e35048eA5d248E698b153e45a84dcE3Ab2D458](https://www.oklink.com/amoy/address/0xd5e35048ea5d248e698b153e45a84dce3ab2d458) |
+| Access | [0x3063152eb36007dEbEA023Caa6725da166bB149c](https://sepolia.basescan.org/address/0x3063152eb36007dEbEA023Caa6725da166bB149c) | [0xbEC4ADBEFc7B9B2BC1277F77B3dFa9a20C72297d](https://sepolia.basescan.org/address/0xbec4adbefc7b9b2bc1277f77b3dfa9a20c72297d) |
+| Agents (Detection Bots) | [0x0C8B8DeC21Aa72179e8C4703a9B55d9Db061D423](https://sepolia.basescan.org/address/0x0C8B8DeC21Aa72179e8C4703a9B55d9Db061D423) | [0x94bb1C019F23da25e6186831c88372422050bAE8](https://sepolia.basescan.org/address/0x94bb1c019f23da25e6186831c88372422050bae8) |
+| Scanner Pools | [0x786e4446bB39F5480310FE98c48d2d5e6129A4cC](https://sepolia.basescan.org/address/0x786e4446bB39F5480310FE98c48d2d5e6129A4cC) | [0xd3BF0042aEDcB9d41cdaaC647249Bf1c7102f764](https://sepolia.basescan.org/address/0xd3bf0042aedcb9d41cdaac647249bf1c7102f764) |
+| Dispatch | [0x452C7044B9977de45ed7621ba0Bb77E312663157](https://sepolia.basescan.org/address/0x452C7044B9977de45ed7621ba0Bb77E312663157) | [0x74bc6EF72B84581aCAB56bd180c1C7A0CCaeECD3](https://sepolia.basescan.org/address/0x74bc6ef72b84581acab56bd180c1c7a0ccaeecd3) |
+| Forwarder | -- | [0x4cf374988bDb78Ba81D59f915612D7D74ef93380](https://sepolia.basescan.org/address/0x4cf374988bDb78Ba81D59f915612D7D74ef93380) |
+| Forta Token (Bridged) | [0x38C0F07ECA98b87757Fb76C56Be779b79C676062](https://sepolia.basescan.org/address/0x38C0F07ECA98b87757Fb76C56Be779b79C676062) | [0xfED0d6639653C1533BD55F7E196C6B0AA38647EF](https://sepolia.basescan.org/address/0xfed0d6639653c1533bd55f7e196c6b0aa38647ef) |
+| Staking | [0x1ed86971E4C4f3d13b6b8030D80C7D609de7139c](https://sepolia.basescan.org/address/0x1ed86971e4c4f3d13b6b8030d80c7d609de7139c) | [0xC6fE33F0BAd197fE65673Eff0D4e959e277fb401](https://sepolia.basescan.org/address/0xc6fe33f0bad197fe65673eff0d4e959e277fb401) |
+| StakeSubjectGateway | [0x7691a7505666fCe7d3512Fd2ec5d731c6CB6C399](https://sepolia.basescan.org/address/0x7691a7505666fce7d3512fd2ec5d731c6cb6c399) | [0x98fb54aF7f508E83b35d81C65158bC8449128BB9](https://sepolia.basescan.org/address/0x98fb54af7f508e83b35d81c65158bc8449128bb9) |
+| ScannerNodeVersion | [0x58376C1982Da91B54d508335D9c9B43F1AC9E54D](https://sepolia.basescan.org/address/0x58376C1982Da91B54d508335D9c9B43F1AC9E54D) | [0x860757a3e9b72deD32CF15ea64f5425533442Fd9](https://sepolia.basescan.org/address/0x860757a3e9b72ded32cf15ea64f5425533442fd9) |
+| SlashingController | [0x1Eca2C733AecaeB2c2E89F7fA526E00fB4A74eDe](https://sepolia.basescan.org/address/0x1Eca2C733AecaeB2c2E89F7fA526E00fB4A74eDe) | [0x18Ca964A5C1a5778fA3519ca6E2Dfc449A5b675b](https://sepolia.basescan.org/address/0x18ca964a5c1a5778fa3519ca6e2dfc449a5b675b) |
+| StakeAllocator | [0xc054a3DABfFEb0279E62669FB699a33D4cC5fC62](https://sepolia.basescan.org/address/0xc054a3DABfFEb0279E62669FB699a33D4cC5fC62) | [0xBe9209E216Bc22b375b87267f009d75286d56B4A](https://sepolia.basescan.org/address/0xbe9209e216bc22b375b87267f009d75286d56b4a) |
+| RewardsDistributor | [0x414E8777Df3e3Af4Ed3e4bA9A2266779F86558e4](https://sepolia.basescan.org/address/0x414E8777Df3e3Af4Ed3e4bA9A2266779F86558e4) | [0xFf5cc53879dB4924E0266c2Ec93C5b6204593684](https://sepolia.basescan.org/address/0xff5cc53879db4924e0266c2ec93c5b6204593684) |
 
 **Pause Functionality**
 
