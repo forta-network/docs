@@ -2,11 +2,13 @@
 
 ## Claiming rewards
 
-After the end of each epoch (**Monday 00:00:00 UTC**), reward calculation starts. The rewards are written to the rewards distributor contract as soon as the calculation is completed. When the rewards are available in the contract, pool owners and delegators can claim their portion of the rewards.
+After the end of each epoch (each epoch is one week from, **Monday 00:00:00 UTC** to **Sunday 23:59:59 UTC**), reward calculation starts. The rewards are written to the rewards distributor contract as soon as the calculation is completed. FORT rewards are distributed to node pools. Rewards earned by each pool are written to the reward distribution smart contract and distributed between owners and delegators based on the rewards formula.
 
 ### Forta App
 
-Visit "My Rewards" page from the top right menu on [Forta App](https://app.forta.network)! You can see on the rewards page if you have any available rewards and claim rewards from multiple epochs with a single action.
+Visit "My Rewards" page from the top right menu in the [Forta App](https://app.forta.network)! You can see on the rewards page if you have any available rewards and claim rewards from multiple epochs with a single action. Please note that this is not available to token vault users. 
+
+For token vault users, FORT rewards will automatically be re-delegated. Visit the “My Delegations” page from the top right menu in the Forta App to view your current deposited token holdings. 
 
 ### Polygonscan
 
