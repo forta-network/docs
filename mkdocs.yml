@@ -33,6 +33,7 @@ nav:
       - Index: bot-development-patterns.md
       - Best Practices: best-practices.md
       - Adding labels to findings: labels.md
+      - Using embeddings: embeddings.md
       - Error monitoring: error-monitoring.md
       - Increasing bot throughput: sharding.md
       - Long running tasks: long-running-tasks.md
