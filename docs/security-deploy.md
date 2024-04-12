@@ -97,31 +97,6 @@ To learn more, read the [smart contracts GitHub repo](https://github.com/forta-n
 | Rug Pull Detector Plan | [0x525d8d73f11a8586482f4f74c105d9d8b7cf73da](https://polygonscan.com/address/0x525d8d73f11a8586482f4f74c105d9d8b7cf73da) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
 | Spam Detector Plan | [0x6453379cbc14f7a277319b6c8b7577ae78524968](https://polygonscan.com/address/0x6453379cbc14f7a277319b6c8b7577ae78524968) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
 
-**Goerli Testnet**
-
-| Name | Proxy | Implementation |
-| -- | -- | -- |
-| Forta Token | [0x848F1fF1fa76Dc882Ca2F3521265ba3F27e42158](https://goerli.etherscan.io/address/0x848f1ff1fa76dc882ca2f3521265ba3f27e42158) | [0x86f09B8B8d0315Cca71a89953Aa3f7982a122eAd](https://goerli.etherscan.io/address/0x86f09B8B8d0315Cca71a89953Aa3f7982a122eAd) |
-
-**Mumbai Testnet**
-
-| Name | Proxy | Implementation |
-| ----- | ----- | -------------- |
-| Access | [0xbb12476ab9f27d3b441964B0aFC03D14a82e1D64](https://mumbai.polygonscan.com/address/0xbb12476ab9f27d3b441964B0aFC03D14a82e1D64) | [0x5Da21607E9e2bCA241E0EA46e27cea3bB8404505](https://mumbai.polygonscan.com/address/0x5Da21607E9e2bCA241E0EA46e27cea3bB8404505) |
-| Agents (Detection Bots) | [0x4519Eaeb9A5c1a9d870Fe35452E54AD04E6e8428](https://mumbai.polygonscan.com/address/0x4519Eaeb9A5c1a9d870Fe35452E54AD04E6e8428) | [0xD25Fd5B722606d08A5DdCD00e969513d06d98d89](https://mumbai.polygonscan.com/address/0xD25Fd5B722606d08A5DdCD00e969513d06d98d89) |
-| Scanners **(Deprecated)** | [0x569c785b4744e582c65a12827726fc03c8d08a4a](https://mumbai.polygonscan.com/address/0x569c785b4744e582c65a12827726fc03c8d08a4a) | [0x0FF4A7603EB4FB7A5c8D4cd25199046942fb968B](https://mumbai.polygonscan.com/address/0x0FF4A7603EB4FB7A5c8D4cd25199046942fb968B) |
-| Scanner Pools | [0x9BBEBf9CB94666464D8a5978363B4943D36A05E4](https://mumbai.polygonscan.com/address/0x9BBEBf9CB94666464D8a5978363B4943D36A05E4) | [0x72eaaBB3f5908D5Ac4Fce00285B5af120BA3EcAC](https://mumbai.polygonscan.com/address/0x72eaaBB3f5908D5Ac4Fce00285B5af120BA3EcAC) |
-| Dispatch | [0x4B71C61400F5da35518DE10dEcd21D1Aa4d7f283](https://mumbai.polygonscan.com/address/0x4B71C61400F5da35518DE10dEcd21D1Aa4d7f283) | [0x0ed550214869C3c3D5C05b97A8Bb9388125C4919](https://mumbai.polygonscan.com/address/0x0ed550214869C3c3D5C05b97A8Bb9388125C4919) |
-| Forwarder | -- | [0x4E29Cea6D64be860f5eAba110686DcB585f393D6](https://mumbai.polygonscan.com/address/0x4E29Cea6D64be860f5eAba110686DcB585f393D6) |
-| Forta Token (Bridged) | [0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3](https://mumbai.polygonscan.com/address/0x107Ac13567b1b5D84691f890A5bA07EdaE1a11c3) | [0x21b1b0f8e9182c92c2a81f43f305ce25994d9d57](https://mumbai.polygonscan.com/address/0x21b1b0f8e9182c92c2a81f43f305ce25994d9d57) |
-| Staking | [0x64d5192F03bD98dB1De2AA8B4abAC5419eaC32CE](https://mumbai.polygonscan.com/address/0x64d5192F03bD98dB1De2AA8B4abAC5419eaC32CE) | [0x8fd9d47e80f1d711aA97C4926e5E7CB3462455E8](https://mumbai.polygonscan.com/address/0x8fd9d47e80f1d711aA97C4926e5E7CB3462455E8) |
-| StakeSubjectGateway | [0x02304eC24ba2996a83F595D7cf80e5571a406EFA](https://mumbai.polygonscan.com/address/0x02304eC24ba2996a83F595D7cf80e5571a406EFA) | [0x40998890c1ad5B22CBe2deB9671E9df91b79dd16](https://mumbai.polygonscan.com/address/0x40998890c1ad5B22CBe2deB9671E9df91b79dd16) |
-| ScannerNodeVersion | [0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201](https://mumbai.polygonscan.com/address/0x67D4d0654D6Ba56d41a7A6Ec8f33430c3d778201) | [0xAA42d92242eA0a6195452C6B64B4Dc5D4282e0a5](https://mumbai.polygonscan.com/address/0xAA42d92242eA0a6195452C6B64B4Dc5D4282e0a5) |
-| SlashingController | [0x9bc159c97fA36282F0362C56586BA16BeB9F656a](https://mumbai.polygonscan.com/address/0x9bc159c97fA36282F0362C56586BA16BeB9F656a) | [0xC43E5C075e4081209F337f0431D8c488Cd61B522](https://mumbai.polygonscan.com/address/0xC43E5C075e4081209F337f0431D8c488Cd61B522) |
-| StakeAllocator | [0x698A6400dE3865fC9E8A6dB22302AAb3372Cebd9](https://mumbai.polygonscan.com/address/0x698A6400dE3865fC9E8A6dB22302AAb3372Cebd9) | [0x70FBC65e20DFe5ACDA5665f98A6CdA98800cC637](https://mumbai.polygonscan.com/address/0x70FBC65e20DFe5ACDA5665f98A6CdA98800cC637) |
-| RewardsDistributor | [0x404afc59Cacd74A28d0D5651460Cc950b42FAf08](https://mumbai.polygonscan.com/address/0x404afc59Cacd74A28d0D5651460Cc950b42FAf08) | [0x09803F257AB3D8a390837640ED9D9F4Eb22c1453](https://mumbai.polygonscan.com/address/0x09803F257AB3D8a390837640ED9D9F4Eb22c1453) |
-| ScannerToScannerPoolMigration | [0xd6F0cDcc0200B5582784973873801A4Ec8712423](https://mumbai.polygonscan.com/address/0xd6F0cDcc0200B5582784973873801A4Ec8712423) | [0x84D8F29994983768d698C71f6816F61B6a42DE49](https://mumbai.polygonscan.com/address/0x84D8F29994983768d698C71f6816F61B6a42DE49) |
-
 **Sepolia Testnet**
 
 | Name | Proxy | Implementation |
