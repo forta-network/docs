@@ -96,6 +96,7 @@ nav:
       - Introduction: delegated-staking-introduction.md
       - Rewards: delegated-staking-rewards.md
     - FORT Holder Staking Guide: fort-holder-staking-guide.md
+    - FORT Vault Deposit Guide: Deposit_Fort_Vault.md
     - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>Network Overview</strong>: 
     - Network Overview: network-overview.md 
