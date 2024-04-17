@@ -26,5 +26,5 @@ You may need to bridge your FORT tokens from Ethereum to Polygon in order to sta
 
 
 
-    !!! info "Forta Metamask Snap"
-Navigate web3 with confidence by [adding the Forta Network Metamask Snap to your wallet](https://snaps.metamask.io/snap/npm/forta-network/metamask-snap/). Learn more about how to protect yourself from scam with Forta [here](https://docs.forta.network/en/latest/Forta-for-Metamask/).
+!!! info "Forta Metamask Snap"
+Navigate web3 with confidence by [adding the Forta Network Metamask Snap to your wallet](https://snaps.metamask.io/snap/npm/forta-network/metamask-snap/). Learn more about how to protect yourself from scams with Forta [here](https://docs.forta.network/en/latest/Forta-for-Metamask/).
