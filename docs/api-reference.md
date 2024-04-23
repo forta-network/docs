@@ -2,7 +2,7 @@
 
 Forta currently supports GraphQL API access to intelligence emitted by detection bots. Each bot’s documentation will describe the types of intelligence it generates, and will often have details about the detection methodology used. For Premium Feeds in particular, bot documentation should also feature example queries you can use to get up and running quickly. The API endpoint is [https://api.forta.network/graphql](https://api.forta.network/graphql) and an API key is required. 
 
-Note: Your query must also include the specific bot ID(s) you want intelligence from. 
+Note: Your query must also include the specific bot ID(s) you want intelligence from. When querying for `alerts` you  must specify `bots` when querying for `labels` you must specify `sourceid`. 
 
 
 ### **Before you can access the API, you must:**
