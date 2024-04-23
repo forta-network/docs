@@ -1,6 +1,6 @@
 # Deposit Your FORT in the Token Vault via Forta App
 
-The FORT Token Vault is a simple and streamlined way to contribute your FORT tokens to securing the Forta Network. The vault allows you to simply deposit FORT tokens into the vault and rest is taken care of for you. Start earning rewards for your contribution without having to choose and decide between different individual pools. 
+The FORT Vault is a simple and streamlined way to contribute your FORT tokens to securing the Forta Network. The vault allows you to simply deposit FORT tokens into the vault and rest is taken care of for you. Start earning rewards for your contribution without having to choose and decide between different individual pools. 
 
 1. Make sure your FORT is on the Polygon network. If you have your FORT on Ethereum Mainnet, follow [these steps](https://docs.forta.network/en/latest/bridging-fort/) to bridge it to Polygon. 
 
@@ -28,6 +28,6 @@ After your approval transaction is confirmed, click the **Deposit** button and a
 
 ## Withdrawing from the FORT Token Vault and Claiming Rewards
 
-Initiating a withdrawal request from the FORT Token Vault will result in a percentage amount of FORT returned to you at the time of withdrawal based on the availability of liquidity in the vault. To claim the remaining FORT, you must wait the **10 day cooling off period** to initiate a withdrawal transaction for the remainder of your FORT tokens. 
+Initiating a withdrawal request from the FORT Vault will result in a percentage amount of FORT returned to you at the time of withdrawal based on the availability of liquidity in the vault. To claim the remaining FORT, you must wait the **10 day cooling off period** to initiate a withdrawal transaction for the remainder of your FORT tokens. 
 
 Rewards are automatically included in your total FORT deposit amount and will continue to grow.  
