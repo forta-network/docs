@@ -1,0 +1,5945 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.forta.network/0.2/sdk/">
+      
+      
+        <link rel="prev" href="../useful-libraries/">
+      
+      
+        <link rel="next" href="../python/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../forta-logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18+insiders-4.53.6">
+    
+    
+      
+        <title>Javascript/Typescript SDK - Forta Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d5b5f0fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-WNVX2Q6");</script>
+<!-- End Google Tag Manager -->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+<meta property="og:image" content="https://docs.forta.network/en/latest/social-preview2.png" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:site" content="@FortaNetwork" />
+<meta property="twitter:title" content="Forta Docs" />
+<meta property="twitter:description" content="Welcome to the Forta docs" />
+<meta property="twitter:image" content="https://docs.forta.network/en/latest/social-preview2.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#javascripttypescript-sdk" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're not viewing the latest version.
+  <a href="../.."> 
+    <strong>Click here to go to latest.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to configuration -->
+
+
+
+<!-- Header -->
+<header class="md-header" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="header.title"
+  >
+
+    <!-- Link to home -->
+    <a
+      href=".."
+      title="Forta Docs"
+      class="md-header__button md-logo"
+      aria-label="Forta Docs"
+      data-md-component="logo"
+    >
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            <a href="..">Forta Docs</a>
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            <a href="..">
+            
+              Javascript/Typescript SDK
+            
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette -->
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    <label class="md-header__button md-icon" for="__search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+
+    <!-- Search interface -->
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Repository information -->
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNVX2Q6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Forta Docs" class="md-nav__button md-logo" aria-label="Forta Docs" data-md-component="logo">
+      
+  <img src="../forta-logo.png" alt="logo">
+
+    </a>
+    Forta Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    <strong>Use Forta</strong>
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    <strong>Use Forta</strong>
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-subscription-tiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Subscription Tiers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forta-api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    GraphQL Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subscribing-to-bot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscribing to a bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-tut-how-pay/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial - How to pay for Forta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Forta-for-Metamask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta for Metamask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    <strong>Build on Forta</strong>
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    <strong>Build on Forta</strong>
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro-to-bot-dev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Bot Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Develop a Bot with the SDK
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Develop a Bot with the SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    1) Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    2) Testing your bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    3) Deploying your bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subscribing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    4) Subscribing to alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintaining/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    5) Maintaining your bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Useful libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Javascript/Typescript SDK
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Javascript/Typescript SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handlers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blockevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BlockEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transactionevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TransactionEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TransactionEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filterlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        filterLog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filterfunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        filterFunction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alertevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AlertEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hasaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hasAddress
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getjsonrpcurl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getJsonRpcUrl
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getethersprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getEthersProvider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettransactionreceipt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getTransactionReceipt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sendalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sendAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getlabels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getLabels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetchjwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fetchJwt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifyjwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        verifyJwt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decodejwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        decodeJwt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createblockevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        createBlockEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createtransactionevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        createTransactionEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createalertevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        createAlertEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    forta.config.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Video tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardhat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrating with Hardhat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wizard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Develop a Bot with Bot Wizard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/forta-network/forta-bot-examples" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Development Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bot Development Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-development-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../labels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding labels to findings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Error monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Increasing bot throughput
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../long-running-tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Long running tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitive-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Protecting sensitive data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../private-alerts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Private alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jwt-auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    JWT authentication for bots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-bots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    External bots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying-ml-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying machine learning models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-series-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Time series analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handle-alert/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Consuming bot alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-transfer-ownership/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Transfer Bot Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tx-simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querying-chains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Querying other chains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-licensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_19" id="__nav_2_5_19_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Development Contests
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bot Development Contests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest1-compound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Compound Contest (10/20/2021)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest2-aave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Aave Contest (11/3/2021)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest3-oz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenZeppelin Contest (11/18/2021)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest4-forta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Contest (12/17/2021)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest5-solace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Solace Contest (3/1/2022)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest6-forta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Contest 2 (4/27/2022)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest7-forta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Contest 3 (6/17/2022)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest8-forta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Contest 4 (8/31/2022)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest9-forta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Contest 5 (10/11/2022)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contest10-forta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Contest 6 (11/8/2022)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning on Forta
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning on Forta
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-with-forta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Machine Learning?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-data-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets and Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-tut-how-earn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial | How to earn developing on Forta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    <strong>Network Fees and Developer Rewards</strong>
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    <strong>Network Fees and Developer Rewards</strong>
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-why/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Fees?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-tut-how-pay/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial | How to Pay for Forta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-tut-how-earn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial | How to earn developing on Forta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs about fees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    <strong>Run a Node</strong>
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    <strong>Run a Node</strong>
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/machine-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/install-forta-node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Forta node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/configure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/register/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/run/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/troubleshoot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/upgrade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-node/miscellaneous/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-local-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Local mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring SLA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monitoring SLA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    SLA Score Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sla-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    SLA API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-pools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage pools and stake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alchemy-partnership/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Scan with Alchemy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan-with-chainstack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Scan with Chainstack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bware-partnership/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Scan with Bware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quicknode-partnership/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Scan with Quicknode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    <strong>Staking on Forta</strong>
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    <strong>Staking on Forta</strong>
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Delegated staking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Delegated staking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delegated-staking-introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delegated-staking-rewards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Rewards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fort-holder-staking-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    FORT Holder Staking Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deposit-fort-vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    FORT Vault Deposit Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanner-direct-withdrawal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Direct withdrawal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    <strong>Network Overview</strong>
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    <strong>Network Overview</strong>
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fort-token/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Tokenomics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-develop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-deploy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment & Smart Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-maintain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7" id="__nav_6_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Smart Contracts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Smart Contracts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart-contracts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/access/AccessManager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/agents/AgentRegistry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/dispatch/Dispatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/metatx/Forwarder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta-transaction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/scanner_pools/ScannerPoolRegistry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Scanner Pool Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/scanners/ScannerRegistry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Scanner Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/scanners/ScannerToNodeRunnerMigration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Scanner To Scanner Pool Migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7_9" id="__nav_6_5_7_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Staking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_5_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Staking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7_9_1" id="__nav_6_5_7_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Allocation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_6_5_7_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Allocation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/StakeAllocator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Stake Allocator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7_9_2" id="__nav_6_5_7_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Rewards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_6_5_7_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rewards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/Accumulators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Accumulators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/RewardsDistributor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Rewards Distributor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7_9_3" id="__nav_6_5_7_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Slashing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_6_5_7_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Slashing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/SlashingController/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Slashing Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/SlashReasons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Slash Reasons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7_9_4" id="__nav_6_5_7_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Stake Subjects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_6_5_7_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stake Subjects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/DelegatedStakeSubject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Delegated Stake Subject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/DirectStakeSubject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Direct Stake Subject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/StakeSubjectGateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Stake Subject Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/FortaStaking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Staking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/FortaStakingUtils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forta Staking Utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/staking/SubjectTypeValidator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Subject Type Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7_10" id="__nav_6_5_7_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Utils
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_5_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Utils
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/AccessManaged/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Managed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/ForwardedContext/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Forwarded Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/ReentrancyGuardHandler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Reentrancy Guard Handler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/Routed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Routed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/utils/StateMachines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    State Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/BaseComponentUpgradeable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Component Upgradeable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/components/Roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_8" id="__nav_6_5_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Stake Slashing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stake Slashing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slashing-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Slashing Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slashing-creating-proposal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating a Slash Proposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handlers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blockevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BlockEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transactionevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TransactionEvent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TransactionEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filterlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        filterLog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filterfunction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        filterFunction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alertevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AlertEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hasaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hasAddress
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getjsonrpcurl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getJsonRpcUrl
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getethersprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getEthersProvider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettransactionreceipt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getTransactionReceipt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sendalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sendAlerts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getlabels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getLabels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetchjwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fetchJwt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifyjwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        verifyJwt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decodejwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        decodeJwt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createblockevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        createBlockEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createtransactionevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        createTransactionEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createalertevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        createAlertEvent
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="javascripttypescript-sdk">Javascript/Typescript SDK</h1>
+<p>The Forta bot Javascript SDK comes with a set of classes and type definitions to provide a consistent interface for developers to write their bots. There are also some utility functions available for your convenience to do common operations like searching for an event in the transaction logs. Check out the Javascript/Typescript bots in our <a href="https://github.com/forta-network/forta-bot-examples">examples repo</a> to learn more.</p>
+<h2 id="handlers">Handlers</h2>
+<p>The most relevant type definitions for bot developers are the handler types: <code>Initialize</code>, <code>HandleBlock</code>, <code>HandleTransaction</code> and <code>HandleAlert</code>. They are function types with the following signatures:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">type</span><span class="w"> </span><span class="nx">Initialize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">InitializeResponse</span><span class="o">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">type</span><span class="w"> </span><span class="nx">HandleTransaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">txEvent</span><span class="o">:</span><span class="w"> </span><span class="nx">TransactionEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Finding</span><span class="p">[]</span><span class="o">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">type</span><span class="w"> </span><span class="nx">HandleBlock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">blockEvent</span><span class="o">:</span><span class="w"> </span><span class="nx">BlockEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Finding</span><span class="p">[]</span><span class="o">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">type</span><span class="w"> </span><span class="nx">HandleAlert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">alertEvent</span><span class="o">:</span><span class="w"> </span><span class="nx">AlertEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Finding</span><span class="p">[]</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Your <code>agent.js</code>/<code>agent.ts</code> file must have a default export object with at least one of <code>handleBlock</code>, <code>handleTransaction</code> or <code>handleAlert</code> properties that provide the handler functions. You can export one or all of these depending on your use case, but at least one must be provided. The return type of these functions is <code>Promise&lt;Finding[]&gt;</code>, meaning they are asynchronous functions that return an array of zero or more <code>Finding</code> objects.</p>
+<p>You can also optionally export an <code>initialize</code> handler that will be executed on bot startup. This is useful for fetching some data from the network or parsing some file before your bot begins. If you are using the <code>handleAlert</code> handler, then the <code>initialize</code> handler is <strong>required</strong> to specify which bot's alerts you want to subscribe to. The returned object in this case would be of the type <code>InitializeResponse</code> (see the pattern for <a href="../handle-alert/">consuming bot alerts</a> for more information). If you don't want to subscribe to any bot alerts, don't return anything i.e. <code>void</code>.</p>
+<h2 id="blockevent">BlockEvent</h2>
+<p>When a block is mined and detected by a Forta scan node, it will generate a <code>BlockEvent</code> containing information such as the block hash and block number. It contains the following fields:</p>
+<ul>
+<li><code>type</code> - specifies whether this was a block reorg or a regular block</li>
+<li><code>network</code> - specifies which network the block was mined on (e.g. mainnet, ropsten, rinkeby, etc)</li>
+<li><code>blockHash</code> - hash of the block</li>
+<li><code>blockNumber</code> - number of the block</li>
+<li><code>block</code> - data object containing the following fields:<ul>
+<li><code>difficulty</code></li>
+<li><code>extraData</code></li>
+<li><code>gasLimit</code></li>
+<li><code>gasUsed</code></li>
+<li><code>hash</code></li>
+<li><code>logsBloom</code></li>
+<li><code>miner</code></li>
+<li><code>mixHash</code></li>
+<li><code>nonce</code></li>
+<li><code>number</code></li>
+<li><code>parentHash</code></li>
+<li><code>receiptsRoot</code></li>
+<li><code>sha3Uncles</code></li>
+<li><code>size</code></li>
+<li><code>stateRoot</code></li>
+<li><code>timestamp</code></li>
+<li><code>totalDifficulty</code></li>
+<li><code>transactions</code></li>
+<li><code>transactionsRoot</code></li>
+<li><code>uncles</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="transactionevent">TransactionEvent</h2>
+<p>When a transaction is mined and detected by a Forta scan node, it will generate a <code>TransactionEvent</code> containing various information about the transaction. It contains the following fields:</p>
+<ul>
+<li><code>type</code> - specifies whether this was from a block reorg or a regular block</li>
+<li><code>network</code> - specifies which network the transaction was mined on (e.g. mainnet, ropsten, rinkeby, etc)</li>
+<li><code>hash</code> - alias for <code>transaction.hash</code></li>
+<li><code>from</code> - alias for <code>transaction.from</code></li>
+<li><code>to</code> - alias for <code>transaction.to</code></li>
+<li><code>gasPrice</code> - alias for <code>transaction.gasPrice</code></li>
+<li><code>timestamp</code> - alias for <code>block.timestamp</code></li>
+<li><code>blockNumber</code> - alias for <code>block.number</code></li>
+<li><code>blockHash</code> - alias for <code>block.hash</code></li>
+<li><code>addresses</code> - map of addresses involved in the transaction (generated from transaction to/from address, any event log address and trace data address if available)</li>
+<li><code>block</code> - data object containing the following fields:<ul>
+<li><code>hash</code></li>
+<li><code>number</code></li>
+<li><code>timestamp</code></li>
+</ul>
+</li>
+<li><code>transaction</code> - data object containing the following fields:<ul>
+<li><code>hash</code></li>
+<li><code>from</code></li>
+<li><code>to</code></li>
+<li><code>nonce</code></li>
+<li><code>gas</code></li>
+<li><code>gasPrice</code></li>
+<li><code>value</code></li>
+<li><code>data</code></li>
+<li><code>r</code></li>
+<li><code>s</code></li>
+<li><code>v</code></li>
+</ul>
+</li>
+<li><code>logs</code> - list of log objects with the following fields:<ul>
+<li><code>address</code></li>
+<li><code>topics</code></li>
+<li><code>data</code></li>
+<li><code>logIndex</code></li>
+<li><code>blockNumber</code></li>
+<li><code>blockHash</code></li>
+<li><code>transactionIndex</code></li>
+<li><code>transactionHash</code></li>
+<li><code>removed</code></li>
+</ul>
+</li>
+<li><code>traces</code> - only with tracing enabled; list of trace objects with the following fields:<ul>
+<li><code>blockHash</code></li>
+<li><code>blockNumber</code></li>
+<li><code>subtraces</code></li>
+<li><code>traceAddress</code></li>
+<li><code>transactionHash</code></li>
+<li><code>transactionPosition</code></li>
+<li><code>type</code></li>
+<li><code>error</code></li>
+<li><code>action</code> - object with the following fields:<ul>
+<li><code>callType</code></li>
+<li><code>to</code></li>
+<li><code>from</code></li>
+<li><code>input</code></li>
+<li><code>value</code></li>
+<li><code>init</code></li>
+<li><code>address</code></li>
+<li><code>balance</code></li>
+<li><code>refundAddress</code></li>
+</ul>
+</li>
+<li><code>result</code> - object with the following fields:<ul>
+<li><code>gasUsed</code></li>
+<li><code>address</code></li>
+<li><code>code</code></li>
+<li><code>output</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="filterlog">filterLog</h3>
+<p><code>filterLog</code> is a convenience function on <code>TransactionEvent</code> to filter <strong>and decode</strong> transaction logs. For example, you can use it to get all of the Transfer logs in a transaction from a particular ERC-20 token:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">erc20TokenAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0x123abc&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">transferEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;event Transfer(address indexed from, address indexed to, uint256 value)&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">transfers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">transactionEvent</span><span class="p">.</span><span class="nx">filterLog</span><span class="p">(</span><span class="nx">transferEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">erc20TokenAddress</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`found </span><span class="si">${</span><span class="nx">transfers</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> transfer events`</span><span class="p">);</span>
+</code></pre></div>
+<p>The underlying library used for decoding event logs is <a href="https://docs.ethers.io/v5/">ethers.js</a>. The Javascript SDK uses the ethers.js <a href="https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing"><code>parseLog</code></a> method and returns an array of <a href="https://docs.ethers.io/v5/api/utils/abi/interface/#LogDescription"><code>LogDescription</code></a> objects (which we modified to also include the originating <code>address</code> of the log). To better understand usage, see the <a href="https://github.com/forta-network/forta-bot-examples/tree/master/filter-event-and-function-js">Javascript filtering example</a> bot.</p>
+<h3 id="filterfunction">filterFunction</h3>
+<p><code>filterFunction</code> is a convenience function on <code>TransactionEvent</code> to filter <strong>and decode</strong> function calls in the transaction or traces. For example, you can use it to get all of the transferFrom function calls on a particular ERC-20 token:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">erc20TokenAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0x123abc&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">transferFromFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;function transferFrom(address from, address to, uint value)&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">transfers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">transactionEvent</span><span class="p">.</span><span class="nx">filterFunction</span><span class="p">(</span><span class="nx">transferFromFunction</span><span class="p">,</span><span class="w"> </span><span class="nx">erc20TokenAddress</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`found </span><span class="si">${</span><span class="nx">transfers</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> function calls`</span><span class="p">);</span>
+</code></pre></div>
+<p>The underlying library used for decoding function calls is <a href="https://docs.ethers.io/v5/">ethers.js</a>. The Javascript SDK uses the ethers.js <a href="https://docs.ethers.io/v5/api/utils/abi/interface/#Interface--parsing"><code>parseTransaction</code></a> method and returns an array of <a href="https://docs.ethers.io/v5/api/utils/abi/interface/#TransactionDescription"><code>TransactionDescription</code></a> objects. To better understand usage, see the <a href="https://github.com/forta-network/forta-bot-examples/tree/master/filter-event-and-function-js">Javascript filtering example</a> bot.</p>
+<h2 id="alertevent">AlertEvent</h2>
+<p>When an alert is fired from a Forta bot and is detected by the network, any subscribing bots will receive an <code>AlertEvent</code> containing various information about the alert (see the pattern for <a href="../handle-alert/">consuming bot alerts</a> for more information). It contains the following fields:</p>
+<ul>
+<li><code>alert</code> - data object containing an <a href="./#alert">Alert</a></li>
+<li><code>alertId</code> - alias for <code>alert.alertId</code></li>
+<li><code>name</code> - alias for <code>alert.name</code></li>
+<li><code>hash</code> - alias for <code>alert.hash</code></li>
+<li><code>botId</code> - alias for <code>alert.source.bot.id</code></li>
+<li><code>transactionHash</code> - alias for <code>alert.source.transactionHash</code></li>
+<li><code>blockHash</code> - alias for <code>alert.source.block.hash</code></li>
+<li><code>blockNumber</code> - alias for <code>alert.source.block.number</code></li>
+<li><code>chainId</code> - alias for <code>alert.chainId</code></li>
+<li><code>hasAddress</code> - alias function for <a href="./#hasaddress"><code>alert.hasAddress</code></a></li>
+</ul>
+<h2 id="finding">Finding</h2>
+<p>If a bot wants to flag a transaction/block/alert because it meets some condition (e.g. flash loan attack), the handler function would return a <code>Finding</code> object. This object would detail the results of the finding and provide metadata such as the severity of the finding. A <code>Finding</code> object can only be created using the <code>Finding.fromObject</code> method which accepts the following properties:</p>
+<ul>
+<li><code>name</code> - <strong>required</strong>; human-readable name of finding e.g. "High Gas"</li>
+<li><code>description</code> - <strong>required</strong>; brief description e.g. "High gas used: 1,000,000"</li>
+<li><code>alertId</code> - <strong>required</strong>; unique string to identify this class of finding, primarily used to group similar findings for the end user</li>
+<li><code>protocol</code> - <strong>required</strong>; name of the protocol being reported on e.g. "aave", defaults to "ethereum" if left blank</li>
+<li><code>type</code> - <strong>required</strong>; indicates the type of finding:<ul>
+<li>Exploit</li>
+<li>Suspicious</li>
+<li>Degraded</li>
+<li>Info</li>
+</ul>
+</li>
+<li><code>severity</code> - <strong>required</strong>; indicates the impact level of finding:<ul>
+<li>Critical - exploitable vulnerabilities, massive impact on users/funds</li>
+<li>High - exploitable under more specific conditions, significant impact on users/funds</li>
+<li>Medium - notable unexpected behaviours, moderate to low impact on users/funds</li>
+<li>Low - minor oversights, negligible impact on users/funds</li>
+<li>Info - miscellaneous behaviours worth describing</li>
+</ul>
+</li>
+<li><code>metadata</code> - optional; key-value map (both keys and values as strings) for providing extra information</li>
+<li><code>labels</code> - optional; array of <code>Label</code> objects to attach to this finding</li>
+</ul>
+<h2 id="alert">Alert</h2>
+<p>When an <code>Alert</code> is fired by a Forta bot, it can be consumed using an <a href="./#alertevent">AlertEvent</a> or manually queried using the <a href="./#getalerts"><code>getAlerts</code></a> method. <code>Alert</code> objects have the following properties:</p>
+<ul>
+<li><code>alertId</code> -  string to identify this class of finding</li>
+<li><code>chainId</code> - chain ID where this alert was fired</li>
+<li><code>addresses</code> -  list of addresses involved in the alert (currently truncated at 50 addresses)</li>
+<li><code>labels</code> - list of <a href="./#label">Labels</a> associated to the alert</li>
+<li><code>contracts</code> -  list of contracts related to the alert</li>
+<li><code>createdAt</code> -  timestamp when the alert was published</li>
+<li><code>description</code> - text description of the alert</li>
+<li><code>name</code> - alert name</li>
+<li><code>protocol</code> - name of the protocol being reported on</li>
+<li><code>scanNodeCount</code> - number of scanners that found the alert</li>
+<li><code>source</code> - source where the alert was detected<ul>
+<li><code>transactionHash</code> - transaction where the alert was detected</li>
+<li><code>block</code> - block where the alert was detected<ul>
+<li><code>timestamp</code></li>
+<li><code>chainId</code></li>
+<li><code>hash</code></li>
+<li><code>number</code></li>
+</ul>
+</li>
+<li><code>bot</code> - bot that triggered the alert<ul>
+<li><code>id</code></li>
+<li><code>reference</code></li>
+<li><code>image</code></li>
+</ul>
+</li>
+<li><code>sourceAlert</code> - alert that triggered this alert<ul>
+<li><code>hash</code></li>
+<li><code>botId</code></li>
+<li><code>timestamp</code></li>
+<li><code>chainId</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>projects</code> - list of Web3 projects related to the alert<ul>
+<li><code>contacts</code> - list of contact info</li>
+<li><code>id</code> - project identifier</li>
+<li><code>name</code> - user-friendly name of the project</li>
+<li><code>token</code></li>
+<li><code>social</code></li>
+<li><code>website</code> - main website of the project</li>
+</ul>
+</li>
+<li><code>findingType</code> -  indicates the type of finding:<ul>
+<li>Exploit</li>
+<li>Suspicious</li>
+<li>Degraded</li>
+<li>Info</li>
+<li>Unknown</li>
+</ul>
+</li>
+<li><code>severity</code> - indicates the impact level of finding:<ul>
+<li>Critical - exploitable vulnerabilities, massive impact on users/funds</li>
+<li>High - exploitable under more specific conditions, significant impact on users/funds</li>
+<li>Medium - notable unexpected behaviours, moderate to low impact on users/funds</li>
+<li>Low - minor oversights, negligible impact on users/funds</li>
+<li>Info - miscellaneous behaviours worth describing</li>
+</ul>
+</li>
+<li><code>metadata</code> - key-value map (both keys and values as strings) for providing extra information</li>
+</ul>
+<h3 id="hasaddress">hasAddress</h3>
+<p><code>hasAddress</code> is a convenience function on <code>Alert</code> meant for checking the existence of an address involved in the alert. The <code>addresses</code> array is truncated for space efficiency, so this method uses a bloom filter to check for existence. It accepts a single string parameter: the address to check</p>
+<h2 id="label">Label</h2>
+<p>Labels can be used to add more contextual data to a <code>Finding</code> e.g. "is this address an attacker?". The <code>Label</code> object has the following properties:</p>
+<ul>
+<li><code>id</code> - string identifier of this label</li>
+<li><code>entityType</code> - enum indicating the type of entity:<ul>
+<li><code>Address</code></li>
+<li><code>Transaction</code></li>
+<li><code>Block</code></li>
+<li><code>Url</code></li>
+<li><code>Unknown</code></li>
+</ul>
+</li>
+<li><code>entity</code> - string identifier of the entity being labelled e.g. transaction hash</li>
+<li><code>label</code> - string label to attach to the entity e.g. "exploit"</li>
+<li><code>confidence</code> - confidence level of label between 0 and 1</li>
+<li><code>metadata</code> - key-value map (both keys and values as strings) for providing extra information</li>
+<li><code>createdAt</code> - string containing the timestamp of label creation</li>
+<li><code>source</code> - object with information about where this label came from<ul>
+<li><code>alertHash</code></li>
+<li><code>alertId</code></li>
+<li><code>id</code></li>
+<li><code>chainId</code></li>
+<li><code>bot</code><ul>
+<li><code>id</code></li>
+<li><code>image</code></li>
+<li><code>imageHash</code></li>
+<li><code>manifest</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="getjsonrpcurl">getJsonRpcUrl</h2>
+<p>A convenience function called <code>getJsonRpcUrl</code> can be used to load a JSON-RPC URL for your bot. When running in production, this function will return a URL injected by the scan node that is running the bot. When running locally in development, this function will return the <code>jsonRpcUrl</code> property specified in your forta.config.json file (or <code>https://cloudflare-eth.com/</code> by default).</p>
+<h2 id="getethersprovider">getEthersProvider</h2>
+<p><code>getEthersProvider</code> is a convenience function that returns an <a href="https://docs.ethers.io/v5/api/providers/">ethers.js Provider</a> which can be used to interact with the blockchain. The value from <code>getJsonRpcUrl</code> will be used as the JSON-RPC endpoint to connect to.</p>
+<h2 id="gettransactionreceipt">getTransactionReceipt</h2>
+<p>A convenience function called <code>getTransactionReceipt</code> can be used to fetch the entire receipt of a transaction and is returned in a format matching the SDK <code>Receipt</code> interface.</p>
+<h2 id="getalerts">getAlerts</h2>
+<p>The <code>getAlerts</code> method can be used to fetch alerts based on input <code>AlertQueryOptions</code>. When developing locally, <strong>you will need to set the <a href="../api-keys/"><code>fortaApiKey</code></a> property</strong> in your forta.config.json (and also have a paid plan) for this method to work. The <code>getAlerts</code> method accepts the following input filter properties:</p>
+<ul>
+<li><code>botIds</code> <strong>required</strong>; list of bot ids to fetch alerts for</li>
+<li><code>addresses</code> -  indicate a list of addresses, alerts returned will have those addresses involved.</li>
+<li><code>alertId</code> - filter alerts by alert-id</li>
+<li><code>chainId</code> - EIP155 identifier of the chain alerts returned will only be from the specific chain Id Default is 1 = Ethereum Mainnet</li>
+<li><code>createdSince</code> - indicate number of milliseconds, alerts returned will be alerts created since the number of milliseconds indicated ago (note: if not specified, the query will only search the past 24 hours)</li>
+<li><code>first</code> - indicates max number of results.</li>
+<li><code>startingCursor</code> - query results after the specified cursor</li>
+<li><code>projectId</code> - indicates a project id, alerts returned will only be from that project.</li>
+<li><code>scanNodeConfirmations</code> - filter alerts by number of scan nodes confirming the alert</li>
+<li><code>severities</code> - filter alerts by severity levels</li>
+<li><code>transactionHash</code> - indicates a transaction hash, alerts returned will only be from that transaction</li>
+<li><code>blockSortDirection</code> - indicates sorting order by block number, 'desc' or 'asc'. The default is 'desc'.</li>
+<li><code>blockDateRange</code> - alerts returned will be between the specified start and end block timestamp dates when the threats were detected</li>
+<li><code>blockNumberRange</code> - alerts for the block number range will be returned</li>
+</ul>
+<p>The returned alerts are formatted to match the SDK <code>AlertsResponse</code> interface which looks like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">alerts</span><span class="o">:</span><span class="w"> </span><span class="nx">Alert</span><span class="p">[],</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">pageInfo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="nx">hasNextPage</span><span class="o">:</span><span class="w"> </span><span class="kr">boolean</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nx">endCursor</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">            </span><span class="nx">alertId</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="nx">blockNumber</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>Here is an example usage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getAlerts</span><span class="p">,</span><span class="w"> </span><span class="nx">AlertsResponse</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;forta-agent&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">hasNext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">startingCursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="nx">hasNext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="o">:</span><span class="w"> </span><span class="nx">AlertsResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getAlerts</span><span class="p">({</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nx">botIds</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;0xddb7c17e370ecd5f99cadcddb39cfa51264e989c5133c490046d63a299dd68f0&quot;</span><span class="p">],</span><span class="w"> </span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="nx">transactionHash</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0xc65af85a3fab1e538f6f521cd0a6e6d246c2f76c05aa8fba40817b59de7401b6&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nx">startingCursor</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p">})</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nx">hasNext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">pageInfo</span><span class="p">.</span><span class="nx">hasNextPage</span><span class="p">;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nx">startingCursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">pageInfo</span><span class="p">.</span><span class="nx">endCursor</span><span class="p">;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nx">results</span><span class="p">.</span><span class="nx">alerts</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="si">}</span><span class="sb"> \n`</span><span class="p">))</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="nx">main</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="sendalerts">sendAlerts</h2>
+<p>The <code>sendAlerts</code> method enables submitting alerts via the GraphQL API. See the <a href="../external-bots/">external bots</a> page for more information.</p>
+<h2 id="getlabels">getLabels</h2>
+<p>The <code>getLabels</code> method can be used to fetch labels based on input <code>LabelQueryOptions</code>. When developing locally, <strong>you will need to set the <a href="../api-keys/"><code>fortaApiKey</code></a> property</strong> in your forta.config.json (and also have a paid plan) for this method to work. The <code>getLabels</code> method accepts the following input filter properties (at least one of <code>entities</code>, <code>labels</code> or <code>sourceIds</code> is <strong>required</strong>):</p>
+<ul>
+<li><code>entities</code> - string array to filter by label entities (e.g. wallet addresses, block/tx hashes)</li>
+<li><code>labels</code> - string array to filter the label value (e.g. "attacker")</li>
+<li><code>sourceIds</code> - string array to filter the label sources (e.g. bot IDs)</li>
+<li><code>entityType</code> - string to filter labels by <code>EntityType</code> (see <a href="#label">label</a> section for possible types)</li>
+<li><code>state</code> - boolean, set to <code>true</code> if only the current state is desired</li>
+<li><code>createdSince</code> - integer timestamp in milliseconds, labels returns will be created after this timestamp</li>
+<li><code>createdBefore</code> - integer timestamp in milliseconds, labels returned will be created before this timestamp</li>
+<li><code>first</code> - integer indicating max number of results</li>
+<li><code>startingCursor</code> - query results after the specified cursor object</li>
+</ul>
+<p>The returned labels are formatted to match the SDK <code>LabelsResponse</code> interface which looks like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">labels</span><span class="o">:</span><span class="w"> </span><span class="nx">Label</span><span class="p">[];</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">pageInfo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="nx">hasNextPage</span><span class="o">:</span><span class="w"> </span><span class="kr">boolean</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="nx">endCursor</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">            </span><span class="nx">pageToken</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="p">};</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</code></pre></div>
+<p>Here is an example usage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getLabels</span><span class="p">,</span><span class="w"> </span><span class="nx">LabelsResponse</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;forta-agent&quot;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">hasNext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">startingCursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="nx">hasNext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="o">:</span><span class="w"> </span><span class="nx">LabelsResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getLabels</span><span class="p">({</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="nx">sourceIds</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;0xddb7c17e370ecd5f99cadcddb39cfa51264e989c5133c490046d63a299dd68f0&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nx">createdSince</span><span class="o">:</span><span class="w"> </span><span class="mf">1684407014000</span><span class="p">,</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nx">startingCursor</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="p">})</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nx">hasNext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">pageInfo</span><span class="p">.</span><span class="nx">hasNextPage</span><span class="p">;</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="nx">startingCursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">pageInfo</span><span class="p">.</span><span class="nx">endCursor</span><span class="p">;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">    </span><span class="nx">results</span><span class="p">.</span><span class="nx">labels</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">l</span><span class="p">)</span><span class="si">}</span><span class="sb"> \n`</span><span class="p">))</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="p">}</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="nx">main</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="fetchjwt">fetchJwt</h2>
+<p>Scan nodes allow bots to make authorized requests to external APIs by using the scan node's identity, without letting the scan node modify the requests. You can use the <code>fetchJwt</code> utility function to generate a jwt token from a scan node.</p>
+<div class="admonition warning">
+<p class="admonition-title">This method will only generate a token if the bot is running on a scan node</p>
+<p>If running a bot locally or in a stand-alone environment (ie. outside of a scanner node), this method will return a mock value.</p>
+</div>
+<p>The function signature is <code>fetchJwt(claims, expiresAt)</code>:</p>
+<ul>
+<li><code>claims</code>:  a JSON object of any additional claims you would like to include in the payload of the JWT</li>
+<li><code>expiresAt</code>:  an optional <code>Date</code> object that sets when the JWT will expire</li>
+</ul>
+<p>The returned JWT can be decoded using the <a href="./#decodeJwt"><code>decodeJwt</code> method</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">token</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">initialize</span><span class="o">:</span><span class="w"> </span><span class="nx">Initialize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">blockEvent</span><span class="o">:</span><span class="w"> </span><span class="nx">BlockEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchJwt</span><span class="p">(</span><span class="nx">claims</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="p">})</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="p">...</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="verifyjwt">verifyJwt</h2>
+<p>A utility method intended to be used on an external server for verifying the claims and signature of a JWT generated by a scan node. This method verifies that the JWT was generated and signed by the same scan node the bot is running on. <a href="../jwt-auth/#detection-bot-authentication-example">See an example usage</a> of verifying a JWT</p>
+<ul>
+<li><code>token</code> - <strong>required</strong>  a JWT token generated by <code>fetchJwt</code></li>
+</ul>
+<h2 id="decodejwt">decodeJwt</h2>
+<p>A utility method for decoding the header and payload of a Jwt returned from a scan node.</p>
+<ul>
+<li><code>token</code> - <strong>required</strong>  a JWT token generated by <code>fetchJwt</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">jwt</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">initialize</span><span class="o">:</span><span class="w"> </span><span class="nx">Initialize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">blockEvent</span><span class="o">:</span><span class="w"> </span><span class="nx">BlockEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchJwt</span><span class="p">(</span><span class="nx">claims</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="p">})</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nx">jwt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">decodeJwt</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="p">...</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">This method will not verify the signature of a JWT</p>
+</div>
+<h2 id="createblockevent">createBlockEvent</h2>
+<p>A utility function for writing tests. You can use <code>createBlockEvent</code> to easily generate a mock <code>BlockEvent</code> object when writing unit tests for your <code>handleBlock</code> handler. To better understand usage, see the <a href="https://github.com/forta-network/forta-bot-examples/blob/master/minimum-balance-ts/src/agent.spec.ts">Typescript unit test example</a>.</p>
+<h2 id="createtransactionevent">createTransactionEvent</h2>
+<p>A utility function for writing tests. You can use <code>createTransactionEvent</code> to easily generate a mock <code>TransactionEvent</code> object when writing unit tests for your <code>handleTransaction</code> handler. To better understand usage, see the <a href="https://github.com/forta-network/forta-bot-examples/blob/master/high-gas-js/src/high.gas.used.spec.js">Javascript unit test example</a>.</p>
+<h2 id="createalertevent">createAlertEvent</h2>
+<p>A utility function for writing tests. You can use <code>createAlertEvent</code> to easily generate a mock <code>AlertEvent</code> object when writing unit tests for your <code>handleAlert</code> handler.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/FortaNetwork" target="_blank" rel="noopener" title="Forta on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/KACdTEutQq" target="_blank" rel="noopener" title="Forta on Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/forta-network" target="_blank" rel="noopener" title="Forta on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/channel/UC_jxKtYfj7iLn4hTpQmBcYA" target="_blank" rel="noopener" title="Forta on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://forta.org/blog/" target="_blank" rel="noopener" title="Forta Blog" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zm0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:community@forta.org" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top"], "search": "../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e1f28405.min.js"></script>
+      
+    
+  </body>
+</html>
