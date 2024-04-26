@@ -2,6 +2,10 @@
 
 The FORT Vault is a simple and streamlined way to contribute your FORT tokens to securing the Forta Network. The vault allows you to simply deposit FORT tokens into the vault and rest is taken care of for you. Start earning rewards for your contribution without having to choose and decide between different individual pools. 
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YMWCCNRk5IbQ
+" target="_blank"><img src="vault-video.png" 
+alt="Vault-video" width="240" height="180" border="10" /></a>
+
 1. Make sure your FORT is on the Polygon network. If you have your FORT on Ethereum Mainnet, follow [these steps](https://docs.forta.network/en/latest/bridging-fort/) to bridge it to Polygon. 
 
 2. After connecting your wallet, navigate to the **stake** button on the top of the Forta App. Here you can deposit your FORT tokens into the vault. 
