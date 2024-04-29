@@ -16,7 +16,7 @@ After deploying, you can [view bot logs](maintaining.md#viewing-bot-logs) using 
 
 Documentation for your bot is **required** in order to deploy. It should let others know what conditions your bot is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific bot.
 
-You will also find the [Forta Detection Bot License](https://github.com/forta-network/forta-bot-sdk/blob/master/starter-project/LICENSE.md){:target="_blank"} included in your project LICENSE.md file (and copied over in your Dockerfile). This is **required** for every detection bot deployed to the network.
+You will also find the [Forta Detection Bot License](https://github.com/forta-network/forta-bot-sdk/blob/master/starter-project/LICENSE.md){:target="\_blank"} included in your project LICENSE.md file (and copied over in your Dockerfile). This is **required** for every detection bot deployed to the network.
 
 ## Pushing your bot image
 
@@ -31,6 +31,7 @@ This will build your bot image and push it to a repository where scan nodes can 
 ```
 successfully pushed image with reference bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2
 ```
+
 Copy the image reference (i.e. `bafybeifutbdhewyz7lfl4z7bfry6xfscaewwhe4n3uqi2gdj67js6plwre@sha256:3904d36d3527ae4135e479dd223c37dde1e6052ae47fdbf3305ebd506d4e34d2`) to your clipboard and head over to [Forta App](https://app.forta.network/).
 
 ## Import your keyfile into Metamask
@@ -60,14 +61,15 @@ Your Metamask should now be connected to Forta App. You should see your wallet a
 In order to deploy your bot, you will need to complete a short form by navigating to the Detection Bots page (from the menu at the top right):
 
 1. Click the Deploy Bot button to bring up the form. The bot ID will be automatically generated for you
-2. Fill in the rest of the fields with your bot's information like name, description, version and which blockchains you want to scan (currently supported chains are Ethereum, Polygon, Binance Smart Chain, Avalanche, Arbitrum, Optimism, and Fantom)
-3. For the Documentation field, select the README.md from your project folder. This will be uploaded to IPFS
-4. For the Docker Image field, paste in the image reference you copied earlier from the `npm run push` command
-5. If your code repository is public, fill in the Repository field
-6. Click the "Sign to proceed" button
-7. A Metamask dialog will appear asking you to sign the bot metadata. Click the Sign button
-8. A confirmation form will display your bot metadata, including the IPFS hash of the bot metadata and documentation. If these look good, click the Deploy Bot button to initiate the deployment transaction
-9. A Metamask dialog will appear asking you to confirm the deployment transaction. Review the details and click the Confirm button
+2. Fill in the rest of the fields with your bot's information like name, description, version
+3. For the Blockchains To Shard field, you can **optionally** specify a comma-delimited list of chain IDs to shard your bot by the specified blockchains (e.g. 1, 137, 8453)
+4. For the Documentation field, select the README.md from your project folder. This will be uploaded to IPFS
+5. For the Docker Image field, paste in the image reference you copied earlier from the `npm run push` command
+6. If your code repository is public, fill in the Repository field
+7. Click the "Sign to proceed" button
+8. A Metamask dialog will appear asking you to sign the bot metadata. Click the Sign button
+9. A confirmation form will display your bot metadata, including the IPFS hash of the bot metadata and documentation. If these look good, click the Deploy Bot button to initiate the deployment transaction
+10. A Metamask dialog will appear asking you to confirm the deployment transaction. Review the details and click the Confirm button
 
 ## Staking
 

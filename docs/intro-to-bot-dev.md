@@ -1,27 +1,21 @@
+**Introduction**
 
+In this article you will gain a high-level understanding of Forta detection bot development including development workflows, dApps and SDKs that will lay out a clear path to develop on Forta. This article is intended for developers who are new to Forta and assumes you have some general knowledge about blockchains, smart contracts and tokens. Let’s jump in!
 
+**Demystifying Forta development**
 
- **Introduction**
+The most important thing for new Forta developers to understand is that it is not a requirement to have experience with blockchain development to get started building on Forta. In fact, your web2 development experience transfers directly to detection bot development. In Forta, detection bots are programs running on the Forta Network that scan the blockchain for events of interest and alerts users about them e.g. large token transfers or declining account balances. While detection bots can be written in any language, Forta provides convenient SDKs in Typescript/Javascript and Python for you to get started easily. Detection bots are the heart of the Forta Network as they alert users of any suspicious or anomalous activity. There are currently many bots deployed for users to interact and integrate with.
 
-In this article you will gain a high-level understanding of Forta detection bot development including myths, development workflows, dApps and SDKs that will lay out a clear path to develop on Forta. This article is intended for developers who are new to Forta and assumes you have some general knowledge about blockchains, smart contracts and tokens. Let’s jump in!
+**Forta development workflows**
 
+The primary development workflow for building detection bots involves the `forta-bot` CLI tool. Using the CLI (command line interface), you can setup a detection bot project within seconds. As a general overview of the workflow, it starts from initialization, to development and testing, then finally deployment and maintenance.
 
- **Demystifying Forta development**
-
-The most important thing for new Forta developers to understand is that it is not a requirement to have experience with blockchain development to get started building on Forta. In fact, your web2 development experience transfers directly to detection bot development. In Forta, detection bots are programs running on the Forta Network that scan the blockchain for events of interest and alerts users about them e.g. large token transfers or declining account balances. While detection bots can be written in any language, Forta provides convenient SDKs in Javascript, Typescript and Python for you to get started easily. Detection bots are the heart of the Forta Network as they alert users of any suspicious or anomalous activity. There are currently many bots deployed for users to interact and integrate with.
-
-
- **Forta development workflows**
-
-The primary development workflow for building detection bots involves the forta-agent CLI (command line interface) tool. Using the CLI, you can setup a detection bot project within seconds. As a general overview of the workflow, it starts from initialization, to development and testing, then finally deployment and maintenance.
-
-As mentioned earlier, Forta provides easy to use SDKs for detection bot development in [Javascript/Typescript](https://www.npmjs.com/package/forta-agent) and [Python](https://pypi.org/project/forta-agent/). These allow you to focus on your bot’s detection logic while taking care of the rest of the details. Once your bot is ready to deploy, you simply use the CLI to publish it to the Forta Network.
+As mentioned earlier, Forta provides easy to use SDKs for detection bot development in [Typescript/Javascript](https://www.npmjs.com/package/@fortanetwork/forta-bot) and [Python](https://pypi.org/project/forta-bot-sdk/). These allow you to focus on your bot’s detection logic while taking care of the rest of the details. Once your bot is ready to deploy, you simply use the CLI to publish it to the Forta Network.
 
 A second development workflow involves the use of the [Forta Hardhat plugin](https://www.npmjs.com/package/hardhat-forta) to create detection bots for your existing smart contract project. Hardhat is a smart contract development framework with a powerful plugin ecosystem. Using the Forta plugin, you can initialize detection bots right into your project. Also, you can choose from a set of low-code templates to setup detection bots for your project quickly.
 
-To deploy your bot to the Forta Network you can use the CLI or the Forta App, which provides a convenient UI to deploy and manage your detection bots. Deploying a bot involves making a transaction to the Bot Registry contract on the Polygon blockchain. This requires having MATIC tokens in order to pay the small transaction fee (in the order of a few cents). Developers just need to ensure they have enough MATIC tokens, and the CLI or Forta App will take care of executing the transaction. Once a detection bot is deployed to the Forta Network, users can subscribe to the alerts generated by the bot or consume them through the Forta API.
+To deploy your bot to the Forta Network you can use the CLI or the [Forta App](https://app.forta.network/), which provides a convenient UI to deploy and manage your detection bots. Deploying a bot involves making a transaction to the Bot Registry contract on the Polygon blockchain. This requires having MATIC tokens in order to pay the small transaction fee (in the order of a few cents). Developers just need to ensure they have enough MATIC tokens, and the CLI or Forta App will take care of executing the transaction. Once a detection bot is deployed to the Forta Network, users can subscribe to the alerts generated by the bot or consume them through the Forta API.
 
-
- **Great! How do I begin?**
+**Great! How do I begin?**
 
 Now that you are ready to dive into bot development, the best place to start is the [Quickstart](https://docs.forta.network/en/latest/quickstart/) guide. If you want to browse examples, check out the repo. Good luck and we can’t wait to see what you develop on Forta!
