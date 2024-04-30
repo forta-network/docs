@@ -6,7 +6,7 @@ This guide will explore the basics of creating a Forta detection bot.
 
 Before you start, please make sure you have the following:
 
-- [High-level understanding of Forta detection bot development](forta-quickstart.md)
+- [High-level understanding of Forta detection bot development](intro-to-bot-dev.md)
 - [Node.js v20+](https://nodejs.org/) (which includes the Node package manager i.e. npm)
 - [Python v3.10+](https://www.python.org/) (only if you want to build Python detection bots)
 - [Docker Desktop v4.16+](https://docs.docker.com/desktop)
