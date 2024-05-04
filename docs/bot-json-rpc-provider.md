@@ -66,6 +66,19 @@ VjL3a0dfT/2BHyzlpPBwCmSOZQwUqyzJV05rQfoVeqyZJhp6e1hTwTWi4Fff7TH5
 -----END PUBLIC KEY-----
 ```
 
+## Forta RPC Cache
+
+When running on scan nodes in **_production_**, v2 detection bots also have access to a RPC cache (courtesy of the Forta Network). The cache provides access to basic blockchain data including blocks, transactions and logs. The cache is _short-lived_ and only stores blockchain data for the **past 5 minutes for certain chains**. Currently the following 8 chains are supported by the cache:
+
+- Ethereum (includes trace data)
+- Polygon
+- Base
+- BSC
+- Avalanche
+- Arbitrum
+- Fantom (includes trace data)
+- Optimism
+
 ## Local RPC URLs
 
 Note that JWT-authenticated RPC URLs can only work inside of a scan node (i.e. only in production). When developing locally, these URLs will not work as they require a scan node environment. To work around this when developing locally, you can specify a local RPC URL in your bot that will be used **_only when running locally_**. This way you can use public/private RPC URLs locally without exposing them to the world. For example, you would put the public/private URLs inside your `forta.config.json` like so:

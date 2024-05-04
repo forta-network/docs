@@ -144,13 +144,17 @@ $ npm start
 
 !!! info "npm scripts"
 
-    The package.json file includes a set of npm scripts which invoke the `forta-bot` CLI tool. But when invoking `npm start` to run the bot, we are simply building the src/bot.ts file and running it directly.
+    The package.json file includes a set of npm scripts which invoke the `forta-bot` CLI tool. But when invoking `npm start` to run the bot, we are simply invoking the bot script and running it directly.
 
-This will run blocks and transactions against your bot as they are mined. Blockchain data is pulled from the provided [Cloudflare Ethereum gateway](https://cloudflare-eth.com/).
+This will run blocks and transactions against your bot as they are mined. Blockchain data is pulled from the provided [Cloudflare Ethereum gateway](https://cloudflare-eth.com/) (as specified by the `rpcUrl` parameter to `scanEthereum`).
 
 Since our transfer value threshold is pretty high (10 thousand), we may not flag a lot of transactions. To quickly make changes and see them take effect, try changing the threshold to a lower number and save the bot.ts file. The bot should automatically restart with your new changes.
 
 It is also worth mentioning that bots are long-running processes. This means you can maintain state in-memory across blocks and transactions if needed. See the [high transaction volume bot](https://github.com/forta-network/forta-bot-examples/tree/master/high-volume-js) as an example of a stateful bot.
+
+## Setting up a JSON-RPC provider
+
+Detection bots require blockchain data to execute their scanning logic. This means developers will need to provide their bots with data from a JSON-RPC URL. The starter project uses the public Cloudflare JSON-RPC endpoint for easy setup, but you will likely need a non-public URL when deploying to production. Please see [this guide](bot-json-rpc-provider.md) on setting up a JSON-RPC provider.
 
 ## Getting test data
 
