@@ -1,6 +1,6 @@
 ## Security - Design
 
-Security starts in the design phase by incorporating strategies to disincentivize and mitigate malicious behaviors. As described in the [Forta Litepaper](../2022-7-11 Forta Litepaper.pdf), the primary guiding principles around the Forta protocol were:
+Security starts in the design phase by incorporating strategies to disincentivize and mitigate malicious behaviors. As described in the [Forta Litepaper](2022-7-11_Forta_Litepaper.pdf), the primary guiding principles around the Forta protocol were:
 
 - **Decentralization** - this not only applies to the network of independent scan nodes, but also to the detection bots that the community develops and the governance over the Network. This creates redundancies and increases the reliability of the network in case isolated failures occur.
 - **Cryptoeconomic Incentives** - these incentives, like node and bot staking, encourage net positive behavior and disincentivize malicious behaviors.

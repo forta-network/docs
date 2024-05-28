@@ -4,7 +4,7 @@ Anyone who detects a slashable offence perpetrated by a Scan Node or Bot may rep
 
 ## Requirements.
 
-- Have 1000 FORT bridged to Polygon, per proposal. ** This deposit can be slashed if the proposal does not follow appropriate formatting, it is malicious, false or spam**. Check the [slashing process](./slashing-process.md) for more info.
+- Have 1000 FORT bridged to Polygon, per proposal. ** This deposit can be slashed if the proposal does not follow appropriate formatting, it is malicious, false or spam**. Check the [slashing policy](slashing-policy.md) for more info.
 - Present verifiable evidence, in the form of screen captures, log files or any file that proves the accusations.
 - Have knowledge of uploading files to IPFS.
 - Is able to present evidence following Forta's [Evidence Format](#evidence-format)

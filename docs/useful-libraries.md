@@ -1,6 +1,6 @@
 # Useful libraries
 
-Here is a collection of libraries and APIs that bot developers may find useful when building their bots. Want to add your library here? Check out [this section](/contributing/#improve-the-documentation) to suggest an edit.
+Here is a collection of libraries and APIs that bot developers may find useful when building their bots. Want to add your library here? Check out [this section](contributing#improve-the-documentation) to suggest an edit.
 
 ## forta-helpers
 

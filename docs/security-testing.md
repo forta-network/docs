@@ -31,10 +31,10 @@ Testing of the code must happen through GitHub Actions on each pull request and 
 
 Adopting an attacker mindset, the Foundation went beyond employing secure design, development, deployment and testing and enlisted external security experts to assess the Forta Network after it was built. This helped to surface erroneous assumptions and uncover security gaps that may have remained hidden. Forta primarily engaged OpenZeppelin's smart contract auditing expertise as well as Dedalo's web2 and broad threat assessment expertise for other critical components of the Network. All such reports/findings are linked below:
 
-- [Dedalo's Airdrop Assessment, June 17th 2022](../2022Q2-FortaAirdrop-AuditReport.pdf)
-- <a href="../Forta Network Airdrop Audit Report.pdf">OpenZeppelin's Airdrop Smart Contract Audit, June 9th 2022</a>
-- [Dedalo's Forta Scan Node Assessment, April 7th 2022](../2022Q1-V2-FortaNode-AuditReport.pdf)
-- <a href="../OZ Forta Protocol Audit.pdf">OpenZeppelin's Protocol Audit, February 7th 2022</a>
-- [Dedalo's Web Security Assessment, January 5th 2022 ](../Forta-Report-DDL-05-01-2022.pdf)
+- [Dedalo's Airdrop Assessment, June 17th 2022](2022Q2-FortaAirdrop-AuditReport.pdf)
+- [OpenZeppelin's Airdrop Smart Contract Audit, June 9th 2022](Forta_Network_Airdrop_Audit_Report.pdf)
+- [Dedalo's Forta Scan Node Assessment, April 7th 2022](2022Q1-V2-FortaNode-AuditReport.pdf)
+- [OpenZeppelin's Protocol Audit, February 7th 2022](OZ_Forta_Protocol_Audit.pdf)
+- [Dedalo's Web Security Assessment, January 5th 2022 ](Forta-Report-DDL-05-01-2022.pdf)
 - [MixBytes' Security Assessment of slash proposal changes, September 2nd 2022](https://github.com/forta-network/forta-contracts/commit/c940dc39b94bc8be6c298deab92a3dd55527f321)
 - [Consensys' Security Assessment of Delegated Staking, November 2022](https://consensys.net/diligence/audits/2022/11/forta-delegated-staking/)
