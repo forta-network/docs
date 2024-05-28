@@ -3,12 +3,6 @@ const path = require('path')
 const yaml = require('yamljs')
 const { globSync } = require('glob')
 
-const SHOULD_REMOVE = false;
-const SHOULD_LOG = true;
-
-// Load and parse the mkdocs config
-const docsDir = path.resolve(__dirname, '../docs')
-
 function exploreMarkdownFilesFromConfig (nav, markdownList, mediaList, visited) {
   if (Array.isArray(nav)) {
     nav.forEach(item => exploreMarkdownFilesFromConfig(item, markdownList, mediaList, visited))
@@ -119,12 +113,15 @@ function processMediaLink (link, currentPath, markdownLinks, mediaLinks, visited
 // Here we start execution
 // ------------
 
+const SHOULD_REMOVE = false;
+const SHOULD_LOG = true;
+
 const EXCLUDE_FOLDERS = ['forta-api-reference', 'stylesheets', 'contracts'];
 const INCLUDE_DOC_FILES = ['scam-detector-bot.md', 'attack-detector-bot.md'];
 
+// Load and parse the mkdocs config
+const docsDir = path.resolve(__dirname, '../docs')
 
-
-// const mkdocsConfig = yaml.load('../mkdocs.yml')
 const mkdocsConfig = yaml.load('mkdocs.yml')
 
 const usedMarkdownFileSet = new Set()
