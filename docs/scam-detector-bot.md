@@ -54,7 +54,7 @@ The Scam Detector *labels* are each available via Forta's GraphQL API. For acces
 ### *Labels*
 Labels allow a contributor to tag an entity (like an address) with a label.  Labels are available via our [GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels). This API allows one to search by date range and page over results.
 
-A recent one month sample of the labels can be downloaded [here (prod, V1 label format)](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230601-20230630.csv) and [here (beta, V2 label format)](../ScamDetector_0x47c45816807d2eac30ba88745bf2778b61bc106bc76411b520a5289495c76db8_labels_20230622-20230630.csv).
+A recent one month sample of the labels can be downloaded [here (prod, V1 label format)](ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230601-20230630.csv) and [here (beta, V2 label format)](ScamDetector_0x47c45816807d2eac30ba88745bf2778b61bc106bc76411b520a5289495c76db8_labels_20230622-20230630.csv).
 
 
 **Note:** 

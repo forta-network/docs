@@ -14,7 +14,7 @@ into your browser's search bar.
 
 ![View scan node SLA example](../scan-node-view.png)
 
-You can use the [SLA API](sla-api.md) for more details insights.
+You can use the [SLA API](../sla-api.md) for more details insights.
 
 Please note that the number in Forta App can differ from what SLA API returns because of time range differences (see Q3 in [FAQ](faq.md)).
 

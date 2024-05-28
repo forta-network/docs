@@ -29,7 +29,7 @@ You can use Forta’s GraphQL API to query the data, or subscribe to notificatio
 
 [Here](https://docs.forta.network/en/latest/api-reference/) you can learn how to use the API.
 
-[Here](https://docs.forta.network/en/latest/subcribing-to-bot/) you can learn how to subscribe to notifications using the Forta App.
+[Here](subscribing-to-bot.md) you can learn how to subscribe to notifications using the Forta App.
 
 ### **How can I find valuable detection bots in the network?**
 
