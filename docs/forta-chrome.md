@@ -9,7 +9,6 @@ The **Forta URL Authenticator** is a Forta-powered Chrome extension designed to 
 </br>
 
 
-
 ## Installation and Setup
 
 1. **Install the Extension**
@@ -25,7 +24,8 @@ The **Forta URL Authenticator** is a Forta-powered Chrome extension designed to 
 1. **Automatic Check**
    - Navigate to the page you want to scan.
    - Click the Forta URL Extension icon in your browser.
-   - Click the **Check Current URL** button.<br/>
+   - Click the **Check Current URL** button.
+   <br/>
 ![Step 1](p1.png)
 
 2. **Manual URL Entry**
