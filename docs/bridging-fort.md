@@ -2,8 +2,8 @@
 
 You may need to bridge your FORT tokens from Ethereum to Polygon in order to stake on scan nodes or detection bots. This page will describe how to bridge your FORT tokens.
 
-1. Go to [https://wallet.polygon.technology/](https://wallet.polygon.technology/) and click on Polygon Bridge
-   ![Polygon Bridge](bridging-1.png)
+1. Go to [https://wallet.polygon.technology/](https://wallet.polygon.technology/), select Proof of Stake network and click on Native Bridge
+   ![Polygon Native Bridge](bridging-1.png)
 2. Log in by connecting your wallet
    ![Connect wallet](bridging-2.png)
 3. Click "Deposit" and then click the dropdown list of tokens
@@ -16,3 +16,4 @@ You may need to bridge your FORT tokens from Ethereum to Polygon in order to sta
    ![Select FORT](bridging-6.png)
 7. Select the amount of FORT you want to bridge and then click "Transfer" to bridge your tokens to Polygon
    ![Transfer FORT](bridging-7.png)
+8. Wait for the bridge transaction to be completed and find the assets in the FORT contract address in Polygon (0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1)
