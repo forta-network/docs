@@ -8,7 +8,7 @@ nav:
       - GraphQL Reference: forta-api-reference/index.html
       - Subscribing to a bot: subscribing-to-bot.md
       - Use Cases: https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c
-      - Tutorial - How to pay for Forta: fees-tut-how-pay.md
+      - Tutorial | How to pay for Forta: fees-tut-how-pay.md
       - Forta for Metamask: Forta-for-Metamask.md
       - Forta URL Authenticator: forta-chrome.md
   - <strong>Build on Forta</strong>:
