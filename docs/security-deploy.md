@@ -96,6 +96,9 @@ To learn more, read the [smart contracts GitHub repo](https://github.com/forta-n
 | Scam Detector Plan | [0x54089510aec879ca42e08bc4b166be8362b56bb2](https://polygonscan.com/address/0x54089510aec879ca42e08bc4b166be8362b56bb2) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
 | Rug Pull Detector Plan | [0x525d8d73f11a8586482f4f74c105d9d8b7cf73da](https://polygonscan.com/address/0x525d8d73f11a8586482f4f74c105d9d8b7cf73da) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
 | Spam Detector Plan | [0x6453379cbc14f7a277319b6c8b7577ae78524968](https://polygonscan.com/address/0x6453379cbc14f7a277319b6c8b7577ae78524968) | [0x64a3328cf61025720c26de2a87b6d913fa6e376a](https://polygonscan.com/address/0x64a3328cf61025720c26de2a87b6d913fa6e376a) |
+| Sybil Defender Plan | [0xFc4ea1cB01D9a48711a481BC6af08590E661612c](https://polygonscan.com/address/0xFc4ea1cB01D9a48711a481BC6af08590E661612c) | [0x64A3328Cf61025720c26dE2a87B6d913fA6e376a](https://polygonscan.com/address/0x64A3328Cf61025720c26dE2a87B6d913fA6e376a) |
+| Attack Detector Plan | [0x4Fd7019EaB30fF7347d215Fe1510d05e6FD420a4](https://polygonscan.com/address/0x4Fd7019EaB30fF7347d215Fe1510d05e6FD420a4) | [0x64A3328Cf61025720c26dE2a87B6d913fA6e376a](https://polygonscan.com/address/0x64A3328Cf61025720c26dE2a87B6d913fA6e376a) |
+
 
 **Sepolia Testnet**
 

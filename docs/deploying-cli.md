@@ -1,6 +1,6 @@
 # Deploying your bot with the CLI
 
-This page covers how to deploy your bot using the `forta-agent` CLI tool.
+This page covers how to deploy your bot using the `forta-bot` CLI tool.
 
 ## Enable logging (optional)
 
@@ -16,7 +16,7 @@ After deploying, you can [view bot logs](maintaining.md#viewing-bot-logs) using 
 
 Documentation for your bot is **required** in order to deploy. It should let others know what conditions your bot is detecting and what sort of alerts it will fire. Documentation will always be in the README.md file in your project folder (we have provided example documentation to help you get started). Please update the README.md for your specific bot.
 
-You will also find the [Forta Detection Bot License](https://github.com/forta-network/forta-bot-sdk/blob/master/starter-project/LICENSE.md){:target="_blank"} included in your project LICENSE.md file (and copied over in your Dockerfile). This is **required** for every detection bot deployed to the network.
+You will also find the [Forta Detection Bot License](https://github.com/forta-network/forta-bot-sdk/blob/master/starter-project/LICENSE.md){:target="\_blank"} included in your project LICENSE.md file (and copied over in your Dockerfile). This is **required** for every detection bot deployed to the network.
 
 ## Configuration
 
@@ -25,14 +25,7 @@ A few configuration values must be set in your package.json in order to deploy:
 - `name` of your bot project should be specified
 - `description` should be a short human-readable description of what your bot does
 - `version` of your bot should also be set as well
-- `chainIds` of the blockchains that your bot will be scanning should be specified as an array of integers. You must specify at least one and up to as many as you need. The supported chain IDs are:
-    - 1 (Ethereum)
-    - 137 (Polygon)
-    - 56 (Binance Smart Chain)
-    - 43114 (Avalanche)
-    - 42161 (Arbitrum)
-    - 10 (Optimism)
-    - 250 (Fantom)
+- `chainIds` are **optional**, use this to shard your bot by the specified chains as an array of integers
 - `repository` is **optional**, but providing a link to your code helps build trust in your bot
 
 ## Deploying
@@ -46,12 +39,15 @@ npm run publish
 This will build a Docker image for your bot using the Dockerfile in your project folder and push it to an image repository where scan nodes can find it. A manifest will be generated for your bot (which includes a reference to the Docker image) and be published to the Bot Registry contract.
 
 !!! warning "Signing the manifest"
-    The bot manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password** (unless you specified `keyfilePassword` in forta.config.json).
 
-When successfully deployed, you should see a message in your output similar to 
+        The bot manifest will need to be signed using your keyfile (located in ~/.forta), so **you will be prompted for the password** (unless you specified `keyfilePassword` in forta.config.json).
+
+When successfully deployed, you should see a message in your output similar to
+
 ```
-successfully added agent id 0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7 with manifest QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg
+successfully added bot id 0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7 with manifest QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg
 ```
+
 This message contains your bot ID (i.e. `0x855b1556a45637abf05c63407437f6f305b4627c4361fb965a78e5731999c0c7`) as well as your manifest IPFS reference (i.e. `QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg`). You can view the manifest by requesting it from any IPFS gateway (e.g. [`https://ipfs.io/ipfs/QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg`](https://ipfs.io/ipfs/QmcWPhPQ3un47QpZKKJZxD5ih3TXgk91ehLeUw6we2ncYg))
 
 ## Staking
