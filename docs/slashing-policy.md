@@ -113,7 +113,7 @@ Initially, the Arbiter role will be delegated by the Forta Governance Council to
 The initial members of the CAC include (Discord usernames, as found in [#slashing-proposals](https://discord.com/channels/869983523371642921/1033029398472962088)):
 
 - ba3is#1622
-- slanders#4806
+- aomerkeser#3969
 - 0xRoberto#8830
 
 
