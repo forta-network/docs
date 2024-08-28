@@ -32,7 +32,9 @@ Any Proposer can submit an on-chain Slashing Proposal by following the Technical
 
 The Proposer’s 1000 FORT deposit is at risk of being slashed if the Arbiter determines the Slashing Proposal does not conform to the requirements herein, or it is deemed malicious. Therefore, the Proposer must take care to submit sufficient verifiable evidence (e.g. screen captures, log files, or any other file that proves the accusations) in accordance with the formatting and file limitations set out in the Technical Slashing Guidance. Such evidence must remain publicly accessible through the entire slashing process. 
 
-If a Slashing Proposal is ultimately validated and executed, the FORT tokens of the Slashing Subject **operator** targeted by the Slashing Proposal will be slashed and distributed as follows:
+Once a slashing proposal is submitted and accepted by the Slashing Committee, the FORT tokens slashed from the Node Operator will be frozen, making them unavailable for withdrawal. However, if the proposal includes FORT tokens from a delegator, those tokens will not be frozen, and the delegator will still be able to withdraw them.
+
+FORT Token targeted by the Slashing Proposal will be slashed and distributed as follows:
 
 - 80% of slashed stake will go to the Proposer
 - 20% of slashed stake will be returned to a community treasury at 0xC99884BE6eEE5533Be08152C40DF0464B3FAE877 on Polygon
