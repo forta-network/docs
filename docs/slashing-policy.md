@@ -2,7 +2,7 @@
 
 ## Slashing in the Forta Network
 
-Both Scanner Pool Owners and Detection Bots are required to stake FORT tokens in order to participate in the Forta Network and earn FORT rewards. Soon, delegated staking will allow other Forta community members to stake tokens on node operations. Staking aligns incentives amongst Network participants and also acts as a sybil resistance mechanism. As a further security feature, Network participants also risk their staked FORT being slashed as follows:
+Both Scanner Pool Owners and Detection Bots are required to stake FORT tokens in order to participate in the Forta Network and earn FORT rewards. Delegated staking allows other Forta community members to stake tokens on node operations. Staking aligns incentives amongst Network participants and also acts as a sybil resistance mechanism. As a further security feature, Network participants also risk their staked FORT being slashed as follows:
 
 - **Slashing Scanner Pool Owners.** Although the Forta work assignment algorithm takes into account SLA performance and pool owners that fail to execute their assigned work correctly should be organically pushed out of the Network over time, for additional reliability, Scanner Pool Owners are also subject to slashing if they fail to execute their assigned work correctly outside of the SLA factors or if they attempt misconduct.
 
@@ -32,7 +32,7 @@ Any Proposer can submit an on-chain Slashing Proposal by following the Technical
 
 The Proposer’s 1000 FORT deposit is at risk of being slashed if the Arbiter determines the Slashing Proposal does not conform to the requirements herein, or it is deemed malicious. Therefore, the Proposer must take care to submit sufficient verifiable evidence (e.g. screen captures, log files, or any other file that proves the accusations) in accordance with the formatting and file limitations set out in the Technical Slashing Guidance. Such evidence must remain publicly accessible through the entire slashing process. 
 
-If a Slashing Proposal is ultimately validated and executed, the FORT tokens of the Slashing Subject (which could include anyone who has delegated stake to such Slashing Subject) targeted by the Slashing Proposal will be slashed and distributed as follows:
+If a Slashing Proposal is ultimately validated and executed, the FORT tokens of the Slashing Subject **operator** targeted by the Slashing Proposal will be slashed and distributed as follows:
 
 - 80% of slashed stake will go to the Proposer
 - 20% of slashed stake will be returned to a community treasury at 0xC99884BE6eEE5533Be08152C40DF0464B3FAE877 on Polygon
