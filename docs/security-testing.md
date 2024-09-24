@@ -38,4 +38,4 @@ Adopting an attacker mindset, the Foundation went beyond employing secure design
 - [Dedalo's Web Security Assessment, January 5th 2022 ](../Forta-Report-DDL-05-01-2022.pdf)
 - [MixBytes' Security Assessment of slash proposal changes, September 2nd 2022](https://github.com/forta-network/forta-contracts/commit/c940dc39b94bc8be6c298deab92a3dd55527f321)
 - [Consensys' Security Assessment of Delegated Staking, November 2022](https://consensys.net/diligence/audits/2022/11/forta-delegated-staking/)
-- <a href="../Forta Staking Vault Final Report (March 2024)_">OpenZeppelin's Staking Vault Audit, March 11th 2024</a>
+- <a href="../Forta Staking Vault Final Report (March 2024)_.pdf">OpenZeppelin's Staking Vault Audit, March 11th 2024</a>
