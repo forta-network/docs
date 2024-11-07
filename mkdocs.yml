@@ -1,107 +1,12 @@
 site_name: Forta Docs
 
 nav:
-  - <strong>Use Forta</strong>:
-      - Getting Started: getting-started.md
-      - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md
-      - Using the API: api-reference.md
-      - GraphQL Reference: forta-api-reference/index.html
-      - Subscribing to a bot: subscribing-to-bot.md
-      - Use Cases: https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c
-      - Tutorial - How to pay for Forta: fees-tut-how-pay.md
-      - Forta for Metamask: Forta-for-Metamask.md
-      - Forta URL Authenticator: forta-chrome.md
-  - <strong>Build on Forta</strong>:
-      - Introduction to Bot Development: intro-to-bot-dev.md
-      - Migrating from v1 SDK: migrating-from-v1.md
-      - Develop a Bot with the v2 SDK:
-          - 1) Quick start: quickstart.md
-          - 2) Testing your bot: testing.md
-          - 3) Deploying your bot: deploying.md
-          - 4) Subscribing to alerts: subscribing.md
-          - 5) Maintaining your bot: maintaining.md
-          - Tools:
-              - Useful libraries: useful-libraries.md
-              - Javascript/Typescript SDK: sdk.md
-              - Python SDK: python.md
-              - CLI commands: cli.md
-              - forta.config.json: config.md
-              - Video tutorials: tutorials.md
-              - Integrating with Hardhat: hardhat.md
-              - CLI Reference: deploying-cli.md
-      - Develop a Bot with Bot Wizard: wizard.md
-      - Bot Examples: https://github.com/forta-network/forta-bot-examples
-      - Bot Development Patterns:
-          - Index: bot-development-patterns.md
-          - Best Practices: best-practices.md
-          - Adding labels to findings: labels.md
-          - Error monitoring: error-monitoring.md
-          - Increasing bot throughput: sharding.md
-          - Long running tasks: long-running-tasks.md
-          - Protecting sensitive data: sensitive-data.md
-          - Private alerts: private-alerts.md
-          - JWT authentication for bots: jwt-auth.md
-          - External bots: external-bots.md
-          - Deploying machine learning models: deploying-ml-models.md
-          - Time series analysis: time-series-analysis.md
-          - Consuming bot alerts: handle-alert.md
-          - Transfer Bot Ownership: bot-transfer-ownership.md
-          - Transaction simulation: tx-simulation.md
-          - Advanced testing: advanced-testing.md
-          - Querying other chains: querying-chains.md
-          - Bot Licensing: bot-licensing.md
-          - Bot Development Contests:
-              - Compound Contest (10/20/2021): contest1-compound.md
-              - Aave Contest (11/3/2021): contest2-aave.md
-              - OpenZeppelin Contest (11/18/2021): contest3-oz.md
-              - Forta Contest (12/17/2021): contest4-forta.md
-              - Solace Contest (3/1/2022): contest5-solace.md
-              - Forta Contest 2 (4/27/2022): contest6-forta.md
-              - Forta Contest 3 (6/17/2022): contest7-forta.md
-              - Forta Contest 4 (8/31/2022): contest8-forta.md
-              - Forta Contest 5 (10/11/2022): contest9-forta.md
-              - Forta Contest 6 (11/8/2022): contest10-forta.md
-      - Machine Learning on Forta:
-          - Why Machine Learning?: ml-with-forta.md
-          - Datasets and Resources: ml-data-resources.md
-      - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md
-  - <strong>Network Fees and Developer Rewards</strong>:
-      - Why Fees?: fees-why.md
-      - Tutorial | How to Pay for Forta: fees-tut-how-pay.md
-      - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md
-      - FAQs about fees: fees-faqs.md
-  - <strong>Run a Node</strong>:
-      - Guide:
-          - Introduction: scan-node/introduction.md
-          - Machine setup: scan-node/machine-setup.md
-          - Install Forta node: scan-node/install-forta-node.md
-          - Configure: scan-node/configure.md
-          - Register: scan-node/register.md
-          - Run: scan-node/run.md
-          - Troubleshoot: scan-node/troubleshoot.md
-          - Monitor: scan-node/monitor.md
-          - Upgrade: scan-node/upgrade.md
-          - FAQ: scan-node/faq.md
-          - Miscellaneous: scan-node/miscellaneous.md
-      - Local mode: scanner-local-mode.md
-      - Monitoring SLA:
-          - SLA Score Calculation: sla.md
-          - SLA API: sla-api.md
-      - Manage pools and stake: scanner-pools.md
-      - Node Resources:
-          - Scan with Alchemy: alchemy-partnership.md
-          - Scan with Chainstack: scan-with-chainstack.md
-          - Scan with Bware: bware-partnership.md
-          - Scan with Quicknode: quicknode-partnership.md
-  - <strong>Staking on Forta</strong>:
-      - Delegated staking:
-          - Introduction: delegated-staking-introduction.md
-          - Rewards: delegated-staking-rewards.md
-      - FORT Holder Staking Guide: fort-holder-staking-guide.md
-      - FORT Vault Deposit Guide: deposit-fort-vault.md
-      - Direct withdrawal: scanner-direct-withdrawal.md
-  - <strong>Network Overview</strong>:
-      - Network Overview: network-overview.md
+  - <strong>Firewall</strong>:
+      - What is Forta Firewall?: what-is-forta-firewall.md
+      - Why Transaction Screening: why-transaction-screening.md
+      - FORTRESS - AI Based Risk Scoring: FORTRESS-ai-based-risk-scoring.md
+      - Forta Chain: fota-chain.md
+  - <strong>FORTA Overview</strong>:
       - Tokenomics: fort-token.md
       - Governance: governance.md
       - FAQs: FAQs.md
@@ -148,6 +53,109 @@ nav:
           - Stake Slashing:
               - Slashing Policy: slashing-policy.md
               - Creating a Slash Proposal: slashing-creating-proposal.md
+  - <strong>Staking on Forta</strong>:
+      - Delegated staking:
+          - Introduction: delegated-staking-introduction.md
+          - Rewards: delegated-staking-rewards.md
+      - FORT Holder Staking Guide: fort-holder-staking-guide.md
+      - FORT Vault Deposit Guide: deposit-fort-vault.md
+      - Direct withdrawal: scanner-direct-withdrawal.md     
+  - <strong>Monitoring Network</strong>:
+      - Getting Started: getting-started.md
+      - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md
+      - Using the API: api-reference.md
+      - GraphQL Reference: forta-api-reference/index.html
+      - Subscribing to a bot: subscribing-to-bot.md
+      - Use Cases: https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c
+      - Tutorial - How to pay for Forta: fees-tut-how-pay.md
+      - Forta for Metamask: Forta-for-Metamask.md
+      - Forta URL Authenticator: forta-chrome.md
+      - Network Overview: network-overview.md
+      - Run a Node:
+          - Guide:
+              - Introduction: scan-node/introduction.md
+              - Machine setup: scan-node/machine-setup.md
+              - Install Forta node: scan-node/install-forta-node.md
+              - Configure: scan-node/configure.md
+              - Register: scan-node/register.md
+              - Run: scan-node/run.md
+              - Troubleshoot: scan-node/troubleshoot.md
+              - Monitor: scan-node/monitor.md
+              - Upgrade: scan-node/upgrade.md
+              - FAQ: scan-node/faq.md
+              - Miscellaneous: scan-node/miscellaneous.md
+          - Local mode: scanner-local-mode.md
+          - Monitoring SLA:
+              - SLA Score Calculation: sla.md
+              - SLA API: sla-api.md
+          - Manage pools and stake: scanner-pools.md
+          - Node Resources:
+              - Scan with Alchemy: alchemy-partnership.md
+              - Scan with Chainstack: scan-with-chainstack.md
+              - Scan with Bware: bware-partnership.md
+              - Scan with Quicknode: quicknode-partnership.md
+      - Network Fees and Developer Rewards:
+          - Why Fees?: fees-why.md
+          - Tutorial | How to Pay for Forta: fees-tut-how-pay.md
+          - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md
+          - FAQs about fees: fees-faqs.md
+      - Build on Forta:
+          - Introduction to Bot Development: intro-to-bot-dev.md
+          - Migrating from v1 SDK: migrating-from-v1.md
+          - Develop a Bot with the v2 SDK:
+              - 1) Quick start: quickstart.md
+              - 2) Testing your bot: testing.md
+              - 3) Deploying your bot: deploying.md
+              - 4) Subscribing to alerts: subscribing.md
+              - 5) Maintaining your bot: maintaining.md
+              - Tools:
+                  - Useful libraries: useful-libraries.md
+                  - Javascript/Typescript SDK: sdk.md
+                  - Python SDK: python.md
+                  - CLI commands: cli.md
+                  - forta.config.json: config.md
+                  - Video tutorials: tutorials.md
+                  - Integrating with Hardhat: hardhat.md
+                  - CLI Reference: deploying-cli.md
+              - Develop a Bot with Bot Wizard: wizard.md
+              - Bot Examples: https://github.com/forta-network/forta-bot-examples
+              - Bot Development Patterns:
+                  - Index: bot-development-patterns.md
+                  - Best Practices: best-practices.md
+                  - Adding labels to findings: labels.md
+                  - Error monitoring: error-monitoring.md
+                  - Increasing bot throughput: sharding.md
+                  - Long running tasks: long-running-tasks.md
+                  - Protecting sensitive data: sensitive-data.md
+                  - Private alerts: private-alerts.md
+                  - JWT authentication for bots: jwt-auth.md
+                  - External bots: external-bots.md
+                  - Deploying machine learning models: deploying-ml-models.md
+                  - Time series analysis: time-series-analysis.md
+                  - Consuming bot alerts: handle-alert.md
+                  - Transfer Bot Ownership: bot-transfer-ownership.md
+                  - Transaction simulation: tx-simulation.md
+                  - Advanced testing: advanced-testing.md
+                  - Querying other chains: querying-chains.md
+                  - Bot Licensing: bot-licensing.md
+                  - Bot Development Contests:
+                      - Compound Contest (10/20/2021): contest1-compound.md
+                      - Aave Contest (11/3/2021): contest2-aave.md
+                      - OpenZeppelin Contest (11/18/2021): contest3-oz.md
+                      - Forta Contest (12/17/2021): contest4-forta.md
+                      - Solace Contest (3/1/2022): contest5-solace.md
+                      - Forta Contest 2 (4/27/2022): contest6-forta.md
+                      - Forta Contest 3 (6/17/2022): contest7-forta.md
+                      - Forta Contest 4 (8/31/2022): contest8-forta.md
+                      - Forta Contest 5 (10/11/2022): contest9-forta.md
+                      - Forta Contest 6 (11/8/2022): contest10-forta.md
+          - Machine Learning on Forta:
+              - Why Machine Learning?: ml-with-forta.md
+              - Datasets and Resources: ml-data-resources.md
+          - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md
+
+              
+      
 
 theme:
   name: material
