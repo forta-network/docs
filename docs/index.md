@@ -38,12 +38,11 @@ hide:
 
     ---
 
-    Get a high-level understanding of the Forta Monitring Network, its Data Feeds and how to run bots.
+    Get a high-level understanding of the Forta Monitoring Network, its Data Feeds and how to run bots.
 
     [:octicons-arrow-right-24: Learn more](getting-started.md)
 
 
-  
 
 
 </div>
