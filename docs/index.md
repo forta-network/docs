@@ -10,36 +10,21 @@ hide:
 <div class="grid cards" markdown>
 
 
--   :zap:{ .lg .middle } __Use Forta__
+-   :zap:{ .lg .middle } __Forta Firewall__
 
     ---
 
-    Access Forta's Threat Intel to detect Web3 hacks.
+    Know everything about Forta Firewall and Forta chain.
 
-    [:octicons-arrow-right-24: Getting Started](getting-started.md)
+    [:octicons-arrow-right-24: What is Forta Firewall?](what-is-forta-firewall.md)
 
--   :gear:{ .lg .middle } __Build on Forta__
-
-    ---
-
-    Build detection bots and earn recurring monthly revenue
-
-    [:octicons-arrow-right-24: Start building](intro-to-bot-dev.md )
-
--   :material-server:{ .lg .middle } __Run a Node__
-
-    ---
-    Setup a scan node to run detection bots and operate the Forta network
-
-    [:octicons-arrow-right-24: Learn more](scan-node/introduction.md)
-
--   :bank:{ .lg .middle } __Network Fees and Developer Rewards__
+-   :gear:{ .lg .middle } __Forta Overview__
 
     ---
 
-    Users that want to consume Forta Threat Intel will need to purchase one or more monthly subscription plans. Developers that create and maintain those data feeds get rewards
+    Know how Forta protocol works and it's Governance, the FORT token and a security overview
 
-    [:octicons-arrow-right-24: Getting Started](fees-why.md)
+    [:octicons-arrow-right-24: Forta Overview](governance.md )
 
 -   :information_source:{ .lg .middle } __Staking on Forta__
 
@@ -49,13 +34,13 @@ hide:
 
     [:octicons-arrow-right-24: Getting Started](delegated-staking-introduction.md)
 
--   :tools:{ .lg .middle } __Network Overview__
+-   :tools:{ .lg .middle } __Monitoring Network__
 
     ---
 
-    Get a high-level understanding of the Forta Network, its governance, the FORT token and a security overview
+    Get a high-level understanding of the Forta Monitring Network, its Data Feeds and how to run bots.
 
-    [:octicons-arrow-right-24: Learn more](network-overview.md)
+    [:octicons-arrow-right-24: Learn more](getting-started.md)
 
 
   
