@@ -16,6 +16,13 @@
           mask-image: var(--md-admonition-icon--forta);
 }
 
+.md-typeset .grid {
+  grid-gap: .4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,20rem),1fr));
+    margin: 1em 0
+}
+
 .md-nav__title {
   display: none;
 }
