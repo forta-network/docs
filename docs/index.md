@@ -7,7 +7,10 @@ hide:
 
 # Welcome to the Forta Docs!
 
-<div class="grid cards" markdown>
+<div class="grid cards" style="grid-gap: .4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,20rem),1fr));
+    margin: 1em 0" markdown>
 
 
 -   :zap:{ .lg .middle } __Forta Firewall__
