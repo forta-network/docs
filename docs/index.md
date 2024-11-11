@@ -13,7 +13,7 @@ hide:
     margin: 1em 0" markdown>
 
 
--   :zap:{ .lg .middle } __Forta Firewall__
+-   :shield:{ .lg .middle } __Forta Firewall__
 
     ---
 
@@ -21,7 +21,7 @@ hide:
 
     [:octicons-arrow-right-24: What is Forta Firewall?](what-is-forta-firewall.md)
 
--   :gear:{ .lg .middle } __Forta Overview__
+-   :mag:{ .lg .middle } __Forta Overview__
 
     ---
 
@@ -29,7 +29,7 @@ hide:
 
     [:octicons-arrow-right-24: Forta Overview](governance.md )
 
--   :information_source:{ .lg .middle } __Staking on Forta__
+-   :battery:{ .lg .middle } __Staking on Forta__
 
     ---
 
@@ -37,7 +37,7 @@ hide:
 
     [:octicons-arrow-right-24: Getting Started](delegated-staking-introduction.md)
 
--   :tools:{ .lg .middle } __Monitoring Network__
+-   :flashlight:{ .lg .middle } __Monitoring Network__
 
     ---
 
