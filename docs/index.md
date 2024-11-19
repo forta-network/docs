@@ -12,6 +12,15 @@ hide:
     grid-template-columns: repeat(auto-fit,minmax(min(100%,20rem),1fr));
     margin: 1em 0" markdown>
 
+
+-   :shield:{ .lg .middle } __Forta Firewall__
+
+    ---
+
+    Know everything about Forta Firewall and Forta chain.
+
+    [:octicons-arrow-right-24: What is Forta Firewall?](what-is-forta-firewall.md)
+
 -   :mag:{ .lg .middle } __Forta Overview__
 
     ---
@@ -40,6 +49,9 @@ hide:
 
 
 </div>
+
+
+:fontawesome-brands-discord: Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.gg/KACdTEutQq).<br><br>
 
 
 :fontawesome-brands-discord: Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.gg/KACdTEutQq).<br><br>
