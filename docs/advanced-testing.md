@@ -2,7 +2,7 @@
 
 There may be cases where developers want to test their bot with more complex interactions using real data, or to test scenarios that have not yet occurred on-chain. One way to do this is to fork the state of the chain locally and point your bot to it. You can then simulate transactions on the forked chain and the bot will scan the resulting blocks and transactions.
 
-This page describes how to conduct more advanced testing using a locally forked chain. The complete code for this example can be found [here](https://github.com/forta-network/forta-bot-examples/tree/master/advanced-testing-js).
+This page describes how to conduct more advanced testing using a locally forked chain. The complete code for this example can be found [here](https://github.com/forta-network/forta-bot-examples/tree/master/advanced-testing-js)
 
 ## Run a forked chain
 
