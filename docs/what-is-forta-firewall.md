@@ -8,6 +8,9 @@ It can be leveraged by rollups and protocol teams to screen transactions in real
 
 For the case of rollups, Forta works with a rollup’s RaaS provider to route transaction activity to Firewall for screening. High-risk transactions are flagged and filtered out before they get to the sequencer.
 
+
+![FORT Token Distribution](protocol_fortrress.png)
+
 ### For Protocols
 
 For protocols, Firewall integrates at the smart contract level to require that specified transactions are accompanied by an on-chain attestation that indicates that the transaction went through automated security checks. Transactions that are flagged as high risk do not receive attestations and will revert on-chain.
