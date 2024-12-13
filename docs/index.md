@@ -25,7 +25,7 @@ hide:
 
     ---
 
-    Know how Forta protocol works and it's Governance, the FORT token and a security overview
+    Learn how the Forta protocol works and it's Governance, the FORT token and a security overview
 
     [:octicons-arrow-right-24: Forta Overview](governance.md )
 
