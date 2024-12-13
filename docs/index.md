@@ -25,7 +25,7 @@ hide:
 
     ---
 
-    Learn how the Forta protocol works and it's Governance, the FORT token and a security overview
+    Learn about how the protocol works, its governance and the role of the FORT token
 
     [:octicons-arrow-right-24: Forta Overview](governance.md )
 
@@ -33,8 +33,8 @@ hide:
 
     ---
 
-    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing Forta network security
-
+    Delegate your FORT tokens to a Scanner Pool and get rewarded for increasing the security of the network
+    
     [:octicons-arrow-right-24: Getting Started](delegated-staking-introduction.md)
 
 -   :flashlight:{ .lg .middle } __Monitoring Network__
