@@ -17,7 +17,7 @@ hide:
 
     ---
 
-    Know everything about Forta Firewall and Forta chain.
+    Learn more about Forta Firewall and the Forta Chain.
 
     [:octicons-arrow-right-24: What is Forta Firewall?](what-is-forta-firewall.md)
 
@@ -25,7 +25,7 @@ hide:
 
     ---
 
-    Learn about how the protocol works, its governance and the role of the FORT token
+    Read about how the protocol works, its governance and the role of the FORT token
 
     [:octicons-arrow-right-24: Forta Overview](governance.md )
 
