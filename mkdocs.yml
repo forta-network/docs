@@ -5,7 +5,7 @@ nav:
       - What is Forta Firewall?: what-is-forta-firewall.md
       - Why Transaction Screening: why-transaction-screening.md
       - FORTRESS - AI Based Risk Scoring: FORTRESS-ai-based-risk-scoring.md
-      - Forta Chain: fota-chain.md
+      - Forta Chain: forta-chain.md
   - <strong>Forta Overview</strong>:
       - Tokenomics: fort-token.md
       - Governance: governance.md
@@ -59,7 +59,7 @@ nav:
           - Rewards: delegated-staking-rewards.md
       - FORT Holder Staking Guide: fort-holder-staking-guide.md
       - FORT Vault Deposit Guide: deposit-fort-vault.md
-      - Direct withdrawal: scanner-direct-withdrawal.md     
+      - Direct withdrawal: scanner-direct-withdrawal.md
   - <strong>Monitoring Network</strong>:
       - Network Overview: getting-started.md
       - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md
@@ -152,9 +152,6 @@ nav:
               - Why Machine Learning?: ml-with-forta.md
               - Datasets and Resources: ml-data-resources.md
           - Tutorial | How to earn developing on Forta: fees-tut-how-earn.md
-
-              
-      
 
 theme:
   name: material
