@@ -21,6 +21,9 @@ FORT has the following primary uses that are indispensable to the proper functio
 
  3. **Payment of Data Fees:** Users who want to buy Forta’s General Plan to consume data from the network must pay a monthly fee, denominated and paid in FORT. In addition, premium feeds can be denominated and paid either in FORT or in USDC, subject to the feed owner’s decision.
 
+ 4. **Governance:** FORT holders can participate in the governance of the Forta Network, helping shape its evolution by voting on key proposals that impact protocol upgrades, economic policies, and ecosystem initiatives.
+
+
 In addition, FORT holders can participate in governance to shape the evolution of Forta. Please read more in the governance section of the docs.
 
 
@@ -43,9 +46,25 @@ As of August 2023, less than 45 million FORT have been distributed to community 
 Other FORT token allocations include tokens held by Backers, Initial Core Contributors, and OpenZeppelin. All three groups are subject to transfer restrictions that are removed according to 4-year linear vesting periods with a 1-year cliff. FORT tokens allocated to these groups began vesting on September 1, 2021 and will be fully transferable by September 1, 2025.
 
 
-### Backers
 
-The Forta Network received early support from a group of dedicated backers who not only provided funding for the development of Forta, but also became some of the earliest members of the Forta community, providing key networking and support across various functions. Backers also represented some of the first node operators in the Forta Network. Backers’ transfer restrictions are enforced through on-chain vesting smart contracts.
+### Early Backers Allocation
+
+
+The Forta Network received early support from a group of dedicated backers who not only provided funding for the development of Forta, but also became some of the earliest members of the Forta community, providing key networking and support across various functions. Backers also represented some of the first node operators in the Forta Network. Backers’ transfer restrictions are enforced through on-chain vesting smart contracts. 
+
+Early backers of the Forta Network played a critical role in supporting its development, providing funding and strategic support for the network’s initial growth. Their allocation represents **24.5% of the total FORT supply** and is subject to **4-year linear vesting with a 1-year cliff**, enforced through on-chain vesting smart contracts. Vesting commenced on **September 1, 2021**, and tokens will be fully unlocked by **September 1, 2025**.
+
+
+This allocation is composed of two funding rounds:
+
+**2021 Funding Round**
+
+In **2021**, Forta raised **$23 million** through the sale of **92 million FORT at $0.25 per token**.
+
+**Previous rounds**
+
+Before this, earlier funding rounds allocated **151 million** FORT to backers.
+ 
 ![Backers Allocation](backers-allocation.png)
 
 
