@@ -1,8 +1,9 @@
 # FORT Token
 
-FORT is an ERC-20 token in the Ethereum network. (Address: *0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29*)
+FORT is an ERC-20 token in the Ethereum network. 
+Address: *0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29*
 
-Staking is only available in Polygon, so anyone who wants to stake needs to bridge FORT to Polygon to do so ([https://wallet.polygon.technology/](https://wallet.polygon.technology/)), or acquire FORT tokens directly in Polygon. FORT’s address in Polygon is: 0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1 
+Staking is only available in Polygon, so anyone who wants to stake needs to bridge FORT to Polygon to do so ([https://wallet.polygon.technology/](https://wallet.polygon.technology/)), or acquire FORT tokens directly in Polygon. FORT’s address in Polygon is: *0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1* 
 
 ## How is the FORT token used in Forta?
 
@@ -81,3 +82,7 @@ OpenZeppelin is a leading blockchain security company that founded and incubated
 
 
 ![OpenZeppelin Allocation](open-zeppelin-allocation.png)
+
+
+
+A detailed list of vesting wallets and their allocations can be found [here.](https://drive.google.com/file/d/1TYfjBK37v3o8nGgMprMKObFva85Xshls/view)
