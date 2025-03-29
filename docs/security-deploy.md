@@ -72,7 +72,7 @@ To learn more, read the [smart contracts GitHub repo](https://github.com/forta-n
 
 | Name | Proxy | Implementation |
 | -- | -- | -- |
-| Forta Token | [0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29](https://etherscan.io/address/0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29) | [0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a](https://etherscan.io/address/0x587969Add789c13F64Bcc34Ff253BD9BFB78f38a) |
+| Forta Token | [0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29](https://etherscan.io/address/0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29) | [0xc855d842ff0aF97B0D18Cc81eEcbb702EA1a0706](https://etherscan.io/address/0xc855d842ff0af97b0d18cc81eecbb702ea1a0706) |
 
 **Polygon**
 
@@ -104,7 +104,7 @@ To learn more, read the [smart contracts GitHub repo](https://github.com/forta-n
 
 | Name | Proxy | Implementation |
 | -- | -- | -- |
-| Forta Token | [0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79](https://sepolia.etherscan.io/address/0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79) | [0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed](https://sepolia.etherscan.io/address/0x6A434647A4a3De2F915Bb49B6227444EBbE67Aed) |
+| Forta Token | [0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79](https://sepolia.etherscan.io/address/0x95d9a757ad9C25999ffE93f3067221F04ce1Cc79) | [0x786e4446bB39F5480310FE98c48d2d5e6129A4cC](https://sepolia.etherscan.io/address/0x786e4446bb39f5480310fe98c48d2d5e6129a4cc) |
 
 **Base Sepolia Testnet**
 
