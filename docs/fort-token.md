@@ -86,3 +86,23 @@ OpenZeppelin is a leading blockchain security company that founded and incubated
 
 
 A detailed list of vesting wallets and their allocations can be found [here.](https://drive.google.com/file/d/1TYfjBK37v3o8nGgMprMKObFva85Xshls/view)
+
+### Firewall Revenue & Treasury Allocation
+
+As a function-specific layer in the rollup stack, **Firewall** earns fees from rollups and protocols that screen transactions for risk. Revenue should grow alongside the shift of activity from L1s to L2s and the overall expansion of digital assets.
+
+All Firewall revenue flows into the **Forta Treasury**, where the community will decide—via governance—how the funds are used, potentially through token buybacks or other programs that enhance FORT’s utility and liquidity.
+
+### Potential Uses of Firewall Revenue†  
+*(subject to future governance votes)*
+
+- **Token buybacks**  
+- **Liquidity provisioning**  
+- **Staking incentives**  
+- **Ecosystem-growth initiatives**
+
+---
+
+### Tokenomics Update
+
+To add transparency and predictability to FORT’s supply, the community has approved **FP-8**, which removes the *minting function* and *MINTER role* from the FORT token contract. FORT’s supply is now **permanently capped at 1 billion tokens**, further reinforcing trust in Forta’s economic model.
