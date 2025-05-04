@@ -11,7 +11,7 @@ Before you start, please make sure you have the following:
 - [Python v3.10+](https://www.python.org/) (only if you want to build Python detection bots)
 - [Docker Desktop v4.16+](https://docs.docker.com/desktop)
 - Basic understanding of [Ethereum](https://ethereum.org/) and smart contracts
-- MATIC tokens for deploying your bot (see [this guide](matic.md))
+- POL tokens for deploying your bot (see [this guide](matic.md))
 
 ## Initializing a project
 
