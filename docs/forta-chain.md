@@ -2,7 +2,11 @@ The **Forta Chain** is an L3 rollup with the core function of supporting the For
 
 The Forta Chain is built as an Arbitrum Orbit chain, leveraging the scalability and security of the Arbitrum ecosystem.
 
-![Arbitrum Logo](Forta_black_arbitrum_logo_3.png)
+![Arbitrum Logo](Forta_arbitrum_logo.png)
+
+<div align="center">
+  <img src="Forta_arbitrum_logo.png" alt="Arbitrum Logo" width="200"/>
+</div>
 
 The Firewall writes certain encrypted details to Forta Chain, including:
 
