@@ -2,9 +2,11 @@ site_name: Forta Docs
 
 nav:
   - <strong>Forta Firewall</strong>:
-      - What is Forta Firewall?: what-is-forta-firewall.md
-      - Why Transaction Screening: why-transaction-screening.md
-      - FORTRESS - AI Based Risk Scoring: FORTRESS-ai-based-risk-scoring.md
+      - What is Forta Firewall?: forta-firewall-overview.md
+      - Why Transaction Screening: forta-firewall-why-transaction-screening.md
+      - Scam Prevention: forta-firewall-scam-prevention.md
+      - Compliance Screening: forta-firewall-compliance-screening.md
+      - Realtime Monitoring: forta-firewall-realtime-monitoring.md
       - Forta Chain: forta-chain.md
   - <strong>Forta Overview</strong>:
       - Tokenomics: fort-token.md
