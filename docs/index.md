@@ -19,7 +19,7 @@ hide:
 
     Learn more about Forta Firewall and the Forta Chain.
 
-    [:octicons-arrow-right-24: What is Forta Firewall?](what-is-forta-firewall.md)
+    [:octicons-arrow-right-24: What is Forta Firewall?](forta-firewall-overview.md)
 
 -   :mag:{ .lg .middle } __Forta Overview__
 
