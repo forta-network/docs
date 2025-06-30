@@ -1,6 +1,7 @@
 # Why Transaction Screening?
 
 The transaction screening approach is more effective at preventing exploits than other methods, such as auto-pausing contracts because:
+
 - **Total Visibility:** It has total visibility into pending transactions (even transactions submitted via private channels).
 - **No Dependency on Speed:** It doesn’t depend on being faster than the attacker.
 
