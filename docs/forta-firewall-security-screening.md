@@ -17,4 +17,4 @@ Here's a visual representation of the risk score distribution for a DeFi protoco
 
 
 
-<div class="nav-buttons"><a href="why-transaction-screening.md" class="nav-button prev"> « Previous</a>      <a href="forta-firewall-scam-prevention.md" class="nav-button next"> Next »</a></div>
+<div class="nav-buttons"><a href="why-transaction-screening.md/" class="nav-button prev"> « Previous</a>                                          <a href="forta-firewall-scam-prevention.md/" class="nav-button next"> Next »</a></div>
