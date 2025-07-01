@@ -19,3 +19,7 @@ Data written to the Forta Chain will be encrypted and will only be available to 
 - Chain ID: 80931
 - Public RPC: `https://rpc-forta-chain-8gj1qndmfc.t.conduit.xyz`
 - Explorer: [https://explorer.forta.org/](https://explorer.forta.org/)
+
+
+
+[:octicons-arrow-left-24: Previous](forta-firewall-monitoring.md) 

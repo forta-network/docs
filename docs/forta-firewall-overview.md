@@ -44,3 +44,5 @@ If your rollup uses another RaaS provider or a custom implementation, you can co
 ## Censorship-Resistance
 
 For censorship-resistance, transactions flagged as high risk are not permanently blocked, but delayed, with details revealed only to the Firewall user and giving them time to respond.
+
+[Next :octicons-arrow-right-24:](forta-firewall-why-transaction-screening.md)

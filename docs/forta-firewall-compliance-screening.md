@@ -11,3 +11,6 @@ Firewall can block or delay transactions that violate compliance rules based on:
 By integrating directly into the transaction flow, Firewall ensures that sanctioned or non-compliant activity is filtered out before execution. Rollups and protocols can define their own rulesets or adopt global standards, enabling flexible enforcement tailored to their regulatory needs.
 
 This makes Forta Firewall a powerful tool for maintaining compliance without sacrificing decentralization or speed.
+
+
+[:octicons-arrow-left-24: Previous](forta-firewall-scam-prevention.md) [Next :octicons-arrow-right-24:](forta-firewall-monitoring.md)

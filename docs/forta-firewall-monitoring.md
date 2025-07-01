@@ -15,3 +15,6 @@ Firewall can surface signals across four critical vectors:
 - **Security threats:** Provides early detection of key theft, unauthorized contract upgrades, or the deployment of malicious contracts.
 
 By catching these events before they impact the chain, Forta Firewall shifts response from reactive to proactive, giving users time to act while the window is still open.
+
+
+[:octicons-arrow-left-24: Previous](forta-firewall-compliance-screening.md) [Next :octicons-arrow-right-24:](forta-chain.md)

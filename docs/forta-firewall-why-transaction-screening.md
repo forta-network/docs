@@ -24,3 +24,6 @@ Here's a visual representation of the risk score distribution for a DeFi protoco
 
 
 ![fortress_risk_score](fortress.png)
+
+
+[:octicons-arrow-left-24: Previous](forta-firewall-overview.md) [Next :octicons-arrow-right-24:](forta-firewall-security-screening.md)
