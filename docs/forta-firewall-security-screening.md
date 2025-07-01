@@ -1,6 +1,4 @@
 
-## Security Screening
-
 Firewall uses Al to simulate malicious transactions and block them before they reach the chain. It also prevents the deployment of scam smart contracts in real time.
 
 
