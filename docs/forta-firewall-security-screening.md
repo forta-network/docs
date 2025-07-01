@@ -1,9 +1,10 @@
+
 ## Security Screening
 
 Firewall uses Al to simulate malicious transactions and block them before they reach the chain. It also prevents the deployment of scam smart contracts in real time.
 
 
-## FORTRESS - AI Based Risk Scoring
+### FORTRESS - AI Based Risk Scoring
 
 Firewall uses an advanced AI model called FORTRESS to analyze and detect high-risk transactions. Each transaction simulated and screened by FORTRESS receives a risk score from 0 to 1 with a latency <60 ms. The closer the score is to 1, the more likely it is malicious. Each rollup and protocol that uses Firewall sets their desired threshold, above which transactions are blocked at the firewall.
 
@@ -11,14 +12,20 @@ FORTRESS has been trained on past exploits and is fine-tuned on a regular basis 
 
 Here's a visual representation of the risk score distribution for a DeFi protocol's transactions over the last week:
 
-## Scam prevention
 
-Forta Firewall can prevent the deployment of scam contracts by screening them before they're confirmed on-chain. This includes identifying and blocking patterns commonly associated with:
+![fortress_risk_score](fortress.png)
 
-Rug pulls - contracts with functions that enable liquidity withdrawal or token minting by a privileged address
 
-Fake tokens - contracts mimicking legitimate assets but with altered parameters or backdoors
 
-Phishing contracts - interfaces or tokens designed to trick users into signing malicious transactions
-
-Firewall detects these threats by simulating contract behavior and analyzing on-chain metadata before deployment. Because screening happens before inclusion in a block, scams can be stopped before they affect users.
+<div class="nav-buttons">
+  <a href="./why-transaction-screening.md" class="nav-button prev">
+    « Previous
+    <br>
+    <small>Why transactions screening</small>
+  </a>
+  <a href="./forta-firewall-scam-prevention.md" class="nav-button next">
+    Next »
+    <br>
+    <small>Scam Prevention</small>
+  </a>
+</div>

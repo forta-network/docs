@@ -4,9 +4,10 @@ nav:
   - <strong>Forta Firewall</strong>:
       - What is Forta Firewall?: forta-firewall-overview.md
       - Why Transaction Screening: forta-firewall-why-transaction-screening.md
+      - Security Screening: forta-firewall-security-screening.md
       - Scam Prevention: forta-firewall-scam-prevention.md
       - Compliance Screening: forta-firewall-compliance-screening.md
-      - Realtime Monitoring: forta-firewall-monitoring.md
+      - Real Time Monitoring: forta-firewall-monitoring.md
       - Forta Chain: forta-chain.md
   - <strong>Forta Overview</strong>:
       - Tokenomics: fort-token.md
