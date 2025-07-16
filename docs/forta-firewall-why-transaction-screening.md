@@ -9,10 +9,9 @@ Regardless of how the exploit is submitted (public or private mempools), and how
 
 Forta Firewall provides a unified layer for security enforcement, compliance checks, and real-time transaction monitoring.
 
-## Security Screening
+### Inbox Protection for Arbitrum rollups
 
-Firewall uses Al to simulate malicious transactions and block them before they reach the chain. It also prevents the deployment of scam smart contracts in real time.
-
+A capability within Forta Firewall that hardens rollup infrastructure by preventing unverified or malicious L2 transactions from bypassing security layers through the L1. Designed to enable each chain to take control of its risk management. Firstly, chains can decide which types of transactions are let through automatically, without requiring an in-depth check. Secondly, each chain can configure what checks are performed on the remaining transactions, including exploits screening, malicious contract deployments, sanctions lists or even custom blocklists.
 
 ### FORTRESS - AI Based Risk Scoring
 
