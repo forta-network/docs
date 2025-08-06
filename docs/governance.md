@@ -63,7 +63,7 @@ The current Forta Governance Council consists of the following members. They wer
 4. [Jonathan Alexander](https://www.linkedin.com/in/jonathanealexander/) - CTO @ OpenZeppelin, the company that founded and incubated Forta
 5. [Juan Garre](https://www.linkedin.com/in/juangarre/) - Director @ the Forta Foundation, a serial entrepreneur running operations for the Forta Foundation since its inception
 6. [Mat Travizano](https://www.linkedin.com/in/mtravizano/) - Founder @ Rewilder, serial entrepreneur now focused on tackling environmental issues with blockchain technology
-7. [Tomasz Stańczak](https://www.linkedin.com/in/tomaszkajetanstanczak/) - Founder @ Nethermind, one of the earliest members of the Forta community, developing detection bots, contributing to core development, running scan nodes and actively involved in the ecosystem
+7. [Kubi Mensah](https://www.linkedin.com/in/kubimensah) - Co-Founder @ Gattaca, a successful angel investor and former OneLogin executive, educated at Ruhr University Bochum and TU Dortmund University
 
 
 ## Forta Proposal Process
