@@ -78,7 +78,7 @@ Once you are happy with the bot behaviour, you can deploy this bot to the produc
 npx hardhat forta:publish
 ```
 
-You may be prompted to select a specific bot if you have multiple. This command builds a Docker image for the bot and pushes it to a public repository. The image will then be registered in the Bot Registry smart contract. This step requires having MATIC tokens on Polygon mainnet (see [here](matic.md) on how to acquire MATIC tokens).
+You may be prompted to select a specific bot if you have multiple. This command builds a Docker image for the bot and pushes it to a public repository. The image will then be registered in the Bot Registry smart contract. This step requires having POL tokens on Polygon mainnet (see [here](matic.md) on how to acquire POL tokens).
 
 Another way to deploy your bot is using the [Forta App](https://app.forta.network/). To learn more about deploying bots (including how to enable logging), check out [this section](deploying.md).
 
