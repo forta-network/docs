@@ -90,8 +90,10 @@ Within the FPP, Phase 3 or the “Community Vote” is the most consequential ph
 
 
 * FP-1 ([Governance Forum](https://gov.forta.network/t/forta-proposal-permissionless-launch-fp-1/202?u=forta) / [Snapshot Voting](https://snapshot.org/#/forta.eth/proposal/0xe4ac40876e9525d975d7d204354d2f9a058135e611f455226f97a712bc0227b2))
-* FP-2 (Governance Forum / Snapshot Voting)
-* FP-3 (Governance Forum / Snapshot Voting)
-* FP-4 (Governance Forum / Snapshot Voting)
-* FP-5 (Governance Forum / Snapshot Voting)
-* FP-6 (Governance Forum / Snapshot Voting)
+* FP-2 ([Governance Forum](https://gov.forta.network/t/forta-proposal-2-fp-2-forta-bot-staking-and-developer-grants/480) / [Snapshot Voting](https://snapshot.box/#/s:forta.eth/proposal/0x6e50a15aee0fe32d5022b697d9c07efafacd062120c032e40b1246876723147b))
+* FP-3 ([Governance Forum](https://gov.forta.network/t/forta-proposal-3-fp-3-forta-delegated-staking/536) / [Snapshot Voting](https://snapshot.box/#/s:forta.eth/proposal/0xb8de2abf4fb0109181b805b5e6e91642abc14f907bafe47d68da0c97f8fd24d7))
+* FP-4 ([Governance Forum](https://gov.forta.network/t/forta-proposal-on-delegated-staking-fp-4/610) / [Snapshot Voting](https://snapshot.box/#/s:forta.eth/proposal/0xa02eababf0d42264606a80e689bf24e98fa2bd712606219bcbbf6935bbd0540d))
+* FP-5 ([Governance Forum](https://gov.forta.network/t/forta-proposal-5-fp-5-fee-framework/688) / [Snapshot Voting](https://snapshot.box/#/s:forta.eth/proposal/0x6830fcecbd8acd028daf19e8d49e82cb8e46c001eaa6cffe6c0ca6c485ffe174))
+* FP-6 ([Governance Forum](https://gov.forta.network/t/forta-proposal-6-fp-6-implementing-bot-data-fees/707) / [Snapshot Voting](https://snapshot.box/#/s:forta.eth/proposal/0x92b0dbfc932f59e7cea923394fdadc39e5b0f3c684e9e8234a4f7c89126d8e10))
+* FP-7 ([Governance Forum](https://gov.forta.network/t/forta-proposal-7-fp-7-forta-firewall/766) / [Snapshot Voting](https://snapshot.box/#/s:forta.eth/proposal/0x11fa19beb6691fa088d2626a16d95ef595658066b684444c9af498e220a7999b2))
+* FP-8 ([Governance Forum](https://gov.forta.network/t/forta-proposal-8-fp8-removal-of-minting-functionality-from-fort-token-contract/841/3) / [Snapshot Voting](https://snapshot.box/#/s:forta.eth/proposal/0x2d5c5375ca5d56960a5ad1eff948562bd8e7325547f2a0f13f7c560e963eedf5))
