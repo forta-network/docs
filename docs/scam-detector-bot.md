@@ -1,11 +1,23 @@
 # Scam Detector Docs
 
+
 ## Overview
-The Scam Detector is an ideal source of threat intel for Web3 wallets and dashboard tools, as well as for security and compliance solutions serving a retail or institutional audience. Use the Scam Detector to build or supplement a blacklist, or as a transaction analysis tool by querying the Scam Detector at the point of approval or transaction to determine whether they are malicious. 
+The Scam Detector is an ideal source of threat intelligence for Web3
+wallets and dashboard tools, as well as for security and compliance
+solutions serving retail or institutional audiences. Use the Scam
+Detector to build or supplement a blacklist, or as a transaction risk
+signal by querying it at approval/signing time to determine whether an
+entity is potentially malicious.
 
-The Scam Detector provides threat intelligence about malicious smart contracts, EOAs, and URLs engaging in scams and other end-user attacks. It relies on a *bundle* of underlying Forta bots, each monitoring for a specific threat type (ex: Ice Phishing). 
+The Scam Detector provides threat intelligence about malicious smart
+contracts, EOAs, and URLs engaging in scams and other end-user
+attacks. It relies on a *bundle* of underlying Forta bots, each
+monitoring for specific scam behaviors.
 
-The Scam Detector and its underlying bots are collectively maintained by the Forta community, including the Forta Foundation, Nethermind, and dozens of individual security researchers and developers.
+The Scam Detector and its underlying bots are collectively maintained
+by the Forta community, including the Forta Foundation, Nethermind,
+and individual security researchers and developers.
+
 
 ## How it works
 Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuristic-based approach, others leverage machine learning to identify malicious activity. When bots identify an attack or scam on-chain, they create two types of threat intelligence:
@@ -24,29 +36,18 @@ Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuri
 - label/metadata/logic - (passthrough, ml, manual)
 - label/metadata/threat_description_url - URL that describes the threat_category in more detail
 
+## Supported threat categories (current)
+The Scam Detector currently labels onchain activity for the following
+categories:
 
-The Scam Detector currently monitors on-chain activity for the following threat categories:
+- **phishing** — Fired when alert combinations indicate
+phishing/drainer-style scam activity.
+- **address-poisoning** — Fired when alert combinations indicate
+address poisoning behavior.
+- **impersonating-token** — Fired when a token contract is identified
+as impersonating an established token (e.g., USDC/USDT/ETH-branded
+impersonation patterns).
 
-- sleep-minting - Fired when an alert combination is observed that points to a sleep minting attack
-- ice-phishing - Fired when an alert combination is observed that points to an ice phishing attack
-- wash-trading - Fired when an NFT wash trade has been observed
-- fraudulent-nft-order - Fired when an alert combination is observed that points to a fraudulent NFT order
-- native-ice-phishing-social-engineering - Fired when an alert combination is observed that points to an native ice phishing involving social engineering techniques (e.g. SecurityUpdate() function sig in the input data field)
-- native-ice-phishing - Fired when an alert combination is observed that points to a native ice phishing without a social engineering component
-- hard-rug-pull - Fired when a contract with hard rug pull techniques is identified
-- soft-rug-pull - Fired when a contract with soft rug pull techniques is identified
-- rake-token - Fired when a contract with a rake is identified
-- impersonating-token - Fired when a token contract has been identified that is impersonating a known established token (e.g. USDC or USDT)
-- address-poisoning - Fired when an alert combination is observed that points to address poisoning attack; this threat category is used for labeling poisoning addresses
-- address-poisoner - Fired when an alert combination is observed that points to address poisoning attack; this threat category is used for labeling poisoner addresses, aka the address that is initiating the poisoning and the contract performing the poisoning
-- attack-stages - Fired when an alert combination is observed that points to an attack on-chain that spans the 4 stages of an attack (funding, preparation, exploitation, and money laundering) Many of the alerts here point to rug pulls and rake tokens.
-- similar contract - Fired when a similar contract to a previously identified scammer contract has been identified
-- scammer association - Fired when an EOA is associated with a known scammer account (e.g. receiving or sending funds)
-- scammer-deployed-contract - When a known scammer deploys a contract
-
-New threat types are regularly added to the Scam Detector by the Forta community. 
-
-Here’s a [glossary](https://forta.org/attacks/) defining threat types in more detail. 
 
 ## Using the Scam Detector  
 The Scam Detector *labels* are each available via Forta's GraphQL API. For accessing threat intel from the Scam Detector, we recommend querying labels generated by this bot (sourceIds parameter needs to be set to ["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"].) The primary label is 'scammer'. 
@@ -173,52 +174,13 @@ curl --request POST \
 More details on querying labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels)  documentation. 
 
 
-## Matching Threat Intelligence
-Forta’s threat intelligence indicators consist of scammer contracts, EOAs, and Urls that can be matched against transaction data (either pre-signing, during transaction simulation, or after block building.) 
-
-Independent on the type of transaction data that will be used to match Forta's threat intelligence, specific matching logic need to be applied to obtain all relevant transactions based on the threat category observed as outlined below:
-
-### ice-phishing
-Ice phishing involves a user issuing an approval, approvalForAll, increaseApproval or permit transaction. The to address is a benign token contract, but approval is granted to the scammer address specified in the input data of the transaction. As such, the input data or corresponding emitted events for approvals, approval for all and permit transactions need to be parse and the spender value ought to be matched against Forta’s threat intelligence.
-
-### fraudulent-nft-order
-Fraudulent NFT orders are challenging to match against the Forta’s threat intelligence as the order is merely signed by a user, collected through web2 infrastructure (such as a web site) and then submitted by the scammer on the user’s behalf. The order itself does not include the scammer address. 
-
-However, the order gets executed by the scammer, so matching the from field will match those transactions. Once executed, the seaport protocol will transfer the digital assets to the scammer (which could be a different address from the invoking EOA) and matching emitted events for transfers would yield all relevant transactions. 
-
-### address-poisoning
-Address poisoning results in a user’s address history to be poisoned using token transfers or native asset dust. Matching should happen at two levels:
-1. Match on any parsed transfer input data fields or corresponding event emissions for tokens. Note, either the to or the from could match the scammer.
-2. Match on the from address for native assets transfers. 
-
-### address-poisoner
-Address poisoners are the initiator of the address poisoning activity. A simple matching of the from and to field (if a contract) would yield the relevant transactions.
-
-### native-ice-phishing/ native-ice-phishing-social-engineering
-Native ice phishing are straight transfers of native assets to the scammer. Matching the to address of the transaction against Forta threat intelligence yield transactions for this type of scam.
-
-### hard-rug-pull/ soft-rug-pull/ token-impersonation/ rake-token
-These threat categories are indicative of malicious token contracts that can be matched based on the transaction to address and/or log fields (e.g. transfer logs) post tx simulation. 
-
-### wash-trading
-Wash trading artificially inflates the value and trading volume of digital assets the user may hold. In order identify transactions associated with these wash traded digital assets, the scammer addresses need to be matched against to/ from/ input data fields/ and emitted events. 
-
-In addition, however, the actual wash traded digital asset is tainted and can be tracked by the transfer function. Note, given the contract could emit events with incorrect information - if created by the scammer; it is not a reliable data source. 
-
-### sleep minting
-Sleep minting is similar to wash trading in that the provenance of an NFT is no longer guaranteed. In order track the sleep minted token by the transfer function. Note, given the contract could emit events with incorrect information, which is prevalent in sleep minting attacks; it is not a reliable data source. 
-
 ## What chains are supported?
 
 - Ethereum
 - BNB Chain
 - Polygon
-- Avalanche
 - Arbitrum
 - Optimism 
-- Fantom 
-
-The Forta community evaluates new chains on an ongoing basis.
 
 
 ## False Positives
