@@ -26,7 +26,7 @@ FORT has the following primary uses that are indispensable to the proper functio
 
  3. **Payment of Data Fees:** Users who want to buy Forta’s General Plan to consume data from the network must pay a monthly fee, denominated and paid in FORT. In addition, premium feeds can be denominated and paid either in FORT or in USDC, subject to the feed owner’s decision.
 
- 4. **Payment of Gas Fees in the Forta Chain:** Users of the Forta Chain, both Attesters and Firewall users, need to pay gas fees in FORT to get their transactions included in blocks.
+ 4. **Payment of Gas Fees:** Certain protocol participants, including Attesters and Firewall users, need to pay gas fees in FORT to get their transactions included in blocks.
 
  5. **Governance:** FORT holders can participate in the governance of the Forta Network, helping shape its evolution by voting on key proposals that impact protocol upgrades, economic policies, and ecosystem initiatives.
 

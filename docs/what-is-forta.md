@@ -17,7 +17,7 @@ hide:
 
     ---
 
-    Learn more about Forta Firewall and the Forta Chain.
+    Learn more about Forta Firewall.
 
     [:octicons-arrow-right-24: What is Forta Firewall?](what-is-forta-firewall.md)
 
@@ -52,4 +52,3 @@ hide:
 
 
 :fontawesome-brands-discord: Got a question or feedback? Get in touch with the community in the [Forta Discord server](https://discord.gg/KACdTEutQq).<br><br>
-

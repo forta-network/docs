@@ -17,7 +17,7 @@ hide:
 
     ---
 
-    Learn more about Forta Firewall and the Forta Chain.
+    Learn more about Forta Firewall.
 
     [:octicons-arrow-right-24: What is Forta Firewall?](forta-firewall-overview.md)
 

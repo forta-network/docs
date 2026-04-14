@@ -17,4 +17,4 @@ Firewall can surface signals across four critical vectors:
 By catching these events before they impact the chain, Forta Firewall shifts response from reactive to proactive, giving users time to act while the window is still open.
 
 
-[:octicons-arrow-left-24: Previous](forta-firewall-compliance-screening.md) [Next :octicons-arrow-right-24:](forta-chain.md)
+[:octicons-arrow-left-24: Previous](forta-firewall-compliance-screening.md)
