@@ -62,39 +62,6 @@ nav:
       - FORT Holder Staking Guide: fort-holder-staking-guide.md
       - FORT Vault Deposit Guide: deposit-fort-vault.md
       - Direct withdrawal: scanner-direct-withdrawal.md
-  - <strong>Monitoring Network</strong>:
-      - Network Overview: getting-started.md
-      - Introduction to Subscription Tiers: introduction-to-subscription-tiers.md
-      - Using the API: api-reference.md
-      - GraphQL Reference: forta-api-reference/index.html
-      - Use Cases: https://forta.notion.site/Selected-Use-Cases-1dcdf290ecfb47788cd588cdfa12585c
-      - Forta for Metamask: Forta-for-Metamask.md
-      - Run a Node:
-          - Guide:
-              - Introduction: scan-node/introduction.md
-              - Machine setup: scan-node/machine-setup.md
-              - Install Forta node: scan-node/install-forta-node.md
-              - Configure: scan-node/configure.md
-              - Register: scan-node/register.md
-              - Run: scan-node/run.md
-              - Troubleshoot: scan-node/troubleshoot.md
-              - Monitor: scan-node/monitor.md
-              - Upgrade: scan-node/upgrade.md
-              - FAQ: scan-node/faq.md
-              - Miscellaneous: scan-node/miscellaneous.md
-          - Local mode: scanner-local-mode.md
-          - Monitoring SLA:
-              - SLA Score Calculation: sla.md
-              - SLA API: sla-api.md
-          - Manage pools and stake: scanner-pools.md
-          - Node Resources:
-              - Scan with Alchemy: alchemy-partnership.md
-              - Scan with Chainstack: scan-with-chainstack.md
-              - Scan with Bware: bware-partnership.md
-              - Scan with Quicknode: quicknode-partnership.md
-      - Network Fees and Developer Rewards:
-          - Why Fees?: fees-why.md
-          - FAQs about fees: fees-faqs.md
 
 theme:
   name: material
