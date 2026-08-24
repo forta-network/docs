@@ -1,6 +1,8 @@
 site_name: Forta Docs
 
 nav:
+  - <strong>Forta Risk</strong>:
+      - Forta Risk Graph MCP: forta-risk-graph-mcp.md
   - <strong>Forta Firewall</strong>:
       - What is Forta Firewall?: forta-firewall-overview.md
       - Why Risk Management: forta-firewall-why-transaction-screening.md
