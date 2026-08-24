@@ -13,7 +13,7 @@ The point of a graph, rather than a dashboard, is depth. A vault depends on a ma
 **Claude Code**
 
 ```bash
-claude mcp add --transport http Forta-Risk-Graph https://risk-graph-mcp.forta.network/mcp
+claude mcp add --transport http forta-risk-graph https://risk-graph-mcp.forta.network/mcp
 ```
 
 **Claude Cowork** — add this MCP server in your connector settings:
