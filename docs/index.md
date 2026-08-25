@@ -13,6 +13,14 @@ hide:
     margin: 1em 0" markdown>
 
 
+-   :spider_web:{ .lg .middle } __Forta Risk__
+
+    ---
+
+    Explore on-chain risk with the Forta Risk Graph MCP — map dependencies and blast radius in dollar terms.
+
+    [:octicons-arrow-right-24: Forta Risk Graph MCP](forta-risk-graph-mcp.md)
+
 -   :shield:{ .lg .middle } __Forta Firewall__
 
     ---
@@ -20,14 +28,6 @@ hide:
     Learn more about Forta Firewall.
 
     [:octicons-arrow-right-24: What is Forta Firewall?](forta-firewall-overview.md)
-
--   :mag:{ .lg .middle } __Forta Overview__
-
-    ---
-
-    Read about how the protocol works, its governance and the role of the FORT token
-
-    [:octicons-arrow-right-24: Forta Overview](governance.md )
 
 -   :battery:{ .lg .middle } __Staking on Forta__
 
