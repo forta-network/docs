@@ -54,6 +54,8 @@ The graph goes multiple hops deep, highlighting indirect and non-obvious relatio
 
 If you're using Claude, we have a packaged skill called **Forta Risk Analysis** that runs the full end-to-end analysis and produces a standardized report.
 
+**GitHub repo:** [forta-network/forta-risk-skills](https://github.com/forta-network/forta-risk-skills)
+
 ## Prompt library
 
 To start, we suggest using template prompts. The Forta Risk Analysis skill was developed with these prompts in mind. To use, copy and paste the prompt below into Claude and insert the relevant token/vault addresses.
