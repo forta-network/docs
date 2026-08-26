@@ -43,7 +43,9 @@ A real-time view of:
 - **Governance** — admin keys, owners, upgrade authority, and signer sets plus thresholds for around 24,000 multisigs.
 - **Attribution** — exchange wallets, protocol contracts and known entities, sourced and labelled.
 
-Two things the MCP was built for:
+## What the MCP was built for
+
+Two things:
 
 1. **Dependency mapping** — take a vault, wallet or asset you care about, and understand its key dependencies in dollar terms.
 2. **Blast radius** — take an asset, oracle feed, admin address, etc., and understand what gets impacted if it fails.
