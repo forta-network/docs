@@ -6,9 +6,9 @@ Once you have tested your bot locally, you are ready to deploy it to the Forta n
 2. registering it in the Bot Registry smart contract
 3. staking 100 FORT tokens on your bot
 
-## Acquiring Polygon MATIC tokens
+## Acquiring Polygon POL tokens
 
-The Bot Registry smart contract currently lives on Polygon mainnet, so you will need **MATIC tokens on Polygon mainnet** in order to deploy your bot. You can acquire some MATIC tokens by following [this guide](matic.md).
+The Bot Registry smart contract currently lives on Polygon mainnet, so you will need **POL tokens on Polygon mainnet** in order to deploy your bot. You can acquire some POL tokens by following [this guide](matic.md).
 
 ## Using Forta App vs CLI
 

@@ -1,8 +1,8 @@
-# Acquiring Polygon MATIC
+# Acquiring Polygon POL
 
-As of October 18th 2021, Forta smart contracts (including the Bot Registry) have been moved to Polygon, a blockchain scaling solution that enables faster and cheaper transactions. You will need [MATIC](https://coinmarketcap.com/currencies/polygon/) tokens in order to pay gas fees on Polygon when deploying your bot. This guide will walk you through converting your ETH (on Ethereum mainnet) to MATIC (on Polygon mainnet). To learn more about Polygon, visit their [website](https://polygon.technology/).
+As of October 18th 2021, Forta smart contracts (including the Bot Registry) have been moved to Polygon, a blockchain scaling solution that enables faster and cheaper transactions. You will need [POL](https://coinmarketcap.com/currencies/polygon/) tokens in order to pay gas fees on Polygon when deploying your bot. This guide will walk you through converting your ETH (on Ethereum mainnet) to POL (on Polygon mainnet). To learn more about Polygon, visit their [website](https://polygon.technology/).
 
-**If you already have MATIC tokens on Ethereum mainnet, you can transfer them over to Polygon using the bridge in step 3.**
+**If you already have POL tokens on Ethereum mainnet, you can transfer them over to Polygon using the bridge in step 3.**
 
 ## 1. Import your keyfile into Metamask
 
@@ -21,7 +21,7 @@ Your keyfile should now be in Metamask. **Make sure there is some ETH in this ac
     - Network Name: `Polygon Mainnet`
     - RPC URL: `https://polygon-rpc.com/`
     - Chain ID: `137`
-    - Currency Symbol: `MATIC`
+    - Currency Symbol: `POL`
     - Explorer URL: `https://polygonscan.com/`
 3. Click the Save button
 
@@ -32,7 +32,7 @@ You can now interact with the Polygon network using your Metamask.
 1. Navigate to the [Polygon bridge](https://wallet.polygon.technology)
 2. Connect your Metamask wallet if needed (you will be prompted to sign a message)
 3. Select Ether from the dropdown as the token to transfer
-4. Enter how much ETH you want to transfer (for reference, 1 [MATIC](https://coinmarketcap.com/currencies/polygon/) will allow you to publish ~80 bots)
+4. Enter how much ETH you want to transfer (for reference, 1 [POL](https://coinmarketcap.com/currencies/polygon/) will allow you to publish ~80 bots)
 5. Click the Transfer button, then click Continue on the following dialogs
 6. In the Metamask transaction dialog, review the gas fees and click Confirm
 7. Wait for the transaction to complete on Ethereum mainnet
@@ -40,16 +40,16 @@ You can now interact with the Polygon network using your Metamask.
 
 You have now transferred ETH from Ethereum mainnet over to Polygon mainnet.
 
-## 4. Swap ETH for MATIC using the swap tool
+## 4. Swap ETH for POL using the swap tool
 
 1. Navigate to the [Polygon swap tool](https://wallet.polygon.technology/swap/)
 2. Connect your Metamask wallet if needed (you will be prompted to sign a message)
-3. Select how much MATIC you want to receive (for reference, 1 [MATIC](https://coinmarketcap.com/currencies/polygon/) will allow you to publish ~80 bots)
+3. Select how much POL you want to receive (for reference, 1 [POL](https://coinmarketcap.com/currencies/polygon/) will allow you to publish ~80 bots)
 4. Select WETH as the token to swap (will be labelled "Ether (PoS-WETH)")
 5. Click the Approve button
 6. Click the Swap button
 7. Wait for the transaction to complete on Polyon mainnet
-8. Verify your account balance on Polygon mainnet using the [Polygon block explorer](https://polygonscan.com/). You should have received the specified amount of **MATIC**
+8. Verify your account balance on Polygon mainnet using the [Polygon block explorer](https://polygonscan.com/). You should have received the specified amount of **POL**
 
-You should now have MATIC tokens on Polygon mainnet in order to pay gas fees! You can now continue [deploying your bot](deploying.md).
+You should now have POL tokens on Polygon mainnet in order to pay gas fees! You can now continue [deploying your bot](deploying.md).
 
