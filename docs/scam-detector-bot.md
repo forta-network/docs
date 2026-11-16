@@ -214,10 +214,7 @@ More details on querying labels can be found in our [Forta GraphQL API](https://
 ## What chains are supported?
 
 - Ethereum
-- BNB Chain
-- Polygon
 - Arbitrum
-- Optimism
 - Base
 
 
