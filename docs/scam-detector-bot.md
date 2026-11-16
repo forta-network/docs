@@ -15,6 +15,9 @@ attacks. It is powered by the scam detection modules of
 [Forta Firewall](forta-firewall-scam-prevention.md), each analyzing
 transactions for a specific scam behavior.
 
+The Scam Detector is maintained by a collaboration between Forta and
+Nethermind.
+
 
 ## How it works
 The detection modules analyze transactions on the supported chains. Each module looks for one scam behavior:
@@ -196,9 +199,10 @@ Example Response
 }
 ```
 
-Example as curl
+Example as curl (an [API key](api-keys.md) is required)
 ```
 curl --request POST \
+    --header 'Authorization: Bearer <YOUR_API_KEY>' \
     --header 'content-type: application/json' \
     --url 'https://api.forta.network/graphql' \
     --data '{"query":"query Labels($input: LabelsInput) {\n  labels(input: $input) {\n    labels {\n      label {\n        label\n        entity\n        metadata\n      }\n      createdAt\n    }\n    pageInfo {\n      endCursor {\n        pageToken\n      }\n      hasNextPage\n    }\n  }\n}","variables":{"input":{"sourceIds":["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],"labels":["scammer"],"state":true,"first":5,"metadata":{"chain_id":1,"threat_category":"phishing"}}}}'
@@ -218,7 +222,4 @@ More details on querying labels can be found in our [Forta GraphQL API](https://
 
 
 ## Confidence Scores
-The confidence score of a label depends on its threat category:
-
-- **phishing** and **rugpull** - the score is the similarity between the detected contract and the known scam contract it matched, from 0 to 1.0. A label is only published when the similarity passes the match threshold.
-- **spam** and **address_poisoning** - these detections are rule-based: a transaction either matches the rule or it does not. Every label carries a fixed score: 0.95 for spam and 0.9 for address poisoning.
+The confidence score reflects how strong the detection behind a label is, from 0 to 1.0. For some threat categories the score is derived from the individual detection and varies from label to label. For the others, every label in the category carries the same score.
