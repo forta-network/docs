@@ -10,7 +10,7 @@ signal by querying it at approval/signing time to determine whether an
 entity is potentially malicious.
 
 The Scam Detector provides threat intelligence about malicious smart
-contracts, EOAs, and URLs engaging in scams and other end-user
+contracts and EOAs engaging in scams and other end-user
 attacks. It relies on a *bundle* of underlying Forta bots, each
 monitoring for specific scam behaviors.
 
@@ -20,21 +20,26 @@ and individual security researchers and developers.
 
 
 ## How it works
-Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuristic-based approach, others leverage machine learning to identify malicious activity. When bots identify an attack or scam on-chain, they create two types of threat intelligence:
+Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuristic-based approach, others leverage machine learning to identify malicious activity. When an attack or scam is identified on-chain, the Scam Detector publishes a label:
 
 
-**Labels.** A persistent tag placed on an entity (smart contract, EOA, URL) responsible for a scam or attack. Today, the Scam Detector assigns one label: “scammer” (additional labels, like "victim" and "stolen asset" may follow). The label will contain the following information:
+**Labels.** A persistent tag placed on an address (smart contract or EOA) responsible for a scam or attack. Today, the Scam Detector assigns one label: “scammer” (additional labels, like "victim" and "stolen asset" may follow). The label will contain the following information:
 
-- label/entity - the address (either EOA or contract address) or URL
-- label/entityType - EntityType.ADDRESS or EntityType.Url
+- label/entity - the address (EOA or contract), in lower case
+- label/entityType - `Address`
 - label/confidence - a confidence score from 0-1.0 with 1.0 being the most confident the label is correct
 - label/remove - a flag indicating whether the label is being added or removed
 - label/label - a string denoting the label that was placed on the entity. It currently is set to 'scammer'
-- label/metadata/bot_version - version of the bot when the label was added
 - label/metadata/threat_category - (see below)
-- label/metadata/address_type - EOA or contract (addresses only)
-- label/metadata/logic - (passthrough, ml, manual)
-- label/metadata/threat_description_url - URL that describes the threat_category in more detail
+- label/metadata/address_type - `EOA` or `Contract`
+- label/metadata/logic - the detection logic that produced the label (for example `phishing_similarity`, `token_symbol_or_name_impersonation`, `low_value_transfer`)
+- label/metadata/chain_id - the chain id the address was first detected on
+- label/metadata/detection_source - where the detection came from (currently `firewall`)
+- label/metadata/impersonating_property, label/metadata/impersonating_hex_value - for `spam` labels only: the token name or symbol being impersonated, and its hex encoding
+
+An address receives one label. If it is detected again later, on another chain or in another category, no second label is added, so `chain_id` and `threat_category` describe the first detection only.
+
+Older labels remain in the feed in the format of their time. They can carry other values and metadata keys than the ones listed here, for example the label `scammer-eoa`, the entity type `ADDRESS`, and the key `threat_description_url`.
 
 ## Supported threat categories (current)
 The Scam Detector currently labels onchain activity for the following
@@ -42,11 +47,11 @@ categories:
 
 - **phishing** — Fired when alert combinations indicate
 phishing/drainer-style scam activity.
-- **address-poisoning** — Fired when alert combinations indicate
-address poisoning behavior.
-- **impersonating-token** — Fired when a token contract is identified
-as impersonating an established token (e.g., USDC/USDT/ETH-branded
-impersonation patterns).
+- **address_poisoning** — Fired when transfers indicate address
+poisoning behavior.
+- **spam** — Fired when a token contract is identified as
+impersonating an established token by name or symbol (e.g.,
+USDC/USDT/ETH-branded impersonation patterns).
 
 
 ## Using the Scam Detector  
@@ -55,7 +60,9 @@ The Scam Detector *labels* are each available via Forta's GraphQL API. For acces
 ### *Labels*
 Labels allow a contributor to tag an entity (like an address) with a label.  Labels are available via our [GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels). This API allows one to search by date range and page over results.
 
-A recent one month sample of the labels can be downloaded [here (prod, V1 label format)](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230601-20230630.csv) and [here (beta, V2 label format)](../ScamDetector_0x47c45816807d2eac30ba88745bf2778b61bc106bc76411b520a5289495c76db8_labels_20230622-20230630.csv).
+A label's `createdAt` is the time of the detection, and the label is published shortly after it. When polling by date range, overlap consecutive windows so that labels published after their `createdAt` are not missed.
+
+Historical samples from June 2023, in an older label format that differs from today's labels, can be downloaded [here](../ScamDetector_0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23_labels_20230601-20230630.csv) and [here](../ScamDetector_0x47c45816807d2eac30ba88745bf2778b61bc106bc76411b520a5289495c76db8_labels_20230622-20230630.csv).
 
 
 **Note:** 
@@ -99,12 +106,8 @@ Example Input
     "state": true,
     "first": 5,
     "metadata": {
-      "chain_id": 56
-    },
-    "afterCreatedAtDate": "2023-04-03T15:01:33Z",
-    "beforeCreatedAtDate": "2023-04-03T15:10:45Z",
-    "after": {
-      "pageToken": "29427820"
+      "chain_id": 1,
+      "threat_category": "phishing"
     }
   }
 }
@@ -118,45 +121,71 @@ Example Response
  "data": {
    "labels": {
      "pageInfo": {
-       "hasNextPage": true,
-       "endCursor": {
-         "pageToken": "21193"
-       }
+       "hasNextPage": true
      },
      "labels": [
        {
-          "createdAt": "2023-07-04T23:09:35.614989763Z",
-          "id": "0x97555444ff87aa9a56431571c906c6ef7ab25a24165fed6b72969964d455dadb",
-          "label": {
-            "label": "scammer",
-            "metadata": [
-              "address_type=contract",
-              "base_bot_alert_hashes=0x8f5e07151a1666d387a163bf91efdb346bc65c53c260e9e043125e762437ea84",
-              "base_bot_alert_ids=SOFT-RUG-PULL-SUS-POOL-REMOVAL",
-              "bot_version=2.15.3",
-              "chain_id=1",
-              "deployer_info=Deployer 0x02caf8b1e4b59529c9c100e8f0f90a3faeeeb2e4 involved in SCAM-DETECTOR-SOFT-RUG-PULL scam; this contract has been associated with this scam.",
-              "feature_vector=",
-              "label_version=2.1.0",
-              "logic=passthrough",
-              "model_name=v3_scammer_model.joblib",
-              "threat_category=soft-rug-pull",
-              "threat_description_url=https://forta.org/attacks#rug-pull"
-            ],
-            "remove": false,
-            "entityType": "ADDRESS",
-            "entity": "0x9bc388edeeb94c8017e0a6e178a8e7cb40f3d1f3",
-            "confidence": 0.477
-          },
-          "source": {
-            "chainId": 1,
-            "alertId": "SCAM-DETECTOR-SOFT-RUG-PULL",
-            "bot": {
-              "id": "0x47c45816807d2eac30ba88745bf2778b61bc106bc76411b520a5289495c76db8"
-            },
-            "alertHash": "0x1b11901bfca2873e83a1cba50ee937a35279b873eff56214eaaefbe068c3582a"
-          }
-        }
+         "createdAt": "2026-11-16T12:45:24.781229263Z",
+         "label": {
+           "label": "scammer",
+           "entity": "0xdbe97348b147b2afc59abfe28e43031fc39d7835",
+           "entityType": "Address",
+           "confidence": 1,
+           "metadata": [
+             "address_type=Contract",
+             "chain_id=1",
+             "detection_source=firewall",
+             "logic=phishing_similarity",
+             "threat_category=phishing"
+           ]
+         },
+         "source": {
+           "chainId": 1,
+           "alertId": "0xf34929e7e8bb74f53444d6ca2ed5c5f71380229b5f859d76ef35dc06b1797631"
+         }
+       },
+       {
+         "createdAt": "2026-11-16T12:53:02.306425011Z",
+         "label": {
+           "label": "scammer",
+           "entity": "0x827230b1dea674021f44481af287453e0b2714df",
+           "entityType": "Address",
+           "confidence": 0.95,
+           "metadata": [
+             "address_type=Contract",
+             "chain_id=1",
+             "detection_source=firewall",
+             "impersonating_hex_value=44616920537461626c65636f696e",
+             "impersonating_property=Dai Stablecoin (name)",
+             "logic=token_symbol_or_name_impersonation",
+             "threat_category=spam"
+           ]
+         },
+         "source": {
+           "chainId": 1,
+           "alertId": "0x4f427621c129737996e242984a6d2bef80f3c1f89e540783d9da00222e12e4fa"
+         }
+       },
+       {
+         "createdAt": "2026-11-16T13:20:09.124178916Z",
+         "label": {
+           "label": "scammer",
+           "entity": "0x014be3e63fd7d61e5e22746db72d1327b08f380d",
+           "entityType": "Address",
+           "confidence": 0.9,
+           "metadata": [
+             "address_type=EOA",
+             "chain_id=1",
+             "detection_source=firewall",
+             "logic=zero_value_transfer",
+             "threat_category=address_poisoning"
+           ]
+         },
+         "source": {
+           "chainId": 1,
+           "alertId": "0x39ec339b03e10b014d2608a3a498738631868f63dcfa8ed02ab73eae5425d387"
+         }
+       }
      ]
    }
   }
@@ -168,7 +197,7 @@ Example as curl
 curl --request POST \
     --header 'content-type: application/json' \
     --url 'https://api.forta.network/graphql' \
-    --data '{"query":"query Labels($input: LabelsInput) {\n  labels(input: $input) {\n    labels {\n      label {\n        label\n        entity\n        metadata\n      }\n      createdAt\n    }\n    pageInfo {\n      endCursor {\n        pageToken\n      }\n      hasNextPage\n    }\n  }\n}","variables":{"input":{"sourceIds":["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],"labels":["scammer"],"state":true,"first":5,"metadata":{"chain_id":56},"afterCreatedAtDate":"2023-04-03T15:01:33Z","beforeCreatedAtDate":"2023-04-03T15:10:45Z","after":{"pageToken":"29427820"}}}}'
+    --data '{"query":"query Labels($input: LabelsInput) {\n  labels(input: $input) {\n    labels {\n      label {\n        label\n        entity\n        metadata\n      }\n      createdAt\n    }\n    pageInfo {\n      endCursor {\n        pageToken\n      }\n      hasNextPage\n    }\n  }\n}","variables":{"input":{"sourceIds":["0x1d646c4045189991fdfd24a66b192a294158b839a6ec121d740474bdacb3ab23"],"labels":["scammer"],"state":true,"first":5,"metadata":{"chain_id":1,"threat_category":"phishing"}}}}'
 ```
 
 More details on querying labels can be found in our [Forta GraphQL API](https://docs.forta.network/en/latest/forta-api-reference/#query-labels)  documentation. 
@@ -180,7 +209,8 @@ More details on querying labels can be found in our [Forta GraphQL API](https://
 - BNB Chain
 - Polygon
 - Arbitrum
-- Optimism 
+- Optimism
+- Base
 
 
 ## False Positives
