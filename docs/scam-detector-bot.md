@@ -11,16 +11,20 @@ entity is potentially malicious.
 
 The Scam Detector provides threat intelligence about malicious smart
 contracts and EOAs engaging in scams and other end-user
-attacks. It relies on a *bundle* of underlying Forta bots, each
-monitoring for specific scam behaviors.
-
-The Scam Detector and its underlying bots are collectively maintained
-by the Forta community, including the Forta Foundation, Nethermind,
-and individual security researchers and developers.
+attacks. It is powered by the scam detection modules of
+[Forta Firewall](forta-firewall-scam-prevention.md), each analyzing
+transactions for a specific scam behavior.
 
 
 ## How it works
-Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuristic-based approach, others leverage machine learning to identify malicious activity. When an attack or scam is identified on-chain, the Scam Detector publishes a label:
+The detection modules analyze transactions on the supported chains. Each module looks for one scam behavior:
+
+- **Phishing** - compares the code of every newly created contract with the code of known phishing and drainer contracts.
+- **Rug pull** - compares newly created token contracts with known rug-pull tokens.
+- **Spam** - checks newly created tokens for a name or symbol that impersonates an established token, including look-alike characters.
+- **Address poisoning** - looks for transfers designed to plant a look-alike address in a wallet's transaction history: zero-value transfers, low-value transfers of tokens or the native asset, and transfers of fake tokens.
+
+When a module identifies a scam on-chain, the Scam Detector publishes a label on the addresses responsible:
 
 
 **Labels.** A persistent tag placed on an address (smart contract or EOA) responsible for a scam or attack. Today, the Scam Detector assigns one label: “scammer” (additional labels, like "victim" and "stolen asset" may follow). The label will contain the following information:
@@ -32,7 +36,7 @@ Forta bots are monitoring on-chain activity 24/7/365. Some bots leverage a heuri
 - label/label - a string denoting the label that was placed on the entity. It currently is set to 'scammer'
 - label/metadata/threat_category - (see below)
 - label/metadata/address_type - `EOA` or `Contract`
-- label/metadata/logic - the detection logic that produced the label (for example `phishing_similarity`, `token_symbol_or_name_impersonation`, `low_value_transfer`)
+- label/metadata/logic - the detection logic that produced the label (see below)
 - label/metadata/chain_id - the chain id the address was first detected on
 - label/metadata/detection_source - where the detection came from (currently `firewall`)
 - label/metadata/impersonating_property, label/metadata/impersonating_hex_value - for `spam` labels only: the token name or symbol being impersonated, and its hex encoding
@@ -43,15 +47,15 @@ Older labels remain in the feed in the format of their time. They can carry othe
 
 ## Supported threat categories (current)
 The Scam Detector currently labels onchain activity for the following
-categories:
+categories. Each label carries the category in `threat_category` and
+the detection logic in `logic`:
 
-- **phishing** — Fired when alert combinations indicate
-phishing/drainer-style scam activity.
-- **address_poisoning** — Fired when transfers indicate address
-poisoning behavior.
-- **spam** — Fired when a token contract is identified as
-impersonating an established token by name or symbol (e.g.,
-USDC/USDT/ETH-branded impersonation patterns).
+| threat_category | Fired when | logic |
+|---|---|---|
+| `phishing` | A newly created contract closely matches a known phishing or drainer contract. | `phishing_similarity` |
+| `rugpull` | A newly created token contract closely matches a known rug-pull token. | `rugpull_similarity` |
+| `spam` | A token contract impersonates an established token by name or symbol (e.g., USDC/USDT/ETH-branded impersonation patterns). | `token_symbol_or_name_impersonation` |
+| `address_poisoning` | Transfers indicate address poisoning behavior. | `zero_value_transfer`, `low_value_transfer`, `low_value_native_transfer` or `fake_token_transfer` |
 
 
 ## Using the Scam Detector  
@@ -213,8 +217,8 @@ More details on querying labels can be found in our [Forta GraphQL API](https://
 - Base
 
 
-## False Positives
-While the Scam Detector maintains high precision, it’s possible that it identifies a false positive. To address this risk, the Forta community manually verifies certain Scam Detector alerts within one business day. If a false positive is identified during the manual verification process, an FP alert will be emitted by the Scam Detector and the label will be removed. If you’re accessing the Labels API via the state endpoint, all labels are up to date and take into account the latest FP information.  
-
 ## Confidence Scores
-The confidence score associated with a label is hard coded and based on the precision analysis performed by the Forta community or derived from the machine learning score. The hard coded score is updated on a monthly basis, and reflects the precision of the Scam Detector for a particular threat-category *before* manual verification. 
+The confidence score of a label depends on its threat category:
+
+- **phishing** and **rugpull** - the score is the similarity between the detected contract and the known scam contract it matched, from 0 to 1.0. A label is only published when the similarity passes the match threshold.
+- **spam** and **address_poisoning** - these detections are rule-based: a transaction either matches the rule or it does not. Every label carries a fixed score: 0.95 for spam and 0.9 for address poisoning.
